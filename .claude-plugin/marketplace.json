@@ -1,0 +1,10 @@
+{
+  "name": "legal-skills",
+  "owner": {
+    "name": "l0cka"
+  },
+  "metadata": {
+    "description": "Open-source, governed legal workflow plugins maintained by l0cka."
+  },
+  "plugins": []
+}
