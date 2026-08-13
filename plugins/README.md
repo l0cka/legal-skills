@@ -3,7 +3,8 @@
 Canonical plugin packages live in this directory.
 
 - `commonwealth-legislation` — provenance-first Commonwealth legislation
-  identity, status and point-in-time version checks.
+  identity, status and point-in-time version checks, plus evidence-linked
+  provision change tracing.
 - `nsw-legislation` — provenance-first NSW legislation identity, collection,
   authorisation and point-in-time version checks.
 

@@ -1,7 +1,7 @@
 {
   "name": "commonwealth-legislation",
-  "version": "0.1.0",
-  "description": "Verify Commonwealth legislation identity, status and point-in-time versions against the Federal Register of Legislation.",
+  "version": "0.2.0",
+  "description": "Verify Commonwealth legislation and trace provision changes against the Federal Register of Legislation.",
   "author": {
     "name": "l0cka",
     "url": "https://github.com/l0cka"
@@ -14,6 +14,7 @@
     "commonwealth-legislation",
     "federal-register-of-legislation",
     "point-in-time",
+    "legislative-change",
     "legal-research"
   ],
   "skills": "./skills/"

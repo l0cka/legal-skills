@@ -6,12 +6,14 @@ ChatGPT Work while keeping provider-specific manifests thin and separate.
 
 ## Plugin suite
 
-The marketplace contains two plugins and two skills:
+The marketplace contains two plugins and three skills:
 
 - **Commonwealth Legislation** — checks the identity, status and applicable
   point-in-time version of Commonwealth Acts and registered instruments against
   the official Federal Register of Legislation. It reports Register IDs and
-  currency qualifications instead of treating "current" as a binary label.
+  currency qualifications instead of treating "current" as a binary label. A
+  second skill traces provision changes through every intervening compilation,
+  amending legislation and commencement material without claiming legal effect.
 - **NSW Legislation** — checks NSW Acts, statutory instruments and environmental
   planning instruments against the official NSW legislation website. It
   identifies the applicable point-in-time version and preserves commencement,
