@@ -109,6 +109,7 @@ python3 -m unittest discover -s tests
 See [CONTRIBUTING.md](CONTRIBUTING.md) and
 [docs/adding-a-plugin.md](docs/adding-a-plugin.md). Repository architecture and
 provider boundaries are described in [docs/architecture.md](docs/architecture.md).
+Release history is recorded in [CHANGELOG.md](CHANGELOG.md).
 
 ## Licence
 

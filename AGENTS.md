@@ -13,6 +13,10 @@ between Claude Cowork and ChatGPT Work.
   `.claude-plugin/plugin.json` manifests. Keep shared content provider-neutral.
 - Register every plugin in both marketplace catalogs and every skill in
   `skills.json`.
+- Update `CHANGELOG.md` under **Unreleased** for user-facing workflow changes,
+  plugin additions or removals, version changes, and material fixes. Move an
+  entry into a dated section only when the relevant release is published or
+  tagged.
 - Never commit client data, matter data, privileged or confidential material,
   credentials, tokens, private endpoints, or licensed source text without
   redistribution rights.
@@ -35,4 +39,4 @@ python3 -m unittest discover -s tests
 git diff --check
 ```
 
-Both commands must pass before a change is published.
+All three commands must pass before a change is published.
