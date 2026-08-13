@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   validate:
-    name: Validate repository (Python ${{ matrix.python-version }})
+    name: Validate matrix (Python ${{ matrix.python-version }})
     runs-on: ubuntu-24.04
     timeout-minutes: 10
 
@@ -62,3 +62,19 @@ jobs:
         uses: astral-sh/ruff-action@4919ec5cf1f49eff0871dbcea0da843445b837e6 # v3.6.1
         with:
           args: check scripts plugins tests
+
+  required-check:
+    # The "Protect main" ruleset requires a status check with exactly this
+    # name. Aggregating here lets the matrix and lint jobs change freely
+    # without editing the ruleset.
+    name: Validate repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    needs: [validate, lint]
+    if: always()
+
+    steps:
+      - name: Require every dependency to succeed
+        run: |
+          test "${{ needs.validate.result }}" = "success"
+          test "${{ needs.lint.result }}" = "success"
