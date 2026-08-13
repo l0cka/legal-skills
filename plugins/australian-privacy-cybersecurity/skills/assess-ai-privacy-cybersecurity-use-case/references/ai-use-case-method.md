@@ -65,6 +65,11 @@ Use the official point-in-time legislation text. Invoke
 `$check-nsw-legislation` for NSW titles. Invoke
 `$trace-commonwealth-legislative-change` when the proposed deployment or review
 period crosses a Commonwealth amendment or commencement date.
+Invoke `$check-australian-privacy-principles` whenever personal information or
+APP-entity coverage is possible. Its decision horizon should cover the known
+pilot, deployment, retention and next-review periods. A detected or unverified
+APP-framework change blocks a positive suitability or pilot recommendation
+until the affected analysis is refreshed.
 
 Candidate material may include:
 
@@ -82,6 +87,12 @@ Candidate material may include:
 Verify commencement and application dates. An enacted future amendment is not
 current law merely because its text exists. Preserve legislation-skill currency
 flags and known-future-change qualifications.
+
+After live APP verification, test each principle in the verified inventory
+against the use case. Pay particular attention to governance and transparency,
+collection and notice, secondary model-training or evaluation uses, overseas
+providers, data quality, security and deletion, access and correction. These
+are issue prompts rather than a fixed statement of the APP framework.
 
 Case law is outside scope. Separately refer material discrimination, consumer,
 employment, intellectual-property, administrative, recordkeeping,

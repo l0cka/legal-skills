@@ -23,6 +23,9 @@ Do not use them to resolve ambiguity.
   title or provision and requested date.
 - NSW: invoke `$check-nsw-legislation` for every material title or provision
   and requested date.
+- APP framework: invoke `$check-australian-privacy-principles` whenever an APP
+  may apply. Use its live inventory and change status; do not rely on the
+  candidate-law table as an APP inventory.
 - Other States and Territories: use the official jurisdictional publisher and
   preserve title, version, currency and commencement evidence. State that a
   dedicated legislation skill was unavailable when applicable.
@@ -52,6 +55,16 @@ Also test whether an exemption, small-business rule, employee-records rule,
 journalism rule, political exemption, secrecy provision or sector-specific
 regime changes the analysis. Verify the current text and threshold; do not
 assume an exemption applies from an entity label alone.
+
+## APP issue prompts
+
+After live framework verification, map every verified principle to the facts.
+Use these non-authoritative domains to test completeness: governance and
+transparency; anonymity or pseudonymity; solicited and unsolicited collection;
+collection notice; use and disclosure; direct marketing; overseas disclosure;
+government identifiers; data quality; security and lifecycle; access; and
+correction. These domains are prompts, not a fixed APP inventory. Add, remove
+or revise them when the verified Schedule 1 framework differs.
 
 ## Issue-matrix method
 

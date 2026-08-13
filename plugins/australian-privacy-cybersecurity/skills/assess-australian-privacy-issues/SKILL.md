@@ -1,6 +1,6 @@
 ---
 name: assess-australian-privacy-issues
-description: Identify and structure Australian privacy, data protection and cybersecurity legal issues from facts, contracts, policies, data maps or proposed activities; map each issue to potentially applicable Commonwealth, State or Territory legislation; verify Commonwealth and NSW legislation with the corresponding legislation skills; and prepare a source-linked issue matrix for lawyer review. Use for privacy scoping, applicability analysis, privacy-policy or DPA issue spotting, data-flow reviews, cyber regulatory scoping and preliminary legal research. Do not use for case law, foreign law, final legal opinions, autonomous compliance decisions or external notifications.
+description: Identify and structure Australian privacy, data protection and cybersecurity legal issues from facts, contracts, policies, data maps or proposed activities; map each issue to potentially applicable Commonwealth, State or Territory legislation; perform change-safe Australian Privacy Principles verification; verify Commonwealth and NSW legislation with the corresponding legislation skills; and prepare a source-linked issue matrix for lawyer review. Use for privacy scoping, applicability analysis, privacy-policy or DPA issue spotting, data-flow reviews, cyber regulatory scoping and preliminary legal research. Do not use for case law, foreign law, final legal opinions, autonomous compliance decisions or external notifications.
 ---
 
 # Assess Australian Privacy Issues
@@ -54,6 +54,13 @@ taxonomy and treatment of Harvey Labs patterns.
      `$trace-commonwealth-legislative-change` and keep future or transitional
      law separate from law in force at the as-at date.
    - For each NSW candidate, invoke `$check-nsw-legislation` in the same way.
+   - Whenever an APP may apply, invoke
+     `$check-australian-privacy-principles` for the as-at date and decision
+     horizon. Do not use a static APP list as authority.
+   - If the APP result is `APP FRAMEWORK CHANGE DETECTED – LEGAL CONTENT REVIEW
+     REQUIRED`, stop reuse of earlier APP analysis and identify each affected
+     mapping for lawyer refresh. If it is `APP FRAMEWORK NOT VERIFIED – DO NOT
+     RELY`, make no APP conclusion.
    - For another State or Territory, inspect the official legislation
      publisher. If no jurisdiction-specific legislation skill is installed,
      label the proposition `PRIMARY TEXT CHECK REQUIRED` unless the official
@@ -82,6 +89,8 @@ Facts, assumptions and gaps: <separate lists>
 
 Applicability matrix:
 Entity/conduct | Candidate regime | Threshold facts | Preliminary status | Evidence needed
+
+APP framework status: <exact result, compilations compared and downstream effect>
 
 Issue matrix:
 Priority | Issue | Material fact | Candidate legislation/provision |

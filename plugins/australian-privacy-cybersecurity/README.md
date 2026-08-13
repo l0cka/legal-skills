@@ -1,12 +1,16 @@
 # Australian Privacy & Cybersecurity
 
 This plugin helps lawyers identify Australian privacy and cybersecurity legal
-issues and assess suspected data breaches. It produces preliminary,
-source-linked work for human review; it does not provide a final legal opinion,
-make notifications, or determine facts.
+issues, assess suspected data breaches and evaluate AI-system use cases. It
+produces preliminary, source-linked work for human review; it does not provide
+a final legal opinion, make notifications, approve deployments or determine
+facts.
 
 ## Skills
 
+- `check-australian-privacy-principles` verifies the applicable official APP
+  framework, fingerprints complete principle text and blocks stale analysis
+  when a change is detected or cannot be ruled out.
 - `assess-australian-privacy-issues` maps facts, entities, data, conduct and
   jurisdictions to potentially applicable Australian legislation.
 - `assess-australian-data-breach` prepares an urgent assessment and action
@@ -23,6 +27,11 @@ alongside this plugin. The skills use them to verify Commonwealth and NSW
 legislation at the requested date. Other State and Territory propositions must
 be checked against the relevant official legislation publisher and reported as
 not verified if that check cannot be completed.
+
+The APP workflow does not assume a fixed number, numbering or text. It
+enumerates official Schedule 1 at the relevant date, compares full-text
+fingerprints across the decision horizon and requires legal-content review
+before an earlier APP analysis is reused after change.
 
 Case law is expressly outside scope. Regulator guidance and standards may be
 used only when identified as non-legislative material. Every output states its

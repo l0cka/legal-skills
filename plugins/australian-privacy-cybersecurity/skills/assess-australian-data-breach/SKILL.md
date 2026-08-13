@@ -1,6 +1,6 @@
 ---
 name: assess-australian-data-breach
-description: Triage a suspected Australian privacy or cybersecurity incident for lawyers; extract incident facts; identify potentially applicable Commonwealth, State, Territory and sectoral breach regimes; verify Commonwealth and NSW legislation through the corresponding legislation skills; distinguish statutory, regulatory, contractual and voluntary reporting; and prepare a time-sensitive assessment and action matrix. Use for suspected unauthorised access, disclosure or loss, ransomware, cyber extortion, vendor incidents and breach-response planning. Do not use for case law, forensic conclusions, live containment, threat hunting, external reports or autonomous notification decisions.
+description: Triage a suspected Australian privacy or cybersecurity incident for lawyers; extract incident facts; identify potentially applicable Commonwealth, State, Territory and sectoral breach regimes; perform change-safe Australian Privacy Principles verification where an APP issue is material; verify Commonwealth and NSW legislation through the corresponding legislation skills; distinguish statutory, regulatory, contractual and voluntary reporting; and prepare a time-sensitive assessment and action matrix. Use for suspected unauthorised access, disclosure or loss, ransomware, cyber extortion, vendor incidents and breach-response planning. Do not use for case law, forensic conclusions, live containment, threat hunting, external reports or autonomous notification decisions.
 ---
 
 # Assess Australian Data Breach
@@ -47,6 +47,12 @@ and source rules.
    - Invoke `$check-commonwealth-legislation` for every material Commonwealth
      title or provision and the relevant incident date. Invoke
      `$check-nsw-legislation` for every material NSW title or provision.
+   - Invoke `$check-australian-privacy-principles` when security, retention,
+     use, disclosure or another APP issue is material. Keep this Schedule 1
+     check separate from verification of the Notifiable Data Breaches scheme.
+     A detected or unverified APP-framework change blocks the APP conclusion,
+     but must not delay urgent containment or independently verified incident
+     duties.
    - For another State or Territory, inspect its official legislation source.
      If a version or commencement point cannot be established, use `NOT
      VERIFIED` and escalate the check.
@@ -75,6 +81,7 @@ Jurisdictions and sectors: <identified and unresolved>
 As at: <YYYY-MM-DD HH:MM timezone>
 Immediate human escalations: <owner and reason>
 Known facts, assumptions, disputes and unknowns: <separate sections>
+APP framework status: <exact result and effect on APP analysis, if relevant>
 
 Potential-obligation matrix:
 Priority | Regime | Entity/role | Trigger and threshold | Trigger facts |

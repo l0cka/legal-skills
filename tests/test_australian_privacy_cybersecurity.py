@@ -21,6 +21,8 @@ class AustralianPrivacyCybersecurityTests(unittest.TestCase):
             "$check-commonwealth-legislation",
             "$check-nsw-legislation",
             "$trace-commonwealth-legislative-change",
+            "$check-australian-privacy-principles",
+            "APP FRAMEWORK CHANGE DETECTED – LEGAL CONTENT REVIEW REQUIRED",
             "case law is outside scope",
             "PRIMARY TEXT CHECK REQUIRED",
             "PRELIMINARY LAW AND ISSUE MAP — HUMAN REVIEW REQUIRED",
@@ -37,6 +39,7 @@ class AustralianPrivacyCybersecurityTests(unittest.TestCase):
         normalized = " ".join(text.split())
         for phrase in (
             "Do not take containment action",
+            "$check-australian-privacy-principles",
             "Do not equate detection, confirmation, containment",
             "Calculate a deadline only after verifying the trigger",
             "Reserve all notification and legal conclusions",
@@ -61,10 +64,28 @@ class AustralianPrivacyCybersecurityTests(unittest.TestCase):
         for phrase in (
             "$check-commonwealth-legislation",
             "$check-nsw-legislation",
+            "$check-australian-privacy-principles",
             "PILOT ONLY",
             "NOT SUITABLE ON CURRENT INFORMATION",
             "Case law: Outside scope and not considered",
             "Do not approve, procure, deploy, connect, upload data to",
+        ):
+            self.assertIn(phrase, normalized)
+
+    def test_app_verifier_does_not_assume_a_fixed_framework(self) -> None:
+        text = (
+            PLUGIN
+            / "skills"
+            / "check-australian-privacy-principles"
+            / "SKILL.md"
+        ).read_text(encoding="utf-8")
+        normalized = " ".join(text.split())
+        for phrase in (
+            "Never assume that the number, numbering, heading or text",
+            "$check-commonwealth-legislation",
+            "$trace-commonwealth-legislative-change",
+            "fingerprints normalized full text",
+            "APP FRAMEWORK NOT VERIFIED – DO NOT RELY",
         ):
             self.assertIn(phrase, normalized)
 

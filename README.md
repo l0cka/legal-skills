@@ -6,7 +6,7 @@ ChatGPT Work while keeping provider-specific manifests thin and separate.
 
 ## Plugin suite
 
-The marketplace contains four plugins and eight skills:
+The marketplace contains four plugins and nine skills:
 
 - **Commonwealth Legislation** — checks the identity, status and applicable
   point-in-time version of Commonwealth Acts and registered instruments against
@@ -24,9 +24,10 @@ The marketplace contains four plugins and eight skills:
   uncertainty, and reserves every consequential decision for authorised staff.
 - **Australian Privacy & Cybersecurity** — maps facts to potentially applicable
   Australian privacy and cyber legislation and assesses suspected data
-  breaches and AI-system use cases. It verifies Commonwealth and NSW
-  legislation through the dedicated legislation skills, clearly labels other
-  source types, and excludes case law.
+  breaches and AI-system use cases. It verifies and fingerprints the applicable
+  APP framework without assuming a fixed list, detects change across the
+  decision horizon, verifies Commonwealth and NSW legislation through the
+  dedicated legislation skills, and excludes case law.
 
 ## Install
 

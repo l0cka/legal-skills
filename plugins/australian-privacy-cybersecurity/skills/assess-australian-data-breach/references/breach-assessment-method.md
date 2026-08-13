@@ -45,10 +45,13 @@ mandatory for the entity and event.
 1. Use the official point-in-time legislation text as the controlling source.
 2. Route Commonwealth checks through `$check-commonwealth-legislation` and NSW
    checks through `$check-nsw-legislation`.
-3. Label regulator guidance as guidance and record its publication/update date.
-4. For every deadline, record the source provision, trigger fact, trigger time,
+3. Route material APP questions through
+   `$check-australian-privacy-principles`; verify NDB provisions separately
+   because they are not part of Schedule 1.
+4. Label regulator guidance as guidance and record its publication/update date.
+5. For every deadline, record the source provision, trigger fact, trigger time,
    timezone, unit, counting rule and calculation.
-5. If any input is unresolved, report the earliest plausible deadline as an
+6. If any input is unresolved, report the earliest plausible deadline as an
    escalation marker, not a concluded deadline.
 
 Case law is outside scope. Do not use it to define serious harm, knowledge,

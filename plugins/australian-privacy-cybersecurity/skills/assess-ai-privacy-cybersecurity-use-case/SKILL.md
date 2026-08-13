@@ -1,6 +1,6 @@
 ---
 name: assess-ai-privacy-cybersecurity-use-case
-description: Assess whether a proposed or existing AI-system use case is suitable from an Australian privacy, cybersecurity and related governance perspective; identify data flows, affected people, legal thresholds, harms, threats, vendor dependencies and controls; verify relevant Commonwealth and NSW legislation with the corresponding legislation skills; and prepare a reasoned suitability recommendation for lawyer and accountable-owner review. Use for AI intake, procurement, pilots, deployment changes, privacy impact assessments, generative-AI use cases and automated or AI-assisted decisions. Do not use for case law, foreign law, technical penetration testing, final legal opinions, autonomous approval or a complete review of discrimination, consumer, employment, intellectual-property or sector-specific law.
+description: Assess whether a proposed or existing AI-system use case is suitable from an Australian privacy, cybersecurity and related governance perspective; identify data flows, affected people, legal thresholds, harms, threats, vendor dependencies and controls; perform change-safe Australian Privacy Principles verification; verify relevant Commonwealth and NSW legislation with the corresponding legislation skills; and prepare a reasoned suitability recommendation for lawyer and accountable-owner review. Use for AI intake, procurement, pilots, deployment changes, privacy impact assessments, generative-AI use cases and automated or AI-assisted decisions. Do not use for case law, foreign law, technical penetration testing, final legal opinions, autonomous approval or a complete review of discrimination, consumer, employment, intellectual-property or sector-specific law.
 ---
 
 # Assess AI Privacy and Cybersecurity Use Case
@@ -43,6 +43,15 @@ control tests and authority boundaries.
      legislative change, invoke `$trace-commonwealth-legislative-change` and
      distinguish present requirements, future requirements and transition
      actions.
+   - If personal information or APP-entity coverage is possible, invoke
+     `$check-australian-privacy-principles` using the legal as-at date and a
+     decision horizon covering the pilot, deployment, retention and next review
+     dates that are actually known.
+   - Do not issue `SUITABLE`, `SUITABLE WITH CONTROLS` or `PILOT ONLY` while the
+     result is `APP FRAMEWORK CHANGE DETECTED – LEGAL CONTENT REVIEW REQUIRED`
+     or `APP FRAMEWORK NOT VERIFIED – DO NOT RELY`. Use `INSUFFICIENT
+     INFORMATION` or `NOT SUITABLE ON CURRENT INFORMATION`, as the facts
+     warrant, until a lawyer refreshes the APP analysis.
    - For another State or Territory, inspect its official legislation
      publisher. Use `PRIMARY TEXT CHECK REQUIRED` or `NOT VERIFIED` when an
      applicable version cannot be established.
@@ -95,6 +104,7 @@ Facts, vendor claims, assumptions and unknowns: <separate sections>
 
 Data-flow summary: <source to input to processing to output to storage/disclosure/deletion>
 Applicability matrix: <candidate regime, threshold, verified text and status>
+APP framework status: <exact result, inventories and decision-horizon coverage>
 Risk-control matrix:
 Priority | Risk event | Affected people/asset | Material fact | Legal/governance basis |
 Existing control and evidence | Residual gap | Required control | Owner | Acceptance test

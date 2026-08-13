@@ -1,7 +1,7 @@
 {
   "name": "australian-privacy-cybersecurity",
-  "version": "0.1.0",
-  "description": "Identify Australian privacy and cybersecurity legal issues, assess suspected data breaches and evaluate AI-system use cases using verified legislation.",
+  "version": "0.2.0",
+  "description": "Verify the APP framework and identify Australian privacy, cybersecurity, data-breach and AI-use-case risks using current legislation.",
   "author": {
     "name": "l0cka",
     "url": "https://github.com/l0cka"
@@ -20,7 +20,7 @@
   "interface": {
     "displayName": "Australian Privacy & Cybersecurity",
     "shortDescription": "Map privacy, breach and AI use-case risks.",
-    "longDescription": "Helps lawyers identify Australian privacy and cybersecurity issues, assess suspected data breaches, and evaluate the suitability and risks of defined AI-system use cases. It verifies legislation through the repository's legislation skills, separates law from regulator guidance and assumptions, excludes case law, and reserves conclusions, approvals and external notifications for human review.",
+    "longDescription": "Helps lawyers verify the applicable Australian Privacy Principles framework, identify Australian privacy and cybersecurity issues, assess suspected data breaches, and evaluate defined AI-system use cases. It detects APP changes across the decision horizon, verifies legislation through the repository's legislation skills, separates law from guidance and assumptions, excludes case law, and reserves conclusions and approvals for human review.",
     "developerName": "l0cka",
     "category": "Productivity",
     "capabilities": [
@@ -28,6 +28,7 @@
     ],
     "websiteURL": "https://github.com/l0cka/legal-skills",
     "defaultPrompt": [
+      "Verify the applicable APP framework and detect changes across the relevant dates.",
       "Identify the Australian privacy and cybersecurity issues raised by these facts.",
       "Assess this suspected data breach and prepare a lawyer-review action matrix.",
       "Map the potentially applicable Australian privacy legislation and identify missing facts.",

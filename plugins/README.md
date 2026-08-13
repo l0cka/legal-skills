@@ -11,7 +11,7 @@ Canonical plugin packages live in this directory.
   configuration and provisional legal enquiry triage.
 - `australian-privacy-cybersecurity` — preliminary Australian privacy and
   cybersecurity issue mapping, suspected data-breach assessment and AI-system
-  use-case suitability review using verified legislation, with case law
-  excluded.
+  use-case suitability review using verified legislation, with change-safe APP
+  verification and case law excluded.
 
 See [Adding a plugin](../docs/adding-a-plugin.md).
