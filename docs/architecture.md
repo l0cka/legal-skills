@@ -44,5 +44,5 @@ A plugin version is identical across its two manifests and the Claude catalog.
 A release changes the canonical plugin, updates both wrappers and catalogs,
 passes offline validation, and is then tested from each consumer surface.
 
-The empty initial marketplace is intentional. No plugin will be registered
-until its purpose, scope, sources, and risk controls have been decided.
+The first package, `commonwealth-legislation`, demonstrates the model with one
+provider-neutral skill, paired manifests and an optional official-API helper.

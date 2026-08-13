@@ -1,0 +1,20 @@
+{
+  "name": "commonwealth-legislation",
+  "version": "0.1.0",
+  "description": "Verify Commonwealth legislation identity, status and point-in-time versions against the Federal Register of Legislation.",
+  "author": {
+    "name": "l0cka",
+    "url": "https://github.com/l0cka"
+  },
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/commonwealth-legislation",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": [
+    "australian-law",
+    "commonwealth-legislation",
+    "federal-register-of-legislation",
+    "point-in-time",
+    "legal-research"
+  ],
+  "skills": "./skills/"
+}

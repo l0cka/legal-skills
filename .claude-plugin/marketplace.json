@@ -6,5 +6,19 @@
   "metadata": {
     "description": "Open-source, governed legal workflow plugins maintained by l0cka."
   },
-  "plugins": []
+  "plugins": [
+    {
+      "name": "commonwealth-legislation",
+      "source": "./plugins/commonwealth-legislation",
+      "description": "Verify Commonwealth legislation identity, status and point-in-time versions against the Federal Register of Legislation.",
+      "version": "0.1.0",
+      "category": "Productivity",
+      "tags": [
+        "australian-law",
+        "commonwealth-legislation",
+        "point-in-time",
+        "legal-research"
+      ]
+    }
+  ]
 }
