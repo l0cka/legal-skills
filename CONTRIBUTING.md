@@ -12,7 +12,8 @@ efficient are welcome.
 3. Update both marketplace catalogs and `skills.json` in the same change.
 4. Add focused tests for scripts and any rule that could silently change legal
    meaning.
-5. Run `python3 scripts/validate_repository.py` and `git diff --check`.
+5. Run `python3 scripts/validate_repository.py`,
+   `python3 -m unittest discover -s tests`, and `git diff --check`.
 
 See [docs/adding-a-plugin.md](docs/adding-a-plugin.md) for the repository
 contract.

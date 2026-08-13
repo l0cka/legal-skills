@@ -7,7 +7,7 @@
       "name": "australian-legislation",
       "source": "./plugins/australian-legislation",
       "description": "Verify Commonwealth, State and Territory legislation and trace Commonwealth legislative change against official Australian sources.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "category": "Productivity",
       "tags": ["australian-law", "legislation", "point-in-time", "legislative-change", "legal-research"]
     },
@@ -15,7 +15,7 @@
       "name": "legal-triage",
       "source": "./plugins/legal-triage",
       "description": "Configure and conduct governed, staff-facing legal enquiry triage for Australian community legal centres.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "category": "Productivity",
       "tags": ["australian-law", "community-legal-centres", "legal-triage", "client-intake", "access-to-justice", "responsible-ai"]
     },
@@ -23,7 +23,7 @@
       "name": "australian-privacy-cybersecurity",
       "source": "./plugins/australian-privacy-cybersecurity",
       "description": "Route and verify Australian privacy, cyber incident, statutory tort, automated-decision and AI-use-case issues using current legislation.",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "category": "Productivity",
       "tags": ["australian-law", "privacy", "cybersecurity", "data-breach", "legal-research"]
     }

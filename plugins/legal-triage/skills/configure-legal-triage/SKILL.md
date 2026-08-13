@@ -43,6 +43,9 @@ privacy, accreditation, responsible-AI or source requirements.
 
    Resolve `<skill-root>` as the directory containing this `SKILL.md`. The
    first command checks a draft. The second also checks approval and currency.
+   The helper is read-only and offline. If command execution is unavailable,
+   do not treat the profile as approved; an authorised person must run the
+   validation in an environment that supports it.
 5. Obtain human approval.
    - Give the draft and validation result to the centre's authorised legal,
      operational and privacy or governance reviewers.

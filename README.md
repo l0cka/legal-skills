@@ -11,62 +11,86 @@
 # Legal Skills
 
 Legal Skills is an open-source marketplace for portable legal-workflow plugins.
-Each plugin is designed to package the same skills for Claude Cowork and
-ChatGPT Work while keeping provider-specific manifests thin and separate.
+The marketplace supplies the same skills to Claude Cowork and ChatGPT Work.
+Each provider has a small, separate manifest.
 
 ## Plugin suite
 
 The marketplace contains three plugins and twenty skills:
 
-- **Australian Legislation** — checks Commonwealth, State and Territory law
-  against each jurisdiction's official publisher. It preserves point-in-time,
-  commencement, currency and authorisation qualifications, and includes a
-  separate Commonwealth legislative-change tracing workflow.
-- **Legal Triage** — configures a centre-approved, staff-facing triage profile
-  and prepares provisional enquiry records against it. It minimises client
-  information, keeps conflict checks outside the model, escalates urgency and
-  uncertainty, and reserves every consequential decision for authorised staff.
-- **Australian Privacy & Cybersecurity** — maps facts to potentially applicable
-  Australian privacy and cyber legislation and assesses suspected data
-  breaches and AI-system use cases. It verifies and fingerprints the applicable
-  APP framework without assuming a fixed list, detects change across the
-  decision horizon, uses the Australian Legislation plugin for authoritative
-  point-in-time checks, and excludes case law.
+- **Australian Legislation** checks Commonwealth, State, and Territory law
+  against each jurisdiction's official publisher. It records qualifications
+  about point-in-time status, commencement, currency, and authorisation. It
+  also traces changes to Commonwealth legislation.
+- **Legal Triage** configures a staff triage profile that the responsible
+  centre has approved. It prepares provisional enquiry records and limits client
+  information. It keeps conflict checks outside the model. It escalates urgent
+  or uncertain matters. Authorized staff make every consequential decision.
+- **Australian Privacy & Cybersecurity** maps facts to potentially applicable
+  Australian privacy and cyber legislation. It assesses suspected data breaches
+  and AI-system use cases. It verifies the applicable APP framework without a
+  fixed-list assumption. It records a framework fingerprint and detects changes
+  across the decision horizon. It uses the Australian Legislation plugin for
+  authoritative point-in-time checks. It excludes case law.
 
-## Install
+## Install with your Agent
 
-Add the marketplace and plugin independently in each provider's development
-client:
+If your Agent can manage plugins, copy this request. Then paste it into the
+Agent.
+
+```text
+Install the Legal Skills plugin suite in this environment.
+
+1. Add the marketplace `l0cka/legal-skills`.
+2. Install `australian-legislation@legal-skills`.
+3. Install `legal-triage@legal-skills`.
+4. Install `australian-privacy-cybersecurity@legal-skills`.
+5. Keep all other marketplaces and plugins unchanged.
+6. Use user scope if this client supports installation scopes.
+7. Verify that all three plugins are available.
+8. Report the actions and the verification result.
+
+If you cannot manage plugins, give me the exact manual steps and stop.
+```
+
+### Install from a terminal
+
+For Codex, run:
 
 ```bash
 codex plugin marketplace add l0cka/legal-skills
 codex plugin add australian-legislation@legal-skills
 codex plugin add legal-triage@legal-skills
 codex plugin add australian-privacy-cybersecurity@legal-skills
+```
 
+For Claude, run:
+
+```bash
 claude plugin marketplace add l0cka/legal-skills
 claude plugin install australian-legislation@legal-skills --scope user
 claude plugin install legal-triage@legal-skills --scope user
 claude plugin install australian-privacy-cybersecurity@legal-skills --scope user
 ```
 
-Claude users can also add `l0cka/legal-skills` from Cowork's personal plugin
-marketplace interface. ChatGPT Work availability remains subject to the user's
-plan and workspace plugin settings; the `.agents` catalog is the OpenAI-side
-marketplace package.
+Claude users can also add `l0cka/legal-skills` from the personal plugin
+marketplace in Cowork.
+
+ChatGPT Work availability depends on the user's plan and workspace plugin
+settings. The `.agents` catalog is the OpenAI marketplace package.
 
 ## Principles
 
-- Legal workflows must be transparent about jurisdiction, currency, sources,
+- Legal workflows must state their jurisdiction, currency, sources,
   assumptions, and human-review requirements.
 - Skills must not contain client information, matter information, credentials,
   privileged material, or confidential firm content.
-- Shared instructions live once. Provider manifests wrap that canonical
-  content without creating divergent copies.
-- External tools start read-only where practical. Write actions require clear
-  approval boundaries.
-- Discovery material is not authority. Legal propositions must be grounded in
-  appropriate primary or otherwise authoritative sources.
+- Shared instructions must have one canonical copy. Provider manifests must
+  wrap that copy without creating different versions.
+- External tools must start in read-only mode when practical. Write actions
+  require clear approval boundaries.
+- Discovery material is not authority. Legal propositions must use appropriate
+  primary or authoritative sources.
 
 ## Repository layout
 
@@ -86,7 +110,14 @@ Each plugin uses this structure:
 plugins/<plugin-name>/
 ├── .codex-plugin/plugin.json
 ├── .claude-plugin/plugin.json
-└── skills/<skill-name>/SKILL.md
+├── README.md
+└── skills/
+    └── <skill-name>/
+        ├── SKILL.md
+        ├── agents/openai.yaml    # required
+        ├── references/           # optional
+        ├── scripts/              # optional
+        └── assets/               # optional
 ```
 
 ## Validate
@@ -95,8 +126,9 @@ plugins/<plugin-name>/
 python3 scripts/validate_repository.py
 ```
 
-The validator checks both marketplace catalogs, paired provider manifests,
-plugin versions, skill frontmatter, and the canonical registry.
+The validator checks both marketplace catalogs and the paired provider
+manifests. It also checks plugin versions, skill frontmatter, and the canonical
+registry.
 
 Run the focused tests:
 
@@ -106,10 +138,11 @@ python3 -m unittest discover -s tests
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) and
-[docs/adding-a-plugin.md](docs/adding-a-plugin.md). Repository architecture and
-provider boundaries are described in [docs/architecture.md](docs/architecture.md).
-Release history is recorded in [CHANGELOG.md](CHANGELOG.md).
+Use [CONTRIBUTING.md](CONTRIBUTING.md) and
+[docs/adding-a-plugin.md](docs/adding-a-plugin.md) for contribution
+instructions. [docs/architecture.md](docs/architecture.md) explains the
+repository architecture and provider boundaries. [CHANGELOG.md](CHANGELOG.md)
+records the release history.
 
 ## Licence
 

@@ -1,6 +1,6 @@
 {
   "name": "australian-legislation",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Verify Commonwealth, State and Territory legislation and trace Commonwealth legislative change against official Australian sources.",
   "author": {"name": "l0cka", "url": "https://github.com/l0cka"},
   "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/australian-legislation",

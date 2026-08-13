@@ -34,7 +34,10 @@ schema.
      ```
 
      Resolve `<skill-root>` as the directory containing this `SKILL.md`. The
-     helper supplies metadata only; it does not complete the legal check.
+     helper supplies metadata only; it does not complete the legal check. It
+     is optional and read-only, and it makes network requests only to
+     `legislation.gov.au`. Without command execution, follow the same steps on
+     the official website directly.
 3. Identify the point-in-time version.
    - Use the Register's point-in-time result and All versions page.
    - Record the compilation ID, compilation number, start date and end date.
@@ -87,6 +90,38 @@ Limitations and review: <what remains unverified and the human-review point>
 Use a separate evidence table when verifying more than one proposition. Cite
 the exact official page supporting each field. Never describe the result as
 legal advice or as proof of how a court would interpret or apply the law.
+
+## Example
+
+A completed `VERIFIED WITH QUALIFICATIONS` result. Every value below is
+illustrative; take real values only from the official pages inspected during
+the check.
+
+```text
+VERIFIED WITH QUALIFICATIONS
+
+Requested check: Privacy Act 1988 (Cth) s 13G
+Jurisdiction: Commonwealth of Australia
+As at: 2024-01-01
+Official title: Privacy Act 1988
+Collection: Act
+Title ID: C2004A03712
+Current title status: In force (present status; commencement caveat below)
+Applicable version: Compilation No. 92, Register ID C2023C00341
+Version status: In force at the requested date
+Version period: 2023-12-14 to 2024-04-02
+Currency flags: An amending Act commenced after the version period; it does
+  not alter the text as at 2024-01-01 but affects any later-date reliance
+Official sources: Title page, point-in-time result and All versions page for
+  C2004A03712; authorised PDF for the selected compilation
+Checked: 2026-08-14, Australia/Sydney
+Limitations and review: Interpretation and application of s 13G are for
+  lawyer review; case law was not considered
+```
+
+The qualification is what separates this from `VERIFIED`: identity and version
+are established, but a currency flag relevant to the request must be surfaced
+rather than silently dropped.
 
 ## Fail closed
 

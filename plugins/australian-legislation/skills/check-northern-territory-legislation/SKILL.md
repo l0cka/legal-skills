@@ -5,19 +5,73 @@ description: Verify the identity, status, point-in-time reprint, commencement an
 
 # Check Northern Territory Legislation
 
-Use `legislation.nt.gov.au` as the controlling source.
+Use `legislation.nt.gov.au` as the controlling source. Produce a provenance
+record, not a bare assertion that legislation is "current".
 
-1. Record the title, provision and requested date; use today's
-   `Australia/Darwin` date if none is supplied and say so.
-2. Resolve one official title and instrument type. Reject ambiguous matches.
-3. Select the official reprint or historical text covering the date and record
-   its in-force date, current/repealed status and exact URL.
-4. Inspect commencement, amendment, reprint and currency material relevant to
-   the provision. Keep registration and present status separate from operation
-   on the requested date.
-5. Return `VERIFIED`, `VERIFIED WITH QUALIFICATIONS`, `NOT VERIFIED` or
-   `OUTSIDE SCOPE`, with identity, reprint, period, commencement, currency
-   flags, sources and unresolved lawyer-review issues.
+Read [the shared point-in-time method](../../references/point-in-time-method.md)
+before performing a check. It defines the official-source rules, identity
+resolution, point-in-time selection and fail-closed boundary shared by every
+State and Territory checker in this plugin.
 
-Fail closed if the official database does not establish the proposition. Case
-law is outside scope.
+## Workflow
+
+1. Fix the scope.
+   - Accept Northern Territory Acts and regulations.
+   - Record the exact title, provision and requested date. If no date is
+     given, use today's `Australia/Darwin` date and state it explicitly.
+   - Return `OUTSIDE SCOPE` for Bills, another jurisdiction, case treatment or
+     a request for legal advice.
+2. Resolve identity.
+   - Search `legislation.nt.gov.au` and identify one official title and
+     instrument type. Treat multiple plausible titles as ambiguous.
+3. Select the point-in-time version.
+   - Select the official reprint or historical text covering the requested
+     date.
+   - Record its in-force date range, the title's present current or repealed
+     status and the exact URL.
+   - Keep registration and the title's present status separate from whether
+     the selected reprint operated on the requested date.
+4. Check commencement and currency.
+   - Inspect commencement, amendment, reprint and currency material relevant
+     to the provision.
+   - Do not infer operation from registration alone or from a URL date.
+5. Report using the required result contract.
+
+## Result contract
+
+Lead with one status:
+
+- `VERIFIED` — one official title and applicable version were identified with
+  no unresolved qualification relevant to the request.
+- `VERIFIED WITH QUALIFICATIONS` — identity and version were established, but
+  an identified commencement, currency or authorisation limitation matters.
+- `NOT VERIFIED` — official evidence is missing, inconsistent or insufficient.
+- `OUTSIDE SCOPE` — the request is outside this Northern Territory metadata
+  and text check.
+
+Then provide:
+
+```text
+Requested check: <legislation and provision, if any>
+Jurisdiction: Northern Territory, Australia
+As at: <YYYY-MM-DD>
+Official title: <title>
+Type: <Act / regulation>
+Current title status: <In force / Repealed / other official status>
+Applicable version: <reprint identifier and effective date range>
+Commencement evidence: <official commencement material inspected, or not established>
+Currency flags: <none or itemised flags>
+Official sources: <exact official pages actually inspected>
+Checked: <date and Australian timezone>
+Limitations and review: <what remains unverified and the human-review point>
+```
+
+Cite the exact official page supporting each field. Never describe the result
+as legal advice or as proof of interpretation, application or legal effect.
+
+## Fail closed
+
+Return `NOT VERIFIED` instead of guessing when the title or type is ambiguous,
+the requested date cannot be tied to a displayed reprint, the official
+database is unavailable, or a relevant commencement, amendment or currency
+issue cannot be resolved. Case law is outside scope.

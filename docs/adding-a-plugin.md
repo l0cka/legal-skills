@@ -16,13 +16,27 @@ plugins/<plugin-name>/
 └── skills/
     └── <skill-name>/
         ├── SKILL.md
-        ├── references/       # optional
-        ├── scripts/          # optional
-        └── assets/           # optional
+        ├── agents/openai.yaml    # required
+        ├── references/           # optional
+        ├── scripts/              # optional
+        └── assets/               # optional
 ```
 
 Names must use lowercase words separated by hyphens. Each `SKILL.md` needs
-frontmatter whose `name` matches its directory.
+frontmatter whose `name` matches its directory and a non-empty `description`
+of at most 1024 characters. The description is the trigger surface that agents
+use to select the skill, so state what the skill does, when to use it, and
+when not to.
+
+Each skill also needs `agents/openai.yaml`, the ChatGPT Work interface file.
+Without it the skill is invisible in ChatGPT Work. It has three required keys:
+
+```yaml
+interface:
+  display_name: "Check NSW Legislation"
+  short_description: "Verify NSW legislation at a date"
+  default_prompt: "Use $check-nsw-legislation to verify this NSW law and identify the applicable version."
+```
 
 ## 3. Add provider wrappers
 

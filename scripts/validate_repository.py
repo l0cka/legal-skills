@@ -9,19 +9,22 @@ import sys
 from pathlib import Path
 from typing import Any
 
-
 ROOT = Path(__file__).resolve().parents[1]
 SEMVER = re.compile(r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$")
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+FRONTMATTER_LINE = re.compile(r"^([A-Za-z0-9_-]+):\s*(.*)$")
+MARKDOWN_LINK = re.compile(r"\[[^\]]*\]\(([^)\s]+)\)")
 EXPECTED_TARGETS = {"claude-cowork", "chatgpt-work"}
+MAX_DESCRIPTION_LENGTH = 1024
+OPENAI_AGENT_KEYS = ("display_name", "short_description", "default_prompt")
 
 
 class ValidationError(Exception):
     """Raised when repository state violates the marketplace contract."""
 
 
-def load_json(relative_path: str) -> dict[str, Any]:
-    path = ROOT / relative_path
+def load_json(root: Path, relative_path: str) -> dict[str, Any]:
+    path = root / relative_path
     try:
         data = json.loads(path.read_text(encoding="utf-8"))
     except FileNotFoundError as exc:
@@ -59,22 +62,70 @@ def plugin_entries(data: dict[str, Any], location: str) -> list[dict[str, Any]]:
     return entries
 
 
-def parse_skill_name(path: Path) -> str:
+def parse_frontmatter(root: Path, path: Path) -> dict[str, str]:
+    relative = path.relative_to(root)
     text = path.read_text(encoding="utf-8")
     if not text.startswith("---\n"):
-        raise ValidationError(f"{path.relative_to(ROOT)}: missing YAML frontmatter")
+        raise ValidationError(f"{relative}: missing YAML frontmatter")
     end = text.find("\n---\n", 4)
     if end == -1:
-        raise ValidationError(f"{path.relative_to(ROOT)}: unterminated YAML frontmatter")
-    match = re.search(r"(?m)^name:\s*[\"']?([^\"'\n]+)[\"']?\s*$", text[4:end])
-    if not match:
-        raise ValidationError(f"{path.relative_to(ROOT)}: frontmatter requires name")
-    return require_slug(match.group(1).strip(), f"{path.relative_to(ROOT)}: name")
+        raise ValidationError(f"{relative}: unterminated YAML frontmatter")
+    fields: dict[str, str] = {}
+    for line in text[4:end].splitlines():
+        if not line.strip():
+            continue
+        match = FRONTMATTER_LINE.match(line)
+        if not match:
+            raise ValidationError(f"{relative}: malformed frontmatter line: {line!r}")
+        key, value = match.group(1), match.group(2).strip()
+        if key in fields:
+            raise ValidationError(f"{relative}: duplicate frontmatter key {key}")
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
+            value = value[1:-1]
+        fields[key] = value.strip()
+    return fields
 
 
-def validate_manifest(plugin_name: str, provider: str) -> dict[str, Any]:
+def validate_skill_frontmatter(root: Path, path: Path) -> str:
+    relative = path.relative_to(root)
+    fields = parse_frontmatter(root, path)
+    name = require_slug(fields.get("name"), f"{relative}: name")
+    description = fields.get("description", "")
+    if not description:
+        raise ValidationError(f"{relative}: frontmatter requires a non-empty description")
+    if len(description) > MAX_DESCRIPTION_LENGTH:
+        raise ValidationError(
+            f"{relative}: description exceeds {MAX_DESCRIPTION_LENGTH} characters"
+        )
+    return name
+
+
+def validate_relative_links(root: Path, path: Path) -> None:
+    relative = path.relative_to(root)
+    text = path.read_text(encoding="utf-8")
+    for match in MARKDOWN_LINK.finditer(text):
+        target = match.group(1)
+        if target.startswith(("http://", "https://", "mailto:", "#")):
+            continue
+        target_path = (path.parent / target.split("#", 1)[0]).resolve()
+        if not target_path.exists():
+            raise ValidationError(f"{relative}: broken relative link: {target}")
+
+
+def validate_openai_agent_file(root: Path, skill_dir: Path) -> None:
+    agent_file = skill_dir / "agents" / "openai.yaml"
+    relative = skill_dir.relative_to(root) / "agents" / "openai.yaml"
+    if not agent_file.is_file():
+        raise ValidationError(f"{relative}: missing ChatGPT Work interface file")
+    text = agent_file.read_text(encoding="utf-8")
+    for key in OPENAI_AGENT_KEYS:
+        if not re.search(rf"(?m)^\s*{key}:\s*\S", text):
+            raise ValidationError(f"{relative}: missing required key {key}")
+
+
+def validate_manifest(root: Path, plugin_name: str, provider: str) -> dict[str, Any]:
     relative = f"plugins/{plugin_name}/.{provider}-plugin/plugin.json"
-    manifest = load_json(relative)
+    manifest = load_json(root, relative)
     if manifest.get("name") != plugin_name:
         raise ValidationError(f"{relative}.name: must equal {plugin_name}")
     require_semver(manifest.get("version"), f"{relative}.version")
@@ -91,12 +142,12 @@ def validate_manifest(plugin_name: str, provider: str) -> dict[str, Any]:
     return manifest
 
 
-def validate() -> tuple[int, int]:
+def validate(root: Path = ROOT) -> tuple[int, int]:
     codex_path = ".agents/plugins/marketplace.json"
     claude_path = ".claude-plugin/marketplace.json"
-    codex = load_json(codex_path)
-    claude = load_json(claude_path)
-    registry = load_json("skills.json")
+    codex = load_json(root, codex_path)
+    claude = load_json(root, claude_path)
+    registry = load_json(root, "skills.json")
 
     if codex.get("name") != "legal-skills":
         raise ValidationError(f"{codex_path}.name: must be legal-skills")
@@ -110,7 +161,7 @@ def validate() -> tuple[int, int]:
     codex_by_name = {entry["name"]: entry for entry in codex_entries}
     claude_by_name = {entry["name"]: entry for entry in claude_entries}
 
-    plugin_root = ROOT / "plugins"
+    plugin_root = root / "plugins"
     directories = {
         path.name
         for path in plugin_root.iterdir()
@@ -128,38 +179,61 @@ def validate() -> tuple[int, int]:
     discovered_skills: dict[str, tuple[str, str]] = {}
     for plugin_name in sorted(directories):
         require_slug(plugin_name, f"plugins/{plugin_name}")
-        codex_manifest = validate_manifest(plugin_name, "codex")
-        claude_manifest = validate_manifest(plugin_name, "claude")
+        codex_manifest = validate_manifest(root, plugin_name, "codex")
+        claude_manifest = validate_manifest(root, plugin_name, "claude")
         version = codex_manifest["version"]
         if claude_manifest["version"] != version:
             raise ValidationError(f"plugins/{plugin_name}: provider manifest versions differ")
+        if codex_manifest["description"] != claude_manifest["description"]:
+            raise ValidationError(
+                f"plugins/{plugin_name}: provider manifest descriptions differ"
+            )
+        if not (root / "plugins" / plugin_name / "README.md").is_file():
+            raise ValidationError(f"plugins/{plugin_name}/README.md: missing plugin README")
 
-        codex_source = codex_by_name[plugin_name].get("source")
+        codex_entry = codex_by_name[plugin_name]
         expected_path = f"./plugins/{plugin_name}"
-        if codex_source != {"source": "local", "path": expected_path}:
+        if codex_entry.get("source") != {"source": "local", "path": expected_path}:
             raise ValidationError(f"{codex_path}: invalid source for {plugin_name}")
-        policy = codex_by_name[plugin_name].get("policy")
+        policy = codex_entry.get("policy")
         if policy != {"installation": "AVAILABLE", "authentication": "ON_INSTALL"}:
             raise ValidationError(f"{codex_path}: invalid policy for {plugin_name}")
-        if not isinstance(codex_by_name[plugin_name].get("category"), str):
+        if not isinstance(codex_entry.get("category"), str):
             raise ValidationError(f"{codex_path}: category required for {plugin_name}")
+        if codex_entry.get("description") != codex_manifest["description"]:
+            raise ValidationError(f"{codex_path}: description mismatch for {plugin_name}")
+        if codex_entry.get("version") != version:
+            raise ValidationError(f"{codex_path}: version mismatch for {plugin_name}")
+        if codex_entry.get("keywords") != codex_manifest.get("keywords"):
+            raise ValidationError(f"{codex_path}: keywords mismatch for {plugin_name}")
 
         claude_entry = claude_by_name[plugin_name]
         if claude_entry.get("source") != expected_path:
             raise ValidationError(f"{claude_path}: invalid source for {plugin_name}")
         if claude_entry.get("version") != version:
             raise ValidationError(f"{claude_path}: version mismatch for {plugin_name}")
+        if claude_entry.get("description") != claude_manifest["description"]:
+            raise ValidationError(f"{claude_path}: description mismatch for {plugin_name}")
+        if claude_entry.get("tags") != claude_manifest.get("keywords"):
+            raise ValidationError(f"{claude_path}: tags mismatch for {plugin_name}")
 
-        skill_root = ROOT / "plugins" / plugin_name / "skills"
+        skill_root = root / "plugins" / plugin_name / "skills"
         if not skill_root.is_dir():
             raise ValidationError(f"plugins/{plugin_name}/skills: missing directory")
-        for skill_file in sorted(skill_root.glob("*/SKILL.md")):
-            skill_name = skill_file.parent.name
-            require_slug(skill_name, str(skill_file.parent.relative_to(ROOT)))
-            if parse_skill_name(skill_file) != skill_name:
+        for skill_dir in sorted(path for path in skill_root.iterdir() if path.is_dir()):
+            skill_file = skill_dir / "SKILL.md"
+            if not skill_file.is_file():
                 raise ValidationError(
-                    f"{skill_file.relative_to(ROOT)}: frontmatter name must equal {skill_name}"
+                    f"{skill_dir.relative_to(root)}: skill directory missing SKILL.md"
                 )
+            skill_name = skill_dir.name
+            require_slug(skill_name, str(skill_dir.relative_to(root)))
+            if validate_skill_frontmatter(root, skill_file) != skill_name:
+                raise ValidationError(
+                    f"{skill_file.relative_to(root)}: frontmatter name must equal {skill_name}"
+                )
+            validate_relative_links(root, skill_file)
+            validate_openai_agent_file(root, skill_dir)
             if skill_name in discovered_skills:
                 raise ValidationError(f"duplicate skill name: {skill_name}")
             discovered_skills[skill_name] = (plugin_name, version)
@@ -182,6 +256,7 @@ def validate() -> tuple[int, int]:
         )
     for skill_name, (plugin_name, plugin_version) in discovered_skills.items():
         entry = registry_by_name[skill_name]
+        require_semver(entry.get("version"), f"skills.json: version for {skill_name}")
         if entry.get("path") != f"plugins/{plugin_name}/skills/{skill_name}":
             raise ValidationError(f"skills.json: invalid path for {skill_name}")
         if entry.get("plugin") != f"plugins/{plugin_name}":

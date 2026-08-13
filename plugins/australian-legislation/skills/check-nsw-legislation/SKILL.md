@@ -43,7 +43,10 @@ authorisation boundary, point-in-time method and URL structure.
      generates the selected-version URLs under the site's `inforce/<date>`
      route. It does not prove that the title operated on that date or establish
      identity, currency, commencement or authorisation. Do not cite a generated
-     URL as a source used unless it resolved and was inspected.
+     URL as a source used unless it resolved and was inspected. The helper is
+     optional and read-only, and it makes network requests only to
+     `legislation.nsw.gov.au`. Without command execution, follow the same
+     steps on the official website directly.
 3. Select the point-in-time version.
    - Use the status-page timeline and the Legislative history table of
      versions for the requested date.

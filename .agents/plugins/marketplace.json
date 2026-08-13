@@ -1,24 +1,36 @@
 {
   "name": "legal-skills",
-  "interface": {"displayName": "Legal Skills"},
+  "interface": {
+    "displayName": "Legal Skills",
+    "description": "Open-source, governed legal workflow plugins maintained by l0cka."
+  },
   "plugins": [
     {
       "name": "australian-legislation",
       "source": {"source": "local", "path": "./plugins/australian-legislation"},
       "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
-      "category": "Productivity"
+      "category": "Productivity",
+      "description": "Verify Commonwealth, State and Territory legislation and trace Commonwealth legislative change against official Australian sources.",
+      "version": "0.2.0",
+      "keywords": ["australian-law", "legislation", "point-in-time", "legislative-change", "legal-research"]
     },
     {
       "name": "legal-triage",
       "source": {"source": "local", "path": "./plugins/legal-triage"},
       "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
-      "category": "Productivity"
+      "category": "Productivity",
+      "description": "Configure and conduct governed, staff-facing legal enquiry triage for Australian community legal centres.",
+      "version": "0.1.1",
+      "keywords": ["australian-law", "community-legal-centres", "legal-triage", "client-intake", "access-to-justice", "responsible-ai"]
     },
     {
       "name": "australian-privacy-cybersecurity",
       "source": {"source": "local", "path": "./plugins/australian-privacy-cybersecurity"},
       "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
-      "category": "Productivity"
+      "category": "Productivity",
+      "description": "Route and verify Australian privacy, cyber incident, statutory tort, automated-decision and AI-use-case issues using current legislation.",
+      "version": "0.3.1",
+      "keywords": ["australian-law", "privacy", "cybersecurity", "data-breach", "legal-research"]
     }
   ]
 }

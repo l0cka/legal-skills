@@ -107,3 +107,45 @@ Use `VERIFIED`, `VERIFIED WITH QUALIFICATIONS`, `NOT VERIFIED`, `PRIMARY TEXT
 CHECK REQUIRED`, or `OUTSIDE SCOPE` for legislation status. Link the official
 text and version actually inspected. Do not describe an OAIC or ACSC web form,
 guideline, policy, standard or contract as legislation.
+
+## Example
+
+An abbreviated completed assessment for a vendor ransomware incident. Every
+value is illustrative, and a real assessment includes one matrix row per
+possible obligation, not the two shown.
+
+```text
+URGENT PRELIMINARY BREACH ASSESSMENT — HUMAN DECISION REQUIRED
+
+Incident status: Suspected, containment unconfirmed (not a legal conclusion)
+Scope and exclusions: No case law considered; no forensic opinion given
+Jurisdictions and sectors: Commonwealth confirmed; NSW health nexus unresolved
+As at: 2026-08-14 09:30 Australia/Sydney
+Immediate human escalations: Incident lead — ransom demand received and a
+  statutory assessment clock may already be running
+Known facts, assumptions, disputes and unknowns: Detection 2026-08-13 22:10
+  AEST (known, monitoring alert); occurrence window unknown; exfiltration
+  assumed but disputed by vendor
+
+APP framework status: VERIFIED WITH QUALIFICATIONS — APP 11 verified against
+  the current compilation; a commenced-but-unincorporated amendment was
+  flagged and blocks an unqualified APP conclusion
+
+Potential-obligation matrix (abbreviated):
+1 | Privacy Act NDB scheme | APP entity | Reasonable grounds to suspect an
+  eligible data breach → 30-day assessment | Detection facts above |
+  VERIFIED | 2026-09-12 (from detection; trigger time uncertain) | OAIC +
+  affected individuals | <official compilation link> | Exfiltration evidence |
+  General counsel
+2 | Vendor MSA cl 14 notice | Customer of vendor | "Security incident" defined
+  term, 48 hours | Vendor notice 2026-08-14 07:00 | OUTSIDE SCOPE (contract,
+  not legislation) | 2026-08-16 07:00 | Customer security contact | MSA v3.2 |
+  Executed MSA copy | Commercial lead
+
+Harm and remediation assessment: Facts for and against serious harm retained
+  separately; no conclusion drawn
+Action plan: Preserve logs (forensic lead, today); confirm data classes
+  (vendor, 48h); lawyer decision on NDB assessment start time
+Limitations and review: Occurrence window, exfiltration and NSW nexus
+  unverified; all notification decisions reserved to the lawyer
+```

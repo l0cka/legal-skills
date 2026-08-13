@@ -53,3 +53,57 @@ and the next authorised step.
 
 Use plain, respectful and trauma-aware language. Ask one bounded question at a
 time and allow the staff member to skip unnecessary detail.
+
+## Example
+
+An abbreviated completed record following
+[references/result-contract.md](references/result-contract.md). Every value is
+illustrative; real records cite the centre's own profile rule IDs.
+
+```text
+PROVISIONAL PATHWAY IDENTIFIED
+Record label: DRAFT - HUMAN CONFIRMATION REQUIRED
+Enquiry reference: ENQ-2026-0341
+Profile: clc-example-profile v1.2, approved, review due 2026-11-01
+Prepared: 2026-08-14 10:15 Australia/Sydney
+
+Urgency and safety:
+- Observed trigger: None identified from supplied facts
+- Configured pathway: Not engaged
+- Immediate staff action: None
+
+Conflict-check boundary:
+- Status: pending
+- Checked outside model: yes
+- Further substantive intake permitted: human decision
+
+Enquiry summary:
+- Client-stated problem: Tenant received a termination notice for the rented
+  premises and disputes the stated ground
+- Help sought: Advice about responding before the vacate date
+- Jurisdiction or forum: NSW stated by staff; no legal conclusion drawn
+- Key dates or next event: Vacate date 2026-09-05 (from the notice)
+- Access and communication needs: Interpreter requested (Vietnamese)
+
+Configured pathway assessment:
+- Supplied fact: Residential tenancy termination dispute, NSW
+- Configured rule: RULE-TEN-02 (policy POL-SCOPE-01)
+- Provisional assessment: possible fit
+- Missing information or assumptions: Notice type not yet sighted by staff
+
+Proposed next step:
+- Internal pathway: Tenancy advice list, subject to conflict check outcome
+- Referral: None proposed at this stage
+- Consent required: not applicable
+- No acceptance or availability promise: confirmed
+
+Human decision required:
+- Decision owner: Intake supervisor
+- Questions for reviewer: Confirm notice type and conflict-check outcome
+  before booking
+- Model output adopted without review: no
+
+Limitations:
+- This is a provisional triage aid, not legal advice, a conflict check, a
+  merits assessment, a service decision or a client record.
+```
