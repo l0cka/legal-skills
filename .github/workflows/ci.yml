@@ -31,6 +31,9 @@ jobs:
       - name: Validate marketplace and plugins
         run: python3 scripts/validate_repository.py
 
+      - name: Run focused tests
+        run: python3 -m unittest discover -s tests
+
       - name: Compile repository scripts
         run: python3 -m compileall -q scripts
 

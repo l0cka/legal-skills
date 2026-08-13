@@ -1,4 +1,17 @@
 {
   "registry_version": 1,
-  "skills": []
+  "skills": [
+    {
+      "name": "check-commonwealth-legislation",
+      "version": "0.1.0",
+      "path": "plugins/commonwealth-legislation/skills/check-commonwealth-legislation",
+      "plugin": "plugins/commonwealth-legislation",
+      "plugin_version": "0.1.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original provenance-first workflow based on the official Federal Register of Legislation website, help guidance and public API."
+    }
+  ]
 }

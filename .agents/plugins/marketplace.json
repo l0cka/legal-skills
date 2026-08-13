@@ -3,5 +3,18 @@
   "interface": {
     "displayName": "Legal Skills"
   },
-  "plugins": []
+  "plugins": [
+    {
+      "name": "commonwealth-legislation",
+      "source": {
+        "source": "local",
+        "path": "./plugins/commonwealth-legislation"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
 }

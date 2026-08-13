@@ -4,10 +4,32 @@ Legal Skills is an open-source marketplace for portable legal-workflow plugins.
 Each plugin is designed to package the same skills for Claude Cowork and
 ChatGPT Work while keeping provider-specific manifests thin and separate.
 
-## Status
+## Plugin suite
 
-The marketplace structure is ready, but no plugins have been published yet.
-Installation instructions will be added with the first plugin release.
+The marketplace contains one plugin and one skill:
+
+- **Commonwealth Legislation** — checks the identity, status and applicable
+  point-in-time version of Commonwealth Acts and registered instruments against
+  the official Federal Register of Legislation. It reports Register IDs and
+  currency qualifications instead of treating "current" as a binary label.
+
+## Install
+
+Add the marketplace and plugin independently in each provider's development
+client:
+
+```bash
+codex plugin marketplace add l0cka/legal-skills
+codex plugin add commonwealth-legislation@legal-skills
+
+claude plugin marketplace add l0cka/legal-skills
+claude plugin install commonwealth-legislation@legal-skills --scope user
+```
+
+Claude users can also add `l0cka/legal-skills` from Cowork's personal plugin
+marketplace interface. ChatGPT Work availability remains subject to the user's
+plan and workspace plugin settings; the `.agents` catalog is the OpenAI-side
+marketplace package.
 
 ## Principles
 
@@ -34,7 +56,7 @@ legal-skills/
 └── docs/
 ```
 
-When the first plugin is added, its structure will be:
+Each plugin uses this structure:
 
 ```text
 plugins/<plugin-name>/
@@ -50,8 +72,13 @@ python3 scripts/validate_repository.py
 ```
 
 The validator checks both marketplace catalogs, paired provider manifests,
-plugin versions, skill frontmatter, and the canonical registry. It deliberately
-accepts an empty marketplace while the first plugin is being designed.
+plugin versions, skill frontmatter, and the canonical registry.
+
+Run the focused tests:
+
+```bash
+python3 -m unittest discover -s tests
+```
 
 ## Contributing
 

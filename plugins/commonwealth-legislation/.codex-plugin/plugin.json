@@ -1,0 +1,37 @@
+{
+  "name": "commonwealth-legislation",
+  "version": "0.1.0",
+  "description": "Verify Commonwealth legislation identity, status and point-in-time versions against the Federal Register of Legislation.",
+  "author": {
+    "name": "l0cka",
+    "url": "https://github.com/l0cka"
+  },
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/commonwealth-legislation",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": [
+    "australian-law",
+    "commonwealth-legislation",
+    "federal-register-of-legislation",
+    "point-in-time",
+    "legal-research"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Commonwealth Legislation",
+    "shortDescription": "Verify Commonwealth legislation and versions.",
+    "longDescription": "Checks Commonwealth Acts and registered instruments against the official Federal Register of Legislation. Identifies the title and applicable point-in-time compilation, records Register IDs and currency flags, and fails closed when commencement or amendment issues remain unresolved.",
+    "developerName": "l0cka",
+    "category": "Productivity",
+    "capabilities": [
+      "Read"
+    ],
+    "websiteURL": "https://github.com/l0cka/legal-skills",
+    "defaultPrompt": [
+      "Check whether this Commonwealth legislation is current and identify the official version.",
+      "Which compilation of this Commonwealth Act applied on the specified date?",
+      "Verify this Commonwealth legislative provision against the Federal Register."
+    ],
+    "brandColor": "#1C3C63"
+  }
+}
