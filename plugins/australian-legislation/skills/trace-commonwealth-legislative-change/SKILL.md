@@ -45,6 +45,9 @@ semantics, attribution test and special cases.
      Resolve `<skill-root>` as the directory containing this `SKILL.md`. The
      helper supplies metadata and navigation links only. It does not establish
      a textual change, commencement, legal effect or provision-level causation.
+     It is optional and read-only, and it makes network requests only to
+     `legislation.gov.au`. Without command execution, follow the same steps on
+     the official website directly.
 3. Compare the official text.
    - Inspect the exact provision in both endpoint compilations and in each
      potentially relevant intervening compilation.

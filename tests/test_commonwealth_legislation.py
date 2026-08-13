@@ -1,13 +1,11 @@
 from __future__ import annotations
 
 import importlib.util
-import json
 import subprocess
 import sys
 import unittest
 from pathlib import Path
 from unittest.mock import patch
-
 
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = (

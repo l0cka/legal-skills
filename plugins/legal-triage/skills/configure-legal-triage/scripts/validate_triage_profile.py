@@ -9,8 +9,7 @@ import re
 import sys
 from datetime import date
 from pathlib import Path
-from typing import Any, Optional
-
+from typing import Any
 
 SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 SEMVER = re.compile(
@@ -149,7 +148,7 @@ def validate_profile(
     payload: dict[str, Any],
     *,
     require_approved: bool = False,
-    today: Optional[date] = None,
+    today: date | None = None,
 ) -> list[str]:
     """Validate a decoded profile and return non-fatal warnings."""
 
@@ -436,7 +435,7 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def main(argv: Optional[list[str]] = None) -> int:
+def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
         warnings = validate_profile(

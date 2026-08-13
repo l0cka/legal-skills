@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -15,9 +16,14 @@ concurrency:
 
 jobs:
   validate:
-    name: Validate repository
+    name: Validate matrix (Python ${{ matrix.python-version }})
     runs-on: ubuntu-24.04
     timeout-minutes: 10
+
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12", "3.13"]
 
     steps:
       - name: Check out repository
@@ -26,16 +32,49 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
-          python-version: "3.12"
+          python-version: ${{ matrix.python-version }}
 
       - name: Validate marketplace and plugins
         run: python3 scripts/validate_repository.py
 
+      - name: Check README counts
+        run: python3 scripts/check_readme_counts.py
+
       - name: Run focused tests
         run: python3 -m unittest discover -s tests
 
-      - name: Compile repository scripts
-        run: python3 -m compileall -q scripts
+      - name: Compile all repository Python
+        run: python3 -m compileall -q scripts plugins tests
 
       - name: Check patch formatting
         run: git diff --check
+
+  lint:
+    name: Lint Python
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Run ruff
+        uses: astral-sh/ruff-action@4919ec5cf1f49eff0871dbcea0da843445b837e6 # v3.6.1
+        with:
+          args: check scripts plugins tests
+
+  required-check:
+    # The "Protect main" ruleset requires a status check with exactly this
+    # name. Aggregating here lets the matrix and lint jobs change freely
+    # without editing the ruleset.
+    name: Validate repository
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    needs: [validate, lint]
+    if: always()
+
+    steps:
+      - name: Require every dependency to succeed
+        run: |
+          test "${{ needs.validate.result }}" = "success"
+          test "${{ needs.lint.result }}" = "success"

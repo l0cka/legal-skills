@@ -10,7 +10,6 @@ import sys
 from datetime import date
 from typing import Any
 
-
 BASE_URL = "https://legislation.nsw.gov.au"
 IDENTIFIER = re.compile(r"^(act|sl|epi)-\d{4}-[0-9a-z]+$")
 COLLECTIONS = ("inforce", "repealed")

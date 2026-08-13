@@ -13,7 +13,6 @@ from urllib.error import HTTPError, URLError
 from urllib.parse import quote, urlencode
 from urllib.request import Request, urlopen
 
-
 API_ROOT = "https://api.prod.legislation.gov.au/v1"
 TITLE_ID = re.compile(r"^[A-Z][0-9]{4}[A-Z][0-9]{5}$")
 USER_AGENT = "legal-skills/australian-legislation/0.1.0"

@@ -3,109 +3,109 @@
   "skills": [
     {
       "name": "check-commonwealth-legislation",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "path": "plugins/australian-legislation/skills/check-commonwealth-legislation",
       "plugin": "plugins/australian-legislation",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.2.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original provenance-first workflow based on the official Federal Register of Legislation website, help guidance and public API."
     },
     {
       "name": "trace-commonwealth-legislative-change",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "path": "plugins/australian-legislation/skills/trace-commonwealth-legislative-change",
       "plugin": "plugins/australian-legislation",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.2.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original provenance-first workflow based on official Federal Register compilations, amendment histories, amending legislation and commencement material."
     },
     {
       "name": "check-nsw-legislation",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "path": "plugins/australian-legislation/skills/check-nsw-legislation",
       "plugin": "plugins/australian-legislation",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.2.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original provenance-first workflow based on the official NSW legislation website and public XML export."
     },
     {
       "name": "check-victoria-legislation",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "path": "plugins/australian-legislation/skills/check-victoria-legislation",
       "plugin": "plugins/australian-legislation",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.2.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original point-in-time verification workflow based on the official Victorian legislation publisher."
     },
     {
       "name": "check-queensland-legislation",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "path": "plugins/australian-legislation/skills/check-queensland-legislation",
       "plugin": "plugins/australian-legislation",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.2.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original point-in-time verification workflow based on the official Queensland legislation publisher."
     },
     {
       "name": "check-western-australia-legislation",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "path": "plugins/australian-legislation/skills/check-western-australia-legislation",
       "plugin": "plugins/australian-legislation",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.2.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original point-in-time verification workflow based on the official Western Australian legislation publisher."
     },
     {
       "name": "check-south-australia-legislation",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "path": "plugins/australian-legislation/skills/check-south-australia-legislation",
       "plugin": "plugins/australian-legislation",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.2.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original point-in-time verification workflow based on the official South Australian legislation publisher."
     },
     {
       "name": "check-tasmania-legislation",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "path": "plugins/australian-legislation/skills/check-tasmania-legislation",
       "plugin": "plugins/australian-legislation",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.2.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original point-in-time verification workflow based on the official Tasmanian legislation publisher."
     },
     {
       "name": "check-act-legislation",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "path": "plugins/australian-legislation/skills/check-act-legislation",
       "plugin": "plugins/australian-legislation",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.2.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original point-in-time verification workflow based on the official ACT legislation register."
     },
     {
       "name": "check-northern-territory-legislation",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "path": "plugins/australian-legislation/skills/check-northern-territory-legislation",
       "plugin": "plugins/australian-legislation",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.2.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original point-in-time verification workflow based on the official Northern Territory legislation database."
     },
     {
       "name": "configure-legal-triage",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "path": "plugins/legal-triage/skills/configure-legal-triage",
       "plugin": "plugins/legal-triage",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original governance-first workflow informed by public Australian legal assistance, privacy and responsible-AI guidance."
     },
     {
       "name": "triage-legal-enquiry",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "path": "plugins/legal-triage/skills/triage-legal-enquiry",
       "plugin": "plugins/legal-triage",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original staff-facing community legal centre triage workflow informed by public Australian guidance."
     },
@@ -114,16 +114,16 @@
       "version": "0.3.0",
       "path": "plugins/australian-privacy-cybersecurity/skills/assess-australian-privacy-issues",
       "plugin": "plugins/australian-privacy-cybersecurity",
-      "plugin_version": "0.3.0",
+      "plugin_version": "0.3.1",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original Australia-specific workflow informed by official legislation and regulator sources, with generic patterns adapted from MIT-licensed Harvey AI harvey-labs tasks."
     },
     {
       "name": "assess-australian-data-breach",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "path": "plugins/australian-privacy-cybersecurity/skills/assess-australian-data-breach",
       "plugin": "plugins/australian-privacy-cybersecurity",
-      "plugin_version": "0.3.0",
+      "plugin_version": "0.3.1",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original Australian breach workflow informed by official legislation and regulator sources, with generic patterns adapted from MIT-licensed Harvey AI harvey-labs tasks."
     },
@@ -132,16 +132,16 @@
       "version": "0.3.0",
       "path": "plugins/australian-privacy-cybersecurity/skills/assess-ai-privacy-cybersecurity-use-case",
       "plugin": "plugins/australian-privacy-cybersecurity",
-      "plugin_version": "0.3.0",
+      "plugin_version": "0.3.1",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original Australian AI suitability workflow informed by official sources, with generic patterns adapted from MIT-licensed Harvey AI harvey-labs tasks."
     },
     {
       "name": "check-australian-privacy-principles",
-      "version": "0.2.0",
+      "version": "0.2.1",
       "path": "plugins/australian-privacy-cybersecurity/skills/check-australian-privacy-principles",
       "plugin": "plugins/australian-privacy-cybersecurity",
-      "plugin_version": "0.3.0",
+      "plugin_version": "0.3.1",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original layered APP verification workflow based on official Privacy Act compilations, instruments, code metadata, future amendments and separately versioned OAIC guidance."
     },
@@ -150,7 +150,7 @@
       "version": "0.1.0",
       "path": "plugins/australian-privacy-cybersecurity/skills/route-australian-privacy-jurisdiction",
       "plugin": "plugins/australian-privacy-cybersecurity",
-      "plugin_version": "0.3.0",
+      "plugin_version": "0.3.1",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original Australia-wide privacy, health, breach and surveillance routing workflow based on official legislation and regulator sources."
     },
@@ -159,7 +159,7 @@
       "version": "0.1.0",
       "path": "plugins/australian-privacy-cybersecurity/skills/map-australian-cyber-incident-obligations",
       "plugin": "plugins/australian-privacy-cybersecurity",
-      "plugin_version": "0.3.0",
+      "plugin_version": "0.3.1",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original concurrent Australian cyber incident obligations workflow based on official legislation, instruments and regulator sources."
     },
@@ -168,7 +168,7 @@
       "version": "0.1.0",
       "path": "plugins/australian-privacy-cybersecurity/skills/assess-statutory-privacy-tort",
       "plugin": "plugins/australian-privacy-cybersecurity",
-      "plugin_version": "0.3.0",
+      "plugin_version": "0.3.1",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original legislation-only statutory privacy tort workflow based on Privacy Act 1988 Schedule 2."
     },
@@ -177,7 +177,7 @@
       "version": "0.1.0",
       "path": "plugins/australian-privacy-cybersecurity/skills/assess-automated-decision-transparency",
       "plugin": "plugins/australian-privacy-cybersecurity",
-      "plugin_version": "0.3.0",
+      "plugin_version": "0.3.1",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original current-and-future automated-decision transparency workflow based on verified Commonwealth and Western Australian legislation."
     }

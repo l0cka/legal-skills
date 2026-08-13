@@ -44,7 +44,9 @@ before starting.
 
    `validate` returns only `INVENTORY SCHEMA VALID`. The script cannot prove
    that supplied content is official and never independently returns `APP
-   FRAMEWORK VERIFIED`.
+   FRAMEWORK VERIFIED`. The helper is optional, read-only and offline. Without
+   command execution, perform the same comparison manually and record that the
+   scripted check was not run.
 5. Apply fail-closed statuses.
    - Use `APP FRAMEWORK VERIFIED` only after legislation checks establish the
      official source, applicable period, complete Schedule and every

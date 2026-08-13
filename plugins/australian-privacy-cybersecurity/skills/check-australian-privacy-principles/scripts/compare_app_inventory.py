@@ -14,7 +14,6 @@ from pathlib import Path
 from typing import Any
 from urllib.parse import urlparse
 
-
 PRIVACY_ACT_TITLE_ID = "C2004A03712"
 REGISTER_ID = re.compile(r"^C\d{4}C\d{5}$")
 DIGEST = re.compile(r"^[0-9a-f]{64}$")
