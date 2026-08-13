@@ -43,6 +43,9 @@ and source rules.
    - Treat numerical thresholds, triggering knowledge standards, recipients,
      content requirements and time periods as propositions requiring current
      verification.
+   - Invoke `$route-australian-privacy-jurisdiction` for every State or
+     Territory nexus and `$map-australian-cyber-incident-obligations` for the
+     concurrent Commonwealth and sectoral matrix.
 4. Verify law and calculate cautiously.
    - Invoke `$check-commonwealth-legislation` for every material Commonwealth
      title or provision and the relevant incident date. Invoke
@@ -53,6 +56,9 @@ and source rules.
      A detected or unverified APP-framework change blocks the APP conclusion,
      but must not delay urgent containment or independently verified incident
      duties.
+   - Invoke `$assess-statutory-privacy-tort` independently of APP coverage when
+     intentional or reckless intrusion, surveillance, misuse, disclosure or
+     publication may be material.
    - For another State or Territory, inspect its official legislation source.
      If a version or commencement point cannot be established, use `NOT
      VERIFIED` and escalate the check.
@@ -90,6 +96,8 @@ Source | Missing evidence | Decision owner
 
 Harm and remediation assessment: <facts for and against, uncertainty retained>
 Notification coordination: <statutory, contractual, insurer and voluntary channels separated>
+Concurrent cyber map: <one row and one clock per entity and regime>
+Statutory privacy tort: <separate screen or reason not triggered>
 Action plan: <owner, action, time, dependency and approval>
 Preservation and privilege considerations: <questions for the lawyer and forensic lead>
 Limitations and review: <currency, factual and interpretation gaps>

@@ -1,55 +1,23 @@
 {
   "name": "legal-skills",
-  "interface": {
-    "displayName": "Legal Skills"
-  },
+  "interface": {"displayName": "Legal Skills"},
   "plugins": [
     {
-      "name": "commonwealth-legislation",
-      "source": {
-        "source": "local",
-        "path": "./plugins/commonwealth-legislation"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Productivity"
-    },
-    {
-      "name": "nsw-legislation",
-      "source": {
-        "source": "local",
-        "path": "./plugins/nsw-legislation"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
+      "name": "australian-legislation",
+      "source": {"source": "local", "path": "./plugins/australian-legislation"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
       "category": "Productivity"
     },
     {
       "name": "legal-triage",
-      "source": {
-        "source": "local",
-        "path": "./plugins/legal-triage"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
+      "source": {"source": "local", "path": "./plugins/legal-triage"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
       "category": "Productivity"
     },
     {
       "name": "australian-privacy-cybersecurity",
-      "source": {
-        "source": "local",
-        "path": "./plugins/australian-privacy-cybersecurity"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
+      "source": {"source": "local", "path": "./plugins/australian-privacy-cybersecurity"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
       "category": "Productivity"
     }
   ]

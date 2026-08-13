@@ -13,6 +13,10 @@ Read [references/source-and-issue-method.md](references/source-and-issue-method.
 before starting. It defines the source hierarchy, legislation routing, issue
 taxonomy and treatment of Harvey Labs patterns.
 
+Read [references/current-commonwealth-privacy-map.md](references/current-commonwealth-privacy-map.md)
+when Commonwealth privacy law is potentially relevant. Treat its dated entries
+as prompts requiring current verification.
+
 ## Workflow
 
 1. Protect the material and fix scope.
@@ -36,6 +40,9 @@ taxonomy and treatment of Harvey Labs patterns.
    - Identify collection, use, disclosure, security, access/correction,
      retention/destruction, direct marketing, automated decision-making,
      cross-border, vendor and incident-response issues raised by the facts.
+   - Invoke `$route-australian-privacy-jurisdiction` whenever a State or
+     Territory nexus is possible. Preserve its public/private, health,
+     government-contractor, breach and surveillance distinctions.
 3. Identify candidate law.
    - Use the trigger table in the reference. Treat it as an issue-spotting aid,
      not authority or a statement that every listed law applies.
@@ -61,10 +68,13 @@ taxonomy and treatment of Harvey Labs patterns.
      REQUIRED`, stop reuse of earlier APP analysis and identify each affected
      mapping for lawyer refresh. If it is `APP FRAMEWORK NOT VERIFIED – DO NOT
      RELY`, make no APP conclusion.
-   - For another State or Territory, inspect the official legislation
-     publisher. If no jurisdiction-specific legislation skill is installed,
-     label the proposition `PRIMARY TEXT CHECK REQUIRED` unless the official
-     text and applicable version were actually inspected.
+   - Invoke `$assess-statutory-privacy-tort` independently of APP coverage for
+     surveillance, recording, scraping, profiling, inference, deepfakes,
+     disclosure, publication or intimate, location, health or financial data.
+   - Invoke `$assess-automated-decision-transparency` for automated or
+     AI-assisted decisions, including any horizon crossing 10 December 2026.
+   - Invoke `$map-australian-cyber-incident-obligations` for a suspected
+     incident, cyber-extortion payment, outage or material control weakness.
    - If a legislation skill or official source is unavailable, do not fill the
      gap from memory, a search snippet or secondary commentary. Label it `NOT
      VERIFIED` and identify the exact follow-up check.
@@ -90,7 +100,10 @@ Facts, assumptions and gaps: <separate lists>
 Applicability matrix:
 Entity/conduct | Candidate regime | Threshold facts | Preliminary status | Evidence needed
 
-APP framework status: <exact result, compilations compared and downstream effect>
+APP framework layers: <text, application perimeter, instruments, future changes and guidance>
+Jurisdiction route: <Commonwealth, State and Territory candidates and boundaries>
+Statutory privacy tort: <separate Schedule 2 screen or reason not triggered>
+Automated decisions: <current/future status or reason not triggered>
 
 Issue matrix:
 Priority | Issue | Material fact | Candidate legislation/provision |

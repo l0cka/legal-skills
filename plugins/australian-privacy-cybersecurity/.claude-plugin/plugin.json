@@ -1,7 +1,7 @@
 {
   "name": "australian-privacy-cybersecurity",
-  "version": "0.2.0",
-  "description": "Verify the APP framework and identify Australian privacy, cybersecurity, data-breach and AI-use-case risks using current legislation.",
+  "version": "0.3.0",
+  "description": "Route and verify Australian privacy, cyber incident, statutory tort, automated-decision and AI-use-case issues using current legislation.",
   "author": {
     "name": "l0cka",
     "url": "https://github.com/l0cka"

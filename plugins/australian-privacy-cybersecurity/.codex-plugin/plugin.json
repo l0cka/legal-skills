@@ -1,7 +1,7 @@
 {
   "name": "australian-privacy-cybersecurity",
-  "version": "0.2.0",
-  "description": "Verify the APP framework and identify Australian privacy, cybersecurity, data-breach and AI-use-case risks using current legislation.",
+  "version": "0.3.0",
+  "description": "Route and verify Australian privacy, cyber incident, statutory tort, automated-decision and AI-use-case issues using current legislation.",
   "author": {
     "name": "l0cka",
     "url": "https://github.com/l0cka"
@@ -20,7 +20,7 @@
   "interface": {
     "displayName": "Australian Privacy & Cybersecurity",
     "shortDescription": "Map privacy, breach and AI use-case risks.",
-    "longDescription": "Helps lawyers verify the applicable Australian Privacy Principles framework, identify Australian privacy and cybersecurity issues, assess suspected data breaches, and evaluate defined AI-system use cases. It detects APP changes across the decision horizon, verifies legislation through the repository's legislation skills, separates law from guidance and assumptions, excludes case law, and reserves conclusions and approvals for human review.",
+    "longDescription": "Helps lawyers verify the full Australian Privacy Principles framework, route State and Territory privacy overlays, map concurrent cyber incident obligations, screen the statutory privacy tort and automated-decision reforms, assess suspected data breaches, and evaluate defined AI-system use cases. It separates legal status and source layers, excludes case law, and reserves conclusions and approvals for human review.",
     "developerName": "l0cka",
     "category": "Productivity",
     "capabilities": [
@@ -32,7 +32,10 @@
       "Identify the Australian privacy and cybersecurity issues raised by these facts.",
       "Assess this suspected data breach and prepare a lawyer-review action matrix.",
       "Map the potentially applicable Australian privacy legislation and identify missing facts.",
-      "Assess whether this AI-system use case is suitable and identify required controls."
+      "Assess whether this AI-system use case is suitable and identify required controls.",
+      "Route the Commonwealth, State and Territory privacy regimes applicable to these facts.",
+      "Map every concurrent cyber incident obligation, recipient and reporting clock.",
+      "Screen these facts against the statutory privacy tort and automated-decision transparency reforms."
     ],
     "brandColor": "#1C3C63"
   }

@@ -1,38 +1,15 @@
 {
   "name": "legal-skills",
-  "owner": {
-    "name": "l0cka"
-  },
-  "metadata": {
-    "description": "Open-source, governed legal workflow plugins maintained by l0cka."
-  },
+  "owner": {"name": "l0cka"},
+  "metadata": {"description": "Open-source, governed legal workflow plugins maintained by l0cka."},
   "plugins": [
     {
-      "name": "commonwealth-legislation",
-      "source": "./plugins/commonwealth-legislation",
-      "description": "Verify Commonwealth legislation and trace provision changes against the Federal Register of Legislation.",
-      "version": "0.2.0",
-      "category": "Productivity",
-      "tags": [
-        "australian-law",
-        "commonwealth-legislation",
-        "point-in-time",
-        "legislative-change",
-        "legal-research"
-      ]
-    },
-    {
-      "name": "nsw-legislation",
-      "source": "./plugins/nsw-legislation",
-      "description": "Verify NSW legislation identity, status and point-in-time versions against the official NSW legislation website.",
+      "name": "australian-legislation",
+      "source": "./plugins/australian-legislation",
+      "description": "Verify Commonwealth, State and Territory legislation and trace Commonwealth legislative change against official Australian sources.",
       "version": "0.1.0",
       "category": "Productivity",
-      "tags": [
-        "australian-law",
-        "nsw-legislation",
-        "point-in-time",
-        "legal-research"
-      ]
+      "tags": ["australian-law", "legislation", "point-in-time", "legislative-change", "legal-research"]
     },
     {
       "name": "legal-triage",
@@ -40,28 +17,15 @@
       "description": "Configure and conduct governed, staff-facing legal enquiry triage for Australian community legal centres.",
       "version": "0.1.0",
       "category": "Productivity",
-      "tags": [
-        "australian-law",
-        "community-legal-centres",
-        "legal-triage",
-        "client-intake",
-        "access-to-justice",
-        "responsible-ai"
-      ]
+      "tags": ["australian-law", "community-legal-centres", "legal-triage", "client-intake", "access-to-justice", "responsible-ai"]
     },
     {
       "name": "australian-privacy-cybersecurity",
       "source": "./plugins/australian-privacy-cybersecurity",
-      "description": "Verify the APP framework and identify Australian privacy, cybersecurity, data-breach and AI-use-case risks using current legislation.",
-      "version": "0.2.0",
+      "description": "Route and verify Australian privacy, cyber incident, statutory tort, automated-decision and AI-use-case issues using current legislation.",
+      "version": "0.3.0",
       "category": "Productivity",
-      "tags": [
-        "australian-law",
-        "privacy",
-        "cybersecurity",
-        "data-breach",
-        "legal-research"
-      ]
+      "tags": ["australian-law", "privacy", "cybersecurity", "data-breach", "legal-research"]
     }
   ]
 }

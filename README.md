@@ -3,8 +3,8 @@
 <p align="center">
   <a href="https://github.com/l0cka/legal-skills/actions/workflows/ci.yml"><img alt="CI status" src="https://img.shields.io/github/actions/workflow/status/l0cka/legal-skills/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
   <a href="LICENSE"><img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-1f6f5f?style=flat-square"></a>
-  <img alt="Four plugins" src="https://img.shields.io/badge/plugins-4-31547a?style=flat-square">
-  <img alt="Nine skills" src="https://img.shields.io/badge/skills-9-31547a?style=flat-square">
+  <img alt="Three plugins" src="https://img.shields.io/badge/plugins-3-31547a?style=flat-square">
+  <img alt="Twenty skills" src="https://img.shields.io/badge/skills-20-31547a?style=flat-square">
   <img alt="Claude Cowork and ChatGPT Work" src="https://img.shields.io/badge/works%20with-Claude%20Cowork%20%2B%20ChatGPT%20Work-c59a46?style=flat-square">
 </p>
 
@@ -16,18 +16,12 @@ ChatGPT Work while keeping provider-specific manifests thin and separate.
 
 ## Plugin suite
 
-The marketplace contains four plugins and nine skills:
+The marketplace contains three plugins and twenty skills:
 
-- **Commonwealth Legislation** — checks the identity, status and applicable
-  point-in-time version of Commonwealth Acts and registered instruments against
-  the official Federal Register of Legislation. It reports Register IDs and
-  currency qualifications instead of treating "current" as a binary label. A
-  second skill traces provision changes through every intervening compilation,
-  amending legislation and commencement material without claiming legal effect.
-- **NSW Legislation** — checks NSW Acts, statutory instruments and environmental
-  planning instruments against the official NSW legislation website. It
-  identifies the applicable point-in-time version and preserves commencement,
-  update-lag and authorisation qualifications.
+- **Australian Legislation** — checks Commonwealth, State and Territory law
+  against each jurisdiction's official publisher. It preserves point-in-time,
+  commencement, currency and authorisation qualifications, and includes a
+  separate Commonwealth legislative-change tracing workflow.
 - **Legal Triage** — configures a centre-approved, staff-facing triage profile
   and prepares provisional enquiry records against it. It minimises client
   information, keeps conflict checks outside the model, escalates urgency and
@@ -36,8 +30,8 @@ The marketplace contains four plugins and nine skills:
   Australian privacy and cyber legislation and assesses suspected data
   breaches and AI-system use cases. It verifies and fingerprints the applicable
   APP framework without assuming a fixed list, detects change across the
-  decision horizon, verifies Commonwealth and NSW legislation through the
-  dedicated legislation skills, and excludes case law.
+  decision horizon, uses the Australian Legislation plugin for authoritative
+  point-in-time checks, and excludes case law.
 
 ## Install
 
@@ -46,14 +40,12 @@ client:
 
 ```bash
 codex plugin marketplace add l0cka/legal-skills
-codex plugin add commonwealth-legislation@legal-skills
-codex plugin add nsw-legislation@legal-skills
+codex plugin add australian-legislation@legal-skills
 codex plugin add legal-triage@legal-skills
 codex plugin add australian-privacy-cybersecurity@legal-skills
 
 claude plugin marketplace add l0cka/legal-skills
-claude plugin install commonwealth-legislation@legal-skills --scope user
-claude plugin install nsw-legislation@legal-skills --scope user
+claude plugin install australian-legislation@legal-skills --scope user
 claude plugin install legal-triage@legal-skills --scope user
 claude plugin install australian-privacy-cybersecurity@legal-skills --scope user
 ```
