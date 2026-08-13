@@ -1,0 +1,20 @@
+{
+  "name": "nsw-legislation",
+  "version": "0.1.0",
+  "description": "Verify NSW legislation identity, status and point-in-time versions against the official NSW legislation website.",
+  "author": {
+    "name": "l0cka",
+    "url": "https://github.com/l0cka"
+  },
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/nsw-legislation",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": [
+    "australian-law",
+    "nsw-legislation",
+    "point-in-time",
+    "authorised-legislation",
+    "legal-research"
+  ],
+  "skills": "./skills/"
+}

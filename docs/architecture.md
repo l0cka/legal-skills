@@ -44,5 +44,6 @@ A plugin version is identical across its two manifests and the Claude catalog.
 A release changes the canonical plugin, updates both wrappers and catalogs,
 passes offline validation, and is then tested from each consumer surface.
 
-The first package, `commonwealth-legislation`, demonstrates the model with one
-provider-neutral skill, paired manifests and an optional official-API helper.
+The legislation packages demonstrate the model with provider-neutral skills,
+paired manifests and optional helpers for official-source navigation or
+metadata retrieval.

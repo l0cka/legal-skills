@@ -12,6 +12,18 @@
         "chatgpt-work"
       ],
       "source": "Original provenance-first workflow based on the official Federal Register of Legislation website, help guidance and public API."
+    },
+    {
+      "name": "check-nsw-legislation",
+      "version": "0.1.0",
+      "path": "plugins/nsw-legislation/skills/check-nsw-legislation",
+      "plugin": "plugins/nsw-legislation",
+      "plugin_version": "0.1.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original provenance-first workflow based on the official NSW legislation website, Parliamentary Counsel help guidance and public XML export."
     }
   ]
 }

@@ -19,6 +19,19 @@
         "point-in-time",
         "legal-research"
       ]
+    },
+    {
+      "name": "nsw-legislation",
+      "source": "./plugins/nsw-legislation",
+      "description": "Verify NSW legislation identity, status and point-in-time versions against the official NSW legislation website.",
+      "version": "0.1.0",
+      "category": "Productivity",
+      "tags": [
+        "australian-law",
+        "nsw-legislation",
+        "point-in-time",
+        "legal-research"
+      ]
     }
   ]
 }

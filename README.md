@@ -6,12 +6,16 @@ ChatGPT Work while keeping provider-specific manifests thin and separate.
 
 ## Plugin suite
 
-The marketplace contains one plugin and one skill:
+The marketplace contains two plugins and two skills:
 
 - **Commonwealth Legislation** — checks the identity, status and applicable
   point-in-time version of Commonwealth Acts and registered instruments against
   the official Federal Register of Legislation. It reports Register IDs and
   currency qualifications instead of treating "current" as a binary label.
+- **NSW Legislation** — checks NSW Acts, statutory instruments and environmental
+  planning instruments against the official NSW legislation website. It
+  identifies the applicable point-in-time version and preserves commencement,
+  update-lag and authorisation qualifications.
 
 ## Install
 
@@ -21,9 +25,11 @@ client:
 ```bash
 codex plugin marketplace add l0cka/legal-skills
 codex plugin add commonwealth-legislation@legal-skills
+codex plugin add nsw-legislation@legal-skills
 
 claude plugin marketplace add l0cka/legal-skills
 claude plugin install commonwealth-legislation@legal-skills --scope user
+claude plugin install nsw-legislation@legal-skills --scope user
 ```
 
 Claude users can also add `l0cka/legal-skills` from Cowork's personal plugin
