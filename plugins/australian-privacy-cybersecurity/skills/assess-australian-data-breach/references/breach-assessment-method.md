@@ -19,7 +19,8 @@ content in the assessment unless strictly necessary and approved for the tool.
 
 ## Candidate regime prompts
 
-Verify, rather than assume:
+Invoke `$map-australian-cyber-incident-obligations` and use its versioned
+registry to identify candidate rows. Verify, rather than assume:
 
 - *Privacy Act 1988* (Cth): entity and information coverage, exceptions,
   eligible-data-breach elements, assessment, remedial action, multi-entity
@@ -34,6 +35,13 @@ Verify, rather than assume:
 - Sectoral requirements: APRA, telecommunications, My Health Record, Consumer
   Data Right, government contracts, professional obligations and other
   verified sector-specific duties.
+
+Do not use a 30-day NDB assessment period as a notification deadline. Preserve
+the SOCI 12-hour and 72-hour branches, Cyber Security Act 72-hour payment
+report, CPS 234/CPS 230 interaction, telco DFV two-day branch, CDR NDB-plus-ACSC
+overlap and My Health Record section 26WD interaction where relevant. Route
+present telecommunications security duties to SOCI, not superseded Part 14
+TSSR duties.
 
 Also identify contractual notices to customers, counterparties, vendors and
 insurers. Keep them separate from statutory duties. Treat ACSC reporting or

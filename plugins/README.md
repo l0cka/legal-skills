@@ -2,11 +2,8 @@
 
 Canonical plugin packages live in this directory.
 
-- `commonwealth-legislation` — provenance-first Commonwealth legislation
-  identity, status and point-in-time version checks, plus evidence-linked
-  provision change tracing.
-- `nsw-legislation` — provenance-first NSW legislation identity, collection,
-  authorisation and point-in-time version checks.
+- `australian-legislation` — provenance-first Commonwealth, State and Territory
+  legislation verification, plus Commonwealth legislative change tracing.
 - `legal-triage` — governed, staff-facing community legal centre profile
   configuration and provisional legal enquiry triage.
 - `australian-privacy-cybersecurity` — preliminary Australian privacy and

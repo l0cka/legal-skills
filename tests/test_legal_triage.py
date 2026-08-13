@@ -49,7 +49,7 @@ class LegalTriageProfileTests(unittest.TestCase):
         profile["profile"]["intended_staff_roles"] = ["Intake lawyer"]
         profile["governance"] = {
             "approved_by": "Responsible solicitor",
-            "approved_at": "2026-08-14",
+            "approved_at": "2026-08-13",
             "review_due": "2099-12-31",
         }
         for policy in profile["policies"]:

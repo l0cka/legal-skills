@@ -34,6 +34,9 @@ control tests and authority boundaries.
    - Separate supplied facts, vendor claims, tested evidence, assumptions and
      unknowns. Never invent a control or infer that a setting is enabled.
 3. Test law and governance scope.
+   - Invoke `$route-australian-privacy-jurisdiction` for public-sector,
+     government-contractor, health, surveillance, workplace and State or
+     Territory automated-decision overlays.
    - Identify candidate privacy and cyber legislation using the linked
      reference. Verify Commonwealth propositions with
      `$check-commonwealth-legislation` and NSW propositions with
@@ -47,9 +50,18 @@ control tests and authority boundaries.
      `$check-australian-privacy-principles` using the legal as-at date and a
      decision horizon covering the pilot, deployment, retention and next review
      dates that are actually known.
-   - Do not issue `SUITABLE`, `SUITABLE WITH CONTROLS` or `PILOT ONLY` while the
-     result is `APP FRAMEWORK CHANGE DETECTED – LEGAL CONTENT REVIEW REQUIRED`
-     or `APP FRAMEWORK NOT VERIFIED – DO NOT RELY`. Use `INSUFFICIENT
+   - Invoke `$assess-statutory-privacy-tort` independently of APP coverage for
+     surveillance, recording, scraping, profiling, inference, deepfakes,
+     publication or intimate, location, health or financial information.
+   - Invoke `$assess-automated-decision-transparency` whenever a program makes
+     or performs a material step related to a decision. Include the 10 December
+     2026 Commonwealth transition and WA IPP 10 where relevant.
+   - Invoke `$map-australian-cyber-incident-obligations` when the proposed
+     system, smart product or response plan could engage sector incident,
+     outage, control-weakness or cyber-extortion obligations.
+   - Do not issue `SUITABLE`, `SUITABLE WITH CONTROLS` or `PILOT ONLY` while an
+     APP layer requires legal-content or application-law review, or while the
+     result is `APP FRAMEWORK NOT VERIFIED – DO NOT RELY`. Use `INSUFFICIENT
      INFORMATION` or `NOT SUITABLE ON CURRENT INFORMATION`, as the facts
      warrant, until a lawyer refreshes the APP analysis.
    - For another State or Territory, inspect its official legislation
@@ -105,6 +117,10 @@ Facts, vendor claims, assumptions and unknowns: <separate sections>
 Data-flow summary: <source to input to processing to output to storage/disclosure/deletion>
 Applicability matrix: <candidate regime, threshold, verified text and status>
 APP framework status: <exact result, inventories and decision-horizon coverage>
+Jurisdiction and health overlays: <routes and verified boundaries>
+Statutory privacy tort: <separate Schedule 2 screen or reason not triggered>
+Automated-decision transparency: <current and future requirements>
+Cyber and sector obligations: <deployment and incident-response routes>
 Risk-control matrix:
 Priority | Risk event | Affected people/asset | Material fact | Legal/governance basis |
 Existing control and evidence | Residual gap | Required control | Owner | Acceptance test

@@ -26,9 +26,9 @@ Do not use them to resolve ambiguity.
 - APP framework: invoke `$check-australian-privacy-principles` whenever an APP
   may apply. Use its live inventory and change status; do not rely on the
   candidate-law table as an APP inventory.
-- Other States and Territories: use the official jurisdictional publisher and
-  preserve title, version, currency and commencement evidence. State that a
-  dedicated legislation skill was unavailable when applicable.
+- Other States and Territories: route through
+  `$route-australian-privacy-jurisdiction`, then use the official publisher and
+  preserve title, version, currency and commencement evidence.
 - Conflicts, overrides and constitutional questions: identify the issue for
   lawyer review. Do not resolve it without verified authority, and do not use
   case law.
@@ -50,6 +50,8 @@ Use this table to generate questions, not conclusions.
 | APRA-regulated entity or regulated service provider | Applicable APRA standards and reporting requirements; distinguish prudential standards from Acts and regulations |
 | Surveillance, monitoring, biometrics or employee information | Privacy Act coverage and exemptions; applicable State or Territory surveillance, workplace-surveillance, health-records and public-sector privacy legislation |
 | Overseas disclosure, offshore storage or foreign recipient | Privacy Act cross-border rules, contractual allocation and any applicable sector or data-specific restriction |
+| Intentional or reckless intrusion, surveillance, scraping, profiling, deepfake, disclosure or publication | Privacy Act Schedule 2 statutory privacy tort, screened independently of APP coverage |
+| Automated or AI-assisted consequential decision | Current transparency duties, APP 1.7–1.9 from 10 December 2026, and WA PRIS IPP 10 where applicable |
 
 Also test whether an exemption, small-business rule, employee-records rule,
 journalism rule, political exemption, secrecy provision or sector-specific

@@ -22,6 +22,10 @@ class AustralianPrivacyCybersecurityTests(unittest.TestCase):
             "$check-nsw-legislation",
             "$trace-commonwealth-legislative-change",
             "$check-australian-privacy-principles",
+            "$route-australian-privacy-jurisdiction",
+            "$assess-statutory-privacy-tort",
+            "$assess-automated-decision-transparency",
+            "$map-australian-cyber-incident-obligations",
             "APP FRAMEWORK CHANGE DETECTED – LEGAL CONTENT REVIEW REQUIRED",
             "case law is outside scope",
             "PRIMARY TEXT CHECK REQUIRED",
@@ -40,6 +44,8 @@ class AustralianPrivacyCybersecurityTests(unittest.TestCase):
         for phrase in (
             "Do not take containment action",
             "$check-australian-privacy-principles",
+            "$map-australian-cyber-incident-obligations",
+            "$assess-statutory-privacy-tort",
             "Do not equate detection, confirmation, containment",
             "Calculate a deadline only after verifying the trigger",
             "Reserve all notification and legal conclusions",
@@ -65,6 +71,9 @@ class AustralianPrivacyCybersecurityTests(unittest.TestCase):
             "$check-commonwealth-legislation",
             "$check-nsw-legislation",
             "$check-australian-privacy-principles",
+            "$route-australian-privacy-jurisdiction",
+            "$assess-statutory-privacy-tort",
+            "$assess-automated-decision-transparency",
             "PILOT ONLY",
             "NOT SUITABLE ON CURRENT INFORMATION",
             "Case law: Outside scope and not considered",
@@ -81,10 +90,11 @@ class AustralianPrivacyCybersecurityTests(unittest.TestCase):
         ).read_text(encoding="utf-8")
         normalized = " ".join(text.split())
         for phrase in (
-            "Never assume that the number, numbering, heading or text",
+            "Never assume that the text, application perimeter, instruments",
             "$check-commonwealth-legislation",
             "$trace-commonwealth-legislative-change",
-            "fingerprints normalized full text",
+            "INVENTORY SCHEMA VALID",
+            "GUIDANCE REFRESH REQUIRED",
             "APP FRAMEWORK NOT VERIFIED – DO NOT RELY",
         ):
             self.assertIn(phrase, normalized)

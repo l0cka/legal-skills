@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SCRIPT = (
     ROOT
     / "plugins"
-    / "commonwealth-legislation"
+    / "australian-legislation"
     / "skills"
     / "trace-commonwealth-legislative-change"
     / "scripts"

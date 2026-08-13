@@ -1,45 +1,46 @@
 # Australian Privacy & Cybersecurity
 
-This plugin helps lawyers identify Australian privacy and cybersecurity legal
-issues, assess suspected data breaches and evaluate AI-system use cases. It
-produces preliminary, source-linked work for human review; it does not provide
-a final legal opinion, make notifications, approve deployments or determine
-facts.
+This plugin helps lawyers route and verify Australian privacy and cybersecurity
+law, assess incidents and AI-system use cases, and prepare source-linked work
+for human review. It does not provide a final legal opinion, make notifications
+or approve deployments. Case law is outside scope.
 
 ## Skills
 
-- `check-australian-privacy-principles` verifies the applicable official APP
-  framework, fingerprints complete principle text and blocks stale analysis
-  when a change is detected or cannot be ruled out.
-- `assess-australian-privacy-issues` maps facts, entities, data, conduct and
-  jurisdictions to potentially applicable Australian legislation.
-- `assess-australian-data-breach` prepares an urgent assessment and action
-  matrix for a suspected breach without making external reports.
-- `assess-ai-privacy-cybersecurity-use-case` assesses a defined AI-system use
-  case and recommends suitable, suitable with controls, pilot only, not
-  suitable on current information, or insufficient information for human
-  approval.
+- `check-australian-privacy-principles` verifies APP text, application
+  perimeter, regulations, registered codes, future amendments and guidance as
+  separate change-safe layers.
+- `route-australian-privacy-jurisdiction` routes Commonwealth, State and
+  Territory privacy, health, breach and surveillance overlays.
+- `map-australian-cyber-incident-obligations` builds concurrent, entity-specific
+  trigger, recipient and reporting-clock rows.
+- `assess-statutory-privacy-tort` and
+  `assess-automated-decision-transparency` provide legislation-only screens for
+  Schedule 2 and current or commencing automated-decision duties.
+- The issue, breach and AI-use-case assessment skills orchestrate those checks
+  and preserve human decision and action boundaries.
 
-## Authority and scope
+## Authority and currency
 
-Install `commonwealth-legislation` and `nsw-legislation` from this marketplace
-alongside this plugin. The skills use them to verify Commonwealth and NSW
-legislation at the requested date. Other State and Territory propositions must
-be checked against the relevant official legislation publisher and reported as
-not verified if that check cannot be completed.
+Install `australian-legislation` alongside this plugin. Legal propositions must
+be checked against the applicable point-in-time official source. The bundled JSON
+registries are issue-routing and change-detection metadata, not legal
+authority.
 
-The APP workflow does not assume a fixed number, numbering or text. It
-enumerates official Schedule 1 at the relevant date, compares full-text
-fingerprints across the decision horizon and requires legal-content review
-before an earlier APP analysis is reused after change.
+The APP comparator never treats self-attested JSON as verified law. It can
+validate schema and compare bound metadata and digests, but only independent
+official-source checks can support `APP FRAMEWORK VERIFIED`. Changes to the APP
+text, application perimeter, regulations or codes block reuse; guidance and
+known future amendments have separate statuses.
 
-Case law is expressly outside scope. Regulator guidance and standards may be
-used only when identified as non-legislative material. Every output states its
-jurisdiction, as-at date, sources, assumptions, gaps and human-review points.
+Every output identifies jurisdiction, legal as-at date, provenance, legal
+status, assumptions, currency limits and human-review points. Acts, delegated
+instruments, enforceable prudential standards, guidance, contracts and
+voluntary reporting must remain distinct.
 
 Do not provide unnecessary personal information, credentials, secrets,
-malicious payloads, privileged material or confidential client documents.
-Use de-identified extracts wherever possible.
+malicious payloads, privileged material or confidential client documents. Use
+de-identified extracts wherever possible.
 
 ## Provenance
 

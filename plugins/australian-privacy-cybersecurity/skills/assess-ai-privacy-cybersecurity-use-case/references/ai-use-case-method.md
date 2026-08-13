@@ -70,6 +70,9 @@ APP-entity coverage is possible. Its decision horizon should cover the known
 pilot, deployment, retention and next-review periods. A detected or unverified
 APP-framework change blocks a positive suitability or pilot recommendation
 until the affected analysis is refreshed.
+Invoke `$route-australian-privacy-jurisdiction` for State and Territory scope,
+`$assess-statutory-privacy-tort` independently of APP coverage, and
+`$assess-automated-decision-transparency` for program-mediated decisions.
 
 Candidate material may include:
 
@@ -90,8 +93,11 @@ flags and known-future-change qualifications.
 
 After live APP verification, test each principle in the verified inventory
 against the use case. Pay particular attention to governance and transparency,
-collection and notice, secondary model-training or evaluation uses, overseas
-providers, data quality, security and deletion, access and correction. These
+collection and notice, scraped, inferred and generated information, momentary
+holding, proportionality and data minimisation, sensitive information,
+secondary model-training or evaluation uses, vendor and subprocessor access,
+offshore processing, accuracy, retention, security and deletion, access and
+correction. These
 are issue prompts rather than a fixed statement of the APP framework.
 
 Case law is outside scope. Separately refer material discrimination, consumer,
