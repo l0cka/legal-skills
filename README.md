@@ -1,3 +1,13 @@
+![Legal Skills banner](docs/assets/legal-skills-banner.png)
+
+<p align="center">
+  <a href="https://github.com/l0cka/legal-skills/actions/workflows/ci.yml"><img alt="CI status" src="https://img.shields.io/github/actions/workflow/status/l0cka/legal-skills/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
+  <a href="LICENSE"><img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-1f6f5f?style=flat-square"></a>
+  <img alt="Four plugins" src="https://img.shields.io/badge/plugins-4-31547a?style=flat-square">
+  <img alt="Nine skills" src="https://img.shields.io/badge/skills-9-31547a?style=flat-square">
+  <img alt="Claude Cowork and ChatGPT Work" src="https://img.shields.io/badge/works%20with-Claude%20Cowork%20%2B%20ChatGPT%20Work-c59a46?style=flat-square">
+</p>
+
 # Legal Skills
 
 Legal Skills is an open-source marketplace for portable legal-workflow plugins.
