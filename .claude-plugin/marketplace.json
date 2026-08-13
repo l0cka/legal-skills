@@ -33,6 +33,21 @@
         "point-in-time",
         "legal-research"
       ]
+    },
+    {
+      "name": "legal-triage",
+      "source": "./plugins/legal-triage",
+      "description": "Configure and conduct governed, staff-facing legal enquiry triage for Australian community legal centres.",
+      "version": "0.1.0",
+      "category": "Productivity",
+      "tags": [
+        "australian-law",
+        "community-legal-centres",
+        "legal-triage",
+        "client-intake",
+        "access-to-justice",
+        "responsible-ai"
+      ]
     }
   ]
 }

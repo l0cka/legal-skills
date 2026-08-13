@@ -36,6 +36,30 @@
         "chatgpt-work"
       ],
       "source": "Original provenance-first workflow based on the official NSW legislation website, Parliamentary Counsel help guidance and public XML export."
+    },
+    {
+      "name": "configure-legal-triage",
+      "version": "0.1.0",
+      "path": "plugins/legal-triage/skills/configure-legal-triage",
+      "plugin": "plugins/legal-triage",
+      "plugin_version": "0.1.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original governance-first workflow informed by public guidance from Community Legal Centres Australia, the Office of the Australian Information Commissioner, the National AI Centre and Justice Connect."
+    },
+    {
+      "name": "triage-legal-enquiry",
+      "version": "0.1.0",
+      "path": "plugins/legal-triage/skills/triage-legal-enquiry",
+      "plugin": "plugins/legal-triage",
+      "plugin_version": "0.1.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original staff-facing community legal centre triage workflow informed by public sector accreditation, privacy, responsible-AI and evaluated online-intake guidance."
     }
   ]
 }

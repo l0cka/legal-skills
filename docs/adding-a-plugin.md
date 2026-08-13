@@ -45,6 +45,7 @@ match the manifests.
 
 ```bash
 python3 scripts/validate_repository.py
+python3 -m unittest discover -s tests
 git diff --check
 ```
 

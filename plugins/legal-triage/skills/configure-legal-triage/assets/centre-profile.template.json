@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "profile": {
+    "profile_id": "example-clc-legal-triage",
+    "profile_version": "0.1.0",
+    "centre_name": "Replace with centre name",
+    "jurisdictions": [
+      "Replace with jurisdiction"
+    ],
+    "intended_staff_roles": [
+      "Replace with authorised role"
+    ],
+    "status": "draft"
+  },
+  "governance": {
+    "approved_by": null,
+    "approved_at": null,
+    "review_due": null
+  },
+  "policies": [
+    {
+      "policy_id": "service-scope",
+      "category": "service-scope",
+      "title": "Replace with service scope policy",
+      "version": "draft",
+      "owner": "Replace with policy owner",
+      "source": "Centre-controlled source - replace before approval",
+      "effective_date": "2026-08-14",
+      "review_due": "2026-08-14"
+    },
+    {
+      "policy_id": "urgent-escalation",
+      "category": "urgent-escalation",
+      "title": "Replace with urgent escalation policy",
+      "version": "draft",
+      "owner": "Replace with policy owner",
+      "source": "Centre-controlled source - replace before approval",
+      "effective_date": "2026-08-14",
+      "review_due": "2026-08-14"
+    },
+    {
+      "policy_id": "conflict-checking",
+      "category": "conflict-checking",
+      "title": "Replace with conflict-checking policy",
+      "version": "draft",
+      "owner": "Replace with policy owner",
+      "source": "Centre-controlled source - replace before approval",
+      "effective_date": "2026-08-14",
+      "review_due": "2026-08-14"
+    },
+    {
+      "policy_id": "privacy-client-information",
+      "category": "privacy-and-client-information",
+      "title": "Replace with privacy and client information policy",
+      "version": "draft",
+      "owner": "Replace with policy owner",
+      "source": "Centre-controlled source - replace before approval",
+      "effective_date": "2026-08-14",
+      "review_due": "2026-08-14"
+    },
+    {
+      "policy_id": "referrals",
+      "category": "referrals",
+      "title": "Replace with referral policy or procedure",
+      "version": "draft",
+      "owner": "Replace with policy owner",
+      "source": "Centre-controlled source - replace before approval",
+      "effective_date": "2026-08-14",
+      "review_due": "2026-08-14"
+    }
+  ],
+  "data_handling": {
+    "staff_facing_only": true,
+    "approved_environment": "Not yet approved",
+    "minimum_necessary": true,
+    "client_notice_required": true,
+    "public_ai_personal_information": false,
+    "model_training_with_client_data": false,
+    "model_may_write_client_record": false
+  },
+  "human_review": {
+    "required": true,
+    "responsible_role": "Replace with authorised role",
+    "can_override": true,
+    "automated_rejection_allowed": false
+  },
+  "conflict_check": {
+    "required": true,
+    "performed_outside_model": true,
+    "party_names_in_model": false,
+    "responsible_role": "Replace with authorised role"
+  },
+  "service_rules": {
+    "service_areas": [
+      {
+        "service_area_id": "example-service-area",
+        "name": "Replace with service area",
+        "jurisdictions": [
+          "Replace with jurisdiction"
+        ],
+        "source_policy_id": "service-scope"
+      }
+    ],
+    "eligibility_factors": [
+      {
+        "factor_id": "example-eligibility-factor",
+        "question": "Replace with an approved staff question",
+        "source_policy_id": "service-scope",
+        "human_decision_required": true
+      }
+    ],
+    "exclusions": [
+      {
+        "exclusion_id": "example-exclusion",
+        "description": "Replace with a narrow approved exclusion",
+        "source_policy_id": "service-scope",
+        "referral_required": true
+      }
+    ]
+  },
+  "escalation_pathways": [
+    {
+      "pathway_id": "example-urgent-pathway",
+      "trigger": "Replace with an approved observable trigger",
+      "action": "Replace with the exact staff escalation action",
+      "availability": "Replace with hours and fallback",
+      "source_policy_id": "urgent-escalation"
+    }
+  ],
+  "referrals": [
+    {
+      "referral_id": "example-referral",
+      "name": "Replace with service name",
+      "scope": "Replace with verified referral scope",
+      "jurisdictions": [
+        "Replace with jurisdiction"
+      ],
+      "contact": "Replace with public or approved contact",
+      "source": "Replace with official service source",
+      "verified_at": "2026-08-14",
+      "review_due": "2026-08-14",
+      "warm_referral_available": false,
+      "consent_required": true
+    }
+  ],
+  "output_control": {
+    "allowed_statuses": [
+      "URGENT HUMAN ESCALATION",
+      "HUMAN TRIAGE REQUIRED",
+      "PROVISIONAL SERVICE PATHWAY",
+      "OUTSIDE CONFIGURED SCOPE",
+      "INSUFFICIENT INFORMATION"
+    ],
+    "human_approval_required": true,
+    "reasons_required": true,
+    "policy_citations_required": true
+  }
+}

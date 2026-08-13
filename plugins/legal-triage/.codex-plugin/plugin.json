@@ -1,0 +1,38 @@
+{
+  "name": "legal-triage",
+  "version": "0.1.0",
+  "description": "Configure and conduct governed, staff-facing legal enquiry triage for Australian community legal centres.",
+  "author": {
+    "name": "l0cka",
+    "url": "https://github.com/l0cka"
+  },
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/legal-triage",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": [
+    "australian-law",
+    "community-legal-centres",
+    "legal-triage",
+    "client-intake",
+    "access-to-justice",
+    "responsible-ai"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Legal Triage",
+    "shortDescription": "Governed staff-facing triage for community legal centres.",
+    "longDescription": "Creates a centre-approved triage profile and uses it to prepare provisional, staff-reviewed enquiry records. The plugin minimises client data, keeps conflict checking outside the model, escalates urgency and uncertainty, and never makes autonomous eligibility, merits or service decisions.",
+    "developerName": "l0cka",
+    "category": "Productivity",
+    "capabilities": [
+      "Read"
+    ],
+    "websiteURL": "https://github.com/l0cka/legal-skills",
+    "defaultPrompt": [
+      "Configure a governed triage profile for this community legal centre.",
+      "Prepare a provisional staff-reviewed triage record for this enquiry.",
+      "Check whether this triage profile is approved and safe to use."
+    ],
+    "brandColor": "#1C3C63"
+  }
+}

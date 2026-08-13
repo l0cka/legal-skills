@@ -1,0 +1,21 @@
+{
+  "name": "legal-triage",
+  "version": "0.1.0",
+  "description": "Configure and conduct governed, staff-facing legal enquiry triage for Australian community legal centres.",
+  "author": {
+    "name": "l0cka",
+    "url": "https://github.com/l0cka"
+  },
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/legal-triage",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": [
+    "australian-law",
+    "community-legal-centres",
+    "legal-triage",
+    "client-intake",
+    "access-to-justice",
+    "responsible-ai"
+  ],
+  "skills": "./skills/"
+}

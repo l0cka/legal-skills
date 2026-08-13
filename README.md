@@ -6,7 +6,7 @@ ChatGPT Work while keeping provider-specific manifests thin and separate.
 
 ## Plugin suite
 
-The marketplace contains two plugins and three skills:
+The marketplace contains three plugins and five skills:
 
 - **Commonwealth Legislation** — checks the identity, status and applicable
   point-in-time version of Commonwealth Acts and registered instruments against
@@ -18,6 +18,10 @@ The marketplace contains two plugins and three skills:
   planning instruments against the official NSW legislation website. It
   identifies the applicable point-in-time version and preserves commencement,
   update-lag and authorisation qualifications.
+- **Legal Triage** — configures a centre-approved, staff-facing triage profile
+  and prepares provisional enquiry records against it. It minimises client
+  information, keeps conflict checks outside the model, escalates urgency and
+  uncertainty, and reserves every consequential decision for authorised staff.
 
 ## Install
 
@@ -28,10 +32,12 @@ client:
 codex plugin marketplace add l0cka/legal-skills
 codex plugin add commonwealth-legislation@legal-skills
 codex plugin add nsw-legislation@legal-skills
+codex plugin add legal-triage@legal-skills
 
 claude plugin marketplace add l0cka/legal-skills
 claude plugin install commonwealth-legislation@legal-skills --scope user
 claude plugin install nsw-legislation@legal-skills --scope user
+claude plugin install legal-triage@legal-skills --scope user
 ```
 
 Claude users can also add `l0cka/legal-skills` from Cowork's personal plugin
