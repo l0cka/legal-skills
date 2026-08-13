@@ -16,7 +16,7 @@ from urllib.request import Request, urlopen
 
 API_ROOT = "https://api.prod.legislation.gov.au/v1"
 TITLE_ID = re.compile(r"^[A-Z][0-9]{4}[A-Z][0-9]{5}$")
-USER_AGENT = "legal-skills/commonwealth-legislation/0.1.0"
+USER_AGENT = "legal-skills/commonwealth-legislation/0.2.0"
 TIMEOUT_SECONDS = 20
 
 TITLE_FIELDS = (

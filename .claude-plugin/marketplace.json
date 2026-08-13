@@ -10,13 +10,14 @@
     {
       "name": "commonwealth-legislation",
       "source": "./plugins/commonwealth-legislation",
-      "description": "Verify Commonwealth legislation identity, status and point-in-time versions against the Federal Register of Legislation.",
-      "version": "0.1.0",
+      "description": "Verify Commonwealth legislation and trace provision changes against the Federal Register of Legislation.",
+      "version": "0.2.0",
       "category": "Productivity",
       "tags": [
         "australian-law",
         "commonwealth-legislation",
         "point-in-time",
+        "legislative-change",
         "legal-research"
       ]
     },

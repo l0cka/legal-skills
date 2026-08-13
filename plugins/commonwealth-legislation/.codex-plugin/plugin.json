@@ -1,7 +1,7 @@
 {
   "name": "commonwealth-legislation",
-  "version": "0.1.0",
-  "description": "Verify Commonwealth legislation identity, status and point-in-time versions against the Federal Register of Legislation.",
+  "version": "0.2.0",
+  "description": "Verify Commonwealth legislation and trace provision changes against the Federal Register of Legislation.",
   "author": {
     "name": "l0cka",
     "url": "https://github.com/l0cka"
@@ -14,13 +14,14 @@
     "commonwealth-legislation",
     "federal-register-of-legislation",
     "point-in-time",
+    "legislative-change",
     "legal-research"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Commonwealth Legislation",
-    "shortDescription": "Verify Commonwealth legislation and versions.",
-    "longDescription": "Checks Commonwealth Acts and registered instruments against the official Federal Register of Legislation. Identifies the title and applicable point-in-time compilation, records Register IDs and currency flags, and fails closed when commencement or amendment issues remain unresolved.",
+    "shortDescription": "Verify legislation and trace provision changes.",
+    "longDescription": "Checks Commonwealth Acts and registered instruments against the official Federal Register of Legislation. Identifies applicable point-in-time compilations and traces provision changes through intervening versions, amending legislation and commencement material while preserving currency and legal-effect qualifications.",
     "developerName": "l0cka",
     "category": "Productivity",
     "capabilities": [
@@ -30,7 +31,8 @@
     "defaultPrompt": [
       "Check whether this Commonwealth legislation is current and identify the official version.",
       "Which compilation of this Commonwealth Act applied on the specified date?",
-      "Verify this Commonwealth legislative provision against the Federal Register."
+      "Verify this Commonwealth legislative provision against the Federal Register.",
+      "Trace how this Commonwealth provision changed between the specified dates."
     ],
     "brandColor": "#1C3C63"
   }
