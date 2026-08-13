@@ -1,0 +1,38 @@
+{
+  "name": "australian-privacy-cybersecurity",
+  "version": "0.1.0",
+  "description": "Identify Australian privacy and cybersecurity legal issues, assess suspected data breaches and evaluate AI-system use cases using verified legislation.",
+  "author": {
+    "name": "l0cka",
+    "url": "https://github.com/l0cka"
+  },
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/australian-privacy-cybersecurity",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": [
+    "australian-law",
+    "privacy",
+    "cybersecurity",
+    "data-breach",
+    "legal-research"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Australian Privacy & Cybersecurity",
+    "shortDescription": "Map privacy, breach and AI use-case risks.",
+    "longDescription": "Helps lawyers identify Australian privacy and cybersecurity issues, assess suspected data breaches, and evaluate the suitability and risks of defined AI-system use cases. It verifies legislation through the repository's legislation skills, separates law from regulator guidance and assumptions, excludes case law, and reserves conclusions, approvals and external notifications for human review.",
+    "developerName": "l0cka",
+    "category": "Productivity",
+    "capabilities": [
+      "Read"
+    ],
+    "websiteURL": "https://github.com/l0cka/legal-skills",
+    "defaultPrompt": [
+      "Identify the Australian privacy and cybersecurity issues raised by these facts.",
+      "Assess this suspected data breach and prepare a lawyer-review action matrix.",
+      "Map the potentially applicable Australian privacy legislation and identify missing facts.",
+      "Assess whether this AI-system use case is suitable and identify required controls."
+    ],
+    "brandColor": "#1C3C63"
+  }
+}

@@ -60,6 +60,42 @@
         "chatgpt-work"
       ],
       "source": "Original staff-facing community legal centre triage workflow informed by public sector accreditation, privacy, responsible-AI and evaluated online-intake guidance."
+    },
+    {
+      "name": "assess-australian-privacy-issues",
+      "version": "0.1.0",
+      "path": "plugins/australian-privacy-cybersecurity/skills/assess-australian-privacy-issues",
+      "plugin": "plugins/australian-privacy-cybersecurity",
+      "plugin_version": "0.1.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original Australia-specific workflow informed by official Australian legislation and regulator sources, with generic issue-matrix and evaluation patterns adapted from the MIT-licensed Harvey AI harvey-labs data-privacy-cybersecurity task corpus."
+    },
+    {
+      "name": "assess-australian-data-breach",
+      "version": "0.1.0",
+      "path": "plugins/australian-privacy-cybersecurity/skills/assess-australian-data-breach",
+      "plugin": "plugins/australian-privacy-cybersecurity",
+      "plugin_version": "0.1.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original Australia-specific breach-assessment workflow informed by official Australian legislation and regulator sources, with generic obligation-matrix and evaluation patterns adapted from the MIT-licensed Harvey AI harvey-labs data-privacy-cybersecurity task corpus."
+    },
+    {
+      "name": "assess-ai-privacy-cybersecurity-use-case",
+      "version": "0.1.0",
+      "path": "plugins/australian-privacy-cybersecurity/skills/assess-ai-privacy-cybersecurity-use-case",
+      "plugin": "plugins/australian-privacy-cybersecurity",
+      "plugin_version": "0.1.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original Australian AI use-case suitability workflow informed by official Australian legislation and regulator sources, with generic data-flow and explicit-evaluation patterns adapted from the MIT-licensed Harvey AI harvey-labs data-privacy-cybersecurity task corpus."
     }
   ]
 }

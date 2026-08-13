@@ -6,7 +6,7 @@ ChatGPT Work while keeping provider-specific manifests thin and separate.
 
 ## Plugin suite
 
-The marketplace contains three plugins and five skills:
+The marketplace contains four plugins and eight skills:
 
 - **Commonwealth Legislation** — checks the identity, status and applicable
   point-in-time version of Commonwealth Acts and registered instruments against
@@ -22,6 +22,11 @@ The marketplace contains three plugins and five skills:
   and prepares provisional enquiry records against it. It minimises client
   information, keeps conflict checks outside the model, escalates urgency and
   uncertainty, and reserves every consequential decision for authorised staff.
+- **Australian Privacy & Cybersecurity** — maps facts to potentially applicable
+  Australian privacy and cyber legislation and assesses suspected data
+  breaches and AI-system use cases. It verifies Commonwealth and NSW
+  legislation through the dedicated legislation skills, clearly labels other
+  source types, and excludes case law.
 
 ## Install
 
@@ -33,11 +38,13 @@ codex plugin marketplace add l0cka/legal-skills
 codex plugin add commonwealth-legislation@legal-skills
 codex plugin add nsw-legislation@legal-skills
 codex plugin add legal-triage@legal-skills
+codex plugin add australian-privacy-cybersecurity@legal-skills
 
 claude plugin marketplace add l0cka/legal-skills
 claude plugin install commonwealth-legislation@legal-skills --scope user
 claude plugin install nsw-legislation@legal-skills --scope user
 claude plugin install legal-triage@legal-skills --scope user
+claude plugin install australian-privacy-cybersecurity@legal-skills --scope user
 ```
 
 Claude users can also add `l0cka/legal-skills` from Cowork's personal plugin

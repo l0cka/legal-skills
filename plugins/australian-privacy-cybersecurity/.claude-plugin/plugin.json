@@ -1,0 +1,20 @@
+{
+  "name": "australian-privacy-cybersecurity",
+  "version": "0.1.0",
+  "description": "Identify Australian privacy and cybersecurity legal issues, assess suspected data breaches and evaluate AI-system use cases using verified legislation.",
+  "author": {
+    "name": "l0cka",
+    "url": "https://github.com/l0cka"
+  },
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/australian-privacy-cybersecurity",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": [
+    "australian-law",
+    "privacy",
+    "cybersecurity",
+    "data-breach",
+    "legal-research"
+  ],
+  "skills": "./skills/"
+}

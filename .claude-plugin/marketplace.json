@@ -48,6 +48,20 @@
         "access-to-justice",
         "responsible-ai"
       ]
+    },
+    {
+      "name": "australian-privacy-cybersecurity",
+      "source": "./plugins/australian-privacy-cybersecurity",
+      "description": "Identify Australian privacy and cybersecurity legal issues, assess suspected data breaches and evaluate AI-system use cases using verified legislation.",
+      "version": "0.1.0",
+      "category": "Productivity",
+      "tags": [
+        "australian-law",
+        "privacy",
+        "cybersecurity",
+        "data-breach",
+        "legal-research"
+      ]
     }
   ]
 }
