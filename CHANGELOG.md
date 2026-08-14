@@ -10,6 +10,15 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- Added `australian-legal-research` 0.1.0, merging the `australian-legislation`
+  0.2.0, `australian-case-law` 0.1.0 and `australian-legal-citation` 0.1.0
+  plugins into a single research plugin with all sixteen skills unchanged.
+  The three source plugins covered one workflow — verify legislation, verify
+  case citations and quoted passages, cite under AGLC4 — and every skill keeps
+  its name, so `$skill` cross-references from other plugins are unaffected.
+  Users of the three superseded plugins should uninstall them and install
+  `australian-legal-research@legal-skills` instead.
+
 - Added `australian-corporations-governance` 0.1.0 with five skills:
   `configure-corporations-governance`, `assess-director-duties-governance`,
   `prepare-board-decision-record`, `review-corporations-governance-framework`
@@ -93,6 +102,12 @@ plugin manifests contain their intended release versions.
 - Updated AI-system and data breach workflows to route concurrent privacy,
   cyber, sectoral and contractual obligations without treating case law as in
   scope.
+
+### Removed
+
+- Removed the `australian-legislation`, `australian-case-law` and
+  `australian-legal-citation` plugins, superseded by `australian-legal-research`
+  0.1.0 above.
 
 ### Fixed
 

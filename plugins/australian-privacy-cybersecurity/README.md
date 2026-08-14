@@ -22,7 +22,7 @@ or approve deployments. Case law is outside scope.
 
 ## Authority and currency
 
-Install `australian-legislation` alongside this plugin. Legal propositions must
+Install `australian-legal-research` alongside this plugin. Legal propositions must
 be checked against the applicable point-in-time official source. The bundled JSON
 registries are issue-routing and change-detection metadata, not legal
 authority.

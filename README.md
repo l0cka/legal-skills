@@ -3,7 +3,7 @@
 <p align="center">
   <a href="https://github.com/l0cka/legal-skills/actions/workflows/ci.yml"><img alt="CI status" src="https://img.shields.io/github/actions/workflow/status/l0cka/legal-skills/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
   <a href="LICENSE"><img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-1f6f5f?style=flat-square"></a>
-  <img alt="Six plugins" src="https://img.shields.io/badge/plugins-6-31547a?style=flat-square">
+  <img alt="Four plugins" src="https://img.shields.io/badge/plugins-4-31547a?style=flat-square">
   <img alt="Thirty-one skills" src="https://img.shields.io/badge/skills-31-31547a?style=flat-square">
   <img alt="Claude Cowork and ChatGPT Work" src="https://img.shields.io/badge/works%20with-Claude%20Cowork%20%2B%20ChatGPT%20Work-c59a46?style=flat-square">
 </p>
@@ -16,12 +16,20 @@ Each provider has a small, separate manifest.
 
 ## Plugin suite
 
-The marketplace contains six plugins and thirty-one skills:
+The marketplace contains four plugins and thirty-one skills:
 
-- **Australian Legislation** checks Commonwealth, State, and Territory law
-  against each jurisdiction's official publisher. It records qualifications
-  about point-in-time status, commencement, currency, and authorisation. It
-  also traces changes to Commonwealth legislation.
+- **Australian Legal Research** checks Commonwealth, State, and Territory law
+  against each jurisdiction's official publisher, recording qualifications
+  about point-in-time status, commencement, currency, and authorisation, and
+  traces changes to Commonwealth legislation. It verifies case citations,
+  judgments and quoted passages against the official publishers of the
+  issuing courts, distinguishes citations that cannot be checked from
+  citations the court's own database does not contain, and flags the latter
+  as fabrication risks without ever bypassing publisher bot challenges. It
+  also drafts, converts, reviews and corrects citations and bibliographies
+  under the Australian Guide to Legal Citation, 4th edition, never inventing
+  a missing citation field and treating formatting and source verification
+  as separate findings. It excludes treatment analysis.
 - **Legal Triage** configures a staff triage profile that the responsible
   centre has approved. It prepares provisional enquiry records and limits client
   information. It keeps conflict checks outside the model. It escalates urgent
@@ -30,20 +38,8 @@ The marketplace contains six plugins and thirty-one skills:
   Australian privacy and cyber legislation. It assesses suspected data breaches
   and AI-system use cases. It verifies the applicable APP framework without a
   fixed-list assumption. It records a framework fingerprint and detects changes
-  across the decision horizon. It uses the Australian Legislation plugin for
-  authoritative point-in-time checks. It excludes case law.
-- **Australian Case Law** verifies case citations, judgments and quoted
-  passages against the official publishers of the issuing courts. It routes
-  each citation by its medium-neutral court identifier. It distinguishes
-  citations that cannot be checked from citations the court's own database
-  does not contain, and flags the latter as fabrication risks. It never
-  bypasses publisher bot challenges. It excludes treatment analysis.
-- **Australian Legal Citation** drafts, converts, reviews and corrects
-  citations and bibliographies under the Australian Guide to Legal Citation,
-  4th edition. It covers footnotes, pinpoints, subsequent references,
-  quotation treatment and citation audits. It never invents a missing
-  citation field, and it treats formatting and source verification as
-  separate findings.
+  across the decision horizon. It uses the Australian Legal Research plugin
+  for authoritative point-in-time checks. It excludes case law.
 - **Australian Corporations Governance** configures a controlled company
   governance profile, issue-spots director-duty and conflict controls, prepares
   draft board-decision records, reviews governance frameworks and builds
@@ -60,15 +56,13 @@ Agent.
 Install the Legal Skills plugin suite in this environment.
 
 1. Add the marketplace `l0cka/legal-skills`.
-2. Install `australian-legislation@legal-skills`.
+2. Install `australian-legal-research@legal-skills`.
 3. Install `legal-triage@legal-skills`.
 4. Install `australian-privacy-cybersecurity@legal-skills`.
-5. Install `australian-case-law@legal-skills`.
-6. Install `australian-legal-citation@legal-skills`.
-7. Install `australian-corporations-governance@legal-skills`.
-8. Keep all other marketplaces and plugins unchanged.
-9. Use user scope if this client supports installation scopes.
-10. Verify that all six plugins are available and report the result.
+5. Install `australian-corporations-governance@legal-skills`.
+6. Keep all other marketplaces and plugins unchanged.
+7. Use user scope if this client supports installation scopes.
+8. Verify that all four plugins are available and report the result.
 
 If you cannot manage plugins, give me the exact manual steps and stop.
 ```
@@ -79,11 +73,9 @@ For Codex, run:
 
 ```bash
 codex plugin marketplace add l0cka/legal-skills
-codex plugin add australian-legislation@legal-skills
+codex plugin add australian-legal-research@legal-skills
 codex plugin add legal-triage@legal-skills
 codex plugin add australian-privacy-cybersecurity@legal-skills
-codex plugin add australian-case-law@legal-skills
-codex plugin add australian-legal-citation@legal-skills
 codex plugin add australian-corporations-governance@legal-skills
 ```
 
@@ -91,11 +83,9 @@ For Claude, run:
 
 ```bash
 claude plugin marketplace add l0cka/legal-skills
-claude plugin install australian-legislation@legal-skills --scope user
+claude plugin install australian-legal-research@legal-skills --scope user
 claude plugin install legal-triage@legal-skills --scope user
 claude plugin install australian-privacy-cybersecurity@legal-skills --scope user
-claude plugin install australian-case-law@legal-skills --scope user
-claude plugin install australian-legal-citation@legal-skills --scope user
 claude plugin install australian-corporations-governance@legal-skills --scope user
 ```
 

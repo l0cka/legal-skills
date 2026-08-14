@@ -1,7 +1,7 @@
 # Case law verification method
 
-This reference defines the shared method for every skill in the
-`australian-case-law` plugin: the official-source hierarchy, the citation
+This reference defines the shared method for every case-law skill in the
+`australian-legal-research` plugin: the official-source hierarchy, the citation
 grammar, the five-outcome result semantics, the access rules and the
 restriction handling. Each skill supplies only its court-specific facts.
 

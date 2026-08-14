@@ -4,11 +4,11 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN = ROOT / "plugins" / "australian-legislation"
+PLUGIN = ROOT / "plugins" / "australian-legal-research"
 
 
-class AustralianLegislationPluginTests(unittest.TestCase):
-    def test_unified_plugin_contains_every_jurisdiction_checker(self) -> None:
+class AustralianLegalResearchPluginTests(unittest.TestCase):
+    def test_unified_plugin_contains_every_expected_skill(self) -> None:
         expected = {
             "check-commonwealth-legislation",
             "trace-commonwealth-legislative-change",
@@ -20,6 +20,12 @@ class AustralianLegislationPluginTests(unittest.TestCase):
             "check-tasmania-legislation",
             "check-act-legislation",
             "check-northern-territory-legislation",
+            "route-case-citation",
+            "verify-hca-judgment",
+            "verify-nsw-judgment",
+            "verify-federal-judgment",
+            "verify-case-quote",
+            "format-aglc4-citations",
         }
         actual = {path.parent.name for path in (PLUGIN / "skills").glob("*/SKILL.md")}
         self.assertEqual(actual, expected)
@@ -29,6 +35,9 @@ class AustralianLegislationPluginTests(unittest.TestCase):
             "commonwealth-legislation",
             "nsw-legislation",
             "state-territory-legislation",
+            "australian-legislation",
+            "australian-case-law",
+            "australian-legal-citation",
         ):
             self.assertFalse((ROOT / "plugins" / name).exists())
 

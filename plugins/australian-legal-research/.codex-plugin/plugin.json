@@ -1,0 +1,26 @@
+{
+  "name": "australian-legal-research",
+  "version": "0.1.0",
+  "description": "Verify Australian legislation, case citations and quoted passages against official publishers, trace Commonwealth legislative change, and draft AGLC4 citations.",
+  "author": {"name": "l0cka", "url": "https://github.com/l0cka"},
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/australian-legal-research",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": ["australian-law", "legislation", "case-law", "citation-verification", "aglc4", "legal-research"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Australian Legal Research",
+    "shortDescription": "Verify Australian legislation and case law, and draft AGLC4 citations.",
+    "longDescription": "Checks Commonwealth, State and Territory legislation against each jurisdiction's official publisher, traces Commonwealth legislative change, verifies case citations and quoted passages at the issuing court's official publisher, and drafts, converts, reviews and corrects citations under the Australian Guide to Legal Citation, 4th edition. Every verification fails closed when authoritative source or currency evidence is incomplete, and no citation field is ever invented.",
+    "developerName": "l0cka",
+    "category": "Productivity",
+    "capabilities": ["Read"],
+    "websiteURL": "https://github.com/l0cka/legal-skills",
+    "defaultPrompt": [
+      "Verify this Australian legislative provision against the applicable official point-in-time source.",
+      "Verify every case citation in this document against the official court publishers and flag any that cannot be found.",
+      "Convert every citation in this document to AGLC4 format and flag any citation with missing or unresolved fields."
+    ],
+    "brandColor": "#1C3C63"
+  }
+}

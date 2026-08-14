@@ -5,7 +5,7 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN = ROOT / "plugins" / "australian-legal-citation"
+PLUGIN = ROOT / "plugins" / "australian-legal-research"
 SKILL = PLUGIN / "skills" / "format-aglc4-citations"
 
 REFERENCE_FILES = (
@@ -27,9 +27,9 @@ REQUIRED_HEADINGS = (
 
 
 class AustralianLegalCitationPluginTests(unittest.TestCase):
-    def test_plugin_contains_only_expected_skill(self) -> None:
+    def test_plugin_contains_citation_skill(self) -> None:
         skills = {path.name for path in (PLUGIN / "skills").iterdir() if path.is_dir()}
-        self.assertEqual(skills, {"format-aglc4-citations"})
+        self.assertIn("format-aglc4-citations", skills)
 
     def test_skill_has_required_headings(self) -> None:
         text = (SKILL / "SKILL.md").read_text(encoding="utf-8")
@@ -70,7 +70,7 @@ class AustralianLegalCitationPluginTests(unittest.TestCase):
         manifest = json.loads(
             (PLUGIN / ".claude-plugin" / "plugin.json").read_text(encoding="utf-8")
         )
-        self.assertEqual(entry["plugin"], "plugins/australian-legal-citation")
+        self.assertEqual(entry["plugin"], "plugins/australian-legal-research")
         self.assertEqual(entry["plugin_version"], manifest["version"])
         self.assertIn("without reproducing the copyrighted publication", entry["source"])
 
