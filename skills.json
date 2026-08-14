@@ -510,7 +510,7 @@
       "version": "0.1.0",
       "path": "plugins/australian-litigation-deadlines/skills/configure-litigation-deadline-profile",
       "plugin": "plugins/australian-litigation-deadlines",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.2.0",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -522,7 +522,7 @@
       "version": "0.1.0",
       "path": "plugins/australian-litigation-deadlines/skills/map-limitation-periods",
       "plugin": "plugins/australian-litigation-deadlines",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.2.0",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -531,10 +531,10 @@
     },
     {
       "name": "compute-procedural-deadlines",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "path": "plugins/australian-litigation-deadlines/skills/compute-procedural-deadlines",
       "plugin": "plugins/australian-litigation-deadlines",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.2.0",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -543,10 +543,10 @@
     },
     {
       "name": "map-tribunal-review-deadlines",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "path": "plugins/australian-litigation-deadlines/skills/map-tribunal-review-deadlines",
       "plugin": "plugins/australian-litigation-deadlines",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.2.0",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -558,7 +558,7 @@
       "version": "0.1.0",
       "path": "plugins/australian-litigation-deadlines/skills/maintain-deadline-register",
       "plugin": "plugins/australian-litigation-deadlines",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.2.0",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -570,7 +570,7 @@
       "version": "0.1.0",
       "path": "plugins/australian-litigation-deadlines/skills/verify-deadline-basis",
       "plugin": "plugins/australian-litigation-deadlines",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.2.0",
       "targets": [
         "claude-cowork",
         "chatgpt-work"

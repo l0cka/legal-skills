@@ -1,0 +1,61 @@
+{
+  "table_id": "qld-courts",
+  "jurisdiction": "QLD",
+  "forums": ["Supreme Court of Queensland", "District Court of Queensland", "Magistrates Courts of Queensland"],
+  "holiday_table": "qld",
+  "note": "Verified against legislation.qld.gov.au on 2026-08-14. The UCPR contains no time-reckoning rule of its own: the note to r 7 states that a time allowed or provided for under the rules is calculated according to the Acts Interpretation Act 1954 s 38, which applies to the UCPR through the Statutory Instruments Act 1992 s 14(1) and sch 1 (item 'parts 9-11'). The UCPR dictionary is schedule 3 and adopts the AIA sch 1 'business day' definition. Rollover under s 38(2) turns on 'excluded days' — for filing, days the registry is closed (s 38(5)(a)), and the registry closes on Saturdays, Sundays and court holidays (r 976); the script approximates registry-closed days with the weekend-and-public-holiday table, and every computed date carries a warning to confirm the registry was open.",
+  "computation_provisions": [
+    {
+      "id": "qld-aia-s38",
+      "citation": "Acts Interpretation Act 1954 (Qld) s 38",
+      "role": "time_computation_and_rollover",
+      "summary": "Reckoning of time: a period beginning on a day, act or event excludes that day (s 38(1)), and a period of clear days or of at least a specified number of days also excludes the day on which the purpose is to be fulfilled (s 38(1)(a)); where the time or last day falls on an excluded day it moves to the next day that is not an excluded day (s 38(2)); 'excluded day' means, for filing or registering a document, a day the office is closed, and otherwise a day that is not a business day in the place (s 38(5)); 'business day' (sch 1) excludes Saturdays, Sundays and public, special and bank holidays.",
+      "source_url": "https://www.legislation.qld.gov.au/view/whole/html/inforce/current/act-1954-003",
+      "evidence": {"state": "verified", "checked": "2026-08-14", "method": "Firecrawl scrape of the official current reprint.", "version": "Reprint current from 1 February 2024 to date (accessed 14 August 2026)"}
+    },
+    {
+      "id": "qld-sia-s14",
+      "citation": "Statutory Instruments Act 1992 (Qld) s 14(1) and sch 1",
+      "role": "application_of_interpretation_provisions",
+      "summary": "Applies the provisions of the Acts Interpretation Act 1954 mentioned in sch 1 — including parts 9-11, which carry s 38, and the sch 1 dictionary with 'business day' — to statutory instruments such as the UCPR in the same way as they apply to an Act (s 14(1)). The UCPR is a rule and hence a statutory instrument (s 7(3)); the note to UCPR r 7 confirms the s 38 calculation basis.",
+      "source_url": "https://www.legislation.qld.gov.au/view/whole/html/inforce/current/act-1992-022",
+      "evidence": {"state": "verified", "checked": "2026-08-14", "method": "Firecrawl scrape of the official current reprint.", "version": "Reprint current from 18 June 2024 to date (accessed 14 August 2026)"}
+    }
+  ],
+  "period_rules": [
+    {
+      "id": "qld-ucpr-noid-after-service",
+      "label": "Notice of intention to defend (with defence attached) after service of claim",
+      "citation": "Uniform Civil Procedure Rules 1999 (Qld) r 137(1)",
+      "trigger": "Service of the claim on the defendant; the period runs after the day the claim is served",
+      "period": {"length": 28, "unit": "calendar_days"},
+      "rollover": "next_business_day",
+      "applies_provisions": ["qld-aia-s38", "qld-sia-s14"],
+      "source_url": "https://www.legislation.qld.gov.au/view/whole/html/inforce/current/sl-1999-0111",
+      "warnings": [
+        "The defence must be attached to the notice of intention to defend (r 139(1)(b)), so this deadline is also the effective defence deadline.",
+        "Where the Service and Execution of Process Act 1992 (Cwlth) applies to interstate service, the time limited by that Act displaces the 28 days (r 137(2)); where the claim was served outside Australia under ch 4 pt 7, r 129(3) substitutes 42 days unless the court orders otherwise.",
+        "A defendant may file a notice of intention to defend at any time before judgment even if in default (r 138), subject to the default-judgment consequences.",
+        "Rollover is computed as the next weekday that is not a listed Queensland public holiday; for filing, an excluded day under AIA s 38(5)(a) is a day the registry is closed, and the registry closes on court holidays (r 976), which may differ from gazetted public holidays — confirm the registry was open on the candidate date."
+      ],
+      "evidence": {"state": "verified", "checked": "2026-08-14", "method": "Firecrawl scrape of the official current in-force reprint; period and trigger confirmed exactly.", "version": "Reprint current from 13 September 2024 to date (accessed 14 August 2026)"}
+    },
+    {
+      "id": "qld-ucpr-appeal-notice",
+      "label": "Notice of appeal to the Court of Appeal",
+      "citation": "Uniform Civil Procedure Rules 1999 (Qld) r 748(a)",
+      "trigger": "The date of the decision appealed from; 'decision' means an order, judgment, verdict or an assessment of damages (r 744)",
+      "period": {"length": 28, "unit": "calendar_days"},
+      "rollover": "next_business_day",
+      "applies_provisions": ["qld-aia-s38", "qld-sia-s14"],
+      "source_url": "https://www.legislation.qld.gov.au/view/whole/html/inforce/current/sl-1999-0111",
+      "warnings": [
+        "The period applies unless the Court of Appeal orders otherwise — the dispensing power sits in r 748 itself, and the general extension power in r 7(1) also remains available.",
+        "Where leave to appeal is required, r 747(2) fixes additional content requirements for the notice; this entry does not compute any leave-application deadline.",
+        "The notice of appeal is filed with the registrar of the Supreme Court at Brisbane (r 746(1)); the holiday table is Brisbane-area based — confirm registry-location holidays.",
+        "Rollover is computed as the next weekday that is not a listed Queensland public holiday; for filing, an excluded day under AIA s 38(5)(a) is a day the registry is closed, and the registry closes on court holidays (r 976), which may differ from gazetted public holidays — confirm the registry was open on the candidate date."
+      ],
+      "evidence": {"state": "verified", "checked": "2026-08-14", "method": "Firecrawl scrape of the official current in-force reprint; period, trigger and the r 744 definition confirmed exactly.", "version": "Reprint current from 13 September 2024 to date (accessed 14 August 2026)"}
+    }
+  ]
+}

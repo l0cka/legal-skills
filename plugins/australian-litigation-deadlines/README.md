@@ -34,8 +34,8 @@ periods counted backwards from a future event — is identified but never
 computed. Computation activates for a rule-table entry only after it is
 verified against the official publisher through `verify-deadline-basis`.
 The shipped tables carry the initial verification of 2026-08-14: the
-Federal Court, NSW court, ART, NCAT and Victorian defence rules are
-verified and compute. FCR r 1.61(5) is expressed as a declared excluded
+Federal Court, NSW court, Queensland court, ART, NCAT, QCAT and Victorian
+defence rules are verified and compute. FCR r 1.61(5) is expressed as a declared excluded
 range (24 December to 14 January not counted) and r 1.61(3) as a
 short-period threshold that fails calendar-day rules of 5 days or less
 closed; where rolling a last day would enter the excluded range, the
@@ -43,15 +43,20 @@ unsettled interaction of r 1.61(4) and (5) makes the script refuse rather
 than choose a reading. The Victorian appearance rule stays pending because
 the operative time is stated in the writ itself, and VCAT ships no general
 period rule because none exists in the Act or Rules — the enabling
-enactment always fixes it. Holiday tables for NSW and Victoria ship verified against the
-official government publications listed in each table.
+enactment always fixes it. The Queensland UCPR has no time-reckoning rule
+of its own — the Acts Interpretation Act 1954 s 38 governs through the
+Statutory Instruments Act 1992 bridge, and the Queensland holiday table is
+Brisbane-area based, with district show holidays and the Christmas Eve
+part-day holiday recorded as caveats. Holiday tables for NSW, Victoria and
+Queensland ship verified against the official government publications
+listed in each table.
 
 The plugin never determines when a cause of action accrued, when a fact
 became discoverable, or whether an extension of time would be granted —
 those are the responsible lawyer's calls, recorded as inputs. Computed
-coverage is staged: federal courts, NSW and Victorian courts, and the ART,
-NCAT and VCAT; other forums receive identify-only output naming the
-governing rule. Migration-review outputs always carry a non-extendable and
+coverage is staged: federal courts, NSW, Victorian and Queensland courts,
+and the ART, NCAT, QCAT and VCAT; other forums receive identify-only
+output naming the governing rule. Migration-review outputs always carry a non-extendable and
 jurisdictional-deadline warning with a specialist-review flag.
 
 Point-in-time verification of Acts routes to the separately installed
@@ -61,8 +66,8 @@ scope by design, so this plugin carries its own court-rules source method.
 ## Sources
 
 Controlling sources are the official publishers: legislation.gov.au,
-legislation.nsw.gov.au, legislation.vic.gov.au and the other jurisdictions'
-official legislation sites for Limitation Acts, Interpretation Acts, court
+legislation.nsw.gov.au, legislation.vic.gov.au, legislation.qld.gov.au and
+the other jurisdictions' official legislation sites for Limitation Acts, Interpretation Acts, court
 rules and tribunal Acts; court and tribunal websites for practice notes and
 registry arrangements; and the official government public-holiday
 publications named in each holiday table. Commentary and firm
