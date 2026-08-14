@@ -7,7 +7,10 @@
       "path": "plugins/australian-legal-research/skills/check-commonwealth-legislation",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original provenance-first workflow based on the official Federal Register of Legislation website, help guidance and public API."
     },
     {
@@ -16,7 +19,10 @@
       "path": "plugins/australian-legal-research/skills/trace-commonwealth-legislative-change",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original provenance-first workflow based on official Federal Register compilations, amendment histories, amending legislation and commencement material."
     },
     {
@@ -25,7 +31,10 @@
       "path": "plugins/australian-legal-research/skills/check-nsw-legislation",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original provenance-first workflow based on the official NSW legislation website and public XML export."
     },
     {
@@ -34,7 +43,10 @@
       "path": "plugins/australian-legal-research/skills/check-victoria-legislation",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original point-in-time verification workflow based on the official Victorian legislation publisher."
     },
     {
@@ -43,7 +55,10 @@
       "path": "plugins/australian-legal-research/skills/check-queensland-legislation",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original point-in-time verification workflow based on the official Queensland legislation publisher."
     },
     {
@@ -52,7 +67,10 @@
       "path": "plugins/australian-legal-research/skills/check-western-australia-legislation",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original point-in-time verification workflow based on the official Western Australian legislation publisher."
     },
     {
@@ -61,7 +79,10 @@
       "path": "plugins/australian-legal-research/skills/check-south-australia-legislation",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original point-in-time verification workflow based on the official South Australian legislation publisher."
     },
     {
@@ -70,7 +91,10 @@
       "path": "plugins/australian-legal-research/skills/check-tasmania-legislation",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original point-in-time verification workflow based on the official Tasmanian legislation publisher."
     },
     {
@@ -79,7 +103,10 @@
       "path": "plugins/australian-legal-research/skills/check-act-legislation",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original point-in-time verification workflow based on the official ACT legislation register."
     },
     {
@@ -88,7 +115,10 @@
       "path": "plugins/australian-legal-research/skills/check-northern-territory-legislation",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original point-in-time verification workflow based on the official Northern Territory legislation database."
     },
     {
@@ -97,7 +127,10 @@
       "path": "plugins/legal-triage/skills/configure-legal-triage",
       "plugin": "plugins/legal-triage",
       "plugin_version": "0.1.1",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original governance-first workflow informed by public Australian legal assistance, privacy and responsible-AI guidance."
     },
     {
@@ -106,7 +139,10 @@
       "path": "plugins/legal-triage/skills/triage-legal-enquiry",
       "plugin": "plugins/legal-triage",
       "plugin_version": "0.1.1",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original staff-facing community legal centre triage workflow informed by public Australian guidance."
     },
     {
@@ -115,7 +151,10 @@
       "path": "plugins/australian-privacy-cybersecurity/skills/assess-australian-privacy-issues",
       "plugin": "plugins/australian-privacy-cybersecurity",
       "plugin_version": "0.3.1",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original Australia-specific workflow informed by official legislation and regulator sources, with generic patterns adapted from MIT-licensed Harvey AI harvey-labs tasks."
     },
     {
@@ -124,7 +163,10 @@
       "path": "plugins/australian-privacy-cybersecurity/skills/assess-australian-data-breach",
       "plugin": "plugins/australian-privacy-cybersecurity",
       "plugin_version": "0.3.1",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original Australian breach workflow informed by official legislation and regulator sources, with generic patterns adapted from MIT-licensed Harvey AI harvey-labs tasks."
     },
     {
@@ -133,7 +175,10 @@
       "path": "plugins/australian-privacy-cybersecurity/skills/assess-ai-privacy-cybersecurity-use-case",
       "plugin": "plugins/australian-privacy-cybersecurity",
       "plugin_version": "0.3.1",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original Australian AI suitability workflow informed by official sources, with generic patterns adapted from MIT-licensed Harvey AI harvey-labs tasks."
     },
     {
@@ -142,7 +187,10 @@
       "path": "plugins/australian-privacy-cybersecurity/skills/check-australian-privacy-principles",
       "plugin": "plugins/australian-privacy-cybersecurity",
       "plugin_version": "0.3.1",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original layered APP verification workflow based on official Privacy Act compilations, instruments, code metadata, future amendments and separately versioned OAIC guidance."
     },
     {
@@ -151,7 +199,10 @@
       "path": "plugins/australian-privacy-cybersecurity/skills/route-australian-privacy-jurisdiction",
       "plugin": "plugins/australian-privacy-cybersecurity",
       "plugin_version": "0.3.1",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original Australia-wide privacy, health, breach and surveillance routing workflow based on official legislation and regulator sources."
     },
     {
@@ -160,7 +211,10 @@
       "path": "plugins/australian-privacy-cybersecurity/skills/map-australian-cyber-incident-obligations",
       "plugin": "plugins/australian-privacy-cybersecurity",
       "plugin_version": "0.3.1",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original concurrent Australian cyber incident obligations workflow based on official legislation, instruments and regulator sources."
     },
     {
@@ -169,7 +223,10 @@
       "path": "plugins/australian-privacy-cybersecurity/skills/assess-statutory-privacy-tort",
       "plugin": "plugins/australian-privacy-cybersecurity",
       "plugin_version": "0.3.1",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original legislation-only statutory privacy tort workflow based on Privacy Act 1988 Schedule 2."
     },
     {
@@ -178,7 +235,10 @@
       "path": "plugins/australian-privacy-cybersecurity/skills/assess-automated-decision-transparency",
       "plugin": "plugins/australian-privacy-cybersecurity",
       "plugin_version": "0.3.1",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original current-and-future automated-decision transparency workflow based on verified Commonwealth and Western Australian legislation."
     },
     {
@@ -187,7 +247,10 @@
       "path": "plugins/australian-legal-research/skills/route-case-citation",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original offline citation-grammar router mapping Australian medium-neutral and reported citations to each issuing court's official publisher."
     },
     {
@@ -196,7 +259,10 @@
       "path": "plugins/australian-legal-research/skills/verify-hca-judgment",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original provenance-first verification workflow based on the official High Court of Australia judgments database including CLR volumes 1-100."
     },
     {
@@ -205,7 +271,10 @@
       "path": "plugins/australian-legal-research/skills/verify-nsw-judgment",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original provenance-first verification workflow based on the official NSW Caselaw website and the Copyright in Judicial Decisions Notice 1995 (NSW) conditions."
     },
     {
@@ -214,7 +283,10 @@
       "path": "plugins/australian-legal-research/skills/verify-federal-judgment",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original provenance-first verification workflow based on the official FCFCOA website and Federal Law Search, with an explicit non-bypass posture for the Federal Court bot challenge."
     },
     {
@@ -223,7 +295,10 @@
       "path": "plugins/australian-legal-research/skills/verify-case-quote",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original quote-verification workflow that checks quoted passages only against judgment text obtained from the official court publisher."
     },
     {
@@ -232,7 +307,10 @@
       "path": "plugins/australian-legal-research/skills/format-aglc4-citations",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original operational distillation of the Australian Guide to Legal Citation, 4th edition, prepared from the published PDF; summarises rules and field templates without reproducing the copyrighted publication."
     },
     {
@@ -241,7 +319,10 @@
       "path": "plugins/australian-corporations-governance/skills/configure-corporations-governance",
       "plugin": "plugins/australian-corporations-governance",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original governance-profile workflow informed by the official Federal Register of Legislation and public ASIC, ASX, APRA, ACNC and ORIC materials."
     },
     {
@@ -250,7 +331,10 @@
       "path": "plugins/australian-corporations-governance/skills/assess-director-duties-governance",
       "plugin": "plugins/australian-corporations-governance",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original Australian director-duty governance issue-spotting workflow based on verified official legislation and organisation-controlled evidence."
     },
     {
@@ -259,7 +343,10 @@
       "path": "plugins/australian-corporations-governance/skills/prepare-board-decision-record",
       "plugin": "plugins/australian-corporations-governance",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original controlled board-material drafting workflow based on verified official legislation and approved company governance documents."
     },
     {
@@ -268,7 +355,10 @@
       "path": "plugins/australian-corporations-governance/skills/review-corporations-governance-framework",
       "plugin": "plugins/australian-corporations-governance",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original evidence-per-finding Australian company governance review workflow informed by official regulator and legislation sources."
     },
     {
@@ -277,7 +367,10 @@
       "path": "plugins/australian-corporations-governance/skills/maintain-corporations-governance-calendar",
       "plugin": "plugins/australian-corporations-governance",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original source-linked Australian company governance calendar workflow based on verified official legislation and approved organisation triggers."
     },
     {
@@ -286,7 +379,10 @@
       "path": "plugins/australian-ai-governance/skills/configure-ai-governance-profile",
       "plugin": "plugins/australian-ai-governance",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original controlled AI-governance profile workflow recording overlays, government track and governing documents for human approval."
     },
     {
@@ -295,7 +391,10 @@
       "path": "plugins/australian-ai-governance/skills/map-ai-regulatory-obligations",
       "plugin": "plugins/australian-ai-governance",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original binding-versus-pending Australian AI obligations mapping workflow based on official regulator, legislation and government policy sources."
     },
     {
@@ -304,7 +403,10 @@
       "path": "plugins/australian-ai-governance/skills/assess-board-ai-oversight",
       "plugin": "plugins/australian-ai-governance",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original board AI-oversight issue-spotting workflow based on verified Corporations Act provisions, verified case-law leads and labelled regulator guidance."
     },
     {
@@ -313,7 +415,10 @@
       "path": "plugins/australian-ai-governance/skills/check-ai-guidance-alignment",
       "plugin": "plugins/australian-ai-governance",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original guidance-alignment workflow assessing organisational AI documentation against the official AI6 guidance, VAISS guardrail catalogue and AS ISO/IEC 42001 crosswalk."
     },
     {
@@ -322,7 +427,10 @@
       "path": "plugins/australian-ai-governance/skills/triage-government-ai-use-case",
       "plugin": "plugins/australian-ai-governance",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original government AI assurance triage workflow built on the national framework and the official Commonwealth, state and territory framework sources."
     },
     {
@@ -331,7 +439,10 @@
       "path": "plugins/australian-ai-governance/skills/track-ai-regulatory-developments",
       "plugin": "plugins/australian-ai-governance",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original primary-source watch-list workflow for pending Australian AI instruments, using public trackers as discovery indexes only."
     },
     {
@@ -340,7 +451,10 @@
       "path": "plugins/australian-aml-ctf/skills/configure-aml-ctf-practice-profile",
       "plugin": "plugins/australian-aml-ctf",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original controlled practice-profile workflow for Australian legal practices under the tranche 2 AML/CTF reforms, based on official AUSTRAC and legislation sources."
     },
     {
@@ -349,7 +463,10 @@
       "path": "plugins/australian-aml-ctf/skills/map-designated-services",
       "plugin": "plugins/australian-aml-ctf",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original table 6 designated-services mapping workflow for legal practices, based on the amended AML/CTF Act and AUSTRAC's professional designated-services guidance."
     },
     {
@@ -358,7 +475,10 @@
       "path": "plugins/australian-aml-ctf/skills/review-aml-ctf-program",
       "plugin": "plugins/australian-aml-ctf",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original AML/CTF program and CDD framework gap-review workflow, based on the amended AML/CTF Act, the AML/CTF Rules 2025 and AUSTRAC's legal profession program starter kit."
     },
     {
@@ -367,7 +487,10 @@
       "path": "plugins/australian-aml-ctf/skills/map-reporting-obligations",
       "plugin": "plugins/australian-aml-ctf",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original reporting-trigger and legal-professional-privilege mapping workflow, based on the amended AML/CTF Act and AUSTRAC's LPP and reporting guidance."
     },
     {
@@ -376,8 +499,83 @@
       "path": "plugins/australian-aml-ctf/skills/track-aml-ctf-developments",
       "plugin": "plugins/australian-aml-ctf",
       "plugin_version": "0.1.0",
-      "targets": ["claude-cowork", "chatgpt-work"],
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
       "source": "Original primary-source watch-register workflow for pending Australian AML/CTF instruments and AUSTRAC guidance affecting legal practices."
+    },
+    {
+      "name": "configure-litigation-deadline-profile",
+      "version": "0.1.0",
+      "path": "plugins/australian-litigation-deadlines/skills/configure-litigation-deadline-profile",
+      "plugin": "plugins/australian-litigation-deadlines",
+      "plugin_version": "0.1.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original controlled practice-profile workflow for the Australian litigation-deadlines suite with named-confirmer and diary-system-of-record gates."
+    },
+    {
+      "name": "map-limitation-periods",
+      "version": "0.1.0",
+      "path": "plugins/australian-litigation-deadlines/skills/map-limitation-periods",
+      "plugin": "plugins/australian-litigation-deadlines",
+      "plugin_version": "0.1.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original candidate-mapping workflow over the nine Australian Limitation Acts and Commonwealth statutory periods with special-regime flags and a conservative earliest-candidate marker."
+    },
+    {
+      "name": "compute-procedural-deadlines",
+      "version": "0.1.0",
+      "path": "plugins/australian-litigation-deadlines/skills/compute-procedural-deadlines",
+      "plugin": "plugins/australian-litigation-deadlines",
+      "plugin_version": "0.1.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original script-only deadline computation workflow over evidence-gated JSON rule tables and officially published NSW and Victorian holiday tables."
+    },
+    {
+      "name": "map-tribunal-review-deadlines",
+      "version": "0.1.0",
+      "path": "plugins/australian-litigation-deadlines/skills/map-tribunal-review-deadlines",
+      "plugin": "plugins/australian-litigation-deadlines",
+      "plugin_version": "0.1.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original tribunal and merits-review deadline mapping workflow for the ART, NCAT and VCAT with mandatory migration warnings."
+    },
+    {
+      "name": "maintain-deadline-register",
+      "version": "0.1.0",
+      "path": "plugins/australian-litigation-deadlines/skills/maintain-deadline-register",
+      "plugin": "plugins/australian-litigation-deadlines",
+      "plugin_version": "0.1.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original source-linked matter deadline register workflow with per-entry provenance, evidence state and human confirmation status."
+    },
+    {
+      "name": "verify-deadline-basis",
+      "version": "0.1.0",
+      "path": "plugins/australian-litigation-deadlines/skills/verify-deadline-basis",
+      "plugin": "plugins/australian-litigation-deadlines",
+      "plugin_version": "0.1.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original publisher-verification and fingerprint workflow for the computation-rule and holiday tables the deadline script depends on."
     }
   ]
 }

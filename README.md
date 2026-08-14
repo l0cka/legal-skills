@@ -3,8 +3,8 @@
 <p align="center">
   <a href="https://github.com/l0cka/legal-skills/actions/workflows/ci.yml"><img alt="CI status" src="https://img.shields.io/github/actions/workflow/status/l0cka/legal-skills/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
   <a href="LICENSE"><img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-1f6f5f?style=flat-square"></a>
-  <img alt="Six plugins" src="https://img.shields.io/badge/plugins-6-31547a?style=flat-square">
-  <img alt="Forty-two skills" src="https://img.shields.io/badge/skills-42-31547a?style=flat-square">
+  <img alt="Seven plugins" src="https://img.shields.io/badge/plugins-7-31547a?style=flat-square">
+  <img alt="Forty-eight skills" src="https://img.shields.io/badge/skills-48-31547a?style=flat-square">
   <img alt="Claude Cowork and ChatGPT Work" src="https://img.shields.io/badge/works%20with-Claude%20Cowork%20%2B%20ChatGPT%20Work-c59a46?style=flat-square">
 </p>
 
@@ -16,7 +16,7 @@ Each provider has a small, separate manifest.
 
 ## Plugin suite
 
-The marketplace contains six plugins and forty-two skills:
+The marketplace contains seven plugins and forty-eight skills:
 
 | Plugin | Skills | What it does | Boundaries |
 | --- | :---: | --- | --- |
@@ -26,6 +26,7 @@ The marketplace contains six plugins and forty-two skills:
 | [**Australian Corporations Governance**](plugins/australian-corporations-governance/README.md) | 5 | <ul><li>Configures a controlled company governance profile</li><li>Issue-spots director-duty and conflict controls</li><li>Prepares draft board-decision records</li><li>Reviews governance frameworks and builds source-linked calendars</li><li>Separates listed, APRA, ACNC, and CATSI overlays</li></ul> | <ul><li>Never approves, files, executes, or invents corporate action</li></ul> |
 | [**Australian AI Governance**](plugins/australian-ai-governance/README.md) | 6 | <ul><li>Configures a controlled AI-governance profile</li><li>Maps binding versus pending instruments for an AI use case</li><li>Issue-spots board and director-duty AI exposure</li><li>Checks documentation against the AI6, VAISS, and AS ISO/IEC 42001 layers</li><li>Routes government AI use to nine jurisdictional assurance tracks</li><li>Monitors the pending-instrument watch-list</li></ul> | <ul><li>Never asserts pending law as in force</li><li>Labels superseded and voluntary guidance layers</li><li>Routes privacy and board-process depth to the sibling plugins</li><li>Never certifies compliance with any standard</li></ul> |
 | [**Australian AML/CTF**](plugins/australian-aml-ctf/README.md) | 5 | <ul><li>Configures a controlled AML/CTF practice profile for legal practices</li><li>Maps described legal services to the table 6 designated services under the tranche 2 reforms</li><li>Issue-spots AML/CTF programs and customer-due-diligence frameworks against the Act and the AML/CTF Rules 2025</li><li>Maps reporting triggers with legal-professional-privilege carve-outs and LPP-form mechanics</li><li>Monitors the pending AUSTRAC guidance watch-list</li></ul> | <ul><li>Legal practices only — other tranche 2 sectors and tranche 1 entities fail closed to human review</li><li>Never enrols, lodges or submits anything to AUSTRAC</li><li>Never performs customer due diligence or concludes a matter is suspicious</li><li>Never concludes that privilege applies — privilege calls go to the responsible lawyer</li></ul> |
+| [**Australian Litigation Deadlines**](plugins/australian-litigation-deadlines/README.md) | 6 | <ul><li>Maps described causes of action to candidate limitation periods across all nine jurisdictions with special-regime flags and a conservative earliest-candidate marker</li><li>Computes candidate procedural and tribunal deadlines with a bundled deterministic script over evidence-gated rule tables and verified NSW and Victorian holiday tables</li><li>Maintains a source-linked matter deadline register and verifies the rule tables against official publishers with an evidence fingerprint</li></ul> | <ul><li>Every date is provisional until the responsible lawyer confirms it — the plugin is not a diary or practice-management system</li><li>The model never performs date arithmetic; unexpressible or unverified periods fail closed to identify-only output</li><li>Never determines accrual, discoverability or extension prospects</li><li>Criminal procedure and foreign limitation law are excluded; migration outputs always carry a specialist-review warning</li></ul> |
 
 ## Install with your Agent
 
@@ -33,13 +34,14 @@ If your Agent can manage plugins, copy this request. Then paste it into the
 Agent.
 
 ```text
-Add the plugin marketplace `l0cka/legal-skills`, then install its six
+Add the plugin marketplace `l0cka/legal-skills`, then install its seven
 plugins: `australian-legal-research`, `legal-triage`,
 `australian-privacy-cybersecurity`, `australian-corporations-governance`,
-`australian-ai-governance`, and `australian-aml-ctf` (all `@legal-skills`,
-user scope if supported). Leave other marketplaces and plugins unchanged.
-Verify all six are available and report the result. If you cannot manage
-plugins, give me the exact manual steps and stop.
+`australian-ai-governance`, `australian-aml-ctf`, and
+`australian-litigation-deadlines` (all `@legal-skills`, user scope if
+supported). Leave other marketplaces and plugins unchanged. Verify all
+seven are available and report the result. If you cannot manage plugins,
+give me the exact manual steps and stop.
 ```
 
 ### Install from a terminal
@@ -54,6 +56,7 @@ codex plugin add australian-privacy-cybersecurity@legal-skills
 codex plugin add australian-corporations-governance@legal-skills
 codex plugin add australian-ai-governance@legal-skills
 codex plugin add australian-aml-ctf@legal-skills
+codex plugin add australian-litigation-deadlines@legal-skills
 ```
 
 For Claude, run:
@@ -66,6 +69,7 @@ claude plugin install australian-privacy-cybersecurity@legal-skills --scope user
 claude plugin install australian-corporations-governance@legal-skills --scope user
 claude plugin install australian-ai-governance@legal-skills --scope user
 claude plugin install australian-aml-ctf@legal-skills --scope user
+claude plugin install australian-litigation-deadlines@legal-skills --scope user
 ```
 
 Claude users can also add `l0cka/legal-skills` from the personal plugin
