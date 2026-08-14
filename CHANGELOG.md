@@ -10,6 +10,16 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- Added `australian-corporations-governance` 0.1.0 with five skills:
+  `configure-corporations-governance`, `assess-director-duties-governance`,
+  `prepare-board-decision-record`, `review-corporations-governance-framework`
+  and `maintain-corporations-governance-calendar`. The plugin configures a
+  controlled governance profile, issue-spots decision-process risks, drafts
+  board records, reviews governance frameworks and creates source-linked
+  calendars for companies governed by the *Corporations Act 2001* (Cth). It
+  separates ASX, APRA, ACNC and CATSI overlays, treats consultation drafts as
+  non-operative, and never approves, files, executes or invents corporate action.
+
 - Added `australian-legal-citation` 0.1.0 with one skill,
   `format-aglc4-citations`, ported from the author's private gt-skills
   workbench with firm-specific branding removed. The skill drafts, converts,

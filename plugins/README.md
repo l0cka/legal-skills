@@ -10,5 +10,12 @@ Canonical plugin packages live in this directory.
   cybersecurity issue mapping, suspected data-breach assessment and AI-system
   use-case suitability review using verified legislation, with change-safe APP
   verification and case law excluded.
+- `australian-case-law` — official-publisher verification of Australian case
+  citations, judgments and quoted passages.
+- `australian-legal-citation` — AGLC4 citation drafting, conversion, review and
+  correction with source-verification boundaries.
+- `australian-corporations-governance` — controlled Australian company
+  governance profiles, decision reviews, board records, framework reviews and
+  source-linked calendars.
 
 See [Adding a plugin](../docs/adding-a-plugin.md).

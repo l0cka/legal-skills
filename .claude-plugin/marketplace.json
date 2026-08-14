@@ -42,6 +42,14 @@
       "version": "0.1.0",
       "category": "Productivity",
       "tags": ["australian-law", "legal-citation", "aglc4", "legal-writing", "footnotes"]
+    },
+    {
+      "name": "australian-corporations-governance",
+      "source": "./plugins/australian-corporations-governance",
+      "description": "Configure, assess and document Australian company governance using verified Corporations Act sources and approved organisational controls.",
+      "version": "0.1.0",
+      "category": "Productivity",
+      "tags": ["australian-law", "corporate-governance", "corporations-act", "directors-duties", "board-governance"]
     }
   ]
 }
