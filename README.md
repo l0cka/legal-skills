@@ -20,10 +20,10 @@ The marketplace contains four plugins and thirty-one skills:
 
 | Plugin | Skills | What it does | Boundaries |
 | --- | :---: | --- | --- |
-| [**Australian Legal Research**](plugins/australian-legal-research/README.md) | 16 | Verifies Commonwealth, State, and Territory legislation against each jurisdiction's official publisher, with point-in-time, commencement, currency, and authorisation qualifications. Verifies case citations, judgments, and quoted passages against the issuing courts' official publishers. Drafts, converts, reviews, and corrects AGLC4 citations and bibliographies. | Flags citations absent from a court's own database as fabrication risks and keeps them separate from citations that simply cannot be checked. Never bypasses publisher bot challenges, never invents a missing citation field. Excludes treatment analysis. |
-| [**Legal Triage**](plugins/legal-triage/README.md) | 2 | Configures a centre-approved staff triage profile, prepares provisional enquiry records with limited client information, and escalates urgent or uncertain matters. | Conflict checks stay outside the model. Authorized staff make every consequential decision. |
-| [**Australian Privacy & Cybersecurity**](plugins/australian-privacy-cybersecurity/README.md) | 8 | Maps facts to potentially applicable Australian privacy and cyber legislation. Assesses suspected data breaches and AI-system use cases. Verifies the applicable APP framework, records a framework fingerprint, and detects changes across the decision horizon. | No fixed-list assumption about the framework. Relies on Australian Legal Research for authoritative point-in-time checks. Excludes case law. |
-| [**Australian Corporations Governance**](plugins/australian-corporations-governance/README.md) | 5 | Configures a controlled company governance profile, issue-spots director-duty and conflict controls, prepares draft board-decision records, reviews governance frameworks, and builds source-linked calendars. Separates listed, APRA, ACNC, and CATSI overlays. | Never approves, files, executes, or invents corporate action. |
+| [**Australian Legal Research**](plugins/australian-legal-research/README.md) | 16 | <ul><li>Verifies Commonwealth, State, and Territory legislation against each jurisdiction's official publisher, with point-in-time, commencement, currency, and authorisation qualifications</li><li>Verifies case citations, judgments, and quoted passages against the issuing courts' official publishers</li><li>Drafts, converts, reviews, and corrects AGLC4 citations and bibliographies</li></ul> | <ul><li>Flags citations absent from a court's own database as fabrication risks, kept separate from citations that simply cannot be checked</li><li>Never bypasses publisher bot challenges</li><li>Never invents a missing citation field</li><li>Excludes treatment analysis</li></ul> |
+| [**Legal Triage**](plugins/legal-triage/README.md) | 2 | <ul><li>Configures a centre-approved staff triage profile</li><li>Prepares provisional enquiry records with limited client information</li><li>Escalates urgent or uncertain matters</li></ul> | <ul><li>Conflict checks stay outside the model</li><li>Authorized staff make every consequential decision</li></ul> |
+| [**Australian Privacy & Cybersecurity**](plugins/australian-privacy-cybersecurity/README.md) | 8 | <ul><li>Maps facts to potentially applicable Australian privacy and cyber legislation</li><li>Assesses suspected data breaches and AI-system use cases</li><li>Verifies the applicable APP framework, records a framework fingerprint, and detects changes across the decision horizon</li></ul> | <ul><li>No fixed-list assumption about the framework</li><li>Relies on Australian Legal Research for authoritative point-in-time checks</li><li>Excludes case law</li></ul> |
+| [**Australian Corporations Governance**](plugins/australian-corporations-governance/README.md) | 5 | <ul><li>Configures a controlled company governance profile</li><li>Issue-spots director-duty and conflict controls</li><li>Prepares draft board-decision records</li><li>Reviews governance frameworks and builds source-linked calendars</li><li>Separates listed, APRA, ACNC, and CATSI overlays</li></ul> | <ul><li>Never approves, files, executes, or invents corporate action</li></ul> |
 
 ## Install with your Agent
 
@@ -31,18 +31,13 @@ If your Agent can manage plugins, copy this request. Then paste it into the
 Agent.
 
 ```text
-Install the Legal Skills plugin suite in this environment.
-
-1. Add the marketplace `l0cka/legal-skills`.
-2. Install `australian-legal-research@legal-skills`.
-3. Install `legal-triage@legal-skills`.
-4. Install `australian-privacy-cybersecurity@legal-skills`.
-5. Install `australian-corporations-governance@legal-skills`.
-6. Keep all other marketplaces and plugins unchanged.
-7. Use user scope if this client supports installation scopes.
-8. Verify that all four plugins are available and report the result.
-
-If you cannot manage plugins, give me the exact manual steps and stop.
+Add the plugin marketplace `l0cka/legal-skills`, then install its four
+plugins: `australian-legal-research`, `legal-triage`,
+`australian-privacy-cybersecurity`, and
+`australian-corporations-governance` (all `@legal-skills`, user scope if
+supported). Leave other marketplaces and plugins unchanged. Verify all
+four are available and report the result. If you cannot manage plugins,
+give me the exact manual steps and stop.
 ```
 
 ### Install from a terminal
