@@ -51,18 +51,23 @@ workflow must recheck each source:
    `map-limitation-periods` records candidates only.
 2. **Court rules** — Federal Court Rules 2011 (Cth), High Court Rules 2004
    (Cth), Uniform Civil Procedure Rules 2005 (NSW), Supreme Court (General
-   Civil Procedure) Rules 2015 (Vic) and their counterparts are statutory
-   instruments published on the official legislation sites. Time-computation
-   provisions also sit in each jurisdiction's Interpretation Act.
+   Civil Procedure) Rules 2025 (Vic), Uniform Civil Procedure Rules 1999
+   (Qld) and their counterparts are statutory instruments published on the
+   official legislation sites. Time-computation provisions also sit in each
+   jurisdiction's Interpretation Act — and where the rules are silent, as
+   the Queensland UCPR is, the Interpretation Act governs alone through the
+   jurisdiction's statutory-instruments bridge.
 3. **Tribunals** — review periods sit in enabling Acts (Administrative
    Review Tribunal Act 2024 (Cth), Civil and Administrative Tribunal Act
-   2013 (NSW), Victorian Civil and Administrative Tribunal Act 1998 (Vic))
-   and in the Acts conferring the reviewable decision. Migration deadlines
-   include non-extendable and jurisdictional periods.
-4. **Holidays** — NSW and Victorian public-holiday tables are verified
-   against the official government publications recorded in each table.
-   Local public holidays, non-metropolitan arrangements and
-   not-yet-declared dates are recorded as caveats or uncertain windows.
+   2013 (NSW), Victorian Civil and Administrative Tribunal Act 1998 (Vic),
+   Queensland Civil and Administrative Tribunal Act 2009 (Qld)) and in the
+   Acts conferring the reviewable decision. Migration deadlines include
+   non-extendable and jurisdictional periods.
+4. **Holidays** — NSW, Victorian and Queensland public-holiday tables are
+   verified against the official government publications recorded in each
+   table. Local public holidays, non-metropolitan and district
+   arrangements, part-day holidays and not-yet-declared dates are recorded
+   as caveats or uncertain windows.
 
 ## Source hierarchy
 

@@ -10,6 +10,26 @@ plugin manifests contain their intended release versions.
 
 ### Changed
 
+- Extended `australian-litigation-deadlines` (0.2.0) computed coverage to
+  Queensland: new `qld-courts` and `qcat` computation-rule tables and a
+  `qld` holiday table, all verified against legislation.qld.gov.au and the
+  official Queensland Government holiday pages (checked 2026-08-14).
+  Verified and computing: UCPR 1999 (Qld) r 137(1) notice of intention to
+  defend (the defence attaches to it under r 139(1)(b), with SEPA and
+  42-day outside-Australia displacement warnings) and r 748(a) notice of
+  appeal, reckoned under the Acts Interpretation Act 1954 (Qld) s 38 —
+  the UCPR has no time-reckoning rule of its own; the note to r 7 confirms
+  s 38 governs through the Statutory Instruments Act 1992 s 14(1) and
+  sch 1 bridge — and the QCAT Act 2009 s 33(3) general review period with
+  relevant-day branches, enabling-Act displacement (s 6(7)) and the s 61(3)
+  extension bar recorded as warnings. The Queensland holiday table is
+  Brisbane-area based: the Royal Queensland Show day is included because
+  appeals are filed at Brisbane (r 746(1)), the 96 other district show
+  holidays are a caveat, and the Christmas Eve part-day holiday (6pm to
+  midnight) is not counted as a non-business day. Shipped-table tests
+  cover the Brisbane show-day rollover, the Christmas Eve business-day
+  decision and the QCAT enabling-Act warning.
+
 - Extended the `australian-litigation-deadlines` computation script with
   table-driven excluded-range support so Federal Court time reckoning is
   now expressible: a computation provision may declare recurring month-day

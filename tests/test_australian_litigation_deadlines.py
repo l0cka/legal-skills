@@ -115,7 +115,7 @@ class ShippedTableTests(unittest.TestCase):
     def test_rule_table_entries_are_verified_or_pending_with_notes(self) -> None:
         rules_dir = PLUGIN / "references" / "computation-rules"
         tables = sorted(rules_dir.glob("*.json"))
-        self.assertEqual(len(tables), 6)
+        self.assertEqual(len(tables), 8)
         verified = pending = 0
         for path in tables:
             table = json.loads(path.read_text(encoding="utf-8"))
@@ -175,6 +175,54 @@ class ShippedTableTests(unittest.TestCase):
         self.assertEqual(result["status"], "computed", result)
         self.assertEqual(result["candidate_date"], "2027-01-29")
         self.assertIn("r 16.32", result["citation"])
+
+    def test_shipped_qld_rule_rolls_over_brisbane_show_day(self) -> None:
+        result = ENGINE.compute(
+            {
+                "table_id": "qld-courts",
+                "period_rule_id": "qld-ucpr-noid-after-service",
+                "trigger_date": "2026-07-15",
+            },
+            PLUGIN / "references",
+        )
+        self.assertEqual(result["status"], "computed", result)
+        # 28 days lands on Wednesday 2026-08-12, the Royal Queensland Show
+        # holiday in Brisbane, and rolls to Thursday.
+        self.assertEqual(result["candidate_date"], "2026-08-13")
+        self.assertIn("r 137(1)", result["citation"])
+        self.assertTrue(
+            any("registry" in warning for warning in result["warnings"]), result
+        )
+
+    def test_shipped_qld_christmas_eve_is_a_business_day(self) -> None:
+        result = ENGINE.compute(
+            {
+                "table_id": "qld-courts",
+                "period_rule_id": "qld-ucpr-noid-after-service",
+                "trigger_date": "2026-11-26",
+            },
+            PLUGIN / "references",
+        )
+        self.assertEqual(result["status"], "computed", result)
+        # Christmas Eve is a part-day holiday (6pm to midnight) and is not
+        # a non-business day in the Queensland table.
+        self.assertEqual(result["candidate_date"], "2026-12-24")
+
+    def test_shipped_qcat_rule_computes_with_enabling_act_warning(self) -> None:
+        result = ENGINE.compute(
+            {
+                "table_id": "qcat",
+                "period_rule_id": "qcat-review-application",
+                "trigger_date": "2026-08-14",
+            },
+            PLUGIN / "references",
+        )
+        self.assertEqual(result["status"], "computed", result)
+        self.assertEqual(result["candidate_date"], "2026-09-11")
+        self.assertIn("s 33(3)", result["citation"])
+        self.assertTrue(
+            any("enabling Act" in warning for warning in result["warnings"]), result
+        )
 
     def test_shipped_pending_rule_refuses_to_compute(self) -> None:
         result = ENGINE.compute(
