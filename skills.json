@@ -225,6 +225,15 @@
       "plugin_version": "0.1.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original quote-verification workflow that checks quoted passages only against judgment text obtained from the official court publisher."
+    },
+    {
+      "name": "format-aglc4-citations",
+      "version": "0.1.0",
+      "path": "plugins/australian-legal-citation/skills/format-aglc4-citations",
+      "plugin": "plugins/australian-legal-citation",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original operational distillation of the Australian Guide to Legal Citation, 4th edition, prepared from the published PDF; summarises rules and field templates without reproducing the copyrighted publication."
     }
   ]
 }

@@ -1,0 +1,25 @@
+{
+  "name": "australian-legal-citation",
+  "version": "0.1.0",
+  "description": "Draft, convert, review and correct Australian legal citations and bibliographies in Australian Guide to Legal Citation, 4th edition (AGLC4) format.",
+  "author": {"name": "l0cka", "url": "https://github.com/l0cka"},
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/australian-legal-citation",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": ["australian-law", "legal-citation", "aglc4", "legal-writing", "footnotes"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Australian Legal Citation",
+    "shortDescription": "Draft and check AGLC4 legal citations.",
+    "longDescription": "Drafts, converts, reviews and corrects Australian legal citations and bibliographies under the Australian Guide to Legal Citation, 4th edition, covering footnotes, pinpoints, subsequent references, cases, legislation, secondary sources, treaties, international and foreign materials, quotation treatment and citation audits, without inventing missing citation fields.",
+    "developerName": "l0cka",
+    "category": "Productivity",
+    "capabilities": ["Read"],
+    "websiteURL": "https://github.com/l0cka/legal-skills",
+    "defaultPrompt": [
+      "Convert every citation in this document to AGLC4 format and flag any citation with missing or unresolved fields.",
+      "Audit the footnotes and bibliography in this document against AGLC4."
+    ],
+    "brandColor": "#1C3C63"
+  }
+}
