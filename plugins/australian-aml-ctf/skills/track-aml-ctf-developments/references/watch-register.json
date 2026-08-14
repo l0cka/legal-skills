@@ -1,0 +1,46 @@
+{
+  "registry_version": 1,
+  "as_at": "2026-08-14",
+  "note": "Research snapshot of pending Australian AML/CTF developments affecting legal practices. Every item is a watch item, not an obligation. Confirm each against its primary source at use time.",
+  "watch_items": [
+    {
+      "id": "lpp-ministerial-guidelines",
+      "item": "Ministerial guidelines on legal professional privilege claims under section 242A",
+      "status_at_snapshot": "AUSTRAC's LPP guidance (last updated 1 July 2026) states the Minister for Home Affairs will issue guidelines covering review and challenge of LPP claims, further-information requests, handling of privileged information in searches and dispute resolution; not released at snapshot",
+      "expected_trigger": "Publication of the guidelines by the Minister or AUSTRAC",
+      "primary_sources": [
+        "https://www.austrac.gov.au/industry-and-business/obligations-and-guidance/your-amlctf-program/reporting-us/legal-professional-privilege"
+      ]
+    },
+    {
+      "id": "austrac-professional-services-guidance-waves",
+      "item": "Further AUSTRAC guidance and worked examples for professional designated services",
+      "status_at_snapshot": "AUSTRAC states its reform guidance pages are updated regularly; the professional designated-services guidance and legal profession program starter kit continue to be expanded with examples and sector detail",
+      "expected_trigger": "Updates to the professional designated-services guidance, the legal profession program starter kit or new sector-specific releases",
+      "primary_sources": [
+        "https://www.austrac.gov.au/new-austrac/designated-services-newly-regulated-entities/professional-designated-services",
+        "https://www.austrac.gov.au/industry-and-business/obligations-and-guidance/program-starter-kits/legal-profession-program-starter-kit"
+      ]
+    },
+    {
+      "id": "amlctf-rules-amendments",
+      "item": "Amendments to the Anti-Money Laundering and Counter-Terrorism Financing Rules 2025 and transitional rules",
+      "status_at_snapshot": "The AML/CTF Rules 2025 (F2025L01026) are in force as amended; AUSTRAC maintains transitional rules including staged obligations for some services; further amendment instruments are expected as the reform settles",
+      "expected_trigger": "Registration of amendment or transitional instruments on the Federal Register of Legislation",
+      "primary_sources": [
+        "https://www.austrac.gov.au/about-us/legislation/amlctf-rules",
+        "https://www.legislation.gov.au/F2025L01026/latest/text"
+      ]
+    },
+    {
+      "id": "first-compliance-report-cycle",
+      "item": "First annual compliance report cycle for tranche 2 reporting entities",
+      "status_at_snapshot": "AUSTRAC's obligations summary describes an annual compliance report about how obligations were met the previous calendar year; the first cycle covering tranche 2 entities' 2026 obligations, and its lodgement window, had not been the subject of dedicated tranche 2 guidance located at snapshot",
+      "expected_trigger": "AUSTRAC guidance or AUSTRAC Online notice fixing the first tranche 2 compliance-report window",
+      "primary_sources": [
+        "https://www.austrac.gov.au/amlctf-reform/reforms-guidance/before-you-start/summary-obligations-reform",
+        "https://www.austrac.gov.au/industry-and-business/obligations-and-guidance/your-amlctf-program/reporting-us"
+      ]
+    }
+  ]
+}

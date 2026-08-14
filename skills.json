@@ -333,6 +333,51 @@
       "plugin_version": "0.1.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original primary-source watch-list workflow for pending Australian AI instruments, using public trackers as discovery indexes only."
+    },
+    {
+      "name": "configure-aml-ctf-practice-profile",
+      "version": "0.1.0",
+      "path": "plugins/australian-aml-ctf/skills/configure-aml-ctf-practice-profile",
+      "plugin": "plugins/australian-aml-ctf",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original controlled practice-profile workflow for Australian legal practices under the tranche 2 AML/CTF reforms, based on official AUSTRAC and legislation sources."
+    },
+    {
+      "name": "map-designated-services",
+      "version": "0.1.0",
+      "path": "plugins/australian-aml-ctf/skills/map-designated-services",
+      "plugin": "plugins/australian-aml-ctf",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original table 6 designated-services mapping workflow for legal practices, based on the amended AML/CTF Act and AUSTRAC's professional designated-services guidance."
+    },
+    {
+      "name": "review-aml-ctf-program",
+      "version": "0.1.0",
+      "path": "plugins/australian-aml-ctf/skills/review-aml-ctf-program",
+      "plugin": "plugins/australian-aml-ctf",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original AML/CTF program and CDD framework gap-review workflow, based on the amended AML/CTF Act, the AML/CTF Rules 2025 and AUSTRAC's legal profession program starter kit."
+    },
+    {
+      "name": "map-reporting-obligations",
+      "version": "0.1.0",
+      "path": "plugins/australian-aml-ctf/skills/map-reporting-obligations",
+      "plugin": "plugins/australian-aml-ctf",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original reporting-trigger and legal-professional-privilege mapping workflow, based on the amended AML/CTF Act and AUSTRAC's LPP and reporting guidance."
+    },
+    {
+      "name": "track-aml-ctf-developments",
+      "version": "0.1.0",
+      "path": "plugins/australian-aml-ctf/skills/track-aml-ctf-developments",
+      "plugin": "plugins/australian-aml-ctf",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original primary-source watch-register workflow for pending Australian AML/CTF instruments and AUSTRAC guidance affecting legal practices."
     }
   ]
 }
