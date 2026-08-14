@@ -1,0 +1,4 @@
+interface:
+  display_name: "Track AML/CTF Developments"
+  short_description: "Check the Australian AML/CTF watch register"
+  default_prompt: "Use $track-aml-ctf-developments to check the AML/CTF watch register for developments since the last review."

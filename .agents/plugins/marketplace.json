@@ -49,6 +49,15 @@
       "description": "Map, assess and monitor Australian AI governance obligations using verified official sources, current-versus-superseded guidance labelling and human-review gates.",
       "version": "0.1.0",
       "keywords": ["australian-law", "ai-governance", "responsible-ai", "ai-regulation", "board-governance"]
+    },
+    {
+      "name": "australian-aml-ctf",
+      "source": {"source": "local", "path": "./plugins/australian-aml-ctf"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "category": "Productivity",
+      "description": "Map, review and monitor AML/CTF obligations for Australian legal practices under the tranche 2 reforms using verified official sources, designated-service mapping, legal-professional-privilege handling and human-review gates.",
+      "version": "0.1.0",
+      "keywords": ["australian-law", "aml-ctf", "austrac", "tranche-2", "legal-practice"]
     }
   ]
 }

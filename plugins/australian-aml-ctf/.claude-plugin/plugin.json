@@ -1,0 +1,11 @@
+{
+  "name": "australian-aml-ctf",
+  "version": "0.1.0",
+  "description": "Map, review and monitor AML/CTF obligations for Australian legal practices under the tranche 2 reforms using verified official sources, designated-service mapping, legal-professional-privilege handling and human-review gates.",
+  "author": {"name": "l0cka", "url": "https://github.com/l0cka"},
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/australian-aml-ctf",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": ["australian-law", "aml-ctf", "austrac", "tranche-2", "legal-practice"],
+  "skills": "./skills/"
+}

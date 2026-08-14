@@ -1,0 +1,4 @@
+interface:
+  display_name: "Map Reporting Obligations"
+  short_description: "Map AML/CTF reporting triggers and privilege interactions"
+  default_prompt: "Use $map-reporting-obligations to map which AML/CTF reporting obligations this scenario may engage and how legal professional privilege interacts."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review AML/CTF Program"
+  short_description: "Issue-spot a legal practice's AML/CTF program and CDD design"
+  default_prompt: "Use $review-aml-ctf-program to review this practice's AML/CTF program and customer due diligence framework for gaps against the Act and Rules."

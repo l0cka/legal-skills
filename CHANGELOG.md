@@ -10,6 +10,27 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- Added `australian-aml-ctf` 0.1.0 with five skills:
+  `configure-aml-ctf-practice-profile`, `map-designated-services`,
+  `review-aml-ctf-program`, `map-reporting-obligations` and
+  `track-aml-ctf-developments`. The plugin serves Australian legal practices
+  regulated under the tranche 2 AML/CTF reforms that commenced on
+  1 July 2026. It creates a controlled practice profile, maps described
+  legal services to the table 6 designated services in subsection 6(5B) of
+  the amended AML/CTF Act using AUSTRAC's sufficiently-linked principles and
+  the exemption carve-outs, issue-spots AML/CTF programs and
+  customer-due-diligence frameworks against the Act, the AML/CTF Rules 2025
+  and AUSTRAC's legal profession program starter kit, maps SMR, TTR and
+  compliance-report triggers with the tipping-off offence and the
+  legal-professional-privilege carve-outs and LPP-form mechanics, and checks
+  a primary-source watch register on demand. Legislation verification stays
+  with `australian-legal-research` and CDD-data privacy depth with
+  `australian-privacy-cybersecurity` via `$skill` routing. The plugin covers
+  legal practices only — other tranche 2 sectors fail closed to human
+  review — and never enrols, lodges or submits anything to AUSTRAC, never
+  performs customer due diligence, never concludes a matter is suspicious
+  and never concludes that privilege applies.
+
 - Added `australian-ai-governance` 0.1.0 with six skills:
   `configure-ai-governance-profile`, `map-ai-regulatory-obligations`,
   `assess-board-ai-oversight`, `check-ai-guidance-alignment`,
