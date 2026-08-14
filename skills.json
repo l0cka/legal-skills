@@ -180,6 +180,51 @@
       "plugin_version": "0.3.1",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original current-and-future automated-decision transparency workflow based on verified Commonwealth and Western Australian legislation."
+    },
+    {
+      "name": "route-case-citation",
+      "version": "0.1.0",
+      "path": "plugins/australian-case-law/skills/route-case-citation",
+      "plugin": "plugins/australian-case-law",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original offline citation-grammar router mapping Australian medium-neutral and reported citations to each issuing court's official publisher."
+    },
+    {
+      "name": "verify-hca-judgment",
+      "version": "0.1.0",
+      "path": "plugins/australian-case-law/skills/verify-hca-judgment",
+      "plugin": "plugins/australian-case-law",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original provenance-first verification workflow based on the official High Court of Australia judgments database including CLR volumes 1-100."
+    },
+    {
+      "name": "verify-nsw-judgment",
+      "version": "0.1.0",
+      "path": "plugins/australian-case-law/skills/verify-nsw-judgment",
+      "plugin": "plugins/australian-case-law",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original provenance-first verification workflow based on the official NSW Caselaw website and the Copyright in Judicial Decisions Notice 1995 (NSW) conditions."
+    },
+    {
+      "name": "verify-federal-judgment",
+      "version": "0.1.0",
+      "path": "plugins/australian-case-law/skills/verify-federal-judgment",
+      "plugin": "plugins/australian-case-law",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original provenance-first verification workflow based on the official FCFCOA website and Federal Law Search, with an explicit non-bypass posture for the Federal Court bot challenge."
+    },
+    {
+      "name": "verify-case-quote",
+      "version": "0.1.0",
+      "path": "plugins/australian-case-law/skills/verify-case-quote",
+      "plugin": "plugins/australian-case-law",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original quote-verification workflow that checks quoted passages only against judgment text obtained from the official court publisher."
     }
   ]
 }
