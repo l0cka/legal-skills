@@ -1,0 +1,4 @@
+interface:
+  display_name: "Check AI Guidance Alignment"
+  short_description: "Assess AI documentation against AI6, VAISS and 42001"
+  default_prompt: "Use $check-ai-guidance-alignment to check this AI governance documentation against the current Australian voluntary guidance layers."

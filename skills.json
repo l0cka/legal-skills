@@ -279,6 +279,60 @@
       "plugin_version": "0.1.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original source-linked Australian company governance calendar workflow based on verified official legislation and approved organisation triggers."
+    },
+    {
+      "name": "configure-ai-governance-profile",
+      "version": "0.1.0",
+      "path": "plugins/australian-ai-governance/skills/configure-ai-governance-profile",
+      "plugin": "plugins/australian-ai-governance",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original controlled AI-governance profile workflow recording overlays, government track and governing documents for human approval."
+    },
+    {
+      "name": "map-ai-regulatory-obligations",
+      "version": "0.1.0",
+      "path": "plugins/australian-ai-governance/skills/map-ai-regulatory-obligations",
+      "plugin": "plugins/australian-ai-governance",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original binding-versus-pending Australian AI obligations mapping workflow based on official regulator, legislation and government policy sources."
+    },
+    {
+      "name": "assess-board-ai-oversight",
+      "version": "0.1.0",
+      "path": "plugins/australian-ai-governance/skills/assess-board-ai-oversight",
+      "plugin": "plugins/australian-ai-governance",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original board AI-oversight issue-spotting workflow based on verified Corporations Act provisions, verified case-law leads and labelled regulator guidance."
+    },
+    {
+      "name": "check-ai-guidance-alignment",
+      "version": "0.1.0",
+      "path": "plugins/australian-ai-governance/skills/check-ai-guidance-alignment",
+      "plugin": "plugins/australian-ai-governance",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original guidance-alignment workflow assessing organisational AI documentation against the official AI6 guidance, VAISS guardrail catalogue and AS ISO/IEC 42001 crosswalk."
+    },
+    {
+      "name": "triage-government-ai-use-case",
+      "version": "0.1.0",
+      "path": "plugins/australian-ai-governance/skills/triage-government-ai-use-case",
+      "plugin": "plugins/australian-ai-governance",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original government AI assurance triage workflow built on the national framework and the official Commonwealth, state and territory framework sources."
+    },
+    {
+      "name": "track-ai-regulatory-developments",
+      "version": "0.1.0",
+      "path": "plugins/australian-ai-governance/skills/track-ai-regulatory-developments",
+      "plugin": "plugins/australian-ai-governance",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original primary-source watch-list workflow for pending Australian AI instruments, using public trackers as discovery indexes only."
     }
   ]
 }

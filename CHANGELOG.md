@@ -10,6 +10,24 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- Added `australian-ai-governance` 0.1.0 with six skills:
+  `configure-ai-governance-profile`, `map-ai-regulatory-obligations`,
+  `assess-board-ai-oversight`, `check-ai-guidance-alignment`,
+  `triage-government-ai-use-case` and `track-ai-regulatory-developments`. The
+  plugin creates a controlled AI-governance profile, maps which Australian
+  instruments currently bind an AI use case while flagging pending
+  instruments — including the proposed Australian Standards for AI — as watch
+  items only, issue-spots board and director-duty AI exposure, checks
+  governance documentation against the AI6 guidance with the superseded
+  Voluntary AI Safety Standard as detail catalogue and AS ISO/IEC 42001 as
+  crosswalk, routes government AI use cases to the Commonwealth DTA policy or
+  the eight state and territory assurance frameworks, and checks a
+  primary-source watch register on demand. AI-privacy depth stays with
+  `australian-privacy-cybersecurity` and board-process depth with
+  `australian-corporations-governance` via `$skill` routing. The plugin never
+  asserts pending law as in force, never certifies compliance with any
+  standard and treats trackers such as policai.org as discovery indexes only.
+
 - Added `australian-legal-research` 0.1.0, merging the `australian-legislation`
   0.2.0, `australian-case-law` 0.1.0 and `australian-legal-citation` 0.1.0
   plugins into a single research plugin with all sixteen skills unchanged.

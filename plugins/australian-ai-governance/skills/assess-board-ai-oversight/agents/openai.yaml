@@ -1,0 +1,4 @@
+interface:
+  display_name: "Assess Board AI Oversight"
+  short_description: "Issue-spot director-duty exposure for AI adoption"
+  default_prompt: "Use $assess-board-ai-oversight to assess board-level AI oversight and director-duty exposure for this organisation."

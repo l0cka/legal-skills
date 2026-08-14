@@ -1,0 +1,71 @@
+{
+  "registry_version": 1,
+  "as_at": "2026-08-14",
+  "note": "Research snapshot of pending Australian AI regulatory developments. Every item is a watch item, not an obligation. Confirm each against its primary source at use time; policai.org is a discovery index only.",
+  "watch_items": [
+    {
+      "id": "standards-for-ai-bill",
+      "item": "Legislated 'Australian Standards for AI' and Office of AI",
+      "status_at_snapshot": "Announced 15 July 2026; Office of AI established in PM&C; legislation targeted early 2027; confirmed scope so far limited to large-AI-data-centre requirements and creator-consent copyright protections; National Cabinet's August 2026 consideration unresolved at snapshot",
+      "expected_trigger": "National Cabinet outcome, exposure draft or Bill introduction",
+      "primary_sources": [
+        "https://www.pmc.gov.au/domestic-policy/office-ai",
+        "https://www.pm.gov.au/media/ai-australias-interests"
+      ]
+    },
+    {
+      "id": "oaic-adm-guidance",
+      "item": "OAIC guidance on transparency in automated decision making",
+      "status_at_snapshot": "Consultation issues paper 18 May 2026, submissions closed 15 June 2026; final guidance expected before the APP 1.7-1.8 commencement on 10 December 2026",
+      "expected_trigger": "Publication of final OAIC guidance",
+      "primary_sources": [
+        "https://www.oaic.gov.au/engage-with-us/consultations/consultation-on-guidance-for-transparency-in-automated-decision-making"
+      ]
+    },
+    {
+      "id": "asx-cgc-5th-edition",
+      "item": "ASX Corporate Governance Council Principles and Recommendations, 5th edition",
+      "status_at_snapshot": "Draft in consultation (July 2026); verified negative: the draft contains no AI-specific recommendation, only generic material-risk disclosure; 4th edition (2019) remains in force; 5th edition targeted at financial years commencing on or after 1 July 2027",
+      "expected_trigger": "Final 5th edition publication",
+      "primary_sources": [
+        "https://www.asx.com.au/about/regulation/corporate-governance-principles-and-recommendations"
+      ]
+    },
+    {
+      "id": "kmart-art-review",
+      "item": "ART review of the Kmart facial-recognition determination [2025] AICmr 155",
+      "status_at_snapshot": "Determination 18 September 2025; under ART review; reported hearing timing (early 2027) unverified",
+      "expected_trigger": "ART listing or decision",
+      "primary_sources": [
+        "https://www.oaic.gov.au/news/media-centre/18-kmarts-use-of-facial-recognition-to-tackle-refund-fraud-unlawful,-privacy-commissioner-finds"
+      ]
+    },
+    {
+      "id": "bunnings-appeal-window",
+      "item": "Possible appeal from the ART's Bunnings decision of 4 February 2026",
+      "status_at_snapshot": "ART affirmed APP 1 and APP 5 findings, set aside APP 3.3 under s 16A; OAIC noted an appeal period applies; neutral citation to be located on AustLII before formal citation",
+      "expected_trigger": "Appeal filing or expiry of the appeal window",
+      "primary_sources": [
+        "https://www.oaic.gov.au/news/media-centre/oaic-statement-on-administrative-review-tribunals-bunnings-decision"
+      ]
+    },
+    {
+      "id": "privacy-tranche-2",
+      "item": "Second tranche of Privacy Act reform",
+      "status_at_snapshot": "Government commitment only; Attorney-General confirmed in February 2026 Senate estimates that a tranche 2 Bill is being progressed; no Bill introduced, no timetable",
+      "expected_trigger": "Exposure draft or Bill introduction",
+      "primary_sources": [
+        "https://www.ag.gov.au/rights-and-protections/publications/government-response-privacy-act-review-report"
+      ]
+    },
+    {
+      "id": "esafety-code-phases",
+      "item": "eSafety industry code and standard obligation phases",
+      "status_at_snapshot": "Phase 2 codes registered September 2025 with most obligations from 9 March 2026; later phases and code reviews continue",
+      "expected_trigger": "Registration or commencement notices on the eSafety codes page",
+      "primary_sources": [
+        "https://www.esafety.gov.au/industry/codes"
+      ]
+    }
+  ]
+}
