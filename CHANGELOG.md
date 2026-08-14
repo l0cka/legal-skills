@@ -8,7 +8,80 @@ plugin manifests contain their intended release versions.
 
 ## Unreleased
 
+### Changed
+
+- Extended the `australian-litigation-deadlines` computation script with
+  table-driven excluded-range support so Federal Court time reckoning is
+  now expressible: a computation provision may declare recurring month-day
+  excluded ranges (FCR r 1.61(5), 24 December to 14 January not counted)
+  and a short-period threshold (r 1.61(3), periods of 5 days or less count
+  business days only, so calendar-day rules at or under the threshold fail
+  closed). Both FCR period rules (`fcr-defence-after-service`,
+  `fcr-notice-of-appeal`) flipped to verified and now compute. Where
+  rolling a last day under r 1.61(4) would enter the excluded range, the
+  interaction with r 1.61(5) is legally unsettled, so the script refuses
+  and refers the call to the responsible lawyer rather than choosing a
+  reading. Excluded ranges combine only with calendar-day and business-day
+  periods; months and years fail closed. Eight new fixtures cover periods
+  spanning, inside and clear of the December-January window, the
+  business-day interaction, both refusal gates and the roll-into-window
+  refusal.
+
+- Completed the initial publisher-verification pass over the
+  `australian-litigation-deadlines` computation-rule tables against
+  legislation.gov.au, legislation.nsw.gov.au and legislation.vic.gov.au
+  (checked 2026-08-14). Verified and activated for computation: Acts
+  Interpretation Act 1901 (Cth) s 36, FCR 2011 r 1.61, Interpretation Act
+  1987 (NSW) s 36, UCPR r 1.11, UCPR rr 14.3(1) and 51.16(1)(c), the ART
+  Rules 2024 r 5 general review period (citation corrected from the ART
+  Act), Migration Act ss 477/477A, NCAT r 25(4)(c) (trigger corrected to
+  the later of notification and first giving of reasons), Interpretation of
+  Legislation Act 1984 (Vic) s 44 and the Victorian defence rule.
+  Corrections from verification: the Supreme Court (General Civil
+  Procedure) Rules 2015 (Vic) were replaced by the 2025 Rules
+  (S.R. No. 85/2025) and all Victorian citations now reference the 2025
+  instrument; the Victorian appearance rule stays pending because r 8.04
+  fixes only minimum periods and the operative time is stated in the writ;
+  the Federal Court period rules stay pending because FCR r 1.61(5)
+  excludes 24 December to 14 January from the reckoning, which the script
+  cannot yet express; NSW Interpretation Act s 36 is disapplied to the
+  UCPR by r 1.11(5), so UCPR rules now rely on r 1.11 alone with a
+  registry-closure warning; and the VCAT general 28-day review period was
+  removed entirely — verification found no such period exists in the VCAT
+  Act or Rules, so the enabling enactment always fixes it. Tests updated:
+  verified entries must carry checked/method/version metadata, a shipped
+  verified rule must compute, and shipped pending rules must still refuse.
+
 ### Added
+
+- Added `australian-litigation-deadlines` 0.1.0 with six skills:
+  `configure-litigation-deadline-profile`, `map-limitation-periods`,
+  `compute-procedural-deadlines`, `map-tribunal-review-deadlines`,
+  `maintain-deadline-register` and `verify-deadline-basis`. The plugin
+  serves Australian legal practitioners running civil litigation. Every
+  date it produces is provisional until the responsible lawyer confirms
+  it, and the model never performs date arithmetic: a bundled
+  deterministic script computes candidate dates from evidence-gated JSON
+  computation-rule tables and refuses — returning identify-only output
+  naming the governing rule — whenever an entry is unverified, a holiday
+  table does not cover the computed range or intersects an uncertain
+  window, or a period cannot be expressed. Rule tables ship as
+  pending-verification routing leads that `verify-deadline-basis`
+  activates against official publishers; NSW and Victorian holiday tables
+  ship verified against the official government publications, including
+  an uncertain window for the undeclared 2027 Grand Final Friday holiday.
+  Limitation mapping covers all nine jurisdictions with special-regime
+  flags and a conservative earliest-candidate marker; computed procedural
+  coverage is staged to the federal courts, NSW, Victoria, the ART, NCAT
+  and VCAT; migration outputs always carry a non-extendable and
+  jurisdictional warning with a specialist-review flag. Accrual,
+  discoverability and extension prospects stay with the lawyer; criminal
+  procedure and foreign limitation law are excluded. Act verification
+  routes to `australian-legal-research`; court rules carry their own
+  source method because that plugin excludes them by design. The engine
+  ships with 46 hand-derived and property fixtures covering weekend and
+  holiday rollover, business-day counting across holiday clusters,
+  month-end and leap-year arithmetic and every fail-closed gate.
 
 - Added `australian-aml-ctf` 0.1.0 with five skills:
   `configure-aml-ctf-practice-profile`, `map-designated-services`,

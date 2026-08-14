@@ -1,0 +1,18 @@
+{
+  "table_id": "vcat",
+  "jurisdiction": "VIC",
+  "forums": ["Victorian Civil and Administrative Tribunal"],
+  "holiday_table": "vic",
+  "note": "Verified against legislation.vic.gov.au on 2026-08-14: NO general default review period exists. Neither the Victorian Civil and Administrative Tribunal Act 1998 (Authorised Version No. 145) nor the VCAT Rules 2018 (Authorised Version No. 019) fixes a period for review applications where the enabling enactment is silent — s 67 of the Act deals only with the form and manner of applications, and the phrase '28 days' does not appear in the current Rules. Each enabling enactment fixes its own period (many specify 28 days; planning matters 60 days), and s 126 of the Act permits extensions. The widely repeated general '28 days' derives from VCAT guidance, not legislation. No general period rule ships in this table; add enabling-enactment-specific rules per practice after verifying the conferring provision, in the pending-verification state until verify-deadline-basis confirms them.",
+  "computation_provisions": [
+    {
+      "id": "vic-ila-s44",
+      "citation": "Interpretation of Legislation Act 1984 (Vic) s 44",
+      "role": "time_computation_and_rollover",
+      "summary": "A period reckoned from a particular day excludes that day (s 44(1)) and a period ending on a particular day includes it (s 44(2)); where the time for doing an act expires on a holiday it extends to the next day that is not a holiday (s 44(3)); holiday means a Saturday, Sunday or public holiday appointed under the Public Holidays Act 1993 for the place where the act is to be done (s 44(4)).",
+      "source_url": "https://www.legislation.vic.gov.au/in-force/acts/interpretation-legislation-act-1984/134",
+      "evidence": {"state": "verified", "checked": "2026-08-14", "method": "Firecrawl scrape of the official authorised in-force version.", "version": "Authorised Version No. 134, as at 1 May 2026"}
+    }
+  ],
+  "period_rules": []
+}

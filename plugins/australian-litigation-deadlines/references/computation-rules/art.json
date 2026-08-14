@@ -1,0 +1,47 @@
+{
+  "table_id": "art",
+  "jurisdiction": "Cth",
+  "forums": ["Administrative Review Tribunal"],
+  "holiday_table": "nsw",
+  "note": "Verified against legislation.gov.au on 2026-08-14. Review periods for particular decisions sit in the Act conferring the reviewable decision; entries here cover only the general ART layer, which the conferring Act can displace. Migration-review periods carry mandatory non-extendable and jurisdictional warnings. The holiday_table is a placeholder the profile must confirm for the place where the act is to be done.",
+  "computation_provisions": [
+    {
+      "id": "aia-s36",
+      "citation": "Acts Interpretation Act 1901 (Cth) s 36",
+      "role": "trigger_day_and_weekend_holiday_rollover",
+      "summary": "s 36(1) fixes trigger-day rules by a table (a period beginning 'from' or 'after' a day excludes that day); s 36(2) provides that where the last day for doing a thing is a Saturday, Sunday or holiday, it may be done on the next day that is not; s 36(3) defines holiday to include a public holiday in the relevant place and a day the office or place is closed for the whole day.",
+      "source_url": "https://www.legislation.gov.au/C1901A00002/latest/text",
+      "evidence": {"state": "verified", "checked": "2026-08-14", "method": "Firecrawl scrape of the official current compilation text.", "version": "C2026C00117, Compilation No. 39, 28 March 2026"}
+    }
+  ],
+  "period_rules": [
+    {
+      "id": "art-general-review-application",
+      "label": "Application for review of a reviewable decision (general period, where no other Act fixes one)",
+      "citation": "Administrative Review Tribunal Rules 2024 (Cth) r 5, made for s 18(1) of the Administrative Review Tribunal Act 2024 (Cth)",
+      "trigger": "Day the applicant is given written notice of the decision (r 5(3)); the period formally starts on the day the decision is made",
+      "period": {"length": 28, "unit": "calendar_days"},
+      "rollover": "next_business_day",
+      "applies_provisions": ["aia-s36"],
+      "source_url": "https://www.legislation.gov.au/F2024L01179/latest/text",
+      "warnings": ["Where a statement of reasons is given or obtained, the 28 days runs instead from the statement of reasons (r 5(4)-(6)); for deemed decisions r 6(3) fixes 28 days after the day the decision is taken to be made.", "The Act conferring the reviewable decision may fix a different period; confirm the conferring Act before reliance.", "Extension of time is available under s 19 of the ART Act."],
+      "evidence": {"state": "verified", "checked": "2026-08-14", "method": "Firecrawl scrape of the official current compilation; citation corrected from the ART Act to ART Rules 2024 r 5 and the trigger corrected to the giving of written notice.", "version": "F2026C00659, Compilation No. 3, 1 July 2026"}
+    },
+    {
+      "id": "migration-judicial-review",
+      "label": "Judicial review of a migration decision",
+      "citation": "Migration Act 1958 (Cth) ss 477(1) and 477A(1)",
+      "trigger": "Date of the migration decision, as defined in s 477(3) (for example the day of the ART decision or the date of written notice)",
+      "period": {"length": 35, "unit": "calendar_days"},
+      "rollover": "none",
+      "applies_provisions": [],
+      "source_url": "https://www.legislation.gov.au/C1958A00062/latest/text",
+      "warnings": [
+        "MIGRATION: this period is a jurisdictional time limit; the court may extend it only by order, on written application, where satisfied it is necessary in the interests of the administration of justice (ss 477(2), 477A(2)). Specialist review is required before any reliance.",
+        "'Date of the migration decision' is a defined term (s 477(3)) and the period runs despite notification defects or invalidity (ss 477(4)-(5), 477A(4)-(5)).",
+        "Never treat this entry as current without verification — migration time limits have changed repeatedly."
+      ],
+      "evidence": {"state": "verified", "checked": "2026-08-14", "method": "Firecrawl scrape of the official current compilation text; period, defined trigger and extension mechanism confirmed.", "version": "C2026C00232, Compilation No. 171, 4 June 2026"}
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "table_id": "vic",
+  "jurisdiction": "VIC",
+  "description": "Victorian public holidays as published by Business Victoria (statewide list; metropolitan basis).",
+  "source_url": "https://business.vic.gov.au/business-information/public-holidays",
+  "checked": "2026-08-14",
+  "evidence": {"state": "verified", "method": "Scraped from the official Business Victoria 2026 and 2027 public-holiday pages on the checked date; 2026 page modified 2026-05-21, 2027 page modified 2025-12-02."},
+  "coverage": {"from": "2026-01-01", "to": "2027-12-31"},
+  "holidays": [
+    "2026-01-01", "2026-01-26", "2026-03-09", "2026-04-03", "2026-04-04",
+    "2026-04-05", "2026-04-06", "2026-04-25", "2026-06-08", "2026-09-25",
+    "2026-11-03", "2026-12-25", "2026-12-26", "2026-12-28",
+    "2027-01-01", "2027-01-26", "2027-03-08", "2027-03-26", "2027-03-27",
+    "2027-03-28", "2027-03-29", "2027-04-25", "2027-06-14", "2027-11-02",
+    "2027-12-25", "2027-12-26", "2027-12-27", "2027-12-28"
+  ],
+  "uncertain_windows": [
+    {
+      "from": "2027-09-01",
+      "to": "2027-10-08",
+      "reason": "The Friday before the AFL Grand Final 2027 public holiday has no fixed date until the AFL schedule is released; the publisher states the page will be updated when it is."
+    }
+  ],
+  "caveats": [
+    "Non-metropolitan councils may substitute an alternate local holiday for Melbourne Cup Day; confirm registry-location holidays before relying on a business-day computation.",
+    "ANZAC Day is commemorated on the day it falls with no replacement holiday when it falls on a weekend."
+  ]
+}
