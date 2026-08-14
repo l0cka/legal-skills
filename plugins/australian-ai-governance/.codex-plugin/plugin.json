@@ -1,0 +1,29 @@
+{
+  "name": "australian-ai-governance",
+  "version": "0.1.0",
+  "description": "Map, assess and monitor Australian AI governance obligations using verified official sources, current-versus-superseded guidance labelling and human-review gates.",
+  "author": {"name": "l0cka", "url": "https://github.com/l0cka"},
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/australian-ai-governance",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": ["australian-law", "ai-governance", "responsible-ai", "ai-regulation", "board-governance"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Australian AI Governance",
+    "shortDescription": "Govern Australian AI adoption against verified sources.",
+    "longDescription": "Creates an approved AI-governance profile, maps which Australian instruments currently bind an AI use case, issue-spots board AI-oversight exposure, checks governance documentation against the AI6 guidance and VAISS guardrail catalogue, routes government AI use cases to the right jurisdictional assurance track and monitors pending AI regulatory developments. It verifies official publishers, labels superseded and proposed instruments, and never asserts pending law as in force.",
+    "developerName": "l0cka",
+    "category": "Productivity",
+    "capabilities": ["Read"],
+    "websiteURL": "https://github.com/l0cka/legal-skills",
+    "defaultPrompt": [
+      "Create a controlled AI-governance profile for this organisation before assessing its AI obligations.",
+      "Map which Australian regulatory instruments currently apply to this AI use case, and which are only pending.",
+      "Assess board-level AI oversight and director-duty exposure for this organisation's AI adoption.",
+      "Check this AI governance documentation against the current Australian voluntary guidance layers.",
+      "Route this government AI use case to the applicable assurance framework and escalation threshold.",
+      "Check the AI regulatory watch-list for developments since the last review."
+    ],
+    "brandColor": "#1C3C63"
+  }
+}

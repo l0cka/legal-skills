@@ -3,8 +3,8 @@
 <p align="center">
   <a href="https://github.com/l0cka/legal-skills/actions/workflows/ci.yml"><img alt="CI status" src="https://img.shields.io/github/actions/workflow/status/l0cka/legal-skills/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
   <a href="LICENSE"><img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-1f6f5f?style=flat-square"></a>
-  <img alt="Four plugins" src="https://img.shields.io/badge/plugins-4-31547a?style=flat-square">
-  <img alt="Thirty-one skills" src="https://img.shields.io/badge/skills-31-31547a?style=flat-square">
+  <img alt="Five plugins" src="https://img.shields.io/badge/plugins-5-31547a?style=flat-square">
+  <img alt="Thirty-seven skills" src="https://img.shields.io/badge/skills-37-31547a?style=flat-square">
   <img alt="Claude Cowork and ChatGPT Work" src="https://img.shields.io/badge/works%20with-Claude%20Cowork%20%2B%20ChatGPT%20Work-c59a46?style=flat-square">
 </p>
 
@@ -16,7 +16,7 @@ Each provider has a small, separate manifest.
 
 ## Plugin suite
 
-The marketplace contains four plugins and thirty-one skills:
+The marketplace contains five plugins and thirty-seven skills:
 
 | Plugin | Skills | What it does | Boundaries |
 | --- | :---: | --- | --- |
@@ -24,6 +24,7 @@ The marketplace contains four plugins and thirty-one skills:
 | [**Legal Triage**](plugins/legal-triage/README.md) | 2 | <ul><li>Configures a centre-approved staff triage profile</li><li>Prepares provisional enquiry records with limited client information</li><li>Escalates urgent or uncertain matters</li></ul> | <ul><li>Conflict checks stay outside the model</li><li>Authorized staff make every consequential decision</li></ul> |
 | [**Australian Privacy & Cybersecurity**](plugins/australian-privacy-cybersecurity/README.md) | 8 | <ul><li>Maps facts to potentially applicable Australian privacy and cyber legislation</li><li>Assesses suspected data breaches and AI-system use cases</li><li>Verifies the applicable APP framework, records a framework fingerprint, and detects changes across the decision horizon</li></ul> | <ul><li>No fixed-list assumption about the framework</li><li>Relies on Australian Legal Research for authoritative point-in-time checks</li><li>Excludes case law</li></ul> |
 | [**Australian Corporations Governance**](plugins/australian-corporations-governance/README.md) | 5 | <ul><li>Configures a controlled company governance profile</li><li>Issue-spots director-duty and conflict controls</li><li>Prepares draft board-decision records</li><li>Reviews governance frameworks and builds source-linked calendars</li><li>Separates listed, APRA, ACNC, and CATSI overlays</li></ul> | <ul><li>Never approves, files, executes, or invents corporate action</li></ul> |
+| [**Australian AI Governance**](plugins/australian-ai-governance/README.md) | 6 | <ul><li>Configures a controlled AI-governance profile</li><li>Maps binding versus pending instruments for an AI use case</li><li>Issue-spots board and director-duty AI exposure</li><li>Checks documentation against the AI6, VAISS, and AS ISO/IEC 42001 layers</li><li>Routes government AI use to nine jurisdictional assurance tracks</li><li>Monitors the pending-instrument watch-list</li></ul> | <ul><li>Never asserts pending law as in force</li><li>Labels superseded and voluntary guidance layers</li><li>Routes privacy and board-process depth to the sibling plugins</li><li>Never certifies compliance with any standard</li></ul> |
 
 ## Install with your Agent
 
@@ -31,12 +32,12 @@ If your Agent can manage plugins, copy this request. Then paste it into the
 Agent.
 
 ```text
-Add the plugin marketplace `l0cka/legal-skills`, then install its four
+Add the plugin marketplace `l0cka/legal-skills`, then install its five
 plugins: `australian-legal-research`, `legal-triage`,
-`australian-privacy-cybersecurity`, and
-`australian-corporations-governance` (all `@legal-skills`, user scope if
+`australian-privacy-cybersecurity`, `australian-corporations-governance`,
+and `australian-ai-governance` (all `@legal-skills`, user scope if
 supported). Leave other marketplaces and plugins unchanged. Verify all
-four are available and report the result. If you cannot manage plugins,
+five are available and report the result. If you cannot manage plugins,
 give me the exact manual steps and stop.
 ```
 
@@ -50,6 +51,7 @@ codex plugin add australian-legal-research@legal-skills
 codex plugin add legal-triage@legal-skills
 codex plugin add australian-privacy-cybersecurity@legal-skills
 codex plugin add australian-corporations-governance@legal-skills
+codex plugin add australian-ai-governance@legal-skills
 ```
 
 For Claude, run:
@@ -60,6 +62,7 @@ claude plugin install australian-legal-research@legal-skills --scope user
 claude plugin install legal-triage@legal-skills --scope user
 claude plugin install australian-privacy-cybersecurity@legal-skills --scope user
 claude plugin install australian-corporations-governance@legal-skills --scope user
+claude plugin install australian-ai-governance@legal-skills --scope user
 ```
 
 Claude users can also add `l0cka/legal-skills` from the personal plugin

@@ -1,0 +1,11 @@
+{
+  "name": "australian-ai-governance",
+  "version": "0.1.0",
+  "description": "Map, assess and monitor Australian AI governance obligations using verified official sources, current-versus-superseded guidance labelling and human-review gates.",
+  "author": {"name": "l0cka", "url": "https://github.com/l0cka"},
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/australian-ai-governance",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": ["australian-law", "ai-governance", "responsible-ai", "ai-regulation", "board-governance"],
+  "skills": "./skills/"
+}

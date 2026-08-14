@@ -34,6 +34,14 @@
       "version": "0.1.0",
       "category": "Productivity",
       "tags": ["australian-law", "corporate-governance", "corporations-act", "directors-duties", "board-governance"]
+    },
+    {
+      "name": "australian-ai-governance",
+      "source": "./plugins/australian-ai-governance",
+      "description": "Map, assess and monitor Australian AI governance obligations using verified official sources, current-versus-superseded guidance labelling and human-review gates.",
+      "version": "0.1.0",
+      "category": "Productivity",
+      "tags": ["australian-law", "ai-governance", "responsible-ai", "ai-regulation", "board-governance"]
     }
   ]
 }

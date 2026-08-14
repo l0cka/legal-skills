@@ -1,0 +1,4 @@
+interface:
+  display_name: "Track AI Regulatory Developments"
+  short_description: "Check the Australian AI regulatory watch-list"
+  default_prompt: "Use $track-ai-regulatory-developments to check the AI regulatory watch-list for developments since the last review."
