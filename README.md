@@ -3,8 +3,8 @@
 <p align="center">
   <a href="https://github.com/l0cka/legal-skills/actions/workflows/ci.yml"><img alt="CI status" src="https://img.shields.io/github/actions/workflow/status/l0cka/legal-skills/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
   <a href="LICENSE"><img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-1f6f5f?style=flat-square"></a>
-  <img alt="Four plugins" src="https://img.shields.io/badge/plugins-4-31547a?style=flat-square">
-  <img alt="Twenty-five skills" src="https://img.shields.io/badge/skills-25-31547a?style=flat-square">
+  <img alt="Five plugins" src="https://img.shields.io/badge/plugins-5-31547a?style=flat-square">
+  <img alt="Twenty-six skills" src="https://img.shields.io/badge/skills-26-31547a?style=flat-square">
   <img alt="Claude Cowork and ChatGPT Work" src="https://img.shields.io/badge/works%20with-Claude%20Cowork%20%2B%20ChatGPT%20Work-c59a46?style=flat-square">
 </p>
 
@@ -16,7 +16,7 @@ Each provider has a small, separate manifest.
 
 ## Plugin suite
 
-The marketplace contains four plugins and twenty-five skills:
+The marketplace contains five plugins and twenty-six skills:
 
 - **Australian Legislation** checks Commonwealth, State, and Territory law
   against each jurisdiction's official publisher. It records qualifications
@@ -38,6 +38,12 @@ The marketplace contains four plugins and twenty-five skills:
   citations that cannot be checked from citations the court's own database
   does not contain, and flags the latter as fabrication risks. It never
   bypasses publisher bot challenges. It excludes treatment analysis.
+- **Australian Legal Citation** drafts, converts, reviews and corrects
+  citations and bibliographies under the Australian Guide to Legal Citation,
+  4th edition. It covers footnotes, pinpoints, subsequent references,
+  quotation treatment and citation audits. It never invents a missing
+  citation field, and it treats formatting and source verification as
+  separate findings.
 
 ## Install with your Agent
 
@@ -52,10 +58,11 @@ Install the Legal Skills plugin suite in this environment.
 3. Install `legal-triage@legal-skills`.
 4. Install `australian-privacy-cybersecurity@legal-skills`.
 5. Install `australian-case-law@legal-skills`.
-6. Keep all other marketplaces and plugins unchanged.
-7. Use user scope if this client supports installation scopes.
-8. Verify that all four plugins are available.
-9. Report the actions and the verification result.
+6. Install `australian-legal-citation@legal-skills`.
+7. Keep all other marketplaces and plugins unchanged.
+8. Use user scope if this client supports installation scopes.
+9. Verify that all five plugins are available.
+10. Report the actions and the verification result.
 
 If you cannot manage plugins, give me the exact manual steps and stop.
 ```
@@ -70,6 +77,7 @@ codex plugin add australian-legislation@legal-skills
 codex plugin add legal-triage@legal-skills
 codex plugin add australian-privacy-cybersecurity@legal-skills
 codex plugin add australian-case-law@legal-skills
+codex plugin add australian-legal-citation@legal-skills
 ```
 
 For Claude, run:
@@ -80,6 +88,7 @@ claude plugin install australian-legislation@legal-skills --scope user
 claude plugin install legal-triage@legal-skills --scope user
 claude plugin install australian-privacy-cybersecurity@legal-skills --scope user
 claude plugin install australian-case-law@legal-skills --scope user
+claude plugin install australian-legal-citation@legal-skills --scope user
 ```
 
 Claude users can also add `l0cka/legal-skills` from the personal plugin

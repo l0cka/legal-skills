@@ -10,6 +10,18 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- Added `australian-legal-citation` 0.1.0 with one skill,
+  `format-aglc4-citations`, ported from the author's private gt-skills
+  workbench with firm-specific branding removed. The skill drafts, converts,
+  reviews and corrects citations and bibliographies under the Australian
+  Guide to Legal Citation, 4th edition, covering footnotes, pinpoints,
+  subsequent references, cases, legislation, secondary sources, treaties,
+  international and foreign materials, quotation treatment and citation
+  audits. It ships an operational distillation with a source map recording
+  provenance, chapter routing and missing appendices; it never invents a
+  missing citation field and keeps formatting separate from source
+  verification.
+
 - Added `australian-case-law` 0.1.0 with five skills: `route-case-citation`,
   `verify-hca-judgment`, `verify-nsw-judgment`, `verify-federal-judgment` and
   `verify-case-quote`. The plugin verifies Australian case citations and

@@ -34,6 +34,14 @@
       "version": "0.1.0",
       "category": "Productivity",
       "tags": ["australian-law", "case-law", "citation-verification", "judgments", "legal-research"]
+    },
+    {
+      "name": "australian-legal-citation",
+      "source": "./plugins/australian-legal-citation",
+      "description": "Draft, convert, review and correct Australian legal citations and bibliographies in Australian Guide to Legal Citation, 4th edition (AGLC4) format.",
+      "version": "0.1.0",
+      "category": "Productivity",
+      "tags": ["australian-law", "legal-citation", "aglc4", "legal-writing", "footnotes"]
     }
   ]
 }

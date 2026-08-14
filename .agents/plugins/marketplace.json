@@ -40,6 +40,15 @@
       "description": "Verify Australian case citations, judgments and quoted passages against the official court publishers, flagging citations that cannot be found as fabrication risks.",
       "version": "0.1.0",
       "keywords": ["australian-law", "case-law", "citation-verification", "judgments", "legal-research"]
+    },
+    {
+      "name": "australian-legal-citation",
+      "source": {"source": "local", "path": "./plugins/australian-legal-citation"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "category": "Productivity",
+      "description": "Draft, convert, review and correct Australian legal citations and bibliographies in Australian Guide to Legal Citation, 4th edition (AGLC4) format.",
+      "version": "0.1.0",
+      "keywords": ["australian-law", "legal-citation", "aglc4", "legal-writing", "footnotes"]
     }
   ]
 }
