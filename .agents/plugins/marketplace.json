@@ -49,6 +49,15 @@
       "description": "Draft, convert, review and correct Australian legal citations and bibliographies in Australian Guide to Legal Citation, 4th edition (AGLC4) format.",
       "version": "0.1.0",
       "keywords": ["australian-law", "legal-citation", "aglc4", "legal-writing", "footnotes"]
+    },
+    {
+      "name": "australian-corporations-governance",
+      "source": {"source": "local", "path": "./plugins/australian-corporations-governance"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "category": "Productivity",
+      "description": "Configure, assess and document Australian company governance using verified Corporations Act sources and approved organisational controls.",
+      "version": "0.1.0",
+      "keywords": ["australian-law", "corporate-governance", "corporations-act", "directors-duties", "board-governance"]
     }
   ]
 }

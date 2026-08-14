@@ -1,0 +1,28 @@
+{
+  "name": "australian-corporations-governance",
+  "version": "0.1.0",
+  "description": "Configure, assess and document Australian company governance using verified Corporations Act sources and approved organisational controls.",
+  "author": {"name": "l0cka", "url": "https://github.com/l0cka"},
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/australian-corporations-governance",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": ["australian-law", "corporate-governance", "corporations-act", "directors-duties", "board-governance"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Australian Corporations Governance",
+    "shortDescription": "Govern Australian company decisions and records.",
+    "longDescription": "Creates an approved company-governance profile, issue-spots director-duty and conflict controls, prepares controlled board-decision records, reviews governance frameworks and builds source-linked compliance calendars. It verifies current Commonwealth legislation, separates regulated overlays and never files, approves or invents corporate action.",
+    "developerName": "l0cka",
+    "category": "Productivity",
+    "capabilities": ["Read"],
+    "websiteURL": "https://github.com/l0cka/legal-skills",
+    "defaultPrompt": [
+      "Create a controlled governance profile for this Australian company before assessing its governance arrangements.",
+      "Assess the governance process and director-duty issues for this proposed company decision.",
+      "Prepare draft board decision materials without inventing any meeting event or approval.",
+      "Review this Australian company governance framework against verified requirements and approved documents.",
+      "Build a source-linked governance calendar without submitting or filing anything."
+    ],
+    "brandColor": "#1C3C63"
+  }
+}

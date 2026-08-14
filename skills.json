@@ -234,6 +234,51 @@
       "plugin_version": "0.1.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original operational distillation of the Australian Guide to Legal Citation, 4th edition, prepared from the published PDF; summarises rules and field templates without reproducing the copyrighted publication."
+    },
+    {
+      "name": "configure-corporations-governance",
+      "version": "0.1.0",
+      "path": "plugins/australian-corporations-governance/skills/configure-corporations-governance",
+      "plugin": "plugins/australian-corporations-governance",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original governance-profile workflow informed by the official Federal Register of Legislation and public ASIC, ASX, APRA, ACNC and ORIC materials."
+    },
+    {
+      "name": "assess-director-duties-governance",
+      "version": "0.1.0",
+      "path": "plugins/australian-corporations-governance/skills/assess-director-duties-governance",
+      "plugin": "plugins/australian-corporations-governance",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original Australian director-duty governance issue-spotting workflow based on verified official legislation and organisation-controlled evidence."
+    },
+    {
+      "name": "prepare-board-decision-record",
+      "version": "0.1.0",
+      "path": "plugins/australian-corporations-governance/skills/prepare-board-decision-record",
+      "plugin": "plugins/australian-corporations-governance",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original controlled board-material drafting workflow based on verified official legislation and approved company governance documents."
+    },
+    {
+      "name": "review-corporations-governance-framework",
+      "version": "0.1.0",
+      "path": "plugins/australian-corporations-governance/skills/review-corporations-governance-framework",
+      "plugin": "plugins/australian-corporations-governance",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original evidence-per-finding Australian company governance review workflow informed by official regulator and legislation sources."
+    },
+    {
+      "name": "maintain-corporations-governance-calendar",
+      "version": "0.1.0",
+      "path": "plugins/australian-corporations-governance/skills/maintain-corporations-governance-calendar",
+      "plugin": "plugins/australian-corporations-governance",
+      "plugin_version": "0.1.0",
+      "targets": ["claude-cowork", "chatgpt-work"],
+      "source": "Original source-linked Australian company governance calendar workflow based on verified official legislation and approved organisation triggers."
     }
   ]
 }
