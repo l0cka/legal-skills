@@ -31,18 +31,13 @@ If your Agent can manage plugins, copy this request. Then paste it into the
 Agent.
 
 ```text
-Install the Legal Skills plugin suite in this environment.
-
-1. Add the marketplace `l0cka/legal-skills`.
-2. Install `australian-legal-research@legal-skills`.
-3. Install `legal-triage@legal-skills`.
-4. Install `australian-privacy-cybersecurity@legal-skills`.
-5. Install `australian-corporations-governance@legal-skills`.
-6. Keep all other marketplaces and plugins unchanged.
-7. Use user scope if this client supports installation scopes.
-8. Verify that all four plugins are available and report the result.
-
-If you cannot manage plugins, give me the exact manual steps and stop.
+Add the plugin marketplace `l0cka/legal-skills`, then install its four
+plugins: `australian-legal-research`, `legal-triage`,
+`australian-privacy-cybersecurity`, and
+`australian-corporations-governance` (all `@legal-skills`, user scope if
+supported). Leave other marketplaces and plugins unchanged. Verify all
+four are available and report the result. If you cannot manage plugins,
+give me the exact manual steps and stop.
 ```
 
 ### Install from a terminal
