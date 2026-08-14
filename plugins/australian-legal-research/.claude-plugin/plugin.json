@@ -1,0 +1,11 @@
+{
+  "name": "australian-legal-research",
+  "version": "0.1.0",
+  "description": "Verify Australian legislation, case citations and quoted passages against official publishers, trace Commonwealth legislative change, and draft AGLC4 citations.",
+  "author": {"name": "l0cka", "url": "https://github.com/l0cka"},
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/australian-legal-research",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": ["australian-law", "legislation", "case-law", "citation-verification", "aglc4", "legal-research"],
+  "skills": "./skills/"
+}

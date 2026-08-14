@@ -4,12 +4,12 @@
   "metadata": {"description": "Open-source, governed legal workflow plugins maintained by l0cka."},
   "plugins": [
     {
-      "name": "australian-legislation",
-      "source": "./plugins/australian-legislation",
-      "description": "Verify Commonwealth, State and Territory legislation and trace Commonwealth legislative change against official Australian sources.",
-      "version": "0.2.0",
+      "name": "australian-legal-research",
+      "source": "./plugins/australian-legal-research",
+      "description": "Verify Australian legislation, case citations and quoted passages against official publishers, trace Commonwealth legislative change, and draft AGLC4 citations.",
+      "version": "0.1.0",
       "category": "Productivity",
-      "tags": ["australian-law", "legislation", "point-in-time", "legislative-change", "legal-research"]
+      "tags": ["australian-law", "legislation", "case-law", "citation-verification", "aglc4", "legal-research"]
     },
     {
       "name": "legal-triage",
@@ -26,22 +26,6 @@
       "version": "0.3.1",
       "category": "Productivity",
       "tags": ["australian-law", "privacy", "cybersecurity", "data-breach", "legal-research"]
-    },
-    {
-      "name": "australian-case-law",
-      "source": "./plugins/australian-case-law",
-      "description": "Verify Australian case citations, judgments and quoted passages against the official court publishers, flagging citations that cannot be found as fabrication risks.",
-      "version": "0.1.0",
-      "category": "Productivity",
-      "tags": ["australian-law", "case-law", "citation-verification", "judgments", "legal-research"]
-    },
-    {
-      "name": "australian-legal-citation",
-      "source": "./plugins/australian-legal-citation",
-      "description": "Draft, convert, review and correct Australian legal citations and bibliographies in Australian Guide to Legal Citation, 4th edition (AGLC4) format.",
-      "version": "0.1.0",
-      "category": "Productivity",
-      "tags": ["australian-law", "legal-citation", "aglc4", "legal-writing", "footnotes"]
     },
     {
       "name": "australian-corporations-governance",

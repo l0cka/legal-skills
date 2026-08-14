@@ -4,90 +4,90 @@
     {
       "name": "check-commonwealth-legislation",
       "version": "0.1.1",
-      "path": "plugins/australian-legislation/skills/check-commonwealth-legislation",
-      "plugin": "plugins/australian-legislation",
-      "plugin_version": "0.2.0",
+      "path": "plugins/australian-legal-research/skills/check-commonwealth-legislation",
+      "plugin": "plugins/australian-legal-research",
+      "plugin_version": "0.1.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original provenance-first workflow based on the official Federal Register of Legislation website, help guidance and public API."
     },
     {
       "name": "trace-commonwealth-legislative-change",
       "version": "0.1.1",
-      "path": "plugins/australian-legislation/skills/trace-commonwealth-legislative-change",
-      "plugin": "plugins/australian-legislation",
-      "plugin_version": "0.2.0",
+      "path": "plugins/australian-legal-research/skills/trace-commonwealth-legislative-change",
+      "plugin": "plugins/australian-legal-research",
+      "plugin_version": "0.1.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original provenance-first workflow based on official Federal Register compilations, amendment histories, amending legislation and commencement material."
     },
     {
       "name": "check-nsw-legislation",
       "version": "0.1.1",
-      "path": "plugins/australian-legislation/skills/check-nsw-legislation",
-      "plugin": "plugins/australian-legislation",
-      "plugin_version": "0.2.0",
+      "path": "plugins/australian-legal-research/skills/check-nsw-legislation",
+      "plugin": "plugins/australian-legal-research",
+      "plugin_version": "0.1.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original provenance-first workflow based on the official NSW legislation website and public XML export."
     },
     {
       "name": "check-victoria-legislation",
       "version": "0.2.0",
-      "path": "plugins/australian-legislation/skills/check-victoria-legislation",
-      "plugin": "plugins/australian-legislation",
-      "plugin_version": "0.2.0",
+      "path": "plugins/australian-legal-research/skills/check-victoria-legislation",
+      "plugin": "plugins/australian-legal-research",
+      "plugin_version": "0.1.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original point-in-time verification workflow based on the official Victorian legislation publisher."
     },
     {
       "name": "check-queensland-legislation",
       "version": "0.2.0",
-      "path": "plugins/australian-legislation/skills/check-queensland-legislation",
-      "plugin": "plugins/australian-legislation",
-      "plugin_version": "0.2.0",
+      "path": "plugins/australian-legal-research/skills/check-queensland-legislation",
+      "plugin": "plugins/australian-legal-research",
+      "plugin_version": "0.1.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original point-in-time verification workflow based on the official Queensland legislation publisher."
     },
     {
       "name": "check-western-australia-legislation",
       "version": "0.2.0",
-      "path": "plugins/australian-legislation/skills/check-western-australia-legislation",
-      "plugin": "plugins/australian-legislation",
-      "plugin_version": "0.2.0",
+      "path": "plugins/australian-legal-research/skills/check-western-australia-legislation",
+      "plugin": "plugins/australian-legal-research",
+      "plugin_version": "0.1.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original point-in-time verification workflow based on the official Western Australian legislation publisher."
     },
     {
       "name": "check-south-australia-legislation",
       "version": "0.2.0",
-      "path": "plugins/australian-legislation/skills/check-south-australia-legislation",
-      "plugin": "plugins/australian-legislation",
-      "plugin_version": "0.2.0",
+      "path": "plugins/australian-legal-research/skills/check-south-australia-legislation",
+      "plugin": "plugins/australian-legal-research",
+      "plugin_version": "0.1.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original point-in-time verification workflow based on the official South Australian legislation publisher."
     },
     {
       "name": "check-tasmania-legislation",
       "version": "0.2.0",
-      "path": "plugins/australian-legislation/skills/check-tasmania-legislation",
-      "plugin": "plugins/australian-legislation",
-      "plugin_version": "0.2.0",
+      "path": "plugins/australian-legal-research/skills/check-tasmania-legislation",
+      "plugin": "plugins/australian-legal-research",
+      "plugin_version": "0.1.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original point-in-time verification workflow based on the official Tasmanian legislation publisher."
     },
     {
       "name": "check-act-legislation",
       "version": "0.2.0",
-      "path": "plugins/australian-legislation/skills/check-act-legislation",
-      "plugin": "plugins/australian-legislation",
-      "plugin_version": "0.2.0",
+      "path": "plugins/australian-legal-research/skills/check-act-legislation",
+      "plugin": "plugins/australian-legal-research",
+      "plugin_version": "0.1.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original point-in-time verification workflow based on the official ACT legislation register."
     },
     {
       "name": "check-northern-territory-legislation",
       "version": "0.2.0",
-      "path": "plugins/australian-legislation/skills/check-northern-territory-legislation",
-      "plugin": "plugins/australian-legislation",
-      "plugin_version": "0.2.0",
+      "path": "plugins/australian-legal-research/skills/check-northern-territory-legislation",
+      "plugin": "plugins/australian-legal-research",
+      "plugin_version": "0.1.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original point-in-time verification workflow based on the official Northern Territory legislation database."
     },
@@ -184,8 +184,8 @@
     {
       "name": "route-case-citation",
       "version": "0.1.0",
-      "path": "plugins/australian-case-law/skills/route-case-citation",
-      "plugin": "plugins/australian-case-law",
+      "path": "plugins/australian-legal-research/skills/route-case-citation",
+      "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original offline citation-grammar router mapping Australian medium-neutral and reported citations to each issuing court's official publisher."
@@ -193,8 +193,8 @@
     {
       "name": "verify-hca-judgment",
       "version": "0.1.0",
-      "path": "plugins/australian-case-law/skills/verify-hca-judgment",
-      "plugin": "plugins/australian-case-law",
+      "path": "plugins/australian-legal-research/skills/verify-hca-judgment",
+      "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original provenance-first verification workflow based on the official High Court of Australia judgments database including CLR volumes 1-100."
@@ -202,8 +202,8 @@
     {
       "name": "verify-nsw-judgment",
       "version": "0.1.0",
-      "path": "plugins/australian-case-law/skills/verify-nsw-judgment",
-      "plugin": "plugins/australian-case-law",
+      "path": "plugins/australian-legal-research/skills/verify-nsw-judgment",
+      "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original provenance-first verification workflow based on the official NSW Caselaw website and the Copyright in Judicial Decisions Notice 1995 (NSW) conditions."
@@ -211,8 +211,8 @@
     {
       "name": "verify-federal-judgment",
       "version": "0.1.0",
-      "path": "plugins/australian-case-law/skills/verify-federal-judgment",
-      "plugin": "plugins/australian-case-law",
+      "path": "plugins/australian-legal-research/skills/verify-federal-judgment",
+      "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original provenance-first verification workflow based on the official FCFCOA website and Federal Law Search, with an explicit non-bypass posture for the Federal Court bot challenge."
@@ -220,8 +220,8 @@
     {
       "name": "verify-case-quote",
       "version": "0.1.0",
-      "path": "plugins/australian-case-law/skills/verify-case-quote",
-      "plugin": "plugins/australian-case-law",
+      "path": "plugins/australian-legal-research/skills/verify-case-quote",
+      "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original quote-verification workflow that checks quoted passages only against judgment text obtained from the official court publisher."
@@ -229,8 +229,8 @@
     {
       "name": "format-aglc4-citations",
       "version": "0.1.0",
-      "path": "plugins/australian-legal-citation/skills/format-aglc4-citations",
-      "plugin": "plugins/australian-legal-citation",
+      "path": "plugins/australian-legal-research/skills/format-aglc4-citations",
+      "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
       "targets": ["claude-cowork", "chatgpt-work"],
       "source": "Original operational distillation of the Australian Guide to Legal Citation, 4th edition, prepared from the published PDF; summarises rules and field templates without reproducing the copyrighted publication."

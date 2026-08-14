@@ -38,7 +38,7 @@ defines the minimum organisation-controlled configuration.
 ## Permissions
 
 No MCP server, app, hook or write action is bundled. The workflows may use the
-separately installed Australian Legislation plugin for read-only verification
+separately installed Australian Legal Research plugin for read-only verification
 of Commonwealth legislation. Users decide what documents to provide and where
 to save any approved output.
 
