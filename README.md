@@ -18,34 +18,12 @@ Each provider has a small, separate manifest.
 
 The marketplace contains four plugins and thirty-one skills:
 
-- **Australian Legal Research** checks Commonwealth, State, and Territory law
-  against each jurisdiction's official publisher, recording qualifications
-  about point-in-time status, commencement, currency, and authorisation, and
-  traces changes to Commonwealth legislation. It verifies case citations,
-  judgments and quoted passages against the official publishers of the
-  issuing courts, distinguishes citations that cannot be checked from
-  citations the court's own database does not contain, and flags the latter
-  as fabrication risks without ever bypassing publisher bot challenges. It
-  also drafts, converts, reviews and corrects citations and bibliographies
-  under the Australian Guide to Legal Citation, 4th edition, never inventing
-  a missing citation field and treating formatting and source verification
-  as separate findings. It excludes treatment analysis.
-- **Legal Triage** configures a staff triage profile that the responsible
-  centre has approved. It prepares provisional enquiry records and limits client
-  information. It keeps conflict checks outside the model. It escalates urgent
-  or uncertain matters. Authorized staff make every consequential decision.
-- **Australian Privacy & Cybersecurity** maps facts to potentially applicable
-  Australian privacy and cyber legislation. It assesses suspected data breaches
-  and AI-system use cases. It verifies the applicable APP framework without a
-  fixed-list assumption. It records a framework fingerprint and detects changes
-  across the decision horizon. It uses the Australian Legal Research plugin
-  for authoritative point-in-time checks. It excludes case law.
-- **Australian Corporations Governance** configures a controlled company
-  governance profile, issue-spots director-duty and conflict controls, prepares
-  draft board-decision records, reviews governance frameworks and builds
-  source-linked calendars. It verifies current Commonwealth legislation,
-  separates listed, APRA, ACNC and CATSI overlays, and never approves, files,
-  executes or invents corporate action.
+| Plugin | Skills | What it does | Boundaries |
+| --- | :---: | --- | --- |
+| [**Australian Legal Research**](plugins/australian-legal-research/README.md) | 16 | Verifies Commonwealth, State, and Territory legislation against each jurisdiction's official publisher, with point-in-time, commencement, currency, and authorisation qualifications. Verifies case citations, judgments, and quoted passages against the issuing courts' official publishers. Drafts, converts, reviews, and corrects AGLC4 citations and bibliographies. | Flags citations absent from a court's own database as fabrication risks and keeps them separate from citations that simply cannot be checked. Never bypasses publisher bot challenges, never invents a missing citation field. Excludes treatment analysis. |
+| [**Legal Triage**](plugins/legal-triage/README.md) | 2 | Configures a centre-approved staff triage profile, prepares provisional enquiry records with limited client information, and escalates urgent or uncertain matters. | Conflict checks stay outside the model. Authorized staff make every consequential decision. |
+| [**Australian Privacy & Cybersecurity**](plugins/australian-privacy-cybersecurity/README.md) | 8 | Maps facts to potentially applicable Australian privacy and cyber legislation. Assesses suspected data breaches and AI-system use cases. Verifies the applicable APP framework, records a framework fingerprint, and detects changes across the decision horizon. | No fixed-list assumption about the framework. Relies on Australian Legal Research for authoritative point-in-time checks. Excludes case law. |
+| [**Australian Corporations Governance**](plugins/australian-corporations-governance/README.md) | 5 | Configures a controlled company governance profile, issue-spots director-duty and conflict controls, prepares draft board-decision records, reviews governance frameworks, and builds source-linked calendars. Separates listed, APRA, ACNC, and CATSI overlays. | Never approves, files, executes, or invents corporate action. |
 
 ## Install with your Agent
 
