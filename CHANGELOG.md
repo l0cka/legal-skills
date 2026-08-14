@@ -10,6 +10,15 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- Added `australian-case-law` 0.1.0 with five skills: `route-case-citation`,
+  `verify-hca-judgment`, `verify-nsw-judgment`, `verify-federal-judgment` and
+  `verify-case-quote`. The plugin verifies Australian case citations and
+  quoted passages against the official court publishers, routes each citation
+  by its medium-neutral court identifier, distinguishes `UNVERIFIABLE` from
+  `NOT FOUND`, and never bypasses publisher bot challenges. Includes a shared
+  case-law verification method reference, an offline citation parser and a
+  structural and parser test suite.
+
 - Added a shared point-in-time method reference to `australian-legislation`
   0.2.0 and gave every State and Territory checker the same full workflow,
   result contract and fail-closed sections that the Commonwealth and NSW

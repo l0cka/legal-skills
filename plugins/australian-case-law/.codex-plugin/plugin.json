@@ -1,0 +1,25 @@
+{
+  "name": "australian-case-law",
+  "version": "0.1.0",
+  "description": "Verify Australian case citations, judgments and quoted passages against the official court publishers, flagging citations that cannot be found as fabrication risks.",
+  "author": {"name": "l0cka", "url": "https://github.com/l0cka"},
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/australian-case-law",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": ["australian-law", "case-law", "citation-verification", "judgments", "legal-research"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Australian Case Law",
+    "shortDescription": "Verify Australian case citations against official court publishers.",
+    "longDescription": "Routes Australian case citations to the issuing court's official publisher, verifies High Court, NSW and federal court citations and quoted passages, distinguishes unverifiable citations from citations the court's own database does not contain, and fails closed when official evidence is unavailable.",
+    "developerName": "l0cka",
+    "category": "Productivity",
+    "capabilities": ["Read"],
+    "websiteURL": "https://github.com/l0cka/legal-skills",
+    "defaultPrompt": [
+      "Verify every case citation in this document against the official court publishers and flag any that cannot be found.",
+      "Confirm this quotation appears in the officially published judgment."
+    ],
+    "brandColor": "#1C3C63"
+  }
+}

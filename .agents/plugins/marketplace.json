@@ -31,6 +31,15 @@
       "description": "Route and verify Australian privacy, cyber incident, statutory tort, automated-decision and AI-use-case issues using current legislation.",
       "version": "0.3.1",
       "keywords": ["australian-law", "privacy", "cybersecurity", "data-breach", "legal-research"]
+    },
+    {
+      "name": "australian-case-law",
+      "source": {"source": "local", "path": "./plugins/australian-case-law"},
+      "policy": {"installation": "AVAILABLE", "authentication": "ON_INSTALL"},
+      "category": "Productivity",
+      "description": "Verify Australian case citations, judgments and quoted passages against the official court publishers, flagging citations that cannot be found as fabrication risks.",
+      "version": "0.1.0",
+      "keywords": ["australian-law", "case-law", "citation-verification", "judgments", "legal-research"]
     }
   ]
 }
