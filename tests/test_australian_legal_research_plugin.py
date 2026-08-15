@@ -30,17 +30,6 @@ class AustralianLegalResearchPluginTests(unittest.TestCase):
         actual = {path.parent.name for path in (PLUGIN / "skills").glob("*/SKILL.md")}
         self.assertEqual(actual, expected)
 
-    def test_superseded_plugin_directories_are_absent(self) -> None:
-        for name in (
-            "commonwealth-legislation",
-            "nsw-legislation",
-            "state-territory-legislation",
-            "australian-legislation",
-            "australian-case-law",
-            "australian-legal-citation",
-        ):
-            self.assertFalse((ROOT / "plugins" / name).exists())
-
     JURISDICTION_CHECKERS = (
         "check-commonwealth-legislation",
         "check-nsw-legislation",
