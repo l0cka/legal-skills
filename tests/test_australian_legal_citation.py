@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import json
 import unittest
 from pathlib import Path
 
@@ -61,18 +60,6 @@ class AustralianLegalCitationPluginTests(unittest.TestCase):
         self.assertIn(
             "Treat source verification and citation formatting as separate findings", text
         )
-
-    def test_registry_entry_matches_manifests(self) -> None:
-        registry = json.loads((ROOT / "skills.json").read_text(encoding="utf-8"))
-        entries = [e for e in registry["skills"] if e["name"] == "format-aglc4-citations"]
-        self.assertEqual(len(entries), 1)
-        entry = entries[0]
-        manifest = json.loads(
-            (PLUGIN / ".claude-plugin" / "plugin.json").read_text(encoding="utf-8")
-        )
-        self.assertEqual(entry["plugin"], "plugins/australian-legal-research")
-        self.assertEqual(entry["plugin_version"], manifest["version"])
-        self.assertIn("without reproducing the copyrighted publication", entry["source"])
 
 
 if __name__ == "__main__":

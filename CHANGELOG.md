@@ -252,6 +252,15 @@ plugin manifests contain their intended release versions.
 
 ### Removed
 
+- Removed `scripts/check_readme_counts.py` and its CI step: the README
+  badges are a generated region, so `generate_registry.py --check` already
+  fails the build when they drift, and the satellite script re-ran the full
+  validation a second time per CI job.
+- Removed two vestigial tests (the superseded-plugin-directory tombstone and
+  a single-skill duplicate of the validator's registry checks) and made the
+  shipped computation-rule table count assertion derive from the shipped
+  files instead of a hard-coded 8, so adding a jurisdiction no longer breaks
+  an unrelated test.
 - Removed the unused per-skill `version` field from `skills.json` and its
   validator check; plugin versions remain the only versioned surface.
 - Removed the `australian-legislation`, `australian-case-law` and
