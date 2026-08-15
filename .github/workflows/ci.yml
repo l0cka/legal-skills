@@ -37,6 +37,9 @@ jobs:
       - name: Validate marketplace and plugins
         run: python3 scripts/validate_repository.py
 
+      - name: Check generated files are current
+        run: python3 scripts/generate_registry.py --check
+
       - name: Check README counts
         run: python3 scripts/check_readme_counts.py
 

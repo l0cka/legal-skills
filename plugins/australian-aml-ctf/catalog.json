@@ -1,0 +1,25 @@
+{
+  "displayName": "Australian AML/CTF",
+  "shortDescription": "AML/CTF compliance workflows for Australian legal practices.",
+  "longDescription": "Creates an approved AML/CTF practice profile, maps described legal services to the designated services in table 6 of the amended Anti-Money Laundering and Counter-Terrorism Financing Act 2006, issue-spots a practice's AML/CTF program and customer-due-diligence framework against the Act and the AML/CTF Rules 2025, maps reporting obligations including the tipping-off offence and legal-professional-privilege carve-outs, and monitors pending AUSTRAC guidance. It verifies official publishers, fails closed on unmapped services, and never lodges anything with AUSTRAC or concludes that a matter is suspicious.",
+  "defaultPrompt": [
+    "Create a controlled AML/CTF practice profile for this legal practice before assessing its obligations.",
+    "Map whether the services this practice provides are designated services under table 6 of the AML/CTF Act.",
+    "Review this practice's AML/CTF program and customer due diligence framework for gaps against the Act and Rules.",
+    "Map the AML/CTF reporting obligations and legal-professional-privilege handling for this scenario.",
+    "Check the AML/CTF watch-list for AUSTRAC guidance or Rules developments since the last review."
+  ],
+  "whatItDoes": [
+    "Configures a controlled AML/CTF practice profile for legal practices",
+    "Maps described legal services to the table 6 designated services under the tranche 2 reforms",
+    "Issue-spots AML/CTF programs and customer-due-diligence frameworks against the Act and the AML/CTF Rules 2025",
+    "Maps reporting triggers with legal-professional-privilege carve-outs and LPP-form mechanics",
+    "Monitors the pending AUSTRAC guidance watch-list"
+  ],
+  "boundaries": [
+    "Legal practices only — other tranche 2 sectors and tranche 1 entities fail closed to human review",
+    "Never enrols, lodges or submits anything to AUSTRAC",
+    "Never performs customer due diligence or concludes a matter is suspicious",
+    "Never concludes that privilege applies — privilege calls go to the responsible lawyer"
+  ]
+}

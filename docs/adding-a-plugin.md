@@ -10,8 +10,9 @@ whether any connector or write action is necessary.
 
 ```text
 plugins/<plugin-name>/
-├── .codex-plugin/plugin.json
-├── .claude-plugin/plugin.json
+├── .claude-plugin/plugin.json    # canonical: name, version, description, keywords
+├── catalog.json                  # canonical: presentation metadata
+├── .codex-plugin/plugin.json     # generated - do not edit
 ├── README.md
 └── skills/
     └── <skill-name>/
@@ -38,27 +39,47 @@ interface:
   default_prompt: "Use $check-nsw-legislation to verify this NSW law and identify the applicable version."
 ```
 
-## 3. Add provider wrappers
+## 3. Write the canonical sources
 
-Use the same plugin name, semantic version, description, author, repository,
-licence, keywords, and `./skills/` path in both manifests. Add presentation
-metadata only where the provider supports it. Declare apps, MCP servers, hooks,
-or other components only when the corresponding files exist.
+Two hand-edited files describe the plugin; everything else is generated.
 
-## 4. Register the package
+`.claude-plugin/plugin.json` carries the plugin's `name`, `version`,
+`description`, and `keywords`. Author, homepage, repository, licence, and the
+`./skills/` path are stamped by the generator.
 
-Add the plugin to:
+`catalog.json` carries the presentation metadata used by the ChatGPT Work
+interface and the root README table:
 
-- `.agents/plugins/marketplace.json`
-- `.claude-plugin/marketplace.json`
+```json
+{
+  "displayName": "Australian AML/CTF",
+  "shortDescription": "One line shown in listings.",
+  "longDescription": "Full store prose.",
+  "defaultPrompt": ["One suggested prompt per workflow."],
+  "whatItDoes": ["README table bullet."],
+  "boundaries": ["README table bullet."]
+}
+```
 
-Add every skill to `skills.json`. The owning plugin and plugin version must
-match the manifests.
+## 4. Generate the distribution surfaces
+
+```bash
+python3 scripts/generate_registry.py
+```
+
+This regenerates both marketplace catalogs, the `.codex-plugin/plugin.json`
+wrapper, the root README badges, counts, plugin table and install blocks,
+`plugins/README.md`, and `skills.json`. Never edit those files by hand.
+
+A new skill is scaffolded into `skills.json` with an empty `source`. Fill in
+the provenance sentence — it is the one registry field only a human can write,
+and validation fails until it is present.
 
 ## 5. Validate
 
 ```bash
 python3 scripts/validate_repository.py
+python3 scripts/generate_registry.py --check
 python3 -m unittest discover -s tests
 git diff --check
 ```

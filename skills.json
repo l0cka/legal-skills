@@ -3,7 +3,6 @@
   "skills": [
     {
       "name": "assess-board-ai-oversight",
-      "version": "0.1.0",
       "path": "plugins/australian-ai-governance/skills/assess-board-ai-oversight",
       "plugin": "plugins/australian-ai-governance",
       "plugin_version": "0.1.0",
@@ -15,7 +14,6 @@
     },
     {
       "name": "check-ai-guidance-alignment",
-      "version": "0.1.0",
       "path": "plugins/australian-ai-governance/skills/check-ai-guidance-alignment",
       "plugin": "plugins/australian-ai-governance",
       "plugin_version": "0.1.0",
@@ -27,7 +25,6 @@
     },
     {
       "name": "configure-ai-governance-profile",
-      "version": "0.1.0",
       "path": "plugins/australian-ai-governance/skills/configure-ai-governance-profile",
       "plugin": "plugins/australian-ai-governance",
       "plugin_version": "0.1.0",
@@ -39,7 +36,6 @@
     },
     {
       "name": "map-ai-regulatory-obligations",
-      "version": "0.1.0",
       "path": "plugins/australian-ai-governance/skills/map-ai-regulatory-obligations",
       "plugin": "plugins/australian-ai-governance",
       "plugin_version": "0.1.0",
@@ -51,7 +47,6 @@
     },
     {
       "name": "track-ai-regulatory-developments",
-      "version": "0.1.0",
       "path": "plugins/australian-ai-governance/skills/track-ai-regulatory-developments",
       "plugin": "plugins/australian-ai-governance",
       "plugin_version": "0.1.0",
@@ -63,7 +58,6 @@
     },
     {
       "name": "triage-government-ai-use-case",
-      "version": "0.1.0",
       "path": "plugins/australian-ai-governance/skills/triage-government-ai-use-case",
       "plugin": "plugins/australian-ai-governance",
       "plugin_version": "0.1.0",
@@ -75,7 +69,6 @@
     },
     {
       "name": "configure-aml-ctf-practice-profile",
-      "version": "0.1.0",
       "path": "plugins/australian-aml-ctf/skills/configure-aml-ctf-practice-profile",
       "plugin": "plugins/australian-aml-ctf",
       "plugin_version": "0.1.0",
@@ -87,7 +80,6 @@
     },
     {
       "name": "map-designated-services",
-      "version": "0.1.0",
       "path": "plugins/australian-aml-ctf/skills/map-designated-services",
       "plugin": "plugins/australian-aml-ctf",
       "plugin_version": "0.1.0",
@@ -99,7 +91,6 @@
     },
     {
       "name": "map-reporting-obligations",
-      "version": "0.1.0",
       "path": "plugins/australian-aml-ctf/skills/map-reporting-obligations",
       "plugin": "plugins/australian-aml-ctf",
       "plugin_version": "0.1.0",
@@ -111,7 +102,6 @@
     },
     {
       "name": "review-aml-ctf-program",
-      "version": "0.1.0",
       "path": "plugins/australian-aml-ctf/skills/review-aml-ctf-program",
       "plugin": "plugins/australian-aml-ctf",
       "plugin_version": "0.1.0",
@@ -123,7 +113,6 @@
     },
     {
       "name": "track-aml-ctf-developments",
-      "version": "0.1.0",
       "path": "plugins/australian-aml-ctf/skills/track-aml-ctf-developments",
       "plugin": "plugins/australian-aml-ctf",
       "plugin_version": "0.1.0",
@@ -135,7 +124,6 @@
     },
     {
       "name": "assess-director-duties-governance",
-      "version": "0.1.0",
       "path": "plugins/australian-corporations-governance/skills/assess-director-duties-governance",
       "plugin": "plugins/australian-corporations-governance",
       "plugin_version": "0.1.0",
@@ -147,7 +135,6 @@
     },
     {
       "name": "configure-corporations-governance",
-      "version": "0.1.0",
       "path": "plugins/australian-corporations-governance/skills/configure-corporations-governance",
       "plugin": "plugins/australian-corporations-governance",
       "plugin_version": "0.1.0",
@@ -159,7 +146,6 @@
     },
     {
       "name": "maintain-corporations-governance-calendar",
-      "version": "0.1.0",
       "path": "plugins/australian-corporations-governance/skills/maintain-corporations-governance-calendar",
       "plugin": "plugins/australian-corporations-governance",
       "plugin_version": "0.1.0",
@@ -171,7 +157,6 @@
     },
     {
       "name": "prepare-board-decision-record",
-      "version": "0.1.0",
       "path": "plugins/australian-corporations-governance/skills/prepare-board-decision-record",
       "plugin": "plugins/australian-corporations-governance",
       "plugin_version": "0.1.0",
@@ -183,7 +168,6 @@
     },
     {
       "name": "review-corporations-governance-framework",
-      "version": "0.1.0",
       "path": "plugins/australian-corporations-governance/skills/review-corporations-governance-framework",
       "plugin": "plugins/australian-corporations-governance",
       "plugin_version": "0.1.0",
@@ -195,7 +179,6 @@
     },
     {
       "name": "check-act-legislation",
-      "version": "0.2.0",
       "path": "plugins/australian-legal-research/skills/check-act-legislation",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
@@ -207,7 +190,6 @@
     },
     {
       "name": "check-commonwealth-legislation",
-      "version": "0.1.1",
       "path": "plugins/australian-legal-research/skills/check-commonwealth-legislation",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
@@ -219,7 +201,6 @@
     },
     {
       "name": "check-northern-territory-legislation",
-      "version": "0.2.0",
       "path": "plugins/australian-legal-research/skills/check-northern-territory-legislation",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
@@ -231,7 +212,6 @@
     },
     {
       "name": "check-nsw-legislation",
-      "version": "0.1.1",
       "path": "plugins/australian-legal-research/skills/check-nsw-legislation",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
@@ -243,7 +223,6 @@
     },
     {
       "name": "check-queensland-legislation",
-      "version": "0.2.0",
       "path": "plugins/australian-legal-research/skills/check-queensland-legislation",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
@@ -255,7 +234,6 @@
     },
     {
       "name": "check-south-australia-legislation",
-      "version": "0.2.0",
       "path": "plugins/australian-legal-research/skills/check-south-australia-legislation",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
@@ -267,7 +245,6 @@
     },
     {
       "name": "check-tasmania-legislation",
-      "version": "0.2.0",
       "path": "plugins/australian-legal-research/skills/check-tasmania-legislation",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
@@ -279,7 +256,6 @@
     },
     {
       "name": "check-victoria-legislation",
-      "version": "0.2.0",
       "path": "plugins/australian-legal-research/skills/check-victoria-legislation",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
@@ -291,7 +267,6 @@
     },
     {
       "name": "check-western-australia-legislation",
-      "version": "0.2.0",
       "path": "plugins/australian-legal-research/skills/check-western-australia-legislation",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
@@ -303,7 +278,6 @@
     },
     {
       "name": "format-aglc4-citations",
-      "version": "0.1.0",
       "path": "plugins/australian-legal-research/skills/format-aglc4-citations",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
@@ -315,7 +289,6 @@
     },
     {
       "name": "route-case-citation",
-      "version": "0.1.0",
       "path": "plugins/australian-legal-research/skills/route-case-citation",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
@@ -327,7 +300,6 @@
     },
     {
       "name": "trace-commonwealth-legislative-change",
-      "version": "0.1.1",
       "path": "plugins/australian-legal-research/skills/trace-commonwealth-legislative-change",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
@@ -339,7 +311,6 @@
     },
     {
       "name": "verify-case-quote",
-      "version": "0.1.0",
       "path": "plugins/australian-legal-research/skills/verify-case-quote",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
@@ -351,7 +322,6 @@
     },
     {
       "name": "verify-federal-judgment",
-      "version": "0.1.0",
       "path": "plugins/australian-legal-research/skills/verify-federal-judgment",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
@@ -363,7 +333,6 @@
     },
     {
       "name": "verify-hca-judgment",
-      "version": "0.1.0",
       "path": "plugins/australian-legal-research/skills/verify-hca-judgment",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
@@ -375,7 +344,6 @@
     },
     {
       "name": "verify-nsw-judgment",
-      "version": "0.1.0",
       "path": "plugins/australian-legal-research/skills/verify-nsw-judgment",
       "plugin": "plugins/australian-legal-research",
       "plugin_version": "0.1.0",
@@ -387,7 +355,6 @@
     },
     {
       "name": "compute-procedural-deadlines",
-      "version": "0.2.0",
       "path": "plugins/australian-litigation-deadlines/skills/compute-procedural-deadlines",
       "plugin": "plugins/australian-litigation-deadlines",
       "plugin_version": "0.2.0",
@@ -399,7 +366,6 @@
     },
     {
       "name": "configure-litigation-deadline-profile",
-      "version": "0.1.0",
       "path": "plugins/australian-litigation-deadlines/skills/configure-litigation-deadline-profile",
       "plugin": "plugins/australian-litigation-deadlines",
       "plugin_version": "0.2.0",
@@ -411,7 +377,6 @@
     },
     {
       "name": "maintain-deadline-register",
-      "version": "0.1.0",
       "path": "plugins/australian-litigation-deadlines/skills/maintain-deadline-register",
       "plugin": "plugins/australian-litigation-deadlines",
       "plugin_version": "0.2.0",
@@ -423,7 +388,6 @@
     },
     {
       "name": "map-limitation-periods",
-      "version": "0.1.0",
       "path": "plugins/australian-litigation-deadlines/skills/map-limitation-periods",
       "plugin": "plugins/australian-litigation-deadlines",
       "plugin_version": "0.2.0",
@@ -435,7 +399,6 @@
     },
     {
       "name": "map-tribunal-review-deadlines",
-      "version": "0.2.0",
       "path": "plugins/australian-litigation-deadlines/skills/map-tribunal-review-deadlines",
       "plugin": "plugins/australian-litigation-deadlines",
       "plugin_version": "0.2.0",
@@ -447,7 +410,6 @@
     },
     {
       "name": "verify-deadline-basis",
-      "version": "0.1.0",
       "path": "plugins/australian-litigation-deadlines/skills/verify-deadline-basis",
       "plugin": "plugins/australian-litigation-deadlines",
       "plugin_version": "0.2.0",
@@ -459,7 +421,6 @@
     },
     {
       "name": "assess-ai-privacy-cybersecurity-use-case",
-      "version": "0.3.0",
       "path": "plugins/australian-privacy-cybersecurity/skills/assess-ai-privacy-cybersecurity-use-case",
       "plugin": "plugins/australian-privacy-cybersecurity",
       "plugin_version": "0.3.1",
@@ -471,7 +432,6 @@
     },
     {
       "name": "assess-australian-data-breach",
-      "version": "0.3.1",
       "path": "plugins/australian-privacy-cybersecurity/skills/assess-australian-data-breach",
       "plugin": "plugins/australian-privacy-cybersecurity",
       "plugin_version": "0.3.1",
@@ -483,7 +443,6 @@
     },
     {
       "name": "assess-australian-privacy-issues",
-      "version": "0.3.0",
       "path": "plugins/australian-privacy-cybersecurity/skills/assess-australian-privacy-issues",
       "plugin": "plugins/australian-privacy-cybersecurity",
       "plugin_version": "0.3.1",
@@ -495,7 +454,6 @@
     },
     {
       "name": "assess-automated-decision-transparency",
-      "version": "0.1.0",
       "path": "plugins/australian-privacy-cybersecurity/skills/assess-automated-decision-transparency",
       "plugin": "plugins/australian-privacy-cybersecurity",
       "plugin_version": "0.3.1",
@@ -507,7 +465,6 @@
     },
     {
       "name": "assess-statutory-privacy-tort",
-      "version": "0.1.0",
       "path": "plugins/australian-privacy-cybersecurity/skills/assess-statutory-privacy-tort",
       "plugin": "plugins/australian-privacy-cybersecurity",
       "plugin_version": "0.3.1",
@@ -519,7 +476,6 @@
     },
     {
       "name": "check-australian-privacy-principles",
-      "version": "0.2.1",
       "path": "plugins/australian-privacy-cybersecurity/skills/check-australian-privacy-principles",
       "plugin": "plugins/australian-privacy-cybersecurity",
       "plugin_version": "0.3.1",
@@ -531,7 +487,6 @@
     },
     {
       "name": "map-australian-cyber-incident-obligations",
-      "version": "0.1.0",
       "path": "plugins/australian-privacy-cybersecurity/skills/map-australian-cyber-incident-obligations",
       "plugin": "plugins/australian-privacy-cybersecurity",
       "plugin_version": "0.3.1",
@@ -543,7 +498,6 @@
     },
     {
       "name": "route-australian-privacy-jurisdiction",
-      "version": "0.1.0",
       "path": "plugins/australian-privacy-cybersecurity/skills/route-australian-privacy-jurisdiction",
       "plugin": "plugins/australian-privacy-cybersecurity",
       "plugin_version": "0.3.1",
@@ -555,7 +509,6 @@
     },
     {
       "name": "configure-legal-triage",
-      "version": "0.1.1",
       "path": "plugins/legal-triage/skills/configure-legal-triage",
       "plugin": "plugins/legal-triage",
       "plugin_version": "0.1.1",
@@ -567,7 +520,6 @@
     },
     {
       "name": "triage-legal-enquiry",
-      "version": "0.1.1",
       "path": "plugins/legal-triage/skills/triage-legal-enquiry",
       "plugin": "plugins/legal-triage",
       "plugin_version": "0.1.1",

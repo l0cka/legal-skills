@@ -1,0 +1,21 @@
+{
+  "displayName": "Australian Legal Research",
+  "shortDescription": "Verify Australian legislation and case law, and draft AGLC4 citations.",
+  "longDescription": "Checks Commonwealth, State and Territory legislation against each jurisdiction's official publisher, traces Commonwealth legislative change, verifies case citations and quoted passages at the issuing court's official publisher, and drafts, converts, reviews and corrects citations under the Australian Guide to Legal Citation, 4th edition. Every verification fails closed when authoritative source or currency evidence is incomplete, and no citation field is ever invented.",
+  "defaultPrompt": [
+    "Verify this Australian legislative provision against the applicable official point-in-time source.",
+    "Verify every case citation in this document against the official court publishers and flag any that cannot be found.",
+    "Convert every citation in this document to AGLC4 format and flag any citation with missing or unresolved fields."
+  ],
+  "whatItDoes": [
+    "Verifies Commonwealth, State, and Territory legislation against each jurisdiction's official publisher, with point-in-time, commencement, currency, and authorisation qualifications",
+    "Verifies case citations, judgments, and quoted passages against the issuing courts' official publishers",
+    "Drafts, converts, reviews, and corrects AGLC4 citations and bibliographies"
+  ],
+  "boundaries": [
+    "Flags citations absent from a court's own database as fabrication risks, kept separate from citations that simply cannot be checked",
+    "Never bypasses publisher bot challenges",
+    "Never invents a missing citation field",
+    "Excludes treatment analysis"
+  ]
+}
