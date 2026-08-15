@@ -10,6 +10,14 @@ plugin manifests contain their intended release versions.
 
 ### Changed
 
+- Made the evidence-states block of the four `*-source-and-control-method.md`
+  documents a generated region: canonical bullet text lives in
+  `scripts/generate_registry.py`, per-plugin qualification lists are declared
+  as `evidenceStates` in `catalog.json`, and the migration preserved the
+  current wording of every document word for word. The shared convention —
+  the two status vocabularies, the generated block, the invariant sentences
+  now asserted by `tests/test_plugin_structure.py` — is recorded in
+  `docs/source-and-control-method-core.md`.
 - Consolidated the four per-plugin copies of the structural test suite
   (expected skills, workflow/result-contract/fail-closed headings, READY
   status vocabulary, shared-method references) into one parametrized

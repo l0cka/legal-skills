@@ -139,6 +139,20 @@ def validate_plugin_catalog(root: Path, plugin_name: str) -> None:
             or not all(isinstance(item, str) and item.strip() for item in value)
         ):
             raise ValidationError(f"{relative}.{field}: required non-empty array of strings")
+    states = catalog.get("evidenceStates")
+    if states is not None:
+        if not isinstance(states, dict):
+            raise ValidationError(f"{relative}.evidenceStates: expected an object")
+        for key in ("qualifications", "unverifiable"):
+            value = states.get(key)
+            if (
+                not isinstance(value, list)
+                or not value
+                or not all(isinstance(item, str) and item.strip() for item in value)
+            ):
+                raise ValidationError(
+                    f"{relative}.evidenceStates.{key}: required non-empty array of strings"
+                )
 
 
 def validate_manifest(root: Path, plugin_name: str, provider: str) -> dict[str, Any]:

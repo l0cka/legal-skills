@@ -21,5 +21,18 @@
     "Never enrols, lodges or submits anything to AUSTRAC",
     "Never performs customer due diligence or concludes a matter is suspicious",
     "Never concludes that privilege applies — privilege calls go to the responsible lawyer"
-  ]
+  ],
+  "evidenceStates": {
+    "qualifications": [
+      "commencement",
+      "amendment",
+      "application",
+      "document-status"
+    ],
+    "unverifiable": [
+      "official source",
+      "applicable version",
+      "decisive fact"
+    ]
+  }
 }

@@ -46,6 +46,25 @@ TARGETS_BADGE = (
 MANIFEST_DATA_FIELDS = ("name", "version", "description", "keywords")
 CATALOG_STRING_FIELDS = ("displayName", "shortDescription", "longDescription")
 CATALOG_LIST_FIELDS = ("defaultPrompt", "whatItDoes", "boundaries")
+EVIDENCE_STATE_KEYS = ("qualifications", "unverifiable")
+
+# Canonical evidence-state contract, stamped into each declaring plugin's
+# source-and-control method document. The convention is documented in
+# docs/source-and-control-method-core.md; per-plugin qualification lists are
+# declared in catalog.json under "evidenceStates".
+EVIDENCE_STATES_HEADER = "Assign one state to every material proposition:"
+EVIDENCE_STATE_VERIFIED = (
+    "`VERIFIED` — the exact current or point-in-time official source and "
+    "relevant text were checked in this session;"
+)
+EVIDENCE_STATE_QUALIFIED = (
+    "`VERIFIED WITH QUALIFICATIONS` — the source was checked but a "
+    "{qualifications} qualification remains;"
+)
+EVIDENCE_STATE_UNVERIFIED = "`NOT VERIFIED` — the {unverifiable} could not be confirmed; or"
+EVIDENCE_STATE_OUTSIDE = (
+    "`OUTSIDE SCOPE` — the issue needs another legal or regulatory workflow."
+)
 
 ONES = (
     "zero one two three four five six seven eight nine ten eleven twelve "
@@ -119,6 +138,29 @@ def load_plugin(plugin_dir: Path) -> dict[str, Any]:
                 f"{plugin_dir.name}/catalog.json: field {field!r} must be a "
                 "non-empty array of strings"
             )
+    states = catalog.get("evidenceStates")
+    method_path = None
+    if states is not None:
+        for key in EVIDENCE_STATE_KEYS:
+            value = states.get(key) if isinstance(states, dict) else None
+            if (
+                not isinstance(value, list)
+                or not value
+                or not all(isinstance(item, str) and item.strip() for item in value)
+            ):
+                raise GenerationError(
+                    f"{plugin_dir.name}/catalog.json: evidenceStates.{key} must be "
+                    "a non-empty array of strings"
+                )
+        methods = sorted(
+            (plugin_dir / "references").glob("*source-and-control-method.md")
+        )
+        if len(methods) != 1:
+            raise GenerationError(
+                f"{plugin_dir.name}: evidenceStates declared but found "
+                f"{len(methods)} *source-and-control-method.md file(s) under references/"
+            )
+        method_path = methods[0]
     skills = sorted(
         path.parent.name
         for path in (plugin_dir / "skills").glob("*/SKILL.md")
@@ -132,6 +174,7 @@ def load_plugin(plugin_dir: Path) -> dict[str, Any]:
         "keywords": manifest["keywords"],
         "catalog": catalog,
         "skills": skills,
+        "method_path": method_path,
     }
 
 
@@ -348,6 +391,42 @@ def install_claude_region(plugins: list[dict[str, Any]]) -> str:
     return "```bash\n" + "\n".join(lines) + "\n```"
 
 
+def joined(items: list[str]) -> str:
+    if len(items) == 1:
+        return items[0]
+    return ", ".join(items[:-1]) + " or " + items[-1]
+
+
+def evidence_states_region(states: dict[str, Any]) -> str:
+    bullets = (
+        EVIDENCE_STATE_VERIFIED,
+        EVIDENCE_STATE_QUALIFIED.format(
+            qualifications=joined(states["qualifications"])
+        ),
+        EVIDENCE_STATE_UNVERIFIED.format(unverifiable=joined(states["unverifiable"])),
+        EVIDENCE_STATE_OUTSIDE,
+    )
+    lines = [EVIDENCE_STATES_HEADER, ""]
+    for bullet in bullets:
+        lines.extend(
+            textwrap.wrap(
+                f"- {bullet}",
+                width=78,
+                subsequent_indent="  ",
+                break_on_hyphens=False,
+                break_long_words=False,
+            )
+        )
+    return "\n".join(lines)
+
+
+def method_document(plugin: dict[str, Any]) -> str:
+    path = plugin["method_path"]
+    text = path.read_text(encoding="utf-8")
+    region = evidence_states_region(plugin["catalog"]["evidenceStates"])
+    return replace_region(text, "evidence-states", region, path.name)
+
+
 def replace_region(text: str, region: str, content: str, path: str) -> str:
     begin = f"<!-- generated:{region} -->"
     end = f"<!-- end:{region} -->"
@@ -385,6 +464,8 @@ def generate(root: Path = ROOT) -> dict[Path, str]:
         plugin_dir = root / "plugins" / plugin["name"]
         outputs[plugin_dir / ".claude-plugin" / "plugin.json"] = dumps(claude_manifest(plugin))
         outputs[plugin_dir / ".codex-plugin" / "plugin.json"] = dumps(codex_manifest(plugin))
+        if plugin["method_path"] is not None:
+            outputs[plugin["method_path"]] = method_document(plugin)
     outputs[root / ".claude-plugin" / "marketplace.json"] = dumps(claude_marketplace(plugins))
     outputs[root / ".agents" / "plugins" / "marketplace.json"] = dumps(
         agents_marketplace(plugins)
