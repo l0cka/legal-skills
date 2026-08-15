@@ -84,15 +84,17 @@ workflow must recheck each source:
 
 ## Evidence states
 
+<!-- generated:evidence-states -->
 Assign one state to every material proposition:
 
-- `VERIFIED` — the exact current or point-in-time official source and
-  relevant text were checked in this session;
-- `VERIFIED WITH QUALIFICATIONS` — the source was checked but a
-  commencement, amendment, application or coverage qualification remains;
+- `VERIFIED` — the exact current or point-in-time official source and relevant
+  text were checked in this session;
+- `VERIFIED WITH QUALIFICATIONS` — the source was checked but a commencement,
+  amendment, application or coverage qualification remains;
 - `NOT VERIFIED` — the official source, applicable version or decisive fact
   could not be confirmed; or
 - `OUTSIDE SCOPE` — the issue needs another legal or regulatory workflow.
+<!-- end:evidence-states -->
 
 In the JSON tables the machine states are `verified` and
 `pending-verification`; the script computes only from `verified`. The

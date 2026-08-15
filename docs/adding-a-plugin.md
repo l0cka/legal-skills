@@ -61,6 +61,11 @@ interface and the root README table:
 }
 ```
 
+If the plugin ships a `references/<domain>-source-and-control-method.md`
+document, also declare `evidenceStates` in `catalog.json` and follow
+[docs/source-and-control-method-core.md](source-and-control-method-core.md) —
+the evidence-states block is stamped by the generator.
+
 ## 4. Generate the distribution surfaces
 
 ```bash

@@ -95,6 +95,19 @@ PLUGINS = {
 }
 
 
+# Sentences every source-and-control method document must carry verbatim
+# (whitespace-normalized). The convention is recorded in
+# docs/source-and-control-method-core.md; the evidence-states block itself is
+# a generated region, so it is not repeated here.
+INVARIANT_METHOD_SENTENCES = (
+    "a research snapshot, not a cached rule",
+    "search results and model memory as discovery material, never authority",
+    "If profile content conflicts with a verified source, surface the "
+    "conflict and stop the affected conclusion",
+    "cannot mark it approved",
+)
+
+
 def skill_text(plugin: str, skill: str) -> str:
     path = ROOT / "plugins" / plugin / "skills" / skill / "SKILL.md"
     return path.read_text(encoding="utf-8")
@@ -125,6 +138,15 @@ class PluginStructureTests(unittest.TestCase):
                     self.assertTrue(
                         (ROOT / "plugins" / plugin / "references" / name).is_file()
                     )
+
+    def test_method_documents_carry_invariant_sentences(self) -> None:
+        for plugin, config in PLUGINS.items():
+            # By convention the method document is the first reference file.
+            method = ROOT / "plugins" / plugin / "references" / config["reference_files"][0]
+            with self.subTest(plugin=plugin):
+                text = " ".join(method.read_text(encoding="utf-8").split())
+                for sentence in INVARIANT_METHOD_SENTENCES:
+                    self.assertIn(sentence, text)
 
     def test_every_skill_mentions_shared_material(self) -> None:
         for plugin, config in PLUGINS.items():

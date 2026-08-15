@@ -18,5 +18,20 @@
   ],
   "boundaries": [
     "Never approves, files, executes, or invents corporate action"
-  ]
+  ],
+  "evidenceStates": {
+    "qualifications": [
+      "commencement",
+      "application",
+      "overlay",
+      "document-status",
+      "fact"
+    ],
+    "unverifiable": [
+      "official source",
+      "applicable version",
+      "organisational document",
+      "decisive fact"
+    ]
+  }
 }

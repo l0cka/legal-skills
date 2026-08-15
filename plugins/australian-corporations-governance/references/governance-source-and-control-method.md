@@ -56,6 +56,7 @@ Official starting points, whose currency and application must still be checked:
 
 ## Evidence states
 
+<!-- generated:evidence-states -->
 Assign one state to every material proposition:
 
 - `VERIFIED` — the exact current or point-in-time official source and relevant
@@ -65,6 +66,7 @@ Assign one state to every material proposition:
 - `NOT VERIFIED` — the official source, applicable version, organisational
   document or decisive fact could not be confirmed; or
 - `OUTSIDE SCOPE` — the issue needs another legal or regulatory workflow.
+<!-- end:evidence-states -->
 
 Give each finding its source URL or document identifier, version or effective
 date, relevant provision or clause, checked date and evidence state. A source

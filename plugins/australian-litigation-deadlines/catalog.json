@@ -20,5 +20,18 @@
     "The model never performs date arithmetic; unexpressible or unverified periods fail closed to identify-only output",
     "Never determines accrual, discoverability or extension prospects",
     "Criminal procedure and foreign limitation law are excluded; migration outputs always carry a specialist-review warning"
-  ]
+  ],
+  "evidenceStates": {
+    "qualifications": [
+      "commencement",
+      "amendment",
+      "application",
+      "coverage"
+    ],
+    "unverifiable": [
+      "official source",
+      "applicable version",
+      "decisive fact"
+    ]
+  }
 }

@@ -23,5 +23,18 @@
     "Labels superseded and voluntary guidance layers",
     "Routes privacy and board-process depth to the sibling plugins",
     "Never certifies compliance with any standard"
-  ]
+  ],
+  "evidenceStates": {
+    "qualifications": [
+      "commencement",
+      "supersession",
+      "application",
+      "document-status"
+    ],
+    "unverifiable": [
+      "official source",
+      "applicable version",
+      "decisive fact"
+    ]
+  }
 }

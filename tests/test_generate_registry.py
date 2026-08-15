@@ -76,6 +76,41 @@ class GenerateRegistryTests(unittest.TestCase):
         registry = json.loads((self.root / "skills.json").read_text(encoding="utf-8"))
         self.assertEqual(registry["skills"][0]["plugin_version"], "0.2.0")
 
+    def test_evidence_states_stamp_into_method_document(self) -> None:
+        catalog_path = self.root / "plugins" / PLUGIN / "catalog.json"
+        catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+        catalog["evidenceStates"] = {
+            "qualifications": ["commencement", "application"],
+            "unverifiable": ["official source", "decisive fact"],
+        }
+        catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
+        method = (
+            self.root / "plugins" / PLUGIN / "references"
+            / "demo-source-and-control-method.md"
+        )
+        write(
+            method,
+            "# Method\n\n## Evidence states\n\n"
+            "<!-- generated:evidence-states -->\n"
+            "<!-- end:evidence-states -->\n",
+        )
+        generate_registry.apply(self.generate())
+        text = " ".join(method.read_text(encoding="utf-8").split())
+        self.assertIn("commencement or application qualification remains", text)
+        self.assertIn("the official source or decisive fact could not be", text)
+        self.assertEqual(generate_registry.check(self.generate()), [])
+
+    def test_evidence_states_without_method_document_fails(self) -> None:
+        catalog_path = self.root / "plugins" / PLUGIN / "catalog.json"
+        catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+        catalog["evidenceStates"] = {
+            "qualifications": ["commencement"],
+            "unverifiable": ["official source"],
+        }
+        catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
+        with self.assertRaises(generate_registry.GenerationError):
+            self.generate()
+
     def test_missing_catalog_json_fails(self) -> None:
         (self.root / "plugins" / PLUGIN / "catalog.json").unlink()
         with self.assertRaises(generate_registry.GenerationError):
