@@ -41,14 +41,9 @@ Agent.
 
 <!-- generated:install-agent -->
 ```text
-Add the plugin marketplace `l0cka/legal-skills`, then install its seven
-plugins: `australian-ai-governance`, `australian-aml-ctf`,
-`australian-corporations-governance`, `australian-legal-research`,
-`australian-litigation-deadlines`, `australian-privacy-cybersecurity`, and
-`legal-triage` (all `@legal-skills`, user scope if supported). Leave other
-marketplaces and plugins unchanged. Verify all seven are available and
-report the result. If you cannot manage plugins, give me the exact manual
-steps and stop.
+Add the plugin marketplace `l0cka/legal-skills` and install all seven of
+its plugins (user scope if supported). Verify the plugins are available
+and report the result.
 ```
 <!-- end:install-agent -->
 
