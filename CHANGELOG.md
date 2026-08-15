@@ -10,6 +10,16 @@ plugin manifests contain their intended release versions.
 
 ### Changed
 
+- Consolidated the four per-plugin copies of the structural test suite
+  (expected skills, workflow/result-contract/fail-closed headings, READY
+  status vocabulary, shared-method references) into one parametrized
+  `tests/test_plugin_structure.py`; the per-plugin test files now carry only
+  their plugin-specific legal invariants. The pinned skill sets moved with
+  it: they are the guard against accidental skill-directory deletion now
+  that `skills.json` is generated from the directories.
+- Merged the six topic-named test files covering `australian-legal-research`
+  (a fossil of the pre-merge plugin boundaries) into one
+  `tests/test_australian_legal_research.py` with unchanged test classes.
 - Made each plugin's `.claude-plugin/plugin.json` and a new hand-owned
   `catalog.json` the canonical registry sources, generated every other
   distribution surface from them with the new

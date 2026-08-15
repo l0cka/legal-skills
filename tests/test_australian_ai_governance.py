@@ -9,46 +9,8 @@ PLUGIN = ROOT / "plugins" / "australian-ai-governance"
 
 
 class AustralianAiGovernancePluginTests(unittest.TestCase):
-    EXPECTED_SKILLS = {
-        "configure-ai-governance-profile",
-        "map-ai-regulatory-obligations",
-        "assess-board-ai-oversight",
-        "check-ai-guidance-alignment",
-        "triage-government-ai-use-case",
-        "track-ai-regulatory-developments",
-    }
-
-    REQUIRED_HEADINGS = ("## Workflow", "## Result contract", "## Fail closed")
-    REQUIRED_STATUSES = (
-        "`READY FOR HUMAN REVIEW`",
-        "`READY WITH QUALIFICATIONS`",
-        "`NOT READY`",
-        "`OUTSIDE SCOPE`",
-    )
-
-    def test_plugin_contains_expected_skills(self) -> None:
-        actual = {path.parent.name for path in (PLUGIN / "skills").glob("*/SKILL.md")}
-        self.assertEqual(actual, self.EXPECTED_SKILLS)
-
-    def test_every_skill_has_workflow_contract_and_fail_closed(self) -> None:
-        for name in self.EXPECTED_SKILLS:
-            path = PLUGIN / "skills" / name / "SKILL.md"
-            text = path.read_text(encoding="utf-8")
-            for heading in self.REQUIRED_HEADINGS:
-                self.assertIn(heading, text, path)
-            for status in self.REQUIRED_STATUSES:
-                self.assertIn(status, text, path)
-
-    def test_every_skill_uses_shared_method(self) -> None:
-        self.assertTrue(
-            (PLUGIN / "references" / "ai-governance-source-and-control-method.md").is_file()
-        )
-        self.assertTrue(
-            (PLUGIN / "references" / "ai-governance-profile-schema.md").is_file()
-        )
-        for name in self.EXPECTED_SKILLS:
-            text = (PLUGIN / "skills" / name / "SKILL.md").read_text(encoding="utf-8")
-            self.assertIn("ai-governance-source-and-control-method.md", text, name)
+    # Structural conventions are covered by test_plugin_structure.py; this
+    # file keeps only the plugin's legal invariants.
 
     def test_pending_instruments_stay_watch_items(self) -> None:
         for name in ("map-ai-regulatory-obligations", "track-ai-regulatory-developments"):

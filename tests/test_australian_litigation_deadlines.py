@@ -25,50 +25,11 @@ VERIFIED = {"state": "verified"}
 
 
 class AustralianLitigationDeadlinesPluginTests(unittest.TestCase):
-    EXPECTED_SKILLS = {
-        "configure-litigation-deadline-profile",
-        "map-limitation-periods",
-        "compute-procedural-deadlines",
-        "map-tribunal-review-deadlines",
-        "maintain-deadline-register",
-        "verify-deadline-basis",
-    }
-
-    REQUIRED_HEADINGS = ("## Workflow", "## Result contract", "## Fail closed")
-    REQUIRED_STATUSES = (
-        "`READY FOR HUMAN REVIEW`",
-        "`READY WITH QUALIFICATIONS`",
-        "`NOT READY`",
-        "`OUTSIDE SCOPE`",
-    )
+    # Structural conventions are covered by test_plugin_structure.py; this
+    # file keeps only the plugin's legal invariants.
 
     def skill_text(self, name: str) -> str:
         return (PLUGIN / "skills" / name / "SKILL.md").read_text(encoding="utf-8")
-
-    def test_plugin_contains_expected_skills(self) -> None:
-        actual = {path.parent.name for path in (PLUGIN / "skills").glob("*/SKILL.md")}
-        self.assertEqual(actual, self.EXPECTED_SKILLS)
-
-    def test_every_skill_has_workflow_contract_and_fail_closed(self) -> None:
-        for name in self.EXPECTED_SKILLS:
-            text = self.skill_text(name)
-            for heading in self.REQUIRED_HEADINGS:
-                self.assertIn(heading, text, name)
-            for status in self.REQUIRED_STATUSES:
-                self.assertIn(status, text, name)
-
-    def test_every_skill_uses_shared_method_and_states_provisional(self) -> None:
-        self.assertTrue(
-            (
-                PLUGIN / "references"
-                / "litigation-deadlines-source-and-control-method.md"
-            ).is_file()
-        )
-        self.assertTrue((PLUGIN / "references" / "deadline-profile-schema.md").is_file())
-        for name in self.EXPECTED_SKILLS:
-            text = self.skill_text(name)
-            self.assertIn("litigation-deadlines-source-and-control-method.md", text, name)
-            self.assertIn("provisional", text.lower(), name)
 
     def test_script_only_arithmetic_is_stated(self) -> None:
         for name in ("compute-procedural-deadlines", "map-tribunal-review-deadlines"):
