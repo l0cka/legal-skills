@@ -1,0 +1,22 @@
+{
+  "displayName": "Australian Corporations Governance",
+  "shortDescription": "Govern Australian company decisions and records.",
+  "longDescription": "Creates an approved company-governance profile, issue-spots director-duty and conflict controls, prepares controlled board-decision records, reviews governance frameworks and builds source-linked compliance calendars. It verifies current Commonwealth legislation, separates regulated overlays and never files, approves or invents corporate action.",
+  "defaultPrompt": [
+    "Create a controlled governance profile for this Australian company before assessing its governance arrangements.",
+    "Assess the governance process and director-duty issues for this proposed company decision.",
+    "Prepare draft board decision materials without inventing any meeting event or approval.",
+    "Review this Australian company governance framework against verified requirements and approved documents.",
+    "Build a source-linked governance calendar without submitting or filing anything."
+  ],
+  "whatItDoes": [
+    "Configures a controlled company governance profile",
+    "Issue-spots director-duty and conflict controls",
+    "Prepares draft board-decision records",
+    "Reviews governance frameworks and builds source-linked calendars",
+    "Separates listed, APRA, ACNC, and CATSI overlays"
+  ],
+  "boundaries": [
+    "Never approves, files, executes, or invents corporate action"
+  ]
+}

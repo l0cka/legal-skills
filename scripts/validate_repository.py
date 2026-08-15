@@ -17,6 +17,8 @@ MARKDOWN_LINK = re.compile(r"\[[^\]]*\]\(([^)\s]+)\)")
 EXPECTED_TARGETS = {"claude-cowork", "chatgpt-work"}
 MAX_DESCRIPTION_LENGTH = 1024
 OPENAI_AGENT_KEYS = ("display_name", "short_description", "default_prompt")
+CATALOG_STRING_FIELDS = ("displayName", "shortDescription", "longDescription")
+CATALOG_LIST_FIELDS = ("defaultPrompt", "whatItDoes", "boundaries")
 
 
 class ValidationError(Exception):
@@ -123,6 +125,22 @@ def validate_openai_agent_file(root: Path, skill_dir: Path) -> None:
             raise ValidationError(f"{relative}: missing required key {key}")
 
 
+def validate_plugin_catalog(root: Path, plugin_name: str) -> None:
+    relative = f"plugins/{plugin_name}/catalog.json"
+    catalog = load_json(root, relative)
+    for field in CATALOG_STRING_FIELDS:
+        if not isinstance(catalog.get(field), str) or not catalog[field].strip():
+            raise ValidationError(f"{relative}.{field}: required non-empty string")
+    for field in CATALOG_LIST_FIELDS:
+        value = catalog.get(field)
+        if (
+            not isinstance(value, list)
+            or not value
+            or not all(isinstance(item, str) and item.strip() for item in value)
+        ):
+            raise ValidationError(f"{relative}.{field}: required non-empty array of strings")
+
+
 def validate_manifest(root: Path, plugin_name: str, provider: str) -> dict[str, Any]:
     relative = f"plugins/{plugin_name}/.{provider}-plugin/plugin.json"
     manifest = load_json(root, relative)
@@ -190,6 +208,7 @@ def validate(root: Path = ROOT) -> tuple[int, int]:
             )
         if not (root / "plugins" / plugin_name / "README.md").is_file():
             raise ValidationError(f"plugins/{plugin_name}/README.md: missing plugin README")
+        validate_plugin_catalog(root, plugin_name)
 
         codex_entry = codex_by_name[plugin_name]
         expected_path = f"./plugins/{plugin_name}"
@@ -256,7 +275,6 @@ def validate(root: Path = ROOT) -> tuple[int, int]:
         )
     for skill_name, (plugin_name, plugin_version) in discovered_skills.items():
         entry = registry_by_name[skill_name]
-        require_semver(entry.get("version"), f"skills.json: version for {skill_name}")
         if entry.get("path") != f"plugins/{plugin_name}/skills/{skill_name}":
             raise ValidationError(f"skills.json: invalid path for {skill_name}")
         if entry.get("plugin") != f"plugins/{plugin_name}":

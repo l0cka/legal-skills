@@ -2,10 +2,19 @@
   "name": "australian-litigation-deadlines",
   "version": "0.2.0",
   "description": "Map limitation periods and compute candidate procedural deadlines for Australian civil litigation using script-only date arithmetic, evidence-gated computation-rule tables, official-publisher sources and human-confirmation gates — every date is provisional until the responsible lawyer confirms it.",
-  "author": {"name": "l0cka", "url": "https://github.com/l0cka"},
+  "author": {
+    "name": "l0cka",
+    "url": "https://github.com/l0cka"
+  },
   "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/australian-litigation-deadlines",
   "repository": "https://github.com/l0cka/legal-skills",
   "license": "MIT",
-  "keywords": ["australian-law", "litigation", "limitation-periods", "court-deadlines", "tribunal-review"],
+  "keywords": [
+    "australian-law",
+    "litigation",
+    "limitation-periods",
+    "court-deadlines",
+    "tribunal-review"
+  ],
   "skills": "./skills/"
 }

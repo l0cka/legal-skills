@@ -1,0 +1,25 @@
+{
+  "displayName": "Australian Privacy & Cybersecurity",
+  "shortDescription": "Map privacy, breach and AI use-case risks.",
+  "longDescription": "Helps lawyers verify the full Australian Privacy Principles framework, route State and Territory privacy overlays, map concurrent cyber incident obligations, screen the statutory privacy tort and automated-decision reforms, assess suspected data breaches, and evaluate defined AI-system use cases. It separates legal status and source layers, excludes case law, and reserves conclusions and approvals for human review.",
+  "defaultPrompt": [
+    "Verify the applicable APP framework and detect changes across the relevant dates.",
+    "Identify the Australian privacy and cybersecurity issues raised by these facts.",
+    "Assess this suspected data breach and prepare a lawyer-review action matrix.",
+    "Map the potentially applicable Australian privacy legislation and identify missing facts.",
+    "Assess whether this AI-system use case is suitable and identify required controls.",
+    "Route the Commonwealth, State and Territory privacy regimes applicable to these facts.",
+    "Map every concurrent cyber incident obligation, recipient and reporting clock.",
+    "Screen these facts against the statutory privacy tort and automated-decision transparency reforms."
+  ],
+  "whatItDoes": [
+    "Maps facts to potentially applicable Australian privacy and cyber legislation",
+    "Assesses suspected data breaches and AI-system use cases",
+    "Verifies the applicable APP framework, records a framework fingerprint, and detects changes across the decision horizon"
+  ],
+  "boundaries": [
+    "No fixed-list assumption about the framework",
+    "Relies on Australian Legal Research for authoritative point-in-time checks",
+    "Excludes case law"
+  ]
+}

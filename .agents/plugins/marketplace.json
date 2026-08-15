@@ -6,92 +6,6 @@
   },
   "plugins": [
     {
-      "name": "australian-legal-research",
-      "source": {
-        "source": "local",
-        "path": "./plugins/australian-legal-research"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Productivity",
-      "description": "Verify Australian legislation, case citations and quoted passages against official publishers, trace Commonwealth legislative change, and draft AGLC4 citations.",
-      "version": "0.1.0",
-      "keywords": [
-        "australian-law",
-        "legislation",
-        "case-law",
-        "citation-verification",
-        "aglc4",
-        "legal-research"
-      ]
-    },
-    {
-      "name": "legal-triage",
-      "source": {
-        "source": "local",
-        "path": "./plugins/legal-triage"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Productivity",
-      "description": "Configure and conduct governed, staff-facing legal enquiry triage for Australian community legal centres.",
-      "version": "0.1.1",
-      "keywords": [
-        "australian-law",
-        "community-legal-centres",
-        "legal-triage",
-        "client-intake",
-        "access-to-justice",
-        "responsible-ai"
-      ]
-    },
-    {
-      "name": "australian-privacy-cybersecurity",
-      "source": {
-        "source": "local",
-        "path": "./plugins/australian-privacy-cybersecurity"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Productivity",
-      "description": "Route and verify Australian privacy, cyber incident, statutory tort, automated-decision and AI-use-case issues using current legislation.",
-      "version": "0.3.1",
-      "keywords": [
-        "australian-law",
-        "privacy",
-        "cybersecurity",
-        "data-breach",
-        "legal-research"
-      ]
-    },
-    {
-      "name": "australian-corporations-governance",
-      "source": {
-        "source": "local",
-        "path": "./plugins/australian-corporations-governance"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Productivity",
-      "description": "Configure, assess and document Australian company governance using verified Corporations Act sources and approved organisational controls.",
-      "version": "0.1.0",
-      "keywords": [
-        "australian-law",
-        "corporate-governance",
-        "corporations-act",
-        "directors-duties",
-        "board-governance"
-      ]
-    },
-    {
       "name": "australian-ai-governance",
       "source": {
         "source": "local",
@@ -134,6 +48,49 @@
       ]
     },
     {
+      "name": "australian-corporations-governance",
+      "source": {
+        "source": "local",
+        "path": "./plugins/australian-corporations-governance"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity",
+      "description": "Configure, assess and document Australian company governance using verified Corporations Act sources and approved organisational controls.",
+      "version": "0.1.0",
+      "keywords": [
+        "australian-law",
+        "corporate-governance",
+        "corporations-act",
+        "directors-duties",
+        "board-governance"
+      ]
+    },
+    {
+      "name": "australian-legal-research",
+      "source": {
+        "source": "local",
+        "path": "./plugins/australian-legal-research"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity",
+      "description": "Verify Australian legislation, case citations and quoted passages against official publishers, trace Commonwealth legislative change, and draft AGLC4 citations.",
+      "version": "0.1.0",
+      "keywords": [
+        "australian-law",
+        "legislation",
+        "case-law",
+        "citation-verification",
+        "aglc4",
+        "legal-research"
+      ]
+    },
+    {
       "name": "australian-litigation-deadlines",
       "source": {
         "source": "local",
@@ -144,7 +101,7 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Productivity",
-      "description": "Map limitation periods and compute candidate procedural deadlines for Australian civil litigation using script-only date arithmetic, evidence-gated computation-rule tables, official-publisher sources and human-confirmation gates \u2014 every date is provisional until the responsible lawyer confirms it.",
+      "description": "Map limitation periods and compute candidate procedural deadlines for Australian civil litigation using script-only date arithmetic, evidence-gated computation-rule tables, official-publisher sources and human-confirmation gates — every date is provisional until the responsible lawyer confirms it.",
       "version": "0.2.0",
       "keywords": [
         "australian-law",
@@ -152,6 +109,49 @@
         "limitation-periods",
         "court-deadlines",
         "tribunal-review"
+      ]
+    },
+    {
+      "name": "australian-privacy-cybersecurity",
+      "source": {
+        "source": "local",
+        "path": "./plugins/australian-privacy-cybersecurity"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity",
+      "description": "Route and verify Australian privacy, cyber incident, statutory tort, automated-decision and AI-use-case issues using current legislation.",
+      "version": "0.3.1",
+      "keywords": [
+        "australian-law",
+        "privacy",
+        "cybersecurity",
+        "data-breach",
+        "legal-research"
+      ]
+    },
+    {
+      "name": "legal-triage",
+      "source": {
+        "source": "local",
+        "path": "./plugins/legal-triage"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity",
+      "description": "Configure and conduct governed, staff-facing legal enquiry triage for Australian community legal centres.",
+      "version": "0.1.1",
+      "keywords": [
+        "australian-law",
+        "community-legal-centres",
+        "legal-triage",
+        "client-intake",
+        "access-to-justice",
+        "responsible-ai"
       ]
     }
   ]

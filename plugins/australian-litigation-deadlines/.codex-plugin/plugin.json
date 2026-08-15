@@ -2,10 +2,39 @@
   "name": "australian-litigation-deadlines",
   "version": "0.2.0",
   "description": "Map limitation periods and compute candidate procedural deadlines for Australian civil litigation using script-only date arithmetic, evidence-gated computation-rule tables, official-publisher sources and human-confirmation gates — every date is provisional until the responsible lawyer confirms it.",
-  "author": {"name": "l0cka", "url": "https://github.com/l0cka"},
+  "author": {
+    "name": "l0cka",
+    "url": "https://github.com/l0cka"
+  },
   "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/australian-litigation-deadlines",
   "repository": "https://github.com/l0cka/legal-skills",
   "license": "MIT",
-  "keywords": ["australian-law", "litigation", "limitation-periods", "court-deadlines", "tribunal-review"],
-  "skills": "./skills/"
+  "keywords": [
+    "australian-law",
+    "litigation",
+    "limitation-periods",
+    "court-deadlines",
+    "tribunal-review"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Australian Litigation Deadlines",
+    "shortDescription": "Limitation-period mapping and provisional deadline computation for Australian civil litigation.",
+    "longDescription": "Creates a controlled litigation-deadline practice profile, maps described causes of action to candidate limitation periods across all nine Australian jurisdictions, computes candidate procedural and tribunal deadlines with a bundled deterministic script over evidence-gated computation-rule tables and verified holiday tables, verifies those tables against official publishers, and maintains a source-linked matter deadline register. The model never performs date arithmetic, unverified periods fail closed to identify-only output, and every date remains provisional until the responsible lawyer confirms it.",
+    "developerName": "l0cka",
+    "category": "Productivity",
+    "capabilities": [
+      "Read"
+    ],
+    "websiteURL": "https://github.com/l0cka/legal-skills",
+    "defaultPrompt": [
+      "Create a controlled litigation-deadline practice profile before mapping or computing any deadlines.",
+      "Map the candidate limitation periods across Australian jurisdictions for this cause of action.",
+      "Compute the candidate procedural deadline for this trigger event using the bundled script and rule tables.",
+      "Map the merits-review and tribunal deadlines that could apply to this administrative decision.",
+      "Verify the deadline computation-rule tables and holiday tables against the official publishers.",
+      "Update this matter's deadline register with source-linked entries and confirmation status."
+    ],
+    "brandColor": "#1C3C63"
+  }
 }

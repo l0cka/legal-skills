@@ -1,0 +1,27 @@
+{
+  "displayName": "Australian AI Governance",
+  "shortDescription": "Govern Australian AI adoption against verified sources.",
+  "longDescription": "Creates an approved AI-governance profile, maps which Australian instruments currently bind an AI use case, issue-spots board AI-oversight exposure, checks governance documentation against the AI6 guidance and VAISS guardrail catalogue, routes government AI use cases to the right jurisdictional assurance track and monitors pending AI regulatory developments. It verifies official publishers, labels superseded and proposed instruments, and never asserts pending law as in force.",
+  "defaultPrompt": [
+    "Create a controlled AI-governance profile for this organisation before assessing its AI obligations.",
+    "Map which Australian regulatory instruments currently apply to this AI use case, and which are only pending.",
+    "Assess board-level AI oversight and director-duty exposure for this organisation's AI adoption.",
+    "Check this AI governance documentation against the current Australian voluntary guidance layers.",
+    "Route this government AI use case to the applicable assurance framework and escalation threshold.",
+    "Check the AI regulatory watch-list for developments since the last review."
+  ],
+  "whatItDoes": [
+    "Configures a controlled AI-governance profile",
+    "Maps binding versus pending instruments for an AI use case",
+    "Issue-spots board and director-duty AI exposure",
+    "Checks documentation against the AI6, VAISS, and AS ISO/IEC 42001 layers",
+    "Routes government AI use to nine jurisdictional assurance tracks",
+    "Monitors the pending-instrument watch-list"
+  ],
+  "boundaries": [
+    "Never asserts pending law as in force",
+    "Labels superseded and voluntary guidance layers",
+    "Routes privacy and board-process depth to the sibling plugins",
+    "Never certifies compliance with any standard"
+  ]
+}

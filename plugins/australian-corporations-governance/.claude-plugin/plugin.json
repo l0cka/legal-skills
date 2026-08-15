@@ -2,10 +2,19 @@
   "name": "australian-corporations-governance",
   "version": "0.1.0",
   "description": "Configure, assess and document Australian company governance using verified Corporations Act sources and approved organisational controls.",
-  "author": {"name": "l0cka", "url": "https://github.com/l0cka"},
+  "author": {
+    "name": "l0cka",
+    "url": "https://github.com/l0cka"
+  },
   "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/australian-corporations-governance",
   "repository": "https://github.com/l0cka/legal-skills",
   "license": "MIT",
-  "keywords": ["australian-law", "corporate-governance", "corporations-act", "directors-duties", "board-governance"],
+  "keywords": [
+    "australian-law",
+    "corporate-governance",
+    "corporations-act",
+    "directors-duties",
+    "board-governance"
+  ],
   "skills": "./skills/"
 }

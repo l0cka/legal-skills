@@ -30,6 +30,31 @@ def write_json(path: Path, payload: dict) -> None:
     write(path, json.dumps(payload, indent=2) + "\n")
 
 
+def plugin_catalog() -> dict:
+    return {
+        "displayName": "Demo Plugin",
+        "shortDescription": "Demo plugin for tests.",
+        "longDescription": "A demo plugin used by the validator and generator tests.",
+        "defaultPrompt": ["Use the demo skill."],
+        "whatItDoes": ["Demonstrates the fixture."],
+        "boundaries": ["Never leaves the test suite."],
+    }
+
+
+def root_readme() -> str:
+    sections = []
+    for region in (
+        "badges",
+        "counts",
+        "plugin-table",
+        "install-agent",
+        "install-codex",
+        "install-claude",
+    ):
+        sections.append(f"<!-- generated:{region} -->\n<!-- end:{region} -->")
+    return "# Demo marketplace\n\n" + "\n\n".join(sections) + "\n"
+
+
 def plugin_manifest() -> dict:
     return {
         "name": PLUGIN,
@@ -100,7 +125,6 @@ def build_repo(root: Path) -> None:
             "skills": [
                 {
                     "name": SKILL,
-                    "version": "0.1.0",
                     "path": f"plugins/{PLUGIN}/skills/{SKILL}",
                     "plugin": f"plugins/{PLUGIN}",
                     "plugin_version": "0.1.0",
@@ -110,9 +134,11 @@ def build_repo(root: Path) -> None:
             ],
         },
     )
+    write(root / "README.md", root_readme())
     plugin_dir = root / "plugins" / PLUGIN
     write_json(plugin_dir / ".codex-plugin" / "plugin.json", plugin_manifest())
     write_json(plugin_dir / ".claude-plugin" / "plugin.json", plugin_manifest())
+    write_json(plugin_dir / "catalog.json", plugin_catalog())
     write(plugin_dir / "README.md", "# Demo plugin\n")
     skill_dir = plugin_dir / "skills" / SKILL
     write(skill_dir / "SKILL.md", skill_markdown())
@@ -197,12 +223,23 @@ class ValidateRepositoryTests(unittest.TestCase):
         write_json(path, catalog)
         self.assert_error(f"keywords mismatch for {PLUGIN}")
 
-    def test_registry_skill_version_must_be_semver(self) -> None:
+    def test_registry_skill_without_source_fails(self) -> None:
         path = self.root / "skills.json"
         registry = json.loads(path.read_text(encoding="utf-8"))
-        registry["skills"][0]["version"] = "not-a-version"
+        registry["skills"][0]["source"] = ""
         write_json(path, registry)
-        self.assert_error(f"version for {SKILL}")
+        self.assert_error(f"source provenance required for {SKILL}")
+
+    def test_missing_plugin_catalog_fails(self) -> None:
+        (self.plugin_dir / "catalog.json").unlink()
+        self.assert_error(f"plugins/{PLUGIN}/catalog.json")
+
+    def test_plugin_catalog_empty_list_field_fails(self) -> None:
+        path = self.plugin_dir / "catalog.json"
+        catalog = json.loads(path.read_text(encoding="utf-8"))
+        catalog["defaultPrompt"] = []
+        write_json(path, catalog)
+        self.assert_error("defaultPrompt: required non-empty array")
 
     def test_provider_manifest_version_drift_fails(self) -> None:
         path = self.plugin_dir / ".claude-plugin" / "plugin.json"

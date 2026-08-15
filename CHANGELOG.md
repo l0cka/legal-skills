@@ -10,6 +10,21 @@ plugin manifests contain their intended release versions.
 
 ### Changed
 
+- Made each plugin's `.claude-plugin/plugin.json` and a new hand-owned
+  `catalog.json` the canonical registry sources, generated every other
+  distribution surface from them with the new
+  `scripts/generate_registry.py` (both marketplace catalogs, the
+  `.codex-plugin/plugin.json` wrappers, `plugins/README.md`, the root
+  README badges, counts, plugin table and install blocks, and the derived
+  fields of `skills.json`), and added a `--check` drift gate to CI. New
+  skills are now scaffolded into `skills.json` with an empty `source` that
+  fails validation until the provenance sentence is written. Catalogs and
+  the README table are now ordered alphabetically, and `plugins/README.md`
+  again lists all seven plugins.
+- Gave `australian-litigation-deadlines` (0.2.0) its previously missing
+  ChatGPT Work interface metadata (display name, descriptions and default
+  prompts) via its new `catalog.json`.
+
 - Extended `australian-litigation-deadlines` (0.2.0) computed coverage to
   Queensland: new `qld-courts` and `qcat` computation-rule tables and a
   `qld` holiday table, all verified against legislation.qld.gov.au and the
@@ -237,6 +252,8 @@ plugin manifests contain their intended release versions.
 
 ### Removed
 
+- Removed the unused per-skill `version` field from `skills.json` and its
+  validator check; plugin versions remain the only versioned surface.
 - Removed the `australian-legislation`, `australian-case-law` and
   `australian-legal-citation` plugins, superseded by `australian-legal-research`
   0.1.0 above.

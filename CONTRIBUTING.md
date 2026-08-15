@@ -7,12 +7,15 @@ efficient are welcome.
 
 1. Open an issue describing the jurisdiction, users, task, authoritative
    sources, expected output, and material risks.
-2. Keep the canonical skill under its owning plugin and add paired Claude and
-   Codex manifests.
-3. Update both marketplace catalogs and `skills.json` in the same change.
+2. Keep the canonical skill under its owning plugin and hand-edit only the
+   canonical sources: `.claude-plugin/plugin.json`, `catalog.json`, and the
+   per-skill `source` sentences in `skills.json`.
+3. Run `python3 scripts/generate_registry.py` to regenerate the marketplace
+   catalogs, Codex wrapper, README regions, and registry in the same change.
 4. Add focused tests for scripts and any rule that could silently change legal
    meaning.
 5. Run `python3 scripts/validate_repository.py`,
+   `python3 scripts/generate_registry.py --check`,
    `python3 -m unittest discover -s tests`, and `git diff --check`.
 
 See [docs/adding-a-plugin.md](docs/adding-a-plugin.md) for the repository

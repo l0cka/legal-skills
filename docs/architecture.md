@@ -6,27 +6,35 @@ distribution wrappers.
 ## Portability model
 
 ```text
-                        plugins/<name>/skills/
+        canonical sources (hand-edited)
+   plugins/<name>/.claude-plugin/plugin.json     plugins/<name>/catalog.json
+   plugins/<name>/skills/                        skills.json `source` fields
                                   |
-                 shared SKILL.md, references and scripts
+                    scripts/generate_registry.py
                                   |
-                +-----------------+-----------------+
-                |                                   |
-    .claude-plugin/plugin.json          .codex-plugin/plugin.json
-                |                                   |
- .claude-plugin/marketplace.json   .agents/plugins/marketplace.json
-                |                                   |
-          Claude Cowork                       ChatGPT Work
+        +----------------+--------+--------+----------------+
+        |                |                 |                |
+ .codex-plugin/   marketplace.json   marketplace.json   README table,
+  plugin.json      (.claude-plugin)  (.agents/plugins)  badges, install
+                        |                 |             blocks, plugins/
+                  Claude Cowork      ChatGPT Work       README.md
 ```
 
-The shared skill package is authoritative. Provider manifests describe the
-same package using each provider's schema; they must not fork the legal logic.
+The shared skill package is authoritative. Each plugin's
+`.claude-plugin/plugin.json` and `catalog.json` are the only hand-edited
+registry sources; `scripts/generate_registry.py` emits every distribution
+surface from them, so a plugin fact exists in exactly one place. Provider
+manifests describe the same package using each provider's schema; they must
+not fork the legal logic.
 
 ## Canonical registry
 
 `skills.json` records each skill, owning plugin, plugin version, supported
-targets, and source provenance. It exists to make drift detectable without
-depending on either provider's installed cache.
+targets, and source provenance. The generator derives every field except the
+per-skill `source` sentence, which is hand-written provenance: a new skill is
+scaffolded with an empty `source` and validation fails until a human records
+where the workflow came from. CI runs `generate_registry.py --check`, so a
+stale generated file fails the build instead of drifting.
 
 ## Provider boundaries
 
@@ -40,9 +48,11 @@ depending on either provider's installed cache.
 
 ## Release model
 
-A plugin version is identical across its two manifests and the Claude catalog.
-A release changes the canonical plugin, updates both wrappers and catalogs,
-passes offline validation, and is then tested from each consumer surface.
+A plugin version is written once, in the plugin's
+`.claude-plugin/plugin.json`, and propagated by the generator to the Codex
+wrapper, both catalogs, and the skill registry. A release bumps that one
+field, regenerates, passes offline validation, and is then tested from each
+consumer surface.
 
 The legislation packages demonstrate the model with provider-neutral skills,
 paired manifests and optional helpers for official-source navigation or
