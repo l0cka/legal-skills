@@ -10,6 +10,9 @@ plugin manifests contain their intended release versions.
 
 ### Changed
 
+- Slimmed the README plugin table to plugin and skill count; the "What it
+  does" and "Boundaries" detail remains in each plugin's README and in
+  `catalog.json`.
 - Made the evidence-states block of the four `*-source-and-control-method.md`
   documents a generated region: canonical bullet text lives in
   `scripts/generate_registry.py`, per-plugin qualification lists are declared

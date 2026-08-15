@@ -343,16 +343,14 @@ def counts_region(plugins: list[dict[str, Any]], skill_count: int) -> str:
 
 def table_region(plugins: list[dict[str, Any]]) -> str:
     lines = [
-        "| Plugin | Skills | What it does | Boundaries |",
-        "| --- | :---: | --- | --- |",
+        "| Plugin | Skills |",
+        "| --- | :---: |",
     ]
     for plugin in plugins:
         catalog = plugin["catalog"]
-        does = "".join(f"<li>{item}</li>" for item in catalog["whatItDoes"])
-        bounds = "".join(f"<li>{item}</li>" for item in catalog["boundaries"])
         lines.append(
             f"| [**{catalog['displayName']}**](plugins/{plugin['name']}/README.md) "
-            f"| {len(plugin['skills'])} | <ul>{does}</ul> | <ul>{bounds}</ul> |"
+            f"| {len(plugin['skills'])} |"
         )
     return "\n".join(lines)
 
