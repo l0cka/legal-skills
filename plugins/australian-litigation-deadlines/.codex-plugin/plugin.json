@@ -19,7 +19,7 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Australian Litigation Deadlines",
-    "shortDescription": "Limitation-period mapping and provisional deadline computation for Australian civil litigation.",
+    "shortDescription": "Maps limitation periods and computes candidate court deadlines. A lawyer must confirm each date.",
     "longDescription": "Creates a controlled litigation-deadline practice profile, maps described causes of action to candidate limitation periods across all nine Australian jurisdictions, computes candidate procedural and tribunal deadlines with a bundled deterministic script over evidence-gated computation-rule tables and verified holiday tables, verifies those tables against official publishers, and maintains a source-linked matter deadline register. The model never performs date arithmetic, unverified periods fail closed to identify-only output, and every date remains provisional until the responsible lawyer confirms it.",
     "developerName": "l0cka",
     "category": "Productivity",

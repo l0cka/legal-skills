@@ -23,15 +23,15 @@ The marketplace contains seven plugins and forty-eight skills:
 <!-- end:counts -->
 
 <!-- generated:plugin-table -->
-| Plugin | Skills |
-| --- | :---: |
-| [**Australian AI Governance**](plugins/australian-ai-governance/README.md) | 6 |
-| [**Australian AML/CTF**](plugins/australian-aml-ctf/README.md) | 5 |
-| [**Australian Corporations Governance**](plugins/australian-corporations-governance/README.md) | 5 |
-| [**Australian Legal Research**](plugins/australian-legal-research/README.md) | 16 |
-| [**Australian Litigation Deadlines**](plugins/australian-litigation-deadlines/README.md) | 6 |
-| [**Australian Privacy & Cybersecurity**](plugins/australian-privacy-cybersecurity/README.md) | 8 |
-| [**Legal Triage**](plugins/legal-triage/README.md) | 2 |
+| Plugin | Skills | Description |
+| --- | :---: | --- |
+| [**Australian AI Governance**](plugins/australian-ai-governance/README.md) | 6 | Maps the AI rules and guidance that apply to an Australian organisation. Shows which items are law and which are only guidance. |
+| [**Australian AML/CTF**](plugins/australian-aml-ctf/README.md) | 5 | Finds the AML/CTF obligations of an Australian legal practice under the tranche 2 reforms. A person must approve each report and decision. |
+| [**Australian Corporations Governance**](plugins/australian-corporations-governance/README.md) | 5 | Helps govern an Australian company under the Corporations Act. Prepares board records and reviews for human approval. |
+| [**Australian Legal Research**](plugins/australian-legal-research/README.md) | 16 | Checks Australian legislation and case citations against the official publishers. Writes and reviews AGLC4 citations. |
+| [**Australian Litigation Deadlines**](plugins/australian-litigation-deadlines/README.md) | 6 | Maps limitation periods and computes candidate court deadlines. A lawyer must confirm each date. |
+| [**Australian Privacy & Cybersecurity**](plugins/australian-privacy-cybersecurity/README.md) | 8 | Maps the Australian privacy and cyber rules that can apply to a set of facts, a data breach or an AI use case. |
+| [**Legal Triage**](plugins/legal-triage/README.md) | 2 | Helps community legal centre staff record and triage legal enquiries under an approved profile. |
 <!-- end:plugin-table -->
 
 ## Install with your Agent
@@ -41,14 +41,9 @@ Agent.
 
 <!-- generated:install-agent -->
 ```text
-Add the plugin marketplace `l0cka/legal-skills`, then install its seven
-plugins: `australian-ai-governance`, `australian-aml-ctf`,
-`australian-corporations-governance`, `australian-legal-research`,
-`australian-litigation-deadlines`, `australian-privacy-cybersecurity`, and
-`legal-triage` (all `@legal-skills`, user scope if supported). Leave other
-marketplaces and plugins unchanged. Verify all seven are available and
-report the result. If you cannot manage plugins, give me the exact manual
-steps and stop.
+Add the plugin marketplace `l0cka/legal-skills` and install all seven of
+its plugins (user scope if supported). Verify the plugins are available
+and report the result.
 ```
 <!-- end:install-agent -->
 

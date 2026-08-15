@@ -10,6 +10,10 @@ plugin manifests contain their intended release versions.
 
 ### Changed
 
+- Added a Description column to the README plugin table and rewrote each
+  plugin's `shortDescription` as one or two short plain-English sentences;
+  the same text flows to `plugins/README.md` and the ChatGPT Work interface
+  metadata.
 - Slimmed the README plugin table to plugin and skill count; the "What it
   does" and "Boundaries" detail remains in each plugin's README and in
   `catalog.json`.

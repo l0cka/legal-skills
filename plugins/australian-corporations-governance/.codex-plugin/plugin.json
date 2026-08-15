@@ -19,7 +19,7 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Australian Corporations Governance",
-    "shortDescription": "Govern Australian company decisions and records.",
+    "shortDescription": "Helps govern an Australian company under the Corporations Act. Prepares board records and reviews for human approval.",
     "longDescription": "Creates an approved company-governance profile, issue-spots director-duty and conflict controls, prepares controlled board-decision records, reviews governance frameworks and builds source-linked compliance calendars. It verifies current Commonwealth legislation, separates regulated overlays and never files, approves or invents corporate action.",
     "developerName": "l0cka",
     "category": "Productivity",

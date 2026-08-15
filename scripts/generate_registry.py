@@ -343,28 +343,24 @@ def counts_region(plugins: list[dict[str, Any]], skill_count: int) -> str:
 
 def table_region(plugins: list[dict[str, Any]]) -> str:
     lines = [
-        "| Plugin | Skills |",
-        "| --- | :---: |",
+        "| Plugin | Skills | Description |",
+        "| --- | :---: | --- |",
     ]
     for plugin in plugins:
         catalog = plugin["catalog"]
         lines.append(
             f"| [**{catalog['displayName']}**](plugins/{plugin['name']}/README.md) "
-            f"| {len(plugin['skills'])} |"
+            f"| {len(plugin['skills'])} | {catalog['shortDescription']} |"
         )
     return "\n".join(lines)
 
 
 def install_agent_region(plugins: list[dict[str, Any]]) -> str:
-    names = [f"`{plugin['name']}`" for plugin in plugins]
-    listed = ", ".join(names[:-1]) + f", and {names[-1]}"
     word = number_word(len(plugins))
     request = (
-        f"Add the plugin marketplace `{OWNER}/{MARKETPLACE_NAME}`, then install "
-        f"its {word} plugins: {listed} (all `@{MARKETPLACE_NAME}`, user scope if "
-        f"supported). Leave other marketplaces and plugins unchanged. Verify all "
-        f"{word} are available and report the result. If you cannot manage "
-        f"plugins, give me the exact manual steps and stop."
+        f"Add the plugin marketplace `{OWNER}/{MARKETPLACE_NAME}` and install "
+        f"all {word} of its plugins (user scope if supported). Verify the "
+        f"plugins are available and report the result."
     )
     wrapped = textwrap.wrap(
         request, width=74, break_on_hyphens=False, break_long_words=False
