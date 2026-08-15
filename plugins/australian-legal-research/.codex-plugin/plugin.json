@@ -20,7 +20,7 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Australian Legal Research",
-    "shortDescription": "Verify Australian legislation and case law, and draft AGLC4 citations.",
+    "shortDescription": "Checks Australian legislation and case citations against the official publishers. Writes and reviews AGLC4 citations.",
     "longDescription": "Checks Commonwealth, State and Territory legislation against each jurisdiction's official publisher, traces Commonwealth legislative change, verifies case citations and quoted passages at the issuing court's official publisher, and drafts, converts, reviews and corrects citations under the Australian Guide to Legal Citation, 4th edition. Every verification fails closed when authoritative source or currency evidence is incomplete, and no citation field is ever invented.",
     "developerName": "l0cka",
     "category": "Productivity",
