@@ -2,8 +2,9 @@
 
 Every document this plugin produces is a draft until the responsible
 solicitor reviews it, and every draft says so. The plugin never composes a
-legal document: it fills the firm's own precedents at explicit
-`{{field_name}}` markers, and nothing else in a precedent may change.
+legal document: it fills factual `{{field_name}}` markers and registered
+`{{clause_choice:clause_point}}` markers in the firm's own precedents, and
+nothing else in a precedent may change.
 
 One governed workflow, `assemble-nsw-estate-documents`, runs the whole
 pipeline for a New South Wales private-client matter:
@@ -15,9 +16,10 @@ pipeline for a New South Wales private-client matter:
    responsible solicitor confirms the table, and confirmed fields are
    never re-asked;
 3. **Fill** — the firm's will, enduring power of attorney and appointment
-   of enduring guardian precedents are filled at marker sites only, with
-   connected drafting-playbook positions adopted and noted, and every
-   uncovered clause choice sent to the solicitor; and
+   of enduring guardian precedents are filled at marker sites only. A
+   connected drafting playbook may identify a registered, verbatim clause
+   variant, but the solicitor confirms it before insertion; every unresolved
+   choice makes that document `NOT READY`; and
 4. **Report** — each draft returns under a `DRAFT — SOLICITOR REVIEW
    REQUIRED` banner with a change manifest reconciled against the
    precedent, a gap report, and dated NSW execution-formalities references

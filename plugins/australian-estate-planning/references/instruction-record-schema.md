@@ -1,7 +1,10 @@
 # Instruction record schema
 
 The instruction record is the canonical structured output of the extraction
-gate and the only input the fill step may read. Every field carries:
+gate and the only source of factual values the fill step may read. Clause text
+may come only from the precedent's confirmed clause-choice register under the
+marker syntax guide; it is never an instruction-record value. Every factual
+field carries:
 
 - **value** — exactly as given; never inferred, normalised only for
   obvious formatting (dates, capitalisation of names);

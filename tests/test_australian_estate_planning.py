@@ -65,6 +65,21 @@ class AustralianEstatePlanningPluginTests(unittest.TestCase):
         self.assertIn("no conditional, loop or block syntax", guide)
         self.assertIn("per-slot", guide)
 
+    def test_clause_choices_use_confirmed_registered_markers(self) -> None:
+        guide = self.read(REFERENCES / "marker-syntax-guide.md")
+        self.assertIn("{{clause_choice:residue_distribution}}", guide)
+        self.assertIn("closed list of approved variants", guide)
+        self.assertIn("verbatim clause text", guide)
+        self.assertIn("responsible solicitor confirms", guide)
+
+        skill = self.read(SKILL)
+        self.assertIn("unresolved clause-choice marker", skill)
+        self.assertIn("`NOT READY`", skill)
+
+        catalog = self.read(PLUGIN / "catalog.json")
+        self.assertIn("{{clause_choice:clause_point}}", catalog)
+        self.assertNotIn("{{field_name}} markers only", catalog)
+
     def test_change_manifest_reconciliation_fails_closed(self) -> None:
         method = self.read(REFERENCES / "estate-planning-source-and-control-method.md")
         self.assertIn("outside a marker site", method)
@@ -114,6 +129,16 @@ class AustralianEstatePlanningPluginTests(unittest.TestCase):
         self.assertIn("Instructions beat playbook", rules)
         self.assertIn("Playbook never fills a factual field", rules)
         self.assertIn("Law beats playbook", rules)
+
+    def test_playbook_clause_choice_contract_fails_closed(self) -> None:
+        rules = self.read(REFERENCES / "playbook-usage-rules.md")
+        self.assertIn("registered variant", rules)
+        self.assertIn("responsible solicitor confirms", rules)
+        self.assertIn("`NOT READY`", rules)
+
+        method = self.read(REFERENCES / "estate-planning-source-and-control-method.md")
+        self.assertIn("clause-choice register", method)
+        self.assertIn("{{clause_choice:clause_point}}", method)
 
     def test_excluded_matters_route_outside_scope(self) -> None:
         skill = self.read(SKILL)

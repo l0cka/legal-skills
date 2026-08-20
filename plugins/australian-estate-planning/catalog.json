@@ -1,7 +1,7 @@
 {
   "displayName": "Australian Estate Planning",
   "shortDescription": "Fills the firm's NSW will, enduring POA and enduring guardianship precedents from a confirmed instruction record. A solicitor confirms every step.",
-  "longDescription": "Ingests a completed client instruction sheet, extracts a canonical instruction record in which every field carries its provenance in the sheet or is marked cannot be determined, and halts at a solicitor confirmation gate before any document work begins. Once the record is confirmed, the workflow fills the firm's own precedents — a will, an enduring power of attorney and an appointment of enduring guardian for New South Wales — at explicit {{field_name}} markers only, never rewriting precedent wording, adopting connected drafting-playbook positions where they cover a clause point and sending every uncovered clause choice to the gap report. Every fill returns a change manifest reconciling the output against the precedent, a gap report, and dated execution-formalities references verified against the official NSW legislation publisher. No precedent means no draft: the workflow fails closed rather than composing documents itself.",
+  "longDescription": "Ingests a completed client instruction sheet, extracts a canonical instruction record in which every field carries its provenance in the sheet or is marked cannot be determined, and halts at a solicitor confirmation gate before any document work begins. Once the record is confirmed, the workflow fills the firm's own precedents — a will, an enduring power of attorney and an appointment of enduring guardian for New South Wales — at factual {{field_name}} markers and registered {{clause_choice:clause_point}} markers, never rewriting precedent wording. A connected drafting playbook may identify a registered verbatim clause variant, but the responsible solicitor confirms it before insertion and every unresolved choice makes that document NOT READY. Every fill returns a change manifest reconciling the output against the precedent, a gap report, and dated execution-formalities references verified against the official NSW legislation publisher. No precedent means no draft: the workflow fails closed rather than composing documents itself.",
   "defaultPrompt": [
     "Extract an instruction record from this completed estate planning instruction sheet.",
     "Present the extraction table with provenance for my confirmation before drafting anything.",
@@ -12,7 +12,7 @@
   ],
   "whatItDoes": [
     "Extracts a provenance-cited instruction record from a completed instruction sheet and halts at a solicitor confirmation gate before any drafting",
-    "Fills the firm's registered NSW precedents at explicit {{field_name}} markers only, keeping names and roles consistent across the document set",
+    "Fills factual {{field_name}} markers and solicitor-confirmed {{clause_choice:clause_point}} markers in the firm's registered NSW precedents",
     "Returns a change manifest, a gap report and dated NSW execution-formalities references verified against the official publisher with every fill"
   ],
   "boundaries": [

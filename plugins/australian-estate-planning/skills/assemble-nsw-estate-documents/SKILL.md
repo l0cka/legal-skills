@@ -1,6 +1,6 @@
 ---
 name: assemble-nsw-estate-documents
-description: Assemble draft NSW estate planning documents — a will, an enduring power of attorney and an appointment of enduring guardian — by extracting a provenance-cited instruction record from a completed client instruction sheet, halting for the responsible solicitor to confirm the extraction table, then filling the firm's own registered precedents at explicit {{field_name}} markers only, returning a change manifest, gap report and dated execution-formalities references with every fill. Use when a practitioner has a completed instruction sheet, or gives instructions directly, and the firm's precedents are available. Do not use for self-represented parties, jurisdictions other than NSW, advance care directives, superannuation death benefit nominations, trusts, probate, or to draft any document without a precedent — each of these fails closed to the responsible solicitor.
+description: Assemble draft NSW estate planning documents — a will, an enduring power of attorney and an appointment of enduring guardian — by extracting a provenance-cited instruction record, halting for solicitor confirmation, then filling the firm's registered factual `{{field_name}}` markers and solicitor-confirmed `{{clause_choice:clause_point}}` markers. Return a change manifest, gap report and dated execution-formalities references with every fill. Use when a practitioner provides instructions and the firm's precedents are available. Do not use for self-represented parties, jurisdictions other than NSW, advance care directives, superannuation death benefit nominations, trusts, probate or any document without a precedent — each fails closed to the responsible solicitor.
 ---
 
 # Assemble NSW Estate Documents
@@ -47,13 +47,16 @@ the [NSW execution formalities reference](../../references/nsw-execution-formali
      solicitor confirms the table. A confirmed table stands; do not
      re-ask confirmed fields.
 4. Map and fill each precedent.
-   - First use of a precedent: propose the field map (marker ↔ schema
-     field) for the solicitor to confirm; reuse confirmed maps thereafter.
+   - First use of a precedent: propose the field map (factual marker ↔ schema
+     field) and clause-choice register for the solicitor to confirm; reuse
+     confirmed maps and registers thereafter.
    - Fill markers per the marker syntax guide: confirmed values only,
      identical values at repeated sites, names and roles consistent
-     across the whole document set. Adopt connected playbook positions
-     per the playbook usage rules; send every uncovered clause choice to
-     the gap report. Never alter any text outside a marker site.
+     across the whole document set. A connected playbook may identify a
+     registered clause variant, but the responsible solicitor must confirm
+     its identifier and verbatim text before insertion. An unresolved
+     clause-choice marker stays in place, goes to the gap report and makes
+     that document `NOT READY`. Never alter any text outside a marker site.
 5. Report and hand over.
    - Return, for each document: the filled draft under a
      `DRAFT — SOLICITOR REVIEW REQUIRED` banner (banner outside the
@@ -80,10 +83,10 @@ Matter: <client; document types sought; responsible solicitor>
 Instruction record: <confirmed at extraction gate on <date>; fields with
   qualifications listed>
 Documents: <per type: precedent used; filled/blocked; status>
-Change manifest: <per document: marker sites filled; playbook positions
-  adopted; reconciliation result>
-Gap report: <unfilled markers; unused fields; clause choices awaiting the
-  solicitor; flagged conflicts>
+Change manifest: <per document: marker sites filled; registered clause variants
+  confirmed and inserted; reconciliation result>
+Gap report: <unfilled markers; unused fields; unresolved clause choices;
+  flagged conflicts>
 Execution formalities: <per document: requirements, statutory basis,
   evidence state; verification date or live re-verification>
 Human decision gate: <responsible solicitor; confirmations outstanding;
@@ -96,9 +99,9 @@ Limitations: <drafts only; capacity, undue influence, family provision
 
 Return `NOT READY` for any document type whose precedent is missing, whose
 required fields are unconfirmed or `cannot be determined` (listing exactly
-what is missing), or whose change manifest cannot reconcile the output
-against the precedent. Route self-represented parties, non-NSW matters and
-every excluded subject `OUTSIDE SCOPE`. Never pick a clause alternative
-the playbook does not cover, never fill a value the record does not
-contain, never mark anything approved — a blocked document never blocks
-the others.
+what is missing), whose clause-choice marker is unresolved, or whose change
+manifest cannot reconcile the output against the precedent. Route
+self-represented parties, non-NSW matters and every excluded subject `OUTSIDE
+SCOPE`. Never insert a clause outside the precedent's confirmed register,
+never fill a value the record does not contain, never mark anything approved
+— a blocked document never blocks the others.

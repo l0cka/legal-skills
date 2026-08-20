@@ -17,12 +17,21 @@ _Avoid_: intake form, questionnaire
 
 **Instruction record**:
 The canonical structured set of fields extracted from an instruction sheet or
-gathered by interview; the only input the fill step is allowed to read.
+gathered by interview; the only source of factual values the fill step may use.
 _Avoid_: intake data, client data
 
 **Field map**:
 The correspondence between instruction-record fields and a precedent's
-markers, confirmed by the solicitor the first time a precedent is used.
+factual markers, confirmed by the solicitor the first time a precedent is used.
+
+**Clause-choice marker**:
+A typed `{{clause_choice:clause_point}}` slot that accepts only verbatim text
+from the precedent's closed, solicitor-confirmed clause-choice register.
+
+**Clause-choice register**:
+The stable variant identifiers, verbatim approved text, source and approval
+state available for each clause-choice marker. A playbook may identify a
+variant; it cannot create or approve one.
 
 **Extraction gate**:
 The mandatory halt at which the solicitor confirms the extraction table —
@@ -30,7 +39,8 @@ every field with its provenance — before any document work begins.
 
 **Change manifest**:
 The per-fill reconciliation listing every location changed, the marker
-removed and the value inserted, proving nothing outside markers moved.
+removed and the factual value or registered clause variant inserted, proving
+nothing outside markers moved.
 
 **Gap report**:
 The per-fill list of unfilled markers, unused record fields and clause

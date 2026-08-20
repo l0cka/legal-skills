@@ -27,19 +27,25 @@ duplicate:
 ## The marker-only assembly rule
 
 The workflows never compose a legal document and never rewrite precedent
-wording. Document text changes only at explicit `{{field_name}}` markers in
-a firm precedent (see the marker syntax guide), and every fill returns:
+wording. Document text changes only at explicit factual `{{field_name}}`
+markers or registered `{{clause_choice:clause_point}}` markers in a firm
+precedent (see the marker syntax guide), and every fill returns:
 
 1. a **change manifest** — every location changed, the marker removed, the
    value inserted, reconciled against the precedent so any difference
    outside a marker site makes the result `NOT READY`;
-2. a **gap report** — every unfilled marker, unused instruction-record
-   field, and clause choice awaiting the solicitor; and
+2. a **gap report** — every unfilled marker, unused instruction-record field,
+   and unresolved clause choice (each of which makes that document `NOT
+   READY`); and
 3. the **draft banner** — `DRAFT — SOLICITOR REVIEW REQUIRED` above every
    document, outside the copyable document body.
 
 No registered precedent for a document type means that document is
 `NOT READY`. There is no generic fallback document, in any circumstance.
+Each clause-choice marker also requires a confirmed, closed clause-choice
+register of firm-approved variants. A playbook may identify a registered
+variant, but only the responsible solicitor may confirm its identifier and
+verbatim text for insertion. The workflow never composes or adapts clause text.
 
 This is an instruction-level contract rather than a deterministic script —
 a deliberate decision recorded in `docs/adr/0001` of this repository: the
@@ -83,13 +89,15 @@ dated formalities reference governs and the solicitor verifies manually.
 ## Firm material and precedence
 
 Firm-connected material — registered precedents, the instruction-sheet
-template, a connected drafting playbook, cached field maps — is profile
-content: it configures the workflows but is never authority for the law.
+template, a connected drafting playbook, cached field maps and clause-choice
+registers — is profile content: it configures the workflows but is never
+authority for the law.
 If profile content conflicts with a verified source, surface the conflict
-and stop the affected conclusion. Playbook positions are adopted only where
-the playbook covers the clause point, and every adoption is noted in the
-change manifest; where the playbook is silent or absent, the clause choice
-goes to the gap report.
+and stop the affected conclusion. Playbook positions may identify only
+registered variants, and every insertion requires solicitor confirmation and
+is noted in the change manifest; where the playbook is silent or absent, the
+marker remains, the clause choice goes to the gap report and the document is
+`NOT READY`.
 
 ## Evidence states
 

@@ -14,9 +14,10 @@ plugin manifests contain their intended release versions.
   `assemble-nsw-estate-documents`: extracts a provenance-cited instruction
   record from a completed client instruction sheet, halts at a solicitor
   confirmation gate, and fills the firm's own NSW will, enduring power of
-  attorney and appointment of enduring guardian precedents at explicit
-  `{{field_name}}` markers only, returning a change manifest, gap report
-  and a dated execution-formalities reference verified against
+  attorney and appointment of enduring guardian precedents at explicit factual
+  `{{field_name}}` markers and registered
+  `{{clause_choice:clause_point}}` markers, returning a change manifest, gap
+  report and a dated execution-formalities reference verified against
   legislation.nsw.gov.au (2026-08-20). The plugin ships no scripts — a
   deliberate departure from the script-only pattern, recorded in
   `docs/adr/0001-platform-neutral-no-script-document-assembly.md`, so the
@@ -30,6 +31,11 @@ plugin manifests contain their intended release versions.
 
 ### Changed
 
+- Defined explicit clause-choice assembly for `australian-estate-planning`:
+  each clause marker has a closed register of firm-approved verbatim variants,
+  a playbook may identify but not create a variant, the responsible solicitor
+  confirms it before insertion, and every unresolved choice makes that document
+  `NOT READY`.
 - Added a Description column to the README plugin table and rewrote each
   plugin's `shortDescription` as one or two short plain-English sentences;
   the same text flows to `plugins/README.md` and the ChatGPT Work interface

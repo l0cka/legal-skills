@@ -15,15 +15,19 @@ for operations that could silently change legal meaning (see
 `australian-litigation-deadlines`, whose date arithmetic is script-only).
 
 Integrity comes instead from instruction-level contracts enforced by the agent
-definition: precedents are filled at explicit `{{field_name}}` markers only
-(per-slot repetition, no block or conditional syntax); every fill produces a
-change manifest (each location changed, marker removed, value inserted,
-reconciled against the precedent) and a gap report; extraction from an
-instruction sheet cites provenance per field and halts at a lawyer confirmation
-gate; missing precedent, missing required field, or silent playbook all fail
-closed to the responsible solicitor. This is self-attestation, not the proof a
-deterministic script gives — the trade was accepted to keep one canonical,
-platform-neutral markdown pack instead of per-platform forks.
+definition: factual values are filled at explicit `{{field_name}}` markers and
+clause choices at `{{clause_choice:clause_point}}` markers (per-slot
+repetition, no block or conditional syntax). Each clause-choice marker has a
+closed register of firm-approved, verbatim variants and requires the responsible
+solicitor to confirm the chosen variant before insertion. Every fill produces a
+change manifest (each location changed, marker removed, value or registered
+clause inserted, reconciled against the precedent) and a gap report; extraction
+from an instruction sheet cites provenance per field and halts at a lawyer
+confirmation gate; missing precedent, missing required field, unresolved clause
+choice, or silent playbook all fail closed to the responsible solicitor. This
+is self-attestation, not the proof a deterministic script gives — the trade was
+accepted to keep one canonical, platform-neutral markdown pack instead of
+per-platform forks.
 
 Consequences: no file in the plugin may name or depend on any specific target
 platform; firm content (precedents, playbooks, house style) is connected on the
