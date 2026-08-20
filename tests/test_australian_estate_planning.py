@@ -9,6 +9,7 @@ PLUGIN = ROOT / "plugins" / "australian-estate-planning"
 NSW_SKILL = PLUGIN / "skills" / "assemble-nsw-estate-documents" / "SKILL.md"
 VIC_SKILL = PLUGIN / "skills" / "assemble-vic-estate-documents" / "SKILL.md"
 SKILLS = (NSW_SKILL, VIC_SKILL)
+PROFILE_SKILL = PLUGIN / "skills" / "generate-precedent-profile" / "SKILL.md"
 REFERENCES = PLUGIN / "references"
 
 # The pack must stay deployable on any text-based agent platform, so no
@@ -25,7 +26,7 @@ FORBIDDEN_PLATFORM_NAMES = (
 
 
 def shipped_files() -> list[Path]:
-    files = [*SKILLS, PLUGIN / "README.md", PLUGIN / "CONTEXT.md", PLUGIN / "catalog.json"]
+    files = [*SKILLS, PROFILE_SKILL, PLUGIN / "README.md", PLUGIN / "CONTEXT.md", PLUGIN / "catalog.json"]
     files.extend(sorted(REFERENCES.glob("*.md")))
     return files
 
@@ -125,6 +126,42 @@ class AustralianEstatePlanningPluginTests(unittest.TestCase):
             self.assertIn("working copy", skill)
             self.assertIn("precedent drift", skill)
             self.assertIn("never guess an anchor", skill.lower())
+
+    def test_profile_generator_is_read_only_and_stops_for_confirmation(self) -> None:
+        skill = self.read(PROFILE_SKILL)
+        for phrase in (
+            "Work read-only",
+            "one separate proposed sidecar profile per uploaded precedent",
+            "profile_status: proposed",
+            "confirmation_status: pending",
+            "Present the confirmation checklist and stop",
+            "Do not modify or fill the source",
+            "mark the profile confirmed",
+        ):
+            self.assertIn(phrase, skill)
+
+    def test_profile_generator_rejects_client_documents_and_unstable_locations(self) -> None:
+        skill = self.read(PROFILE_SKILL)
+        for phrase in (
+            "executed, client-completed, matter-specific",
+            "Ask for a clean source precedent",
+            "Extracted text is navigation evidence",
+            "page number, approximate phrase or extracted-text offset alone",
+            "unregistrable",
+            "never manufacture certainty",
+        ):
+            self.assertIn(phrase, skill)
+
+    def test_profile_generator_maps_complete_schema_without_invention(self) -> None:
+        skill = self.read(PROFILE_SKILL)
+        for phrase in (
+            "Map each factual site to exactly one field",
+            "Record every schema field",
+            "unmapped precedent field",
+            "register only variants already present verbatim",
+            "Never compose, combine, improve or select a variant",
+        ):
+            self.assertIn(phrase, skill)
 
     def test_extraction_gate_and_no_invented_values(self) -> None:
         for skill in SKILLS:

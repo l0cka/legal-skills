@@ -78,6 +78,7 @@ PLUGINS = {
         "skills": {
             "assemble-nsw-estate-documents",
             "assemble-vic-estate-documents",
+            "generate-precedent-profile",
         },
         "reference_files": (
             "estate-planning-source-and-control-method.md",
@@ -88,7 +89,6 @@ PLUGINS = {
         ),
         "every_skill_mentions": (
             "estate-planning-source-and-control-method.md",
-            "draft — solicitor review required",
             "precedent-profile-guide.md",
         ),
     },

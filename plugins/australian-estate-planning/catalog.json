@@ -1,11 +1,12 @@
 {
   "displayName": "Australian Estate Planning",
-  "shortDescription": "Fills human-designed NSW and Victorian estate precedents through solicitor-confirmed sidecar profiles. Source precedents remain unchanged.",
-  "longDescription": "Ingests a completed client instruction sheet, extracts a canonical instruction record in which every field carries its provenance or is marked cannot be determined, and halts at a solicitor confirmation gate. The firm does not add machine markers to its precedents. On first use, the jurisdiction-specific workflow proposes a separate precedent profile recording the source document's identity, exact factual and clause sites, field map and closed clause-choice register, then stops for solicitor confirmation. Later fills use working copies only after the source fingerprint, structural locations, exact anchors and expected occurrence counts still match; any drift makes that document NOT READY. The plugin covers wills and enduring powers of attorney in New South Wales and Victoria, NSW appointments of enduring guardian, and Victorian appointments of medical treatment decision maker. Every fill returns a complete change manifest, gap report and dated execution-formalities references. No precedent or confirmed profile means no draft, and the workflow never composes a document from scratch.",
+  "shortDescription": "Profiles uploaded NSW and Victorian estate precedents, then fills confirmed sites safely. Source precedents remain unchanged.",
+  "longDescription": "Creates proposed sidecar profiles from uploaded clean, human-designed firm estate precedents without modifying or filling them. The dedicated onboarding workflow records source identity and fingerprint, exact factual and clause sites, schema coverage, field maps and closed verbatim clause registers, then stops for responsible-solicitor confirmation. The two jurisdictional assembly workflows separately extract provenance-cited instructions and fill working copies only after the confirmed profile's fingerprint, structural locations, exact anchors and expected occurrence counts still match; any drift makes that document NOT READY. The plugin covers wills and enduring powers of attorney in New South Wales and Victoria, NSW appointments of enduring guardian, and Victorian appointments of medical treatment decision maker. Executed or client-completed files are rejected, no precedent or confirmed profile means no draft, and the workflows never compose a document from scratch.",
   "defaultPrompt": [
     "Extract an instruction record from this completed estate planning instruction sheet.",
     "Present the extraction table with provenance for my confirmation before drafting anything.",
     "Register this human-designed precedent in a sidecar profile without modifying the source document.",
+    "Generate separate proposed precedent profiles from these uploaded NSW and Victorian firm precedents.",
     "Fill the firm's NSW will precedent from the confirmed instruction record.",
     "Fill the enduring power of attorney and appointment of enduring guardian precedents for the same client.",
     "Fill the firm's Victorian will, enduring power of attorney and medical treatment decision-maker appointment precedents.",
@@ -13,12 +14,14 @@
     "List the execution requirements for each document and where each one comes from."
   ],
   "whatItDoes": [
+    "Generates proposed sidecar profiles from uploaded clean firm precedents and halts for responsible-solicitor confirmation",
     "Extracts a provenance-cited instruction record from a completed instruction sheet and halts at a solicitor confirmation gate before any drafting",
     "Registers exact factual and clause sites in a sidecar precedent profile without modifying the firm's human-designed source document",
     "Fills only solicitor-confirmed sites in a working copy after exact anchor and drift checks",
     "Returns a change manifest, a gap report and dated jurisdiction-specific execution-formalities references verified against the official publisher with every fill"
   ],
   "boundaries": [
+    "Profile generation is read-only and rejects executed, client-completed, matter-specific, corrupted or password-locked uploads",
     "Every output is a draft until the responsible solicitor reviews it — each document carries a DRAFT — SOLICITOR REVIEW REQUIRED banner",
     "No precedent or confirmed profile, no draft: the workflow never composes a will or instrument from scratch and never changes content outside registered sites",
     "Any changed fingerprint, missing or duplicate anchor, changed target or ambiguous site stops the affected document for profile reconfirmation",

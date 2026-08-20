@@ -10,6 +10,12 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- `generate-precedent-profile` in `australian-estate-planning` (0.3.0):
+  inspects uploaded clean NSW or Victorian firm estate precedents read-only,
+  proposes exact sidecar site maps and schema coverage, registers only existing
+  verbatim clause variants, and stops for responsible-solicitor confirmation.
+  Executed, client-completed, matter-specific or structurally unstable uploads
+  fail closed and are never copied into a profile.
 - `assemble-vic-estate-documents` in `australian-estate-planning` (0.2.0):
   extends the solicitor-controlled assembly workflow to Victorian
   wills, enduring powers of attorney and appointments of medical treatment
