@@ -8,6 +8,26 @@ plugin manifests contain their intended release versions.
 
 ## Unreleased
 
+### Added
+
+- New plugin `australian-estate-planning` (0.1.0) with one skill,
+  `assemble-nsw-estate-documents`: extracts a provenance-cited instruction
+  record from a completed client instruction sheet, halts at a solicitor
+  confirmation gate, and fills the firm's own NSW will, enduring power of
+  attorney and appointment of enduring guardian precedents at explicit
+  `{{field_name}}` markers only, returning a change manifest, gap report
+  and a dated execution-formalities reference verified against
+  legislation.nsw.gov.au (2026-08-20). The plugin ships no scripts — a
+  deliberate departure from the script-only pattern, recorded in
+  `docs/adr/0001-platform-neutral-no-script-document-assembly.md`, so the
+  pack stays deployable as plain markdown on text-based agent platforms;
+  `tests/test_australian_estate_planning.py` enforces the marker-only,
+  fail-closed and no-platform-name invariants.
+- First architecture decision records under `docs/adr/`, and a root
+  `CONTEXT-MAP.md` splitting the registry-machinery glossary from the new
+  plugin-domain glossary in
+  `plugins/australian-estate-planning/CONTEXT.md`.
+
 ### Changed
 
 - Added a Description column to the README plugin table and rewrote each

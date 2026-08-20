@@ -69,6 +69,27 @@
       ]
     },
     {
+      "name": "australian-estate-planning",
+      "source": {
+        "source": "local",
+        "path": "./plugins/australian-estate-planning"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity",
+      "description": "Assemble NSW estate planning documents — a will, an enduring power of attorney and an appointment of enduring guardian — by extracting a provenance-cited instruction record from a completed instruction sheet, halting at a solicitor confirmation gate, and filling the firm's own precedents at explicit markers only, with a change manifest and gap report for every fill and no document ever drafted from scratch.",
+      "version": "0.1.0",
+      "keywords": [
+        "australian-law",
+        "estate-planning",
+        "wills",
+        "enduring-powers-of-attorney",
+        "document-assembly"
+      ]
+    },
+    {
       "name": "australian-legal-research",
       "source": {
         "source": "local",

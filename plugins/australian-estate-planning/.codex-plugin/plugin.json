@@ -1,0 +1,40 @@
+{
+  "name": "australian-estate-planning",
+  "version": "0.1.0",
+  "description": "Assemble NSW estate planning documents — a will, an enduring power of attorney and an appointment of enduring guardian — by extracting a provenance-cited instruction record from a completed instruction sheet, halting at a solicitor confirmation gate, and filling the firm's own precedents at explicit markers only, with a change manifest and gap report for every fill and no document ever drafted from scratch.",
+  "author": {
+    "name": "l0cka",
+    "url": "https://github.com/l0cka"
+  },
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/australian-estate-planning",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": [
+    "australian-law",
+    "estate-planning",
+    "wills",
+    "enduring-powers-of-attorney",
+    "document-assembly"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Australian Estate Planning",
+    "shortDescription": "Fills the firm's NSW will, enduring POA and enduring guardianship precedents from a confirmed instruction record. A solicitor confirms every step.",
+    "longDescription": "Ingests a completed client instruction sheet, extracts a canonical instruction record in which every field carries its provenance in the sheet or is marked cannot be determined, and halts at a solicitor confirmation gate before any document work begins. Once the record is confirmed, the workflow fills the firm's own precedents — a will, an enduring power of attorney and an appointment of enduring guardian for New South Wales — at explicit {{field_name}} markers only, never rewriting precedent wording, adopting connected drafting-playbook positions where they cover a clause point and sending every uncovered clause choice to the gap report. Every fill returns a change manifest reconciling the output against the precedent, a gap report, and dated execution-formalities references verified against the official NSW legislation publisher. No precedent means no draft: the workflow fails closed rather than composing documents itself.",
+    "developerName": "l0cka",
+    "category": "Productivity",
+    "capabilities": [
+      "Read"
+    ],
+    "websiteURL": "https://github.com/l0cka/legal-skills",
+    "defaultPrompt": [
+      "Extract an instruction record from this completed estate planning instruction sheet.",
+      "Present the extraction table with provenance for my confirmation before drafting anything.",
+      "Fill the firm's NSW will precedent from the confirmed instruction record.",
+      "Fill the enduring power of attorney and appointment of enduring guardian precedents for the same client.",
+      "Show me the change manifest and gap report for the last fill.",
+      "List the execution requirements for each document and where each one comes from."
+    ],
+    "brandColor": "#1C3C63"
+  }
+}

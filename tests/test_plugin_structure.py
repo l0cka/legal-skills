@@ -74,6 +74,23 @@ PLUGINS = {
             "$check-commonwealth-legislation",
         ),
     },
+    "australian-estate-planning": {
+        "skills": {
+            "assemble-nsw-estate-documents",
+        },
+        "reference_files": (
+            "estate-planning-source-and-control-method.md",
+            "instruction-record-schema.md",
+            "nsw-execution-formalities.md",
+            "marker-syntax-guide.md",
+            "playbook-usage-rules.md",
+        ),
+        "every_skill_mentions": (
+            "estate-planning-source-and-control-method.md",
+            "draft — solicitor review required",
+            "{{",
+        ),
+    },
     "australian-litigation-deadlines": {
         "skills": {
             "configure-litigation-deadline-profile",
