@@ -1,0 +1,4 @@
+interface:
+  display_name: "Assemble Victorian Estate Documents"
+  short_description: "Fill human-designed Victorian estate precedents through a confirmed sidecar profile"
+  default_prompt: "Use $assemble-vic-estate-documents to extract an instruction record, present it for confirmation, register or verify a sidecar profile for the firm's unchanged Victorian precedents, then fill working copies with a change manifest and gap report."

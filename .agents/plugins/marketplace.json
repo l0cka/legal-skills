@@ -79,8 +79,8 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Productivity",
-      "description": "Assemble NSW estate planning documents — a will, an enduring power of attorney and an appointment of enduring guardian — by extracting a provenance-cited instruction record from a completed instruction sheet, halting at a solicitor confirmation gate, and filling the firm's own precedents at explicit markers only, with a change manifest and gap report for every fill and no document ever drafted from scratch.",
-      "version": "0.1.0",
+      "description": "Assemble NSW and Victorian estate planning documents from a provenance-cited instruction record and the firm's human-designed precedents. A separate solicitor-confirmed precedent profile registers exact fill sites, every use checks for anchor drift, and only a working copy is changed. Covers wills and enduring powers of attorney in both jurisdictions, NSW enduring guardianship, and Victorian medical treatment decision-maker appointments, with no document drafted from scratch.",
+      "version": "0.2.0",
       "keywords": [
         "australian-law",
         "estate-planning",

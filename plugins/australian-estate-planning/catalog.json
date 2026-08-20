@@ -1,25 +1,29 @@
 {
   "displayName": "Australian Estate Planning",
-  "shortDescription": "Fills the firm's NSW will, enduring POA and enduring guardianship precedents from a confirmed instruction record. A solicitor confirms every step.",
-  "longDescription": "Ingests a completed client instruction sheet, extracts a canonical instruction record in which every field carries its provenance in the sheet or is marked cannot be determined, and halts at a solicitor confirmation gate before any document work begins. Once the record is confirmed, the workflow fills the firm's own precedents — a will, an enduring power of attorney and an appointment of enduring guardian for New South Wales — at factual {{field_name}} markers and registered {{clause_choice:clause_point}} markers, never rewriting precedent wording. A connected drafting playbook may identify a registered verbatim clause variant, but the responsible solicitor confirms it before insertion and every unresolved choice makes that document NOT READY. Every fill returns a change manifest reconciling the output against the precedent, a gap report, and dated execution-formalities references verified against the official NSW legislation publisher. No precedent means no draft: the workflow fails closed rather than composing documents itself.",
+  "shortDescription": "Fills human-designed NSW and Victorian estate precedents through solicitor-confirmed sidecar profiles. Source precedents remain unchanged.",
+  "longDescription": "Ingests a completed client instruction sheet, extracts a canonical instruction record in which every field carries its provenance or is marked cannot be determined, and halts at a solicitor confirmation gate. The firm does not add machine markers to its precedents. On first use, the jurisdiction-specific workflow proposes a separate precedent profile recording the source document's identity, exact factual and clause sites, field map and closed clause-choice register, then stops for solicitor confirmation. Later fills use working copies only after the source fingerprint, structural locations, exact anchors and expected occurrence counts still match; any drift makes that document NOT READY. The plugin covers wills and enduring powers of attorney in New South Wales and Victoria, NSW appointments of enduring guardian, and Victorian appointments of medical treatment decision maker. Every fill returns a complete change manifest, gap report and dated execution-formalities references. No precedent or confirmed profile means no draft, and the workflow never composes a document from scratch.",
   "defaultPrompt": [
     "Extract an instruction record from this completed estate planning instruction sheet.",
     "Present the extraction table with provenance for my confirmation before drafting anything.",
+    "Register this human-designed precedent in a sidecar profile without modifying the source document.",
     "Fill the firm's NSW will precedent from the confirmed instruction record.",
     "Fill the enduring power of attorney and appointment of enduring guardian precedents for the same client.",
+    "Fill the firm's Victorian will, enduring power of attorney and medical treatment decision-maker appointment precedents.",
     "Show me the change manifest and gap report for the last fill.",
     "List the execution requirements for each document and where each one comes from."
   ],
   "whatItDoes": [
     "Extracts a provenance-cited instruction record from a completed instruction sheet and halts at a solicitor confirmation gate before any drafting",
-    "Fills factual {{field_name}} markers and solicitor-confirmed {{clause_choice:clause_point}} markers in the firm's registered NSW precedents",
-    "Returns a change manifest, a gap report and dated NSW execution-formalities references verified against the official publisher with every fill"
+    "Registers exact factual and clause sites in a sidecar precedent profile without modifying the firm's human-designed source document",
+    "Fills only solicitor-confirmed sites in a working copy after exact anchor and drift checks",
+    "Returns a change manifest, a gap report and dated jurisdiction-specific execution-formalities references verified against the official publisher with every fill"
   ],
   "boundaries": [
     "Every output is a draft until the responsible solicitor reviews it — each document carries a DRAFT — SOLICITOR REVIEW REQUIRED banner",
-    "No precedent, no draft: the workflow never composes a will or instrument from scratch and never rewrites precedent wording outside markers",
+    "No precedent or confirmed profile, no draft: the workflow never composes a will or instrument from scratch and never changes content outside registered sites",
+    "Any changed fingerprint, missing or duplicate anchor, changed target or ambiguous site stops the affected document for profile reconfirmation",
     "Never assesses testamentary capacity, undue influence, family provision or notional estate exposure, or tax — these are flagged to the solicitor, never resolved",
-    "Practitioner-only and NSW-only in this release: self-represented parties and other jurisdictions are routed OUTSIDE SCOPE; advance care directives and superannuation death benefit nominations are flagged, never drafted"
+    "Practitioner-only and limited to NSW and Victoria: self-represented parties and other jurisdictions are routed OUTSIDE SCOPE; advance care directives, supportive attorney appointments and superannuation death benefit nominations are flagged, never drafted"
   ],
   "evidenceStates": {
     "qualifications": [

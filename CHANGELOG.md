@@ -10,20 +10,25 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- `assemble-vic-estate-documents` in `australian-estate-planning` (0.2.0):
+  extends the solicitor-controlled assembly workflow to Victorian
+  wills, enduring powers of attorney and appointments of medical treatment
+  decision maker. Adds a Victorian instruction-record schema and a dated
+  formalities snapshot verified against legislation.vic.gov.au on 2026-08-20,
+  including the Powers of Attorney Regulations 2025 prescribed form.
 - New plugin `australian-estate-planning` (0.1.0) with one skill,
   `assemble-nsw-estate-documents`: extracts a provenance-cited instruction
   record from a completed client instruction sheet, halts at a solicitor
   confirmation gate, and fills the firm's own NSW will, enduring power of
-  attorney and appointment of enduring guardian precedents at explicit factual
-  `{{field_name}}` markers and registered
-  `{{clause_choice:clause_point}}` markers, returning a change manifest, gap
-  report and a dated execution-formalities reference verified against
+  attorney and appointment of enduring guardian precedents through separately
+  confirmed sidecar profiles of exact factual and clause sites, returning a
+  change manifest, gap report and a dated execution-formalities reference verified against
   legislation.nsw.gov.au (2026-08-20). The plugin ships no scripts — a
   deliberate departure from the script-only pattern, recorded in
   `docs/adr/0001-platform-neutral-no-script-document-assembly.md`, so the
   pack stays deployable as plain markdown on text-based agent platforms;
-  `tests/test_australian_estate_planning.py` enforces the marker-only,
-  fail-closed and no-platform-name invariants.
+  `tests/test_australian_estate_planning.py` enforces the sidecar-profile,
+  source-preservation, drift, fail-closed and no-platform-name invariants.
 - First architecture decision records under `docs/adr/`, and a root
   `CONTEXT-MAP.md` splitting the registry-machinery glossary from the new
   plugin-domain glossary in
@@ -31,8 +36,18 @@ plugin manifests contain their intended release versions.
 
 ### Changed
 
+- Replaced the machine-marker requirement in both estate-planning skills with
+  sidecar precedent profiles for ordinary human-designed firm precedents. The
+  source precedent remains unchanged; a solicitor confirms exact structural
+  locations and text anchors before first use; every later fill operates on a
+  working copy and stops on fingerprint, anchor, target or occurrence-count
+  drift. ADR 0002 records the replacement and preserves ADR 0001 as
+  superseded decision history.
+- Broadened `australian-estate-planning` metadata and shared controls from
+  NSW-only to NSW and Victoria while keeping jurisdiction-specific schemas,
+  formalities references and fail-closed routing.
 - Defined explicit clause-choice assembly for `australian-estate-planning`:
-  each clause marker has a closed register of firm-approved verbatim variants,
+  each registered clause site has a closed register of firm-approved verbatim variants,
   a playbook may identify but not create a variant, the responsible solicitor
   confirms it before insertion, and every unresolved choice makes that document
   `NOT READY`.
