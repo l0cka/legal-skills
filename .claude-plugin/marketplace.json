@@ -52,8 +52,8 @@
     {
       "name": "australian-estate-planning",
       "source": "./plugins/australian-estate-planning",
-      "description": "Assemble NSW and Victorian estate planning documents from a provenance-cited instruction record and the firm's human-designed precedents. A separate solicitor-confirmed precedent profile registers exact fill sites, every use checks for anchor drift, and only a working copy is changed. Covers wills and enduring powers of attorney in both jurisdictions, NSW enduring guardianship, and Victorian medical treatment decision-maker appointments, with no document drafted from scratch.",
-      "version": "0.2.0",
+      "description": "Generate solicitor-reviewable sidecar profiles from uploaded human-designed NSW and Victorian estate precedents, then assemble documents from provenance-cited instructions using only confirmed sites in working copies. The source precedents remain unchanged, every reuse checks for anchor drift, and no document is drafted from scratch.",
+      "version": "0.3.0",
       "category": "Productivity",
       "tags": [
         "australian-law",

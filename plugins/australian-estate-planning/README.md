@@ -7,24 +7,31 @@ human-designed source precedent unchanged, registers permitted fill locations
 in a separate solicitor-confirmed precedent profile, and changes only those
 sites in a working copy.
 
-Two jurisdiction-specific workflows run the same governed pipeline:
+One onboarding workflow and two jurisdiction-specific assembly workflows use
+the same governed controls. `generate-precedent-profile` creates a proposed
+sidecar profile from uploaded clean firm precedents and stops for solicitor
+confirmation. The assembly workflows are
 `assemble-nsw-estate-documents` for New South Wales and
 `assemble-vic-estate-documents` for Victoria.
 
-1. **Extract** — a completed client instruction sheet (or a direct
+1. **Profile** — each uploaded clean source precedent is inspected read-only,
+   mapped to the relevant instruction schema and returned as a proposed
+   sidecar profile. Executed or client-completed files are rejected, and the
+   profile cannot be used until the responsible solicitor confirms it;
+2. **Extract** — a completed client instruction sheet (or a direct
    interview) becomes a canonical instruction record in which every field
    carries its provenance or is marked `cannot be determined`;
-2. **Confirm** — the workflow halts at an extraction gate until the
+3. **Confirm** — the workflow halts at an extraction gate until the
    responsible solicitor confirms the table, and confirmed fields are
    never re-asked;
-3. **Register and fill** — on first use, the workflow proposes a sidecar
+4. **Register and fill** — on first use, the workflow proposes a sidecar
    profile of exact factual and clause sites and halts for solicitor
    confirmation. Later fills use working copies only after every structural
    location and exact anchor still matches. A connected drafting playbook may
    identify a registered, verbatim clause variant, but the solicitor confirms
    it before insertion; every unresolved choice or drift finding makes that
    document `NOT READY`; and
-4. **Report** — each draft returns under a `DRAFT — SOLICITOR REVIEW
+5. **Report** — each draft returns under a `DRAFT — SOLICITOR REVIEW
    REQUIRED` banner with a change manifest reconciled against the
    precedent, a gap report, and dated jurisdiction-specific execution-
    formalities references verified against the official publisher.

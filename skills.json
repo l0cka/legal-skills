@@ -181,7 +181,7 @@
       "name": "assemble-nsw-estate-documents",
       "path": "plugins/australian-estate-planning/skills/assemble-nsw-estate-documents",
       "plugin": "plugins/australian-estate-planning",
-      "plugin_version": "0.2.0",
+      "plugin_version": "0.3.0",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -192,12 +192,23 @@
       "name": "assemble-vic-estate-documents",
       "path": "plugins/australian-estate-planning/skills/assemble-vic-estate-documents",
       "plugin": "plugins/australian-estate-planning",
-      "plugin_version": "0.2.0",
+      "plugin_version": "0.3.0",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
       ],
       "source": "Original sidecar-profile Victorian precedent-fill workflow for human-designed firm documents, with provenance-cited extraction, solicitor confirmation, exact-anchor drift checks, and execution formalities verified against legislation.vic.gov.au on 2026-08-20 (Wills Act 1997, Powers of Attorney Act 2014, Powers of Attorney Regulations 2025, Medical Treatment Planning and Decisions Act 2016)."
+    },
+    {
+      "name": "generate-precedent-profile",
+      "path": "plugins/australian-estate-planning/skills/generate-precedent-profile",
+      "plugin": "plugins/australian-estate-planning",
+      "plugin_version": "0.3.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original read-only onboarding workflow for generating solicitor-reviewable sidecar profiles from uploaded clean NSW and Victorian firm estate precedents, using exact structural anchors, complete schema coverage and fail-closed source-integrity checks."
     },
     {
       "name": "check-act-legislation",
