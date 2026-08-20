@@ -16,8 +16,8 @@ Canonical plugin packages live in this directory.
   an Australian company under the Corporations Act. Prepares board records and
   reviews for human approval.
 - [**Australian Estate Planning**](australian-estate-planning/README.md) —
-  Fills the firm's NSW will, enduring POA and enduring guardianship precedents
-  from a confirmed instruction record. A solicitor confirms every step.
+  Fills human-designed NSW and Victorian estate precedents through
+  solicitor-confirmed sidecar profiles. Source precedents remain unchanged.
 - [**Australian Legal Research**](australian-legal-research/README.md) —
   Checks Australian legislation and case citations against the official
   publishers. Writes and reviews AGLC4 citations.

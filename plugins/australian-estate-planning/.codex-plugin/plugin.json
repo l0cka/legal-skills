@@ -1,7 +1,7 @@
 {
   "name": "australian-estate-planning",
-  "version": "0.1.0",
-  "description": "Assemble NSW estate planning documents — a will, an enduring power of attorney and an appointment of enduring guardian — by extracting a provenance-cited instruction record from a completed instruction sheet, halting at a solicitor confirmation gate, and filling the firm's own precedents at explicit markers only, with a change manifest and gap report for every fill and no document ever drafted from scratch.",
+  "version": "0.2.0",
+  "description": "Assemble NSW and Victorian estate planning documents from a provenance-cited instruction record and the firm's human-designed precedents. A separate solicitor-confirmed precedent profile registers exact fill sites, every use checks for anchor drift, and only a working copy is changed. Covers wills and enduring powers of attorney in both jurisdictions, NSW enduring guardianship, and Victorian medical treatment decision-maker appointments, with no document drafted from scratch.",
   "author": {
     "name": "l0cka",
     "url": "https://github.com/l0cka"
@@ -19,8 +19,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Australian Estate Planning",
-    "shortDescription": "Fills the firm's NSW will, enduring POA and enduring guardianship precedents from a confirmed instruction record. A solicitor confirms every step.",
-    "longDescription": "Ingests a completed client instruction sheet, extracts a canonical instruction record in which every field carries its provenance in the sheet or is marked cannot be determined, and halts at a solicitor confirmation gate before any document work begins. Once the record is confirmed, the workflow fills the firm's own precedents — a will, an enduring power of attorney and an appointment of enduring guardian for New South Wales — at factual {{field_name}} markers and registered {{clause_choice:clause_point}} markers, never rewriting precedent wording. A connected drafting playbook may identify a registered verbatim clause variant, but the responsible solicitor confirms it before insertion and every unresolved choice makes that document NOT READY. Every fill returns a change manifest reconciling the output against the precedent, a gap report, and dated execution-formalities references verified against the official NSW legislation publisher. No precedent means no draft: the workflow fails closed rather than composing documents itself.",
+    "shortDescription": "Fills human-designed NSW and Victorian estate precedents through solicitor-confirmed sidecar profiles. Source precedents remain unchanged.",
+    "longDescription": "Ingests a completed client instruction sheet, extracts a canonical instruction record in which every field carries its provenance or is marked cannot be determined, and halts at a solicitor confirmation gate. The firm does not add machine markers to its precedents. On first use, the jurisdiction-specific workflow proposes a separate precedent profile recording the source document's identity, exact factual and clause sites, field map and closed clause-choice register, then stops for solicitor confirmation. Later fills use working copies only after the source fingerprint, structural locations, exact anchors and expected occurrence counts still match; any drift makes that document NOT READY. The plugin covers wills and enduring powers of attorney in New South Wales and Victoria, NSW appointments of enduring guardian, and Victorian appointments of medical treatment decision maker. Every fill returns a complete change manifest, gap report and dated execution-formalities references. No precedent or confirmed profile means no draft, and the workflow never composes a document from scratch.",
     "developerName": "l0cka",
     "category": "Productivity",
     "capabilities": [
@@ -30,8 +30,10 @@
     "defaultPrompt": [
       "Extract an instruction record from this completed estate planning instruction sheet.",
       "Present the extraction table with provenance for my confirmation before drafting anything.",
+      "Register this human-designed precedent in a sidecar profile without modifying the source document.",
       "Fill the firm's NSW will precedent from the confirmed instruction record.",
       "Fill the enduring power of attorney and appointment of enduring guardian precedents for the same client.",
+      "Fill the firm's Victorian will, enduring power of attorney and medical treatment decision-maker appointment precedents.",
       "Show me the change manifest and gap report for the last fill.",
       "List the execution requirements for each document and where each one comes from."
     ],
