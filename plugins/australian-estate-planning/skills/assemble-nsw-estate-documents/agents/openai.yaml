@@ -1,0 +1,4 @@
+interface:
+  display_name: "Assemble NSW Estate Documents"
+  short_description: "Fill the firm's NSW will, enduring POA and enduring guardianship precedents from a confirmed instruction record"
+  default_prompt: "Use $assemble-nsw-estate-documents to extract an instruction record from this completed instruction sheet, present the extraction table for my confirmation, then fill the firm's NSW precedents with a change manifest and gap report."

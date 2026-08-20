@@ -178,6 +178,17 @@
       "source": "Original evidence-per-finding Australian company governance review workflow informed by official regulator and legislation sources."
     },
     {
+      "name": "assemble-nsw-estate-documents",
+      "path": "plugins/australian-estate-planning/skills/assemble-nsw-estate-documents",
+      "plugin": "plugins/australian-estate-planning",
+      "plugin_version": "0.1.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original marker-only precedent-fill workflow with provenance-cited extraction, a solicitor confirmation gate, and execution formalities verified against legislation.nsw.gov.au on 2026-08-20 (Succession Act 2006, Powers of Attorney Act 2003, Guardianship Act 1987)."
+    },
+    {
       "name": "check-act-legislation",
       "path": "plugins/australian-legal-research/skills/check-act-legislation",
       "plugin": "plugins/australian-legal-research",
