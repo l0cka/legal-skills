@@ -13,7 +13,7 @@ precedent.
 Read the
 [source and control method](../../references/estate-planning-source-and-control-method.md)
 first, and work from the
-[instruction record schema](../../references/instruction-record-schema.md),
+[NSW instruction record schema](../../references/nsw-instruction-record-schema.md),
 the [precedent profile guide](../../references/precedent-profile-guide.md),
 the [playbook usage rules](../../references/playbook-usage-rules.md) and
 the [NSW execution formalities reference](../../references/nsw-execution-formalities.md).
