@@ -82,7 +82,7 @@ PLUGINS = {
         },
         "reference_files": (
             "estate-planning-source-and-control-method.md",
-            "instruction-record-schema.md",
+            "nsw-instruction-record-schema.md",
             "nsw-execution-formalities.md",
             "precedent-profile-guide.md",
             "playbook-usage-rules.md",

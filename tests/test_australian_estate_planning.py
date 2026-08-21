@@ -169,11 +169,11 @@ class AustralianEstatePlanningPluginTests(unittest.TestCase):
             self.assertIn("cannot be determined", text)
             self.assertIn("provenance", text.lower())
             self.assertIn("extraction gate", text.lower())
-        for schema in ("instruction-record-schema.md", "vic-instruction-record-schema.md"):
+        for schema in ("nsw-instruction-record-schema.md", "vic-instruction-record-schema.md"):
             self.assertIn("Never fill a plausible value", self.read(REFERENCES / schema))
 
     def test_schema_covers_all_three_document_types(self) -> None:
-        schema = self.read(REFERENCES / "instruction-record-schema.md")
+        schema = self.read(REFERENCES / "nsw-instruction-record-schema.md")
         for heading in (
             "## Will",
             "## Enduring power of attorney",

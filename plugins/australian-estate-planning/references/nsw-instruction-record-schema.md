@@ -1,4 +1,4 @@
-# Instruction record schema
+# NSW instruction record schema
 
 The instruction record is the canonical structured output of the extraction
 gate and the only source of factual values the fill step may read. Clause text

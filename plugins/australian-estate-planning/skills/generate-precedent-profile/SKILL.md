@@ -13,7 +13,7 @@ Read the
 [source and control method](../../references/estate-planning-source-and-control-method.md)
 and [precedent profile guide](../../references/precedent-profile-guide.md)
 first. For NSW, use the
-[NSW instruction record schema](../../references/instruction-record-schema.md).
+[NSW instruction record schema](../../references/nsw-instruction-record-schema.md).
 For Victoria, use the
 [Victorian instruction record schema](../../references/vic-instruction-record-schema.md).
 

@@ -8,6 +8,12 @@ plugin manifests contain their intended release versions.
 
 ## Unreleased
 
+### Fixed
+
+- Renamed the NSW estate-planning instruction-record schema from the generic
+  `instruction-record-schema.md` to `nsw-instruction-record-schema.md`, matching
+  the Victorian naming convention and making the jurisdiction explicit.
+
 ### Added
 
 - `generate-precedent-profile` in `australian-estate-planning` (0.3.0):
