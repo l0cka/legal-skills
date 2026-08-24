@@ -83,8 +83,12 @@ def add_months(date: dt.date, months: int) -> dt.date:
 
 
 def parse_month_day(value: str) -> tuple[int, int]:
-    month, day = value.split("-")
-    return (int(month), int(day))
+    try:
+        month, day = map(int, value.split("-"))
+        dt.date(2000, month, day)
+    except (AttributeError, TypeError, ValueError) as exc:
+        raise Refusal(f"invalid excluded-range date {value!r}; expected MM-DD") from exc
+    return month, day
 
 
 def in_excluded_ranges(date: dt.date, ranges: list[dict]) -> bool:
@@ -128,19 +132,14 @@ class HolidayTable:
             )
         for start, end, reason in self.windows:
             if start <= date <= end:
-                raise Refusal(
-                    f"{date} falls in an uncertain holiday window "
-                    f"({start} to {end}): {reason}"
-                )
+                raise Refusal(f"{date} falls in an uncertain holiday window ({start} to {end}): {reason}")
 
     def is_business_day(self, date: dt.date) -> bool:
         self.check_usable(date)
         return date.weekday() < 5 and date not in self.holidays
 
 
-def next_business_day_on_or_after(
-    date: dt.date, table: HolidayTable, excluded_ranges: list[dict]
-) -> dt.date:
+def next_business_day_on_or_after(date: dt.date, table: HolidayTable, excluded_ranges: list[dict]) -> dt.date:
     while True:
         if excluded_ranges and in_excluded_ranges(date, excluded_ranges):
             raise Refusal(
@@ -223,17 +222,12 @@ def compute(request: dict, tables_dir: Path) -> dict:
         for prov_id in rule.get("applies_provisions", []):
             provision = provisions.get(prov_id)
             if provision is None:
-                raise Refusal(
-                    f"provision {prov_id!r} referenced by rule {rule['id']} is "
-                    "not in the table"
-                )
+                raise Refusal(f"provision {prov_id!r} referenced by rule {rule['id']} is not in the table")
             require_verified(provision.get("evidence"), f"provision {prov_id}")
             applied.append(provision["citation"])
             effects = provision.get("time_computation_effects") or {}
             excluded_ranges.extend(effects.get("excluded_ranges", []))
-            short_threshold = max(
-                short_threshold, effects.get("short_period_threshold_days", 0)
-            )
+            short_threshold = max(short_threshold, effects.get("short_period_threshold_days", 0))
 
         unit = rule["period"]["unit"]
         length = rule["period"]["length"]
@@ -265,18 +259,20 @@ def compute(request: dict, tables_dir: Path) -> dict:
             warnings.extend(holiday_table.caveats)
 
         if unit == "business_days":
-            deadline = counted_day_deadline(
-                trigger, length, excluded_ranges, holiday_table
-            )
+            if holiday_table is None:
+                raise Refusal("business-day computation requires a verified holiday table")
+            deadline = counted_day_deadline(trigger, length, excluded_ranges, holiday_table)
         elif excluded_ranges:
             deadline = counted_day_deadline(trigger, length, excluded_ranges, None)
             if rollover == "next_business_day":
-                deadline = next_business_day_on_or_after(
-                    deadline, holiday_table, excluded_ranges
-                )
+                if holiday_table is None:
+                    raise Refusal("business-day rollover requires a verified holiday table")
+                deadline = next_business_day_on_or_after(deadline, holiday_table, excluded_ranges)
         else:
             deadline = raw_deadline(trigger, length, unit)
             if rollover == "next_business_day":
+                if holiday_table is None:
+                    raise Refusal("business-day rollover requires a verified holiday table")
                 deadline = next_business_day_on_or_after(deadline, holiday_table, [])
 
         return {

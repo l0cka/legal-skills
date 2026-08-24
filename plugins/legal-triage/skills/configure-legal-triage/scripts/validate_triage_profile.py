@@ -73,9 +73,7 @@ def require_string(value: Any, location: str) -> str:
 def require_slug(value: Any, location: str) -> str:
     text = require_string(value, location)
     if not SLUG.fullmatch(text):
-        raise ProfileValidationError(
-            f"{location}: expected lowercase letters, digits and hyphens"
-        )
+        raise ProfileValidationError(f"{location}: expected lowercase letters, digits and hyphens")
     return text
 
 
@@ -87,12 +85,12 @@ def require_semver(value: Any, location: str) -> str:
 
 
 def require_true(value: Any, location: str) -> None:
-    if value is not True:
+    if not isinstance(value, bool) or not value:
         raise ProfileValidationError(f"{location}: must be true")
 
 
 def require_false(value: Any, location: str) -> None:
-    if value is not False:
+    if not isinstance(value, bool) or value:
         raise ProfileValidationError(f"{location}: must be false")
 
 
@@ -101,9 +99,7 @@ def parse_iso_date(value: Any, location: str) -> date:
     try:
         return date.fromisoformat(text)
     except ValueError as exc:
-        raise ProfileValidationError(
-            f"{location}: expected a real date in YYYY-MM-DD format"
-        ) from exc
+        raise ProfileValidationError(f"{location}: expected a real date in YYYY-MM-DD format") from exc
 
 
 def require_string_list(value: Any, location: str) -> list[str]:
@@ -115,9 +111,7 @@ def reject_client_fields(value: Any, location: str = "profile") -> None:
     if isinstance(value, dict):
         for key, child in value.items():
             if key in FORBIDDEN_PROFILE_KEYS:
-                raise ProfileValidationError(
-                    f"{location}.{key}: client or matter fields do not belong in a profile"
-                )
+                raise ProfileValidationError(f"{location}.{key}: client or matter fields do not belong in a profile")
             reject_client_fields(child, f"{location}.{key}")
     elif isinstance(value, list):
         for index, child in enumerate(value):
@@ -162,14 +156,10 @@ def validate_profile(
     require_semver(profile.get("profile_version"), "profile.profile_version")
     require_string(profile.get("centre_name"), "profile.centre_name")
     require_string_list(profile.get("jurisdictions"), "profile.jurisdictions")
-    require_string_list(
-        profile.get("intended_staff_roles"), "profile.intended_staff_roles"
-    )
+    require_string_list(profile.get("intended_staff_roles"), "profile.intended_staff_roles")
     status = require_string(profile.get("status"), "profile.status")
     if status not in ALLOWED_PROFILE_STATUSES:
-        raise ProfileValidationError(
-            "profile.status: expected draft, approved or retired"
-        )
+        raise ProfileValidationError("profile.status: expected draft, approved or retired")
 
     governance = require_object(payload.get("governance"), "governance")
     policies = require_list(payload.get("policies"), "policies")
@@ -185,16 +175,10 @@ def validate_profile(
         policy_categories.add(category)
         for field in ("title", "version", "owner", "source"):
             require_string(policy.get(field), f"{location}.{field}")
-        effective = parse_iso_date(
-            policy.get("effective_date"), f"{location}.effective_date"
-        )
-        review_due = parse_iso_date(
-            policy.get("review_due"), f"{location}.review_due"
-        )
+        effective = parse_iso_date(policy.get("effective_date"), f"{location}.effective_date")
+        review_due = parse_iso_date(policy.get("review_due"), f"{location}.review_due")
         if review_due < effective:
-            raise ProfileValidationError(
-                f"{location}.review_due: cannot precede effective_date"
-            )
+            raise ProfileValidationError(f"{location}.review_due: cannot precede effective_date")
         policy_review_dates.append((policy_id, review_due))
     require_unique(policy_ids, "policies[].policy_id")
     missing_categories = REQUIRED_POLICY_CATEGORIES - policy_categories
@@ -246,16 +230,12 @@ def validate_profile(
     require_string(conflict.get("responsible_role"), "conflict_check.responsible_role")
 
     service_rules = require_object(payload.get("service_rules"), "service_rules")
-    service_areas = require_list(
-        service_rules.get("service_areas"), "service_rules.service_areas"
-    )
+    service_areas = require_list(service_rules.get("service_areas"), "service_rules.service_areas")
     service_area_ids: list[str] = []
     for index, raw_area in enumerate(service_areas):
         location = f"service_rules.service_areas[{index}]"
         area = require_object(raw_area, location)
-        service_area_ids.append(
-            require_slug(area.get("service_area_id"), f"{location}.service_area_id")
-        )
+        service_area_ids.append(require_slug(area.get("service_area_id"), f"{location}.service_area_id"))
         require_string(area.get("name"), f"{location}.name")
         require_string_list(area.get("jurisdictions"), f"{location}.jurisdictions")
         require_policy_reference(area, location, known_policy_ids)
@@ -269,9 +249,7 @@ def validate_profile(
     for index, raw_factor in enumerate(eligibility):
         location = f"service_rules.eligibility_factors[{index}]"
         factor = require_object(raw_factor, location)
-        factor_ids.append(
-            require_slug(factor.get("factor_id"), f"{location}.factor_id")
-        )
+        factor_ids.append(require_slug(factor.get("factor_id"), f"{location}.factor_id"))
         require_string(factor.get("question"), f"{location}.question")
         require_policy_reference(factor, location, known_policy_ids)
         require_true(
@@ -280,16 +258,12 @@ def validate_profile(
         )
     require_unique(factor_ids, "service_rules.eligibility_factors[].factor_id")
 
-    exclusions = require_list(
-        service_rules.get("exclusions"), "service_rules.exclusions"
-    )
+    exclusions = require_list(service_rules.get("exclusions"), "service_rules.exclusions")
     exclusion_ids: list[str] = []
     for index, raw_exclusion in enumerate(exclusions):
         location = f"service_rules.exclusions[{index}]"
         exclusion = require_object(raw_exclusion, location)
-        exclusion_ids.append(
-            require_slug(exclusion.get("exclusion_id"), f"{location}.exclusion_id")
-        )
+        exclusion_ids.append(require_slug(exclusion.get("exclusion_id"), f"{location}.exclusion_id"))
         require_string(exclusion.get("description"), f"{location}.description")
         require_policy_reference(exclusion, location, known_policy_ids)
         require_true(exclusion.get("referral_required"), f"{location}.referral_required")
@@ -300,9 +274,7 @@ def validate_profile(
     for index, raw_pathway in enumerate(pathways):
         location = f"escalation_pathways[{index}]"
         pathway = require_object(raw_pathway, location)
-        pathway_ids.append(
-            require_slug(pathway.get("pathway_id"), f"{location}.pathway_id")
-        )
+        pathway_ids.append(require_slug(pathway.get("pathway_id"), f"{location}.pathway_id"))
         for field in ("trigger", "action", "availability"):
             require_string(pathway.get(field), f"{location}.{field}")
         require_policy_reference(pathway, location, known_policy_ids)
@@ -314,28 +286,18 @@ def validate_profile(
     for index, raw_referral in enumerate(referrals):
         location = f"referrals[{index}]"
         referral = require_object(raw_referral, location)
-        referral_id = require_slug(
-            referral.get("referral_id"), f"{location}.referral_id"
-        )
+        referral_id = require_slug(referral.get("referral_id"), f"{location}.referral_id")
         referral_ids.append(referral_id)
         for field in ("name", "scope", "contact", "source"):
             require_string(referral.get(field), f"{location}.{field}")
         require_string_list(referral.get("jurisdictions"), f"{location}.jurisdictions")
-        verified_at = parse_iso_date(
-            referral.get("verified_at"), f"{location}.verified_at"
-        )
-        review_due = parse_iso_date(
-            referral.get("review_due"), f"{location}.review_due"
-        )
+        verified_at = parse_iso_date(referral.get("verified_at"), f"{location}.verified_at")
+        review_due = parse_iso_date(referral.get("review_due"), f"{location}.review_due")
         if review_due < verified_at:
-            raise ProfileValidationError(
-                f"{location}.review_due: cannot precede verified_at"
-            )
+            raise ProfileValidationError(f"{location}.review_due: cannot precede verified_at")
         referral_review_dates.append((referral_id, review_due))
         if not isinstance(referral.get("warm_referral_available"), bool):
-            raise ProfileValidationError(
-                f"{location}.warm_referral_available: expected true or false"
-            )
+            raise ProfileValidationError(f"{location}.warm_referral_available: expected true or false")
         require_true(referral.get("consent_required"), f"{location}.consent_required")
     require_unique(referral_ids, "referrals[].referral_id")
 
@@ -360,54 +322,32 @@ def validate_profile(
 
     if require_approved:
         if status != "approved":
-            raise ProfileValidationError(
-                "profile.status: must be approved for live triage"
-            )
+            raise ProfileValidationError("profile.status: must be approved for live triage")
         placeholders = find_placeholders(payload)
         if placeholders:
-            raise ProfileValidationError(
-                f"{placeholders[0]}: placeholder content is not allowed for live triage"
-            )
+            raise ProfileValidationError(f"{placeholders[0]}: placeholder content is not allowed for live triage")
         require_string(governance.get("approved_by"), "governance.approved_by")
-        approved_at = parse_iso_date(
-            governance.get("approved_at"), "governance.approved_at"
-        )
-        review_due = parse_iso_date(
-            governance.get("review_due"), "governance.review_due"
-        )
+        approved_at = parse_iso_date(governance.get("approved_at"), "governance.approved_at")
+        review_due = parse_iso_date(governance.get("review_due"), "governance.review_due")
         if review_due < approved_at:
-            raise ProfileValidationError(
-                "governance.review_due: cannot precede approved_at"
-            )
+            raise ProfileValidationError("governance.review_due: cannot precede approved_at")
         if approved_at > today:
-            raise ProfileValidationError(
-                "governance.approved_at: approval date cannot be in the future"
-            )
+            raise ProfileValidationError("governance.approved_at: approval date cannot be in the future")
         if review_due < today:
             raise ProfileValidationError("governance.review_due: profile review is overdue")
         for policy_id, policy_review_due in policy_review_dates:
             if policy_review_due < today:
-                raise ProfileValidationError(
-                    f"policies[{policy_id}].review_due: policy review is overdue"
-                )
+                raise ProfileValidationError(f"policies[{policy_id}].review_due: policy review is overdue")
         for referral_id, referral_review_due in referral_review_dates:
             if referral_review_due < today:
-                raise ProfileValidationError(
-                    f"referrals[{referral_id}].review_due: referral review is overdue"
-                )
+                raise ProfileValidationError(f"referrals[{referral_id}].review_due: referral review is overdue")
     return warnings
 
 
-def require_policy_reference(
-    item: dict[str, Any], location: str, known_policy_ids: set[str]
-) -> None:
-    policy_id = require_slug(
-        item.get("source_policy_id"), f"{location}.source_policy_id"
-    )
+def require_policy_reference(item: dict[str, Any], location: str, known_policy_ids: set[str]) -> None:
+    policy_id = require_slug(item.get("source_policy_id"), f"{location}.source_policy_id")
     if policy_id not in known_policy_ids:
-        raise ProfileValidationError(
-            f"{location}.source_policy_id: unknown policy {policy_id}"
-        )
+        raise ProfileValidationError(f"{location}.source_policy_id: unknown policy {policy_id}")
 
 
 def load_profile(path: Path) -> dict[str, Any]:
@@ -416,16 +356,12 @@ def load_profile(path: Path) -> dict[str, Any]:
     except FileNotFoundError as exc:
         raise ProfileValidationError(f"file not found: {path}") from exc
     except json.JSONDecodeError as exc:
-        raise ProfileValidationError(
-            f"invalid JSON at line {exc.lineno}, column {exc.colno}: {exc.msg}"
-        ) from exc
+        raise ProfileValidationError(f"invalid JSON at line {exc.lineno}, column {exc.colno}: {exc.msg}") from exc
     return require_object(payload, "root")
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(
-        description="Validate a centre-local Legal Triage profile."
-    )
+    parser = argparse.ArgumentParser(description="Validate a centre-local Legal Triage profile.")
     parser.add_argument("profile", type=Path, help="Path to profile JSON")
     parser.add_argument(
         "--require-approved",
@@ -438,9 +374,7 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
-        warnings = validate_profile(
-            load_profile(args.profile), require_approved=args.require_approved
-        )
+        warnings = validate_profile(load_profile(args.profile), require_approved=args.require_approved)
     except (OSError, ProfileValidationError) as exc:
         print(f"INVALID: {exc}", file=sys.stderr)
         return 1

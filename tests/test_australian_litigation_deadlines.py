@@ -11,10 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PLUGIN = ROOT / "plugins" / "australian-litigation-deadlines"
-SCRIPT = (
-    PLUGIN / "skills" / "compute-procedural-deadlines" / "scripts"
-    / "compute_deadline.py"
-)
+SCRIPT = PLUGIN / "skills" / "compute-procedural-deadlines" / "scripts" / "compute_deadline.py"
 SPEC = importlib.util.spec_from_file_location("compute_deadline", SCRIPT)
 assert SPEC and SPEC.loader
 ENGINE = importlib.util.module_from_spec(SPEC)
@@ -69,9 +66,7 @@ class ShippedTableTests(unittest.TestCase):
             cover_from = dt.date.fromisoformat(table["coverage"]["from"])
             cover_to = dt.date.fromisoformat(table["coverage"]["to"])
             for day in table["holidays"]:
-                self.assertTrue(
-                    cover_from <= dt.date.fromisoformat(day) <= cover_to, path.name
-                )
+                self.assertTrue(cover_from <= dt.date.fromisoformat(day) <= cover_to, path.name)
 
     def test_rule_table_entries_are_verified_or_pending_with_notes(self) -> None:
         rules_dir = PLUGIN / "references" / "computation-rules"
@@ -85,9 +80,7 @@ class ShippedTableTests(unittest.TestCase):
                 label = f"{path.name}:{entry['id']}"
                 self.assertTrue(entry.get("citation") or entry.get("summary"), label)
                 evidence = entry["evidence"]
-                self.assertIn(
-                    evidence["state"], ("verified", "pending-verification"), label
-                )
+                self.assertIn(evidence["state"], ("verified", "pending-verification"), label)
                 if evidence["state"] == "verified":
                     verified += 1
                     for field in ("checked", "method", "version"):
@@ -100,11 +93,7 @@ class ShippedTableTests(unittest.TestCase):
         self.assertGreater(pending, 0)
 
     def test_vcat_ships_no_general_period_rule(self) -> None:
-        table = json.loads(
-            (PLUGIN / "references" / "computation-rules" / "vcat.json").read_text(
-                encoding="utf-8"
-            )
-        )
+        table = json.loads((PLUGIN / "references" / "computation-rules" / "vcat.json").read_text(encoding="utf-8"))
         self.assertEqual(table["period_rules"], [])
         self.assertIn("NO general default review period", table["note"])
 
@@ -120,9 +109,7 @@ class ShippedTableTests(unittest.TestCase):
         self.assertEqual(result["status"], "computed", result)
         self.assertEqual(result["candidate_date"], "2026-09-11")
         self.assertIn("r 14.3(1)", result["citation"])
-        self.assertTrue(
-            any("registry" in warning for warning in result["warnings"]), result
-        )
+        self.assertTrue(any("registry" in warning for warning in result["warnings"]), result)
 
     def test_shipped_fcr_rule_applies_december_exclusion(self) -> None:
         result = ENGINE.compute(
@@ -151,9 +138,7 @@ class ShippedTableTests(unittest.TestCase):
         # holiday in Brisbane, and rolls to Thursday.
         self.assertEqual(result["candidate_date"], "2026-08-13")
         self.assertIn("r 137(1)", result["citation"])
-        self.assertTrue(
-            any("registry" in warning for warning in result["warnings"]), result
-        )
+        self.assertTrue(any("registry" in warning for warning in result["warnings"]), result)
 
     def test_shipped_qld_christmas_eve_is_a_business_day(self) -> None:
         result = ENGINE.compute(
@@ -181,9 +166,7 @@ class ShippedTableTests(unittest.TestCase):
         self.assertEqual(result["status"], "computed", result)
         self.assertEqual(result["candidate_date"], "2026-09-11")
         self.assertIn("s 33(3)", result["citation"])
-        self.assertTrue(
-            any("enabling Act" in warning for warning in result["warnings"]), result
-        )
+        self.assertTrue(any("enabling Act" in warning for warning in result["warnings"]), result)
 
     def test_shipped_pending_rule_refuses_to_compute(self) -> None:
         result = ENGINE.compute(
@@ -249,11 +232,9 @@ EFFECTS_FIXTURES = [
 ]
 
 EFFECTS_REFUSALS = [
-    ("fcrx", "calendar_days", 5, "next_business_day", "2026-08-14",
-     "business days in periods of"),
+    ("fcrx", "calendar_days", 5, "next_business_day", "2026-08-14", "business days in periods of"),
     ("fcrx", "months", 2, "none", "2026-11-30", "excluded ranges"),
-    ("winhol", "calendar_days", 7, "next_business_day", "2026-12-12",
-     "would enter an excluded range"),
+    ("winhol", "calendar_days", 7, "next_business_day", "2026-12-12", "would enter an excluded range"),
 ]
 
 
@@ -305,29 +286,22 @@ class ComputationEngineTests(unittest.TestCase):
         cls._tmp = tempfile.TemporaryDirectory()
         cls.tables_dir = Path(cls._tmp.name)
         (cls.tables_dir / "computation-rules").mkdir()
-        shutil.copytree(
-            PLUGIN / "references" / "holidays", cls.tables_dir / "holidays"
-        )
+        shutil.copytree(PLUGIN / "references" / "holidays", cls.tables_dir / "holidays")
         cases = FIXTURES + [case[:5] for case in REFUSALS]
         for table_key in ("nsw", "vic"):
-            combos = {
-                (unit, length, rollover)
-                for key, unit, length, rollover, *_ in cases
-                if key == table_key
-            }
+            combos = {(unit, length, rollover) for key, unit, length, rollover, *_ in cases if key == table_key}
             table = build_rules_table(table_key, combos)
             path = cls.tables_dir / "computation-rules" / f"test-{table_key}.json"
             path.write_text(json.dumps(table), encoding="utf-8")
 
         effects_cases = EFFECTS_FIXTURES + [case[:5] for case in EFFECTS_REFUSALS]
         for table_key, holiday_key in (("fcrx", "nsw"), ("winhol", "winhol")):
-            combos = {
-                (unit, length, rollover)
-                for key, unit, length, rollover, *_ in effects_cases
-                if key == table_key
-            }
+            combos = {(unit, length, rollover) for key, unit, length, rollover, *_ in effects_cases if key == table_key}
             table = build_rules_table(
-                table_key, combos, holiday_table=holiday_key, effects=FCR_EFFECTS
+                table_key,
+                combos,
+                holiday_table=holiday_key,
+                effects=FCR_EFFECTS,  # gitleaks:allow
             )
             path = cls.tables_dir / "computation-rules" / f"test-{table_key}.json"
             path.write_text(json.dumps(table), encoding="utf-8")
@@ -352,9 +326,7 @@ class ComputationEngineTests(unittest.TestCase):
     def tearDownClass(cls) -> None:
         cls._tmp.cleanup()
 
-    def run_engine(
-        self, table_key: str, unit: str, length: int, rollover: str, trigger: str
-    ) -> dict:
+    def run_engine(self, table_key: str, unit: str, length: int, rollover: str, trigger: str) -> dict:
         return ENGINE.compute(
             {
                 "table_id": f"test-{table_key}",
@@ -388,6 +360,8 @@ class ComputationEngineTests(unittest.TestCase):
                 self.assertEqual(result["candidate_date"], expected)
 
     def test_excluded_range_refusals_fail_closed(self) -> None:
+        with self.assertRaises(ENGINE.Refusal):
+            ENGINE.parse_month_day("13-40")
         for table_key, unit, length, rollover, trigger, reason in EFFECTS_REFUSALS:
             with self.subTest(f"{table_key} {unit} {length} {trigger}"):
                 result = self.run_engine(table_key, unit, length, rollover, trigger)
@@ -395,15 +369,11 @@ class ComputationEngineTests(unittest.TestCase):
                 self.assertIn(reason, result["reason"])
 
     def test_every_nsw_2026_holiday_rolls_to_a_business_day(self) -> None:
-        table = json.loads(
-            (self.tables_dir / "holidays" / "nsw.json").read_text(encoding="utf-8")
-        )
+        table = json.loads((self.tables_dir / "holidays" / "nsw.json").read_text(encoding="utf-8"))
         holidays = {dt.date.fromisoformat(day) for day in table["holidays"]}
         for holiday in sorted(day for day in holidays if day.year == 2026):
             trigger = holiday - dt.timedelta(days=1)
-            result = self.run_engine(
-                "nsw", "calendar_days", 1, "next_business_day", trigger.isoformat()
-            )
+            result = self.run_engine("nsw", "calendar_days", 1, "next_business_day", trigger.isoformat())
             self.assertEqual(result["status"], "computed", holiday)
             rolled = dt.date.fromisoformat(result["candidate_date"])
             self.assertGreater(rolled, holiday)
@@ -411,23 +381,13 @@ class ComputationEngineTests(unittest.TestCase):
             self.assertNotIn(rolled, holidays, holiday)
 
     def test_unverified_holiday_table_refuses(self) -> None:
-        unverified = json.loads(
-            (self.tables_dir / "holidays" / "nsw.json").read_text(encoding="utf-8")
-        )
+        unverified = json.loads((self.tables_dir / "holidays" / "nsw.json").read_text(encoding="utf-8"))
         unverified["table_id"] = "unv"
         unverified["evidence"] = {"state": "pending-verification"}
-        (self.tables_dir / "holidays" / "unv.json").write_text(
-            json.dumps(unverified), encoding="utf-8"
-        )
-        table = build_rules_table(
-            "unv", {("calendar_days", 1, "next_business_day")}
-        )
-        (self.tables_dir / "computation-rules" / "test-unv.json").write_text(
-            json.dumps(table), encoding="utf-8"
-        )
-        result = self.run_engine(
-            "unv", "calendar_days", 1, "next_business_day", "2026-08-14"
-        )
+        (self.tables_dir / "holidays" / "unv.json").write_text(json.dumps(unverified), encoding="utf-8")
+        table = build_rules_table("unv", {("calendar_days", 1, "next_business_day")})
+        (self.tables_dir / "computation-rules" / "test-unv.json").write_text(json.dumps(table), encoding="utf-8")
+        result = self.run_engine("unv", "calendar_days", 1, "next_business_day", "2026-08-14")
         self.assertEqual(result["status"], "identify_only")
         self.assertIn("holiday table unv", result["reason"])
 
@@ -448,9 +408,7 @@ class ComputationEngineTests(unittest.TestCase):
         self.assertEqual(result["status"], "identify_only")
 
         table["period_rules"][0]["evidence"] = dict(VERIFIED)
-        table["computation_provisions"][0]["evidence"] = {
-            "state": "pending-verification"
-        }
+        table["computation_provisions"][0]["evidence"] = {"state": "pending-verification"}
         path.write_text(json.dumps(table), encoding="utf-8")
         result = ENGINE.compute(
             {
@@ -477,9 +435,7 @@ class ComputationEngineTests(unittest.TestCase):
             ENGINE.compute(
                 {
                     "table_id": "test-nsw",
-                    "period_rule_id": rule_id(
-                        "calendar_days", 28, "next_business_day"
-                    ),
+                    "period_rule_id": rule_id("calendar_days", 28, "next_business_day"),
                     "trigger_date": "14/08/2026",
                 },
                 self.tables_dir,
@@ -491,23 +447,17 @@ class ComputationEngineTests(unittest.TestCase):
             json.dumps(
                 {
                     "table_id": "test-nsw",
-                    "period_rule_id": rule_id(
-                        "calendar_days", 28, "next_business_day"
-                    ),
+                    "period_rule_id": rule_id("calendar_days", 28, "next_business_day"),
                     "trigger_date": "2026-08-14",
                 }
             ),
             encoding="utf-8",
         )
-        exit_code = ENGINE.main(
-            ["--input", str(request), "--tables-dir", str(self.tables_dir)]
-        )
+        exit_code = ENGINE.main(["--input", str(request), "--tables-dir", str(self.tables_dir)])
         self.assertEqual(exit_code, 0)
         bad = self.tables_dir / "bad.json"
         bad.write_text(json.dumps({"table_id": "test-nsw"}), encoding="utf-8")
-        exit_code = ENGINE.main(
-            ["--input", str(bad), "--tables-dir", str(self.tables_dir)]
-        )
+        exit_code = ENGINE.main(["--input", str(bad), "--tables-dir", str(self.tables_dir)])
         self.assertEqual(exit_code, 1)
 
 

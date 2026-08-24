@@ -114,14 +114,18 @@ class AustralianLegalResearchPluginTests(unittest.TestCase):
 
 # --- Commonwealth legislation lookup ---------------------------------------
 
-FRL_SCRIPT = (
-    PLUGIN / "skills" / "check-commonwealth-legislation" / "scripts" / "frl_lookup.py"
-)
+FRL_SCRIPT = PLUGIN / "skills" / "check-commonwealth-legislation" / "scripts" / "frl_lookup.py"
 FRL_SKILL = FRL_SCRIPT.parents[1] / "SKILL.md"
 FRL = load_script("frl_lookup", FRL_SCRIPT)
 
 
 class FrlLookupTests(unittest.TestCase):
+    def test_api_rejects_urls_outside_official_host(self) -> None:
+        with self.assertRaises(FRL.LookupError):
+            FRL.api_get("file:///etc/passwd")
+        with self.assertRaises(FRL.LookupError):
+            FRL.api_get("https://example.com/v1/Titles")
+
     def test_rejects_invalid_title_id_and_date(self) -> None:
         with self.assertRaises(FRL.LookupError):
             FRL.validate_title_id("Privacy Act 1988")
@@ -168,11 +172,7 @@ class FrlLookupTests(unittest.TestCase):
             {"registerId": "C2019C00084", "start": "2019-02-24T00:00:00"},
         ]
         result = FRL.check("C2004A01224", "2024-01-01")
-        self.assertTrue(
-            result["currencyFlags"][
-                "currentTitleHasCommencedUnincorporatedAmendments"
-            ]
-        )
+        self.assertTrue(result["currencyFlags"]["currentTitleHasCommencedUnincorporatedAmendments"])
         self.assertIn("does not establish commencement", result["warning"])
 
     def test_skill_contains_critical_fail_closed_controls(self) -> None:
@@ -207,13 +207,7 @@ class FrlLookupTests(unittest.TestCase):
 
 # --- Commonwealth legislative change tracing -------------------------------
 
-TRACE_SCRIPT = (
-    PLUGIN
-    / "skills"
-    / "trace-commonwealth-legislative-change"
-    / "scripts"
-    / "frl_change_trace.py"
-)
+TRACE_SCRIPT = PLUGIN / "skills" / "trace-commonwealth-legislative-change" / "scripts" / "frl_change_trace.py"
 TRACE_SKILL = TRACE_SCRIPT.parents[1] / "SKILL.md"
 TRACE_METHOD = TRACE_SCRIPT.parents[1] / "references" / "change-tracing-method.md"
 TRACE = load_script("frl_change_trace", TRACE_SCRIPT)
@@ -244,6 +238,12 @@ def version(
 
 
 class CommonwealthChangeTraceTests(unittest.TestCase):
+    def test_api_rejects_urls_outside_official_host(self) -> None:
+        with self.assertRaises(TRACE.TraceError):
+            TRACE.api_get("file:///etc/passwd")
+        with self.assertRaises(TRACE.TraceError):
+            TRACE.api_get("https://example.com/v1/Titles")
+
     def test_rejects_invalid_or_non_increasing_interval(self) -> None:
         with self.assertRaises(TRACE.TraceError):
             TRACE.validate_title_id("Privacy Act 1988")
@@ -340,9 +340,7 @@ class CommonwealthChangeTraceTests(unittest.TestCase):
 
         self.assertTrue(result["sameCompilation"])
         self.assertEqual(result["transitions"], [])
-        self.assertTrue(
-            result["currencyFlags"]["currentTitleHasCommencedUnincorporatedAmendments"]
-        )
+        self.assertTrue(result["currencyFlags"]["currentTitleHasCommencedUnincorporatedAmendments"])
         self.assertTrue(result["currencyFlags"]["retrospectiveFieldsDiffer"])
         self.assertIn("not that legal operation was unchanged", result["warnings"][0])
 
@@ -439,7 +437,7 @@ class NswLookupTests(unittest.TestCase):
             "OUTSIDE SCOPE",
             "NOT VERIFIED",
             "usually updated within 3 working days",
-            "A Bill listed under \"See also\" is not an amendment",
+            'A Bill listed under "See also" is not an amendment',
             "HTML and PDF versions in the In force and Repealed collections",
             "environmental planning instrument map",
             "Do not cite a generated URL as a source used unless it resolved",
@@ -547,16 +545,12 @@ class AustralianCaseLawPluginTests(unittest.TestCase):
             text = (PLUGIN / "skills" / name / "SKILL.md").read_text(encoding="utf-8")
             self.assertIn(
                 "not evidence of fabrication",
-                (
-                    PLUGIN / "references" / "case-law-verification-method.md"
-                ).read_text(encoding="utf-8"),
+                (PLUGIN / "references" / "case-law-verification-method.md").read_text(encoding="utf-8"),
             )
             self.assertIn("`UNVERIFIABLE`, not `NOT FOUND`", text, name)
 
     def test_router_never_verifies(self) -> None:
-        text = (PLUGIN / "skills" / "route-case-citation" / "SKILL.md").read_text(
-            encoding="utf-8"
-        )
+        text = (PLUGIN / "skills" / "route-case-citation" / "SKILL.md").read_text(encoding="utf-8")
         self.assertIn("Routing itself never outputs `VERIFIED`", text)
 
 
@@ -655,9 +649,7 @@ class AustralianLegalCitationPluginTests(unittest.TestCase):
                 self.assertNotIn(marker, text, f"{path.name} contains {marker!r}")
 
     def test_source_map_preserves_provenance_and_limits(self) -> None:
-        text = (CITATION_SKILL / "references" / "source-map.md").read_text(
-            encoding="utf-8"
-        )
+        text = (CITATION_SKILL / "references" / "source-map.md").read_text(encoding="utf-8")
         self.assertIn("Melbourne University Law Review Association", text)
         self.assertIn("SHA-256", text)
         self.assertIn("## Missing appendices", text)
@@ -666,9 +658,7 @@ class AustralianLegalCitationPluginTests(unittest.TestCase):
     def test_skill_separates_formatting_from_verification(self) -> None:
         text = (CITATION_SKILL / "SKILL.md").read_text(encoding="utf-8")
         self.assertIn("never invent", text)
-        self.assertIn(
-            "Treat source verification and citation formatting as separate findings", text
-        )
+        self.assertIn("Treat source verification and citation formatting as separate findings", text)
 
 
 if __name__ == "__main__":

@@ -17,6 +17,10 @@ plugin manifests contain their intended release versions.
 
 ### Fixed
 
+- Restricted both Federal Register API helpers to the official HTTPS host before
+  opening a URL, preventing non-HTTP and off-host requests.
+- Made procedural-deadline computation fail closed when an excluded-range date
+  is malformed or a required holiday table is unavailable.
 - Renamed the NSW estate-planning instruction-record schema from the generic
   `instruction-record-schema.md` to `nsw-instruction-record-schema.md`, matching
   the Victorian naming convention and making the jurisdiction explicit.
