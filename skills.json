@@ -541,6 +541,17 @@
       "source": "Original Australia-wide privacy, health, breach and surveillance routing workflow based on official legislation and regulator sources."
     },
     {
+      "name": "build-evidence-chronology",
+      "path": "plugins/legal-evidence-workflows/skills/build-evidence-chronology",
+      "plugin": "plugins/legal-evidence-workflows",
+      "plugin_version": "0.1.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original jurisdiction-neutral source-linked evidence chronology workflow designed for native structured review tables, Word-document output and human verification."
+    },
+    {
       "name": "configure-legal-triage",
       "path": "plugins/legal-triage/skills/configure-legal-triage",
       "plugin": "plugins/legal-triage",

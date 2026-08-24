@@ -4,8 +4,8 @@
   <a href="https://github.com/l0cka/legal-skills/actions/workflows/ci.yml"><img alt="CI status" src="https://img.shields.io/github/actions/workflow/status/l0cka/legal-skills/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
   <a href="LICENSE"><img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-1f6f5f?style=flat-square"></a>
   <!-- generated:badges -->
-  <img alt="Eight plugins" src="https://img.shields.io/badge/plugins-8-31547a?style=flat-square">
-  <img alt="Fifty-one skills" src="https://img.shields.io/badge/skills-51-31547a?style=flat-square">
+  <img alt="Nine plugins" src="https://img.shields.io/badge/plugins-9-31547a?style=flat-square">
+  <img alt="Fifty-two skills" src="https://img.shields.io/badge/skills-52-31547a?style=flat-square">
   <img alt="Claude Cowork and ChatGPT Work" src="https://img.shields.io/badge/works%20with-Claude%20Cowork%20%2B%20ChatGPT%20Work-c59a46?style=flat-square">
 <!-- end:badges -->
 </p>
@@ -19,7 +19,7 @@ Each provider has a small, separate manifest.
 ## Plugin suite
 
 <!-- generated:counts -->
-The marketplace contains eight plugins and fifty-one skills:
+The marketplace contains nine plugins and fifty-two skills:
 <!-- end:counts -->
 
 <!-- generated:plugin-table -->
@@ -32,6 +32,7 @@ The marketplace contains eight plugins and fifty-one skills:
 | [**Australian Legal Research**](plugins/australian-legal-research/README.md) | 16 | Checks Australian legislation and case citations against the official publishers. Writes and reviews AGLC4 citations. |
 | [**Australian Litigation Deadlines**](plugins/australian-litigation-deadlines/README.md) | 6 | Maps limitation periods and computes candidate court deadlines. A lawyer must confirm each date. |
 | [**Australian Privacy & Cybersecurity**](plugins/australian-privacy-cybersecurity/README.md) | 8 | Maps the Australian privacy and cyber rules that can apply to a set of facts, a data breach or an AI use case. |
+| [**Legal Evidence Workflows**](plugins/legal-evidence-workflows/README.md) | 1 | Builds source-linked Word evidence chronologies from supplied matter documents without resolving conflicts or credibility. |
 | [**Legal Triage**](plugins/legal-triage/README.md) | 2 | Helps community legal centre staff record and triage legal enquiries under an approved profile. |
 <!-- end:plugin-table -->
 
@@ -42,7 +43,7 @@ Agent.
 
 <!-- generated:install-agent -->
 ```text
-Add the plugin marketplace `l0cka/legal-skills` and install all eight of
+Add the plugin marketplace `l0cka/legal-skills` and install all nine of
 its plugins (user scope if supported). Verify the plugins are available
 and report the result.
 ```
@@ -62,6 +63,7 @@ codex plugin add australian-estate-planning@legal-skills
 codex plugin add australian-legal-research@legal-skills
 codex plugin add australian-litigation-deadlines@legal-skills
 codex plugin add australian-privacy-cybersecurity@legal-skills
+codex plugin add legal-evidence-workflows@legal-skills
 codex plugin add legal-triage@legal-skills
 ```
 <!-- end:install-codex -->
@@ -78,6 +80,7 @@ claude plugin install australian-estate-planning@legal-skills --scope user
 claude plugin install australian-legal-research@legal-skills --scope user
 claude plugin install australian-litigation-deadlines@legal-skills --scope user
 claude plugin install australian-privacy-cybersecurity@legal-skills --scope user
+claude plugin install legal-evidence-workflows@legal-skills --scope user
 claude plugin install legal-triage@legal-skills --scope user
 ```
 <!-- end:install-claude -->

@@ -1,0 +1,37 @@
+{
+  "name": "legal-evidence-workflows",
+  "version": "0.1.0",
+  "description": "Build source-linked evidence chronologies as Word documents from supplied legal matter documents while preserving conflicts, uncertainty and human review.",
+  "author": {
+    "name": "l0cka",
+    "url": "https://github.com/l0cka"
+  },
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/legal-evidence-workflows",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": [
+    "legal-workflows",
+    "evidence",
+    "chronology",
+    "litigation",
+    "investigations",
+    "document-review",
+    "responsible-ai"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Legal Evidence Workflows",
+    "shortDescription": "Builds source-linked Word evidence chronologies from supplied matter documents without resolving conflicts or credibility.",
+    "longDescription": "Uses a native structured document-review table when available to extract event candidates from supplied legal matter documents, then creates an event-level chronology as a .docx file with source pinpoints, uncertainty and conflicting accounts preserved. The workflow does not decide credibility, evidentiary weight, admissibility, legal effect or merits, and every output remains subject to human review.",
+    "developerName": "l0cka",
+    "category": "Productivity",
+    "capabilities": [
+      "Read"
+    ],
+    "websiteURL": "https://github.com/l0cka/legal-skills",
+    "defaultPrompt": [
+      "Build a source-linked evidence chronology as a .docx file from these matter documents and preserve conflicting accounts."
+    ],
+    "brandColor": "#1C3C63"
+  }
+}
