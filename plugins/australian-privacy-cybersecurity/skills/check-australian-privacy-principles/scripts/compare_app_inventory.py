@@ -140,8 +140,10 @@ def validate_layer(data: Any, name: str) -> dict[str, Any]:
     if not isinstance(data, dict):
         raise InventoryError(f"{location}: expected object")
     sources = data.get("sources")
-    if not isinstance(sources, list) or not sources or not all(
-        isinstance(item, str) and item.strip() for item in sources
+    if (
+        not isinstance(sources, list)
+        or not sources
+        or not all(isinstance(item, str) and item.strip() for item in sources)
     ):
         raise InventoryError(f"{location}.sources: expected non-empty string array")
     return {
@@ -166,7 +168,8 @@ def validate_inventory(data: Any) -> dict[str, Any]:
     coverage = data.get("coverage")
     if not isinstance(coverage, dict):
         raise InventoryError("inventory.coverage: expected object")
-    if coverage.get("schedule") != "Schedule 1" or coverage.get("complete") is not True:
+    complete = coverage.get("complete")
+    if coverage.get("schedule") != "Schedule 1" or not isinstance(complete, bool) or not complete:
         raise InventoryError("inventory.coverage: complete Schedule 1 required")
     method = require_string(coverage, "method", "inventory.coverage")
 
@@ -187,19 +190,20 @@ def validate_inventory(data: Any) -> dict[str, Any]:
         clause_range = principle.get("clause_range", "")
         if not isinstance(clause_range, str):
             raise InventoryError(f"{location}.clause_range: expected string")
-        sanitized.append({
-            "identifier": identifier,
-            "heading": normalize_text(require_string(principle, "heading", location)),
-            "clause_range": normalize_text(clause_range),
-            "text_sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(),
-        })
+        sanitized.append(
+            {
+                "identifier": identifier,
+                "heading": normalize_text(require_string(principle, "heading", location)),
+                "clause_range": normalize_text(clause_range),
+                "text_sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(),
+            }
+        )
 
     layers = data.get("framework_layers")
     if not isinstance(layers, dict):
         raise InventoryError("inventory.framework_layers: expected object")
     validated_layers = {
-        name: validate_layer(layers.get(name), name)
-        for name in ("application_perimeter", "applicable_instruments")
+        name: validate_layer(layers.get(name), name) for name in ("application_perimeter", "applicable_instruments")
     }
     guidance = validate_layer(layers.get("guidance"), "guidance")
 
@@ -227,7 +231,8 @@ def compare_inventories(earlier: Any, later: Any, horizon: str | None = None) ->
     modified = []
     for item_id in before_by_id.keys() & after_by_id.keys():
         fields = [
-            field for field in ("heading", "clause_range", "text_sha256")
+            field
+            for field in ("heading", "clause_range", "text_sha256")
             if before_by_id[item_id][field] != after_by_id[item_id][field]
         ]
         if fields:
@@ -245,7 +250,9 @@ def compare_inventories(earlier: Any, later: Any, horizon: str | None = None) ->
         name: before["framework_layers"][name]["sha256"] != after["framework_layers"][name]["sha256"]
         for name in ("application_perimeter", "applicable_instruments", "guidance")
     }
-    statutory_change = app_text_changed or layer_changes["application_perimeter"] or layer_changes["applicable_instruments"]
+    statutory_change = (
+        app_text_changed or layer_changes["application_perimeter"] or layer_changes["applicable_instruments"]
+    )
     guidance_changed = layer_changes["guidance"]
 
     known_future = []
@@ -264,7 +271,9 @@ def compare_inventories(earlier: Any, later: Any, horizon: str | None = None) ->
     return {
         "status": status,
         "app_text_status": CHANGE_DETECTED if app_text_changed else "APP TEXT UNCHANGED",
-        "application_law_status": APPLICATION_REVIEW if any(layer_changes[name] for name in ("application_perimeter", "applicable_instruments")) or known_future else "TRACKED APPLICATION LAW UNCHANGED",
+        "application_law_status": APPLICATION_REVIEW
+        if any(layer_changes[name] for name in ("application_perimeter", "applicable_instruments")) or known_future
+        else "TRACKED APPLICATION LAW UNCHANGED",
         "guidance_status": GUIDANCE_REFRESH if guidance_changed else "TRACKED GUIDANCE UNCHANGED",
         "comparison": {
             "earlier": {"compilation_id": before["compilation_id"], "as_at": before["as_at"]},

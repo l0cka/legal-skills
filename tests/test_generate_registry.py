@@ -8,9 +8,8 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SPEC = importlib.util.spec_from_file_location(
-    "generate_registry", ROOT / "scripts" / "generate_registry.py"
-)
+SPEC = importlib.util.spec_from_file_location("generate_registry", ROOT / "scripts" / "generate_registry.py")
+assert SPEC and SPEC.loader
 generate_registry = importlib.util.module_from_spec(SPEC)
 sys.modules[SPEC.name] = generate_registry
 SPEC.loader.exec_module(generate_registry)
@@ -84,15 +83,10 @@ class GenerateRegistryTests(unittest.TestCase):
             "unverifiable": ["official source", "decisive fact"],
         }
         catalog_path.write_text(json.dumps(catalog), encoding="utf-8")
-        method = (
-            self.root / "plugins" / PLUGIN / "references"
-            / "demo-source-and-control-method.md"
-        )
+        method = self.root / "plugins" / PLUGIN / "references" / "demo-source-and-control-method.md"
         write(
             method,
-            "# Method\n\n## Evidence states\n\n"
-            "<!-- generated:evidence-states -->\n"
-            "<!-- end:evidence-states -->\n",
+            "# Method\n\n## Evidence states\n\n<!-- generated:evidence-states -->\n<!-- end:evidence-states -->\n",
         )
         generate_registry.apply(self.generate())
         text = " ".join(method.read_text(encoding="utf-8").split())

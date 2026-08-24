@@ -92,6 +92,13 @@ SERIES: dict[str, tuple[str, str]] = {
 }
 
 
+def matched_int(match: re.Match[str], group: str) -> int:
+    try:
+        return int(match.group(group))
+    except (IndexError, ValueError) as exc:
+        raise ValueError(f"invalid numeric citation group {group!r}") from exc
+
+
 def parse(text: str) -> dict[str, object]:
     """Parse one citation string into a routing record."""
     neutral = NEUTRAL.search(text)
@@ -101,9 +108,9 @@ def parse(text: str) -> dict[str, object]:
         record: dict[str, object] = {
             "input": text.strip(),
             "citation_type": "medium-neutral",
-            "year": int(neutral.group("year")),
+            "year": matched_int(neutral, "year"),
             "court_id": neutral.group("court"),
-            "number": int(neutral.group("number")),
+            "number": matched_int(neutral, "number"),
         }
         if court is None:
             record["route"] = None
@@ -124,16 +131,14 @@ def parse(text: str) -> dict[str, object]:
         record = {
             "input": text.strip(),
             "citation_type": "reported",
-            "year": int(reported.group("year")),
-            "volume": int(reported.group("volume")),
+            "year": matched_int(reported, "year"),
+            "volume": matched_int(reported, "volume"),
             "series_id": reported.group("series").strip(),
-            "page": int(reported.group("page")),
+            "page": matched_int(reported, "page"),
         }
         if series is None:
             record["route"] = None
-            record["note"] = (
-                "unrecognised report series; resolve to a medium-neutral citation before verification"
-            )
+            record["note"] = "unrecognised report series; resolve to a medium-neutral citation before verification"
         else:
             name, skill = series
             record["series"] = name

@@ -8,9 +8,8 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SPEC = importlib.util.spec_from_file_location(
-    "validate_repository", ROOT / "scripts" / "validate_repository.py"
-)
+SPEC = importlib.util.spec_from_file_location("validate_repository", ROOT / "scripts" / "validate_repository.py")
+assert SPEC and SPEC.loader
 validate_repository = importlib.util.module_from_spec(SPEC)
 sys.modules[SPEC.name] = validate_repository
 SPEC.loader.exec_module(validate_repository)

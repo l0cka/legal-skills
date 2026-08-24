@@ -10,7 +10,7 @@ import sys
 from datetime import date
 from typing import Any
 from urllib.error import HTTPError, URLError
-from urllib.parse import quote, urlencode
+from urllib.parse import quote, urlencode, urlsplit
 from urllib.request import Request, urlopen
 
 API_ROOT = "https://api.prod.legislation.gov.au/v1"
@@ -36,8 +36,18 @@ class LookupError(Exception):
 
 
 def api_get(url: str) -> dict[str, Any]:
+    target = urlsplit(url)
+    if (
+        target.scheme != "https"
+        or target.hostname != "api.prod.legislation.gov.au"
+        or target.port is not None
+        or target.username is not None
+        or target.password is not None
+    ):
+        raise LookupError("refusing a URL outside the Federal Register API")
     request = Request(url, headers={"Accept": "application/json", "User-Agent": USER_AGENT})
     try:
+        # nosemgrep
         with urlopen(request, timeout=TIMEOUT_SECONDS) as response:
             payload = json.load(response)
     except HTTPError as exc:
@@ -94,10 +104,7 @@ def title_url(title_id: str) -> str:
 
 
 def point_in_time_url(title_id: str, as_at: str) -> str:
-    return (
-        f"{API_ROOT}/versions/find(titleid='{quote(title_id)}',"
-        f"asat={quote(as_at)})"
-    )
+    return f"{API_ROOT}/versions/find(titleid='{quote(title_id)}',asat={quote(as_at)})"
 
 
 def candidate_list(payload: dict[str, Any]) -> list[dict[str, Any]]:
@@ -107,20 +114,14 @@ def candidate_list(payload: dict[str, Any]) -> list[dict[str, Any]]:
     return [candidate for candidate in candidates if isinstance(candidate, dict)]
 
 
-def select_expanded_version(
-    versions: list[dict[str, Any]], point_in_time: dict[str, Any]
-) -> dict[str, Any]:
+def select_expanded_version(versions: list[dict[str, Any]], point_in_time: dict[str, Any]) -> dict[str, Any]:
     register_id = point_in_time.get("registerId")
     start = point_in_time.get("start")
     matches = [
-        version
-        for version in versions
-        if version.get("registerId") == register_id and version.get("start") == start
+        version for version in versions if version.get("registerId") == register_id and version.get("start") == start
     ]
     if len(matches) != 1:
-        raise LookupError(
-            "the point-in-time version could not be matched uniquely to the title history"
-        )
+        raise LookupError("the point-in-time version could not be matched uniquely to the title history")
     return matches[0]
 
 
@@ -153,12 +154,8 @@ def check(title_id: str, as_at: str) -> dict[str, Any]:
         "title": title,
         "version": version,
         "currencyFlags": {
-            "currentTitleHasCommencedUnincorporatedAmendments": title.get(
-                "hasCommencedUnincorporatedAmendments"
-            ),
-            "versionHasUnincorporatedAmendments": version.get(
-                "hasUnincorporatedAmendments"
-            ),
+            "currentTitleHasCommencedUnincorporatedAmendments": title.get("hasCommencedUnincorporatedAmendments"),
+            "versionHasUnincorporatedAmendments": version.get("hasUnincorporatedAmendments"),
             "knownFutureNameChanges": bool(title.get("namePossibleFuture")),
             "knownFutureStatusChanges": bool(title.get("statusPossibleFuture")),
         },
@@ -175,9 +172,7 @@ def check(title_id: str, as_at: str) -> dict[str, Any]:
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(
-        description="Retrieve bounded metadata from the official Federal Register API."
-    )
+    parser = argparse.ArgumentParser(description="Retrieve bounded metadata from the official Federal Register API.")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     search_parser = subparsers.add_parser("search", help="Find candidate title records")
