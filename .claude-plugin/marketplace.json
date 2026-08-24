@@ -107,6 +107,22 @@
       ]
     },
     {
+      "name": "legal-evidence-workflows",
+      "source": "./plugins/legal-evidence-workflows",
+      "description": "Build source-linked evidence chronologies as Word documents from supplied legal matter documents while preserving conflicts, uncertainty and human review.",
+      "version": "0.1.0",
+      "category": "Productivity",
+      "tags": [
+        "legal-workflows",
+        "evidence",
+        "chronology",
+        "litigation",
+        "investigations",
+        "document-review",
+        "responsible-ai"
+      ]
+    },
+    {
       "name": "legal-triage",
       "source": "./plugins/legal-triage",
       "description": "Configure and conduct governed, staff-facing legal enquiry triage for Australian community legal centres.",

@@ -154,6 +154,29 @@
       ]
     },
     {
+      "name": "legal-evidence-workflows",
+      "source": {
+        "source": "local",
+        "path": "./plugins/legal-evidence-workflows"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity",
+      "description": "Build source-linked evidence chronologies as Word documents from supplied legal matter documents while preserving conflicts, uncertainty and human review.",
+      "version": "0.1.0",
+      "keywords": [
+        "legal-workflows",
+        "evidence",
+        "chronology",
+        "litigation",
+        "investigations",
+        "document-review",
+        "responsible-ai"
+      ]
+    },
+    {
       "name": "legal-triage",
       "source": {
         "source": "local",

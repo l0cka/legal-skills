@@ -110,6 +110,11 @@ PLUGINS = {
             "provisional",
         ),
     },
+    "legal-evidence-workflows": {
+        "skills": {"build-evidence-chronology"},
+        "reference_files": (),
+        "every_skill_mentions": (),
+    },
 }
 
 
@@ -159,6 +164,8 @@ class PluginStructureTests(unittest.TestCase):
 
     def test_method_documents_carry_invariant_sentences(self) -> None:
         for plugin, config in PLUGINS.items():
+            if not config["reference_files"]:
+                continue
             # By convention the method document is the first reference file.
             method = ROOT / "plugins" / plugin / "references" / config["reference_files"][0]
             with self.subTest(plugin=plugin):

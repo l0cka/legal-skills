@@ -16,6 +16,18 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- New plugin `legal-evidence-workflows` (0.1.0) with
+  `build-evidence-chronology`: inventories supplied legal matter documents,
+  extracts source-linked event candidates through a native structured review
+  table when available, and builds an event-level chronology while preserving
+  exact date wording, conflicting accounts, allegations, inferences and gaps.
+  The final chronology is a generated `.docx` with a review scope, source-linked
+  chronology table, conflict register, evidence gaps and source register; plain
+  text, PDF and spreadsheet output cannot substitute for the Word deliverable.
+  The plugin does not decide credibility, evidentiary weight, admissibility,
+  legal effect or merits. A separate Harvey Agent Builder guide maps the
+  provider-neutral skill to File Upload, Review Table, Prompt, Word-document
+  creation and Response steps without duplicating the canonical workflow.
 - `generate-precedent-profile` in `australian-estate-planning` (0.3.0):
   inspects uploaded clean NSW or Victorian firm estate precedents read-only,
   proposes exact sidecar site maps and schema coverage, registers only existing

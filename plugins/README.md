@@ -29,6 +29,9 @@ Canonical plugin packages live in this directory.
   Cybersecurity**](australian-privacy-cybersecurity/README.md) — Maps the
   Australian privacy and cyber rules that can apply to a set of facts, a data
   breach or an AI use case.
+- [**Legal Evidence Workflows**](legal-evidence-workflows/README.md) — Builds
+  source-linked Word evidence chronologies from supplied matter documents
+  without resolving conflicts or credibility.
 - [**Legal Triage**](legal-triage/README.md) — Helps community legal centre
   staff record and triage legal enquiries under an approved profile.
 
