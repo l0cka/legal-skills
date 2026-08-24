@@ -1,7 +1,8 @@
 ---
-status: accepted
+status: superseded
 date: 2026-08-21
 supersedes: 0001-platform-neutral-no-script-document-assembly.md
+superseded_by: 0003-private-deployment-estate-drafting.md
 ---
 
 # Sidecar precedent profiles for human-designed estate precedents

@@ -22,7 +22,8 @@ variants, a change manifest and a gap report. This mechanism was superseded by
 because ordinary firm precedents are designed for humans and do not contain
 machine markers.
 
-The platform-neutral, no-script decision remains in force through ADR 0002.
+The platform-neutral, no-script decision remains in force through
+[ADR 0003](0003-private-deployment-estate-drafting.md).
 Firm content stays connected on the platform side and is never committed to
 this public repository. Execution formalities remain dated,
 jurisdiction-specific references with a standing instruction to re-verify

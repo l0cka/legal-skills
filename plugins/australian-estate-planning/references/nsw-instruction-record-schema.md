@@ -1,22 +1,31 @@
 # NSW instruction record schema
 
-The instruction record is the canonical structured output of the extraction
-gate and the only source of factual values the fill step may read. Clause text
-may come only from the confirmed clause-choice register in the precedent
-profile; it is never an instruction-record value. Every factual field carries:
+The instruction table is the structured record for one client and the only
+source of matter-specific factual values used in drafting. Clause text comes
+from the approved precedent or drafting playbook; it is never an instruction-
+table value. Every factual field carries:
 
 - **value** — exactly as given; never inferred, normalised only for
   obvious formatting (dates, capitalisation of names);
 - **provenance** — the page, section or question of the instruction sheet
   the value came from, or `interview` when gathered directly, or
   `cannot be determined` when the sheet is blank, illegible or ambiguous
-  at that point; and
-- **confirmation status** — `pending` until the responsible solicitor
-  confirms the extraction table, then `confirmed`. Only `confirmed`
-  records may be used to fill a precedent.
+  at that point.
 
 Two entries naming the same person must spell the name identically; a
-mismatch is flagged at the extraction gate, never silently reconciled.
+mismatch is flagged in the instruction summary and drafting-issues register,
+never silently reconciled.
+
+## Scope and risk flags
+
+Record each flag as `yes`, `no` or `cannot be determined`, with provenance:
+
+- minor children or a client who may be a minor;
+- intended marriage, marriage, divorce or separation;
+- a witness-beneficiary or other witness relationship;
+- an existing will, power, guardianship appointment or related instrument;
+- jointly held assets or a superannuation interest; and
+- any possible capacity, undue influence or other practitioner concern.
 
 ## Common fields (all documents)
 
@@ -67,6 +76,9 @@ mismatch is flagged at the extraction gate, never silently reconciled.
 
 ## Missing required fields
 
-A missing required field blocks only the document type that requires it:
-the other document types still proceed. The blocked type is `NOT READY`
-with the exact missing fields listed. Never fill a plausible value.
+A missing required field does not prevent drafting supported content for that
+document. Insert a review marker at every affected location, add the issue to
+the drafting-issues register and report `PARTIAL DRAFT – UNRESOLVED ISSUES`.
+Use `BLOCKED – NO DRAFT PRODUCED` only if the approved precedent is missing or
+unusable, or the client, jurisdiction or requested document cannot be
+identified. Never fill a plausible value.

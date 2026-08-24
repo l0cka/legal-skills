@@ -1,4 +1,4 @@
 interface:
-  display_name: "Assemble Victorian Estate Documents"
-  short_description: "Fill human-designed Victorian estate precedents through a confirmed sidecar profile"
-  default_prompt: "Use $assemble-vic-estate-documents to extract an instruction record, present it for confirmation, register or verify a sidecar profile for the firm's unchanged Victorian precedents, then fill working copies with a change manifest and gap report."
+  display_name: "Prepare Victorian Estate Planning Drafts"
+  short_description: "Prepare Victorian estate drafts from approved precedents for solicitor review"
+  default_prompt: "Use $assemble-vic-estate-documents for one client: extract a provenance-cited instruction table, apply the approved Victorian playbook to working copies of the approved precedents, and visibly mark every unresolved fact or decision in the drafts and drafting-issues register."

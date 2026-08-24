@@ -8,6 +8,13 @@ plugin manifests contain their intended release versions.
 
 ## Unreleased
 
+### Removed
+
+- Removed `generate-precedent-profile` and the public sidecar-profile,
+  exact-anchor and precedent-drift architecture from
+  `australian-estate-planning` (0.4.0). Precedent approval and version control
+  now belong to the private deployment's senior-lawyer-maintained Vaults.
+
 ### Fixed
 
 - Renamed the NSW estate-planning instruction-record schema from the generic
@@ -59,6 +66,17 @@ plugin manifests contain their intended release versions.
   `plugins/australian-estate-planning/CONTEXT.md`.
 
 ### Changed
+
+- Simplified `australian-estate-planning` (0.4.0) to two jurisdictional
+  workflows, one for NSW and one for Victoria. Each run concerns one client,
+  uses centrally maintained approved precedents and playbooks, and drafts all
+  supported content in one run from provenance-cited instructions. Missing
+  facts, conflicts and unsupported decisions are visibly marked in partial
+  drafts and reconciled to a drafting-issues register. ADR 0003 records the
+  public/private boundary, and separate Harvey deployment guides map each
+  jurisdiction to a Workflow agent with an embedded Vault and exact file-name
+  placeholders. The drafting workflow relies on senior-lawyer maintenance of
+  those approved materials rather than adding live legal-research steps.
 
 - Replaced the machine-marker requirement in both estate-planning skills with
   sidecar precedent profiles for ordinary human-designed firm precedents. The
