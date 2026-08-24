@@ -1,4 +1,0 @@
-interface:
-  display_name: "Generate Precedent Profile"
-  short_description: "Map uploaded precedents to safe sidecar profiles"
-  default_prompt: "Use $generate-precedent-profile to inspect these uploaded firm estate precedents read-only and return proposed sidecar profiles for solicitor confirmation."

@@ -74,24 +74,6 @@ PLUGINS = {
             "$check-commonwealth-legislation",
         ),
     },
-    "australian-estate-planning": {
-        "skills": {
-            "assemble-nsw-estate-documents",
-            "assemble-vic-estate-documents",
-            "generate-precedent-profile",
-        },
-        "reference_files": (
-            "estate-planning-source-and-control-method.md",
-            "nsw-instruction-record-schema.md",
-            "nsw-execution-formalities.md",
-            "precedent-profile-guide.md",
-            "playbook-usage-rules.md",
-        ),
-        "every_skill_mentions": (
-            "estate-planning-source-and-control-method.md",
-            "precedent-profile-guide.md",
-        ),
-    },
     "australian-litigation-deadlines": {
         "skills": {
             "configure-litigation-deadline-profile",

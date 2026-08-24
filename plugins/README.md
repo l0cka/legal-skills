@@ -16,8 +16,8 @@ Canonical plugin packages live in this directory.
   an Australian company under the Corporations Act. Prepares board records and
   reviews for human approval.
 - [**Australian Estate Planning**](australian-estate-planning/README.md) —
-  Profiles uploaded NSW and Victorian estate precedents, then fills confirmed
-  sites safely. Source precedents remain unchanged.
+  Prepares solicitor-review drafts from approved NSW and Victorian estate
+  planning precedents.
 - [**Australian Legal Research**](australian-legal-research/README.md) —
   Checks Australian legislation and case citations against the official
   publishers. Writes and reviews AGLC4 citations.

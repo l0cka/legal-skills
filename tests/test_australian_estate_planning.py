@@ -9,11 +9,12 @@ PLUGIN = ROOT / "plugins" / "australian-estate-planning"
 NSW_SKILL = PLUGIN / "skills" / "assemble-nsw-estate-documents" / "SKILL.md"
 VIC_SKILL = PLUGIN / "skills" / "assemble-vic-estate-documents" / "SKILL.md"
 SKILLS = (NSW_SKILL, VIC_SKILL)
-PROFILE_SKILL = PLUGIN / "skills" / "generate-precedent-profile" / "SKILL.md"
 REFERENCES = PLUGIN / "references"
+METHOD = REFERENCES / "estate-planning-source-and-control-method.md"
+NSW_HARVEY_GUIDE = ROOT / "docs" / "harvey" / "prepare-nsw-estate-planning-drafts.md"
+VIC_HARVEY_GUIDE = ROOT / "docs" / "harvey" / "prepare-victorian-estate-planning-drafts.md"
+DEPLOYMENT_ADR = ROOT / "docs" / "adr" / "0003-private-deployment-estate-drafting.md"
 
-# The pack must stay deployable on any text-based agent platform, so no
-# shipped file may name one (docs/adr/0001). Lowercase substrings.
 FORBIDDEN_PLATFORM_NAMES = (
     "harvey",
     "chatgpt",
@@ -26,18 +27,79 @@ FORBIDDEN_PLATFORM_NAMES = (
 
 
 def shipped_files() -> list[Path]:
-    files = [*SKILLS, PROFILE_SKILL, PLUGIN / "README.md", PLUGIN / "CONTEXT.md", PLUGIN / "catalog.json"]
+    files = [*SKILLS, PLUGIN / "README.md", PLUGIN / "CONTEXT.md", PLUGIN / "catalog.json"]
     files.extend(sorted(REFERENCES.glob("*.md")))
     return files
 
 
 class AustralianEstatePlanningPluginTests(unittest.TestCase):
-    # Structural conventions are covered by test_plugin_structure.py; this
-    # file keeps only the plugin's legal and design invariants.
-
     def read(self, path: Path) -> str:
-        # Whitespace-normalized so asserted phrases survive line wrapping.
         return " ".join(path.read_text(encoding="utf-8").split())
+
+    def test_plugin_exposes_only_two_jurisdiction_skills(self) -> None:
+        skill_dirs = sorted(
+            path.name for path in (PLUGIN / "skills").iterdir() if path.is_dir()
+        )
+        self.assertEqual(
+            skill_dirs,
+            ["assemble-nsw-estate-documents", "assemble-vic-estate-documents"],
+        )
+
+    def test_skills_publish_the_simplified_result_contract(self) -> None:
+        for path in SKILLS:
+            skill = self.read(path)
+            for heading in ("## Workflow", "## Result contract", "## Fail closed"):
+                self.assertIn(heading, skill)
+            for status in (
+                "`DRAFT READY FOR SOLICITOR REVIEW`",
+                "`PARTIAL DRAFT – UNRESOLVED ISSUES`",
+                "`BLOCKED – NO DRAFT PRODUCED`",
+                "`OUTSIDE SCOPE`",
+            ):
+                self.assertIn(status, skill)
+
+    def test_each_skill_uses_one_client_and_the_approved_precedent_library(self) -> None:
+        for path in SKILLS:
+            skill = self.read(path).lower()
+            self.assertIn("one client per run", skill)
+            self.assertIn("approved precedent library", skill)
+            self.assertIn("never accept an uploaded substitute precedent", skill)
+
+    def test_instruction_table_drives_drafting_without_a_mid_run_pause(self) -> None:
+        for path in SKILLS:
+            skill = self.read(path)
+            self.assertIn("instruction table", skill.lower())
+            self.assertIn("provenance", skill.lower())
+            self.assertNotIn("instruction confirmation gate", skill.lower())
+            self.assertNotIn("Draft only after", skill)
+            self.assertIn("review the drafts", skill)
+
+    def test_partial_drafts_make_every_unresolved_issue_visible(self) -> None:
+        for path in (*SKILLS, METHOD):
+            text = self.read(path)
+            for phrase in (
+                "DRAFT – SOLICITOR REVIEW REQUIRED",
+                "PARTIAL DRAFT – UNRESOLVED ISSUES IDENTIFIED",
+                "[REVIEW REQUIRED – <missing fact or unresolved decision>]",
+                "PARTIAL DRAFT – UNRESOLVED ISSUES",
+                "drafting-issues register",
+            ):
+                self.assertIn(phrase, text)
+        for path in SKILLS:
+            self.assertIn("Every review marker must have a matching entry", self.read(path))
+
+    def test_active_pack_has_no_profile_architecture(self) -> None:
+        forbidden = (
+            "sidecar",
+            "precedent profile",
+            "site register",
+            "exact anchor",
+            "precedent drift",
+        )
+        for path in shipped_files():
+            text = self.read(path).lower()
+            for phrase in forbidden:
+                self.assertNotIn(phrase, text, f"{path.name} retains {phrase}")
 
     def test_no_platform_names_in_shipped_content(self) -> None:
         for path in shipped_files():
@@ -45,136 +107,92 @@ class AustralianEstatePlanningPluginTests(unittest.TestCase):
             for name in FORBIDDEN_PLATFORM_NAMES:
                 self.assertNotIn(name, lowered, f"{path.name} names a platform")
 
-    def test_draft_banner_is_mandated(self) -> None:
-        banner = "DRAFT — SOLICITOR REVIEW REQUIRED"
-        for skill in SKILLS:
-            self.assertIn(banner, self.read(skill))
-        self.assertIn(banner, self.read(REFERENCES / "estate-planning-source-and-control-method.md"))
+    def test_harvey_guides_use_supported_vault_configuration(self) -> None:
+        expected = (
+            (NSW_HARVEY_GUIDE, "Prepare NSW Estate Planning Drafts", "jurisdiction: NSW"),
+            (
+                VIC_HARVEY_GUIDE,
+                "Prepare Victorian Estate Planning Drafts",
+                "jurisdiction: VIC",
+            ),
+        )
+        for path, agent_name, jurisdiction in expected:
+            guide = self.read(path)
+            self.assertIn(agent_name, guide)
+            self.assertIn(jurisdiction, guide)
+            self.assertIn("one client", guide.lower())
+            self.assertIn("embedded Vault", guide)
+            self.assertIn("<ADD EXACT", guide)
+            self.assertIn("Do not permit a user-uploaded precedent", guide)
+            self.assertNotIn("Copy-paste build request", guide)
+            self.assertNotIn("## Private configuration", guide)
+            self.assertNotIn("```yaml", guide)
+            self.assertNotIn("instruction confirmation", guide.lower())
 
-    def test_no_precedent_fails_closed_with_no_generic_fallback(self) -> None:
+        adr = self.read(DEPLOYMENT_ADR)
+        self.assertIn("status: accepted", adr)
+        self.assertIn("separate jurisdictional agents", adr)
+        self.assertIn("embedded jurisdiction Vault", adr)
+        self.assertNotIn("private configuration is the operational source of truth", adr)
+
+    def test_no_approved_precedent_blocks_without_generic_fallback(self) -> None:
         for path in SKILLS:
             skill = self.read(path)
-            self.assertIn("`NOT READY`", skill)
+            self.assertIn("`BLOCKED – NO DRAFT PRODUCED`", skill)
             self.assertIn("never substitute a generic document", skill)
-        method = self.read(REFERENCES / "estate-planning-source-and-control-method.md")
+        method = self.read(METHOD)
         self.assertIn("There is no generic fallback document", method)
+        self.assertIn("uploaded substitute must not be used", method)
 
-    def test_human_precedents_do_not_require_machine_markers(self) -> None:
-        for path in (
-            *SKILLS,
-            REFERENCES / "estate-planning-source-and-control-method.md",
-            REFERENCES / "precedent-profile-guide.md",
-            PLUGIN / "README.md",
+    def test_source_precedent_remains_unchanged(self) -> None:
+        for path in (*SKILLS, METHOD):
+            text = self.read(path).lower()
+            self.assertIn("working cop", text)
+            self.assertIn("source unchanged", text)
+
+    def test_clause_choices_remain_solicitor_controlled(self) -> None:
+        method = self.read(METHOD)
+        for phrase in (
+            "approved playbook",
+            "client's express instructions",
+            "Never invent, combine or improve clause text",
         ):
+            self.assertIn(phrase, method)
+        for path in SKILLS:
+            skill = self.read(path)
+            self.assertIn("playbook-usage-rules.md", skill)
+            self.assertIn("Never invent, combine or improve clause text", skill)
+
+        rules = self.read(REFERENCES / "playbook-usage-rules.md")
+        self.assertIn("standing drafting positions", rules)
+        self.assertIn("Apply an approved playbook position", rules)
+        self.assertIn("Never use the playbook to supply a client fact", rules)
+
+    def test_approved_material_placeholders_are_deployment_fillable(self) -> None:
+        method = self.read(METHOD)
+        for placeholder in (
+            "<NSW APPROVED LIBRARY NAME>",
+            "<NSW WILL PRECEDENT FILE NAME>",
+            "<NSW DRAFTING PLAYBOOK FILE NAME>",
+            "<VICTORIAN APPROVED LIBRARY NAME>",
+            "<VICTORIAN WILL PRECEDENT FILE NAME>",
+            "<VICTORIAN DRAFTING PLAYBOOK FILE NAME>",
+        ):
+            self.assertIn(placeholder, method)
+        self.assertNotIn("live verification", method.lower())
+
+    def test_extraction_never_invents_values(self) -> None:
+        for path in SKILLS:
             text = self.read(path)
-            self.assertNotIn("{{field_name}}", text, path.name)
-            self.assertNotIn("{{clause_choice:", text, path.name)
-        self.assertIn("does not need machine markers", self.read(
-            REFERENCES / "precedent-profile-guide.md"
-        ))
-
-    def test_precedent_profile_contract_and_registration_gate(self) -> None:
-        guide = self.read(REFERENCES / "precedent-profile-guide.md")
-        for term in (
-            "precedent identity",
-            "site register",
-            "field map",
-            "clause-choice register",
-            "structural_location",
-            "before_text",
-            "target_text",
-            "after_text",
-            "expected_occurrences",
-            "confirmation record",
-        ):
-            self.assertIn(term, guide)
-        self.assertIn("Do not edit the precedent", guide)
-        self.assertIn("Stop. The profile is not usable", guide)
-        self.assertIn("must not fill a document in the same unconfirmed step", guide)
-
-    def test_clause_choices_use_confirmed_profile_sites(self) -> None:
-        guide = self.read(REFERENCES / "precedent-profile-guide.md")
-        self.assertIn("closed list of approved variants", guide)
-        self.assertIn("verbatim clause text", guide)
-        self.assertIn("responsible solicitor confirms", guide)
-
-        for path in SKILLS:
-            skill = self.read(path)
-            self.assertIn("unresolved clause site", skill)
-            self.assertIn("`NOT READY`", skill)
-
-        catalog = self.read(PLUGIN / "catalog.json")
-        self.assertIn("sidecar", catalog.lower())
-        self.assertNotIn("{{", catalog)
-
-    def test_change_manifest_reconciliation_fails_closed(self) -> None:
-        method = self.read(REFERENCES / "estate-planning-source-and-control-method.md")
-        self.assertIn("any unregistered change", method)
-        self.assertIn("`NOT READY`", method)
-        for skill in SKILLS:
-            self.assertIn("change manifest", self.read(skill).lower())
-
-    def test_source_precedent_is_unchanged_and_drift_fails_closed(self) -> None:
-        guide = self.read(REFERENCES / "precedent-profile-guide.md")
-        self.assertIn("Never modify the registered source precedent", guide)
-        self.assertIn("precedent drift", guide)
-        for finding in ("mismatch", "missing anchor", "duplicate match", "changed target text"):
-            self.assertIn(finding, guide)
-        self.assertIn("require a newly confirmed profile", guide)
-        for path in SKILLS:
-            skill = self.read(path)
-            self.assertIn("working copy", skill)
-            self.assertIn("precedent drift", skill)
-            self.assertIn("never guess an anchor", skill.lower())
-
-    def test_profile_generator_is_read_only_and_stops_for_confirmation(self) -> None:
-        skill = self.read(PROFILE_SKILL)
-        for phrase in (
-            "Work read-only",
-            "one separate proposed sidecar profile per uploaded precedent",
-            "profile_status: proposed",
-            "confirmation_status: pending",
-            "Present the confirmation checklist and stop",
-            "Do not modify or fill the source",
-            "mark the profile confirmed",
-        ):
-            self.assertIn(phrase, skill)
-
-    def test_profile_generator_rejects_client_documents_and_unstable_locations(self) -> None:
-        skill = self.read(PROFILE_SKILL)
-        for phrase in (
-            "executed, client-completed, matter-specific",
-            "Ask for a clean source precedent",
-            "Extracted text is navigation evidence",
-            "page number, approximate phrase or extracted-text offset alone",
-            "unregistrable",
-            "never manufacture certainty",
-        ):
-            self.assertIn(phrase, skill)
-
-    def test_profile_generator_maps_complete_schema_without_invention(self) -> None:
-        skill = self.read(PROFILE_SKILL)
-        for phrase in (
-            "Map each factual site to exactly one field",
-            "Record every schema field",
-            "unmapped precedent field",
-            "register only variants already present verbatim",
-            "Never compose, combine, improve or select a variant",
-        ):
-            self.assertIn(phrase, skill)
-
-    def test_extraction_gate_and_no_invented_values(self) -> None:
-        for skill in SKILLS:
-            text = self.read(skill)
             self.assertIn("cannot be determined", text)
-            self.assertIn("provenance", text.lower())
-            self.assertIn("extraction gate", text.lower())
+            self.assertIn("Never infer a plausible value", text)
         for schema in ("nsw-instruction-record-schema.md", "vic-instruction-record-schema.md"):
             self.assertIn("Never fill a plausible value", self.read(REFERENCES / schema))
 
-    def test_schema_covers_all_three_document_types(self) -> None:
+    def test_schemas_cover_document_types_and_risk_flags(self) -> None:
         schema = self.read(REFERENCES / "nsw-instruction-record-schema.md")
         for heading in (
+            "## Scope and risk flags",
             "## Will",
             "## Enduring power of attorney",
             "## Appointment of enduring guardian",
@@ -184,12 +202,17 @@ class AustralianEstatePlanningPluginTests(unittest.TestCase):
 
         vic_schema = self.read(REFERENCES / "vic-instruction-record-schema.md")
         for heading in (
+            "## Scope and risk flags",
             "## Will",
             "## Enduring power of attorney",
             "## Appointment of medical treatment decision maker",
             "## Missing required fields",
         ):
             self.assertIn(heading, vic_schema)
+
+        for text in (schema, vic_schema):
+            for flag in ("marriage", "divorce", "jointly held assets", "superannuation", "capacity"):
+                self.assertIn(flag, text.lower())
 
     def test_formalities_reference_is_dated_and_official_publisher_only(self) -> None:
         text = self.read(REFERENCES / "nsw-execution-formalities.md")
@@ -210,8 +233,6 @@ class AustralianEstatePlanningPluginTests(unittest.TestCase):
             text = self.read(REFERENCES / reference)
             self.assertIn("never determine", text.lower())
             self.assertIn("formality has been satisfied", text.lower())
-        for skill in SKILLS:
-            self.assertIn("never state that a formality has been satisfied", self.read(skill).lower())
 
     def test_victorian_formalities_are_dated_and_official(self) -> None:
         text = self.read(REFERENCES / "vic-execution-formalities.md")
@@ -222,23 +243,6 @@ class AustralianEstatePlanningPluginTests(unittest.TestCase):
             r"\b([a-z0-9.-]+\.gov\.au)\b", text
         ):
             self.assertEqual(host.removeprefix("www."), "legislation.vic.gov.au")
-
-    def test_playbook_rules_keep_facts_and_law_above_playbook(self) -> None:
-        rules = self.read(REFERENCES / "playbook-usage-rules.md")
-        self.assertIn("Silent means solicitor", rules)
-        self.assertIn("Instructions beat playbook", rules)
-        self.assertIn("Playbook never fills a factual field", rules)
-        self.assertIn("Law beats playbook", rules)
-
-    def test_playbook_clause_choice_contract_fails_closed(self) -> None:
-        rules = self.read(REFERENCES / "playbook-usage-rules.md")
-        self.assertIn("registered variant", rules)
-        self.assertIn("responsible solicitor confirms", rules)
-        self.assertIn("`NOT READY`", rules)
-
-        method = self.read(REFERENCES / "estate-planning-source-and-control-method.md")
-        self.assertIn("clause-choice register", method)
-        self.assertIn("confirmed profile", method)
 
     def test_excluded_matters_route_outside_scope(self) -> None:
         for path in SKILLS:

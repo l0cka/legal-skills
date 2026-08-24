@@ -52,8 +52,8 @@
     {
       "name": "australian-estate-planning",
       "source": "./plugins/australian-estate-planning",
-      "description": "Generate solicitor-reviewable sidecar profiles from uploaded human-designed NSW and Victorian estate precedents, then assemble documents from provenance-cited instructions using only confirmed sites in working copies. The source precedents remain unchanged, every reuse checks for anchor drift, and no document is drafted from scratch.",
-      "version": "0.3.0",
+      "description": "Prepare solicitor-review drafts for one NSW or Victorian client from centrally maintained approved estate planning precedents, an approved drafting playbook and provenance-cited instructions. Draft supported content, visibly flag every unresolved issue and return a matching drafting-issues register.",
+      "version": "0.4.0",
       "category": "Productivity",
       "tags": [
         "australian-law",
