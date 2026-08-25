@@ -17,8 +17,10 @@ capabilities, limits and permissions change.
 | [prompt-and-instruction-design.md](prompt-and-instruction-design.md) | Writing Prompt block text, Review Table column prompts and persistent table instructions |
 | [vaults-and-knowledge-sources.md](vaults-and-knowledge-sources.md) | Vault scope, folder structure, file naming, limits, embedding, precedence, Regional Knowledge Sources, permissions |
 | [harvey-agents-markdown-spec.md](harvey-agents-markdown-spec.md) | Agents authored as a single markdown spec instead of blocks; spec layout, skill-to-spec mapping, testing |
+| [testing-and-governance.md](testing-and-governance.md) | Test sets, synthetic fixtures, deliverable verification, cell lock, roles, publication approval, build records, data scope, retirement |
 
-Planned, not yet written: testing and governance for block agents.
+Read them in table order when building a new agent; each later file links
+back to the principle it relies on.
 
 ## Source policy
 
@@ -55,5 +57,6 @@ same articles. Cite one host consistently; this framework cites the US host.
 - [Getting Started with Workflow Builder: 5 Workflows We Recommend](https://www.harvey.ai/blog/getting-started-with-workflow-builder-5-workflows-we-recommend)
 - [Introducing Agent Builder](https://www.harvey.ai/blog/introducing-agent-builder)
 - [Create and Edit Files in Harvey](https://www.harvey.ai/blog/create-and-edit-files-in-harvey)
+- [Agent Builder, formerly Workflow Builder](https://www.harvey.ai/blog/introducing-workflow-builder) and [Introducing Harvey II](https://www.harvey.ai/blog/introducing-harvey-ii)
 - [Harvey Agents product page](https://www.harvey.ai/agents) and [launch press release, 5 May 2026](https://www.prnewswire.com/news-releases/built-by-lawyers-tailored-by-you-harvey-launches-purpose-built-legal-agents-across-every-major-practice-area-302762519.html)
 - [Vault product page](https://www.harvey.ai/platform/vault), [file ingestion blog](https://www.harvey.ai/blog/building-new-file-ingestion-system-to-scale-firm-knowledge), [100+ Knowledge Sources blog](https://www.harvey.ai/blog/100-knowledge-sources-available-in-harvey)
