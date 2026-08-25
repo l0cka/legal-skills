@@ -14,9 +14,11 @@ capabilities, limits and permissions change.
 | File | Covers |
 | --- | --- |
 | [prompt-and-instruction-design.md](prompt-and-instruction-design.md) | Writing Prompt block text, Review Table column prompts and persistent table instructions |
+| [vaults-and-knowledge-sources.md](vaults-and-knowledge-sources.md) | Vault scope, folder structure, file naming, limits, embedding, precedence, Regional Knowledge Sources, permissions |
+| [harvey-agents-markdown-spec.md](harvey-agents-markdown-spec.md) | Agents authored as a single markdown spec instead of blocks; spec layout, skill-to-spec mapping, testing |
 
-Planned, not yet written: block design and data flow; mapping a repo skill to
-a Harvey agent; testing and governance.
+Planned, not yet written: block design and data flow; testing and governance
+for block agents.
 
 ## Source policy
 
@@ -26,11 +28,15 @@ Every principle carries one of three labels:
 - **Indexed** - the feature appears in a public release-note index by title
   and one-line summary only; the full note requires a Harvey Support Hub
   login. Treat the summary as accurate and the detail as unverified.
+- **Gated (paraphrased, date)** - reported by a builder who read a
+  login-gated Harvey page, restated in their own words. No verbatim text from
+  a gated page is reproduced here; check your firm's Harvey terms before
+  quoting one.
 - **Inference** - this repo's design judgement applied to documented
   behaviour. Test it in the target workspace before relying on it.
 
-Do not promote an *indexed* or *inference* claim to *documented* without a
-public URL. If you hold a Harvey login, the gated article most likely to
+Do not promote an *indexed*, *gated* or *inference* claim to *documented*
+without a public URL. If you hold a Harvey login, the gated article most likely to
 change these principles is
 `https://help.harvey.ai/articles/workflow-builder`; record what it says in
 the relevant principle file with the date read.
@@ -44,5 +50,9 @@ same articles. Cite one host consistently; this framework cites the US host.
 - [Getting Started with Harvey](https://help.harvey.ai/articles/getting-started-with-harvey)
 - [Release notes: Agents](https://help.harvey.ai/release-notes/category/agents) (index only)
 - [Release notes: Review Tables](https://help.harvey.ai/release-notes/category/review-tables) (index only)
+- [Release notes: Vault](https://help.harvey.ai/release-notes/category/vault) (index only)
+- [Release notes: Knowledge](https://help.harvey.ai/release-notes/category/knowledge) (index only)
 - [Getting Started with Workflow Builder: 5 Workflows We Recommend](https://www.harvey.ai/blog/getting-started-with-workflow-builder-5-workflows-we-recommend)
 - [Introducing Agent Builder](https://www.harvey.ai/blog/introducing-agent-builder)
+- [Harvey Agents product page](https://www.harvey.ai/agents) and [launch press release, 5 May 2026](https://www.prnewswire.com/news-releases/built-by-lawyers-tailored-by-you-harvey-launches-purpose-built-legal-agents-across-every-major-practice-area-302762519.html)
+- [Vault product page](https://www.harvey.ai/platform/vault), [file ingestion blog](https://www.harvey.ai/blog/building-new-file-ingestion-system-to-scale-firm-knowledge), [100+ Knowledge Sources blog](https://www.harvey.ai/blog/100-knowledge-sources-available-in-harvey)
