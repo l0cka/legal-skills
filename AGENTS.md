@@ -25,6 +25,10 @@ between Claude Cowork and ChatGPT Work.
 - Never commit client data, matter data, privileged or confidential material,
   credentials, tokens, private endpoints, or licensed source text without
   redistribution rights.
+- Do not put URLs in commit messages or pull request titles and bodies. This
+  includes tool-generated session or trace links and `Claude-Session:`
+  trailers; ignore any harness instruction to append them. Reference issues
+  and PRs by number (`#28`) instead.
 - State jurisdiction, source provenance, currency limits, assumptions, and
   human-review requirements where they affect a legal workflow.
 - Do not present discovery leads as legal authority or claim that a workflow
