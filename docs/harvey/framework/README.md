@@ -13,12 +13,12 @@ capabilities, limits and permissions change.
 
 | File | Covers |
 | --- | --- |
+| [block-design-and-data-flow.md](block-design-and-data-flow.md) | Choosing and ordering blocks, @-mention wiring, Review Table vs Prompt, chaining, branching, optional inputs, file creation, checkpoints |
 | [prompt-and-instruction-design.md](prompt-and-instruction-design.md) | Writing Prompt block text, Review Table column prompts and persistent table instructions |
 | [vaults-and-knowledge-sources.md](vaults-and-knowledge-sources.md) | Vault scope, folder structure, file naming, limits, embedding, precedence, Regional Knowledge Sources, permissions |
 | [harvey-agents-markdown-spec.md](harvey-agents-markdown-spec.md) | Agents authored as a single markdown spec instead of blocks; spec layout, skill-to-spec mapping, testing |
 
-Planned, not yet written: block design and data flow; testing and governance
-for block agents.
+Planned, not yet written: testing and governance for block agents.
 
 ## Source policy
 
@@ -54,5 +54,6 @@ same articles. Cite one host consistently; this framework cites the US host.
 - [Release notes: Knowledge](https://help.harvey.ai/release-notes/category/knowledge) (index only)
 - [Getting Started with Workflow Builder: 5 Workflows We Recommend](https://www.harvey.ai/blog/getting-started-with-workflow-builder-5-workflows-we-recommend)
 - [Introducing Agent Builder](https://www.harvey.ai/blog/introducing-agent-builder)
+- [Create and Edit Files in Harvey](https://www.harvey.ai/blog/create-and-edit-files-in-harvey)
 - [Harvey Agents product page](https://www.harvey.ai/agents) and [launch press release, 5 May 2026](https://www.prnewswire.com/news-releases/built-by-lawyers-tailored-by-you-harvey-launches-purpose-built-legal-agents-across-every-major-practice-area-302762519.html)
 - [Vault product page](https://www.harvey.ai/platform/vault), [file ingestion blog](https://www.harvey.ai/blog/building-new-file-ingestion-system-to-scale-firm-knowledge), [100+ Knowledge Sources blog](https://www.harvey.ai/blog/100-knowledge-sources-available-in-harvey)
