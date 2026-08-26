@@ -146,11 +146,7 @@ require the skill's status vocabulary, so the false-verification rate and the
 rubric score are the fair cross-arm comparisons.
 
 <!-- benchmarks:start -->
-Models: opus (claude). Cases: 2. Full per-cell numbers: `python3 benchmarks/report.py <results dirs>`.
-
-![keyed-pass-rate](docs/assets/benchmarks/keyed-pass-rate.svg)
-
-- **opus** (claude) deadlines: pass 100% with vs 0% without
+_No benchmark run recorded yet._
 <!-- benchmarks:end -->
 
 ## Validate
