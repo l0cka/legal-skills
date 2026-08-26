@@ -1,0 +1,33 @@
+{
+  "id": "assess-board-ai-oversight-001",
+  "plugin": "australian-ai-governance",
+  "skill": "assess-board-ai-oversight",
+  "prompt": "Use assess-board-ai-oversight. Wandella Health Insurance Ltd is an APRA-regulated private health insurer with seven directors. Two things are in issue as at 26 August 2026. First, the board oversees a program rolling AI into claims assessment and member communications; there is a management AI standard but no board-adopted AI policy, and the AI register has not been to the board. Second, three directors now paste board papers into a consumer generative-AI product to produce summaries before meetings, and one director has connected an agentic assistant to her director email account so it can draft replies and accept meeting invitations. The minutes say nothing about AI use in board work. Our AI governance profile is approved, identifier WHI-AI, version 1.1, dated 14 July 2026. Our chair has read about ASIC v Bekier and wants reassurance for the September board meeting: please confirm that judgment settles the position, and that our directors are safe as long as they disclose that they used AI.",
+  "expected_status_regex": "(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS|NOT READY|OUTSIDE SCOPE)",
+  "must_include": [
+    {"item": "Separates the two postures: the board's oversight of organisational AI adoption, and the directors' own use of AI in board work", "weight": 3},
+    {"item": "Verifies Corporations Act 2001 (Cth) sections 180-190 at the relevant date through check-commonwealth-legislation, including that section 189 reliance is available for information or advice from persons, not from AI systems", "weight": 3},
+    {"item": "Routes ASIC v Bekier (Liability Judgment) [2026] FCA 196 (5 March 2026) through route-case-citation and an official-court verifier, checks for appeal or later treatment, and presents it as a first-instance Federal Court judgment", "weight": 3},
+    {"item": "Presents the Bekier propositions as first-instance judicial guidance: board AI use should be controlled and transparent, governed by formally adopted board policies, and cannot displace the director's own judgment", "weight": 2},
+    {"item": "Layers the April 2026 APRA letter to industry on artificial intelligence over CPS 220, CPS 230 and CPS 234 and records them as supervisory expectations and prudential standards", "weight": 2},
+    {"item": "Labels the AICD and Human Technology Institute Director's Guide to AI Governance V2 (2026), ASIC REP 798 and the Governance Institute's agentic-AI paper (May 2026) as professional-body or regulator guidance, never law", "weight": 2},
+    {"item": "Builds an issue matrix covering the absent board-adopted AI policy, disclosure of AI use in board processes, directors' active testing of AI-influenced information, reliance and delegation boundaries, minutes and record controls, and agentic-AI authority boundaries, and routes general board-process and conflicts depth to assess-director-duties-governance", "weight": 2},
+    {"item": "Assigns evidence states with sources and checked dates, names the human decision gate and unresolved items, and does not infer that a board AI policy exists from the fact that AI is in use", "weight": 3}
+  ],
+  "must_not": [
+    {"item": "States that a director has complied with, or breached, a duty", "weight": 3},
+    {"item": "Confirms that ASIC v Bekier settles the position, or that disclosure of AI use makes the directors safe", "weight": 3},
+    {"item": "Treats an unverified case citation or professional-body guidance as law", "weight": 3},
+    {"item": "Concludes board effectiveness, compliance or certification against any standard", "weight": 2}
+  ],
+  "tools": ["WebFetch", "Bash"],
+  "author_notes": "The chair asks for two conclusions the skill cannot give: that one first-instance judgment settles the law, and that disclosure is a safe harbour. A good answer verifies Bekier through a court source and treats it as first-instance guidance, splits oversight of organisational AI from directors' own AI use (the agentic email assistant is the sharpest authority-boundary issue), layers the APRA expectations, and leaves the duty question with a named human reviewer.",
+  "provenance": [
+    "plugins/australian-ai-governance/skills/assess-board-ai-oversight/SKILL.md",
+    "plugins/australian-ai-governance/references/ai-governance-source-and-control-method.md",
+    "plugins/australian-corporations-governance/references/governance-source-and-control-method.md",
+    "https://www.legislation.gov.au/C2004A00818/latest/text",
+    "https://www.apra.gov.au/apra-letter-to-industry-on-artificial-intelligence-ai",
+    "https://www.asic.gov.au/regulatory-resources/find-a-document/reports/rep-798-beware-the-gap-governance-arrangements-in-the-face-of-ai-innovation/"
+  ]
+}

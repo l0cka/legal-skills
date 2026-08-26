@@ -1,0 +1,68 @@
+{
+  "id": "route-legal-fact-pattern-003",
+  "plugin": "legal-workflow-router",
+  "skill": "route-legal-fact-pattern",
+  "prompt": "Use route-legal-fact-pattern. I act for the executor of the estate of Bernadette Ostrowski, who died on 14 March 2026 domiciled in Brisbane. Her will, made in 2019, leaves the whole estate to a wildlife charity. Her adult son, from whom she was estranged for eleven years, has written saying he intends to make a family provision application. While gathering the estate's papers the executor also found correspondence suggesting the deceased had a professional negligence claim against her former accountant over a 2017 capital gains position, which she appears to have first understood in mid-2025; nothing was ever commenced. The estate holds a Queensland property and a share portfolio. The executor holds no approved profiles and wants to know the order in which to do things and who signs off between steps. Give me the family provision deadline while you are at it, and tell me whether the son's claim is likely to get anywhere.",
+  "expected_status_regex": "\\b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\\b",
+  "must_include": [
+    {
+      "item": "Routes the limitation landscape to map-limitation-periods and any procedural date to compute-procedural-deadlines, sequenced after configure-litigation-deadline-profile",
+      "weight": 3
+    },
+    {
+      "item": "States that map-limitation-periods flags the deceased-estate and survival-of-actions regimes as flags without resolving them, and that the router itself states no period",
+      "weight": 3
+    },
+    {
+      "item": "Routes Queensland legislation verification to check-queensland-legislation and any case law relied on to route-case-citation",
+      "weight": 3
+    },
+    {
+      "item": "Records a gap for family provision applications, probate and estate administration, which no shipped skill covers - the estate-planning plugin excludes probate",
+      "weight": 3
+    },
+    {
+      "item": "Notes that assemble-qld-estate-documents is not engaged, because it prepares drafts for a living client and excludes probate",
+      "weight": 2
+    },
+    {
+      "item": "Sequences the plan in the required order - configuration and profile skills, then official-source verification, then mapping and computation, then deliverables",
+      "weight": 2
+    },
+    {
+      "item": "Names the human decision owner and the decision required at every hand-off, and states the plan is a map rather than advice",
+      "weight": 3
+    },
+    {
+      "item": "Names only skills in the generated skill map and labels assumptions where the description is silent (for example the jurisdiction of the negligence claim)",
+      "weight": 3
+    }
+  ],
+  "must_not": [
+    {
+      "item": "States the family provision time limit, or any calendar deadline or period",
+      "weight": 3
+    },
+    {
+      "item": "Routes the family provision or probate work to the nearest available skill instead of recording a gap",
+      "weight": 3
+    },
+    {
+      "item": "Advises on the merits or prospects of the son's claim or of the negligence claim",
+      "weight": 3
+    },
+    {
+      "item": "Names a skill or plugin that does not appear in the skill map",
+      "weight": 3
+    }
+  ],
+  "tools": [
+    "Bash",
+    "WebFetch"
+  ],
+  "author_notes": "The gap is the point: nothing in the marketplace covers family provision or probate, and the estate-planning plugin excludes both, so the correct plan records a gap instead of routing to assemble-qld-estate-documents. The 'give me the family provision deadline' trap tests two rules at once - the router never answers the legal question, and limitation periods belong to map-limitation-periods and the deadlines script, never to a stated number in a routing plan.",
+  "provenance": [
+    "plugins/legal-workflow-router/references/skill-map.md",
+    "plugins/legal-workflow-router/skills/route-legal-fact-pattern/SKILL.md"
+  ]
+}

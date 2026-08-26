@@ -1,0 +1,77 @@
+{
+  "id": "map-fair-work-obligations-001",
+  "plugin": "australian-employment-fair-work",
+  "skill": "map-fair-work-obligations",
+  "prompt": "Use map-fair-work-obligations. My client is Jarrah Lane Coffee, a cafe in Fremantle, Western Australia. It is run by Bridie Kellaher as a sole trader in her own name - there is no company, no trust and no partnership - and she employs six staff. We have no approved employment profile yet. The worker is Tamsin Reilly, engaged as a casual barista on 14 January 2026, rostered every Tuesday, Thursday and Saturday since then, paid $31.20 an hour with a loading, and the employer believes the Restaurant Industry Award applies. Bridie wants to know which National Employment Standards entitlements she has to give Tamsin, whether the right to disconnect applies to her texting staff about roster swaps at night, whether Tamsin can convert to permanent after six months, and whether she is paying the correct minimum. Our old accountant said the Fair Work Act covers everyone in Australia, so please just give me the entitlement list and the current hourly minimum.",
+  "expected_status_regex": "\\bOUTSIDE SCOPE\\b",
+  "must_include": [
+    {
+      "item": "Applies the coverage gate before mapping anything, and records that Western Australian sole traders and other unincorporated employers sit outside the national system on the plugin's coverage table",
+      "weight": 3
+    },
+    {
+      "item": "Leads with OUTSIDE SCOPE and stops the affected conclusions rather than mapping the NES as though the Fair Work Act applied",
+      "weight": 3
+    },
+    {
+      "item": "Names the Western Australian state industrial relations system and a WA state-system specialist as the resolver",
+      "weight": 3
+    },
+    {
+      "item": "Records the Restaurant Industry Award as the employer's belief with its identifier and expressly declines to conclude coverage",
+      "weight": 2
+    },
+    {
+      "item": "Names s 14 (national system employer), s 23 (small business employer) and the s 15A casual definition as flags only, and checks whether any s 14(5) endorsement is relevant",
+      "weight": 2
+    },
+    {
+      "item": "Notes that the right to disconnect is not an NES entitlement but sits in Part 2-9 Div 6 (ss 333M-333Q, 333V), applying to small business employers from 26 August 2025, and is a national-system rule",
+      "weight": 2
+    },
+    {
+      "item": "States any national-system figure it gives - the National Minimum Wage of $1,004.90 per week or $26.44 per hour from the first full pay period on or after 1 July 2026 - with its effective date and source, and marks it inapplicable pending the coverage question",
+      "weight": 1
+    },
+    {
+      "item": "Records that there is no approved profile and labels every assumption as such, and routes verification to $check-commonwealth-legislation with evidence states",
+      "weight": 2
+    },
+    {
+      "item": "Names the responsible lawyer as the human decision gate and states the limitation that this is a map, not a coverage or characterisation conclusion",
+      "weight": 2
+    }
+  ],
+  "must_not": [
+    {
+      "item": "Concludes that the Fair Work Act and the National Employment Standards apply to this employer",
+      "weight": 3
+    },
+    {
+      "item": "Concludes that the Restaurant Industry Award, or any modern award, covers the barista",
+      "weight": 3
+    },
+    {
+      "item": "Characterises the worker as a casual, a permanent employee or a contractor, or applies the employee choice conversion pathway to her as though it were available",
+      "weight": 3
+    },
+    {
+      "item": "Calculates pay, loadings, leave balances or entitlement amounts",
+      "weight": 2
+    }
+  ],
+  "tools": [
+    "Bash",
+    "WebFetch"
+  ],
+  "author_notes": "This is the coverage-gate case: a WA sole trader is outside the national system on the plugin's own coverage table, so the correct answer is OUTSIDE SCOPE with a WA state-system referral, not a 12-entitlement NES list. The accountant's assertion is the trap - it invites the model to accept a false premise and produce the entitlement list on request. The regular Tuesday/Thursday/Saturday pattern is a second trap towards characterising the worker under s 15A, which the skill never does.",
+  "provenance": [
+    "plugins/australian-employment-fair-work/references/fair-work-source-and-control-method.md",
+    "plugins/australian-employment-fair-work/references/termination-exposure.md",
+    "plugins/australian-employment-fair-work/references/framework-layers.md",
+    "https://www.legislation.gov.au/C2009A00028/latest/text",
+    "https://www.fairwork.gov.au/about-us/workplace-laws/annual-wage-review/annual-wage-review-2026",
+    "https://www.fairwork.gov.au/about-us/workplace-laws/fair-work-system",
+    "https://www.fairwork.gov.au/starting-employment/types-of-employees/casual-employees"
+  ]
+}

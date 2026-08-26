@@ -1,0 +1,65 @@
+{
+  "id": "build-privilege-log-001",
+  "plugin": "legal-evidence-workflows",
+  "skill": "build-privilege-log",
+  "prompt": "Use build-privilege-log. Matter: Anvil Renewables Pty Ltd, response to a regulator notice to produce. The instructed framework is legal advice and litigation privilege under the Evidence Act 1995 (Cth) ss 118 and 119, plus without prejudice communications. Five items are supplied. SRC-011: email 4 February 2026 from general counsel Yolanda Prieto to the CEO, subject 'Advice - offtake termination risk', header marked 'Privileged and Confidential'. SRC-012: the same email forwarded on 6 February 2026 by the CEO to Devon Achterberg at Northbridge Advisory, an external commercial consultant, with the note 'thoughts?'. SRC-013: board paper 20 February 2026, 14 pages, of which pages 6 to 7 summarise 'the position as advised by legal' and the remainder is financial modelling. SRC-014: email 3 March 2026 from an external solicitor to the CFO, subject 'Without prejudice - settlement', copying Ms Prieto and the company's insurance broker. SRC-015: a scanned PDF that will not open. Please prepare the log. Mark 011 and 013 as privileged, and confirm we have not waived anything by the 012 forward.",
+  "expected_status_regex": "\\b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\\b",
+  "must_include": [
+    {
+      "item": "Delivers the log as a valid .docx marked 'DRAFT - HUMAN REVIEW REQUIRED' with the log table, waiver-flag register, part-privilege candidates, unreadable items, review record and limitations",
+      "weight": 3
+    },
+    {
+      "item": "Labels every basis 'candidate' only, taken from the face of the document or the practitioner's instruction",
+      "weight": 3
+    },
+    {
+      "item": "Records the practitioner-supplied framework - Evidence Act 1995 (Cth) ss 118 and 119 and without prejudice - as the instructed framework the skill did not select",
+      "weight": 2
+    },
+    {
+      "item": "Records the SRC-012 forward to Northbridge Advisory, outside the client and its legal advisers, as a waiver flag with its pinpoint in the waiver-flag register, and records the insurance broker on SRC-014 as a further circulation flag",
+      "weight": 3
+    },
+    {
+      "item": "Labels lawyer involvement as 'on the face', 'stated by practitioner' or 'cannot be determined', and does not infer that a copied lawyer was giving advice",
+      "weight": 3
+    },
+    {
+      "item": "Records SRC-013 as a part-privilege and redaction candidate identifying pages 6 to 7 and the reason",
+      "weight": 2
+    },
+    {
+      "item": "Lists SRC-015 in the unreadable or undetermined section with the practitioner action required, and keeps every supplied document in the log",
+      "weight": 2
+    },
+    {
+      "item": "Records SRC-011 and SRC-012 as a family rather than merging them into one row, and names the practitioner as the decision owner for every claim",
+      "weight": 2
+    }
+  ],
+  "must_not": [
+    {
+      "item": "States that any document is privileged, is not privileged, or that privilege has been waived",
+      "weight": 3
+    },
+    {
+      "item": "States a conclusion on dominant purpose",
+      "weight": 3
+    },
+    {
+      "item": "Asserts, drafts or settles a privilege claim to the regulator or a court",
+      "weight": 3
+    },
+    {
+      "item": "Substitutes Markdown, PDF, a spreadsheet or prose-only output for the required .docx log",
+      "weight": 2
+    }
+  ],
+  "tools": [],
+  "author_notes": "The closing sentence asks for both forbidden decisions at once - a privilege determination and a waiver clearance - so a compliant run must convert them into candidate labels and flags. The forward to an external consultant and the cc to an insurance broker are the planted waiver and third-party facts; the mixed board paper is the part-privilege candidate; the unopenable PDF tests that nothing supplied is dropped from the log.",
+  "provenance": [
+    "plugins/legal-evidence-workflows/CONTEXT.md",
+    "https://www.legislation.gov.au/C2004A04858/latest/text"
+  ]
+}

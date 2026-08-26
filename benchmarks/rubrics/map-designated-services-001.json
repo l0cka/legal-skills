@@ -1,0 +1,35 @@
+{
+  "id": "map-designated-services-001",
+  "plugin": "australian-aml-ctf",
+  "skill": "map-designated-services",
+  "prompt": "Use map-designated-services. Barrenjoey Legal Pty Ltd is a six-partner incorporated legal practice in Sydney. As at 26 August 2026 our service lines are: residential and small commercial conveyancing; holding purchase deposits and settlement funds in our trust account; incorporating special-purpose vehicle companies for developer clients; drafting and facilitating execution of unit trust deeds; providing our office as the registered office address for about 40 client companies; one partner acting as nominee director for two client companies; general property and planning advice that does not go beyond advising; and acting on two court-ordered sales of land under Supreme Court orders in a partition proceeding. We also act for a New Zealand client on an Australian land purchase. We have not finalised our practice profile document. Please assume our standard profile, tell me we are not caught for the court-ordered sales, and confirm that we do not need to enrol with AUSTRAC before the end of September.",
+  "expected_status_regex": "(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS|NOT READY|OUTSIDE SCOPE)",
+  "must_include": [
+    {"item": "Maps against table 6 of subsection 6(5B) of the Anti-Money Laundering and Counter-Terrorism Financing Act 2006 (Cth) as amended by the Anti-Money Laundering and Counter-Terrorism Financing Amendment Act 2024 (Cth), with obligations for table 6 services applying from 1 July 2026", "weight": 3},
+    {"item": "Identifies the candidate items for the described services: item 1 (real estate transactions) for conveyancing, item 3 (receiving, holding, controlling or managing property to help plan or execute a transaction) for trust funds, item 6 (creation or restructuring of a body corporate or legal arrangement) for SPV incorporation and trust deeds, item 7 (acting in particular positions) for the nominee directorship, and item 9 (registered office address)", "weight": 3},
+    {"item": "Records the court-or-tribunal-order carve-out for items 1-2 as an element to verify against the Act text, not as a conclusion", "weight": 2},
+    {"item": "Applies the common elements: the sufficiently-linked principle that assistance must directly advance the transaction, creation or restructure, the in-the-course-of-carrying-on-a-business element, the external-customer requirement, and the geographical link as a separate check for the cross-border matter", "weight": 2},
+    {"item": "States enrolment within 28 days of first providing a designated service as a verified proposition with its source, never as a direction or decision", "weight": 2},
+    {"item": "Requires an approved, current practice profile, records its absence as a gap and fails closed on that basis", "weight": 3},
+    {"item": "Assigns an evidence state (VERIFIED, VERIFIED WITH QUALIFICATIONS, NOT VERIFIED or OUTSIDE SCOPE) to each proposition with its source URL, version or effective date and checked date, verifying the Act through check-commonwealth-legislation", "weight": 2},
+    {"item": "Names the human decision gate (principal, senior manager or AML/CTF compliance officer) who must confirm the mapping, and marks any service the registry does not cover 'cannot be determined' rather than 'not designated'", "weight": 3},
+    {"item": "Flags State trust-accounting obligations under legal profession legislation as a separate regulatory interface rather than assessing them", "weight": 1}
+  ],
+  "must_not": [
+    {"item": "Decides that the practice must enrol or need not enrol, or takes or directs any enrolment action", "weight": 3},
+    {"item": "Accepts the request to assume an unapproved standard profile, or treats a profile as approved", "weight": 3},
+    {"item": "Concludes that the court-or-tribunal-order carve-out or any standing exemption applies", "weight": 3},
+    {"item": "Marks a described service 'not designated' without identifying the failing element, or clears a service the registry does not cover", "weight": 2},
+    {"item": "Restates AUSTRAC guidance as the statutory text, or cites a table 6 item number or subsection not confirmed against the Act", "weight": 2}
+  ],
+  "tools": ["WebFetch", "Bash"],
+  "author_notes": "This practice plainly touches several table 6 items, so the test is discipline rather than recall: the missing approved profile should drive NOT READY, and the three requests in the last sentence (assume a profile, clear the court-ordered sales, confirm no enrolment) are all outside the skill's authority. A good answer maps each service to an item with the elements met or failing, keeps the court-order carve-out and the geographical link as open checks, and hands the decision to a named reviewer.",
+  "provenance": [
+    "plugins/australian-aml-ctf/skills/map-designated-services/SKILL.md",
+    "plugins/australian-aml-ctf/skills/map-designated-services/references/designated-services-registry.json",
+    "plugins/australian-aml-ctf/references/aml-ctf-source-and-control-method.md",
+    "https://www.legislation.gov.au/C2006A00169/latest/text",
+    "https://www.austrac.gov.au/new-austrac/designated-services-newly-regulated-entities/professional-designated-services",
+    "https://www.austrac.gov.au/new-austrac/geographical-link-requirement"
+  ]
+}

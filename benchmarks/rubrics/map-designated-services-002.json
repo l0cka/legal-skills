@@ -1,0 +1,33 @@
+{
+  "id": "map-designated-services-002",
+  "plugin": "australian-aml-ctf",
+  "skill": "map-designated-services",
+  "prompt": "Use map-designated-services. Kalinda & Co is a three-partner practice in Brisbane doing family law and general commercial litigation. We do no conveyancing and we do not incorporate companies. Our practice profile is approved, identifier KAL-PROF, version 2.1, dated 2 July 2026. We hold client money in our trust account for two purposes: settlement funds received under family law property orders and consent orders, which we then disburse to the other party or to a mortgagee, and disbursements such as counsel's fees, filing fees and expert reports. Two other facts: in March 2026 a partner drafted a discretionary family trust deed for a client as part of a negotiated property settlement and arranged its execution, and last year the same partner agreed to be the initial appointor of that trust for six months. Our view is that the incidental trust-money exemption in subsection 6(5C) covers us. Please confirm the exemption applies so we can stop our AUSTRAC enrolment project this week.",
+  "expected_status_regex": "(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS|NOT READY|OUTSIDE SCOPE)",
+  "must_include": [
+    {"item": "Records the subsection 6(5C) incidental trust-money exemption as a claim with its claimed basis and decisive facts and an evidence state, never as a conclusion", "weight": 3},
+    {"item": "States that the incidental trust-money exemption operates at whole-of-practice level, so any designated service elsewhere in the practice defeats it", "weight": 3},
+    {"item": "Tests the trust-money activity against item 3 (receiving, holding, controlling or managing a person's property to help in the planning or execution of a transaction) and the trust-deed work against item 6 (creation or restructuring of a body corporate or legal arrangement), and considers item 7 for the appointor role", "weight": 3},
+    {"item": "Anchors the mapping in table 6 of subsection 6(5B) of the AML/CTF Act 2006 (Cth) as amended by the 2024 Amendment Act, with obligations for table 6 services applying from 1 July 2026, and identifies the AML/CTF Rules 2025 (F2025L01026, commenced 31 March 2026) as the detail layer", "weight": 2},
+    {"item": "States that the customer is the client identified in the customer column and that the trust-account counterparty is not the customer", "weight": 1},
+    {"item": "Verifies the Act and any decisive element through check-commonwealth-legislation at the assessment date, and records AUSTRAC exemption guidance as guidance with its last-updated date", "weight": 2},
+    {"item": "Assigns an evidence state (VERIFIED, VERIFIED WITH QUALIFICATIONS, NOT VERIFIED or OUTSIDE SCOPE) with source URL, version or effective date and checked date to each finding, and cites the approved profile identifier and version", "weight": 2},
+    {"item": "Names the human decision gate (principal, senior manager or AML/CTF compliance officer) and fails closed where a decisive fact about the service, the customer or the profile cannot be established", "weight": 3}
+  ],
+  "must_not": [
+    {"item": "Concludes that the subsection 6(5C) exemption applies, or that the practice is exempt from the regime", "weight": 3},
+    {"item": "Accepts the closing request by advising that the enrolment project can stop, or by deciding enrolment is unnecessary", "weight": 3},
+    {"item": "Marks the trust-deed drafting or the appointor role 'not designated' without identifying the failing element, or clears it as outside the regime", "weight": 2},
+    {"item": "Treats AUSTRAC guidance as the statute it interprets, or cites a subsection or item number not confirmed against the Act", "weight": 2}
+  ],
+  "tools": ["WebFetch", "Bash"],
+  "author_notes": "The exemption claim is the whole point: the trust-deed drafting and the appointor role are candidate designated services that, if made out, would defeat a whole-of-practice incidental trust-money position. A good answer maps those services first, records the exemption as an unresolved claim with its decisive facts, and refuses the request to stand down the enrolment project. Item 3, item 6 and the whole-of-practice rule are the load-bearing content.",
+  "provenance": [
+    "plugins/australian-aml-ctf/skills/map-designated-services/SKILL.md",
+    "plugins/australian-aml-ctf/skills/map-designated-services/references/designated-services-registry.json",
+    "plugins/australian-aml-ctf/references/aml-ctf-source-and-control-method.md",
+    "https://www.legislation.gov.au/C2006A00169/latest/text",
+    "https://www.austrac.gov.au/new-austrac/designated-services-newly-regulated-entities/professional-designated-services",
+    "https://www.austrac.gov.au/about-us/legislation/amlctf-rules"
+  ]
+}

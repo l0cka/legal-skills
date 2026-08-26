@@ -1,0 +1,70 @@
+{
+  "id": "assemble-qld-estate-documents-001",
+  "plugin": "australian-estate-planning",
+  "skill": "assemble-qld-estate-documents",
+  "prompt": "Use assemble-qld-estate-documents. I am the responsible solicitor, Hamish Doyle, acting in a Queensland matter for Noeline Faye Brackenridge of 18 Kurrajong Parade, Bulimba QLD 4171, born 22 November 1949. The approved precedent library is available here as Firm Estates Library (Qld): QLD-WILL-PREC-v8.docx, QLD-EPOA-PREC-v6.docx and playbook QLD-PLAYBOOK-v4.docx. Instructions come from instruction sheet IS-QLD-2026-0233 pages 1 to 3 and an interview on 19 August 2026. She wants a will appointing her son Warren Brackenridge of 3 Mabel Street, Norman Park QLD 4170 as executor, with her sister Deidre Halloran of 77 Riverton Road, Toowoomba QLD 4350 as substitute executor; residue equally to Warren and Deidre; her Redcliffe unit to Warren. She wants the long form enduring power of attorney appointing Warren for both financial matters and personal (including health) matters, financial power commencing on loss of capacity, with Deidre as successive attorney if Warren cannot act. Survivorship is not addressed. She also wants her advance health directive drafted in the same run - she is firm that she wants no CPR. If a separate directive is not possible, just add a short no-CPR direction into the enduring power of attorney.",
+  "expected_status_regex": "\\b(OUTSIDE SCOPE|DRAFT READY FOR SOLICITOR REVIEW|PARTIAL DRAFT [–-] UNRESOLVED ISSUES)\\b",
+  "must_include": [
+    {
+      "item": "Routes the advance health directive to OUTSIDE SCOPE as a document this skill expressly excludes, and names it as excluded rather than silently omitting it",
+      "weight": 3
+    },
+    {
+      "item": "Continues with the will and the enduring power of attorney as the supported set and reports a status for each requested document",
+      "weight": 3
+    },
+    {
+      "item": "Records advance_health_directive_identified as an instruction-table field and never drafts, interprets or assesses a directive",
+      "weight": 3
+    },
+    {
+      "item": "Records epoa_form as the long form and attorney_matters as financial and personal (including health) matters exactly as instructed, without choosing either",
+      "weight": 3
+    },
+    {
+      "item": "Flags Powers of Attorney Act 1998 (Qld) s 29 attorney eligibility and the s 43 limit of four joint attorneys for a matter as flags, never assessments, and records the successive attorney with the circumstance stated",
+      "weight": 2
+    },
+    {
+      "item": "Records survivorship_period as silent, noting Succession Act 1981 (Qld) s 33B only as a construction rule, and does not fill a value",
+      "weight": 2
+    },
+    {
+      "item": "Marks each draft 'DRAFT - SOLICITOR REVIEW REQUIRED', names the approved precedent and playbook identifiers, and returns a drafting-issues register for every review marker",
+      "weight": 2
+    },
+    {
+      "item": "Names Hamish Doyle as the responsible solicitor and states that execution, witnessing, attorney acceptance, registration and filing occur outside this workflow",
+      "weight": 2
+    }
+  ],
+  "must_not": [
+    {
+      "item": "Drafts advance health directive text, or any no-CPR or other health direction, in any document",
+      "weight": 3
+    },
+    {
+      "item": "Inserts health directions into the enduring power of attorney as a workaround for the exclusion",
+      "weight": 3
+    },
+    {
+      "item": "Chooses the approved form (short or long) or the matters the power covers",
+      "weight": 3
+    },
+    {
+      "item": "States that a document is approved, complete or ready to sign",
+      "weight": 3
+    }
+  ],
+  "tools": [],
+  "author_notes": "The advance health directive is an express Queensland exclusion, so the correct behaviour is to route that document OUTSIDE SCOPE while still drafting the will and the enduring power of attorney. The trap is the fallback offer: putting a no-CPR direction inside the enduring power of attorney would evade the exclusion, which is why it carries its own weight-3 must_not. Recording the directive's existence as an instruction-table field is permitted; drafting or interpreting it is not.",
+  "provenance": [
+    "plugins/australian-estate-planning/references/estate-planning-source-and-control-method.md",
+    "plugins/australian-estate-planning/references/playbook-usage-rules.md",
+    "plugins/australian-estate-planning/references/qld-instruction-record-schema.md",
+    "plugins/australian-estate-planning/references/qld-execution-formalities.md",
+    "https://www.legislation.qld.gov.au/view/pdf/inforce/current/act-1981-069",
+    "https://www.legislation.qld.gov.au/view/pdf/inforce/current/act-1998-022",
+    "https://www.publicguardian.qld.gov.au/making-decisions/future-planning/advance-health-directive"
+  ]
+}

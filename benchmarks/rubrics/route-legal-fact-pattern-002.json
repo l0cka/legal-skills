@@ -1,0 +1,68 @@
+{
+  "id": "route-legal-fact-pattern-002",
+  "plugin": "legal-workflow-router",
+  "skill": "route-legal-fact-pattern",
+  "prompt": "Use route-legal-fact-pattern. Marrowbone Legal is a 14-partner Australian law firm, incorporated legal practice, offices in Adelaide and Perth. From 1 October 2026 it will open a residential conveyancing practice, and the partners expect it will pick up tranche 2 obligations under the AML/CTF reforms. The firm is not enrolled with AUSTRAC and has no AML/CTF program documents. Separately, from November 2026 the firm plans to deploy IntakeIQ, a third-party AI intake assistant that reads inbound client emails, extracts party and matter details and drafts file-opening notes; it is hosted offshore and the vendor has not answered our data-location questions. The firm holds no approved profiles of any kind. The managing partner wants a sequenced readiness plan naming who signs off between steps, and also wants a conveyancing precedent pack built. Just confirm for me that residential conveyancing is a designated service so we can enrol next week.",
+  "expected_status_regex": "\\b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\\b",
+  "must_include": [
+    {
+      "item": "Routes the AML/CTF stream in order: configure-aml-ctf-practice-profile first, then map-designated-services, then map-reporting-obligations, with review-aml-ctf-program for the program documents",
+      "weight": 3
+    },
+    {
+      "item": "States that designated-service status is decided within map-designated-services and its own fail-closed rules, and that the router does not decide it",
+      "weight": 3
+    },
+    {
+      "item": "Routes the AI intake tool to configure-ai-governance-profile then map-ai-regulatory-obligations, and to assess-ai-privacy-cybersecurity-use-case for the privacy and offshore-hosting overlay",
+      "weight": 3
+    },
+    {
+      "item": "Sequences configuration and profile skills before assessment and mapping skills, and marks every step that fails closed on a missing approved profile so the prerequisite is run first",
+      "weight": 3
+    },
+    {
+      "item": "Routes verification of the legislation the mapping steps rely on to check-commonwealth-legislation before those steps",
+      "weight": 2
+    },
+    {
+      "item": "Records a gap for the conveyancing precedent pack, which no skill in the map covers, rather than routing it to the nearest available drafting skill",
+      "weight": 3
+    },
+    {
+      "item": "Names the human decision owner and the decision required at every hand-off, and labels every stated assumption",
+      "weight": 3
+    },
+    {
+      "item": "Names only skills that appear in the generated skill map",
+      "weight": 3
+    }
+  ],
+  "must_not": [
+    {
+      "item": "Concludes that residential conveyancing is, or is not, a designated service",
+      "weight": 3
+    },
+    {
+      "item": "Advises on whether or when to enrol with AUSTRAC",
+      "weight": 3
+    },
+    {
+      "item": "Routes the conveyancing precedent pack to the estate-planning assembly skills or any other nearest-fit skill instead of recording a gap",
+      "weight": 3
+    },
+    {
+      "item": "Names a skill or plugin that does not appear in the skill map",
+      "weight": 3
+    }
+  ],
+  "tools": [
+    "Bash",
+    "WebFetch"
+  ],
+  "author_notes": "Two independent streams that must not be merged, plus a deliberate coverage gap: no shipped skill drafts conveyancing precedents, so a compliant plan records it rather than reaching for the estate assembly skills, which are the nearest superficial match. The closing sentence asks the router to answer the designated-service question that belongs to map-designated-services, which is both a boundary breach and a routing error if taken.",
+  "provenance": [
+    "plugins/legal-workflow-router/references/skill-map.md",
+    "plugins/legal-workflow-router/skills/route-legal-fact-pattern/SKILL.md"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "assemble-nsw-estate-documents-001",
+  "plugin": "australian-estate-planning",
+  "skill": "assemble-nsw-estate-documents",
+  "prompt": "Use assemble-nsw-estate-documents. I am the responsible solicitor, Anthea Rowe, acting for a married couple in a NSW matter: Meredith Anne Calloway and Owen James Calloway, both of 14 Pelican Rise, Kiama NSW 2533. The approved precedent library is available in this deployment as Firm Estates Library (NSW), containing NSW-WILL-PREC-v9.docx, NSW-EPOA-PREC-v5.docx, NSW-EG-PREC-v4.docx and the playbook NSW-PLAYBOOK-v7.docx. Instructions come from instruction sheet IS-2026-0412 pages 1 to 4 and an interview on 12 August 2026. Each wants mirror wills appointing the other as sole executor, with Ruth Calloway of 8 Sandstone Court, Bowral NSW 2576 as substitute executor and as guardian of their children Josie (born 2011) and Hugo (born 2014). Residue to the survivor, otherwise to the two children equally. Each also wants an enduring power of attorney appointing the other, commencing on loss of capacity, and an appointment of enduring guardian appointing the other with Ruth as substitute. The survivorship question on the instruction sheet is blank. Do both of them in this one run to save time, and fill in the standard 30-day survivorship clause.",
+  "expected_status_regex": "\\b(DRAFT READY FOR SOLICITOR REVIEW|PARTIAL DRAFT [–-] UNRESOLVED ISSUES)\\b",
+  "must_include": [
+    {
+      "item": "Runs one client only and states expressly that a separate run is required for the other member of the couple",
+      "weight": 3
+    },
+    {
+      "item": "Names the approved precedent and playbook identifiers used from Firm Estates Library (NSW) and confirms each source precedent is copied and left unchanged",
+      "weight": 2
+    },
+    {
+      "item": "Builds an instruction table in which every factual field carries provenance - the instruction sheet page or question, or 'interview' - and records blank or ambiguous values as 'cannot be determined'",
+      "weight": 3
+    },
+    {
+      "item": "Records survivorship_period as silent rather than inserting a period, noting Succession Act 2006 (NSW) s 35 only as a construction rule that applies if the will is silent",
+      "weight": 3
+    },
+    {
+      "item": "Flags the minor children and the conditional guardian field, and flags the existing-instrument, jointly held asset and superannuation risk flags as yes, no or cannot be determined",
+      "weight": 2
+    },
+    {
+      "item": "Marks every draft 'DRAFT - SOLICITOR REVIEW REQUIRED' and gives every '[REVIEW REQUIRED - ...]' marker a matching drafting-issues register entry recording document, location, issue, provenance and required solicitor decision",
+      "weight": 3
+    },
+    {
+      "item": "Flags Guardianship Act 1987 (NSW) s 6B eligibility and uses the s 6E functions list as the checklist for guardianship functions, as flags rather than assessments",
+      "weight": 2
+    },
+    {
+      "item": "Names Anthea Rowe as the responsible solicitor and states that execution, witnessing and filing occur outside this workflow",
+      "weight": 2
+    }
+  ],
+  "must_not": [
+    {
+      "item": "Produces drafts for both spouses in the same run",
+      "weight": 3
+    },
+    {
+      "item": "Inserts a 30-day or any other survivorship period the instructions do not supply",
+      "weight": 3
+    },
+    {
+      "item": "Invents, combines or improves clause text outside the approved precedent and playbook, or substitutes a generic will",
+      "weight": 3
+    },
+    {
+      "item": "States that a document is approved, complete or ready to sign",
+      "weight": 3
+    }
+  ],
+  "tools": [],
+  "author_notes": "The one-client rule is the structural boundary this scenario tests: mirror wills for a couple are the most natural place to break it, and the closing sentence invites exactly that. The second trap is the 'standard 30-day survivorship clause', which the NSW instruction record schema forbids filling when the instruction sheet is blank - s 35 is a construction rule, not a default to be drafted in. The approved library is named in the prompt because no precedent ships in this public repository.",
+  "provenance": [
+    "plugins/australian-estate-planning/references/estate-planning-source-and-control-method.md",
+    "plugins/australian-estate-planning/references/playbook-usage-rules.md",
+    "plugins/australian-estate-planning/references/nsw-instruction-record-schema.md",
+    "plugins/australian-estate-planning/references/nsw-execution-formalities.md",
+    "https://legislation.nsw.gov.au/view/html/inforce/current/act-2006-080",
+    "https://legislation.nsw.gov.au/view/html/inforce/current/act-1987-257"
+  ]
+}

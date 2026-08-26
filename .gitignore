@@ -10,3 +10,4 @@ build/
 # Local session state
 .claude/
 plugins/*/evals/results/
+benchmarks/results/

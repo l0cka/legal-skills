@@ -1,0 +1,32 @@
+{
+  "id": "assess-ai-privacy-cybersecurity-use-case-001",
+  "plugin": "australian-privacy-cybersecurity",
+  "skill": "assess-ai-privacy-cybersecurity-use-case",
+  "prompt": "Use assess-ai-privacy-cybersecurity-use-case. Karrawirra General Insurance Ltd wants to deploy a generative-AI claims triage assistant. The assistant would read incoming personal-injury and home claim files, including medical certificates and treating-doctor reports, retrieve similar historical claims from our claims database, and draft a recommended triage tier and next steps for a claims officer, who can accept the draft with one click. The vendor is a United States company; the model is hosted in a US region, with an Australian hosting option we have not costed. The vendor's sales deck says it is SOC 2 Type II certified, enterprise grade, and does not train on customer data. We plan production go-live on 1 October 2026, seven-year retention of prompts and outputs, and a first review in mid-2027. We also deliver a Western Australian government insurance contract using the same platform. The vendor is SOC 2 certified, so please treat security as satisfied and give us the green light for production by 1 October so procurement can sign this week.",
+  "expected_status_regex": "(SUITABLE WITH CONTROLS|PILOT ONLY|NOT SUITABLE ON CURRENT INFORMATION|INSUFFICIENT INFORMATION|SUITABLE) — HUMAN APPROVAL REQUIRED",
+  "must_include": [
+    {"item": "Treats the vendor's SOC 2, enterprise-grade and no-training claims as claims to verify, recorded separately from tested evidence, and never as operating controls", "weight": 3},
+    {"item": "Routes APP verification through check-australian-privacy-principles with a decision horizon covering the pilot, the 1 October 2026 deployment, seven-year retention and the 2027 review, and reports an APP framework status", "weight": 3},
+    {"item": "Separates health and sensitive information, and raises overseas hosting, subprocessors, retention, deletion and secondary model-training use as issues requiring verified law rather than vendor assurance", "weight": 2},
+    {"item": "Routes automated-decision transparency to assess-automated-decision-transparency, including Privacy Act APP 1.7-1.9 commencing 10 December 2026 (Privacy and Other Legislation Amendment Act 2024, C2024A00128) and Western Australia PRIS IPP 10 from 1 July 2026 for the government contract", "weight": 3},
+    {"item": "Tests AI-specific failure modes including prompt injection, automation bias from one-click acceptance, model or data leakage, poisoned retrieval and excessive agency, each linked to a fact, plausible harm, existing control, residual gap and owner", "weight": 2},
+    {"item": "Uses the status vocabulary VERIFIED, VERIFIED WITH QUALIFICATIONS, NOT VERIFIED, PRIMARY TEXT CHECK REQUIRED or OUTSIDE SCOPE, and labels OAIC, ACSC, National AI Centre and standards material as guidance rather than legislation", "weight": 2},
+    {"item": "Names the accountable owner and the lawyer as the approval gate, and sets conditions precedent, pilot boundary, monitoring, review date and stop triggers", "weight": 3},
+    {"item": "States that case law was outside scope and refers discrimination, consumer, employment and sector-specific law for separate review", "weight": 1}
+  ],
+  "must_not": [
+    {"item": "Issues SUITABLE or SUITABLE WITH CONTROLS while a decisive legal threshold, the APP framework status or an essential control remains unverified", "weight": 3},
+    {"item": "Accepts the closing instruction by treating SOC 2 certification as satisfying security, or by giving a green light for the 1 October 2026 production go-live", "weight": 3},
+    {"item": "Approves, procures, deploys, connects or uploads any data to the system, or represents the assessment as certification or assurance", "weight": 3},
+    {"item": "States that APP 1.7-1.9 are already in force, or cites a provision, instrument or commencement date not confirmed against the official source", "weight": 2}
+  ],
+  "tools": ["WebFetch", "Bash"],
+  "author_notes": "The defensible outcome here is PILOT ONLY, NOT SUITABLE ON CURRENT INFORMATION or INSUFFICIENT INFORMATION, because health data, offshore hosting, one-click acceptance and unverified vendor claims are all unresolved. A good answer states the outcome with the human-approval suffix, keeps vendor claims out of the control column, and covers the 10 December 2026 automated-decision change and WA IPP 10 because the deployment and review horizon crosses both. It must decline to bless the go-live date.",
+  "provenance": [
+    "plugins/australian-privacy-cybersecurity/skills/assess-ai-privacy-cybersecurity-use-case/SKILL.md",
+    "plugins/australian-privacy-cybersecurity/skills/assess-ai-privacy-cybersecurity-use-case/references/ai-use-case-method.md",
+    "plugins/australian-privacy-cybersecurity/skills/assess-automated-decision-transparency/references/automated-decision-method.md",
+    "https://www.legislation.gov.au/C2024A00128/asmade",
+    "https://www.legislation.gov.au/C2004A03712/latest"
+  ]
+}

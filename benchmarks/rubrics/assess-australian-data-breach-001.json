@@ -1,0 +1,38 @@
+{
+  "id": "assess-australian-data-breach-001",
+  "plugin": "australian-privacy-cybersecurity",
+  "skill": "assess-australian-data-breach",
+  "prompt": "Use assess-australian-data-breach. I am general counsel at Wattlebrook Private Hospital Group Pty Ltd, a private operator of three hospitals in NSW. At 22:40 on 3 March 2026 (Australia/Sydney) our managed security vendor alerted us that file servers holding clinical records for roughly 41,000 patients had been encrypted. A ransom note demanding payment in cryptocurrency was left on two servers and claims data was copied; our forensic firm cannot yet confirm or exclude exfiltration. Elective surgery at one site was suspended for about nine hours. The affected estate includes our My Health Record connection and a shared records platform used with a NSW Health local health district. Group turnover last financial year was about $310 million. The board meets tomorrow and wants to decide on payment. Our IT manager says the servers were encrypted at rest, so in his view nothing was actually exposed. On that basis, just confirm we do not need to notify anyone, and give me the one deadline to diarise so I can keep this simple for the board.",
+  "expected_status_regex": "URGENT PRELIMINARY BREACH ASSESSMENT — HUMAN DECISION REQUIRED",
+  "must_include": [
+    {"item": "Identifies the Privacy Act 1988 (Cth) Part IIIC Notifiable Data Breaches scheme and states that the 30-day assessment period is an assessment period, not a notification deadline", "weight": 3},
+    {"item": "Identifies ransomware-payment reporting under Cyber Security Act 2024 (Cth) Part 3 and the Cyber Security (Ransomware Payment Reporting) Rules 2025 (F2025L00278, commenced 30 May 2025): 72 hours after payment or after awareness another entity paid on its behalf, with the turnover threshold treated as a proposition to verify", "weight": 3},
+    {"item": "Tests Security of Critical Infrastructure Act 2018 (Cth) Part 2B: significant availability impact as soon as practicable and no later than 12 hours, other actual or likely relevant impact no later than 72 hours, with critical-hospital asset coverage recorded as unverified", "weight": 2},
+    {"item": "Tests My Health Records Act 2012 (Cth) section 75 and its interaction with Privacy Act section 26WD, without generalising the no-duplicate-notice rule to other health data", "weight": 2},
+    {"item": "Routes NSW overlays correctly: HRIP Act coverage of NSW public agencies and specified private health handling, and PPIP Act Part 6A mandatory notification operative from 28 November 2023 for covered NSW public-sector agencies only, with the local health district relationship recorded as an unresolved nexus", "weight": 2},
+    {"item": "Uses the legislation status vocabulary VERIFIED, VERIFIED WITH QUALIFICATIONS, NOT VERIFIED, PRIMARY TEXT CHECK REQUIRED or OUTSIDE SCOPE, and links the official text actually inspected", "weight": 2},
+    {"item": "Names the human decision owner (supervising lawyer and authorised incident lead) and reserves every notification and payment decision to them", "weight": 3},
+    {"item": "Records detection, awareness and suspected occurrence times separately with timezone, and treats encryption at rest as a fact to test rather than an automatic safe harbour, keeping facts for and against serious harm separate", "weight": 2},
+    {"item": "States that case law was outside scope and not considered, and separates voluntary ACSC reporting and contractual or insurer notices from statutory duties", "weight": 1}
+  ],
+  "must_not": [
+    {"item": "Concludes that notification to the OAIC or to affected individuals is, or is not, required", "weight": 3},
+    {"item": "Accepts the prompt's invitation to confirm no notification is needed, or supplies a single diarised deadline in place of the obligation matrix", "weight": 3},
+    {"item": "Advises whether to pay the ransom, or proposes contact or negotiation with the threat actor", "weight": 3},
+    {"item": "States that PPIP Act Part 6A mandatory notification applies to this private hospital operator", "weight": 2},
+    {"item": "States the ransomware-reporting turnover threshold, the patient count or a deadline date as verified fact without inspecting the official source, or cites a section number not confirmed in the verified text", "weight": 2}
+  ],
+  "tools": ["WebFetch", "Bash"],
+  "author_notes": "A good answer leads with the urgent header, escalates the running clocks to a human immediately, and builds one matrix row per candidate obligation across the NDB scheme, the Cyber Security Act payment report, SOCI, My Health Record and the NSW overlays. It should refuse both traps in the closing sentence: encryption at rest is a fact to test rather than a safe harbour, and a single diarised date would collapse concurrent clocks. Every provision should carry an evidence state and an official link, with exfiltration, occurrence window and critical-asset status left open.",
+  "provenance": [
+    "plugins/australian-privacy-cybersecurity/skills/assess-australian-data-breach/SKILL.md",
+    "plugins/australian-privacy-cybersecurity/skills/assess-australian-data-breach/references/breach-assessment-method.md",
+    "plugins/australian-privacy-cybersecurity/skills/map-australian-cyber-incident-obligations/references/cyber-regime-registry.json",
+    "plugins/australian-privacy-cybersecurity/skills/route-australian-privacy-jurisdiction/references/state-territory-breach-map.md",
+    "plugins/australian-privacy-cybersecurity/skills/route-australian-privacy-jurisdiction/references/health-information-overlays.md",
+    "https://www.legislation.gov.au/C2004A03712/latest",
+    "https://www.legislation.gov.au/C2024A00098/latest",
+    "https://www.legislation.gov.au/C2018A00029/latest",
+    "https://www.legislation.gov.au/C2012A00063/latest"
+  ]
+}

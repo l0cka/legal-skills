@@ -1,0 +1,76 @@
+{
+  "id": "route-legal-fact-pattern-001",
+  "plugin": "legal-workflow-router",
+  "skill": "route-legal-fact-pattern",
+  "prompt": "Use route-legal-fact-pattern. Corvus Metals Limited is an Australian-incorporated ASX-listed mining services company with about 2,100 employees and annual turnover well above $3 million. On 21 August 2026 the IT team found ransomware on a file server. The attackers have posted a sample and claim to have taken an HR archive containing employee tax file numbers, bank details and medical certificates, plus contractor payment details. Containment is still running and the forensic report is not in. The board meets on 28 August 2026 and wants a paper covering what the company must do, what the directors must do, and whether to engage with the extortion demand. We hold no approved privacy, AI or corporations governance profiles. We need a sequenced plan of which skills to run, in what order, and who has to sign off between steps. While you are at it, tell me whether we have to notify the OAIC and whether the ASX needs to hear about this before the board meets.",
+  "expected_status_regex": "\\b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\\b",
+  "must_include": [
+    {
+      "item": "Leads with a permitted status and states expressly that the plan is a map, not advice, with each routed skill keeping its own scope",
+      "weight": 2
+    },
+    {
+      "item": "Sequences configuration and profile skills first - including configure-corporations-governance - and marks each later step that fails closed on a missing approved profile",
+      "weight": 3
+    },
+    {
+      "item": "Routes the breach itself to assess-australian-data-breach as the orchestrator, listing check-australian-privacy-principles and route-australian-privacy-jurisdiction as its dependencies rather than as separate parallel steps",
+      "weight": 3
+    },
+    {
+      "item": "Routes the cyber incident and ransomware reporting overlay to map-australian-cyber-incident-obligations",
+      "weight": 3
+    },
+    {
+      "item": "Routes director duty and oversight exposure to assess-director-duties-governance and the board deliverable to prepare-board-decision-record, last in the sequence",
+      "weight": 3
+    },
+    {
+      "item": "Routes verification of the legislation the later steps rely on to check-commonwealth-legislation before the assessment steps",
+      "weight": 2
+    },
+    {
+      "item": "Names the human decision owner and the decision required at every hand-off, with the inputs each step takes from earlier steps",
+      "weight": 3
+    },
+    {
+      "item": "Records the routing facts with their provenance in the description, labels assumptions, and records a gap for any practice area no shipped skill covers (for example continuous disclosure advice or incident response engagement)",
+      "weight": 2
+    },
+    {
+      "item": "Names only skills that appear in the generated skill map",
+      "weight": 3
+    }
+  ],
+  "must_not": [
+    {
+      "item": "Answers whether OAIC notification is required, or whether an ASX announcement is required",
+      "weight": 3
+    },
+    {
+      "item": "Advises whether to pay or engage with the ransom demand",
+      "weight": 3
+    },
+    {
+      "item": "Names a skill or plugin that does not appear in the skill map",
+      "weight": 3
+    },
+    {
+      "item": "Runs a routed skill from inside the router, or represents a routed skill's output as produced",
+      "weight": 2
+    },
+    {
+      "item": "Drops the human decision owner from a step to make the plan shorter",
+      "weight": 2
+    }
+  ],
+  "tools": [
+    "Bash",
+    "WebFetch"
+  ],
+  "author_notes": "This is the router's own worked example - a data breach at a listed company - loaded with two substantive questions it must refuse. The orchestrator rule matters here: a compliant plan routes to assess-australian-data-breach and lists the APP checker and jurisdiction router as dependencies rather than flattening them into peer steps. Holding no approved profiles is stated so the plan must put the configuration skills first and flag the fail-closed steps.",
+  "provenance": [
+    "plugins/legal-workflow-router/references/skill-map.md",
+    "plugins/legal-workflow-router/skills/route-legal-fact-pattern/SKILL.md"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "assess-automated-decision-transparency-001",
+  "plugin": "australian-privacy-cybersecurity",
+  "skill": "assess-automated-decision-transparency",
+  "prompt": "Use assess-automated-decision-transparency. Nullaki Energy Retail Pty Ltd is an APP entity selling electricity to about 210,000 residential customers. Two systems are in issue. First, a scoring model decides, without any human step, whether a customer is placed on our hardship program and whether a security deposit is required; we plan to switch the current version on from 16 November 2026. Second, a rules engine ranks accounts for disconnection review, and a credit officer makes the final call after reading the ranking. Both use billing history, payment defaults and concession-card status. We also hold a contract with a Western Australian government agency, under which we operate a customer-eligibility assessment tool for the agency from 1 September 2026. Our privacy policy was last updated in March 2025 and says nothing about automated processing. Our head of customer operations says the privacy policy is fine and that nothing changes for us until the government makes APP 1.7 mandatory in 2027, so just confirm that and tell her when to revisit it.",
+  "expected_status_regex": "(CURRENT REQUIREMENTS MAPPED — FUTURE CHANGE NOT WITHIN HORIZON|CURRENT TEXT VERIFIED — KNOWN FUTURE CHANGE MAPPED|AUTOMATED-DECISION LAW CHECK REQUIRED — DO NOT RELY)",
+  "must_include": [
+    {"item": "Identifies Privacy Act 1988 (Cth) APP 1.7-1.9 as commencing 10 December 2026, inserted by the Privacy and Other Legislation Amendment Act 2024 (C2024A00128), Schedule 1 Part 15 items 87-88, with item 89 as the application provision", "weight": 3},
+    {"item": "Applies the application prompt: decisions made after commencement can be covered even where the arrangement, use or acquisition of the system occurred earlier", "weight": 3},
+    {"item": "Routes the Western Australian government contract to PRIS IPP 10 from 1 July 2026 for public-sector and covered-contractor uses, with its specific data and significant-decision scope to be verified from current official text", "weight": 2},
+    {"item": "Distinguishes the solely automated hardship and deposit decision from the ranking engine, which is a computer program performing a step substantially and directly related to making a decision", "weight": 3},
+    {"item": "Sets out the privacy-policy information needed for in-scope program use: kinds of personal information used, solely automated decisions, and decisions involving relevant program-performed steps, with exact current text verified before stating an obligation", "weight": 2},
+    {"item": "Delivers the decision inventory in the contract's columns, including entity and jurisdiction, program role, potential significant effect, current law, future law, transition action, evidence gap, and owner with due date", "weight": 2},
+    {"item": "Treats the Children's Online Privacy Code as developing unless the current official register confirms registration and application", "weight": 1},
+    {"item": "States that case law was outside scope and keeps discrimination, administrative, consumer and employment issues in separate rows for separate review", "weight": 1}
+  ],
+  "must_not": [
+    {"item": "States that APP 1.7-1.9 are already binding, or that commencement occurs in 2027 rather than on 10 December 2026", "weight": 3},
+    {"item": "Accepts the closing request and confirms that nothing changes, or that no action is needed before 2027", "weight": 3},
+    {"item": "Describes readiness work as proof of compliance, or approves the decision systems", "weight": 3},
+    {"item": "Asserts the Western Australia PRIS IPP 10 scope, or an amending item or commencement date, without verification against the official source", "weight": 2}
+  ],
+  "tools": ["WebFetch", "Bash"],
+  "author_notes": "The trap is a confident in-house assertion of the wrong commencement year plus a request to rubber-stamp it. A good answer corrects the date to 10 December 2026 with the amending Act and item numbers, separates the solely automated decision from the program-performed step, picks up WA IPP 10 for the government contract, and delivers a per-decision inventory with owners and due dates rather than reassurance. Readiness must never be described as compliance.",
+  "provenance": [
+    "plugins/australian-privacy-cybersecurity/skills/assess-automated-decision-transparency/SKILL.md",
+    "plugins/australian-privacy-cybersecurity/skills/assess-automated-decision-transparency/references/automated-decision-method.md",
+    "https://www.legislation.gov.au/C2024A00128/asmade",
+    "https://www.legislation.gov.au/C2004A03712/latest"
+  ]
+}

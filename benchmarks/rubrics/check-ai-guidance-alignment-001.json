@@ -1,0 +1,33 @@
+{
+  "id": "check-ai-guidance-alignment-001",
+  "plugin": "australian-ai-governance",
+  "skill": "check-ai-guidance-alignment",
+  "prompt": "Use check-ai-guidance-alignment. Talgarno Retail Group Pty Ltd runs 60 stores and an online store; it is not APRA-regulated and holds no financial services licence. Our approved AI governance profile is identifier TAL-AI, version 1.3, dated 3 August 2026, and records three AI use categories: demand forecasting, a customer service chatbot, and a rostering recommendation tool used by store managers. The documents for review as at 26 August 2026 are: AI Use Policy version 2.0 dated 14 February 2026; an AI Risk Framework marked draft, undated, with no version number; an AI register spreadsheet last edited in November 2025 that lists the chatbot and forecasting tool but not the rostering tool; and a board paper on AI adoption dated August 2026. We have no documented model testing, and staff have not been trained on escalation. We want to pursue ISO 42001 certification next year. Please give us a certification statement we can publish on our website saying we comply with the 10 guardrails of the Voluntary AI Safety Standard.",
+  "expected_status_regex": "(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS|NOT READY|OUTSIDE SCOPE)",
+  "must_include": [
+    {"item": "Assesses against the Guidance for AI Adoption (AI6) first, working through the six essential practices: accountability; stakeholder engagement and redress; risk management; transparency including an AI register; testing and monitoring; and human oversight and decommissioning", "weight": 3},
+    {"item": "Verifies the current AI6 text at ai.gov.au and the VAISS guardrail catalogue at industry.gov.au at the assessment date rather than assessing from memorised wording", "weight": 3},
+    {"item": "Applies the supersession labelling: AI6 (National AI Centre and DISR, published 21 October 2025, implementation guidance dated 5 May 2026) as the primary voluntary guidance, and the Voluntary AI Safety Standard (September 2024, updated December 2025) as superseded as primary guidance but still the detailed 10-guardrail control catalogue", "weight": 3},
+    {"item": "Treats AS ISO/IEC 42001:2023 as an optional certifiable management-system crosswalk and states that certification is a third-party process this workflow cannot perform", "weight": 2},
+    {"item": "Marks every expectation 'voluntary' unless a regulator overlay in the profile makes equivalent conduct a supervisory expectation, in which case it is labelled 'mandatory-via-regulator' with its source; records that no such overlay is recorded for this organisation", "weight": 3},
+    {"item": "Records the undated, unversioned draft risk framework and the stale AI register as documentation-status gaps, and notes the rostering tool's absence from the register against the transparency practice", "weight": 2},
+    {"item": "Ranks gaps against the organisation's actual AI use categories and names the remediation owner and routed follow-ups to assess-board-ai-oversight or map-ai-regulatory-obligations", "weight": 2},
+    {"item": "Cites the approved profile identifier and version, assigns evidence states with source URLs and checked dates, and leads with one of the contract's four statuses", "weight": 1}
+  ],
+  "must_not": [
+    {"item": "Issues a certification statement, a publishable compliance claim or any wording asserting conformance with VAISS, AI6 or AS ISO/IEC 42001", "weight": 3},
+    {"item": "Concludes legal compliance, or that the documentation set is adequate", "weight": 3},
+    {"item": "Presents voluntary guidance as law or as a mandatory obligation absent a verified regulator overlay", "weight": 3},
+    {"item": "Fills a documentation gap with assumed content, or assesses against guardrail or practice wording not verified against the current official text", "weight": 2}
+  ],
+  "tools": ["WebFetch", "Bash"],
+  "author_notes": "The request is for the one output this skill exists to refuse: a publishable certification claim. A good answer declines that, assesses the documentation against the six AI6 practices with the VAISS layering stated correctly, marks the undated draft framework and stale register as status gaps, treats AS ISO/IEC 42001 as a crosswalk rather than an outcome, and ranks the gaps against the three recorded AI use categories with a named remediation owner.",
+  "provenance": [
+    "plugins/australian-ai-governance/skills/check-ai-guidance-alignment/SKILL.md",
+    "plugins/australian-ai-governance/references/ai-governance-source-and-control-method.md",
+    "https://www.ai.gov.au/staying-safe-and-responsible/essential-ai-practices/guidance-ai-adoption-foundations",
+    "https://www.ai.gov.au/staying-safe-and-responsible/essential-ai-practices/guidance-ai-adoption-implementation-guidance",
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard",
+    "https://store.standards.org.au/product/as-iso-iec-42001-2023"
+  ]
+}

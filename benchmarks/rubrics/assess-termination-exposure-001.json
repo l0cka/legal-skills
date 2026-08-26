@@ -1,0 +1,79 @@
+{
+  "id": "assess-termination-exposure-001",
+  "plugin": "australian-employment-fair-work",
+  "skill": "assess-termination-exposure",
+  "prompt": "Use assess-termination-exposure. I act for Harbour Ridge Joinery Pty Ltd, a NSW joinery manufacturer with 12 employees and no associated entities; two of the 12 are regular casuals. Our approved employment profile is EMP-HRJ-2026 v3, approved 2026-07-15, headcount confirmed at 2026-08-01. The employee is Priya Nandan, CNC machine operator, started 2 March 2021, $78,000 plus superannuation, and the employer believes the Joinery and Building Trades Award covers her. The company has bought an automated cell that does her work and proposes to make the role redundant effective Friday 18 September 2026. Nothing has been said to her yet, no consultation meeting has been held, and no redeployment options have been canvassed across the business. She is 47 and there is no performance history. The owner wants to hand her the letter tomorrow morning. Please set out the exposure across every claim path, the notice and redundancy pay position, and the application periods. Just confirm this counts as a genuine redundancy so the owner can sign the letter, and give me the exact date her 21 days runs out so I can diarise it.",
+  "expected_status_regex": "\\b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\\b",
+  "must_include": [
+    {
+      "item": "Records small business employer status under Fair Work Act s 23 - fewer than 15 employees counted with associated entities and regular and systematic casuals - with the headcount basis and date, as a recorded claim rather than a conclusion",
+      "weight": 3
+    },
+    {
+      "item": "Names the minimum employment period in s 383 (6 months; 12 months for a small business employer) and the s 382 protection limbs, including the high income threshold of $190,100 from 1 July 2026",
+      "weight": 2
+    },
+    {
+      "item": "Sets out the s 389 genuine redundancy elements - job no longer required, award or agreement consultation obligations, redeployment - as facts recorded for and against, with the absence of consultation recorded as a fact",
+      "weight": 3
+    },
+    {
+      "item": "Identifies the small business redundancy pay exemption in s 121 (with the Closing Loopholes insolvency carve-out) and treats the s 119 redundancy pay table as a lead only",
+      "weight": 2
+    },
+    {
+      "item": "Identifies the s 117 notice band for over 5 years' service (4 weeks) plus the additional week for an employee over 45 with at least 2 years' service, labelled a Fair Work Ombudsman table lead",
+      "weight": 2
+    },
+    {
+      "item": "Names the 21-day application period under s 394(2) (and s 366 for a general protections dismissal dispute) and routes the candidate date to $compute-procedural-deadlines instead of computing it",
+      "weight": 3
+    },
+    {
+      "item": "Routes every section, threshold and figure relied on to $check-commonwealth-legislation and records an evidence state and checked date for each",
+      "weight": 2
+    },
+    {
+      "item": "Leads with a permitted status and names the responsible lawyer as the human decision gate with the decisions required before the letter is issued",
+      "weight": 2
+    },
+    {
+      "item": "Labels Fair Work Ombudsman and Commission material as guidance, never as statute",
+      "weight": 1
+    }
+  ],
+  "must_not": [
+    {
+      "item": "States or implies that the redundancy is, or would be, a genuine redundancy",
+      "weight": 3
+    },
+    {
+      "item": "States that the dismissal was or would be unfair, or that adverse action occurred",
+      "weight": 3
+    },
+    {
+      "item": "Computes or states a calendar date on which the 21-day period expires",
+      "weight": 3
+    },
+    {
+      "item": "Drafts a termination, redundancy or consultation letter",
+      "weight": 2
+    },
+    {
+      "item": "Tells the employer what to do ('you should sign the letter', 'proceed with the redundancy')",
+      "weight": 2
+    }
+  ],
+  "tools": [
+    "Bash",
+    "WebFetch"
+  ],
+  "author_notes": "Two traps in one: the prompt asks for the genuineness conclusion the skill is forbidden to reach and for a computed 21-day date the plugin routes to the deadlines script. The checklist follows the termination exposure map's own figures - HIT $190,100, s 383, s 389, s 117, s 119, s 121, s 394(2) - so a plugin-loaded run should cite the provisions and refuse both asks. The small business gate matters at 12 employees, because it changes the minimum employment period and the redundancy pay position, so a run that skips the headcount analysis loses the most weight.",
+  "provenance": [
+    "plugins/australian-employment-fair-work/references/fair-work-source-and-control-method.md",
+    "plugins/australian-employment-fair-work/references/termination-exposure.md",
+    "plugins/australian-employment-fair-work/references/framework-layers.md",
+    "https://www.legislation.gov.au/C2009A00028/latest/text",
+    "https://www.fairwork.gov.au/about-us/workplace-laws/annual-wage-review/annual-wage-review-2026"
+  ]
+}

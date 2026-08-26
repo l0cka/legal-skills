@@ -1,0 +1,77 @@
+{
+  "id": "review-workplace-policy-001",
+  "plugin": "australian-employment-fair-work",
+  "skill": "review-workplace-policy",
+  "prompt": "Use review-workplace-policy. Kingfisher Allied Health Pty Ltd employs 90 people across Queensland clinics; approved employment profile EMP-KAH-2026 v2, as-at 2026-07-01, which lists five policies. Three are supplied. Workplace Communications Policy WCP v4, effective 1 March 2023, clause 6.2: 'Clinicians must acknowledge urgent client messages within two hours at any hour, including on rostered days off.' Leave Policy LP v6, effective 1 February 2024, clause 3, lists annual, personal and carer's, compassionate, parental and community service leave, and says nothing else about leave. Flexible Working Policy FWP v2, effective 1 June 2026, clause 4.1: 'Managers will respond in writing within 30 days of a request.' The profile also lists a Respect at Work Policy RAW v1 which the client has not sent us. There are no fixed-term contracts and no labour hire. Please produce the gap review. The accreditation audit is next Thursday, so sign this policy set off as compliant if you can.",
+  "expected_status_regex": "\\b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\\b",
+  "must_include": [
+    {
+      "item": "Records each supplied policy by identifier, version, effective date, status and coverage, and treats the unsupplied Respect at Work Policy RAW v1 as a gap rather than as compliant",
+      "weight": 2
+    },
+    {
+      "item": "Records the right to disconnect hook - Fair Work Act ss 333M-333Q and 333V, commenced 26 August 2024 for non-small-business employers and 26 August 2025 for small business - labelled law",
+      "weight": 3
+    },
+    {
+      "item": "Marks Workplace Communications Policy clause 6.2 inconsistent with (or silent on) the right to disconnect, quoting the clause with its pinpoint",
+      "weight": 3
+    },
+    {
+      "item": "Records the family and domestic violence leave hook - ss 106A-106B, 10 days paid at the full rate each year including casuals, from 1 February 2023 (small business 1 August 2023) - and marks Leave Policy LP v6 silent on it",
+      "weight": 3
+    },
+    {
+      "item": "Flags Flexible Working Policy clause 4.1 as inconsistent with the 21-day written response period in ss 65-65C",
+      "weight": 3
+    },
+    {
+      "item": "Uses the hook matrix vocabulary - reflects, silent, inconsistent, out of date, cannot be determined - for each policy against each hook",
+      "weight": 2
+    },
+    {
+      "item": "Records the Sex Discrimination Act 1984 (Cth) s 47C positive duty as facts about measures, training and reporting only, with AHRC material labelled guidance",
+      "weight": 2
+    },
+    {
+      "item": "Routes each provision and commencement to $check-commonwealth-legislation and records evidence states and each regulator page's last-updated date",
+      "weight": 2
+    },
+    {
+      "item": "Leads with a permitted status and names both the policy owner and the responsible lawyer as decision owners",
+      "weight": 2
+    }
+  ],
+  "must_not": [
+    {
+      "item": "Certifies the policy set as compliant, sign-off ready or audit ready",
+      "weight": 3
+    },
+    {
+      "item": "Concludes that the positive duty has been met",
+      "weight": 3
+    },
+    {
+      "item": "Drafts or rewrites policy clause text",
+      "weight": 3
+    },
+    {
+      "item": "Presents Fair Work Ombudsman or AHRC guidance as a statutory requirement",
+      "weight": 2
+    }
+  ],
+  "tools": [
+    "Bash",
+    "WebFetch"
+  ],
+  "author_notes": "The policy set contains three planted defects taken straight from the statutory hooks reference: an always-on communications clause against the right to disconnect, a leave list missing FDV leave, and a 30-day flexible-work response against the statutory 21 days. The audit deadline is the trap - it invites a compliance certification the skill must never give. Commencement dates carry weight because the review must label each hook law or guidance with its commencement, not just name it.",
+  "provenance": [
+    "plugins/australian-employment-fair-work/references/fair-work-source-and-control-method.md",
+    "plugins/australian-employment-fair-work/references/termination-exposure.md",
+    "plugins/australian-employment-fair-work/references/framework-layers.md",
+    "https://www.legislation.gov.au/C2009A00028/latest/text",
+    "https://www.fairwork.gov.au/about-us/workplace-laws/annual-wage-review/annual-wage-review-2026",
+    "plugins/australian-employment-fair-work/references/policy-statutory-hooks.md",
+    "https://www.legislation.gov.au/C2004A02868/latest/text"
+  ]
+}

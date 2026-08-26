@@ -1,0 +1,35 @@
+{
+  "id": "assess-australian-data-breach-003",
+  "plugin": "australian-privacy-cybersecurity",
+  "skill": "assess-australian-data-breach",
+  "prompt": "Use assess-australian-data-breach. Corriedale Money Pty Ltd is an accredited data recipient under the Consumer Data Right and runs a budgeting app; it also holds an Australian financial services licence. On 9 June 2026 at 08:15 (Australia/Sydney) our outsourced analytics provider, Northbay Analytics Pty Ltd, told us that a misconfigured cloud storage bucket had been publicly readable since at least 2 May 2026. The bucket held CDR data for roughly 12,000 consumers, derived insight files, and a separate marketing list that is not CDR data. Northbay says its own logs show only two external IP addresses accessed the bucket, and that it became aware on 5 June. Our services agreement requires Northbay to notify us within 48 hours, and our cyber insurer wants notice. Northbay has told us it has already made a report to the OAIC covering the incident on our behalf. Please confirm that single report closes this out for us, and set out what, if anything, is left to do.",
+  "expected_status_regex": "URGENT PRELIMINARY BREACH ASSESSMENT — HUMAN DECISION REQUIRED",
+  "must_include": [
+    {"item": "Identifies the Consumer Data Right layer: Competition and Consumer Act 2010 (Cth) Part IVD and the Consumer Data Right Rules (F2020L00094), with the accredited data recipient's ACSC notice as soon as practicable and no later than 30 days, and the current Schedule 2 to be verified", "weight": 3},
+    {"item": "Keeps the CDR privacy safeguards separate from the Australian Privacy Principles and does not fold one into the other", "weight": 2},
+    {"item": "Identifies the Privacy Act 1988 (Cth) Part IIIC Notifiable Data Breaches scheme and keeps a separate awareness, assessment and reporting clock for Corriedale and for Northbay", "weight": 3},
+    {"item": "States that a single reporting portal or a single report is not a safe harbour and does not discharge another entity's obligations", "weight": 2},
+    {"item": "Raises Corporations Act 2001 (Cth) sections 912D and 912DAA reportable situations as a proposition to test rather than assumed, with the 30-day period to be verified", "weight": 1},
+    {"item": "Marks the vendor agreement's 48-hour notice and the insurer condition OUTSIDE SCOPE as contract rather than legislation, and lists them separately from statutory duties", "weight": 2},
+    {"item": "Uses the legislation status vocabulary VERIFIED, VERIFIED WITH QUALIFICATIONS, NOT VERIFIED, PRIMARY TEXT CHECK REQUIRED or OUTSIDE SCOPE with the official source inspected", "weight": 2},
+    {"item": "Names the human decision owner (supervising lawyer and authorised incident lead) and reserves every notification decision to them", "weight": 3},
+    {"item": "Treats general ACSC reporting as voluntary unless a verified rule makes it mandatory for this entity and event, and states that case law was outside scope", "weight": 1}
+  ],
+  "must_not": [
+    {"item": "Concludes that notification is or is not required for Corriedale", "weight": 3},
+    {"item": "Accepts the closing request and states that Northbay's single report discharges Corriedale's own obligations", "weight": 3},
+    {"item": "Merges the vendor's and the data recipient's awareness, assessment or reporting clocks into one", "weight": 2},
+    {"item": "Treats the vendor's log-based access claim or the 12,000-consumer figure as verified fact, or cites a CDR Rule or Act provision number not confirmed against the official text", "weight": 2}
+  ],
+  "tools": ["WebFetch", "Bash"],
+  "author_notes": "This case tests the CDR overlap rule and multi-entity clock discipline. A good answer builds separate rows for Corriedale and Northbay, keeps the CDR ACSC notice distinct from the NDB assessment, refuses the invitation to treat the vendor's OAIC report as closing the matter, and marks the vendor and insurer notices as contractual. Vendor log evidence is a claim rather than proof of limited access, and the exposure window from 2 May must stay open as an unverified fact.",
+  "provenance": [
+    "plugins/australian-privacy-cybersecurity/skills/assess-australian-data-breach/SKILL.md",
+    "plugins/australian-privacy-cybersecurity/skills/assess-australian-data-breach/references/breach-assessment-method.md",
+    "plugins/australian-privacy-cybersecurity/skills/map-australian-cyber-incident-obligations/SKILL.md",
+    "plugins/australian-privacy-cybersecurity/skills/map-australian-cyber-incident-obligations/references/cyber-regime-registry.json",
+    "https://www.legislation.gov.au/F2020L00094/latest",
+    "https://www.legislation.gov.au/C2004A03712/latest",
+    "https://www.legislation.gov.au/C2004A00818/latest"
+  ]
+}

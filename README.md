@@ -138,6 +138,17 @@ plugins/<plugin-name>/
         └── assets/               # optional
 ```
 
+## Benchmarks
+
+With/without-plugin ablation on answer-keyed and rubric-scored Australian legal
+tasks (see [benchmarks/README.md](benchmarks/README.md)). Keyed pass rates
+require the skill's status vocabulary, so the false-verification rate and the
+rubric score are the fair cross-arm comparisons.
+
+<!-- benchmarks:start -->
+_No benchmark run recorded yet._
+<!-- benchmarks:end -->
+
 ## Validate
 
 ```bash
@@ -165,6 +176,14 @@ claude plugin eval plugins/australian-legal-research --allow-tools Bash WebFetch
 Each suite has a happy-path case and at least one fail-closed case, so a
 prompt change that makes a skill verify a fabricated citation, compute a date
 outside the script or hand a help-seeker legal advice fails the run.
+
+Benchmark the plugins against answer-keyed and rubric-scored Australian legal
+tasks, with and without the plugin loaded (see [benchmarks/README.md](benchmarks/README.md)):
+
+```bash
+python3 benchmarks/run.py --set citations --arm with,without --model opus
+python3 benchmarks/score.py benchmarks/results/<timestamp>/
+```
 
 A weekly workflow probes every URL cited under `plugins/` and fails on a dead
 link; publishers that block non-browser clients are reported as warnings:
