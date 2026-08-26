@@ -5,7 +5,7 @@
   <a href="LICENSE"><img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-1f6f5f?style=flat-square"></a>
   <!-- generated:badges -->
   <img alt="Nine plugins" src="https://img.shields.io/badge/plugins-9-31547a?style=flat-square">
-  <img alt="Fifty-one skills" src="https://img.shields.io/badge/skills-51-31547a?style=flat-square">
+  <img alt="Fifty-five skills" src="https://img.shields.io/badge/skills-55-31547a?style=flat-square">
   <img alt="Claude Cowork and ChatGPT Work" src="https://img.shields.io/badge/works%20with-Claude%20Cowork%20%2B%20ChatGPT%20Work-c59a46?style=flat-square">
 <!-- end:badges -->
 </p>
@@ -19,7 +19,7 @@ Each provider has a small, separate manifest.
 ## Plugin suite
 
 <!-- generated:counts -->
-The marketplace contains nine plugins and fifty-one skills:
+The marketplace contains nine plugins and fifty-five skills:
 <!-- end:counts -->
 
 <!-- generated:plugin-table -->
@@ -28,11 +28,11 @@ The marketplace contains nine plugins and fifty-one skills:
 | [**Australian AI Governance**](plugins/australian-ai-governance/README.md) | 6 | Maps the AI rules and guidance that apply to an Australian organisation. Shows which items are law and which are only guidance. | 2026-08-26 |
 | [**Australian AML/CTF**](plugins/australian-aml-ctf/README.md) | 5 | Finds the AML/CTF obligations of an Australian legal practice under the tranche 2 reforms. A person must approve each report and decision. | 2026-08-26 |
 | [**Australian Corporations Governance**](plugins/australian-corporations-governance/README.md) | 5 | Helps govern an Australian company under the Corporations Act. Prepares board records and reviews for human approval. | 2026-08-26 |
-| [**Australian Estate Planning**](plugins/australian-estate-planning/README.md) | 2 | Prepares solicitor-review drafts from approved NSW and Victorian estate planning precedents. | 2026-08-26 |
+| [**Australian Estate Planning**](plugins/australian-estate-planning/README.md) | 3 | Prepares solicitor-review drafts from approved NSW, Victorian and Queensland estate planning precedents. | 2026-08-26 |
 | [**Australian Legal Research**](plugins/australian-legal-research/README.md) | 16 | Checks Australian legislation and case citations against the official publishers. Writes and reviews AGLC4 citations. | 2026-08-26 |
 | [**Australian Litigation Deadlines**](plugins/australian-litigation-deadlines/README.md) | 6 | Maps limitation periods and computes candidate court deadlines. A lawyer must confirm each date. | 2026-08-26 |
 | [**Australian Privacy & Cybersecurity**](plugins/australian-privacy-cybersecurity/README.md) | 8 | Maps the Australian privacy and cyber rules that can apply to a set of facts, a data breach or an AI use case. | 2026-08-26 |
-| [**Legal Evidence Workflows**](plugins/legal-evidence-workflows/README.md) | 1 | Builds source-linked Word evidence chronologies from supplied matter documents without resolving conflicts or credibility. | 2026-08-26 |
+| [**Legal Evidence Workflows**](plugins/legal-evidence-workflows/README.md) | 4 | Builds source-linked Word document indexes, chronologies, privilege logs and inconsistency maps from supplied matter documents without deciding credibility, privilege or merits. | 2026-08-26 |
 | [**Legal Triage**](plugins/legal-triage/README.md) | 2 | Helps community legal centre staff record and triage legal enquiries under an approved profile. | 2026-08-26 |
 <!-- end:plugin-table -->
 

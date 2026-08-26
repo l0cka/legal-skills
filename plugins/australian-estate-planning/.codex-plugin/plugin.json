@@ -1,7 +1,7 @@
 {
   "name": "australian-estate-planning",
-  "version": "0.4.0",
-  "description": "Prepare solicitor-review drafts for one NSW or Victorian client from centrally maintained approved estate planning precedents, an approved drafting playbook and provenance-cited instructions. Draft supported content, visibly flag every unresolved issue and return a matching drafting-issues register.",
+  "version": "0.5.0",
+  "description": "Prepare solicitor-review drafts for one NSW, Victorian or Queensland client from centrally maintained approved estate planning precedents, an approved drafting playbook and provenance-cited instructions. Draft supported content, visibly flag every unresolved issue and return a matching drafting-issues register.",
   "author": {
     "name": "l0cka",
     "url": "https://github.com/l0cka"
@@ -19,8 +19,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Australian Estate Planning",
-    "shortDescription": "Prepares solicitor-review drafts from approved NSW and Victorian estate planning precedents.",
-    "longDescription": "Provides one practitioner-facing drafting workflow for New South Wales and one for Victoria. Each run concerns one client and uses centrally maintained approved precedents, an approved drafting playbook and a provenance-cited instruction table. The workflow drafts all supported content in one run, inserts visible review markers for every unresolved fact, conflict or decision, and returns a matching drafting-issues register. It never substitutes a generic or uploaded precedent, changes an approved source, independently verifies the firm's drafting materials, or presents a document as final or ready to sign.",
+    "shortDescription": "Prepares solicitor-review drafts from approved NSW, Victorian and Queensland estate planning precedents.",
+    "longDescription": "Provides one practitioner-facing drafting workflow each for New South Wales, Victoria and Queensland. Each run concerns one client and uses centrally maintained approved precedents, an approved drafting playbook and a provenance-cited instruction table. The workflow drafts all supported content in one run, inserts visible review markers for every unresolved fact, conflict or decision, and returns a matching drafting-issues register. It never substitutes a generic or uploaded precedent, changes an approved source, independently verifies the firm's drafting materials, or presents a document as final or ready to sign.",
     "developerName": "l0cka",
     "category": "Productivity",
     "capabilities": [
@@ -30,6 +30,7 @@
     "defaultPrompt": [
       "Prepare NSW estate planning drafts for this client from the approved precedents and these instructions.",
       "Prepare Victorian estate planning drafts for this client from the approved precedents and these instructions.",
+      "Prepare Queensland estate planning drafts for this client from the approved precedents and these instructions.",
       "Extract the instruction table with provenance and use the approved playbook when preparing the drafts.",
       "Draft all supported content and visibly mark each missing fact or unresolved decision.",
       "Show the drafting-issues register and change summary for these drafts."

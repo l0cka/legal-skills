@@ -79,3 +79,10 @@ The private deployment contains:
   control of instructions and clauses.
 - ADR 0002 remains as decision history but no longer describes the active
   architecture.
+
+## Amendment 2026-08-26
+
+Queensland joins New South Wales and Victoria as a third public workflow
+interface (`assemble-qld-estate-documents`) deployed on the same model: a
+separate jurisdictional agent with its own embedded jurisdiction Vault. No
+other part of this decision changes.

@@ -4,9 +4,11 @@ This plugin provides one practitioner-facing drafting skill per supported
 jurisdiction:
 
 - `assemble-nsw-estate-documents` prepares NSW wills, enduring powers of
-  attorney and appointments of enduring guardian; and
+  attorney and appointments of enduring guardian;
 - `assemble-vic-estate-documents` prepares Victorian wills, enduring powers of
-  attorney and appointments of medical treatment decision maker.
+  attorney and appointments of medical treatment decision maker; and
+- `assemble-qld-estate-documents` prepares Queensland wills and enduring
+  powers of attorney (financial and personal matters).
 
 Each run concerns one client. The skill extracts a provenance-cited instruction
 table and prepares working copies from the centrally maintained approved
@@ -23,8 +25,9 @@ PRODUCED` or `OUTSIDE SCOPE`.
 ## Boundary
 
 The plugin serves Australian legal practitioners only. It covers New South
-Wales and Victoria. Self-represented parties and other jurisdictions are
-outside scope. Advance care directives, supportive attorney appointments,
+Wales, Victoria and Queensland. Self-represented parties and other
+jurisdictions are outside scope. Advance care directives, advance health
+directives, supportive attorney appointments,
 superannuation death benefit nominations, trusts, probate and administration
 are not drafted. Testamentary capacity, undue influence, family provision,
 notional estate exposure and tax remain matters for the responsible solicitor.
@@ -34,7 +37,7 @@ states that a document is approved, final or ready to sign.
 
 ## Deployment model
 
-The plugin ships provider-neutral markdown only. Its two skill definitions are
+The plugin ships provider-neutral markdown only. Its three skill definitions are
 the portable public interfaces. A private deployment connects the relevant
 skill to one senior-lawyer-maintained jurisdiction library containing the
 approved precedents, instruction sheet and playbook. The embedded library and

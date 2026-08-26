@@ -1,7 +1,7 @@
 {
   "name": "legal-evidence-workflows",
-  "version": "0.1.0",
-  "description": "Build source-linked evidence chronologies as Word documents from supplied legal matter documents while preserving conflicts, uncertainty and human review.",
+  "version": "0.2.0",
+  "description": "Build source-linked document indexes, evidence chronologies, candidate-only privilege logs and inconsistency maps as Word documents from supplied legal matter documents while preserving conflicts, uncertainty and human review.",
   "author": {
     "name": "l0cka",
     "url": "https://github.com/l0cka"
@@ -16,13 +16,16 @@
     "litigation",
     "investigations",
     "document-review",
-    "responsible-ai"
+    "responsible-ai",
+    "privilege",
+    "disclosure",
+    "bundle"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Legal Evidence Workflows",
-    "shortDescription": "Builds source-linked Word evidence chronologies from supplied matter documents without resolving conflicts or credibility.",
-    "longDescription": "Uses a native structured document-review table when available to extract event candidates from supplied legal matter documents, then creates an event-level chronology as a .docx file with source pinpoints, uncertainty and conflicting accounts preserved. The workflow does not decide credibility, evidentiary weight, admissibility, legal effect or merits, and every output remains subject to human review.",
+    "shortDescription": "Builds source-linked Word document indexes, chronologies, privilege logs and inconsistency maps from supplied matter documents without deciding credibility, privilege or merits.",
+    "longDescription": "Uses a native structured document-review table when available to work through supplied legal matter documents, then creates Word deliverables for practitioner review: a numbered document index with descriptions taken from the documents themselves, an event-level chronology with source pinpoints, uncertainty and conflicting accounts preserved, a candidate-only privilege log recording roles, purpose on the face, circulation and waiver flags, and a fact-by-source inconsistency map that quotes each competing passage. No workflow decides relevance, privilege, credibility, evidentiary weight, admissibility, legal effect or merits, and every output remains subject to human review.",
     "developerName": "l0cka",
     "category": "Productivity",
     "capabilities": [
@@ -30,7 +33,10 @@
     ],
     "websiteURL": "https://github.com/l0cka/legal-skills",
     "defaultPrompt": [
-      "Build a source-linked evidence chronology as a .docx file from these matter documents and preserve conflicting accounts."
+      "Build a numbered, source-linked document index as a .docx file from these matter documents.",
+      "Build a source-linked evidence chronology as a .docx file from these matter documents and preserve conflicting accounts.",
+      "Prepare a candidate-only privilege log as a .docx file from these documents and leave every claim to me.",
+      "Map where these sources agree, diverge or are silent on each material fact as a .docx file, without deciding which account is right."
     ],
     "brandColor": "#1C3C63"
   }
