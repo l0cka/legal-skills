@@ -13,7 +13,7 @@ layers independently:
 3. `Codes and instruments`: Part IIIB, section 100, Privacy Regulations and the
    OAIC registered-code inventory applicable to the facts.
 4. `Known future amendments`: enacted changes whose future compilation may not
-   yet exist, including C2024A00128 Schedule 1 Part 15 items 87–89 commencing
+   yet exist, including C2024A00128 Schedule 1 Part 15 items 87–88 (application provision item 89) commencing
    10 December 2026.
 5. `Guidance`: separately versioned OAIC APP Guidelines and topic guidance.
 

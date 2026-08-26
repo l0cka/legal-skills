@@ -14,7 +14,7 @@ against official sources at the legal as-at date.
 | Eligible breach declarations | Test any Ministerial declaration and its exact scope; do not treat the power as routine disclosure authority | Privacy Act Part IIIC Division 5 |
 | Enforcement | Check current three-tier civil penalties, sections 13G, 13H and 13K; notices in sections 80UB–80UD; court orders in section 80UA; and current monitoring or investigation powers | Privacy Act current compilation |
 | Statutory tort | Schedule 2 has operated since 10 June 2025 and is not limited to APP entities | Privacy Act section 94A and Schedule 2 |
-| Automated decisions | APP 1.7–1.9 commence on 10 December 2026 | C2024A00128 Schedule 1 Part 15 items 87–89 |
+| Automated decisions | APP 1.7–1.9 commence on 10 December 2026 | C2024A00128 Schedule 1 Part 15 items 87–88 (application provision: item 89) |
 
 The OAIC code register identified the Australian Government Agencies Governance
 APP Code 2017, Market and Social Research APP Code 2021 and CR Code 2025 as
