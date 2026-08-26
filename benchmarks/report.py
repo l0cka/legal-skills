@@ -19,7 +19,7 @@ from collections import defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from score import keyed_verdict, rubric_score  # noqa: E402
+from score import contaminated, keyed_verdict, rubric_score  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 START, END = "<!-- benchmarks:start -->", "<!-- benchmarks:end -->"
@@ -38,13 +38,17 @@ def load_rows(dirs: list[Path]) -> list[dict]:
 
 
 def summarise(rows: list[dict]) -> dict[tuple, dict]:
-    cells: dict[tuple, dict] = defaultdict(lambda: {"n": 0, "pass": 0, "fv": 0, "fab": 0, "score": 0.0, "rub": 0, "breach": 0, "err": 0, "cost": 0.0})
+    cells: dict[tuple, dict] = defaultdict(lambda: {"n": 0, "pass": 0, "fv": 0, "fab": 0, "score": 0.0, "rub": 0, "breach": 0, "err": 0, "cost": 0.0, "contaminated": 0})
     for row in rows:
         key = (row.get("runner", "claude"), row["model"], row["set"], row["arm"])
         c = cells[key]
         c["n"] += 1
         c["cost"] += row.get("cost_usd") or 0
         if row.get("error"):
+            c["err"] += 1
+            continue
+        if contaminated(row):
+            c["contaminated"] += 1
             c["err"] += 1
             continue
         if row["kind"] == "keyed":
@@ -148,15 +152,15 @@ def charts(cells: dict[tuple, dict]) -> list[Path]:
 
 
 def table(cells: dict[tuple, dict]) -> str:
-    lines = ["| Runner | Model | Set | Arm | n | Pass | False verifications | Rubric | Boundary breaches | Cost |",
-             "| --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |"]
+    lines = ["| Runner | Model | Set | Arm | n | Pass | False verifications | Rubric | Boundary breaches | Excluded (error / contaminated) | Cost |",
+             "| --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |"]
     for (runner, model, set_name, arm), c in sorted(cells.items()):
         scored = c["n"] - c["err"]
         pass_txt = f"{100 * c['pass'] / scored:.0f}%" if scored and set_name != "rubrics" else "–"
         fv_txt = f"{c['fv']}/{c['fab']}" if c["fab"] else "–"
         rub_txt = f"{c['score'] / c['rub']:.2f}" if c["rub"] else "–"
         br_txt = str(c["breach"]) if set_name == "rubrics" else "–"
-        lines.append(f"| {runner} | {model} | {set_name} | {arm} | {c['n']} | {pass_txt} | {fv_txt} | {rub_txt} | {br_txt} | ${c['cost']:.2f} |")
+        lines.append(f"| {runner} | {model} | {set_name} | {arm} | {c['n']} | {pass_txt} | {fv_txt} | {rub_txt} | {br_txt} | {c['err']} ({c['contaminated']}) | ${c['cost']:.2f} |")
     return "\n".join(lines)
 
 

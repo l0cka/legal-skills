@@ -22,6 +22,7 @@ import datetime as dt
 import json
 import subprocess
 import sys
+import tempfile
 import threading
 from pathlib import Path
 
@@ -240,7 +241,8 @@ def main(argv: list[str] | None = None) -> int:
     def run_one(case: dict, arm: str) -> None:
         plugin_dir = ROOT / "plugins" / case["plugin"] if arm == "with" else None
         tools = list(dict.fromkeys(case.get("tools", []) + [x for x in args.extra_tools.split(",") if x]))
-        scratch = out_dir / "scratch" / f"{case['id']}-{arm}"
+        # Scratch lives outside the repository: a cwd inside it let baseline runs `find` the skills on disk.
+        scratch = Path(tempfile.gettempdir()) / "legal-skills-bench" / out_dir.name / f"{case['id']}-{arm}"
         scratch.mkdir(parents=True, exist_ok=True)
         if args.runner == "pi":
             payload = pi(case["prompt"], model=args.model, max_turns=args.max_turns, tools=tools, plugin_dir=plugin_dir,
