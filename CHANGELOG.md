@@ -44,6 +44,14 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- `australian-litigation-deadlines` (0.3.0): computed coverage extended to
+  the Supreme, District and Magistrates or Local Courts of Western
+  Australia, South Australia, Tasmania, the ACT and the Northern Territory,
+  with computation-rule tables (appearance, defence and appeal periods,
+  Christmas exclusions and registry-closure windows) and public-holiday
+  tables for 2026–2027, each entry verified against the official publisher
+  on 26 August 2026 or held `pending-verification` so the script refuses to
+  compute it.
 - New plugin `legal-workflow-router` (0.1.0) with `route-legal-fact-pattern`:
   turns a described matter into a sequenced plan of Legal Skills plugins and
   skills with the human decision owner at each step. Its skill map is

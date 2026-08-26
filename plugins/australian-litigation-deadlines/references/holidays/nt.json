@@ -1,0 +1,24 @@
+{
+  "table_id": "nt",
+  "jurisdiction": "NT",
+  "description": "Northern Territory public holidays under the Public Holidays Act 1981 (NT), as published by the Northern Territory Government (territory-wide list; Darwin-registry basis for the regional show day).",
+  "source_url": "https://nt.gov.au/nt-public-holidays",
+  "checked": "2026-08-26",
+  "evidence": {"state": "verified", "method": "Firecrawl scrape of the official nt.gov.au public-holidays page on the checked date; page last modified 21 July 2026 and lists 2026, 2027 and 2028."},
+  "coverage": {"from": "2026-01-01", "to": "2027-12-31"},
+  "holidays": [
+    "2026-01-01", "2026-01-26", "2026-04-03", "2026-04-04", "2026-04-05",
+    "2026-04-06", "2026-04-25", "2026-05-04", "2026-06-08", "2026-07-24",
+    "2026-08-03", "2026-12-25", "2026-12-26", "2026-12-28",
+    "2027-01-01", "2027-01-26", "2027-03-26", "2027-03-27", "2027-03-28",
+    "2027-03-29", "2027-04-26", "2027-05-03", "2027-06-14", "2027-07-23",
+    "2027-08-02", "2027-12-25", "2027-12-26", "2027-12-27", "2027-12-28"
+  ],
+  "uncertain_windows": [],
+  "caveats": [
+    "The Darwin Show Day (Friday 24 July 2026; Friday 23 July 2027) is a regional holiday and is included on a Darwin-registry basis; the Alice Springs Show Day (3 July 2026; 2 July 2027) and the Tennant Creek, Katherine and Borroloola show days are not included — confirm registry-location holidays for the Alice Springs registry (see the show-day regions map on the source page).",
+    "Christmas Eve and New Year's Eve are part-day public holidays (7pm to midnight) and are not included as non-business days; Interpretation Act 1978 (NT) s 28(2) and the 'business day' definition likewise disregard part-day holidays.",
+    "Anzac Day 2026 falls on a Saturday with no substitute; Anzac Day 2027 is observed on Monday 26 April, as published.",
+    "Christmas Day 2027 falls on a Saturday: Saturday 25 and Monday 27 December are holidays, and Boxing Day is observed on Sunday 26 and Tuesday 28 December, as published."
+  ]
+}

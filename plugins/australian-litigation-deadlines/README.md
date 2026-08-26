@@ -54,8 +54,9 @@ listed in each table.
 The plugin never determines when a cause of action accrued, when a fact
 became discoverable, or whether an extension of time would be granted —
 those are the responsible lawyer's calls, recorded as inputs. Computed
-coverage is staged: federal courts, NSW, Victorian and Queensland courts,
-and the ART, NCAT, QCAT and VCAT; other forums receive identify-only
+coverage: the federal courts, the Supreme, District/County and Magistrates
+or Local Courts of every State and Territory, and the ART, NCAT, QCAT and
+VCAT; steps without a verified table entry receive identify-only
 output naming the governing rule. Migration-review outputs always carry a non-extendable and
 jurisdictional-deadline warning with a specialist-review flag.
 

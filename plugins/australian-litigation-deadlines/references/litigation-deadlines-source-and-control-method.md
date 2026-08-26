@@ -63,7 +63,7 @@ workflow must recheck each source:
    Queensland Civil and Administrative Tribunal Act 2009 (Qld)) and in the
    Acts conferring the reviewable decision. Migration deadlines include
    non-extendable and jurisdictional periods.
-4. **Holidays** — NSW, Victorian and Queensland public-holiday tables are
+4. **Holidays** — public-holiday tables for every State and Territory are
    verified against the official government publications recorded in each
    table. Local public holidays, non-metropolitan and district
    arrangements, part-day holidays and not-yet-declared dates are recorded
