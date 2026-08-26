@@ -390,7 +390,7 @@
       "name": "compute-procedural-deadlines",
       "path": "plugins/australian-litigation-deadlines/skills/compute-procedural-deadlines",
       "plugin": "plugins/australian-litigation-deadlines",
-      "plugin_version": "0.2.0",
+      "plugin_version": "0.3.0",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -401,7 +401,7 @@
       "name": "configure-litigation-deadline-profile",
       "path": "plugins/australian-litigation-deadlines/skills/configure-litigation-deadline-profile",
       "plugin": "plugins/australian-litigation-deadlines",
-      "plugin_version": "0.2.0",
+      "plugin_version": "0.3.0",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -412,7 +412,7 @@
       "name": "maintain-deadline-register",
       "path": "plugins/australian-litigation-deadlines/skills/maintain-deadline-register",
       "plugin": "plugins/australian-litigation-deadlines",
-      "plugin_version": "0.2.0",
+      "plugin_version": "0.3.0",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -423,7 +423,7 @@
       "name": "map-limitation-periods",
       "path": "plugins/australian-litigation-deadlines/skills/map-limitation-periods",
       "plugin": "plugins/australian-litigation-deadlines",
-      "plugin_version": "0.2.0",
+      "plugin_version": "0.3.0",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -434,7 +434,7 @@
       "name": "map-tribunal-review-deadlines",
       "path": "plugins/australian-litigation-deadlines/skills/map-tribunal-review-deadlines",
       "plugin": "plugins/australian-litigation-deadlines",
-      "plugin_version": "0.2.0",
+      "plugin_version": "0.3.0",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -445,7 +445,7 @@
       "name": "verify-deadline-basis",
       "path": "plugins/australian-litigation-deadlines/skills/verify-deadline-basis",
       "plugin": "plugins/australian-litigation-deadlines",
-      "plugin_version": "0.2.0",
+      "plugin_version": "0.3.0",
       "targets": [
         "claude-cowork",
         "chatgpt-work"

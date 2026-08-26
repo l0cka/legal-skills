@@ -1,6 +1,6 @@
 {
   "name": "australian-litigation-deadlines",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Map limitation periods and compute candidate procedural deadlines for Australian civil litigation using script-only date arithmetic, evidence-gated computation-rule tables, official-publisher sources and human-confirmation gates — every date is provisional until the responsible lawyer confirms it.",
   "author": {
     "name": "l0cka",

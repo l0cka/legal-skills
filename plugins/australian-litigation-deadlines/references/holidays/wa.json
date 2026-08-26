@@ -1,0 +1,25 @@
+{
+  "table_id": "wa",
+  "jurisdiction": "WA",
+  "description": "Western Australian public holidays under the Public and Bank Holidays Act 1972 (WA), as published by the Western Australian Government (statewide list; Perth basis for the King's Birthday holiday).",
+  "source_url": "https://www.wa.gov.au/service/employment/workplace-arrangements/public-holidays-western-australia",
+  "checked": "2026-08-26",
+  "evidence": {"state": "verified", "method": "Firecrawl scrape of the official Western Australian Government public-holidays page on the checked date; page last updated 2026-05-25 and covering 2026 and 2027, with 2028 to be published when confirmed."},
+  "coverage": {"from": "2026-01-01", "to": "2027-12-31"},
+  "holidays": [
+    "2026-01-01", "2026-01-26", "2026-03-02", "2026-04-03", "2026-04-05",
+    "2026-04-06", "2026-04-25", "2026-04-27", "2026-06-01", "2026-09-28",
+    "2026-12-25", "2026-12-26", "2026-12-28",
+    "2027-01-01", "2027-01-26", "2027-03-01", "2027-03-26", "2027-03-28",
+    "2027-03-29", "2027-04-25", "2027-04-26", "2027-06-07", "2027-09-27",
+    "2027-12-25", "2027-12-26", "2027-12-27", "2027-12-28"
+  ],
+  "uncertain_windows": [],
+  "caveats": [
+    "The King's Birthday holiday is observed in late September in Western Australia (Monday 28 September 2026; Monday 27 September 2027); the City of Karratha and Town of Port Hedland observe it instead on Monday 3 August 2026, on which date the statewide holiday does not apply in those districts, and 2027 regional dates had not been published at the checked date — confirm registry-location holidays before relying on a business-day computation.",
+    "Western Australia Day is Monday 1 June 2026 and Monday 7 June 2027; Labour Day is Monday 2 March 2026 and Monday 1 March 2027.",
+    "Anzac Day falls on Saturday 25 April 2026 with Monday 27 April 2026 an additional holiday, and on Sunday 25 April 2027 with Monday 26 April 2027 an additional holiday; Boxing Day 2026 (Saturday) is followed by Monday 28 December 2026, and Christmas Day 2027 (Saturday) and Boxing Day 2027 (Sunday) are followed by Monday 27 and Tuesday 28 December 2027, all as published.",
+    "Interpretation Act 1984 (WA) s 61(2) also treats public service holidays and bank holidays as excluded days; no public service holiday is listed in this table — confirm none applies to the candidate date.",
+    "The Government has a public holiday review under way (Department of the Premier and Cabinet); dates for 2026 and 2027 are as published on the checked date but may change if the review is implemented, and 2028 dates had not been published."
+  ]
+}
