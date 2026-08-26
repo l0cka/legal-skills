@@ -44,6 +44,11 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- New plugin `legal-workflow-router` (0.1.0) with `route-legal-fact-pattern`:
+  turns a described matter into a sequenced plan of Legal Skills plugins and
+  skills with the human decision owner at each step. Its skill map is
+  generated from every SKILL.md description by `generate_registry.py`, so
+  it cannot drift from the shipped plugins.
 - `assemble-qld-estate-documents` in `australian-estate-planning` (0.5.0): a
   third jurisdictional drafting skill for Queensland wills and enduring
   powers of attorney, with a Queensland instruction record schema, a dated
