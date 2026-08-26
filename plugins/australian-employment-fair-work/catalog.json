@@ -1,0 +1,39 @@
+{
+  "displayName": "Australian Employment & Fair Work",
+  "shortDescription": "Maps the Fair Work Act, NES, award and agreement layers for an employment arrangement and issue-spots termination and policy exposure. A lawyer decides every conclusion.",
+  "longDescription": "Creates an approved employment profile for an Australian employer, maps which Fair Work Act 2009 (Cth), National Employment Standards, modern award and enterprise agreement provisions apply to a described employment arrangement, issue-spots unfair dismissal, general protections, redundancy and notice exposure for a proposed or completed termination with the Fair Work Commission time limits routed to the litigation-deadlines script, reviews a workplace policy set against the current statutory hooks (right to disconnect, flexible work, parental and family and domestic violence leave, fixed-term limits, positive duty, wage theft), and tracks Fair Work developments against their primary sources. It verifies official publishers, labels regulator guidance as guidance, and never concludes that a dismissal was unfair, that adverse action occurred, or that an employer is compliant.",
+  "lawCheckedOn": "2026-08-26",
+  "defaultPrompt": [
+    "Create a controlled employment profile for this employer before mapping its Fair Work obligations.",
+    "Map the NES, award and agreement entitlements that apply to this employee's arrangement.",
+    "Issue-spot the termination exposure for this proposed dismissal and the Fair Work Commission time limits.",
+    "Review this workplace policy set against the current Fair Work Act hooks.",
+    "Check the Fair Work watch register and tell me what has changed since our last review."
+  ],
+  "whatItDoes": [
+    "Records employer type, coverage, size, instruments and governance in a controlled employment profile",
+    "Maps the Fair Work Act, NES, modern award and enterprise agreement layers to a described arrangement with evidence states",
+    "Issue-spots unfair dismissal, general protections, redundancy, notice and unlawful termination exposure with the FWC time limits flagged",
+    "Reviews a policy set against the current statutory hooks and labels each hook law or guidance",
+    "Tracks Fair Work developments against their primary sources and reports what moved"
+  ],
+  "boundaries": [
+    "Never concludes that a dismissal was unfair, that adverse action occurred, or that an employer is compliant",
+    "Never computes a Fair Work Commission time limit itself — candidate dates come from the litigation-deadlines script",
+    "Never drafts or lodges an application, response or agreement with the Commission or the Ombudsman",
+    "State-system employers, contractors, discrimination merits and industrial action strategy route to human or specialist review"
+  ],
+  "evidenceStates": {
+    "qualifications": [
+      "commencement",
+      "amendment",
+      "application",
+      "document-status"
+    ],
+    "unverifiable": [
+      "official source",
+      "applicable version",
+      "decisive fact"
+    ]
+  }
+}

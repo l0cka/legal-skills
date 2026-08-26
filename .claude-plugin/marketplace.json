@@ -50,6 +50,23 @@
       ]
     },
     {
+      "name": "australian-employment-fair-work",
+      "source": "./plugins/australian-employment-fair-work",
+      "description": "Map the Fair Work Act, National Employment Standards, modern award and enterprise agreement layers that apply to an Australian employment arrangement; issue-spot termination exposure; review workplace policies against current statutory hooks; and track Fair Work developments. Every conclusion stays with the responsible lawyer.",
+      "version": "0.1.0",
+      "category": "Productivity",
+      "tags": [
+        "legal-workflows",
+        "employment-law",
+        "fair-work",
+        "national-employment-standards",
+        "modern-awards",
+        "unfair-dismissal",
+        "australia",
+        "responsible-ai"
+      ]
+    },
+    {
       "name": "australian-estate-planning",
       "source": "./plugins/australian-estate-planning",
       "description": "Prepare solicitor-review drafts for one NSW, Victorian or Queensland client from centrally maintained approved estate planning precedents, an approved drafting playbook and provenance-cited instructions. Draft supported content, visibly flag every unresolved issue and return a matching drafting-issues register.",

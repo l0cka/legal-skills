@@ -1,0 +1,4 @@
+interface:
+  display_name: "Map Fair Work Obligations"
+  short_description: "Map the NES, award and agreement layers for an employment arrangement"
+  default_prompt: "Use $map-fair-work-obligations on this employment arrangement: apply the coverage gate, map each NES entitlement, the award or agreement lead and the current thresholds with evidence states, and flag characterisation issues for the responsible lawyer."
