@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import datetime as dt
 import importlib.util
 import json
 import sys
@@ -34,6 +35,7 @@ def plugin_catalog() -> dict:
         "displayName": "Demo Plugin",
         "shortDescription": "Demo plugin for tests.",
         "longDescription": "A demo plugin used by the validator and generator tests.",
+        "lawCheckedOn": dt.date.today().isoformat(),
         "defaultPrompt": ["Use the demo skill."],
         "whatItDoes": ["Demonstrates the fixture."],
         "boundaries": ["Never leaves the test suite."],
@@ -228,6 +230,20 @@ class ValidateRepositoryTests(unittest.TestCase):
         registry["skills"][0]["source"] = ""
         write_json(path, registry)
         self.assert_error(f"source provenance required for {SKILL}")
+
+    def test_plugin_catalog_stale_law_check_fails(self) -> None:
+        path = self.plugin_dir / "catalog.json"
+        catalog = json.loads(path.read_text(encoding="utf-8"))
+        catalog["lawCheckedOn"] = (dt.date.today() - dt.timedelta(days=200)).isoformat()
+        write_json(path, catalog)
+        self.assert_error("lawCheckedOn")
+
+    def test_plugin_catalog_malformed_law_check_fails(self) -> None:
+        path = self.plugin_dir / "catalog.json"
+        catalog = json.loads(path.read_text(encoding="utf-8"))
+        catalog["lawCheckedOn"] = "26 August 2026"
+        write_json(path, catalog)
+        self.assert_error("lawCheckedOn")
 
     def test_missing_plugin_catalog_fails(self) -> None:
         (self.plugin_dir / "catalog.json").unlink()

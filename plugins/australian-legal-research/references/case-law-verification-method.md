@@ -27,7 +27,7 @@ subscriptions (Westlaw, Lexis, Jade professional tiers), or both.
 | NSW courts and tribunals | `caselaw.nsw.gov.au` | Direct requests permitted; see NSW conditions below |
 | Federal Circuit and Family Court | `fcfcoa.gov.au` | Direct requests permitted |
 | Federal Court of Australia | `fedcourt.gov.au` (Federal Law Search) | Bot-challenge WAF; human-operated browser only |
-| Queensland courts | Supreme Court Library Queensland | Bot-challenge WAF; human-operated browser only |
+| Queensland courts | Supreme Court Library Queensland (`sclqld.org.au/caselaw`) | Client-rendered app; judgment text is not served to non-browser clients — human-operated browser only |
 | Other State and Territory courts | Each court's own website | Not yet mapped by this plugin |
 
 ## Citation grammar
@@ -94,7 +94,8 @@ pseudonymised party names. If a restriction notation is present, report its
 existence, do not reproduce restricted content, and mark the result
 `VERIFIED WITH QUALIFICATIONS` at best. Federal Circuit and Family Court
 family-law decisions are published under statutory anonymisation
-(Family Law Act 1975 (Cth) s 121); treat the published pseudonym as the
+(Family Law Act 1975 (Cth) pt XIVB, s 114Q — formerly s 121 until 6 May
+2024); treat the published pseudonym as the
 official case name.
 
 ## Quote verification

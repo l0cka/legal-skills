@@ -436,7 +436,7 @@ class NswLookupTests(unittest.TestCase):
         for phrase in (
             "OUTSIDE SCOPE",
             "NOT VERIFIED",
-            "usually updated within 3 working days",
+            "stated update lag after a change",
             'A Bill listed under "See also" is not an amendment',
             "HTML and PDF versions in the In force and Repealed collections",
             "environmental planning instrument map",

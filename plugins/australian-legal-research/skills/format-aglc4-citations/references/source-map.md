@@ -11,6 +11,10 @@ Use this reference to locate an exact rule in the source PDF and to understand t
 - Source PDF filename: `AGLC4-with-Bookmarks-1.pdf`
 - SHA-256: `de129a7ccca99e3b464f9faf7e7a401dee05089f3b9992842428d7878bc8b123`
 - Extraction date: 12 August 2026
+- Edition status (checked 26 August 2026): AGLC4 remains the current
+  edition. An AGLC5 is in preparation — consultation closed in 2026 and no
+  publication date is announced. Recheck law.unimelb.edu.au/mulr/aglc
+  before relying on this distillation.
 
 The publishers retain copyright. This skill summarises operational rules and supplies field templates; it does not bundle or reproduce the publication.
 
