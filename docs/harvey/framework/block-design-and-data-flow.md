@@ -49,7 +49,7 @@ Apply it: name each block's output in the build notes (`@instruction_sheet`,
 `@source_table`, `@chronology`) and wire the next block to that name. A
 Prompt block that is not @-mentioned by any later block is either the last
 step or dead. Data that is not @-mentioned is not reliably in scope
-([prompt principle 2](prompt-and-instruction-design.md#2-wire-context-with-mentions-not-prose-descriptions)).
+([prompt principle 2](prompt-and-instruction-design.md#2-wire-context-with--mentions-not-prose-descriptions)).
 
 ## 3. Extract with a Review Table, reason with a Prompt
 

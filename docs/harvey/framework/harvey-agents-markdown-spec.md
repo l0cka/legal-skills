@@ -123,11 +123,11 @@ traced into the spec.
 ## 6. Test a spec agent the way you would test blocks
 
 There is no block boundary to inspect, so the tests carry the whole burden.
-Before seeking approval, run the agent against: a complete input, an input
-with a required field missing, an upload that imitates a Vault precedent, a
-document with an ambiguous date or clause, and an unreadable file. Confirm
-each returns the right status token and no invented pinpoint. Keep the test
-set with the spec and re-run it after every edit.
+Run the minimum set in
+[testing principle 1](testing-and-governance.md#1-write-the-test-set-before-the-agent);
+it applies unchanged to a spec agent. Two things are spec-specific: keep the
+test set in the same file or folder as the spec, and record the spec version
+it was last run against, because a spec edit leaves no block diff to review.
 
 ## Review
 

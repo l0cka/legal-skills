@@ -35,10 +35,16 @@ Add one case for every rule later added to a prompt
 
 ### 2. Test with synthetic material only
 
-**Inference.** Build the test files from invented parties and facts. A test
-run leaves the documents in the workspace's history; never use a live matter
-or a client precedent as a fixture. Keep the fixtures in the same private
-repository as the build notes, not in this public one.
+**Documented.** In Harvey II, Memory learns "from your edits and
+corrections" and "follows you across Harvey, Word, and Outlook".
+([Introducing Harvey II](https://www.harvey.ai/blog/introducing-harvey-ii))
+
+**Inference.** Build the test files from invented parties and facts. Two
+reasons, and the second is the stronger one: a test run leaves the documents
+in the workspace's history, and the builder's corrections during testing can
+shape Memory. Test in a workspace or Space kept for testing, never in a live
+matter, and never use a client precedent as a fixture. Keep the fixtures in
+the same private repository as the build notes, not in this public one.
 
 ### 3. Verify the deliverable, not the transcript
 
@@ -133,9 +139,16 @@ systems into the Space".
 2026); deleted Vaults have a 30-day recovery window (22 July 2026).
 ([Vault release notes](https://help.harvey.ai/release-notes/category/vault))
 
+**Documented.** An agent opened in a Space starts "with the documents,
+parties, tasks, permissions, and history of the work already there".
+([Introducing Harvey II](https://www.harvey.ai/blog/introducing-harvey-ii))
+
 **Inference.** An agent never sends, files, publishes or discloses; the
-Response is the only exit. Matter material enters through the Input block
-for one run and is not embedded. Precedent Vaults hold no matter material
+Response is the only exit. The Input block is the only entry an agent
+controls, but it is not the only entry: an agent run inside a Space also sees
+that matter's material without any Input block, so the Space the agent is run
+in is part of its data scope and belongs in the build record. Nothing the
+agent embeds is matter material. Precedent Vaults hold no matter material
 and are not under a client-matter retention rule. Confirm the agent's
 knowledge sources match its jurisdiction
 ([vaults principle 8](vaults-and-knowledge-sources.md#8-choose-regional-knowledge-sources-deliberately-and-name-the-jurisdiction)).
