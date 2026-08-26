@@ -79,8 +79,8 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Productivity",
-      "description": "Prepare solicitor-review drafts for one NSW or Victorian client from centrally maintained approved estate planning precedents, an approved drafting playbook and provenance-cited instructions. Draft supported content, visibly flag every unresolved issue and return a matching drafting-issues register.",
-      "version": "0.4.0",
+      "description": "Prepare solicitor-review drafts for one NSW, Victorian or Queensland client from centrally maintained approved estate planning precedents, an approved drafting playbook and provenance-cited instructions. Draft supported content, visibly flag every unresolved issue and return a matching drafting-issues register.",
+      "version": "0.5.0",
       "keywords": [
         "australian-law",
         "estate-planning",
@@ -164,8 +164,8 @@
         "authentication": "ON_INSTALL"
       },
       "category": "Productivity",
-      "description": "Build source-linked evidence chronologies as Word documents from supplied legal matter documents while preserving conflicts, uncertainty and human review.",
-      "version": "0.1.0",
+      "description": "Build source-linked document indexes, evidence chronologies, candidate-only privilege logs and inconsistency maps as Word documents from supplied legal matter documents while preserving conflicts, uncertainty and human review.",
+      "version": "0.2.0",
       "keywords": [
         "legal-workflows",
         "evidence",
@@ -173,7 +173,10 @@
         "litigation",
         "investigations",
         "document-review",
-        "responsible-ai"
+        "responsible-ai",
+        "privilege",
+        "disclosure",
+        "bundle"
       ]
     },
     {

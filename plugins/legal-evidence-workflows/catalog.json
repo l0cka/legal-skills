@@ -1,19 +1,23 @@
 {
   "displayName": "Legal Evidence Workflows",
-  "shortDescription": "Builds source-linked Word evidence chronologies from supplied matter documents without resolving conflicts or credibility.",
-  "longDescription": "Uses a native structured document-review table when available to extract event candidates from supplied legal matter documents, then creates an event-level chronology as a .docx file with source pinpoints, uncertainty and conflicting accounts preserved. The workflow does not decide credibility, evidentiary weight, admissibility, legal effect or merits, and every output remains subject to human review.",
+  "shortDescription": "Builds source-linked Word document indexes, chronologies, privilege logs and inconsistency maps from supplied matter documents without deciding credibility, privilege or merits.",
+  "longDescription": "Uses a native structured document-review table when available to work through supplied legal matter documents, then creates Word deliverables for practitioner review: a numbered document index with descriptions taken from the documents themselves, an event-level chronology with source pinpoints, uncertainty and conflicting accounts preserved, a candidate-only privilege log recording roles, purpose on the face, circulation and waiver flags, and a fact-by-source inconsistency map that quotes each competing passage. No workflow decides relevance, privilege, credibility, evidentiary weight, admissibility, legal effect or merits, and every output remains subject to human review.",
   "lawCheckedOn": "2026-08-26",
   "defaultPrompt": [
-    "Build a source-linked evidence chronology as a .docx file from these matter documents and preserve conflicting accounts."
+    "Build a numbered, source-linked document index as a .docx file from these matter documents.",
+    "Build a source-linked evidence chronology as a .docx file from these matter documents and preserve conflicting accounts.",
+    "Prepare a candidate-only privilege log as a .docx file from these documents and leave every claim to me.",
+    "Map where these sources agree, diverge or are silent on each material fact as a .docx file, without deciding which account is right."
   ],
   "whatItDoes": [
-    "Inventories supplied documents and assigns stable source identifiers",
-    "Extracts source-linked event candidates through a structured review table",
-    "Creates an event-level .docx chronology with conflicts and evidence gaps preserved"
+    "Inventories supplied documents into a numbered .docx index with stable source identifiers and duplicate, version and attachment links",
+    "Extracts source-linked event candidates through a structured review table and creates an event-level .docx chronology with conflicts and evidence gaps preserved",
+    "Prepares a .docx privilege log that records roles, purpose on the face, circulation and waiver flags per document, with every basis labelled candidate",
+    "Builds a .docx fact-by-source inconsistency map with a divergence register and corroboration register"
   ],
   "boundaries": [
-    "Does not decide credibility, weight, admissibility, legal effect or merits",
+    "Does not decide relevance, privilege, waiver, credibility, weight, admissibility, legal effect or merits",
     "Does not claim completeness beyond the supplied and readable documents",
-    "A human reviewer verifies every material event and source pinpoint"
+    "A human reviewer verifies every material row, pinpoint and candidate claim"
   ]
 }

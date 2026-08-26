@@ -1,7 +1,7 @@
 {
   "name": "australian-estate-planning",
-  "version": "0.4.0",
-  "description": "Prepare solicitor-review drafts for one NSW or Victorian client from centrally maintained approved estate planning precedents, an approved drafting playbook and provenance-cited instructions. Draft supported content, visibly flag every unresolved issue and return a matching drafting-issues register.",
+  "version": "0.5.0",
+  "description": "Prepare solicitor-review drafts for one NSW, Victorian or Queensland client from centrally maintained approved estate planning precedents, an approved drafting playbook and provenance-cited instructions. Draft supported content, visibly flag every unresolved issue and return a matching drafting-issues register.",
   "author": {
     "name": "l0cka",
     "url": "https://github.com/l0cka"

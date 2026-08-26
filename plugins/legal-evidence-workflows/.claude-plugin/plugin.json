@@ -1,7 +1,7 @@
 {
   "name": "legal-evidence-workflows",
-  "version": "0.1.0",
-  "description": "Build source-linked evidence chronologies as Word documents from supplied legal matter documents while preserving conflicts, uncertainty and human review.",
+  "version": "0.2.0",
+  "description": "Build source-linked document indexes, evidence chronologies, candidate-only privilege logs and inconsistency maps as Word documents from supplied legal matter documents while preserving conflicts, uncertainty and human review.",
   "author": {
     "name": "l0cka",
     "url": "https://github.com/l0cka"
@@ -16,7 +16,10 @@
     "litigation",
     "investigations",
     "document-review",
-    "responsible-ai"
+    "responsible-ai",
+    "privilege",
+    "disclosure",
+    "bundle"
   ],
   "skills": "./skills/"
 }

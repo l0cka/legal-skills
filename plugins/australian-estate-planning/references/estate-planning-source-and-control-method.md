@@ -3,7 +3,7 @@
 ## Purpose and scope
 
 This method governs practitioner-led preparation of estate planning drafts for
-New South Wales and Victoria. Each run concerns one client and uses the
+New South Wales, Victoria and Queensland. Each run concerns one client and uses the
 jurisdiction-specific skill. Start a separate run for each member of a couple.
 
 Every document is a draft until the responsible solicitor reviews it. The
@@ -31,6 +31,12 @@ Victorian enduring power of attorney precedent: <VICTORIAN EPOA PRECEDENT FILE N
 Victorian medical treatment decision-maker precedent: <VICTORIAN MTDM PRECEDENT FILE NAME>
 Victorian instruction sheet: <VICTORIAN INSTRUCTION SHEET FILE NAME>
 Victorian drafting playbook: <VICTORIAN DRAFTING PLAYBOOK FILE NAME>
+
+Queensland approved library: <QUEENSLAND APPROVED LIBRARY NAME>
+Queensland will precedent: <QUEENSLAND WILL PRECEDENT FILE NAME>
+Queensland enduring power of attorney precedent: <QUEENSLAND EPOA PRECEDENT FILE NAME>
+Queensland instruction sheet: <QUEENSLAND INSTRUCTION SHEET FILE NAME>
+Queensland drafting playbook: <QUEENSLAND DRAFTING PLAYBOOK FILE NAME>
 ```
 
 Use only these approved materials. The precedents and playbooks are maintained

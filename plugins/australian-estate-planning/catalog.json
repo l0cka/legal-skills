@@ -1,17 +1,18 @@
 {
   "displayName": "Australian Estate Planning",
-  "shortDescription": "Prepares solicitor-review drafts from approved NSW and Victorian estate planning precedents.",
-  "longDescription": "Provides one practitioner-facing drafting workflow for New South Wales and one for Victoria. Each run concerns one client and uses centrally maintained approved precedents, an approved drafting playbook and a provenance-cited instruction table. The workflow drafts all supported content in one run, inserts visible review markers for every unresolved fact, conflict or decision, and returns a matching drafting-issues register. It never substitutes a generic or uploaded precedent, changes an approved source, independently verifies the firm's drafting materials, or presents a document as final or ready to sign.",
+  "shortDescription": "Prepares solicitor-review drafts from approved NSW, Victorian and Queensland estate planning precedents.",
+  "longDescription": "Provides one practitioner-facing drafting workflow each for New South Wales, Victoria and Queensland. Each run concerns one client and uses centrally maintained approved precedents, an approved drafting playbook and a provenance-cited instruction table. The workflow drafts all supported content in one run, inserts visible review markers for every unresolved fact, conflict or decision, and returns a matching drafting-issues register. It never substitutes a generic or uploaded precedent, changes an approved source, independently verifies the firm's drafting materials, or presents a document as final or ready to sign.",
   "lawCheckedOn": "2026-08-26",
   "defaultPrompt": [
     "Prepare NSW estate planning drafts for this client from the approved precedents and these instructions.",
     "Prepare Victorian estate planning drafts for this client from the approved precedents and these instructions.",
+    "Prepare Queensland estate planning drafts for this client from the approved precedents and these instructions.",
     "Extract the instruction table with provenance and use the approved playbook when preparing the drafts.",
     "Draft all supported content and visibly mark each missing fact or unresolved decision.",
     "Show the drafting-issues register and change summary for these drafts."
   ],
   "whatItDoes": [
-    "Provides separate NSW and Victorian practitioner-facing drafting workflows",
+    "Provides separate NSW, Victorian and Queensland practitioner-facing drafting workflows",
     "Uses one client per run and centrally maintained approved precedents",
     "Extracts a provenance-cited instruction table and applies the approved drafting playbook",
     "Drafts all supported content while visibly marking unresolved facts and decisions",
@@ -22,6 +23,6 @@
     "No approved precedent means no draft; uploaded substitutes and generic instruments are never used",
     "Missing facts ordinarily produce a partial draft with matched review markers and register entries",
     "Testamentary capacity, undue influence, family provision, notional estate exposure and tax remain solicitor decisions",
-    "Practitioner-only and limited to NSW and Victoria; express exclusions are routed OUTSIDE SCOPE"
+    "Practitioner-only and limited to NSW, Victoria and Queensland; express exclusions are routed OUTSIDE SCOPE"
   ]
 }

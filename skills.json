@@ -181,7 +181,7 @@
       "name": "assemble-nsw-estate-documents",
       "path": "plugins/australian-estate-planning/skills/assemble-nsw-estate-documents",
       "plugin": "plugins/australian-estate-planning",
-      "plugin_version": "0.4.0",
+      "plugin_version": "0.5.0",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -189,10 +189,21 @@
       "source": "Original practitioner-controlled NSW estate-drafting workflow using centrally approved precedents, a senior-lawyer-maintained drafting playbook, provenance-cited instructions and visible unresolved-issue markers. The optional execution-formalities reference was verified against legislation.nsw.gov.au on 2026-08-20 (Succession Act 2006, Powers of Attorney Act 2003, Guardianship Act 1987)."
     },
     {
+      "name": "assemble-qld-estate-documents",
+      "path": "plugins/australian-estate-planning/skills/assemble-qld-estate-documents",
+      "plugin": "plugins/australian-estate-planning",
+      "plugin_version": "0.5.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original Queensland estate drafting workflow mirroring the NSW and Victorian skills, with execution formalities verified against the official Queensland legislation publisher."
+    },
+    {
       "name": "assemble-vic-estate-documents",
       "path": "plugins/australian-estate-planning/skills/assemble-vic-estate-documents",
       "plugin": "plugins/australian-estate-planning",
-      "plugin_version": "0.4.0",
+      "plugin_version": "0.5.0",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -530,15 +541,48 @@
       "source": "Original Australia-wide privacy, health, breach and surveillance routing workflow based on official legislation and regulator sources."
     },
     {
+      "name": "build-document-index",
+      "path": "plugins/legal-evidence-workflows/skills/build-document-index",
+      "plugin": "plugins/legal-evidence-workflows",
+      "plugin_version": "0.2.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original source-linked document index workflow using a structured document-review table and a Word deliverable, sharing the evidence-chronology conventions."
+    },
+    {
       "name": "build-evidence-chronology",
       "path": "plugins/legal-evidence-workflows/skills/build-evidence-chronology",
       "plugin": "plugins/legal-evidence-workflows",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.2.0",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
       ],
       "source": "Original jurisdiction-neutral source-linked evidence chronology workflow designed for native structured review tables, Word-document output and human verification."
+    },
+    {
+      "name": "build-privilege-log",
+      "path": "plugins/legal-evidence-workflows/skills/build-privilege-log",
+      "plugin": "plugins/legal-evidence-workflows",
+      "plugin_version": "0.2.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original candidate-only privilege log workflow that records roles, purpose on the face, circulation and waiver flags per document and leaves every claim to the practitioner."
+    },
+    {
+      "name": "map-evidence-inconsistencies",
+      "path": "plugins/legal-evidence-workflows/skills/map-evidence-inconsistencies",
+      "plugin": "plugins/legal-evidence-workflows",
+      "plugin_version": "0.2.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original fact-by-source inconsistency mapping workflow with a divergence register and corroboration register, built on the evidence-chronology conventions."
     },
     {
       "name": "configure-legal-triage",

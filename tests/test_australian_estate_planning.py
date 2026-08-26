@@ -8,11 +8,13 @@ ROOT = Path(__file__).resolve().parents[1]
 PLUGIN = ROOT / "plugins" / "australian-estate-planning"
 NSW_SKILL = PLUGIN / "skills" / "assemble-nsw-estate-documents" / "SKILL.md"
 VIC_SKILL = PLUGIN / "skills" / "assemble-vic-estate-documents" / "SKILL.md"
-SKILLS = (NSW_SKILL, VIC_SKILL)
+QLD_SKILL = PLUGIN / "skills" / "assemble-qld-estate-documents" / "SKILL.md"
+SKILLS = (NSW_SKILL, VIC_SKILL, QLD_SKILL)
 REFERENCES = PLUGIN / "references"
 METHOD = REFERENCES / "estate-planning-source-and-control-method.md"
 NSW_HARVEY_GUIDE = ROOT / "docs" / "harvey" / "prepare-nsw-estate-planning-drafts.md"
 VIC_HARVEY_GUIDE = ROOT / "docs" / "harvey" / "prepare-victorian-estate-planning-drafts.md"
+QLD_HARVEY_GUIDE = ROOT / "docs" / "harvey" / "prepare-queensland-estate-planning-drafts.md"
 DEPLOYMENT_ADR = ROOT / "docs" / "adr" / "0003-private-deployment-estate-drafting.md"
 
 FORBIDDEN_PLATFORM_NAMES = (
@@ -36,13 +38,17 @@ class AustralianEstatePlanningPluginTests(unittest.TestCase):
     def read(self, path: Path) -> str:
         return " ".join(path.read_text(encoding="utf-8").split())
 
-    def test_plugin_exposes_only_two_jurisdiction_skills(self) -> None:
+    def test_plugin_exposes_only_three_jurisdiction_skills(self) -> None:
         skill_dirs = sorted(
             path.name for path in (PLUGIN / "skills").iterdir() if path.is_dir()
         )
         self.assertEqual(
             skill_dirs,
-            ["assemble-nsw-estate-documents", "assemble-vic-estate-documents"],
+            [
+                "assemble-nsw-estate-documents",
+                "assemble-qld-estate-documents",
+                "assemble-vic-estate-documents",
+            ],
         )
 
     def test_skills_publish_the_simplified_result_contract(self) -> None:
@@ -115,6 +121,11 @@ class AustralianEstatePlanningPluginTests(unittest.TestCase):
                 "Prepare Victorian Estate Planning Drafts",
                 "jurisdiction: VIC",
             ),
+            (
+                QLD_HARVEY_GUIDE,
+                "Prepare Queensland Estate Planning Drafts",
+                "jurisdiction: QLD",
+            ),
         )
         for path, agent_name, jurisdiction in expected:
             guide = self.read(path)
@@ -177,6 +188,9 @@ class AustralianEstatePlanningPluginTests(unittest.TestCase):
             "<VICTORIAN APPROVED LIBRARY NAME>",
             "<VICTORIAN WILL PRECEDENT FILE NAME>",
             "<VICTORIAN DRAFTING PLAYBOOK FILE NAME>",
+            "<QUEENSLAND APPROVED LIBRARY NAME>",
+            "<QUEENSLAND WILL PRECEDENT FILE NAME>",
+            "<QUEENSLAND DRAFTING PLAYBOOK FILE NAME>",
         ):
             self.assertIn(placeholder, method)
         self.assertNotIn("live verification", method.lower())
@@ -186,7 +200,11 @@ class AustralianEstatePlanningPluginTests(unittest.TestCase):
             text = self.read(path)
             self.assertIn("cannot be determined", text)
             self.assertIn("Never infer a plausible value", text)
-        for schema in ("nsw-instruction-record-schema.md", "vic-instruction-record-schema.md"):
+        for schema in (
+            "nsw-instruction-record-schema.md",
+            "vic-instruction-record-schema.md",
+            "qld-instruction-record-schema.md",
+        ):
             self.assertIn("Never fill a plausible value", self.read(REFERENCES / schema))
 
     def test_schemas_cover_document_types_and_risk_flags(self) -> None:
@@ -210,7 +228,16 @@ class AustralianEstatePlanningPluginTests(unittest.TestCase):
         ):
             self.assertIn(heading, vic_schema)
 
-        for text in (schema, vic_schema):
+        qld_schema = self.read(REFERENCES / "qld-instruction-record-schema.md")
+        for heading in (
+            "## Scope and risk flags",
+            "## Will",
+            "## Enduring power of attorney",
+            "## Missing required fields",
+        ):
+            self.assertIn(heading, qld_schema)
+
+        for text in (schema, vic_schema, qld_schema):
             for flag in ("marriage", "divorce", "jointly held assets", "superannuation", "capacity"):
                 self.assertIn(flag, text.lower())
 
@@ -229,7 +256,11 @@ class AustralianEstatePlanningPluginTests(unittest.TestCase):
             self.assertEqual(host, "legislation.nsw.gov.au")
 
     def test_formalities_never_declared_satisfied(self) -> None:
-        for reference in ("nsw-execution-formalities.md", "vic-execution-formalities.md"):
+        for reference in (
+            "nsw-execution-formalities.md",
+            "vic-execution-formalities.md",
+            "qld-execution-formalities.md",
+        ):
             text = self.read(REFERENCES / reference)
             self.assertIn("never determine", text.lower())
             self.assertIn("formality has been satisfied", text.lower())
@@ -244,11 +275,24 @@ class AustralianEstatePlanningPluginTests(unittest.TestCase):
         ):
             self.assertEqual(host.removeprefix("www."), "legislation.vic.gov.au")
 
+    def test_queensland_formalities_are_dated_and_official(self) -> None:
+        text = self.read(REFERENCES / "qld-execution-formalities.md")
+        self.assertIn("26 August 2026", text)
+        self.assertIn("Current as at 28 April 2026", text)
+        self.assertIn("Remote witnessing — none in force", text)
+        allowed = {"legislation.qld.gov.au", "publications.qld.gov.au", "publicguardian.qld.gov.au"}
+        for host in re.findall(r"https?://([^/\s)]+)", text) + re.findall(
+            r"\b([a-z0-9.-]+\.gov\.au)\b", text
+        ):
+            self.assertIn(host.removeprefix("www."), allowed)
+
     def test_excluded_matters_route_outside_scope(self) -> None:
         for path in SKILLS:
             skill = self.read(path)
             self.assertIn("`OUTSIDE SCOPE`", skill)
-            for excluded in ("self-represented", "advance care directive", "superannuation"):
+            excluded_terms = ("self-represented", "superannuation")
+            excluded_terms += ("advance health directive",) if path is QLD_SKILL else ("advance care directive",)
+            for excluded in excluded_terms:
                 self.assertIn(excluded, skill.lower())
 
 

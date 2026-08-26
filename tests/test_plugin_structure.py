@@ -93,7 +93,12 @@ PLUGINS = {
         ),
     },
     "legal-evidence-workflows": {
-        "skills": {"build-evidence-chronology"},
+        "skills": {
+            "build-document-index",
+            "build-evidence-chronology",
+            "build-privilege-log",
+            "map-evidence-inconsistencies",
+        },
         "reference_files": (),
         "every_skill_mentions": (),
     },

@@ -44,6 +44,19 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- `assemble-qld-estate-documents` in `australian-estate-planning` (0.5.0): a
+  third jurisdictional drafting skill for Queensland wills and enduring
+  powers of attorney, with a Queensland instruction record schema, a dated
+  execution formalities reference verified against the official Queensland
+  legislation publisher, and a matching deployment guide. Advance health
+  directives are flagged, never drafted.
+- Three new `legal-evidence-workflows` (0.2.0) skills sharing the chronology
+  conventions: `build-document-index` (numbered, source-linked bundle
+  index), `build-privilege-log` (candidate-only privilege log with roles,
+  purpose on the face, circulation and waiver flags) and
+  `map-evidence-inconsistencies` (fact-by-source matrix with divergence and
+  corroboration registers). None decides relevance, privilege, credibility
+  or merits.
 - Added a required `lawCheckedOn` date to every plugin `catalog.json`. The
   validator fails when the date is malformed, in the future or older than 183
   days, and the generated plugin tables show it as a "Law checked" column.
