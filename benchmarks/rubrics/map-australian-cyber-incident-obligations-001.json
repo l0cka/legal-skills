@@ -1,0 +1,36 @@
+{
+  "id": "map-australian-cyber-incident-obligations-001",
+  "plugin": "australian-privacy-cybersecurity",
+  "skill": "map-australian-cyber-incident-obligations",
+  "prompt": "Use map-australian-cyber-incident-obligations. I need the obligations and clocks matrix only, not a full incident triage. Ondine Group Ltd has two relevant subsidiaries: Ondine Telecom Pty Ltd, a carriage service provider with about 45,000 services in operation, and Ondine General Insurance Ltd, an APRA-regulated insurer that shares the group's identity platform. On 15 July 2026 at 04:20 (Australia/Sydney) an intruder used stolen administrator credentials on that shared platform. The mobile core was degraded and customers had no voice or SMS service for about nine hours. The intruder also accessed a customer service records store, which includes records for customers with domestic and family violence safe-contact arrangements. A ransom demand followed; no payment has been made or approved. Group turnover last financial year was about $480 million. Our security team believes there is also a material control weakness in privileged access management. Our head of risk says it is one incident, so please give me the single earliest deadline and the one portal we should use.",
+  "expected_status_regex": "CONCURRENT CYBER OBLIGATIONS MAP — URGENT HUMAN REVIEW REQUIRED",
+  "must_include": [
+    {"item": "Builds one row per entity and obligation and does not collapse entities, awareness times, recipients or clocks", "weight": 3},
+    {"item": "Applies Security of Critical Infrastructure Act 2018 (Cth) Part 2B: significant availability impact as soon as practicable and no later than 12 hours, other actual or likely relevant impact no later than 72 hours, with oral follow-up clocks to verify", "weight": 3},
+    {"item": "Applies the Telecommunications (Domestic, Family and Sexual Violence Consumer Protections) Industry Standard 2025 (F2025L00664): notice to the affected person using agreed safe communications and to ACMA within two days, phased from 1 January 2026 for providers with 30,000 or more services in operation, and notes it can apply without NDB serious-harm eligibility", "weight": 3},
+    {"item": "Applies Cyber Security Act 2024 (Cth) Part 3 and the Cyber Security (Ransomware Payment Reporting) Rules 2025 (F2025L00278) 72-hour post-payment report, and states that Part 4 voluntary sharing does not discharge other duties and that limited-use provisions do not themselves create legal professional privilege", "weight": 2},
+    {"item": "Applies APRA CPS 234 (incident as soon as possible and no later than 72 hours; material control weakness as soon as possible and no later than 10 business days) and the CPS 230 clocks, labelled as enforceable prudential standards rather than legislation", "weight": 2},
+    {"item": "Keeps Telecommunications Act 1997 (Cth) Part 13 and the Telecommunications (Customer Communications for Outages) Industry Standard 2024 (F2024L01447) distinct from data-breach notice, and routes present telecommunications security duties to the Security of Critical Infrastructure (Telecommunications Security and Risk Management Program) Rules 2025 (F2025L00325) rather than superseded Part 14 TSSR duties", "weight": 2},
+    {"item": "Separates the legal-status classes Act, delegated legislative instrument or industry standard, enforceable prudential standard, regulator guidance, contract or insurance, and voluntary report", "weight": 2},
+    {"item": "States that the Privacy Act 1988 (Cth) Part IIIC 30-day assessment period is not a 30-day notification deadline", "weight": 2},
+    {"item": "Gives each row a verification status, missing fact and decision owner, and states that a single reporting portal is not a single-report safe harbour", "weight": 3}
+  ],
+  "must_not": [
+    {"item": "Submits, lodges or drafts a notification to any regulator, or concludes that a notification is or is not required", "weight": 3},
+    {"item": "Accepts the closing request and reduces the map to a single earliest deadline and one portal", "weight": 3},
+    {"item": "Presents Telecommunications Act 1997 Part 14 TSSR duties as current obligations", "weight": 2},
+    {"item": "Presents general ACSC reporting as mandatory, or cites an instrument register number, commencement date or clock not confirmed against the official source", "weight": 2}
+  ],
+  "tools": ["WebFetch", "Bash"],
+  "author_notes": "This is the concurrency test: a telco outage, a DFV-flagged records store, an APRA-regulated affiliate on a shared platform, a material control weakness and a ransom demand all run at once. A good answer produces a row per entity and regime with distinct clocks and recipients, labels each source by legal-status class, and explicitly rejects the one-deadline, one-portal framing in the prompt. Superseded TSSR duties must be routed to the 2025 SOCI telecommunications Rules.",
+  "provenance": [
+    "plugins/australian-privacy-cybersecurity/skills/map-australian-cyber-incident-obligations/SKILL.md",
+    "plugins/australian-privacy-cybersecurity/skills/map-australian-cyber-incident-obligations/references/cyber-regime-registry.json",
+    "https://www.legislation.gov.au/C2018A00029/latest",
+    "https://www.legislation.gov.au/F2025L00664/asmade",
+    "https://www.legislation.gov.au/C2024A00098/latest",
+    "https://www.legislation.gov.au/F2025L00325/asmade",
+    "https://www.legislation.gov.au/F2024L01447/latest",
+    "https://www.apra.gov.au/standards/cps-234"
+  ]
+}

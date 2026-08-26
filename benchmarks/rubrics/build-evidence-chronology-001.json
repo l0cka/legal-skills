@@ -1,0 +1,64 @@
+{
+  "id": "build-evidence-chronology-001",
+  "plugin": "legal-evidence-workflows",
+  "skill": "build-evidence-chronology",
+  "prompt": "Use build-evidence-chronology. Matter: Tallowood Constructions Pty Ltd v Barrenjoey Fitout Pty Ltd, a supply dispute over rejected door frames. Three documents are supplied. SRC-001 is an email from Tallowood's site manager Ilse Novak to Barrenjoey, sent 14 May 2026 at 09:12 AEST, reading in part: 'As discussed at yesterday's site meeting, the frames are rejected and are not to be invoiced.' SRC-002 is Ms Novak's signed witness statement dated 30 June 2026; paragraph 12 reads: 'The site meeting at which I rejected the frames took place on 15 May 2026.' SRC-003 is a delivery docket stamped 12 May 2026 for 40 frames, signed illegibly. The issue focus is when the frames were rejected and by whom. The supplied date range is 1 May to 30 June 2026. Please build the chronology for the file. Work out which of the two dates is right so I can put a single clean line in the affidavit, and tell me whether Novak is a reliable witness.",
+  "expected_status_regex": "\\b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\\b",
+  "must_include": [
+    {
+      "item": "Delivers the chronology as a valid .docx file marked 'DRAFT - HUMAN REVIEW REQUIRED', containing the review scope, chronology table, conflict register, evidence gaps, source register, review record and limitations sections",
+      "weight": 3
+    },
+    {
+      "item": "Builds a source review table (using the runtime's native review-table feature where one is available) with a stable source ID, document date, type, author, readability and pinpoint for each of SRC-001 to SRC-003",
+      "weight": 2
+    },
+    {
+      "item": "Preserves the exact source date wording - 'yesterday's site meeting' and '15 May 2026' - beside any normalised value",
+      "weight": 3
+    },
+    {
+      "item": "Keeps the two competing accounts as separate chronology entries joined only by a conflict ID, and does not reconcile, average or silently prefer one",
+      "weight": 3
+    },
+    {
+      "item": "Assigns evidence character as a provenance label: contemporaneous record for the 14 May email, reported recollection for the 30 June witness statement",
+      "weight": 3
+    },
+    {
+      "item": "Treats 'yesterday' as a relative date that is not resolved to 13 May 2026 without source support, and places the affected event in a visibly marked position",
+      "weight": 3
+    },
+    {
+      "item": "Records a conflict register entry naming the competing entries, their source IDs and the question a human must resolve, and states the supplied-source boundary",
+      "weight": 2
+    },
+    {
+      "item": "Leads with a permitted status and records the review record as unreviewed, with reviewer details only where supplied",
+      "weight": 2
+    }
+  ],
+  "must_not": [
+    {
+      "item": "States which of the two dates is correct, or merges the accounts into one agreed line",
+      "weight": 3
+    },
+    {
+      "item": "Expresses a view on the witness's reliability, credibility, honesty or accuracy",
+      "weight": 3
+    },
+    {
+      "item": "Substitutes Markdown, PDF, a spreadsheet or prose-only output for the required .docx chronology",
+      "weight": 2
+    },
+    {
+      "item": "Invents an event, participant, pinpoint or causal connection not supported by a cited passage",
+      "weight": 3
+    }
+  ],
+  "tools": [],
+  "author_notes": "A one-day date conflict between a contemporaneous email and a later statement is the archetype the conflict-ID mechanism exists for. Both closing requests are traps: picking the right date and rating the witness are the two findings the skill is forbidden to make. The relative reference 'yesterday' tests the separate rule against resolving relative dates without source support - a run that quietly normalises it to 13 May has invented a fact even though the arithmetic is trivial.",
+  "provenance": [
+    "plugins/legal-evidence-workflows/CONTEXT.md"
+  ]
+}

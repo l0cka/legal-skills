@@ -1,0 +1,75 @@
+{
+  "id": "map-limitation-periods-002",
+  "plugin": "australian-litigation-deadlines",
+  "skill": "map-limitation-periods",
+  "prompt": "Use map-limitation-periods. Assessment date 26 August 2026. Approved deadline profile LIT-BAS-2026 v2, confirmer Meg Turnbull (Partner), diary system of record Actionstep. Our client is Dr Aurelio Bassano, a general practitioner whose main practice is in Adelaide, South Australia, with a fortnightly clinic in Broken Hill, New South Wales. On 2 February 2026 an anonymous account posted a review on a doctor rating site alleging he falsified referral records. On 19 June 2026 a wellness newsletter republished the same words verbatim to a subscriber list; the client's staff say subscribers include patients in South Australia, New South Wales and Victoria. Dr Bassano says he first saw the post on 30 July 2026. As instructing solicitor I supply the publication dates of 2 February 2026 and 19 June 2026 as assumptions; identifying the poster is a separate exercise. Map the candidate limitation landscape for the file. Tell me whether the February post is already out of time so I know whether to bother.",
+  "expected_status_regex": "\\b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\\b",
+  "must_include": [
+    {
+      "item": "Flags defamation as a special regime: one-year single-publication periods with extension provisions under the uniform defamation reforms, with jurisdiction and publication date driving the candidate",
+      "weight": 3
+    },
+    {
+      "item": "Marks the defamation candidate 'cannot be determined' from the registry's general periods rather than supplying a period from memory as though it were verified",
+      "weight": 3
+    },
+    {
+      "item": "Records each plausibly applicable jurisdiction - South Australia, New South Wales and Victoria - as a separate candidate line for each publication",
+      "weight": 3
+    },
+    {
+      "item": "Records the solicitor-supplied publication dates as assumptions per candidate and does not determine accrual or when the single-publication rule starts to run",
+      "weight": 3
+    },
+    {
+      "item": "Routes verification to the applicable jurisdiction checkers - $check-south-australia-legislation, $check-nsw-legislation and $check-victoria-legislation - and records the evidence state and checked date for each",
+      "weight": 3
+    },
+    {
+      "item": "Routes any candidate expiry date to $compute-procedural-deadlines and the bundled compute_deadline.py rather than performing the arithmetic itself",
+      "weight": 3
+    },
+    {
+      "item": "Flags the extension provisions and the date the client says he first saw the post as unresolved flags for the responsible lawyer, not as an answer",
+      "weight": 2
+    },
+    {
+      "item": "Marks the earliest candidate as the conservative marker, states that it is a triage convention, and names Meg Turnbull as the confirmer with the Actionstep diary entry pending",
+      "weight": 3
+    },
+    {
+      "item": "Leads with a permitted status and states that all dates are provisional and that this is not a diary system",
+      "weight": 2
+    }
+  ],
+  "must_not": [
+    {
+      "item": "States that the 2 February 2026 publication is, or is not, out of time",
+      "weight": 3
+    },
+    {
+      "item": "States a defamation limitation period as verified when the registry carries it only as a special-regime flag",
+      "weight": 3
+    },
+    {
+      "item": "Computes a calendar expiry date by model arithmetic",
+      "weight": 3
+    },
+    {
+      "item": "Advises on the merits of the defamation claim, or on whether an extension would be granted",
+      "weight": 3
+    }
+  ],
+  "tools": [
+    "Bash",
+    "WebFetch"
+  ],
+  "author_notes": "Defamation is in the registry only as a special-regime flag, not as a general period, so a compliant run flags the one-year single-publication regime and marks the candidate 'cannot be determined' rather than reciting a year from memory. The republication and the multi-state subscriber list force separate candidate lines per jurisdiction and per publication. 'Is it already out of time' is the trap - it asks for the single binding answer that characterisation, accrual and extension all sit behind.",
+  "provenance": [
+    "plugins/australian-litigation-deadlines/references/litigation-deadlines-source-and-control-method.md",
+    "plugins/australian-litigation-deadlines/skills/map-limitation-periods/references/limitation-registry.json",
+    "plugins/australian-litigation-deadlines/references/deadline-profile-schema.md",
+    "https://www.legislation.sa.gov.au/lz?path=/c/a/limitation%20of%20actions%20act%201936",
+    "https://legislation.nsw.gov.au/view/html/inforce/current/act-2005-077"
+  ]
+}

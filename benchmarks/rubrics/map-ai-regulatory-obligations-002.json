@@ -1,0 +1,35 @@
+{
+  "id": "map-ai-regulatory-obligations-002",
+  "plugin": "australian-ai-governance",
+  "skill": "map-ai-regulatory-obligations",
+  "prompt": "Use map-ai-regulatory-obligations. The Regional Assistance Agency is a non-corporate Commonwealth entity administering a drought hardship grant. From 1 February 2027 we plan to use a machine-learning model to score applications against eligibility criteria, auto-approve applications the model scores above a threshold, auto-refuse those below a lower threshold, and refer the middle band to a delegate for a decision. Inputs include applicant-declared income, property size, ATO-sourced turnover indicators and prior grant history. About 14,000 applications a year are expected. We deliver part of the program through a Western Australian state agency that operates its own assessment portal and receives our applicant data. Our AI governance profile is approved, identifier RAA-AI, version 1.2, dated 6 August 2026; it records no EU footprint. Our first assistant secretary says we are a government agency, so the Digital Transformation Agency policy is really just guidance, and asks you to confirm we only need to follow the voluntary standard.",
+  "expected_status_regex": "(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS|NOT READY|OUTSIDE SCOPE)",
+  "must_include": [
+    {"item": "Identifies the Digital Transformation Agency Policy for the Responsible Use of AI in Government v2.0 as mandatory for non-corporate Commonwealth entities, effective 15 December 2025 (replacing v1.1 of 1 September 2024), with staged per-requirement implementation deadlines to verify at use", "weight": 3},
+    {"item": "Names the policy's key artefacts: an accountable official, an AI transparency statement and an AI impact assessment", "weight": 2},
+    {"item": "Routes the government track to triage-government-ai-use-case and records only the routing result", "weight": 2},
+    {"item": "Routes automated-decision transparency to assess-automated-decision-transparency, including Privacy Act APP 1.7-1.9 commencing 10 December 2026, which falls before the February 2027 go-live", "weight": 3},
+    {"item": "Routes privacy depth to assess-ai-privacy-cybersecurity-use-case and flags administrative-law questions about automated decision-making and delegation for separate specialist review rather than answering them", "weight": 2},
+    {"item": "Labels the National framework for the assurance of artificial intelligence in government and Australia's AI Ethics Principles (2019) as policy and principles rather than legislation", "weight": 1},
+    {"item": "Flags the Western Australian delivery partner: the WA Government Artificial Intelligence Policy and Assurance Framework and WA PRIS IPP 10, each to be verified from the current official source", "weight": 2},
+    {"item": "Cites the approved profile identifier and version, assigns evidence states with source URLs and checked dates, names the human decision gate, states there is no economy-wide Australian AI Act, and draws no compliance conclusion", "weight": 3}
+  ],
+  "must_not": [
+    {"item": "Accepts the premise that the DTA policy is voluntary or guidance-only for this non-corporate Commonwealth entity", "weight": 3},
+    {"item": "Concludes that the agency complies, or that auto-approval and auto-refusal of grant applications is lawful", "weight": 3},
+    {"item": "Presents the proposed Australian Standards for AI or any other pending item as a binding obligation", "weight": 2},
+    {"item": "Invents a policy version, staged deadline, framework name or instrument identifier not confirmed against the official source", "weight": 2}
+  ],
+  "tools": ["WebFetch", "Bash"],
+  "author_notes": "The trap is a senior officer mischaracterising a mandatory whole-of-government policy as guidance. A good answer corrects that with the DTA policy v2.0 status and its artefacts, routes the government track and the automated-decision transparency question (APP 1.7-1.9 commences before go-live), picks up the WA delivery partner overlays, and flags administrative-law questions about automated decisions for specialists. No lawfulness or compliance conclusion may be given.",
+  "provenance": [
+    "plugins/australian-ai-governance/skills/map-ai-regulatory-obligations/SKILL.md",
+    "plugins/australian-ai-governance/references/ai-governance-source-and-control-method.md",
+    "plugins/australian-ai-governance/skills/triage-government-ai-use-case/references/government-ai-assurance-registry.json",
+    "plugins/australian-privacy-cybersecurity/skills/assess-automated-decision-transparency/references/automated-decision-method.md",
+    "https://www.digital.gov.au/ai/ai-in-government-policy",
+    "https://www.finance.gov.au/government/public-data/data-and-digital-ministers-meeting/national-framework-assurance-artificial-intelligence-government",
+    "https://www.wa.gov.au/government/publications/wa-government-artificial-intelligence-policy-and-assurance-framework",
+    "https://www.legislation.gov.au/C2024A00128/asmade"
+  ]
+}

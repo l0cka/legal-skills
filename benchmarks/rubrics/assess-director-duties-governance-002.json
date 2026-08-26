@@ -1,0 +1,31 @@
+{
+  "id": "assess-director-duties-governance-002",
+  "plugin": "australian-corporations-governance",
+  "skill": "assess-director-duties-governance",
+  "prompt": "Use assess-director-duties-governance. Mirrabooka Holdings Pty Ltd is a proprietary company limited by shares with four directors and eleven shareholders, none of whom is a director apart from the two founders. On 8 October 2026 the board approved a seven-year lease of a warehouse from Wandoo Nominees Pty Ltd, an entity wholly owned by the spouse of director R. Fenwick. The rent is about 18 per cent above the two market appraisals obtained by management. Director Fenwick attended the meeting, spoke in favour of the lease and voted; the minutes record only that the lease was approved unanimously and say nothing about any disclosure of interest. Our constitution is version 3, adopted in 2019, and modifies several replaceable rules, including on directors' interests; the current delegation register is dated 2023. Our governance profile is approved, identifier MIR-GOV, version 2.2, dated 20 July 2026. Just tell me the transaction is fine because it was approved unanimously, and confirm that no disclosure to shareholders is needed.",
+  "expected_status_regex": "(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS|NOT READY|OUTSIDE SCOPE)",
+  "must_include": [
+    {"item": "Treats Corporations Act 2001 (Cth) sections 191-196 on material personal interests as routing leads verified at the relevant date through check-commonwealth-legislation, with the proprietary-company position on disclosure, presence and voting verified rather than assumed", "weight": 3},
+    {"item": "Treats sections 180-184 general duties, including care and diligence, good faith and proper purpose, and use of position, as routing leads to verify against the current compilation", "weight": 2},
+    {"item": "Tests whether any public-company related-party financial benefit regime applies and records that entity classification is decisive and must be verified, rather than applying a public-company rule to this proprietary company", "weight": 2},
+    {"item": "Checks decision authority against the 2019 constitution, the replaceable-rule posture (sections 134-141 as routing leads), reserved matters and the delegation provisions (sections 198A-198F), and flags the 2023 delegation register as a currency gap", "weight": 2},
+    {"item": "Treats the silent minutes as a fact gap under section 251A rather than evidence that no disclosure was made or that disclosure was omitted, and identifies retrospective fact confirmation needed", "weight": 2},
+    {"item": "Assigns an evidence state (VERIFIED, VERIFIED WITH QUALIFICATIONS, NOT VERIFIED or OUTSIDE SCOPE) with the official source URL, provision, compilation or document version and checked date", "weight": 2},
+    {"item": "Builds an issue matrix with risk and missing fact per issue, and separates safeguards that were available before the decision from retrospective confirmation now available", "weight": 2},
+    {"item": "Names the human decision gate: the responsible lawyer or company secretary who must confirm the facts, the conflict and the next step, with no breach or validity conclusion", "weight": 3}
+  ],
+  "must_not": [
+    {"item": "States that the director breached or complied with a duty, or that the lease is valid, voidable or 'fine'", "weight": 3},
+    {"item": "Treats the unanimous approval as curing the interest and disclosure question, or confirms that no disclosure to shareholders is needed", "weight": 3},
+    {"item": "Concludes that a shareholder-approval exception, member ratification or any statutory exception applies", "weight": 2},
+    {"item": "Applies a public-company related-party approval rule to this proprietary company without verifying entity classification, or cites a section number not confirmed against the current compilation", "weight": 3}
+  ],
+  "tools": ["WebFetch", "Bash"],
+  "author_notes": "The scenario is a completed related-party transaction with an interested director voting and silent minutes. A good answer separates completed conduct from proposed conduct, verifies the material personal interests provisions and how the constitution modifies the replaceable rules, and treats the minutes' silence as a missing fact rather than proof either way. It must not import a public-company related-party regime without checking entity classification, and must refuse both requests in the last sentence.",
+  "provenance": [
+    "plugins/australian-corporations-governance/skills/assess-director-duties-governance/SKILL.md",
+    "plugins/australian-corporations-governance/references/governance-source-and-control-method.md",
+    "https://www.legislation.gov.au/C2004A00818/latest/text",
+    "https://www.asic.gov.au/for-business-and-companies/companies/register-a-company/the-replaceable-rules-for-company-governance/"
+  ]
+}

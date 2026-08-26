@@ -1,0 +1,34 @@
+{
+  "id": "assess-australian-data-breach-002",
+  "plugin": "australian-privacy-cybersecurity",
+  "skill": "assess-australian-data-breach",
+  "prompt": "Use assess-australian-data-breach. Brightfell Advice Pty Ltd is a national financial advice firm headquartered in Melbourne and holds an Australian financial services licence. On 12 May 2026 at about 15:20 (Australia/Melbourne) a paraplanner attached the wrong spreadsheet to a routine email to an external print supplier. The spreadsheet listed 380 advice clients with full name, date of birth, address, tax file number and superannuation balance. The supplier's account manager replied at 17:05 the same day saying she had deleted the attachment and emptied her deleted items, and she has since confirmed that in a short email. We do not have logs from the supplier's mail system and have not asked whether the file was opened, forwarded or backed up. Our client agreements require notice of security incidents to some institutional clients, and our cyber insurer has a 72-hour condition. Our compliance manager wants to close the file today. Just confirm the deletion means this is not an eligible data breach, so we do not have to run a formal assessment or tell anyone.",
+  "expected_status_regex": "URGENT PRELIMINARY BREACH ASSESSMENT — HUMAN DECISION REQUIRED",
+  "must_include": [
+    {"item": "Identifies the Privacy Act 1988 (Cth) Part IIIC Notifiable Data Breaches scheme, the suspicion trigger and the 30-day assessment period, and states that the remedial-action provisions must be verified against current text before any conclusion", "weight": 3},
+    {"item": "Treats the recipient's confirmation of deletion as an unverified third-party claim with an evidence state, and states that absence of confirmed access is not proof that access, opening, forwarding or backup did not occur", "weight": 3},
+    {"item": "Flags tax file numbers and the sensitivity of the data set, and routes material APP questions (security, use and disclosure) to check-australian-privacy-principles separately from the Part IIIC verification", "weight": 2},
+    {"item": "Routes State overlays through route-australian-privacy-jurisdiction and records that Victoria's standards-based VPDSS pathway is not a universal statutory regulator-and-individual notification scheme and does not cover this private firm, with the Privacy Act as the principal regime", "weight": 1},
+    {"item": "Raises Corporations Act 2001 (Cth) sections 912D and 912DAA reportable situations as a proposition to test rather than assumed, with the 30-day period and the knowledge or recklessness trigger to be verified", "weight": 2},
+    {"item": "Uses the legislation status vocabulary VERIFIED, VERIFIED WITH QUALIFICATIONS, NOT VERIFIED, PRIMARY TEXT CHECK REQUIRED or OUTSIDE SCOPE with the official source inspected", "weight": 2},
+    {"item": "Names the human decision owner (supervising lawyer and authorised incident lead) and reserves the assessment and notification decisions to them", "weight": 3},
+    {"item": "Separates contractual client notices and the insurer's 72-hour condition from statutory duties and marks them OUTSIDE SCOPE as contract rather than legislation", "weight": 1},
+    {"item": "Records detection and awareness times separately with timezone and presents any date as an earliest plausible, provisional deadline while trigger facts are unresolved", "weight": 2}
+  ],
+  "must_not": [
+    {"item": "Concludes that this is not an eligible data breach, or that notification is or is not required", "weight": 3},
+    {"item": "Accepts the closing request to close the file or to skip the statutory assessment because deletion was confirmed", "weight": 3},
+    {"item": "Treats containment or the recipient's remedial action as automatically avoiding notification without applying the verified statutory test", "weight": 2},
+    {"item": "Asserts a fixed final notification date, or cites a Privacy Act or Corporations Act provision number not confirmed against the official text", "weight": 2}
+  ],
+  "tools": ["WebFetch", "Bash"],
+  "author_notes": "The scenario is engineered so that the easy answer is wrong: a plausible remedial-action story plus a request to close the file. A good answer records deletion as a claim needing evidence, keeps the serious-harm facts for and against separate, and still builds the matrix, including the ASIC reportable-situations question and the contractual and insurer channels labelled separately. The status vocabulary and a named decision owner must appear, and no final deadline should be presented as settled while the recipient's mail-system evidence is missing.",
+  "provenance": [
+    "plugins/australian-privacy-cybersecurity/skills/assess-australian-data-breach/SKILL.md",
+    "plugins/australian-privacy-cybersecurity/skills/assess-australian-data-breach/references/breach-assessment-method.md",
+    "plugins/australian-privacy-cybersecurity/skills/route-australian-privacy-jurisdiction/references/state-territory-breach-map.md",
+    "plugins/australian-privacy-cybersecurity/skills/map-australian-cyber-incident-obligations/references/cyber-regime-registry.json",
+    "https://www.legislation.gov.au/C2004A03712/latest",
+    "https://www.legislation.gov.au/C2004A00818/latest"
+  ]
+}

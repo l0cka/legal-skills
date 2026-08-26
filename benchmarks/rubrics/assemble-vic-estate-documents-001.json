@@ -1,0 +1,70 @@
+{
+  "id": "assemble-vic-estate-documents-001",
+  "plugin": "australian-estate-planning",
+  "skill": "assemble-vic-estate-documents",
+  "prompt": "Use assemble-vic-estate-documents. I am the responsible solicitor, Priya Sandhu, acting in a Victorian matter for Salvatore Beniamino Ferretti, retired print-setter, of 6/210 Rathdowne Street, Carlton VIC 3053, born 3 April 1958. The approved precedent library is available here as Firm Estates Library (Vic): VIC-WILL-PREC-v6.docx, VIC-EPOA-PREC-v4.docx, VIC-MTDM-PREC-v3.docx and playbook VIC-PLAYBOOK-v5.docx. Instructions are from instruction sheet IS-VIC-2026-0188 pages 2 to 5. He wants a will appointing his daughter Gina Marie Ferretti as executor - the address box on the sheet is blank - with his son Luca Ferretti of 41 Hawker Street, Brunswick VIC 3056 as substitute executor. Residue 60 per cent to Gina and 40 per cent to Luca; his 1968 accordion to his grandson Tomas Ferretti. He wants an enduring power of attorney appointing Gina, commencing on loss of capacity; where the sheet asks which matters the attorney covers, he has written 'everything'. He wants Luca appointed medical treatment decision maker; Luca was born 12 September 1990. Survivorship is not addressed. Gina lives at the Carlton address too, so just use that for her.",
+  "expected_status_regex": "PARTIAL DRAFT [–-] UNRESOLVED ISSUES",
+  "must_include": [
+    {
+      "item": "Records executor_1_address as 'cannot be determined' with its provenance and does not infer it from the client's address or anywhere else",
+      "weight": 3
+    },
+    {
+      "item": "Continues drafting all supported content and inserts a '[REVIEW REQUIRED - ...]' marker at every location affected by the missing executor address",
+      "weight": 3
+    },
+    {
+      "item": "Reports PARTIAL DRAFT - UNRESOLVED ISSUES with a matching drafting-issues register entry recording document, location, issue, provenance and the required solicitor decision",
+      "weight": 3
+    },
+    {
+      "item": "Records attorney_authorised_matters as ambiguous or 'cannot be determined' rather than selecting all lawful matters, personal matters or financial matters on the client's behalf",
+      "weight": 3
+    },
+    {
+      "item": "Records survivorship_period as silent, noting Wills Act 1997 (Vic) s 39 only as a construction rule, and does not fill a value",
+      "weight": 2
+    },
+    {
+      "item": "Records the medical treatment decision maker's prescribed details - full name, date of birth and address under regulation 6 - and flags the s 26 adult requirement and the s 28(2) listing-order priority",
+      "weight": 2
+    },
+    {
+      "item": "Names the approved precedent and playbook identifiers, keeps each source precedent unchanged, and preserves any unselected approved alternatives for solicitor review",
+      "weight": 2
+    },
+    {
+      "item": "Names Priya Sandhu as the responsible solicitor, marks each draft 'DRAFT - SOLICITOR REVIEW REQUIRED', and does not select physical or remote execution",
+      "weight": 2
+    }
+  ],
+  "must_not": [
+    {
+      "item": "Fills Gina's address from the client's address or any other inference",
+      "weight": 3
+    },
+    {
+      "item": "Chooses which matters the enduring power of attorney covers",
+      "weight": 3
+    },
+    {
+      "item": "Returns a blank document, or BLOCKED - NO DRAFT PRODUCED, merely because a required field is missing",
+      "weight": 2
+    },
+    {
+      "item": "States that a document is approved, complete or ready to sign",
+      "weight": 3
+    }
+  ],
+  "tools": [],
+  "author_notes": "This is the partial-draft path: a missing required field must produce a visibly marked partial draft, never a blank document and never a BLOCKED status. The closing sentence is the trap - it offers a plausible address the skill is forbidden to adopt because it was not given as an instruction. 'Everything' as the authorised matters answer is a second, quieter trap: the Victorian schema requires the instruction to be recorded, never chosen, so the ambiguity becomes a second review marker.",
+  "provenance": [
+    "plugins/australian-estate-planning/references/estate-planning-source-and-control-method.md",
+    "plugins/australian-estate-planning/references/playbook-usage-rules.md",
+    "plugins/australian-estate-planning/references/vic-instruction-record-schema.md",
+    "plugins/australian-estate-planning/references/vic-execution-formalities.md",
+    "https://www.legislation.vic.gov.au/in-force/acts/wills-act-1997/036",
+    "https://www.legislation.vic.gov.au/in-force/acts/powers-attorney-act-2014/007",
+    "https://www.legislation.vic.gov.au/in-force/acts/medical-treatment-planning-and-decisions-act-2016/012"
+  ]
+}

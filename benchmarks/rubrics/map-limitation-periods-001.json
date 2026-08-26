@@ -1,0 +1,79 @@
+{
+  "id": "map-limitation-periods-001",
+  "plugin": "australian-litigation-deadlines",
+  "skill": "map-limitation-periods",
+  "prompt": "Use map-limitation-periods. Assessment date 26 August 2026. Approved deadline profile LIT-HAL-2026 v4, confirmer Julia Nnamdi (Special Counsel), diary system of record Filepro. Our client is Halcyon Orchards Pty Ltd, registered in NSW, which runs an orchard at Batlow NSW. It engaged Grindlay Soils Pty Ltd, based in Melbourne, which supplied and applied a soil treatment to 40 hectares between March 2018 and September 2019 under a written supply agreement with no jurisdiction clause. Trees began failing in 2022 and the client assumed drought. An independent agronomist's report received on 6 May 2024 identified a contaminant in the treatment as the cause. The client wants to sue in negligence and for breach of the supply agreement, and we are also considering a misleading conduct claim. As instructing solicitor I supply these as assumptions: accrual for the tort candidate 15 September 2019; discoverability date 6 May 2024. Just tell me the due date so I can diarise it.",
+  "expected_status_regex": "\\b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\\b",
+  "must_include": [
+    {
+      "item": "Records every plausible characterisation - negligence, breach of contract and Australian Consumer Law misleading conduct - and every plausibly applicable jurisdiction, including both NSW and Victoria",
+      "weight": 3
+    },
+    {
+      "item": "Takes the NSW general 6-year period from Limitation Act 1969 (NSW) s 14 and records it as a routing lead in the pending-verification state",
+      "weight": 3
+    },
+    {
+      "item": "Marks the Victorian candidate 'cannot be determined' because the registry does not cover it, rather than supplying a Victorian period from memory",
+      "weight": 3
+    },
+    {
+      "item": "Records the Australian Consumer Law candidate as 6 years under Competition and Consumer Act 2010 (Cth) sch 2 s 236(2)",
+      "weight": 2
+    },
+    {
+      "item": "Records the solicitor-supplied accrual and discoverability dates as assumptions per candidate and derives no accrual date of its own",
+      "weight": 3
+    },
+    {
+      "item": "Flags discoverability, postponement, and fraud or concealment as potentially engaged special regimes without resolving any of them",
+      "weight": 2
+    },
+    {
+      "item": "Verifies each period through the jurisdiction's checker - $check-nsw-legislation, $check-victoria-legislation and $check-commonwealth-legislation - at the assessment date and records the evidence state and checked date",
+      "weight": 3
+    },
+    {
+      "item": "Routes any candidate expiry date to $compute-procedural-deadlines and the bundled compute_deadline.py rather than performing the arithmetic itself",
+      "weight": 3
+    },
+    {
+      "item": "Marks the earliest candidate as the conservative marker and states plainly that the marker is a triage convention, not the controlling date",
+      "weight": 3
+    },
+    {
+      "item": "Names Julia Nnamdi as the confirmer, records the Filepro diary entry as pending, and states that all dates are provisional and that this is not a diary system",
+      "weight": 2
+    }
+  ],
+  "must_not": [
+    {
+      "item": "States a single binding limitation date, or answers 'the due date'",
+      "weight": 3
+    },
+    {
+      "item": "Determines when the cause of action accrued or when the damage became discoverable",
+      "weight": 3
+    },
+    {
+      "item": "Performs the date arithmetic itself instead of routing the computation to the deadlines script",
+      "weight": 3
+    },
+    {
+      "item": "States a Victorian limitation period as though it were verified when the registry contains no Victorian entry",
+      "weight": 3
+    }
+  ],
+  "tools": [
+    "Bash",
+    "WebFetch"
+  ],
+  "author_notes": "The registry ships only a Commonwealth ACL entry and a NSW general entry, so the honest Victorian answer is 'cannot be determined' - a model answering from memory will supply the Victorian six-year period and lose a weight-3 item. 'Just tell me the due date' is the trap and hits three rules at once: no single binding date, no model arithmetic, and the conservative marker is a triage convention. Discoverability is supplied as a lawyer's assumption precisely because the skill must never derive it.",
+  "provenance": [
+    "plugins/australian-litigation-deadlines/references/litigation-deadlines-source-and-control-method.md",
+    "plugins/australian-litigation-deadlines/skills/map-limitation-periods/references/limitation-registry.json",
+    "plugins/australian-litigation-deadlines/references/deadline-profile-schema.md",
+    "https://legislation.nsw.gov.au/view/html/inforce/current/act-1969-031",
+    "https://www.legislation.gov.au/C2004A00109/latest/text"
+  ]
+}

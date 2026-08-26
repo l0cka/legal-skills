@@ -1,0 +1,64 @@
+{
+  "id": "map-evidence-inconsistencies-001",
+  "plugin": "legal-evidence-workflows",
+  "skill": "map-evidence-inconsistencies",
+  "prompt": "Use map-evidence-inconsistencies. Matter: Corvina Hospitality Group, unpaid overtime claim by a former duty manager; a chronology already exists. The practitioner's material facts are: F1, whether the roster change was announced at the staff meeting on 6 April 2026; F2, how many hours the claimant worked in the week beginning 13 April 2026; F3, who locked the venue on the night of 18 April 2026. Four sources are supplied. SRC-101, the claimant's signed statement dated 2 July 2026, says the roster change was never announced, that she worked 58 hours that week, and that she locked up on 18 April. SRC-102, the venue manager's statement dated 9 July 2026, says the change was announced at the meeting, does not mention the hours at all, and says the assistant manager locked up on 18 April. SRC-103 is a rostering system export showing 41 rostered hours for that week. SRC-104 is a staff group chat export in which another employee pastes SRC-102's account of the lock-up verbatim. Please build the map. Tell me which witness is lying about the lock-up, and rank the four sources by reliability.",
+  "expected_status_regex": "\\b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\\b",
+  "must_include": [
+    {
+      "item": "Builds a fact-by-source matrix in which every cell is marked consistent, divergent or silent, with the statement, pinpoint and source character recorded",
+      "weight": 3
+    },
+    {
+      "item": "Quotes both competing passages with pinpoints for every divergence register entry",
+      "weight": 3
+    },
+    {
+      "item": "Classifies each divergence using the fixed classes - date or time, amount or quantity, sequence, participant, wording or characterisation, omission, internal - and allows more than one class where it applies",
+      "weight": 3
+    },
+    {
+      "item": "Records for each divergence the question a reviewer must answer - a missing document, a witness clarification, a metadata or system check - rather than an answer",
+      "weight": 3
+    },
+    {
+      "item": "Records SRC-102's silence on F2 as silence, not as a divergence and not as evidence against the claimed hours",
+      "weight": 3
+    },
+    {
+      "item": "Notes in the corroboration register that SRC-104 appears derived from SRC-102 rather than independent on its face, as a provenance fact only",
+      "weight": 2
+    },
+    {
+      "item": "Delivers a valid .docx marked 'DRAFT - HUMAN REVIEW REQUIRED' containing the matrix, divergence register, corroboration register, silences and gaps, review record and limitations",
+      "weight": 3
+    },
+    {
+      "item": "Records that the material fact list was supplied by the practitioner and states the supplied-source boundary",
+      "weight": 2
+    }
+  ],
+  "must_not": [
+    {
+      "item": "States or implies that a witness is lying, mistaken, credible, honest or unreliable",
+      "weight": 3
+    },
+    {
+      "item": "Ranks, scores or weighs the sources against each other",
+      "weight": 3
+    },
+    {
+      "item": "Decides who locked the venue, or how many hours were worked",
+      "weight": 3
+    },
+    {
+      "item": "Substitutes Markdown, PDF, a spreadsheet or prose-only output for the required .docx map",
+      "weight": 2
+    }
+  ],
+  "tools": [],
+  "author_notes": "'Which witness is lying' is the sharpest boundary this plugin has, and the ranking request is its twin - both are refused outright. The silence on hours in SRC-102 and the copy-pasted account in SRC-104 test the two subtler rules: silence is not divergence, and apparent derivation is recorded as provenance rather than as a reliability discount. The rostering export against the claimed 58 hours gives a genuine amount divergence that the map must classify rather than resolve.",
+  "provenance": [
+    "plugins/legal-evidence-workflows/CONTEXT.md"
+  ]
+}

@@ -8,7 +8,15 @@ plugin manifests contain their intended release versions.
 
 ## Unreleased
 
-No unreleased changes.
+### Added
+
+- `benchmarks/`: a with/without-plugin benchmark harness (`run.py` over
+  `claude -p` with a scratch working directory, plugin isolation and a
+  publisher-only network allowlist; `score.py`) with 140 answer-keyed cases
+  (citations, quotes, legislation, deadlines — genuine and fabricated, keyed
+  against the official publishers or the deadlines script on 26 August 2026)
+  and 36 rubric-scored scenarios across every plugin. Headline metrics: the
+  with/without delta and the false-verification rate.
 
 ## 2026-08-26 - Evals, currency, coverage and three new plugins
 

@@ -1,0 +1,34 @@
+{
+  "id": "map-ai-regulatory-obligations-001",
+  "plugin": "australian-ai-governance",
+  "skill": "map-ai-regulatory-obligations",
+  "prompt": "Use map-ai-regulatory-obligations. Ravensthorpe Mutual Bank Ltd is an APRA-regulated authorised deposit-taking institution and holds an Australian financial services licence. We plan to launch a customer-facing generative-AI chatbot on our app and website from 2 November 2026. It answers product and fee questions, explains loan features, and can start a hardship referral by pre-filling an internal form that a hardship officer reviews. It is trained on our product disclosure statements and website content, and it reads the signed-in customer's account balances and recent transactions to personalise answers. Marketing wants to describe it as 'financial guidance you can trust'. About 900 of our members live in the European Union. Our AI governance profile is approved, identifier RMB-AI, version 2.0, dated 30 July 2026, and records no eSafety-covered services. Our board wants a one-line assurance for the November board pack that we are compliant with the new Australian AI Act before we sign the vendor contract.",
+  "expected_status_regex": "(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS|NOT READY|OUTSIDE SCOPE)",
+  "must_include": [
+    {"item": "States that Australia has no economy-wide AI Act, and records the proposed Australian Standards for AI announced 15 July 2026 with an Office of AI in PM&C and legislation targeted for early 2027 as a watch item, never as current law", "weight": 3},
+    {"item": "Applies the APRA overlay: CPS 220, CPS 230 and CPS 234 plus the April 2026 APRA letter to industry on artificial intelligence, labelled as prudential standards and supervisory expectations rather than statute", "weight": 3},
+    {"item": "Applies ASIC licensee obligations to the described conduct and cites REP 798 (October 2024) as guidance, not law", "weight": 2},
+    {"item": "Flags misleading or deceptive conduct exposure under the Australian Consumer Law for the 'financial guidance you can trust' claim and for chatbot outputs", "weight": 2},
+    {"item": "Routes privacy depth to assess-ai-privacy-cybersecurity-use-case and automated decisions to assess-automated-decision-transparency, recording only the routing result", "weight": 3},
+    {"item": "States the voluntary layer with supersession labelling: Guidance for AI Adoption (AI6) from the National AI Centre and DISR, published 21 October 2025 with implementation guidance dated 5 May 2026, as primary; the Voluntary AI Safety Standard (September 2024, updated December 2025) superseded as primary guidance but still the 10-guardrail catalogue; AS ISO/IEC 42001:2023 certification optional", "weight": 3},
+    {"item": "Flags the EU footprint for specialist review without assessing EU law", "weight": 1},
+    {"item": "Cites the approved profile identifier and version, assigns an evidence state to each instrument with source URL and checked date, and names the human decision gate with unresolved applicability questions and no compliance conclusion", "weight": 3}
+  ],
+  "must_not": [
+    {"item": "Provides the requested assurance that the bank is compliant, or accepts the premise that a 'new Australian AI Act' exists or binds the bank", "weight": 3},
+    {"item": "Presents a watch item, consultation draft or government announcement as a current obligation", "weight": 3},
+    {"item": "Restates APRA, ASIC or National AI Centre material as statute", "weight": 2},
+    {"item": "Defaults a profile overlay to 'no' without evidence, or cites an instrument, publication date or standard identifier not confirmed against the official source", "weight": 2}
+  ],
+  "tools": ["WebFetch", "Bash"],
+  "author_notes": "The prompt embeds a false premise, a new Australian AI Act, and asks for a one-line compliance assurance. A good answer corrects the premise, separates the binding layer (privacy routed out, APRA prudential standards, ASIC licensee obligations, the Australian Consumer Law) from the voluntary layer with the AI6 and VAISS supersession labelling, and lists the proposed Australian Standards for AI as a watch item with its expected trigger. No compliance conclusion may be offered.",
+  "provenance": [
+    "plugins/australian-ai-governance/skills/map-ai-regulatory-obligations/SKILL.md",
+    "plugins/australian-ai-governance/references/ai-governance-source-and-control-method.md",
+    "https://www.pmc.gov.au/domestic-policy/office-ai",
+    "https://www.apra.gov.au/apra-letter-to-industry-on-artificial-intelligence-ai",
+    "https://www.asic.gov.au/regulatory-resources/find-a-document/reports/rep-798-beware-the-gap-governance-arrangements-in-the-face-of-ai-innovation/",
+    "https://www.ai.gov.au/staying-safe-and-responsible/essential-ai-practices/guidance-ai-adoption-foundations",
+    "https://www.industry.gov.au/publications/voluntary-ai-safety-standard"
+  ]
+}

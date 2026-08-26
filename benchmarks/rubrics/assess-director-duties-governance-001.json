@@ -1,0 +1,33 @@
+{
+  "id": "assess-director-duties-governance-001",
+  "plugin": "australian-corporations-governance",
+  "skill": "assess-director-duties-governance",
+  "prompt": "Use assess-director-duties-governance. Coolabah Freight Ltd is an unlisted public company with about $140 million revenue and six directors. At the board meeting on 3 September 2026 the board will be asked to approve a three-year capital plan committing $22 million to new depots. The supporting three-year financial forecast was produced by an in-house large language model tool that ingested the CFO's spreadsheets and last year's management accounts; the tool's assumptions, prompts and validation are not documented and no one has reproduced its numbers by hand. Two directors have told the chair they will not read the 180-page pack before the meeting and will rely on the CFO's summary. Our banker flagged in July that we are close to a covenant threshold. Our governance profile is approved, identifier CFL-GOV, version 3.0, dated 1 August 2026, and our constitution is the 2021 version. Our CFO says the model is more accurate than any human analyst, so please confirm the directors are protected by the business judgment rule if they rely on it.",
+  "expected_status_regex": "(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS|NOT READY|OUTSIDE SCOPE)",
+  "must_include": [
+    {"item": "Requires the approved governance profile and version-controlled constitution and delegations, cites the identifiers supplied and records any document or version uncertainty", "weight": 2},
+    {"item": "Treats Corporations Act 2001 (Cth) sections 180-190 as routing leads verified at the relevant date through check-commonwealth-legislation, including that section 189 reliance is available for information or advice from persons rather than from an AI system", "weight": 3},
+    {"item": "Raises solvency and insolvent-trading indicators under section 588G as an issue given the covenant position, without concluding solvency", "weight": 2},
+    {"item": "Raises the record and process provisions as routing leads to verify, including minutes under section 251A and financial records under section 286, and identifies process safeguards available before the 3 September 2026 meeting", "weight": 1},
+    {"item": "Builds an issue matrix that distinguishes fact, internal control, verified law, guidance, inference and unresolved question for each issue, with the exact evidence linked and the missing facts named", "weight": 3},
+    {"item": "Assigns an evidence state (VERIFIED, VERIFIED WITH QUALIFICATIONS, NOT VERIFIED or OUTSIDE SCOPE) with the official source URL, provision, compilation or version and checked date, rechecking the current Corporations Act compilation rather than relying on a cached one", "weight": 2},
+    {"item": "Routes AI-specific board oversight depth to assess-board-ai-oversight and keeps the undocumented model assumptions as an information and challenge issue for the board", "weight": 1},
+    {"item": "Names the human decision gate: the responsible lawyer, company secretary, board or specialist reviewer who must resolve the unresolved items, without recommending approval as a legal conclusion", "weight": 3}
+  ],
+  "must_not": [
+    {"item": "States that the directors have complied with, or breached, a duty", "weight": 3},
+    {"item": "Confirms that the business judgment rule protects the directors, or infers that protection from process labels or the CFO's accuracy claim", "weight": 3},
+    {"item": "Concludes solvency, legal validity or privilege", "weight": 3},
+    {"item": "Infers assent from a director's silence, or independence or diligence from a title or role description", "weight": 2},
+    {"item": "Cites a Corporations Act section or compilation as current without verification against the Federal Register text", "weight": 2}
+  ],
+  "tools": ["WebFetch", "Bash"],
+  "author_notes": "The interesting issues are information and challenge (an undocumented model output driving a $22 million commitment), reliance and delegation limits, and the covenant position feeding solvency indicators. A good answer verifies the duty provisions at the relevant date rather than reciting them, notes that section 189 reliance runs to persons rather than to an AI tool, produces an issue matrix with missing facts, and refuses the business-judgment assurance the CFO is asking for.",
+  "provenance": [
+    "plugins/australian-corporations-governance/skills/assess-director-duties-governance/SKILL.md",
+    "plugins/australian-corporations-governance/references/governance-source-and-control-method.md",
+    "plugins/australian-ai-governance/references/ai-governance-source-and-control-method.md",
+    "https://www.legislation.gov.au/C2004A00818/latest/text",
+    "https://www.asic.gov.au/for-business/running-a-company/company-officeholder-duties/"
+  ]
+}

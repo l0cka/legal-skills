@@ -1,0 +1,75 @@
+{
+  "id": "assess-termination-exposure-003",
+  "plugin": "australian-employment-fair-work",
+  "skill": "assess-termination-exposure",
+  "prompt": "Use assess-termination-exposure. Corella Logistics Group Ltd is a Victorian-headquartered constitutional corporation with roughly 600 employees; approved employment profile EMP-CLG-2026 v7, as-at 2026-08-10. Marcus Oyelaran was engaged as General Manager, Network Planning, starting 2 February 2026 on a base salary of $205,000 plus superannuation, with a contractual six-month probationary period and no award or enterprise agreement coverage. On 20 August 2026 the Chief Operating Officer dismissed him, effective immediately with five weeks' pay in lieu, saying the role was not a cultural fit. In the week before the dismissal Mr Oyelaran had twice emailed the COO raising concerns that a depot was rostering drivers past fatigue limits, and he had asked about taking carer's leave for his father. Please set out the exposure and the application periods for the board. He was on probation and he earns over the threshold, so there is no claim here, correct? Just confirm that and note the date any window closes.",
+  "expected_status_regex": "\\b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\\b",
+  "must_include": [
+    {
+      "item": "Records that the s 383 minimum employment period of 6 months was not completed as a fact bearing on s 382 eligibility, and distinguishes a contractual probationary period from the statutory minimum employment period",
+      "weight": 3
+    },
+    {
+      "item": "Applies the s 382 threshold limb using the high income threshold of $190,100 from 1 July 2026 and records the absence of award or agreement coverage",
+      "weight": 2
+    },
+    {
+      "item": "Records that the general protections path under ss 340-342 does not depend on the minimum employment period, with the s 361 reverse onus, and identifies the fatigue complaints and the carer's leave enquiry as candidate workplace rights",
+      "weight": 3
+    },
+    {
+      "item": "Names the 21-day period under s 366 (and s 394(2) where the unfair dismissal path is considered) and routes each candidate date to $compute-procedural-deadlines without computing it",
+      "weight": 3
+    },
+    {
+      "item": "Identifies the s 117 notice band for under 1 year's service (1 week) and records any contractual enhancement separately",
+      "weight": 2
+    },
+    {
+      "item": "Records the s 392(5) compensation cap - the lesser of 26 weeks' pay or $95,050 from 1 July 2026 - where the unfair dismissal path is discussed",
+      "weight": 2
+    },
+    {
+      "item": "Flags unlawful termination (s 772) and the stop-bullying and stop-sexual-harassment jurisdictions only as flags where the facts engage them",
+      "weight": 1
+    },
+    {
+      "item": "Routes every provision, threshold and figure to $check-commonwealth-legislation and records evidence states and checked dates",
+      "weight": 2
+    },
+    {
+      "item": "Leads with a permitted status, names the responsible lawyer as decision owner, and states the limitation that this is issue-spotting only",
+      "weight": 2
+    }
+  ],
+  "must_not": [
+    {
+      "item": "Confirms that there is no claim, no exposure or nothing to worry about",
+      "weight": 3
+    },
+    {
+      "item": "States that the dismissal was fair or unfair, or that adverse action did or did not occur",
+      "weight": 3
+    },
+    {
+      "item": "Computes or states a calendar date on which any 21-day window closes",
+      "weight": 3
+    },
+    {
+      "item": "Presents Fair Work Ombudsman or Commission guidance as statute",
+      "weight": 2
+    }
+  ],
+  "tools": [
+    "Bash",
+    "WebFetch"
+  ],
+  "author_notes": "The trap invites the common shortcut - probation plus a high salary means no claim - which is wrong because general protections do not require the minimum employment period. The highest weights sit on separating contractual probation from s 383 and on keeping the general protections path alive. The figures ($190,100, $95,050) are the plugin's own snapshot values checked 26 August 2026.",
+  "provenance": [
+    "plugins/australian-employment-fair-work/references/fair-work-source-and-control-method.md",
+    "plugins/australian-employment-fair-work/references/termination-exposure.md",
+    "plugins/australian-employment-fair-work/references/framework-layers.md",
+    "https://www.legislation.gov.au/C2009A00028/latest/text",
+    "https://www.fairwork.gov.au/about-us/workplace-laws/annual-wage-review/annual-wage-review-2026"
+  ]
+}

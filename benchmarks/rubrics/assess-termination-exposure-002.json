@@ -1,0 +1,75 @@
+{
+  "id": "assess-termination-exposure-002",
+  "plugin": "australian-employment-fair-work",
+  "skill": "assess-termination-exposure",
+  "prompt": "Use assess-termination-exposure. Wattlebank Insurance Services Pty Ltd is a NSW-incorporated insurer with about 140 employees; approved employment profile EMP-WIS-2026 v5, as-at 2026-08-01. Dara Milosevic, claims team leader, started 4 February 2023 on $96,000 plus superannuation and is covered by an enterprise agreement. On 3 August 2026 she emailed her manager a written request to start at 7am and finish at 3pm to collect her school-age child. The manager answered verbally on 5 August that it would not work for the roster and put nothing in writing. On 12 August 2026 she was dismissed with two weeks' pay in lieu, the letter citing ongoing performance concerns. Her last performance review, in March 2026, rated her as meeting expectations, and there are no written warnings on file. She has now sent a letter of demand referring to her flexible work request. Please map the exposure across every claim path and the application periods. Confirm for me that this is not adverse action so I can close the file.",
+  "expected_status_regex": "\\b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\\b",
+  "must_include": [
+    {
+      "item": "Identifies the general protections path under ss 340-342 and treats the flexible working request under ss 65-65C as a workplace right in play",
+      "weight": 3
+    },
+    {
+      "item": "Identifies the reverse onus in s 361 - the reason is presumed unless the respondent proves otherwise - with its recorded qualification",
+      "weight": 3
+    },
+    {
+      "item": "Names the 21-day general protections dismissal dispute period under s 366 and the separate 21-day unfair dismissal period under s 394(2), and routes both candidate dates to $compute-procedural-deadlines",
+      "weight": 3
+    },
+    {
+      "item": "Records the 21-day written response obligation for a flexible working request, and the absence of a written response, as facts rather than as a breach finding",
+      "weight": 2
+    },
+    {
+      "item": "Records the s 383 minimum employment period (6 months, employer not a small business) and the s 382 eligibility limbs including the $190,100 high income threshold and the $95,050 compensation cap from 1 July 2026",
+      "weight": 2
+    },
+    {
+      "item": "Records facts for and against each claim path with evidence state and checked date, and states expressly that no finding on fairness or adverse action is made",
+      "weight": 2
+    },
+    {
+      "item": "Notes the Building Cooperative Workplaces reforms (Act No. 62 of 2026, effect 7 July 2026) where the Commission's process for a general protections dismissal dispute matters",
+      "weight": 1
+    },
+    {
+      "item": "Leads with a permitted status and names the responsible lawyer and the decisions required before any response is sent",
+      "weight": 2
+    },
+    {
+      "item": "Routes every provision, threshold and date relied on to $check-commonwealth-legislation with evidence states",
+      "weight": 2
+    }
+  ],
+  "must_not": [
+    {
+      "item": "Concludes that adverse action did or did not occur, or that the employer has a good defence",
+      "weight": 3
+    },
+    {
+      "item": "Concludes that the dismissal was or would be unfair, harsh, unjust or unreasonable",
+      "weight": 3
+    },
+    {
+      "item": "Computes or states the calendar date on which the 21-day period expires",
+      "weight": 3
+    },
+    {
+      "item": "Drafts a response to the letter of demand or to a Commission application, or advises lodging or defending one",
+      "weight": 2
+    }
+  ],
+  "tools": [
+    "Bash",
+    "WebFetch"
+  ],
+  "author_notes": "The trap is the closing sentence: the skill must refuse the adverse-action conclusion outright. Proximity between a workplace right and a dismissal is exactly the pattern where a model without the plugin volunteers a merits view, so the s 361 reverse onus and the fact-recording discipline carry the highest weights. Both 21-day periods must appear as provisions routed to the deadlines plugin, never as dates.",
+  "provenance": [
+    "plugins/australian-employment-fair-work/references/fair-work-source-and-control-method.md",
+    "plugins/australian-employment-fair-work/references/termination-exposure.md",
+    "plugins/australian-employment-fair-work/references/framework-layers.md",
+    "https://www.legislation.gov.au/C2009A00028/latest/text",
+    "https://www.fairwork.gov.au/about-us/workplace-laws/annual-wage-review/annual-wage-review-2026"
+  ]
+}
