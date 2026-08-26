@@ -1,0 +1,21 @@
+{
+  "name": "legal-workflow-router",
+  "version": "0.1.0",
+  "description": "Route an Australian legal fact pattern to the Legal Skills plugins and skills it engages, in a defensible order, with the human decision points named. Never answers the legal question itself.",
+  "author": {
+    "name": "l0cka",
+    "url": "https://github.com/l0cka"
+  },
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/legal-workflow-router",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": [
+    "legal-workflows",
+    "routing",
+    "triage",
+    "orchestration",
+    "australia",
+    "responsible-ai"
+  ],
+  "skills": "./skills/"
+}

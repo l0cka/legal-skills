@@ -200,6 +200,28 @@
         "access-to-justice",
         "responsible-ai"
       ]
+    },
+    {
+      "name": "legal-workflow-router",
+      "source": {
+        "source": "local",
+        "path": "./plugins/legal-workflow-router"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity",
+      "description": "Route an Australian legal fact pattern to the Legal Skills plugins and skills it engages, in a defensible order, with the human decision points named. Never answers the legal question itself.",
+      "version": "0.1.0",
+      "keywords": [
+        "legal-workflows",
+        "routing",
+        "triage",
+        "orchestration",
+        "australia",
+        "responsible-ai"
+      ]
     }
   ]
 }

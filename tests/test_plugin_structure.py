@@ -92,6 +92,11 @@ PLUGINS = {
             "provisional",
         ),
     },
+    "legal-workflow-router": {
+        "skills": {"route-legal-fact-pattern"},
+        "reference_files": (),
+        "every_skill_mentions": (),
+    },
     "legal-evidence-workflows": {
         "skills": {
             "build-document-index",

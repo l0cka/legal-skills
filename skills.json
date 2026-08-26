@@ -605,6 +605,17 @@
         "chatgpt-work"
       ],
       "source": "Original staff-facing community legal centre triage workflow informed by public Australian guidance."
+    },
+    {
+      "name": "route-legal-fact-pattern",
+      "path": "plugins/legal-workflow-router/skills/route-legal-fact-pattern",
+      "plugin": "plugins/legal-workflow-router",
+      "plugin_version": "0.1.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original cross-plugin routing workflow; its skill map is generated from every shipped SKILL.md description by scripts/generate_registry.py."
     }
   ]
 }
