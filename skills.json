@@ -5,7 +5,7 @@
       "name": "assess-board-ai-oversight",
       "path": "plugins/australian-ai-governance/skills/assess-board-ai-oversight",
       "plugin": "plugins/australian-ai-governance",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -16,7 +16,7 @@
       "name": "check-ai-guidance-alignment",
       "path": "plugins/australian-ai-governance/skills/check-ai-guidance-alignment",
       "plugin": "plugins/australian-ai-governance",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -27,7 +27,7 @@
       "name": "configure-ai-governance-profile",
       "path": "plugins/australian-ai-governance/skills/configure-ai-governance-profile",
       "plugin": "plugins/australian-ai-governance",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -38,7 +38,7 @@
       "name": "map-ai-regulatory-obligations",
       "path": "plugins/australian-ai-governance/skills/map-ai-regulatory-obligations",
       "plugin": "plugins/australian-ai-governance",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -49,7 +49,7 @@
       "name": "track-ai-regulatory-developments",
       "path": "plugins/australian-ai-governance/skills/track-ai-regulatory-developments",
       "plugin": "plugins/australian-ai-governance",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -60,7 +60,7 @@
       "name": "triage-government-ai-use-case",
       "path": "plugins/australian-ai-governance/skills/triage-government-ai-use-case",
       "plugin": "plugins/australian-ai-governance",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -71,7 +71,7 @@
       "name": "configure-aml-ctf-practice-profile",
       "path": "plugins/australian-aml-ctf/skills/configure-aml-ctf-practice-profile",
       "plugin": "plugins/australian-aml-ctf",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -82,7 +82,7 @@
       "name": "map-designated-services",
       "path": "plugins/australian-aml-ctf/skills/map-designated-services",
       "plugin": "plugins/australian-aml-ctf",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -93,7 +93,7 @@
       "name": "map-reporting-obligations",
       "path": "plugins/australian-aml-ctf/skills/map-reporting-obligations",
       "plugin": "plugins/australian-aml-ctf",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -104,7 +104,7 @@
       "name": "review-aml-ctf-program",
       "path": "plugins/australian-aml-ctf/skills/review-aml-ctf-program",
       "plugin": "plugins/australian-aml-ctf",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -115,7 +115,7 @@
       "name": "track-aml-ctf-developments",
       "path": "plugins/australian-aml-ctf/skills/track-aml-ctf-developments",
       "plugin": "plugins/australian-aml-ctf",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -126,7 +126,7 @@
       "name": "assess-director-duties-governance",
       "path": "plugins/australian-corporations-governance/skills/assess-director-duties-governance",
       "plugin": "plugins/australian-corporations-governance",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -137,7 +137,7 @@
       "name": "configure-corporations-governance",
       "path": "plugins/australian-corporations-governance/skills/configure-corporations-governance",
       "plugin": "plugins/australian-corporations-governance",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -148,7 +148,7 @@
       "name": "maintain-corporations-governance-calendar",
       "path": "plugins/australian-corporations-governance/skills/maintain-corporations-governance-calendar",
       "plugin": "plugins/australian-corporations-governance",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -159,7 +159,7 @@
       "name": "prepare-board-decision-record",
       "path": "plugins/australian-corporations-governance/skills/prepare-board-decision-record",
       "plugin": "plugins/australian-corporations-governance",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -170,7 +170,7 @@
       "name": "review-corporations-governance-framework",
       "path": "plugins/australian-corporations-governance/skills/review-corporations-governance-framework",
       "plugin": "plugins/australian-corporations-governance",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -269,7 +269,7 @@
       "name": "check-act-legislation",
       "path": "plugins/australian-legal-research/skills/check-act-legislation",
       "plugin": "plugins/australian-legal-research",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -280,7 +280,7 @@
       "name": "check-commonwealth-legislation",
       "path": "plugins/australian-legal-research/skills/check-commonwealth-legislation",
       "plugin": "plugins/australian-legal-research",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -291,7 +291,7 @@
       "name": "check-northern-territory-legislation",
       "path": "plugins/australian-legal-research/skills/check-northern-territory-legislation",
       "plugin": "plugins/australian-legal-research",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -302,7 +302,7 @@
       "name": "check-nsw-legislation",
       "path": "plugins/australian-legal-research/skills/check-nsw-legislation",
       "plugin": "plugins/australian-legal-research",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -313,7 +313,7 @@
       "name": "check-queensland-legislation",
       "path": "plugins/australian-legal-research/skills/check-queensland-legislation",
       "plugin": "plugins/australian-legal-research",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -324,7 +324,7 @@
       "name": "check-south-australia-legislation",
       "path": "plugins/australian-legal-research/skills/check-south-australia-legislation",
       "plugin": "plugins/australian-legal-research",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -335,7 +335,7 @@
       "name": "check-tasmania-legislation",
       "path": "plugins/australian-legal-research/skills/check-tasmania-legislation",
       "plugin": "plugins/australian-legal-research",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -346,7 +346,7 @@
       "name": "check-victoria-legislation",
       "path": "plugins/australian-legal-research/skills/check-victoria-legislation",
       "plugin": "plugins/australian-legal-research",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -357,7 +357,7 @@
       "name": "check-western-australia-legislation",
       "path": "plugins/australian-legal-research/skills/check-western-australia-legislation",
       "plugin": "plugins/australian-legal-research",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -368,7 +368,7 @@
       "name": "format-aglc4-citations",
       "path": "plugins/australian-legal-research/skills/format-aglc4-citations",
       "plugin": "plugins/australian-legal-research",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -379,7 +379,7 @@
       "name": "route-case-citation",
       "path": "plugins/australian-legal-research/skills/route-case-citation",
       "plugin": "plugins/australian-legal-research",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -390,7 +390,7 @@
       "name": "trace-commonwealth-legislative-change",
       "path": "plugins/australian-legal-research/skills/trace-commonwealth-legislative-change",
       "plugin": "plugins/australian-legal-research",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -401,7 +401,7 @@
       "name": "verify-case-quote",
       "path": "plugins/australian-legal-research/skills/verify-case-quote",
       "plugin": "plugins/australian-legal-research",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -412,7 +412,7 @@
       "name": "verify-federal-judgment",
       "path": "plugins/australian-legal-research/skills/verify-federal-judgment",
       "plugin": "plugins/australian-legal-research",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -423,7 +423,7 @@
       "name": "verify-hca-judgment",
       "path": "plugins/australian-legal-research/skills/verify-hca-judgment",
       "plugin": "plugins/australian-legal-research",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -434,7 +434,7 @@
       "name": "verify-nsw-judgment",
       "path": "plugins/australian-legal-research/skills/verify-nsw-judgment",
       "plugin": "plugins/australian-legal-research",
-      "plugin_version": "0.1.0",
+      "plugin_version": "0.1.1",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -511,7 +511,7 @@
       "name": "assess-ai-privacy-cybersecurity-use-case",
       "path": "plugins/australian-privacy-cybersecurity/skills/assess-ai-privacy-cybersecurity-use-case",
       "plugin": "plugins/australian-privacy-cybersecurity",
-      "plugin_version": "0.3.1",
+      "plugin_version": "0.3.2",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -522,7 +522,7 @@
       "name": "assess-australian-data-breach",
       "path": "plugins/australian-privacy-cybersecurity/skills/assess-australian-data-breach",
       "plugin": "plugins/australian-privacy-cybersecurity",
-      "plugin_version": "0.3.1",
+      "plugin_version": "0.3.2",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -533,7 +533,7 @@
       "name": "assess-australian-privacy-issues",
       "path": "plugins/australian-privacy-cybersecurity/skills/assess-australian-privacy-issues",
       "plugin": "plugins/australian-privacy-cybersecurity",
-      "plugin_version": "0.3.1",
+      "plugin_version": "0.3.2",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -544,7 +544,7 @@
       "name": "assess-automated-decision-transparency",
       "path": "plugins/australian-privacy-cybersecurity/skills/assess-automated-decision-transparency",
       "plugin": "plugins/australian-privacy-cybersecurity",
-      "plugin_version": "0.3.1",
+      "plugin_version": "0.3.2",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -555,7 +555,7 @@
       "name": "assess-statutory-privacy-tort",
       "path": "plugins/australian-privacy-cybersecurity/skills/assess-statutory-privacy-tort",
       "plugin": "plugins/australian-privacy-cybersecurity",
-      "plugin_version": "0.3.1",
+      "plugin_version": "0.3.2",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -566,7 +566,7 @@
       "name": "check-australian-privacy-principles",
       "path": "plugins/australian-privacy-cybersecurity/skills/check-australian-privacy-principles",
       "plugin": "plugins/australian-privacy-cybersecurity",
-      "plugin_version": "0.3.1",
+      "plugin_version": "0.3.2",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -577,7 +577,7 @@
       "name": "map-australian-cyber-incident-obligations",
       "path": "plugins/australian-privacy-cybersecurity/skills/map-australian-cyber-incident-obligations",
       "plugin": "plugins/australian-privacy-cybersecurity",
-      "plugin_version": "0.3.1",
+      "plugin_version": "0.3.2",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -588,7 +588,7 @@
       "name": "route-australian-privacy-jurisdiction",
       "path": "plugins/australian-privacy-cybersecurity/skills/route-australian-privacy-jurisdiction",
       "plugin": "plugins/australian-privacy-cybersecurity",
-      "plugin_version": "0.3.1",
+      "plugin_version": "0.3.2",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -643,7 +643,7 @@
       "name": "configure-legal-triage",
       "path": "plugins/legal-triage/skills/configure-legal-triage",
       "plugin": "plugins/legal-triage",
-      "plugin_version": "0.1.1",
+      "plugin_version": "0.1.2",
       "targets": [
         "claude-cowork",
         "chatgpt-work"
@@ -654,7 +654,7 @@
       "name": "triage-legal-enquiry",
       "path": "plugins/legal-triage/skills/triage-legal-enquiry",
       "plugin": "plugins/legal-triage",
-      "plugin_version": "0.1.1",
+      "plugin_version": "0.1.2",
       "targets": [
         "claude-cowork",
         "chatgpt-work"

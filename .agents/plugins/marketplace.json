@@ -17,7 +17,7 @@
       },
       "category": "Productivity",
       "description": "Map, assess and monitor Australian AI governance obligations using verified official sources, current-versus-superseded guidance labelling and human-review gates.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "keywords": [
         "australian-law",
         "ai-governance",
@@ -38,7 +38,7 @@
       },
       "category": "Productivity",
       "description": "Map, review and monitor AML/CTF obligations for Australian legal practices under the tranche 2 reforms using verified official sources, designated-service mapping, legal-professional-privilege handling and human-review gates.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "keywords": [
         "australian-law",
         "aml-ctf",
@@ -59,7 +59,7 @@
       },
       "category": "Productivity",
       "description": "Configure, assess and document Australian company governance using verified Corporations Act sources and approved organisational controls.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "keywords": [
         "australian-law",
         "corporate-governance",
@@ -125,7 +125,7 @@
       },
       "category": "Productivity",
       "description": "Verify Australian legislation, case citations and quoted passages against official publishers, trace Commonwealth legislative change, and draft AGLC4 citations.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "keywords": [
         "australian-law",
         "legislation",
@@ -168,7 +168,7 @@
       },
       "category": "Productivity",
       "description": "Route and verify Australian privacy, cyber incident, statutory tort, automated-decision and AI-use-case issues using current legislation.",
-      "version": "0.3.1",
+      "version": "0.3.2",
       "keywords": [
         "australian-law",
         "privacy",
@@ -215,7 +215,7 @@
       },
       "category": "Productivity",
       "description": "Configure and conduct governed, staff-facing legal enquiry triage for Australian community legal centres.",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "keywords": [
         "australian-law",
         "community-legal-centres",

@@ -8,6 +8,19 @@ plugin manifests contain their intended release versions.
 
 ## Unreleased
 
+No unreleased changes.
+
+## 2026-08-26 - Evals, currency, coverage and three new plugins
+
+### Released versions
+
+- New: `australian-employment-fair-work` 0.1.0, `legal-workflow-router` 0.1.0.
+- Bumped for new skills or coverage: `australian-estate-planning` 0.5.0,
+  `australian-litigation-deadlines` 0.3.0, `legal-evidence-workflows` 0.2.0.
+- Patch bumps for the currency-sweep corrections and trigger tightening:
+  `australian-legal-research` 0.1.0 → 0.1.1, `australian-aml-ctf` 0.1.0 → 0.1.1, `australian-ai-governance` 0.1.0 → 0.1.1, `australian-corporations-governance` 0.1.0 → 0.1.1, `australian-privacy-cybersecurity` 0.3.1 → 0.3.2, `legal-triage` 0.1.1 → 0.1.2.
+- Unchanged: none; every plugin ships a `lawCheckedOn` of 2026-08-26.
+
 ### Removed
 
 - Removed `generate-precedent-profile` and the public sidecar-profile,

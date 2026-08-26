@@ -1,6 +1,6 @@
 {
   "name": "australian-ai-governance",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Map, assess and monitor Australian AI governance obligations using verified official sources, current-versus-superseded guidance labelling and human-review gates.",
   "author": {
     "name": "l0cka",
