@@ -36,5 +36,8 @@ Canonical plugin packages live in this directory.
 - [**Legal Triage**](legal-triage/README.md) — Helps community legal centre
   staff record and triage legal enquiries under an approved profile. (law
   checked 2026-08-26)
+- [**Legal Workflow Router**](legal-workflow-router/README.md) — Maps a fact
+  pattern to the Legal Skills plugins and skills it engages, in order, with
+  the human decision points named. (law checked 2026-08-26)
 
 See [Adding a plugin](../docs/adding-a-plugin.md).

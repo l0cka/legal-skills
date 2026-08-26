@@ -1,0 +1,22 @@
+{
+  "displayName": "Legal Workflow Router",
+  "shortDescription": "Maps a fact pattern to the Legal Skills plugins and skills it engages, in order, with the human decision points named.",
+  "longDescription": "Reads a described matter or fact pattern, identifies which Legal Skills plugins and skills it engages (privacy, cyber, AML/CTF, corporations governance, AI governance, litigation deadlines, legal research, evidence, estate planning, triage), and returns a sequenced routing plan: profile and configuration skills first, official-source verification next, assessment and mapping skills after, and the deliverable skills last. The map of available skills is generated from the marketplace registry so it cannot drift from the shipped plugins. The router never answers the legal question, never runs the routed skills without the user, and names the human reviewer for every step.",
+  "lawCheckedOn": "2026-08-26",
+  "defaultPrompt": [
+    "Route this fact pattern: which Legal Skills plugins and skills does it engage, and in what order?",
+    "We have a data breach at a listed company — map the workflows to run and the order to run them in.",
+    "Which skills should I run before advising on this matter, and what remains a human decision?"
+  ],
+  "whatItDoes": [
+    "Extracts the routing facts from a described matter: parties, sector, jurisdiction, events, dates and deliverables sought",
+    "Matches those facts to the shipped skills using the generated skill map",
+    "Returns a sequenced routing plan with prerequisites, hand-offs and the human decision at each step",
+    "Flags fact patterns no shipped skill covers instead of improvising a workflow"
+  ],
+  "boundaries": [
+    "Does not answer the legal question, assess merits or give advice",
+    "Does not run the routed skills; the user invokes each with the routed inputs",
+    "Uncovered practice areas are reported as gaps, never routed to the nearest skill"
+  ]
+}

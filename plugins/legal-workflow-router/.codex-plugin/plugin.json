@@ -1,0 +1,38 @@
+{
+  "name": "legal-workflow-router",
+  "version": "0.1.0",
+  "description": "Route an Australian legal fact pattern to the Legal Skills plugins and skills it engages, in a defensible order, with the human decision points named. Never answers the legal question itself.",
+  "author": {
+    "name": "l0cka",
+    "url": "https://github.com/l0cka"
+  },
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/legal-workflow-router",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": [
+    "legal-workflows",
+    "routing",
+    "triage",
+    "orchestration",
+    "australia",
+    "responsible-ai"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Legal Workflow Router",
+    "shortDescription": "Maps a fact pattern to the Legal Skills plugins and skills it engages, in order, with the human decision points named.",
+    "longDescription": "Reads a described matter or fact pattern, identifies which Legal Skills plugins and skills it engages (privacy, cyber, AML/CTF, corporations governance, AI governance, litigation deadlines, legal research, evidence, estate planning, triage), and returns a sequenced routing plan: profile and configuration skills first, official-source verification next, assessment and mapping skills after, and the deliverable skills last. The map of available skills is generated from the marketplace registry so it cannot drift from the shipped plugins. The router never answers the legal question, never runs the routed skills without the user, and names the human reviewer for every step.",
+    "developerName": "l0cka",
+    "category": "Productivity",
+    "capabilities": [
+      "Read"
+    ],
+    "websiteURL": "https://github.com/l0cka/legal-skills",
+    "defaultPrompt": [
+      "Route this fact pattern: which Legal Skills plugins and skills does it engage, and in what order?",
+      "We have a data breach at a listed company — map the workflows to run and the order to run them in.",
+      "Which skills should I run before advising on this matter, and what remains a human decision?"
+    ],
+    "brandColor": "#1C3C63"
+  }
+}

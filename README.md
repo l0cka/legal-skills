@@ -4,8 +4,8 @@
   <a href="https://github.com/l0cka/legal-skills/actions/workflows/ci.yml"><img alt="CI status" src="https://img.shields.io/github/actions/workflow/status/l0cka/legal-skills/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
   <a href="LICENSE"><img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-1f6f5f?style=flat-square"></a>
   <!-- generated:badges -->
-  <img alt="Nine plugins" src="https://img.shields.io/badge/plugins-9-31547a?style=flat-square">
-  <img alt="Fifty-five skills" src="https://img.shields.io/badge/skills-55-31547a?style=flat-square">
+  <img alt="Ten plugins" src="https://img.shields.io/badge/plugins-10-31547a?style=flat-square">
+  <img alt="Fifty-six skills" src="https://img.shields.io/badge/skills-56-31547a?style=flat-square">
   <img alt="Claude Cowork and ChatGPT Work" src="https://img.shields.io/badge/works%20with-Claude%20Cowork%20%2B%20ChatGPT%20Work-c59a46?style=flat-square">
 <!-- end:badges -->
 </p>
@@ -19,7 +19,7 @@ Each provider has a small, separate manifest.
 ## Plugin suite
 
 <!-- generated:counts -->
-The marketplace contains nine plugins and fifty-five skills:
+The marketplace contains ten plugins and fifty-six skills:
 <!-- end:counts -->
 
 <!-- generated:plugin-table -->
@@ -34,6 +34,7 @@ The marketplace contains nine plugins and fifty-five skills:
 | [**Australian Privacy & Cybersecurity**](plugins/australian-privacy-cybersecurity/README.md) | 8 | Maps the Australian privacy and cyber rules that can apply to a set of facts, a data breach or an AI use case. | 2026-08-26 |
 | [**Legal Evidence Workflows**](plugins/legal-evidence-workflows/README.md) | 4 | Builds source-linked Word document indexes, chronologies, privilege logs and inconsistency maps from supplied matter documents without deciding credibility, privilege or merits. | 2026-08-26 |
 | [**Legal Triage**](plugins/legal-triage/README.md) | 2 | Helps community legal centre staff record and triage legal enquiries under an approved profile. | 2026-08-26 |
+| [**Legal Workflow Router**](plugins/legal-workflow-router/README.md) | 1 | Maps a fact pattern to the Legal Skills plugins and skills it engages, in order, with the human decision points named. | 2026-08-26 |
 <!-- end:plugin-table -->
 
 ## Install with your Agent
@@ -43,9 +44,9 @@ Agent.
 
 <!-- generated:install-agent -->
 ```text
-Add the plugin marketplace `l0cka/legal-skills` and install all nine of
-its plugins (user scope if supported). Verify the plugins are available
-and report the result.
+Add the plugin marketplace `l0cka/legal-skills` and install all ten of its
+plugins (user scope if supported). Verify the plugins are available and
+report the result.
 ```
 <!-- end:install-agent -->
 
@@ -65,6 +66,7 @@ codex plugin add australian-litigation-deadlines@legal-skills
 codex plugin add australian-privacy-cybersecurity@legal-skills
 codex plugin add legal-evidence-workflows@legal-skills
 codex plugin add legal-triage@legal-skills
+codex plugin add legal-workflow-router@legal-skills
 ```
 <!-- end:install-codex -->
 
@@ -82,6 +84,7 @@ claude plugin install australian-litigation-deadlines@legal-skills --scope user
 claude plugin install australian-privacy-cybersecurity@legal-skills --scope user
 claude plugin install legal-evidence-workflows@legal-skills --scope user
 claude plugin install legal-triage@legal-skills --scope user
+claude plugin install legal-workflow-router@legal-skills --scope user
 ```
 <!-- end:install-claude -->
 

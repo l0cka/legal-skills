@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 import textwrap
 from pathlib import Path
@@ -453,6 +454,39 @@ def root_readme(root: Path, plugins: list[dict[str, Any]], skill_count: int) -> 
     return text
 
 
+ROUTER_PLUGIN = "legal-workflow-router"
+DESCRIPTION_LINE = re.compile(r"^description:\s*(.+)$", re.M)
+
+
+def skill_map(root: Path, plugins: list[dict[str, Any]]) -> str:
+    """Generated reference for the router: every shipped skill with its trigger text."""
+    lines = [
+        "<!-- GENERATED FILE - do not edit. Built from each SKILL.md description by",
+        "     scripts/generate_registry.py -->",
+        "",
+        "# Skill map",
+        "",
+        "Every skill the router may name, grouped by plugin. The description is the",
+        "skill's own trigger text: what it does, when to use it and when not to.",
+        "",
+    ]
+    for plugin in plugins:
+        if plugin["name"] == ROUTER_PLUGIN:
+            continue
+        lines.append(f"## {plugin['catalog']['displayName']} (`{plugin['name']}`)")
+        lines.append("")
+        for skill in plugin["skills"]:
+            text = (root / "plugins" / plugin["name"] / "skills" / skill / "SKILL.md").read_text(
+                encoding="utf-8"
+            )
+            match = DESCRIPTION_LINE.search(text)
+            if not match:
+                raise GenerationError(f"{plugin['name']}/skills/{skill}/SKILL.md: missing description")
+            lines.append(f"- **`{skill}`** — {match.group(1).strip()}")
+        lines.append("")
+    return "\n".join(lines).rstrip() + "\n"
+
+
 def generate(root: Path = ROOT) -> dict[Path, str]:
     plugins = load_plugins(root)
     skill_count = sum(len(plugin["skills"]) for plugin in plugins)
@@ -468,6 +502,8 @@ def generate(root: Path = ROOT) -> dict[Path, str]:
         agents_marketplace(plugins)
     )
     outputs[root / "skills.json"] = dumps(skills_registry(root, plugins))
+    if (root / "plugins" / ROUTER_PLUGIN).is_dir():
+        outputs[root / "plugins" / ROUTER_PLUGIN / "references" / "skill-map.md"] = skill_map(root, plugins)
     outputs[root / "plugins" / "README.md"] = plugins_readme(plugins)
     outputs[root / "README.md"] = root_readme(root, plugins, skill_count)
     return outputs
