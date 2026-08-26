@@ -1,6 +1,6 @@
 ---
 name: check-act-legislation
-description: Verify the identity, status, point-in-time republication, commencement and currency of Australian Capital Territory legislation using the official ACT legislation register. Use for current or historical ACT Acts, regulations and provisions. Do not use for Bills, case law, interpretation, application or final legal advice.
+description: Verify the identity, status, point-in-time republication, commencement and currency of Australian Capital Territory legislation using the official ACT legislation register. Use when a user asks whether ACT legislation is in force or repealed, which version applied on a date, or whether a citation or supplied provision matches the official text, for current or historical ACT Acts, regulations and provisions. Do not use for Commonwealth or other State or Territory legislation, Bills, case law, court deadlines, interpretation, application or final legal advice.
 ---
 
 # Check ACT Legislation

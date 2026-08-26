@@ -52,6 +52,9 @@ plugin manifests contain their intended release versions.
   `australian-litigation-deadlines`, `australian-aml-ctf`, `legal-triage`
   and `australian-privacy-cybersecurity` (13 cases), with a structural test
   in `tests/test_evals.py`.
+- Added `scripts/check_links.py` and a weekly `Link check` workflow that
+  probes every URL cited under `plugins/`, failing on 404/410 or unresolvable
+  hosts and warning on bot-blocked or timed-out publishers.
 - New plugin `legal-evidence-workflows` (0.1.0) with
   `build-evidence-chronology`: inventories supplied legal matter documents,
   extracts source-linked event candidates through a native structured review
@@ -96,6 +99,15 @@ plugin manifests contain their intended release versions.
 
 ### Changed
 
+- Tightened skill trigger descriptions where routing overlapped: the seven
+  State and Territory legislation checkers now carry the same
+  "in force / which version applied on a date" triggers as the Commonwealth
+  and NSW checkers and exclude other jurisdictions; the three judgment
+  verifiers state that `route-case-citation` sends citations to them;
+  `map-australian-cyber-incident-obligations` defers full incident triage to
+  `assess-australian-data-breach`; and
+  `assess-ai-privacy-cybersecurity-use-case` hands the obligations map and
+  board oversight to `australian-ai-governance`.
 - Simplified `australian-estate-planning` (0.4.0) to two jurisdictional
   workflows, one for NSW and one for Victoria. Each run concerns one client,
   uses centrally maintained approved precedents and playbooks, and drafts all
