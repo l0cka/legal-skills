@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Workplace Policy"
+  short_description: "Gap-check a policy set against current Fair Work statutory hooks"
+  default_prompt: "Use $review-workplace-policy on this policy set: build the hook matrix from the employer profile, mark each policy clause reflects, silent, inconsistent or out of date against each hook with pinpoints, and leave compliance conclusions to the responsible lawyer."

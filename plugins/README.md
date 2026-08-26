@@ -15,6 +15,11 @@ Canonical plugin packages live in this directory.
   Governance**](australian-corporations-governance/README.md) — Helps govern
   an Australian company under the Corporations Act. Prepares board records and
   reviews for human approval. (law checked 2026-08-26)
+- [**Australian Employment & Fair
+  Work**](australian-employment-fair-work/README.md) — Maps the Fair Work Act,
+  NES, award and agreement layers for an employment arrangement and
+  issue-spots termination and policy exposure. A lawyer decides every
+  conclusion. (law checked 2026-08-26)
 - [**Australian Estate Planning**](australian-estate-planning/README.md) —
   Prepares solicitor-review drafts from approved NSW, Victorian and Queensland
   estate planning precedents. (law checked 2026-08-26)

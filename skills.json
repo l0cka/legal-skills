@@ -178,6 +178,61 @@
       "source": "Original evidence-per-finding Australian company governance review workflow informed by official regulator and legislation sources."
     },
     {
+      "name": "assess-termination-exposure",
+      "path": "plugins/australian-employment-fair-work/skills/assess-termination-exposure",
+      "plugin": "plugins/australian-employment-fair-work",
+      "plugin_version": "0.1.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original termination issue-spotting workflow over a dated exposure map; Commission time limits route to the litigation-deadlines script."
+    },
+    {
+      "name": "configure-employment-profile",
+      "path": "plugins/australian-employment-fair-work/skills/configure-employment-profile",
+      "plugin": "plugins/australian-employment-fair-work",
+      "plugin_version": "0.1.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original controlled employment-profile workflow mirroring the AML/CTF practice profile pattern; coverage, size and instrument facts recorded as claims for verification."
+    },
+    {
+      "name": "map-fair-work-obligations",
+      "path": "plugins/australian-employment-fair-work/skills/map-fair-work-obligations",
+      "plugin": "plugins/australian-employment-fair-work",
+      "plugin_version": "0.1.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original Fair Work layer-mapping workflow over a dated framework reference checked against legislation.gov.au, fwc.gov.au and fairwork.gov.au on 26 August 2026."
+    },
+    {
+      "name": "review-workplace-policy",
+      "path": "plugins/australian-employment-fair-work/skills/review-workplace-policy",
+      "plugin": "plugins/australian-employment-fair-work",
+      "plugin_version": "0.1.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original policy gap-review workflow over a dated statutory-hooks reference that labels each hook law or guidance."
+    },
+    {
+      "name": "track-fair-work-developments",
+      "path": "plugins/australian-employment-fair-work/skills/track-fair-work-developments",
+      "plugin": "plugins/australian-employment-fair-work",
+      "plugin_version": "0.1.0",
+      "targets": [
+        "claude-cowork",
+        "chatgpt-work"
+      ],
+      "source": "Original watch-register workflow mirroring the AML/CTF tracker; 15 items verified against primary sources on 26 August 2026."
+    },
+    {
       "name": "assemble-nsw-estate-documents",
       "path": "plugins/australian-estate-planning/skills/assemble-nsw-estate-documents",
       "plugin": "plugins/australian-estate-planning",

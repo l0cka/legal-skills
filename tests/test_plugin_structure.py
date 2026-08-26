@@ -74,6 +74,20 @@ PLUGINS = {
             "$check-commonwealth-legislation",
         ),
     },
+    "australian-employment-fair-work": {
+        "skills": {
+            "configure-employment-profile",
+            "map-fair-work-obligations",
+            "assess-termination-exposure",
+            "review-workplace-policy",
+            "track-fair-work-developments",
+        },
+        "reference_files": (
+            "fair-work-source-and-control-method.md",
+            "employment-profile-schema.md",
+        ),
+        "every_skill_mentions": ("fair-work-source-and-control-method.md",),
+    },
     "australian-litigation-deadlines": {
         "skills": {
             "configure-litigation-deadline-profile",

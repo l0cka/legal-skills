@@ -1,0 +1,23 @@
+{
+  "name": "australian-employment-fair-work",
+  "version": "0.1.0",
+  "description": "Map the Fair Work Act, National Employment Standards, modern award and enterprise agreement layers that apply to an Australian employment arrangement; issue-spot termination exposure; review workplace policies against current statutory hooks; and track Fair Work developments. Every conclusion stays with the responsible lawyer.",
+  "author": {
+    "name": "l0cka",
+    "url": "https://github.com/l0cka"
+  },
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/australian-employment-fair-work",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": [
+    "legal-workflows",
+    "employment-law",
+    "fair-work",
+    "national-employment-standards",
+    "modern-awards",
+    "unfair-dismissal",
+    "australia",
+    "responsible-ai"
+  ],
+  "skills": "./skills/"
+}

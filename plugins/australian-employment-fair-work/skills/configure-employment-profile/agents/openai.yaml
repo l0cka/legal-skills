@@ -1,0 +1,4 @@
+interface:
+  display_name: "Configure Employment Profile"
+  short_description: "Draft a controlled employment profile for an Australian employer"
+  default_prompt: "Use $configure-employment-profile to draft a controlled employment profile for this employer: coverage basis, size band, awards and agreements believed to apply, contract and policy inventory, workforce composition and governance roles, with every unknown listed as a gap."

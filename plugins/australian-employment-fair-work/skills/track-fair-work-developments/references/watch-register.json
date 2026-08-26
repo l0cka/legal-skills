@@ -1,0 +1,121 @@
+{
+  "registry_version": 1,
+  "as_at": "2026-08-26",
+  "note": "Research snapshot of Fair Work Act developments 2025-2027, verified against the primary sources on the as-at date. Every item is a watch item, not an obligation; confirm each against its primary source at use time and record 'cannot be determined' where the source is unavailable.",
+  "watch_items": [
+    {
+      "id": "fwa-compilation-c73",
+      "item": "Fair Work Act 2009 current compilation",
+      "status_at_snapshot": "C2026C00355 (Compilation No. 73, 7 July 2026) incorporating the Workplace Relations Legislation Amendment (Building Cooperative Workplaces No. 1) Act 2026 sch 1 items 1-9 and 19-62",
+      "expected_trigger": "New compilation registered on the Federal Register of Legislation",
+      "primary_sources": ["https://www.legislation.gov.au/C2009A00028/latest/versions"]
+    },
+    {
+      "id": "closing-loopholes-tranches",
+      "item": "Closing Loopholes tranches",
+      "status_at_snapshot": "All tranches commenced: 15 Dec 2023 (delegates, labour hire applications, discrimination), 1 Jul 2024 (award delegates terms), 26 Aug 2024 (s 15AA employee, s 15A casual, employee choice, right to disconnect for non-small business), 1 Nov 2024 (first labour hire orders), 1 Jan 2025 (s 327A wage theft and the Voluntary Small Business Wage Compliance Code), 26 Feb 2025 (employee choice for small business), 26 Aug 2025 (right to disconnect for small business)",
+      "expected_trigger": "None; retained for transitional disputes about casuals engaged before 26 August 2024",
+      "primary_sources": [
+        "https://www.fairwork.gov.au/about-us/workplace-laws/legislation-changes/closing-loopholes",
+        "https://www.dewr.gov.au/closing-loopholes"
+      ]
+    },
+    {
+      "id": "protecting-penalty-rates-2025",
+      "item": "Fair Work Amendment (Protecting Penalty and Overtime Rates) Act 2025 (No. 37)",
+      "status_at_snapshot": "Assent 29 Aug 2025, in force 30 Aug 2025; the FWC must not reduce award penalty or overtime rates or substitute terms that pay less",
+      "expected_trigger": "FWC award variation decisions applying the principle",
+      "primary_sources": ["https://www.legislation.gov.au/C2025A00037/latest"]
+    },
+    {
+      "id": "baby-priya-act-2025",
+      "item": "Fair Work Amendment (Baby Priya's) Act 2025 (No. 56)",
+      "status_at_snapshot": "Assent 6 Nov 2025, in force 7 Nov 2025 (sch 1 items 1-7): employer-funded paid parental leave cannot be refused or cancelled on stillbirth or infant death",
+      "expected_trigger": "None",
+      "primary_sources": ["https://www.legislation.gov.au/C2025A00056/latest"]
+    },
+    {
+      "id": "fairer-fuel-act-2026",
+      "item": "Fair Work Amendment (Fairer Fuel) Act 2026 (No. 20)",
+      "status_at_snapshot": "Assent 1 Apr 2026, in force 2 Apr 2026; ministerial fast-track for road transport contractual chain orders",
+      "expected_trigger": "Ministerial determinations and FWC road transport contractual chain orders",
+      "primary_sources": [
+        "https://www.legislation.gov.au/C2026A00020/latest",
+        "https://www.fairwork.gov.au/about-us/workplace-laws/legislation-changes/fairer-fuel-reforms-to-road-transport-orders"
+      ]
+    },
+    {
+      "id": "payday-super-fwa-2026",
+      "item": "Treasury Laws Amendment (Payday Superannuation) Act 2025 sch 1 items 73-74 amending the NES superannuation entitlement",
+      "status_at_snapshot": "Commenced 1 Jul 2026 (Compilation No. 72); the substance of the Div 10A amendment has not been read",
+      "expected_trigger": "Verify the amended Div 10A text before relying on the NES superannuation entitlement",
+      "primary_sources": ["https://www.legislation.gov.au/C2025A00057/latest"]
+    },
+    {
+      "id": "building-cooperative-workplaces-no1-2026",
+      "item": "Workplace Relations Legislation Amendment (Building Cooperative Workplaces No. 1) Act 2026 (No. 62)",
+      "status_at_snapshot": "Assent 6 Jul 2026, effect 7 Jul 2026: FWC process reforms (general protections and unlawful termination disputes without a threshold dismissal finding, on-the-papers determinations by consent, dismissal of vexatious applications and repeat-applicant bars, delegated certificates), road transport contractor rights, Commonwealth procurement preferencing, supported and intractable bargaining changes. The 'No. 1' title implies a further tranche",
+      "expected_trigger": "A 'No. 2' Bill; further Fair Work Commission Rules amendments (Fair Work Commission Amendment (2026 Measures No. 1) Rules 2026, F2026L00987, already made)",
+      "primary_sources": [
+        "https://www.legislation.gov.au/C2026A00062/latest",
+        "https://www.fairwork.gov.au/about-us/workplace-laws/legislation-changes/building-cooperative-workplaces-reforms"
+      ]
+    },
+    {
+      "id": "exclusion-state-laws-regs-2026",
+      "item": "Fair Work Amendment (Exclusion of State and Territory Laws) Regulations 2026 (F2026L00766)",
+      "status_at_snapshot": "Registered 19 Jun 2026; disallowable; content not read",
+      "expected_trigger": "Disallowance period; text review",
+      "primary_sources": ["https://www.legislation.gov.au/F2026L00766/latest/text"]
+    },
+    {
+      "id": "state-declaration-endorsement-2026",
+      "item": "Fair Work (State Declarations - Employer Not To Be National System Employer) Endorsement (No. 1) 2026 (F2026L00414)",
+      "status_at_snapshot": "Registered 8 Apr 2026 under s 14(5); moves the named employer or employers out of the national system; employer names not read",
+      "expected_trigger": "Further endorsements naming an employer in the profile",
+      "primary_sources": ["https://www.legislation.gov.au/F2026L00414/latest/text"]
+    },
+    {
+      "id": "annual-wage-review-2026-27",
+      "item": "Annual Wage Review 2026-27",
+      "status_at_snapshot": "AWR 2026 decided [2026] FWCFB 3500 on 2 Jun 2026 (award minimum wages +4.75%; National Minimum Wage $1,004.90 per week from 1 Jul 2026; high income threshold $190,100 and compensation cap $95,050 from 1 Jul 2026). Next review runs March-June 2027, operative 1 Jul 2027; thresholds re-index 1 Jul 2027",
+      "expected_trigger": "FWC timetable statement, usually February-March 2027",
+      "primary_sources": ["https://www.fwc.gov.au/hearings-decisions/major-cases/annual-wage-reviews"]
+    },
+    {
+      "id": "non-compete-ban-2027",
+      "item": "Proposed ban on non-compete clauses for workers under the high income threshold",
+      "status_at_snapshot": "Treasury states the reforms should take effect from 2027 following consultation and passage; consultation closed 5 Sep 2025; no exposure draft or Bill located",
+      "expected_trigger": "Exposure draft or Bill introduction",
+      "primary_sources": ["https://treasury.gov.au/review/competition-review-2023/non-compete-clauses"]
+    },
+    {
+      "id": "gender-undervaluation-priority-awards",
+      "item": "FWC gender-based undervaluation - priority awards review",
+      "status_at_snapshot": "Initial decision [2025] FWCFB 74 (16 Apr 2025; Pharmacy finalised); Health Professionals and Support Services dental and pathology 24 Dec 2025; Children's Services changes from 1 Mar 2026; HPSS health professionals 26 May 2026; SCHADS finalised 1 Jun 2026 (AM2024/21); variation [2026] FWCFB 123; page updated 5 Aug 2026",
+      "expected_trigger": "Phased wage-increase dates in each determination; any further awards referred",
+      "primary_sources": ["https://www.fwc.gov.au/hearings-decisions/major-cases/gender-undervaluation-priority-awards-review"]
+    },
+    {
+      "id": "on-demand-delivery-mso",
+      "item": "Interim On-Demand Delivery Employee-like Worker Minimum Standards Order",
+      "status_at_snapshot": "Made 11 Aug 2026 ([2026] FWCFB 211); operates from 17 Aug 2026",
+      "expected_trigger": "Final order; other employee-like minimum standards applications",
+      "primary_sources": ["https://www.fwc.gov.au/node/5373"]
+    },
+    {
+      "id": "fwo-priorities-2026-27",
+      "item": "Fair Work Ombudsman compliance priorities",
+      "status_at_snapshot": "Priority sectors: aged care, agriculture, building and construction, disability support, fast food, restaurants and cafes, large corporates, universities; Criminal Investigations Branch active; the year label on the page was not confirmed",
+      "expected_trigger": "Priorities page update or Corporate Plan 2026-27",
+      "primary_sources": ["https://www.fairwork.gov.au/about-us/our-role-and-purpose/our-priorities"]
+    },
+    {
+      "id": "rtd-fwc-guidelines",
+      "item": "FWC written guidelines on the right to disconnect",
+      "status_at_snapshot": "Not located on fwc.gov.au on the as-at date; only the fact sheet and dispute page found",
+      "expected_trigger": "Publication on fwc.gov.au",
+      "primary_sources": ["https://www.fwc.gov.au/workplace-disputes/other-workplace-disputes/right-disconnect-disputes"]
+    }
+  ]
+}

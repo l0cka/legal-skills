@@ -44,6 +44,17 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- New plugin `australian-employment-fair-work` (0.1.0) with five skills:
+  `configure-employment-profile`, `map-fair-work-obligations`,
+  `assess-termination-exposure`, `review-workplace-policy` and
+  `track-fair-work-developments`. Ships a source-and-control method, an
+  employment profile schema, dated framework, termination and policy-hook
+  references with per-row evidence states (Fair Work Act Compilation No.
+  73 of 7 July 2026; AWR 2026 figures; high income threshold $190,100 from
+  1 July 2026) and a 15-item watch register, all checked against the
+  official publishers on 26 August 2026. Time limits route to the
+  litigation-deadlines script; no skill concludes fairness, adverse action
+  or compliance.
 - `australian-litigation-deadlines` (0.3.0): computed coverage extended to
   the Supreme, District and Magistrates or Local Courts of Western
   Australia, South Australia, Tasmania, the ACT and the Northern Territory,
