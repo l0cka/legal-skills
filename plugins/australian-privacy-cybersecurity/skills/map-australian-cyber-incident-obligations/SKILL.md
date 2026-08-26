@@ -1,6 +1,6 @@
 ---
 name: map-australian-cyber-incident-obligations
-description: Map concurrent Australian cyber incident, data-breach, ransomware-payment, critical-infrastructure, prudential, telecommunications, Consumer Data Right and health reporting obligations by entity, role, event, trigger, recipient and clock. Use for incident triage, breach response, cyber-extortion decisions, notification matrices and AI-related security incidents. Do not use for live containment, external notification, case law, forensic conclusions or autonomous legal decisions.
+description: Map concurrent Australian cyber incident, data-breach, ransomware-payment, critical-infrastructure, prudential, telecommunications, Consumer Data Right and health reporting obligations by entity, role, event, trigger, recipient and clock. Use when only the obligations and reporting-clock matrix is needed, or as the cyber layer inside assess-australian-data-breach; for a full incident triage with facts, harm assessment and action plan use assess-australian-data-breach instead. Do not use for live containment, external notification, case law, forensic conclusions or autonomous legal decisions.
 ---
 
 # Map Australian Cyber Incident Obligations

@@ -160,6 +160,13 @@ Each suite has a happy-path case and at least one fail-closed case, so a
 prompt change that makes a skill verify a fabricated citation, compute a date
 outside the script or hand a help-seeker legal advice fails the run.
 
+A weekly workflow probes every URL cited under `plugins/` and fails on a dead
+link; publishers that block non-browser clients are reported as warnings:
+
+```bash
+python3 scripts/check_links.py
+```
+
 ## Contributing
 
 Use [CONTRIBUTING.md](CONTRIBUTING.md) and
