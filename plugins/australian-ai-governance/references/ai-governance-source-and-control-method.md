@@ -43,9 +43,11 @@ snapshot, not a cached rule; every live workflow must recheck each source:
    the detailed 10-guardrail control catalogue at
    <https://www.industry.gov.au/publications/voluntary-ai-safety-standard>.
    Any reference to "the 10 guardrails" must state this layering.
-3. **AS ISO/IEC 42001:2023** — the certifiable AI management-system standard
-   adopted by Standards Australia (adoption date not verified against
-   standards.org.au); AI6 and VAISS are designed
+3. **AS ISO/IEC 42001:2023** — the certifiable AI management-system standard,
+   published by Standards Australia on 16 February 2024 as an identical
+   adoption of ISO/IEC 42001:2023
+   (<https://store.standards.org.au/product/as-iso-iec-42001-2023>); AI6 and
+   VAISS are designed
    to interoperate with it. ISO/IEC 23894:2023 (AI risk management) exists
    internationally; its adoption as an AS-badged standard is unconfirmed.
 4. **National AI Plan** — DISR, 2 December 2025: existing law plus sector

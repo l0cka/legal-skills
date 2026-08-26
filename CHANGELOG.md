@@ -17,6 +17,11 @@ plugin manifests contain their intended release versions.
 
 ### Fixed
 
+- Closed the three currency-sweep leftovers: C2024A00128 Schedule 1 Part 15
+  now cites items 87–88 as amending and item 89 as the application
+  provision; the CIRMP Rules registry entry records the Enhanced CIRMP
+  amending instrument (F2026L00701) and its 12- and 24-month grace periods;
+  AS ISO/IEC 42001:2023 is dated to its 16 February 2024 publication.
 - Currency sweep of every plugin against the official publishers on
   26 August 2026. Corrections: `check-commonwealth-legislation` example now
   cites the correct Privacy Act compilation (No. 97, C2023C00347);
@@ -44,6 +49,10 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- Deployment guides for `build-document-index`, `build-privilege-log` and
+  `map-evidence-inconsistencies`, eval cases for the Queensland estate skill
+  and the three evidence skills, and a `CONTEXT.md` glossary for
+  `legal-evidence-workflows`.
 - New plugin `australian-employment-fair-work` (0.1.0) with five skills:
   `configure-employment-profile`, `map-fair-work-obligations`,
   `assess-termination-exposure`, `review-workplace-policy` and

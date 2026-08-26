@@ -6,7 +6,7 @@
 | --- | --- |
 | Amending Act | Privacy and Other Legislation Amendment Act 2024 |
 | Register ID | C2024A00128 |
-| Provisions | Schedule 1 Part 15 items 87–89 |
+| Provisions | Schedule 1 Part 15 items 87–88 (amending; item 89 is the application provision) |
 | Commencement | 10 December 2026 |
 | Change | Privacy Act APP 1.7–1.9 and related civil-penalty treatment |
 | Application prompt | Decisions made after commencement can be covered even where the arrangement, use or acquisition occurred earlier |
