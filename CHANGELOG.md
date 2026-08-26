@@ -17,6 +17,23 @@ plugin manifests contain their intended release versions.
 
 ### Fixed
 
+- Currency sweep of every plugin against the official publishers on
+  26 August 2026. Corrections: `check-commonwealth-legislation` example now
+  cites the correct Privacy Act compilation (No. 97, C2023C00347);
+  Family Law Act anonymisation cited as pt XIVB s 114Q (s 121 repealed
+  6 May 2024); NSW legislation helper described as offline; unverifiable
+  NSW "3 working days" wording softened; AGLC5 status and HCA collection
+  coverage dated; NSW remote witnessing (Electronic Transactions Act 2000
+  s 14G) added to estate-planning formalities; AML/CTF Rules 2025
+  commencement (31 March 2026) and Transitional Rules 2026 deadlines
+  recorded; AI-governance dates corrected (APRA letter, eSafety Phase 2
+  codes, AI6 tiers, DTA policy, NSW AIAF, WA page update); ASX 5th edition
+  and draft CPS 510 consultation dates and climate reporting (s 292A,
+  AASB S2) added to corporations governance; Cyber Security Act rules
+  retitled (Ransomware Payment Reporting; Cyber Incident Review Board), an
+  APRA and a Tasmanian URL replaced after 404s, and the ACMA domestic
+  violence standard's commencement (1 July 2025) separated from its phased
+  requirements; triage template review dates moved past today.
 - Restricted both Federal Register API helpers to the official HTTPS host before
   opening a URL, preventing non-HTTP and off-host requests.
 - Made procedural-deadline computation fail closed when an excluded-range date
@@ -27,6 +44,14 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- Added a required `lawCheckedOn` date to every plugin `catalog.json`. The
+  validator fails when the date is malformed, in the future or older than 183
+  days, and the generated plugin tables show it as a "Law checked" column.
+- Added `claude plugin eval` suites under `plugins/<name>/evals/` for the
+  fail-closed skills in `australian-legal-research`,
+  `australian-litigation-deadlines`, `australian-aml-ctf`, `legal-triage`
+  and `australian-privacy-cybersecurity` (13 cases), with a structural test
+  in `tests/test_evals.py`.
 - New plugin `legal-evidence-workflows` (0.1.0) with
   `build-evidence-chronology`: inventories supplied legal matter documents,
   extracts source-linked event candidates through a native structured review

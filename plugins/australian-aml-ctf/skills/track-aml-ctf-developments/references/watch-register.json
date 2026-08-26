@@ -25,11 +25,13 @@
     {
       "id": "amlctf-rules-amendments",
       "item": "Amendments to the Anti-Money Laundering and Counter-Terrorism Financing Rules 2025 and transitional rules",
-      "status_at_snapshot": "The AML/CTF Rules 2025 (F2025L01026) are in force as amended; AUSTRAC maintains transitional rules including staged obligations for some services; further amendment instruments are expected as the reform settles",
+      "status_at_snapshot": "The AML/CTF Rules 2025 (F2025L01026) commenced 31 March 2026 (latest compilation F2026C00274). The AML/CTF Transitional Rules 2026 (F2026L00393) set staged deadlines: compliance-officer notification for newly regulated entities by the later of 14 days after enrolment or 29 July 2026; first independent evaluation of the program by 30 June 2029 to 31 December 2030 depending on the last two digits of the AUSTRAC account number; IFTI-to-IVTS reporting transition on 31 March 2029. Further amendment instruments are expected as the reform settles",
       "expected_trigger": "Registration of amendment or transitional instruments on the Federal Register of Legislation",
       "primary_sources": [
         "https://www.austrac.gov.au/about-us/legislation/amlctf-rules",
-        "https://www.legislation.gov.au/F2025L01026/latest/text"
+        "https://www.legislation.gov.au/F2025L01026/latest/text",
+        "https://www.austrac.gov.au/about-us/legislation/updates-legislation/amlctf-transitional-rules-2026",
+        "https://www.legislation.gov.au/F2026L00393/asmade/text"
       ]
     },
     {

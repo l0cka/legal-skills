@@ -45,7 +45,7 @@
     },
     {
       "id": "cyber-extortion-payment",
-      "title": "Cyber Security Act 2024 Part 3 and Cyber Security Rules 2025",
+      "title": "Cyber Security Act 2024 Part 3 and Cyber Security (Ransomware Payment Reporting) Rules 2025",
       "title_id": "C2024A00098",
       "register_id": "F2025L00278",
       "legal_status": "Act and delegated legislative instrument",
@@ -67,7 +67,7 @@
     },
     {
       "id": "cyber-incident-review-board",
-      "title": "Cyber Security Act 2024 Part 5 and Cyber Security Rules 2025",
+      "title": "Cyber Security Act 2024 Part 5 and Cyber Security (Cyber Incident Review Board) Rules 2025",
       "register_id": "F2025L00277",
       "legal_status": "Act and delegated legislative instrument",
       "source_url": "https://www.legislation.gov.au/F2025L00277/latest",
@@ -87,7 +87,7 @@
       "id": "apra-cps-230",
       "title": "CPS 230 Operational Risk Management",
       "legal_status": "enforceable prudential standard",
-      "source_url": "https://www.apra.gov.au/cross-industry-prudential-and-reporting-standards",
+      "source_url": "https://www.apra.gov.au/standards/cps-230",
       "latest_checked_version": "effective 2026-07-01",
       "clock_prompt": "verify 72-hour material operational-risk incident, 24-hour tolerance breach and service-provider clocks; where one APRA notice is accepted apply the earliest timeframe",
       "last_verified": "2026-08-14"
@@ -98,9 +98,10 @@
       "register_id": "F2025L00664",
       "legal_status": "delegated legislative instrument or industry standard",
       "source_url": "https://www.legislation.gov.au/F2025L00664/asmade",
-      "commencement_large_provider": "2026-01-01",
-      "commencement_small_provider": "2026-04-01",
-      "clock_prompt": "affected person using agreed safe communications and ACMA within two days after specified unauthorised access or disclosure",
+      "commencement": "2025-07-01",
+      "phased_requirements_large_provider": "2026-01-01 (30,000 or more services in operation)",
+      "phased_requirements_other_provider": "2026-04-01",
+      "clock_prompt": "affected person using agreed safe communications and ACMA within two days after specified unauthorised access or disclosure; verify which commencement phase the notice duty sits in",
       "last_verified": "2026-08-14"
     },
     {

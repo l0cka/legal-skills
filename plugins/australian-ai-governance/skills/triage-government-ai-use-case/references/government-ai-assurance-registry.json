@@ -16,7 +16,7 @@
           "title": "Policy for the Responsible Use of AI in Government v2.0",
           "publisher": "Digital Transformation Agency",
           "official_source": "https://www.digital.gov.au/ai/ai-in-government-policy",
-          "status": "Mandatory for non-corporate Commonwealth entities; effective 15 December 2025, phased to December 2026"
+          "status": "Mandatory for non-corporate Commonwealth entities; v2.0 effective 15 December 2025 (replaces v1.1 of 1 September 2024); staged per-requirement implementation deadlines — verify the specific deadline at use"
         }
       ],
       "key_artefacts": ["accountable official", "AI transparency statement", "AI impact assessment"],
@@ -29,7 +29,7 @@
           "title": "NSW AI Assessment Framework (AIAF)",
           "publisher": "Digital NSW / NSW Office for AI",
           "official_source": "https://www.digital.nsw.gov.au/policy/artificial-intelligence/ai-governance-assurance-and-frameworks/nsw-ai-assessment-framework",
-          "status": "Mandatory for NSW Government AI projects; modernised framework launched 27 January 2026, replacing the version in force since 1 July 2024"
+          "status": "Mandatory for all NSW Government agencies; current Excel AIAF tool published February 2026 (launch date not stated on the official page); system-based version in development; high or critical assessments go to the AI Review Committee"
         }
       ],
       "escalation": "AI Review Committee for higher-risk assessments",
@@ -55,11 +55,11 @@
           "title": "WA Government Artificial Intelligence Policy and Assurance Framework",
           "publisher": "WA Office of Digital Government (DPC)",
           "official_source": "https://www.wa.gov.au/government/publications/wa-government-artificial-intelligence-policy-and-assurance-framework",
-          "status": "In force; supported by an AI governance toolkit and self-assessment"
+          "status": "In force; supported by an AI governance toolkit and self-assessment. Official page updated 25 August 2026, after the 14 August 2026 verification — recheck content before use"
         }
       ],
       "escalation": "WA AI Advisory Board",
-      "verification": "verified-2026-08-14"
+      "verification": "verified-with-caveat"
     },
     {
       "jurisdiction": "Vic",

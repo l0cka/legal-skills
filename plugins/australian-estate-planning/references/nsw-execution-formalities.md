@@ -119,6 +119,18 @@ Version line at verification: "Current version for 27 March 2021 to date
   as the checklist for `guardianship_functions`. Evidence state:
   `VERIFIED`.
 
+## Remote witnessing — Electronic Transactions Act 2000 No 8 (NSW)
+
+- **Pt 2B, s 14G — witnessing by audio visual link.** A will, a power of
+  attorney or enduring power of attorney, and an enduring guardianship
+  appointment may be witnessed by audio visual link if the witness observes
+  the signing in real time, attests by signing the document or a
+  counterpart, is reasonably satisfied the document signed is the same, and
+  endorses a statement of the method used (s 14G(2)–(4)). Flag remote
+  witnessing for the solicitor; never conduct or certify it. Version line:
+  "Current version for 28 March 2026 to date (accessed 26 August 2026)".
+  Evidence state: `VERIFIED`.
+
 ## Out of scope, always flagged
 
 Advance care directives (no NSW statutory instrument verified here),

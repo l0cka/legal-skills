@@ -41,7 +41,7 @@
     {
       "code": "TAS",
       "general_privacy": {"title": "Personal Information Protection Act 2004", "status": "current legislation", "scope": "Tasmanian public sector", "official_url": "https://www.legislation.tas.gov.au/view/html/inforce/current/act-2004-046", "last_verified": "2026-08-14"},
-      "breach": {"title": "Public-sector security incident reporting", "status": "internal policy control", "official_url": "https://www.dpac.tas.gov.au/divisions/cpp/information-security/policy", "last_verified": "2026-08-14"},
+      "breach": {"title": "Public-sector security incident reporting", "status": "internal policy control", "official_url": "https://www.dpac.tas.gov.au/_security/protective-security/information-security", "last_verified": "2026-08-14"},
       "workplace": {"title": "Dedicated workplace-surveillance regime", "status": "not identified", "official_url": "https://www.legislation.tas.gov.au/view/html/inforce/current/act-1991-021", "last_verified": "2026-08-14"}
     },
     {

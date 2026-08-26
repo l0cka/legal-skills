@@ -44,8 +44,8 @@ authorisation boundary, point-in-time method and URL structure.
      route. It does not prove that the title operated on that date or establish
      identity, currency, commencement or authorisation. Do not cite a generated
      URL as a source used unless it resolved and was inspected. The helper is
-     optional and read-only, and it makes network requests only to
-     `legislation.nsw.gov.au`. Without command execution, follow the same
+     optional, offline and read-only; it only formats official URLs and
+     makes no network requests. Without command execution, follow the same
      steps on the official website directly.
 3. Select the point-in-time version.
    - Use the status-page timeline and the Legislative history table of
@@ -68,9 +68,10 @@ authorisation boundary, point-in-time method and URL structure.
      history notes relevant to the request.
    - Treat "Does not include amendments by" and partial-commencement notices as
      qualifications. A Bill listed under "See also" is not an amendment.
-   - Account for the website's warning that legislation is usually updated
-     within 3 working days after a change. Do not give an unqualified result
-     when a recent relevant change may fall inside that interval.
+   - Account for the website's stated update lag after a change (confirm
+     the current statement on the site's help pages). Do not give an
+     unqualified result when a recent relevant change may fall inside that
+     interval.
    - HTML and PDF versions in the In force and Repealed collections, including
      historical versions, are authorised under the website's stated section
      45C framework. Do not transfer that assurance to EPI maps, documents

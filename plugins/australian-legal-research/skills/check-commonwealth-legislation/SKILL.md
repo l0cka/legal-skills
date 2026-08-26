@@ -107,14 +107,14 @@ Official title: Privacy Act 1988
 Collection: Act
 Title ID: C2004A03712
 Current title status: In force (present status; commencement caveat below)
-Applicable version: Compilation No. 92, Register ID C2023C00341
+Applicable version: Compilation No. 97, Register ID C2023C00347
 Version status: In force at the requested date
-Version period: 2023-12-14 to 2024-04-02
-Currency flags: An amending Act commenced after the version period; it does
-  not alter the text as at 2024-01-01 but affects any later-date reliance
+Version period: 2023-10-18 to 2024-05-22
+Currency flags: None reported by the Register for this version; check the
+  All versions page for amending Acts commencing after 2024-01-01
 Official sources: Title page, point-in-time result and All versions page for
   C2004A03712; authorised PDF for the selected compilation
-Checked: 2026-08-14, Australia/Sydney
+Checked: 2026-08-26, Australia/Sydney
 Limitations and review: Interpretation and application of s 13G are for
   lawyer review; case law was not considered
 ```

@@ -48,8 +48,9 @@ restriction handling.
      name as a qualification, and say which differs.
 4. Check restrictions before reproducing anything.
    - Family-law decisions are published under statutory anonymisation
-     (Family Law Act 1975 (Cth) s 121); treat the pseudonym as the official
-     case name and never attempt to identify parties.
+     (Family Law Act 1975 (Cth) pt XIVB, s 114Q; formerly s 121 before
+     6 May 2024); treat the pseudonym as the official case name and never
+     attempt to identify parties.
    - Preserve any suppression or non-publication notation found.
 5. Report using the result contract.
 

@@ -2,6 +2,7 @@
   "displayName": "Australian Estate Planning",
   "shortDescription": "Prepares solicitor-review drafts from approved NSW and Victorian estate planning precedents.",
   "longDescription": "Provides one practitioner-facing drafting workflow for New South Wales and one for Victoria. Each run concerns one client and uses centrally maintained approved precedents, an approved drafting playbook and a provenance-cited instruction table. The workflow drafts all supported content in one run, inserts visible review markers for every unresolved fact, conflict or decision, and returns a matching drafting-issues register. It never substitutes a generic or uploaded precedent, changes an approved source, independently verifies the firm's drafting materials, or presents a document as final or ready to sign.",
+  "lawCheckedOn": "2026-08-26",
   "defaultPrompt": [
     "Prepare NSW estate planning drafts for this client from the approved precedents and these instructions.",
     "Prepare Victorian estate planning drafts for this client from the approved precedents and these instructions.",

@@ -2,6 +2,7 @@
   "displayName": "Australian Privacy & Cybersecurity",
   "shortDescription": "Maps the Australian privacy and cyber rules that can apply to a set of facts, a data breach or an AI use case.",
   "longDescription": "Helps lawyers verify the full Australian Privacy Principles framework, route State and Territory privacy overlays, map concurrent cyber incident obligations, screen the statutory privacy tort and automated-decision reforms, assess suspected data breaches, and evaluate defined AI-system use cases. It separates legal status and source layers, excludes case law, and reserves conclusions and approvals for human review.",
+  "lawCheckedOn": "2026-08-26",
   "defaultPrompt": [
     "Verify the applicable APP framework and detect changes across the relevant dates.",
     "Identify the Australian privacy and cybersecurity issues raised by these facts.",

@@ -28,6 +28,10 @@ page. Do not infer an identifier from a title and treat it as verified.
 
 ## Official URL structure
 
+Checked 2026-08-26: most `/view/...` routes return HTTP 403 to non-browser
+clients (`/lh` and the help pages return 200). Treat the browser fallback
+described below as the normal path, not the exception.
+
 Keep the title's present collection separate from the route for the selected
 version. For an established `{id}`:
 
@@ -58,8 +62,9 @@ is disclosed.
 - Read every Status Information note relevant to the request. In particular,
   distinguish an amendment excluded because it has not commenced from a Bill
   appearing under "See also".
-- The site states that legislation is usually updated within 3 working days
-  after a change. Recent commencement or amendment activity can therefore
+- The site describes an update lag after a change (the exact wording was
+  not located on the help pages on 26 August 2026; confirm it there).
+  Recent commencement or amendment activity can therefore
   prevent an unqualified current-status result.
 - Legislative history contains the table of versions, original and amending
   legislation, commencement information, history notes and creation history.
@@ -74,7 +79,8 @@ is disclosed.
 The official authorisation guidance states that HTML and PDF versions of all
 titles in the In force and Repealed collections, including historical
 versions, are authorised under section 45C of the Interpretation Act 1987
-(NSW).
+(NSW). The same page also authorises as-made PDFs from 2000 and Government
+Gazette PDFs from 2001, which this workflow does not use.
 
 Do not extend that statement to content the guidance excludes, including:
 

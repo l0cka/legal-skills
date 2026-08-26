@@ -2,6 +2,7 @@
   "displayName": "Legal Evidence Workflows",
   "shortDescription": "Builds source-linked Word evidence chronologies from supplied matter documents without resolving conflicts or credibility.",
   "longDescription": "Uses a native structured document-review table when available to extract event candidates from supplied legal matter documents, then creates an event-level chronology as a .docx file with source pinpoints, uncertainty and conflicting accounts preserved. The workflow does not decide credibility, evidentiary weight, admissibility, legal effect or merits, and every output remains subject to human review.",
+  "lawCheckedOn": "2026-08-26",
   "defaultPrompt": [
     "Build a source-linked evidence chronology as a .docx file from these matter documents and preserve conflicting accounts."
   ],

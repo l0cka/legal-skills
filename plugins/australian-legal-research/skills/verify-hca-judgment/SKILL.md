@@ -8,9 +8,12 @@ description: Verify that a cited High Court of Australia decision exists at the 
 Use `hcourt.gov.au` as the controlling source. Produce a provenance record,
 not a bare assertion that a case "exists".
 
-The website's coverage is four collections, and nothing else: judgments 1998
-to current, Commonwealth Law Reports volumes 1–100 (roughly 1903–1959),
-unreported judgments 1906–1994, and single Justice judgments since 2024.
+The website's coverage (checked 2026-08-26) is four collections, and nothing
+else: judgments 1998 to current, Commonwealth Law Reports volumes 1–100
+(roughly 1903–1959), unreported judgments 1906–1994 (an incomplete set, per
+the Court), and single Justice judgments since January 2024. Judgment
+summaries (since December 2002) are not judgments and are not a
+verification source.
 Reported decisions from roughly 1959 to 1997 — CLR volumes above 100 — are
 not published there. A citation in that gap is `UNVERIFIABLE` at the
 official publisher, never `NOT FOUND`. Note also that the High Court only

@@ -29,18 +29,23 @@ Label the layer of every framework proposition. At 14 August 2026 — a research
 snapshot, not a cached rule; every live workflow must recheck each source:
 
 1. **Guidance for AI Adoption ("AI6")** — National AI Centre / DISR, published
-   21 October 2025. The primary voluntary guidance: six essential practices
+   21 October 2025 and restructured into *foundations* and *implementation*
+   tiers (implementation PDF dated 5 May 2026). The primary voluntary
+   guidance: six essential practices
    (accountability; stakeholder engagement and redress; risk management;
    transparency, including an AI register; testing and monitoring; human
    oversight and decommissioning). Verify the current text at
-   <https://www.ai.gov.au/staying-safe-and-responsible/essential-ai-practices/guidance-ai-adoption-implementation-guidance>.
+   <https://www.ai.gov.au/staying-safe-and-responsible/essential-ai-practices/guidance-ai-adoption-implementation-guidance>
+   and
+   <https://www.ai.gov.au/staying-safe-and-responsible/essential-ai-practices/guidance-ai-adoption-foundations>.
 2. **Voluntary AI Safety Standard (VAISS)** — DISR, September 2024, updated
    December 2025. Superseded as primary guidance by AI6 but still published as
    the detailed 10-guardrail control catalogue at
    <https://www.industry.gov.au/publications/voluntary-ai-safety-standard>.
    Any reference to "the 10 guardrails" must state this layering.
 3. **AS ISO/IEC 42001:2023** — the certifiable AI management-system standard
-   adopted by Standards Australia in February 2024; AI6 and VAISS are designed
+   adopted by Standards Australia (adoption date not verified against
+   standards.org.au); AI6 and VAISS are designed
    to interoperate with it. ISO/IEC 23894:2023 (AI risk management) exists
    internationally; its adoption as an AS-badged standard is unconfirmed.
 4. **National AI Plan** — DISR, 2 December 2025: existing law plus sector
@@ -84,12 +89,14 @@ Currency and application must be checked at use time:
   Cybersecurity plugin's automated-decision method reference — defer to it;
 - ASIC REP 798 (October 2024) governance-gap review:
   <https://www.asic.gov.au/regulatory-resources/find-a-document/reports/rep-798-beware-the-gap-governance-arrangements-in-the-face-of-ai-innovation/>;
-- APRA letter to industry on AI (30 April 2026), layered on CPS 220/230/234:
+- APRA letter to industry on AI (April 2026), layered on CPS 220/230/234:
   <https://www.apra.gov.au/apra-letter-to-industry-on-artificial-intelligence-ai>;
-- eSafety Online Safety Act industry codes (Phase 2 obligations largely from
-  9 March 2026): <https://www.esafety.gov.au/industry/codes>;
+- eSafety Online Safety Codes and Standards — Phase 2 Age-Restricted Material
+  Codes: three in effect from 27 December 2025, six from 9 March 2026;
+  Regulatory Guidance updated April 2026: <https://www.esafety.gov.au/industry/codes>;
 - DTA Policy for the Responsible Use of AI in Government v2.0 (mandatory for
-  non-corporate Commonwealth entities, phased to December 2026):
+  non-corporate Commonwealth entities; v2.0 effective 15 December 2025 with
+  staged per-requirement deadlines — verify the specific deadline at use):
   <https://www.digital.gov.au/ai/ai-in-government-policy>;
 - Australia's AI Ethics Principles (2019):
   <https://www.industry.gov.au/publications/australias-ai-ethics-principles>; and

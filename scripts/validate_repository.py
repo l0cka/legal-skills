@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import datetime as dt
 import json
 import re
 import sys
@@ -17,7 +18,11 @@ MARKDOWN_LINK = re.compile(r"\[[^\]]*\]\(([^)\s]+)\)")
 EXPECTED_TARGETS = {"claude-cowork", "chatgpt-work"}
 MAX_DESCRIPTION_LENGTH = 1024
 OPENAI_AGENT_KEYS = ("display_name", "short_description", "default_prompt")
-CATALOG_STRING_FIELDS = ("displayName", "shortDescription", "longDescription")
+CATALOG_STRING_FIELDS = ("displayName", "shortDescription", "longDescription", "lawCheckedOn")
+# A plugin whose legal content has not been re-checked within this window fails
+# validation: re-verify the plugin against the official sources, fix anything
+# stale, then set catalog.json lawCheckedOn to the check date.
+LAW_CHECK_MAX_AGE_DAYS = 183
 CATALOG_LIST_FIELDS = ("defaultPrompt", "whatItDoes", "boundaries")
 
 
@@ -125,12 +130,28 @@ def validate_openai_agent_file(root: Path, skill_dir: Path) -> None:
             raise ValidationError(f"{relative}: missing required key {key}")
 
 
+def validate_law_checked_on(relative: str, value: str, today: dt.date | None = None) -> None:
+    try:
+        checked = dt.date.fromisoformat(value)
+    except ValueError as exc:
+        raise ValidationError(f"{relative}.lawCheckedOn: expected YYYY-MM-DD") from exc
+    today = today or dt.date.today()
+    if checked > today:
+        raise ValidationError(f"{relative}.lawCheckedOn: {value} is in the future")
+    if (today - checked).days > LAW_CHECK_MAX_AGE_DAYS:
+        raise ValidationError(
+            f"{relative}.lawCheckedOn: {value} is older than {LAW_CHECK_MAX_AGE_DAYS} days; "
+            "re-check the plugin against the official sources and update the date"
+        )
+
+
 def validate_plugin_catalog(root: Path, plugin_name: str) -> None:
     relative = f"plugins/{plugin_name}/catalog.json"
     catalog = load_json(root, relative)
     for field in CATALOG_STRING_FIELDS:
         if not isinstance(catalog.get(field), str) or not catalog[field].strip():
             raise ValidationError(f"{relative}.{field}: required non-empty string")
+    validate_law_checked_on(relative, catalog["lawCheckedOn"])
     for field in CATALOG_LIST_FIELDS:
         value = catalog.get(field)
         if (

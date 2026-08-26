@@ -4,8 +4,9 @@
 Canonical, hand-edited sources per plugin:
   plugins/<name>/.claude-plugin/plugin.json  (name, version, description, keywords)
   plugins/<name>/catalog.json                (displayName, shortDescription,
-                                              longDescription, defaultPrompt,
-                                              whatItDoes, boundaries)
+                                              longDescription, lawCheckedOn,
+                                              defaultPrompt, whatItDoes,
+                                              boundaries)
   plugins/<name>/skills/<skill>/...          (the skill packages)
   skills.json                                (per-skill `source` provenance only)
 
@@ -44,7 +45,7 @@ TARGETS_BADGE = (
 )
 
 MANIFEST_DATA_FIELDS = ("name", "version", "description", "keywords")
-CATALOG_STRING_FIELDS = ("displayName", "shortDescription", "longDescription")
+CATALOG_STRING_FIELDS = ("displayName", "shortDescription", "longDescription", "lawCheckedOn")
 CATALOG_LIST_FIELDS = ("defaultPrompt", "whatItDoes", "boundaries")
 EVIDENCE_STATE_KEYS = ("qualifications", "unverifiable")
 
@@ -305,7 +306,8 @@ def plugins_readme(plugins: list[dict[str, Any]]) -> str:
     for plugin in plugins:
         entry = (
             f"- [**{plugin['catalog']['displayName']}**]({plugin['name']}/README.md) — "
-            f"{plugin['catalog']['shortDescription']}"
+            f"{plugin['catalog']['shortDescription']} "
+            f"(law checked {plugin['catalog']['lawCheckedOn']})"
         )
         lines.extend(
             textwrap.wrap(
@@ -343,14 +345,15 @@ def counts_region(plugins: list[dict[str, Any]], skill_count: int) -> str:
 
 def table_region(plugins: list[dict[str, Any]]) -> str:
     lines = [
-        "| Plugin | Skills | Description |",
-        "| --- | :---: | --- |",
+        "| Plugin | Skills | Description | Law checked |",
+        "| --- | :---: | --- | :---: |",
     ]
     for plugin in plugins:
         catalog = plugin["catalog"]
         lines.append(
             f"| [**{catalog['displayName']}**](plugins/{plugin['name']}/README.md) "
-            f"| {len(plugin['skills'])} | {catalog['shortDescription']} |"
+            f"| {len(plugin['skills'])} | {catalog['shortDescription']} "
+            f"| {catalog['lawCheckedOn']} |"
         )
     return "\n".join(lines)
 

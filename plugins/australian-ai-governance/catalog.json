@@ -2,6 +2,7 @@
   "displayName": "Australian AI Governance",
   "shortDescription": "Maps the AI rules and guidance that apply to an Australian organisation. Shows which items are law and which are only guidance.",
   "longDescription": "Creates an approved AI-governance profile, maps which Australian instruments currently bind an AI use case, issue-spots board AI-oversight exposure, checks governance documentation against the AI6 guidance and VAISS guardrail catalogue, routes government AI use cases to the right jurisdictional assurance track and monitors pending AI regulatory developments. It verifies official publishers, labels superseded and proposed instruments, and never asserts pending law as in force.",
+  "lawCheckedOn": "2026-08-26",
   "defaultPrompt": [
     "Create a controlled AI-governance profile for this organisation before assessing its AI obligations.",
     "Map which Australian regulatory instruments currently apply to this AI use case, and which are only pending.",
