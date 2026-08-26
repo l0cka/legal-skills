@@ -31,7 +31,8 @@ def script_was_run(tool_calls: list[dict]) -> bool:
                for c in tool_calls)
 
 
-CONTAMINATION = re.compile(r"legal-skills|SKILL\.md|/plugins/")
+# Actual access to the shipped skills (repo or an installed copy), not a mere `find -name SKILL.md` attempt.
+CONTAMINATION = re.compile(r"legal-skills|plugins/(australian|legal)-[a-z-]+/skills/")
 
 
 def contaminated(row: dict) -> bool:

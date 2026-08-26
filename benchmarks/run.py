@@ -20,6 +20,7 @@ import argparse
 import concurrent.futures
 import datetime as dt
 import json
+import re
 import subprocess
 import sys
 import tempfile
@@ -165,6 +166,25 @@ def pi(prompt: str, *, model: str, max_turns: int, tools: list[str], plugin_dir:
             "exit_code": proc.returncode, "subtype": "success"}
 
 
+def baseline_prompt(prompt: str, skill: str) -> str:
+    """Strip the skill name from a baseline prompt: a user without the plugin would not name it, and a named
+    skill sends tool-using models hunting for it on disk. Sentences are kept intact."""
+    name = r"\$?" + re.escape(skill) + r"\b"
+    rules = [
+        (r"(?i)\buse " + name + r" to\b", "Please"),          # "Use X to verify"  -> "Please verify"
+        (r"(?i)\busing " + name + r"\b,?", ""),                # "using X on these" -> "on these"
+        (r"(?i)\buse " + name + r" (on|for|with)\b", r"For"),  # "Use X for our firm" -> "For our firm"
+        (r"(?i)\buse " + name + r"[.:]?", "Please advise:"),  # "Use X. Draft ..."  -> "Please advise: Draft ..."
+        (r"(?i)\bwith " + name + r"\b", ""),
+        (name, "the appropriate method"),
+    ]
+    out = prompt
+    for pattern, repl in rules:
+        out = re.sub(pattern, repl, out)
+    out = re.sub(r"[ \t]{2,}", " ", out).replace(" .", ".").replace(" ,", ",").strip()
+    return out[0].upper() + out[1:] if out else prompt
+
+
 def result_text(payload: dict) -> str:
     return payload.get("result") or payload.get("text") or ""
 
@@ -244,14 +264,15 @@ def main(argv: list[str] | None = None) -> int:
         # Scratch lives outside the repository: a cwd inside it let baseline runs `find` the skills on disk.
         scratch = Path(tempfile.gettempdir()) / "legal-skills-bench" / out_dir.name / f"{case['id']}-{arm}"
         scratch.mkdir(parents=True, exist_ok=True)
+        prompt = case["prompt"] if arm == "with" else baseline_prompt(case["prompt"], case["skill"])
         if args.runner == "pi":
-            payload = pi(case["prompt"], model=args.model, max_turns=args.max_turns, tools=tools, plugin_dir=plugin_dir,
+            payload = pi(prompt, model=args.model, max_turns=args.max_turns, tools=tools, plugin_dir=plugin_dir,
                          skill=case["skill"], timeout=args.timeout, cwd=scratch, thinking=args.thinking)
         else:
-            payload = claude(case["prompt"], model=args.model, max_turns=args.max_turns, tools=tools,
+            payload = claude(prompt, model=args.model, max_turns=args.max_turns, tools=tools,
                              plugin_dir=plugin_dir, timeout=args.timeout, cwd=scratch,
                              allowed_domains=args.allowed_domains.split(",") if args.allowed_domains else None)
-        row = {"id": case["id"], "set": case["set"], "kind": case["kind"], "arm": arm, "runner": args.runner,
+        row = {"id": case["id"], "set": case["set"], "kind": case["kind"], "arm": arm, "runner": args.runner, "prompt": prompt,
                "model": args.model, "case": case, "text": result_text(payload), "cost_usd": payload.get("total_cost_usd"),
                "turns": payload.get("num_turns"), "exit_code": payload.get("exit_code"),
                "subtype": payload.get("subtype"), "tool_calls": payload.get("tool_calls", []),
