@@ -1,6 +1,6 @@
 {
   "name": "australian-aml-ctf",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Map, review and monitor AML/CTF obligations for Australian legal practices under the tranche 2 reforms using verified official sources, designated-service mapping, legal-professional-privilege handling and human-review gates.",
   "author": {
     "name": "l0cka",
