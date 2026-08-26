@@ -8,6 +8,10 @@ plugin manifests contain their intended release versions.
 
 ## Unreleased
 
+No unreleased changes.
+
+## 2026-08-26 - Evals, currency, coverage and three new plugins
+
 ### Removed
 
 - Removed `generate-precedent-profile` and the public sidecar-profile,
