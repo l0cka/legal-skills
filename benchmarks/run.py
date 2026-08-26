@@ -17,10 +17,12 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import concurrent.futures
 import datetime as dt
 import json
 import subprocess
 import sys
+import threading
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -91,7 +93,7 @@ def claude(prompt: str, *, model: str, max_turns: int, tools: list[str], plugin_
     if json_schema:
         cmd += ["--json-schema", json.dumps(json_schema)]
     try:
-        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, cwd=cwd, check=False)
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, cwd=cwd, check=False, stdin=subprocess.DEVNULL)
     except subprocess.TimeoutExpired:
         return {"error": f"timeout after {timeout}s"}
     payload: dict = {}
@@ -114,6 +116,52 @@ def claude(prompt: str, *, model: str, max_turns: int, tools: list[str], plugin_
     if proc.returncode and not (payload.get("result") or payload.get("text")):
         payload["error"] = f"exit {proc.returncode}: {payload.get('subtype') or proc.stderr.strip()[:300]}"
     return payload
+
+
+def pi(prompt: str, *, model: str, max_turns: int, tools: list[str], plugin_dir: Path | None, skill: str | None,
+       timeout: int, cwd: Path, thinking: str = "low") -> dict:
+    """Run one case through the `pi` coding agent. The with arm loads the case's skill directory via --skill;
+    the without arm passes --no-skills. Context files, sessions, extensions and prompt templates are disabled."""
+    cmd = ["pi", "-p", "--mode", "json", "--no-session", "--no-context-files", "--no-extensions",
+           "--no-prompt-templates", "--thinking", thinking, "--model", model]
+    if plugin_dir and skill:
+        cmd += ["--skill", str((plugin_dir / "skills" / skill).resolve())]
+    else:
+        cmd += ["--no-skills"]
+    if tools:
+        # `read` is always on: pi loads a skill by reading its SKILL.md, so removing it silently disables the skill.
+        pi_tools = sorted({{"Bash": "bash", "WebFetch": "bash", "WebSearch": "bash", "Write": "write",
+                            "Read": "read", "Edit": "edit"}.get(t, t.lower()) for t in tools} | {"read"})
+        cmd += ["--tools", ",".join(pi_tools)]
+    else:
+        cmd += ["--tools", "read"]
+    cmd += ["--", prompt]
+    try:
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, cwd=cwd, check=False, stdin=subprocess.DEVNULL)
+    except subprocess.TimeoutExpired:
+        return {"error": f"timeout after {timeout}s"}
+    text, tool_calls, cost, turns = "", [], 0.0, 0
+    for line in proc.stdout.splitlines():
+        try:
+            event = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        kind = event.get("type")
+        if kind == "message_end" and event.get("message", {}).get("role") == "assistant":
+            turns += 1
+            message = event["message"]
+            cost += (message.get("usage", {}).get("cost", {}) or {}).get("total", 0) or 0
+            for block in message.get("content", []):
+                if block.get("type") == "text" and block.get("text"):
+                    text = block["text"]
+                elif "tool" in str(block.get("type", "")).lower():
+                    tool_calls.append({"name": block.get("name"), "input": block.get("arguments") or block.get("input")})
+        elif kind and "tool_execution_start" in kind:
+            tool_calls.append({"name": event.get("toolName") or event.get("name"), "input": event.get("args") or event.get("arguments")})
+    if not text:
+        return {"error": f"exit {proc.returncode}, no assistant text: {proc.stderr.strip()[:300]}", "tool_calls": tool_calls}
+    return {"result": text, "tool_calls": tool_calls, "total_cost_usd": cost, "num_turns": turns,
+            "exit_code": proc.returncode, "subtype": "success"}
 
 
 def result_text(payload: dict) -> str:
@@ -147,7 +195,10 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--set", default="all", choices=KEYED_SETS + ("rubrics", "all"))
     parser.add_argument("--arm", default="with,without")
-    parser.add_argument("--model", default="opus")
+    parser.add_argument("--runner", default="claude", choices=("claude", "pi"))
+    parser.add_argument("--model", default="opus", help="claude alias, or pi provider/model id")
+    parser.add_argument("--thinking", default="low", help="pi thinking level")
+    parser.add_argument("--workers", type=int, default=1)
     parser.add_argument("--judge-model", default="opus")
     parser.add_argument("--max-turns", type=int, default=15)
     parser.add_argument("--timeout", type=int, default=600)
@@ -184,26 +235,37 @@ def main(argv: list[str] | None = None) -> int:
     out_dir.mkdir(parents=True, exist_ok=True)
     print(f"{len(cases)} case(s) x {arms} -> {out_dir}")
 
-    for case in cases:
-        for arm in arms:
-            plugin_dir = ROOT / "plugins" / case["plugin"] if arm == "with" else None
-            tools = list(dict.fromkeys(case.get("tools", []) + [t for t in args.extra_tools.split(",") if t]))
-            scratch = out_dir / "scratch" / f"{case['id']}-{arm}"
-            scratch.mkdir(parents=True, exist_ok=True)
+    lock = threading.Lock()
+
+    def run_one(case: dict, arm: str) -> None:
+        plugin_dir = ROOT / "plugins" / case["plugin"] if arm == "with" else None
+        tools = list(dict.fromkeys(case.get("tools", []) + [x for x in args.extra_tools.split(",") if x]))
+        scratch = out_dir / "scratch" / f"{case['id']}-{arm}"
+        scratch.mkdir(parents=True, exist_ok=True)
+        if args.runner == "pi":
+            payload = pi(case["prompt"], model=args.model, max_turns=args.max_turns, tools=tools, plugin_dir=plugin_dir,
+                         skill=case["skill"], timeout=args.timeout, cwd=scratch, thinking=args.thinking)
+        else:
             payload = claude(case["prompt"], model=args.model, max_turns=args.max_turns, tools=tools,
                              plugin_dir=plugin_dir, timeout=args.timeout, cwd=scratch,
                              allowed_domains=args.allowed_domains.split(",") if args.allowed_domains else None)
-            row = {"id": case["id"], "set": case["set"], "kind": case["kind"], "arm": arm, "model": args.model,
-                   "case": case, "text": result_text(payload), "cost_usd": payload.get("total_cost_usd"),
-                   "turns": payload.get("num_turns"), "exit_code": payload.get("exit_code"),
-                   "subtype": payload.get("subtype"), "tool_calls": payload.get("tool_calls", []),
-                   "error": payload.get("error")}
-            if case["kind"] == "rubric" and not row["error"]:
-                row["judge"] = judge(case, row["text"], model=args.judge_model, timeout=args.timeout, cwd=scratch)
+        row = {"id": case["id"], "set": case["set"], "kind": case["kind"], "arm": arm, "runner": args.runner,
+               "model": args.model, "case": case, "text": result_text(payload), "cost_usd": payload.get("total_cost_usd"),
+               "turns": payload.get("num_turns"), "exit_code": payload.get("exit_code"),
+               "subtype": payload.get("subtype"), "tool_calls": payload.get("tool_calls", []),
+               "error": payload.get("error")}
+        if case["kind"] == "rubric" and not row["error"]:
+            row["judge"] = judge(case, row["text"], model=args.judge_model, timeout=args.timeout, cwd=scratch)
+        with lock:
             with (out_dir / f"{case['set']}.jsonl").open("a", encoding="utf-8") as handle:
                 handle.write(json.dumps(row) + "\n")
             status = row["error"] or f"{len(row['text'])} chars, {row['turns']} turns, ${row['cost_usd'] or 0:.3f}"
-            print(f"  {case['id']:<28} {arm:<8} {status}")
+            print(f"  {case['id']:<28} {arm:<8} {status}", flush=True)
+
+    with concurrent.futures.ThreadPoolExecutor(max_workers=args.workers) as pool:
+        futures = [pool.submit(run_one, case, arm) for case in cases for arm in arms]
+        for future in futures:
+            future.result()
     print(f"done -> python3 benchmarks/score.py {out_dir}")
     return 0
 

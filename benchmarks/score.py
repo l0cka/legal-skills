@@ -27,7 +27,8 @@ def status_present(token: str, text: str) -> bool:
 
 
 def script_was_run(tool_calls: list[dict]) -> bool:
-    return any(c.get("name") == "Bash" and "compute_deadline.py" in json.dumps(c.get("input", {})) for c in tool_calls)
+    return any(str(c.get("name", "")).lower() == "bash" and "compute_deadline.py" in json.dumps(c.get("input") or {}, default=str)
+               for c in tool_calls)
 
 
 def keyed_verdict(case: dict, text: str, tool_calls: list[dict] | None = None) -> dict:
