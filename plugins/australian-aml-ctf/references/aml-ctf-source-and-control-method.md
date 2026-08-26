@@ -36,8 +36,10 @@ workflow must recheck each source:
    centres and barristers acting for Australian government bodies, and the
    incidental trust-money exemption in subsection 6(5C); AUSTRAC's
    exemptions guidance is the starting point and the Act text controls.
-2. **The Rules** — the AML/CTF Rules 2025 (F2025L01026), as amended, carry
-   the program, CDD and reporting detail:
+2. **The Rules** — the AML/CTF Rules 2025 (F2025L01026; commenced 31 March
+   2026, replacing the AML/CTF Rules 2007; latest compilation F2026C00274 as
+   at 31 March 2026), as amended, carry the program, CDD and reporting
+   detail:
    <https://www.austrac.gov.au/about-us/legislation/amlctf-rules>. Check for
    amendment instruments and transitional rules at use time.
 3. **AUSTRAC guidance** — the reform hub

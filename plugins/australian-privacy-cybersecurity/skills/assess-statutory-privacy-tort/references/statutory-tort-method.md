@@ -3,7 +3,7 @@
 ## Authority and operation
 
 Verify the point-in-time Privacy Act text. Schedule 2 commenced on 10 June
-2025. Section 94A and Schedule 2 clauses 6(2)–(3) require the cause of action to
+2025 (verified 26 August 2026). Section 94A and Schedule 2 clauses 6(2)–(3) require the cause of action to
 be read separately from most of the Act. Do not make APP-entity coverage a
 gateway.
 

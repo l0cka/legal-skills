@@ -1,6 +1,6 @@
 ---
 name: verify-hca-judgment
-description: Verify that a cited High Court of Australia decision exists at the official High Court website, resolving medium-neutral HCA citations, CLR volumes 1-100 and ALJR references to the published judgment and recording provenance. Use when a user asks whether an HCA citation is genuine, what case a High Court citation refers to, or to check High Court authorities in a document for fabrication. Do not use for other courts, subsequent treatment, case summaries or legal advice.
+description: Verify that a cited High Court of Australia decision exists at the official High Court website, resolving medium-neutral HCA citations, CLR volumes 1-100 and ALJR references to the published judgment and recording provenance. Use when the citation is already known to be a High Court citation (route-case-citation sends HCA citations here) and a user asks whether it is genuine, what case a High Court citation refers to, or to check High Court authorities in a document for fabrication. Do not use for other courts, subsequent treatment, case summaries or legal advice.
 ---
 
 # Verify HCA Judgment
@@ -8,9 +8,12 @@ description: Verify that a cited High Court of Australia decision exists at the 
 Use `hcourt.gov.au` as the controlling source. Produce a provenance record,
 not a bare assertion that a case "exists".
 
-The website's coverage is four collections, and nothing else: judgments 1998
-to current, Commonwealth Law Reports volumes 1–100 (roughly 1903–1959),
-unreported judgments 1906–1994, and single Justice judgments since 2024.
+The website's coverage (checked 2026-08-26) is four collections, and nothing
+else: judgments 1998 to current, Commonwealth Law Reports volumes 1–100
+(roughly 1903–1959), unreported judgments 1906–1994 (an incomplete set, per
+the Court), and single Justice judgments since January 2024. Judgment
+summaries (since December 2002) are not judgments and are not a
+verification source.
 Reported decisions from roughly 1959 to 1997 — CLR volumes above 100 — are
 not published there. A citation in that gap is `UNVERIFIABLE` at the
 official publisher, never `NOT FOUND`. Note also that the High Court only

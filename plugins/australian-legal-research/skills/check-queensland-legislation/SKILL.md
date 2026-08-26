@@ -1,6 +1,6 @@
 ---
 name: check-queensland-legislation
-description: Verify the identity, status, point-in-time reprint, commencement and currency of Queensland legislation using the official Queensland legislation publisher. Use for current or historical Queensland Acts and subordinate legislation. Do not use for Bills, case law, interpretation, application or final legal advice.
+description: Verify the identity, status, point-in-time reprint, commencement and currency of Queensland legislation using the official Queensland legislation publisher. Use when a user asks whether Queensland legislation is in force or repealed, which version applied on a date, or whether a citation or supplied provision matches the official text, for current or historical Queensland Acts and subordinate legislation. Do not use for Commonwealth or other State or Territory legislation, Bills, case law, court deadlines, interpretation, application or final legal advice.
 ---
 
 # Check Queensland Legislation

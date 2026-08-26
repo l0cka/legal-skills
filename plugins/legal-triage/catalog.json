@@ -2,6 +2,7 @@
   "displayName": "Legal Triage",
   "shortDescription": "Helps community legal centre staff record and triage legal enquiries under an approved profile.",
   "longDescription": "Creates a centre-approved triage profile and uses it to prepare provisional, staff-reviewed enquiry records. The plugin minimises client data, keeps conflict checking outside the model, escalates urgency and uncertainty, and never makes autonomous eligibility, merits or service decisions.",
+  "lawCheckedOn": "2026-08-26",
   "defaultPrompt": [
     "Configure a governed triage profile for this community legal centre.",
     "Prepare a provisional staff-reviewed triage record for this enquiry.",

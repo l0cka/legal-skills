@@ -41,9 +41,14 @@ continuing.
 At 14 August 2026, the Federal Register identifies C2026C00339, compilation 147
 from 1 July 2026, as the latest *Corporations Act* compilation. This is a
 research snapshot, not a cached rule: every live workflow must recheck it.
-ASX's fourth edition principles remain operative while a fifth edition is in
-consultation. APRA's June 2026 replacement CPS 510 is also a draft; the in-force
-standard must be checked separately. Never apply a draft as current law.
+ASX's 4th edition (2019) remains operative; a draft 5th edition was released
+for consultation on 21 July 2026 (submissions close 14 September 2026; ASX
+response expected Q1 2027; proposed first reporting period is the financial
+year commencing 1 July 2027, or 1 January 2028 for December balancers).
+APRA's draft CPS 510 (released 16 June 2026, consultation closes 28 August
+2026, final standard planned late 2026, effect expected early 2028) is also
+a draft; the in-force standard must be checked separately. Never apply a
+draft as current law.
 
 Official starting points, whose currency and application must still be checked:
 
@@ -92,7 +97,10 @@ verified before use: internal management and replaceable rules (ss 134–141),
 registers (ch 2C), general duties and reliance/delegation (ss 180–190), material
 personal interests (ss 191–196), management powers and delegation (ss 198A–198F),
 director appointment and cessation (pt 2D.3), directors' meetings (pt 2G.1),
-minutes (s 251A), financial records (s 286) and insolvent trading (s 588G).
+minutes (s 251A), financial records (s 286), insolvent trading (s 588G) and
+sustainability (climate) reporting (pt 2M.3 div 1, s 292A thresholds; AASB
+S2; phased Group 1 for financial years from 1 January 2025, Group 2 from
+1 July 2026, Group 3 from 1 July 2027 — ASIC RG 280).
 Other provisions may be decisive. Do not infer that this list is complete.
 
 ## Human control

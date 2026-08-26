@@ -54,6 +54,7 @@ interface and the root README table:
 {
   "displayName": "Australian AML/CTF",
   "shortDescription": "One line shown in listings.",
+  "lawCheckedOn": "2026-08-26",
   "longDescription": "Full store prose.",
   "defaultPrompt": ["One suggested prompt per workflow."],
   "whatItDoes": ["README table bullet."],

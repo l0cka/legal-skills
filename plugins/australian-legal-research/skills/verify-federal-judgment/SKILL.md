@@ -1,6 +1,6 @@
 ---
 name: verify-federal-judgment
-description: Verify that a cited Federal Court of Australia or Federal Circuit and Family Court decision exists at the courts' official publishers, resolving FCA, FCAFC, FedCFamC, FCCA, FamCA and FCR citations, with an explicit browser-guided or manual path where the Federal Court website challenges automated access. Use when a user asks whether a federal citation is genuine, what case a federal citation refers to, or to check federal authorities in a document for fabrication. Do not use for the High Court, State courts, subsequent treatment or legal advice.
+description: Verify that a cited Federal Court of Australia or Federal Circuit and Family Court decision exists at the courts' official publishers, resolving FCA, FCAFC, FedCFamC, FCCA, FamCA and FCR citations, with an explicit browser-guided or manual path where the Federal Court website challenges automated access. Use when the citation is already known to be a Federal Court or FCFCOA citation (route-case-citation sends federal citations here) and a user asks whether it is genuine, what case a federal citation refers to, or to check federal authorities in a document for fabrication. Do not use for the High Court, State courts, subsequent treatment or legal advice.
 ---
 
 # Verify Federal Judgment
@@ -48,8 +48,9 @@ restriction handling.
      name as a qualification, and say which differs.
 4. Check restrictions before reproducing anything.
    - Family-law decisions are published under statutory anonymisation
-     (Family Law Act 1975 (Cth) s 121); treat the pseudonym as the official
-     case name and never attempt to identify parties.
+     (Family Law Act 1975 (Cth) pt XIVB, s 114Q; formerly s 121 before
+     6 May 2024); treat the pseudonym as the official case name and never
+     attempt to identify parties.
    - Preserve any suppression or non-publication notation found.
 5. Report using the result contract.
 
