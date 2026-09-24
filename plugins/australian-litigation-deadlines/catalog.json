@@ -34,5 +34,8 @@
       "applicable version",
       "decisive fact"
     ]
+  },
+  "requires": {
+    "australian-legal-research": "Verifies the Commonwealth and state legislation behind limitation periods and deadline rules."
   }
 }

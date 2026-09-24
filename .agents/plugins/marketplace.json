@@ -237,7 +237,7 @@
       },
       "category": "Productivity",
       "description": "Route an Australian legal fact pattern to the Legal Skills plugins and skills it engages, in a defensible order, with the human decision points named. Never answers the legal question itself.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "keywords": [
         "legal-workflows",
         "routing",

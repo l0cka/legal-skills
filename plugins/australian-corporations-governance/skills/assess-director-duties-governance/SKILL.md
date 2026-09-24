@@ -70,3 +70,20 @@ versions or a material conflict cannot be established. Do not infer assent from
 silence, independence from a title, solvency from incomplete accounts, or a
 business-judgment protection from process labels. Never state that a director
 has complied with or breached a duty; present issue spotting for human advice.
+
+<!-- generated:plugin-dependencies -->
+## Other plugins
+
+This skill names skills from other Legal Skills plugins. Install a required
+plugin alongside this one; install a hand-off plugin when the matter needs
+that depth.
+
+- `australian-legal-research` (required): `check-commonwealth-legislation`,
+  `route-case-citation`. Verifies Corporations Act provisions and case-law
+  leads against the official sources.
+
+If a named skill is not available in this session, say so and name the plugin
+to install. Treat the step it would have performed as not done: record the
+affected proposition as not verified, or the hand-off as not made. Never
+perform that step from memory or substitute a different skill.
+<!-- end:plugin-dependencies -->

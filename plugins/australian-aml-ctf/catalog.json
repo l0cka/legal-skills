@@ -35,5 +35,11 @@
       "applicable version",
       "decisive fact"
     ]
+  },
+  "requires": {
+    "australian-legal-research": "Verifies the AML/CTF Act, Rules and amending instruments against the Federal Register of Legislation."
+  },
+  "handsOffTo": {
+    "australian-privacy-cybersecurity": "Takes privacy depth for customer due diligence and record-keeping."
   }
 }

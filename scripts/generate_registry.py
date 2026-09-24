@@ -6,7 +6,8 @@ Canonical, hand-edited sources per plugin:
   plugins/<name>/catalog.json                (displayName, shortDescription,
                                               longDescription, lawCheckedOn,
                                               defaultPrompt, whatItDoes,
-                                              boundaries)
+                                              boundaries; optional requires
+                                              and handsOffTo)
   plugins/<name>/skills/<skill>/...          (the skill packages)
 
 skills.json (per-skill provenance) is also hand-edited but not generated.
@@ -50,6 +51,11 @@ MANIFEST_DATA_FIELDS = ("name", "version", "description", "keywords")
 CATALOG_STRING_FIELDS = ("displayName", "shortDescription", "longDescription", "lawCheckedOn")
 CATALOG_LIST_FIELDS = ("defaultPrompt", "whatItDoes", "boundaries")
 EVIDENCE_STATE_KEYS = ("qualifications", "unverifiable")
+# Cross-plugin dependency kinds declared in catalog.json as {plugin: reason}.
+# "requires": a skill in this plugin invokes the other plugin's skills as a
+# step of its own workflow (for example official-source verification).
+# "handsOffTo": a skill routes part of a matter to the other plugin for depth.
+DEPENDENCY_KINDS = {"requires": "required", "handsOffTo": "hand-off"}
 
 # Canonical evidence-state contract, stamped into each declaring plugin's
 # source-and-control method document. The convention is documented in
@@ -164,6 +170,22 @@ def load_plugin(plugin_dir: Path) -> dict[str, Any]:
                 f"{len(methods)} *source-and-control-method.md file(s) under references/"
             )
         method_path = methods[0]
+    dependencies: dict[str, dict[str, str]] = {}
+    for field in DEPENDENCY_KINDS:
+        declared = catalog.get(field, {})
+        if not isinstance(declared, dict) or not all(
+            SLUG.fullmatch(str(key)) and is_text(value) for key, value in declared.items()
+        ):
+            raise GenerationError(
+                f"{plugin_dir.name}/catalog.json: {field!r} must map plugin names to "
+                "a non-empty reason"
+            )
+        dependencies[field] = dict(sorted(declared.items()))
+    overlap = sorted(set(dependencies["requires"]) & set(dependencies["handsOffTo"]))
+    if overlap:
+        raise GenerationError(
+            f"{plugin_dir.name}/catalog.json: {overlap} declared as both requires and handsOffTo"
+        )
     skills = sorted(
         path.parent.name
         for path in (plugin_dir / "skills").glob("*/SKILL.md")
@@ -178,6 +200,7 @@ def load_plugin(plugin_dir: Path) -> dict[str, Any]:
         "catalog": catalog,
         "skills": skills,
         "method_path": method_path,
+        "dependencies": dependencies,
     }
 
 
@@ -273,10 +296,12 @@ def plugins_readme(plugins: list[dict[str, Any]]) -> str:
         "",
     ]
     for plugin in plugins:
+        notes = [dependency_summary(plugin["dependencies"])]
+        notes.append(f"law checked {plugin['catalog']['lawCheckedOn']}")
         entry = (
             f"- [**{plugin['catalog']['displayName']}**]({plugin['name']}/README.md) — "
             f"{plugin['catalog']['shortDescription']} "
-            f"(law checked {plugin['catalog']['lawCheckedOn']})"
+            f"({'; '.join(note for note in notes if note)})"
         )
         lines.extend(
             textwrap.wrap(
@@ -443,6 +468,10 @@ def skill_map(root: Path, plugins: list[dict[str, Any]]) -> str:
             continue
         lines.append(f"## {plugin['catalog']['displayName']} (`{plugin['name']}`)")
         lines.append("")
+        summary = dependency_summary(plugin["dependencies"])
+        if summary:
+            lines.extend(wrap_paragraph(f"Plugin dependencies: {summary[0].upper()}{summary[1:]}."))
+            lines.append("")
         for skill in plugin["skills"]:
             text = (root / "plugins" / plugin["name"] / "skills" / skill / "SKILL.md").read_text(
                 encoding="utf-8"
@@ -455,12 +484,203 @@ def skill_map(root: Path, plugins: list[dict[str, Any]]) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
+DEPENDENCY_REGION = "plugin-dependencies"
+SCANNED_SUFFIXES = (".md", ".json")
+
+
+def strip_region(text: str, region: str) -> str:
+    begin = f"<!-- generated:{region} -->"
+    end = f"<!-- end:{region} -->"
+    start = text.find(begin)
+    stop = text.find(end)
+    if start == -1 and stop == -1:
+        return text
+    if start == -1 or stop == -1 or stop < start:
+        raise GenerationError(f"unbalanced generated region markers for {region!r}")
+    return text[:start] + text[stop + len(end):]
+
+
+def stamp_trailing_region(text: str, region: str, content: str | None) -> str:
+    """Own a region at the end of a hand-written file: add, refresh or remove it."""
+    body = strip_region(text, region).rstrip("\n") + "\n"
+    if content is None:
+        return body
+    return f"{body}\n<!-- generated:{region} -->\n{content}\n<!-- end:{region} -->\n"
+
+
+def referenced_skills(files: list[Path], owners: dict[str, str], plugin: str) -> dict[str, set[str]]:
+    """Other plugins' skills named in the given files, grouped by owning plugin."""
+    found: dict[str, set[str]] = {}
+    for path in files:
+        text = strip_region(path.read_text(encoding="utf-8"), DEPENDENCY_REGION)
+        for skill, owner in owners.items():
+            if owner != plugin and re.search(rf"(?<![\w-]){re.escape(skill)}(?![\w-])", text):
+                found.setdefault(owner, set()).add(skill)
+    return found
+
+
+def scanned_files(directory: Path) -> list[Path]:
+    return sorted(
+        path
+        for path in directory.rglob("*")
+        if path.is_file()
+        and path.suffix in SCANNED_SUFFIXES
+        and path.name != "catalog.json"
+        and not any(part in (".claude-plugin", ".codex-plugin") for part in path.parts)
+    )
+
+
+def plugin_dependencies(root: Path, plugins: list[dict[str, Any]]) -> dict[str, dict[str, Any]]:
+    """Derive each plugin's cross-plugin skill references and check them against catalog.json.
+
+    The router is exempt: it names every skill by design and never invokes one.
+    """
+    owners = {skill: plugin["name"] for plugin in plugins for skill in plugin["skills"]}
+    names = set(owners.values())
+    result: dict[str, dict[str, Any]] = {}
+    for plugin in plugins:
+        name = plugin["name"]
+        declared = plugin["dependencies"]
+        declared_names = set(declared["requires"]) | set(declared["handsOffTo"])
+        if name == ROUTER_PLUGIN:
+            if declared_names:
+                raise GenerationError(f"{name}/catalog.json: the router declares no dependencies")
+            continue
+        plugin_dir = root / "plugins" / name
+        unknown = sorted(declared_names - names - {name})
+        if unknown or name in declared_names:
+            raise GenerationError(
+                f"{name}/catalog.json: dependencies name unknown or self plugin(s) "
+                f"{unknown or [name]}"
+            )
+        used = referenced_skills(scanned_files(plugin_dir), owners, name)
+        undeclared = sorted(set(used) - declared_names)
+        if undeclared:
+            raise GenerationError(
+                f"{name}: names skills from {undeclared} but catalog.json does not declare "
+                "them under requires or handsOffTo"
+            )
+        unused = sorted(declared_names - set(used))
+        if unused:
+            raise GenerationError(
+                f"{name}/catalog.json: declares {unused} but no file in the plugin names "
+                "one of their skills"
+            )
+        per_skill = {
+            skill: referenced_skills(scanned_files(plugin_dir / "skills" / skill), owners, name)
+            for skill in plugin["skills"]
+        }
+        result[name] = {"declared": declared, "per_skill": per_skill}
+    return result
+
+
+def dependency_lines(declared: dict[str, dict[str, str]], used: dict[str, set[str]]) -> list[str]:
+    lines = []
+    for field, label in DEPENDENCY_KINDS.items():
+        for other, reason in declared[field].items():
+            if other not in used:
+                continue
+            skills = ", ".join(f"`{skill}`" for skill in sorted(used[other]))
+            lines.extend(
+                textwrap.wrap(
+                    f"- `{other}` ({label}): {skills}. {reason}",
+                    width=78,
+                    subsequent_indent="  ",
+                    break_on_hyphens=False,
+                    break_long_words=False,
+                )
+            )
+    return lines
+
+
+MISSING_PLUGIN_RULE = (
+    "If a named skill is not available in this session, say so and name the "
+    "plugin to install. Treat the step it would have performed as not done: "
+    "record the affected proposition as not verified, or the hand-off as not "
+    "made. Never perform that step from memory or substitute a different skill."
+)
+
+
+def wrap_paragraph(text: str) -> list[str]:
+    return textwrap.wrap(text, width=78, break_on_hyphens=False, break_long_words=False)
+
+
+def skill_dependency_section(declared: dict[str, dict[str, str]], used: dict[str, set[str]]) -> str | None:
+    if not used:
+        return None
+    lines = [
+        "## Other plugins",
+        "",
+        *wrap_paragraph(
+            "This skill names skills from other Legal Skills plugins. Install a "
+            "required plugin alongside this one; install a hand-off plugin when "
+            "the matter needs that depth."
+        ),
+        "",
+        *dependency_lines(declared, used),
+        "",
+        *wrap_paragraph(MISSING_PLUGIN_RULE),
+    ]
+    return "\n".join(lines)
+
+
+def readme_dependency_section(declared: dict[str, dict[str, str]]) -> str | None:
+    if not any(declared[field] for field in DEPENDENCY_KINDS):
+        return None
+    lines = ["## Plugin dependencies", ""]
+    for field, label in DEPENDENCY_KINDS.items():
+        for other, reason in declared[field].items():
+            lines.extend(
+                textwrap.wrap(
+                    f"- `{other}` ({label}) — {reason}",
+                    width=78,
+                    subsequent_indent="  ",
+                    break_on_hyphens=False,
+                    break_long_words=False,
+                )
+            )
+    lines += [
+        "",
+        *wrap_paragraph(
+            "Install every required plugin with this one. A skill whose required "
+            "or hand-off plugin is missing reports the step as not done rather "
+            "than performing it from memory."
+        ),
+    ]
+    return "\n".join(lines)
+
+
+def dependency_summary(declared: dict[str, dict[str, str]]) -> str:
+    parts = []
+    for field, label in (("requires", "requires"), ("handsOffTo", "hands off to")):
+        if declared[field]:
+            parts.append(f"{label} " + ", ".join(f"`{other}`" for other in declared[field]))
+    return "; ".join(parts)
+
+
 def generate(root: Path = ROOT) -> dict[Path, str]:
     plugins = load_plugins(root)
     skill_count = sum(len(plugin["skills"]) for plugin in plugins)
+    dependencies = plugin_dependencies(root, plugins)
     outputs: dict[Path, str] = {}
     for plugin in plugins:
         plugin_dir = root / "plugins" / plugin["name"]
+        if plugin["name"] in dependencies:
+            found = dependencies[plugin["name"]]
+            readme = plugin_dir / "README.md"
+            if readme.is_file():
+                outputs[readme] = stamp_trailing_region(
+                    readme.read_text(encoding="utf-8"),
+                    DEPENDENCY_REGION,
+                    readme_dependency_section(found["declared"]),
+                )
+            for skill, used in found["per_skill"].items():
+                skill_file = plugin_dir / "skills" / skill / "SKILL.md"
+                outputs[skill_file] = stamp_trailing_region(
+                    skill_file.read_text(encoding="utf-8"),
+                    DEPENDENCY_REGION,
+                    skill_dependency_section(found["declared"], used),
+                )
         outputs[plugin_dir / ".claude-plugin" / "plugin.json"] = dumps(claude_manifest(plugin))
         outputs[plugin_dir / ".codex-plugin" / "plugin.json"] = dumps(codex_manifest(plugin))
         if plugin["method_path"] is not None:

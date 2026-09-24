@@ -48,3 +48,14 @@ The workflow is original and Australia-specific. Its issue-matrix and
 evaluation design is informed by the MIT-licensed Harvey AI `harvey-labs`
 data-privacy-cybersecurity task corpus. No task facts, client artefacts or legal
 answers are bundled here.
+
+<!-- generated:plugin-dependencies -->
+## Plugin dependencies
+
+- `australian-legal-research` (required) — Verifies the Commonwealth, state
+  and territory legislation the privacy, breach and cyber workflows rely on.
+
+Install every required plugin with this one. A skill whose required or
+hand-off plugin is missing reports the step as not done rather than performing
+it from memory.
+<!-- end:plugin-dependencies -->

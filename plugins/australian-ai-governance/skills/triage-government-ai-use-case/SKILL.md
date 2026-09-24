@@ -73,3 +73,21 @@ registry entry marked `lead-verify-before-use` without confirming the
 official source, never substitute the national framework for a mandatory
 jurisdictional track, and never present the triage as a completed assurance
 assessment.
+
+<!-- generated:plugin-dependencies -->
+## Other plugins
+
+This skill names skills from other Legal Skills plugins. Install a required
+plugin alongside this one; install a hand-off plugin when the matter needs
+that depth.
+
+- `australian-privacy-cybersecurity` (hand-off):
+  `assess-ai-privacy-cybersecurity-use-case`,
+  `route-australian-privacy-jurisdiction`. Takes privacy, cybersecurity and
+  automated-decision transparency depth for AI use cases.
+
+If a named skill is not available in this session, say so and name the plugin
+to install. Treat the step it would have performed as not done: record the
+affected proposition as not verified, or the hand-off as not made. Never
+perform that step from memory or substitute a different skill.
+<!-- end:plugin-dependencies -->

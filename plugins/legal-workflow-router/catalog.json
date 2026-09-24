@@ -12,6 +12,7 @@
     "Extracts the routing facts from a described matter: parties, sector, jurisdiction, events, dates and deliverables sought",
     "Matches those facts to the shipped skills using the generated skill map",
     "Returns a sequenced routing plan with prerequisites, hand-offs and the human decision at each step",
+    "Marks each routed skill installed or not installed and lists the plugins, including required ones, still to install",
     "Flags fact patterns no shipped skill covers instead of improvising a workflow"
   ],
   "boundaries": [

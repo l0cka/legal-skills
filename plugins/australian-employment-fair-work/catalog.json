@@ -35,5 +35,9 @@
       "applicable version",
       "decisive fact"
     ]
+  },
+  "requires": {
+    "australian-legal-research": "Verifies the Fair Work Act and related legislation and case-law leads against the official sources.",
+    "australian-litigation-deadlines": "Computes the Fair Work Commission time limits the termination assessment flags."
   }
 }

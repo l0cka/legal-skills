@@ -70,3 +70,21 @@ found — the entry stays `pending-verification` and computation stays off.
 Never mark an entry verified from commentary, memory or a non-official
 mirror, never bypass bot protections, and report every fingerprint change
 rather than reconciling it silently.
+
+<!-- generated:plugin-dependencies -->
+## Other plugins
+
+This skill names skills from other Legal Skills plugins. Install a required
+plugin alongside this one; install a hand-off plugin when the matter needs
+that depth.
+
+- `australian-legal-research` (required): `check-commonwealth-legislation`,
+  `check-nsw-legislation`, `check-victoria-legislation`. Verifies the
+  Commonwealth and state legislation behind limitation periods and deadline
+  rules.
+
+If a named skill is not available in this session, say so and name the plugin
+to install. Treat the step it would have performed as not done: record the
+affected proposition as not verified, or the hand-off as not made. Never
+perform that step from memory or substitute a different skill.
+<!-- end:plugin-dependencies -->

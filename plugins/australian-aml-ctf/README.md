@@ -69,3 +69,16 @@ to provide and where to save any approved output.
 ## Licence
 
 MIT. This is an original Australian workflow based on public official sources.
+
+<!-- generated:plugin-dependencies -->
+## Plugin dependencies
+
+- `australian-legal-research` (required) — Verifies the AML/CTF Act, Rules and
+  amending instruments against the Federal Register of Legislation.
+- `australian-privacy-cybersecurity` (hand-off) — Takes privacy depth for
+  customer due diligence and record-keeping.
+
+Install every required plugin with this one. A skill whose required or
+hand-off plugin is missing reports the step as not done rather than performing
+it from memory.
+<!-- end:plugin-dependencies -->

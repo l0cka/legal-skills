@@ -22,5 +22,8 @@
     "No fixed-list assumption about the framework",
     "Relies on Australian Legal Research for authoritative point-in-time checks",
     "Excludes case law"
-  ]
+  ],
+  "requires": {
+    "australian-legal-research": "Verifies the Commonwealth, state and territory legislation the privacy, breach and cyber workflows rely on."
+  }
 }

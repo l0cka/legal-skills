@@ -78,3 +78,23 @@ designated-service coverage cannot be established. Never mark a program
 compliant or adequate, never perform CDD on a real customer, never draft
 findings that conclude a matter is suspicious, and never treat starter-kit
 or guidance content as the statute or Rules it interprets.
+
+<!-- generated:plugin-dependencies -->
+## Other plugins
+
+This skill names skills from other Legal Skills plugins. Install a required
+plugin alongside this one; install a hand-off plugin when the matter needs
+that depth.
+
+- `australian-legal-research` (required): `check-commonwealth-legislation`.
+  Verifies the AML/CTF Act, Rules and amending instruments against the Federal
+  Register of Legislation.
+- `australian-privacy-cybersecurity` (hand-off):
+  `assess-australian-privacy-issues`. Takes privacy depth for customer due
+  diligence and record-keeping.
+
+If a named skill is not available in this session, say so and name the plugin
+to install. Treat the step it would have performed as not done: record the
+affected proposition as not verified, or the hand-off as not made. Never
+perform that step from memory or substitute a different skill.
+<!-- end:plugin-dependencies -->

@@ -69,3 +69,20 @@ authority, required participation, a material conflict, current source or
 decisive fact is unresolved. Never invent attendance, quorum, notice,
 disclosure, abstention, discussion, vote, reason, signature or approval. Never
 backdate, execute, circulate, send, enter in a minute book or file any record.
+
+<!-- generated:plugin-dependencies -->
+## Other plugins
+
+This skill names skills from other Legal Skills plugins. Install a required
+plugin alongside this one; install a hand-off plugin when the matter needs
+that depth.
+
+- `australian-legal-research` (required): `check-commonwealth-legislation`.
+  Verifies Corporations Act provisions and case-law leads against the official
+  sources.
+
+If a named skill is not available in this session, say so and name the plugin
+to install. Treat the step it would have performed as not done: record the
+affected proposition as not verified, or the hand-off as not made. Never
+perform that step from memory or substitute a different skill.
+<!-- end:plugin-dependencies -->

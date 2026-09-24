@@ -45,3 +45,14 @@ to save any approved output.
 ## Licence
 
 MIT. This is an original Australian workflow based on public official sources.
+
+<!-- generated:plugin-dependencies -->
+## Plugin dependencies
+
+- `australian-legal-research` (required) — Verifies Corporations Act
+  provisions and case-law leads against the official sources.
+
+Install every required plugin with this one. A skill whose required or
+hand-off plugin is missing reports the step as not done rather than performing
+it from memory.
+<!-- end:plugin-dependencies -->

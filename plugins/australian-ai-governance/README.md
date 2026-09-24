@@ -59,3 +59,18 @@ to provide and where to save any approved output.
 ## Licence
 
 MIT. This is an original Australian workflow based on public official sources.
+
+<!-- generated:plugin-dependencies -->
+## Plugin dependencies
+
+- `australian-legal-research` (required) — Verifies the Commonwealth
+  legislation and case-law leads the workflow relies on.
+- `australian-corporations-governance` (hand-off) — Takes general
+  director-duty and board-process depth beyond AI oversight.
+- `australian-privacy-cybersecurity` (hand-off) — Takes privacy, cybersecurity
+  and automated-decision transparency depth for AI use cases.
+
+Install every required plugin with this one. A skill whose required or
+hand-off plugin is missing reports the step as not done rather than performing
+it from memory.
+<!-- end:plugin-dependencies -->

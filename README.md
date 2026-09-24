@@ -15,11 +15,15 @@
 
 # Legal Skills
 
-Legal Skills is an open-source marketplace for portable legal-workflow plugins.
-The marketplace supplies the same skills to Claude Cowork and ChatGPT Work.
-Each provider has a small, separate manifest.
+Ready-made legal workflows for your AI assistant. Install them once and
+Claude (Cowork or Claude Code) or ChatGPT (Work or Codex) can check
+Australian citations, map privacy and AML/CTF obligations, compute candidate
+court deadlines, build chronologies and more, always in a way that states
+its sources and leaves the final call to a person.
 
-## Plugin suite
+Free and open source (MIT).
+
+## What's included
 
 <!-- generated:counts -->
 The marketplace contains eleven plugins and sixty-one skills:
@@ -41,10 +45,14 @@ The marketplace contains eleven plugins and sixty-one skills:
 | [**Legal Workflow Router**](plugins/legal-workflow-router/README.md) | 1 | Maps a fact pattern to the Legal Skills plugins and skills it engages, in order, with the human decision points named. | 2026-08-26 |
 <!-- end:plugin-table -->
 
-## Install with your Agent
+"Law checked" is the date each plugin's sources were last reviewed against
+the law. Most plugins cover Australian law.
 
-If your Agent can manage plugins, copy this request. Then paste it into the
-Agent.
+## Install
+
+### The easy way: ask your assistant
+
+Paste this into Claude or ChatGPT (any version that can manage plugins):
 
 <!-- generated:install-agent -->
 ```text
@@ -54,28 +62,14 @@ and report the result.
 ```
 <!-- end:install-agent -->
 
-### Install from a terminal
+Claude Cowork users can instead add `l0cka/legal-skills` from the personal
+plugin marketplace. ChatGPT Work availability depends on your plan and
+workspace plugin settings.
 
-For Codex, run:
+### From a terminal
 
-<!-- generated:install-codex -->
-```bash
-codex plugin marketplace add l0cka/legal-skills
-codex plugin add australian-ai-governance@legal-skills
-codex plugin add australian-aml-ctf@legal-skills
-codex plugin add australian-corporations-governance@legal-skills
-codex plugin add australian-employment-fair-work@legal-skills
-codex plugin add australian-estate-planning@legal-skills
-codex plugin add australian-legal-research@legal-skills
-codex plugin add australian-litigation-deadlines@legal-skills
-codex plugin add australian-privacy-cybersecurity@legal-skills
-codex plugin add legal-evidence-workflows@legal-skills
-codex plugin add legal-triage@legal-skills
-codex plugin add legal-workflow-router@legal-skills
-```
-<!-- end:install-codex -->
-
-For Claude, run:
+<details>
+<summary><b>Claude Code</b></summary>
 
 <!-- generated:install-claude -->
 ```bash
@@ -94,77 +88,51 @@ claude plugin install legal-workflow-router@legal-skills --scope user
 ```
 <!-- end:install-claude -->
 
-Claude users can also add `l0cka/legal-skills` from the personal plugin
-marketplace in Cowork.
+</details>
 
-ChatGPT Work availability depends on the user's plan and workspace plugin
-settings. The `.agents` catalog is the OpenAI marketplace package.
+<details>
+<summary><b>Codex</b></summary>
 
-## Principles
-
-- Legal workflows must state their jurisdiction, currency, sources,
-  assumptions, and human-review requirements.
-- Skills must not contain client information, matter information, credentials,
-  privileged material, or confidential firm content.
-- Shared instructions must have one canonical copy. Provider manifests must
-  wrap that copy without creating different versions.
-- External tools must start in read-only mode when practical. Write actions
-  require clear approval boundaries.
-- Discovery material is not authority. Legal propositions must use appropriate
-  primary or authoritative sources.
-
-## Repository layout
-
-```text
-legal-skills/
-├── plugins/<plugin-name>/             # canonical plugin packages and skills
-├── skills.json                        # per-skill provenance sentences
-├── .claude-plugin/marketplace.json    # Claude marketplace (generated)
-├── .agents/plugins/marketplace.json   # ChatGPT and Codex marketplace (generated)
-├── scripts/                           # generator, validator, link checker
-├── benchmarks/                        # with/without-plugin benchmark harness
-└── docs/
-```
-
-[docs/adding-a-plugin.md](docs/adding-a-plugin.md) describes the plugin
-package and [docs/architecture.md](docs/architecture.md) explains which files
-are hand-edited and which are generated.
-
-## Validate
-
-Every change must pass:
-
+<!-- generated:install-codex -->
 ```bash
-python3 scripts/validate_repository.py
-python3 scripts/generate_registry.py --check
-python3 -m unittest discover -s tests
-git diff --check
+codex plugin marketplace add l0cka/legal-skills
+codex plugin add australian-ai-governance@legal-skills
+codex plugin add australian-aml-ctf@legal-skills
+codex plugin add australian-corporations-governance@legal-skills
+codex plugin add australian-employment-fair-work@legal-skills
+codex plugin add australian-estate-planning@legal-skills
+codex plugin add australian-legal-research@legal-skills
+codex plugin add australian-litigation-deadlines@legal-skills
+codex plugin add australian-privacy-cybersecurity@legal-skills
+codex plugin add legal-evidence-workflows@legal-skills
+codex plugin add legal-triage@legal-skills
+codex plugin add legal-workflow-router@legal-skills
 ```
+<!-- end:install-codex -->
 
-Behavioural evals live under `plugins/<name>/evals/` (`claude plugin eval` is
-in early access; CI only checks that the cases load). Each suite has a
-happy-path case and at least one fail-closed case, so a prompt change that
-makes a skill verify a fabricated citation, compute a date outside the script
-or hand a help-seeker legal advice fails the run:
+</details>
 
-```bash
-claude plugin eval plugins/australian-legal-research --allow-tools Bash WebFetch --no-publish
-```
+You only need the plugins you'll use. Each command installs one plugin.
 
-A weekly workflow runs `python3 scripts/check_links.py`, which probes every
-URL cited under `plugins/` and fails on a dead link.
+## Before you rely on it
+
+- **A person stays in charge.** Every plugin prepares work for a lawyer or
+  other qualified person to check and approve. None of them gives legal
+  advice or replaces professional judgment.
+- **Sources are shown.** Outputs state the jurisdiction, the sources used,
+  how current they are, and any assumptions.
+- **Leads are not authority.** Search results and secondary material are
+  flagged as leads; legal propositions rely on primary or authoritative
+  sources.
+- **No confidential content ships here.** The skills contain no client,
+  matter or privileged information. Take care with what you share with your
+  assistant under your own firm's policies.
 
 ## Benchmarks
 
-With/without-plugin ablation on answer-keyed and rubric-scored Australian legal
-tasks (see [benchmarks/README.md](benchmarks/README.md)). Keyed pass rates
-require the skill's status vocabulary, so the false-verification rate and the
-rubric score are the fair cross-arm comparisons.
-
-```bash
-python3 benchmarks/run.py --set citations --arm with,without --model opus
-python3 benchmarks/score.py benchmarks/results/<timestamp>/
-```
+We measure how answers change with and without the plugins on answer-keyed
+and rubric-scored Australian legal tasks. See
+[benchmarks/README.md](benchmarks/README.md) for the method.
 
 <!-- benchmarks:start -->
 _No benchmark run recorded yet._
@@ -172,8 +140,10 @@ _No benchmark run recorded yet._
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md). [CHANGELOG.md](CHANGELOG.md)
-records the release history.
+Contributions are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md),
+then see [docs/adding-a-plugin.md](docs/adding-a-plugin.md) and
+[docs/architecture.md](docs/architecture.md) for how the repository fits
+together. [CHANGELOG.md](CHANGELOG.md) records what has changed.
 
 ## Licence
 

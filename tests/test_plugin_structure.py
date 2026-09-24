@@ -192,7 +192,7 @@ PLUGINS: dict[str, dict] = {
         "skills": {"route-legal-fact-pattern"},
         "statuses": READY,
         "reference_files": (),
-        "every_skill_mentions": (),
+        "every_skill_mentions": ("`not installed`", "Install first:"),
     },
 }
 

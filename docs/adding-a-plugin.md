@@ -67,6 +67,23 @@ document, also declare `evidenceStates` in `catalog.json` and follow
 [docs/source-and-control-method-core.md](source-and-control-method-core.md) —
 the evidence-states block is stamped by the generator.
 
+If any file in the plugin names a skill from another plugin, declare that
+plugin in `catalog.json` with a one-sentence reason:
+
+```json
+"requires": {"australian-legal-research": "Verifies the legislation the workflow relies on."},
+"handsOffTo": {"australian-privacy-cybersecurity": "Takes privacy depth."}
+```
+
+Use `requires` when a skill invokes the other plugin's skills as a step of
+its own workflow, such as official-source verification, and `handsOffTo` when
+a skill routes part of a matter to the other plugin for depth. The generator
+finds every cross-plugin skill name, fails when one is undeclared or a
+declaration is unused, and appends an "Other plugins" section to each affected
+`SKILL.md` and a "Plugin dependencies" section to the plugin README. Plugins
+install separately, so those sections tell the agent to report a missing
+plugin rather than perform its step from memory.
+
 ## 4. Generate the distribution surfaces
 
 ```bash
@@ -74,8 +91,8 @@ python3 scripts/generate_registry.py
 ```
 
 This regenerates both marketplace catalogs, the `.codex-plugin/plugin.json`
-wrapper, the root README badges, counts, plugin table and install blocks, and
-`plugins/README.md`. Never edit those files by hand.
+wrapper, the root README badges, counts, plugin table and install blocks,
+`plugins/README.md`, the router's skill map, and the dependency sections. Never edit those files by hand.
 
 ## 5. Record provenance
 
