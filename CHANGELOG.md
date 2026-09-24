@@ -34,6 +34,10 @@ plugin manifests contain their intended release versions.
 - `CONTEXT.md` and `CONTEXT-MAP.md` are folded into `docs/architecture.md`,
   and the README's layout, validation and benchmark sections are condensed.
 
+- New brand: a section-sign logo (`docs/assets/legal-skills-logo.svg`) and a
+  README banner with light and dark variants, replacing the stock network
+  banner.
+
 ### Removed
 
 - `docs/harvey/`: the Harvey Agent Builder guides and framework notes. The
