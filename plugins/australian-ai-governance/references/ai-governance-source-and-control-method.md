@@ -59,7 +59,15 @@ snapshot, not a cached rule; every live workflow must recheck each source:
    for large AI data centres (energy, water, siting) and creator-consent
    copyright protections. National Cabinet's August 2026 consideration was
    unresolved at the snapshot date. This is a proposal, never current law.
-   <https://www.pmc.gov.au/domestic-policy/office-ai>.
+   <https://www.pmc.gov.au/domestic-policy/office-ai>. Reported after the
+   snapshot (24 September 2026 review, not yet confirmed against PM&C or
+   pm.gov.au): National Cabinet on 26 August 2026 endorsed nationally
+   consistent mandatory standards for large data centres, with legislation
+   targeted for early 2027; PM&C's consultation "Getting it right: Building AI
+   infrastructure that works for Australia" runs to 9 October 2026 and also
+   covers conditions for AI training and copyright holders; and a reported
+   opt-out model for AI training means the copyright limb should be treated
+   as under consultation. Verify each point at use; see the watch register.
 6. **Mandatory guardrails for high-risk AI proposals paper** — DISR, September
    2024. Consulted on but not proceeded with; historical context only.
 
@@ -86,7 +94,7 @@ Currency and application must be checked at use time:
 
 - OAIC AI guidance (developing and training generative AI models; commercial
   AI products): <https://www.oaic.gov.au/privacy/privacy-guidance-for-organisations-and-government-agencies>;
-- automated-decision transparency (APP 1.7–1.8, commencing 10 December 2026)
+- automated-decision transparency (APP 1.7–1.9, commencing 10 December 2026)
   is asserted, with its verify-at-use instruction, in the Australian Privacy
   Cybersecurity plugin's automated-decision method reference — defer to it;
 - ASIC REP 798 (October 2024) governance-gap review:
@@ -95,10 +103,14 @@ Currency and application must be checked at use time:
   <https://www.apra.gov.au/apra-letter-to-industry-on-artificial-intelligence-ai>;
 - eSafety Online Safety Codes and Standards — Phase 2 Age-Restricted Material
   Codes: three in effect from 27 December 2025, six from 9 March 2026;
-  Regulatory Guidance updated April 2026: <https://www.esafety.gov.au/industry/codes>;
+  Regulatory Guidance updated April 2026 (a further September 2026 update
+  was reported after the snapshot — verify the current version at use):
+  <https://www.esafety.gov.au/industry/codes>;
 - DTA Policy for the Responsible Use of AI in Government v2.0 (mandatory for
   non-corporate Commonwealth entities; v2.0 effective 15 December 2025 with
-  staged per-requirement deadlines — verify the specific deadline at use):
+  staged per-requirement deadlines, with the remaining requirements
+  including AI impact assessments reportedly due by 15 December 2026 —
+  verify the specific deadline at use):
   <https://www.digital.gov.au/ai/ai-in-government-policy>;
 - Australia's AI Ethics Principles (2019):
   <https://www.industry.gov.au/publications/australias-ai-ethics-principles>; and
@@ -111,13 +123,20 @@ Currency and application must be checked at use time:
   first Australian judgment treating directors' use of AI: use should be
   controlled and transparent, governed by formally adopted board policies, and
   cannot displace the director's own judgment. It is a first-instance Federal
-  Court judgment; verify status and any appeal before relying on it.
+  Court judgment. Reported at the 24 September 2026 review (not yet
+  confirmed against the Federal Court): Mr Bekier and Ms Martin filed
+  notices of appeal on 14 July 2026, so the appeal is pending as to the
+  executives; ASIC reportedly will not appeal the dismissal of the claims
+  against the non-executive directors. Verify status before relying on it.
 - The facial-recognition line — *Clearview AI* [2021] AICmr 54 (14 October
   2021); *Bunnings* (OAIC determination 29 October 2024, varied on review by
   the Administrative Review Tribunal on 4 February 2026, which affirmed the
   APP 1 and APP 5 findings but set aside the APP 3.3 finding under the s 16A
-  "permitted general situation"; locate the neutral citation on AustLII before
-  formal citation); *Kmart* [2025] AICmr 155 (18 September 2025, under ART
+  "permitted general situation"; reported neutral citation [2026] ARTA 130 —
+  reported, verify on AustLII before formal citation; no appeal has been
+  located and the OAIC reportedly updated its retail facial-recognition
+  guidance on 29 July 2026 — verify at use); *Kmart* [2025] AICmr 155
+  (18 September 2025, under ART
   review) — is unsettled. Present it as live doctrine, never as final.
 - AICD/Human Technology Institute *Director's Guide to AI Governance* V2
   (2026) and the Governance Institute's agentic-AI paper (May 2026) are

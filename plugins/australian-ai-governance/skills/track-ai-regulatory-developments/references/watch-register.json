@@ -7,11 +7,16 @@
       "id": "standards-for-ai-bill",
       "item": "Legislated 'Australian Standards for AI' and Office of AI",
       "status_at_snapshot": "Announced 15 July 2026; Office of AI established in PM&C; legislation targeted early 2027; confirmed scope so far limited to large-AI-data-centre requirements and creator-consent copyright protections; National Cabinet outcome not published on pmc.gov.au or pm.gov.au as at 26 August 2026",
-      "expected_trigger": "National Cabinet outcome, exposure draft or Bill introduction",
+      "expected_trigger": "PM&C consultation outcome, exposure draft or Bill introduction (targeted early 2027)",
       "primary_sources": [
         "https://www.pmc.gov.au/domestic-policy/office-ai",
-        "https://www.pm.gov.au/media/ai-australias-interests"
-      ]
+        "https://www.pm.gov.au/media/ai-australias-interests",
+        "https://www.pm.gov.au/media/meeting-national-cabinet-26-august-26",
+        "https://www.pmc.gov.au/domestic-policy/office-ai/getting-it-right-building-ai-infrastructure-works-australia"
+      ],
+      "reviewed_on": "2026-09-24",
+      "status_at_review": "Reported: National Cabinet met on 26 August 2026 and endorsed developing nationally consistent mandatory standards for large data centres (energy, water, land use, skills), with the Commonwealth committing to legislate in early 2027; a renewables requirement was reportedly not agreed. PM&C then opened the consultation 'Getting it right: Building AI infrastructure that works for Australia' (18 September to 9 October 2026), which also covers conditions for training AI models and support for copyright holders. Separately, a reported (leaked) Attorney-General's Department paper floats an opt-out model for AI training, so the copyright limb should be treated as under consultation, not as settled creator-consent protection",
+      "review_basis": "official pages seen in search results only, plus secondary sources; confirm against the primary source before relying on it"
     },
     {
       "id": "oaic-adm-guidance",
@@ -20,16 +25,22 @@
       "expected_trigger": "Publication of final OAIC guidance",
       "primary_sources": [
         "https://www.oaic.gov.au/engage-with-us/consultations/consultation-on-guidance-for-transparency-in-automated-decision-making"
-      ]
+      ],
+      "reviewed_on": "2026-09-24",
+      "status_at_review": "No final guidance located at review. The OAIC reportedly aimed to publish final guidance by September 2026; recheck the OAIC consultation page before relying on the absence of guidance. Numbering note: the commencing amendment inserts APP 1.7–1.9 (the snapshot text's 'APP 1.7-1.8' is a numbering slip), commencing 10 December 2026",
+      "review_basis": "secondary sources; confirm against the primary source before relying on it"
     },
     {
       "id": "asx-cgc-5th-edition",
       "item": "ASX Corporate Governance Council Principles and Recommendations, 5th edition",
       "status_at_snapshot": "Draft in consultation (July 2026); verified negative: the draft contains no AI-specific recommendation, only generic material-risk disclosure; 4th edition (2019) remains in force; 5th edition targeted at financial years commencing on or after 1 July 2027",
-      "expected_trigger": "Final 5th edition publication",
+      "expected_trigger": "Recommendation of the final 5th edition to the ASX board (expected December 2026) and final publication",
       "primary_sources": [
         "https://www.asx.com.au/about/regulation/corporate-governance-principles-and-recommendations"
-      ]
+      ],
+      "reviewed_on": "2026-09-24",
+      "status_at_review": "Reported: consultation on the draft (released 21 July 2026 by ASX's Advisory Group on Corporate Governance, established January 2026) closed on 14 September 2026; the Advisory Group intends to recommend a final version to the ASX board by December 2026; reporting expected for financial years ending 30 June 2028 (31 December 2028 for calendar-year entities), consistent with the snapshot",
+      "review_basis": "official page seen in search results only, plus secondary sources; confirm against the primary source before relying on it"
     },
     {
       "id": "kmart-art-review",
@@ -38,25 +49,36 @@
       "expected_trigger": "ART listing or decision",
       "primary_sources": [
         "https://www.oaic.gov.au/news/media-centre/18-kmarts-use-of-facial-recognition-to-tackle-refund-fraud-unlawful,-privacy-commissioner-finds"
-      ]
+      ],
+      "reviewed_on": "2026-09-24",
+      "status_at_review": "Unchanged: still reported as under ART review, with hearing timing (early 2027) unverified",
+      "review_basis": "secondary sources; confirm against the primary source before relying on it"
     },
     {
       "id": "bunnings-appeal-window",
       "item": "Possible appeal from the ART's Bunnings decision of 4 February 2026",
       "status_at_snapshot": "ART affirmed APP 1 and APP 5 findings, set aside APP 3.3 under s 16A; OAIC noted an appeal period applies; neutral citation to be located on AustLII before formal citation",
-      "expected_trigger": "Appeal filing or expiry of the appeal window",
+      "expected_trigger": "Confirmation that no appeal was filed, then retire the item",
       "primary_sources": [
-        "https://www.oaic.gov.au/news/media-centre/oaic-statement-on-administrative-review-tribunals-bunnings-decision"
-      ]
+        "https://www.oaic.gov.au/news/media-centre/oaic-statement-on-administrative-review-tribunals-bunnings-decision",
+        "https://www.oaic.gov.au/news/media-centre/privacy-commissioner-publishes-updated-guidance-on-facial-recognition-in-retail-spaces"
+      ],
+      "reviewed_on": "2026-09-24",
+      "status_at_review": "Reported: no appeal from the ART decision was located and the appeal window appears to have expired; the OAIC published updated guidance on facial recognition in retail spaces on 29 July 2026 applying the ART's findings. Reported neutral citation: Bunnings Group Ltd and Privacy Commissioner (Guidance and Appeals Panel) [2026] ARTA 130 — reported, verify on AustLII before citing. Candidate for retirement once confirmed",
+      "review_basis": "official page seen in search results only, plus secondary sources; confirm against the primary source before relying on it"
     },
     {
       "id": "privacy-tranche-2",
       "item": "Second tranche of Privacy Act reform",
       "status_at_snapshot": "Government commitment only; Attorney-General confirmed in February 2026 Senate estimates that a tranche 2 Bill is being progressed; no Bill introduced, no timetable",
-      "expected_trigger": "Exposure draft or Bill introduction",
+      "expected_trigger": "Bill introduction",
       "primary_sources": [
-        "https://www.ag.gov.au/rights-and-protections/publications/government-response-privacy-act-review-report"
-      ]
+        "https://www.ag.gov.au/rights-and-protections/publications/government-response-privacy-act-review-report",
+        "https://consultations.ag.gov.au/rights-and-protections/privacy-reform/"
+      ],
+      "reviewed_on": "2026-09-24",
+      "status_at_review": "Reported: on 31 August 2026 the Attorney-General's Department released an exposure draft Privacy Amendment (Personal Data Protection) Bill 2026 and consultation paper; submissions closed 18 September 2026. Reported proposals include a fair-and-reasonable test, an expanded personal-information definition, a 72-hour Commissioner notification for eligible data breaches and a right to erasure against large digital platforms; removal of the small-business and employee-records exemptions is reportedly not included; the commencement table is reportedly blank. An exposure draft is not a Bill and not law",
+      "review_basis": "official consultation page seen in search results only, plus secondary sources; confirm against the primary source before relying on it"
     },
     {
       "id": "esafety-code-phases",
@@ -65,7 +87,34 @@
       "expected_trigger": "Registration or commencement notices on the eSafety codes page",
       "primary_sources": [
         "https://www.esafety.gov.au/industry/codes"
-      ]
+      ],
+      "reviewed_on": "2026-09-24",
+      "status_at_review": "Reported: the Online Safety Codes and Standards Regulatory Guidance was updated again in September 2026 following a Federal Court judgment, and FAQs on the applicable Unlawful Material Standard or Code are being revised; the judgment was not identified",
+      "review_basis": "official page seen in search results only; confirm against the primary source before relying on it"
+    },
+    {
+      "id": "joint-select-committee-ai",
+      "item": "Parliamentary Joint Select Committee on Artificial Intelligence",
+      "status_at_snapshot": "Not on the register at the 14 August 2026 snapshot",
+      "expected_trigger": "Committee report (reportedly due 30 November 2026) and any government response",
+      "primary_sources": [
+        "https://www.aph.gov.au/Parliamentary_Business/Committees/Joint/Artificial_Intelligence"
+      ],
+      "reviewed_on": "2026-09-24",
+      "status_at_review": "Reported: appointed by both Houses on 20 August 2026; submissions closed 14 September 2026; report reportedly due 30 November 2026; remit reportedly includes adequacy of existing laws, copyright, national security, data sovereignty, consumer protection, deepfakes and cyber security",
+      "review_basis": "official page seen in search results only, plus secondary sources; confirm against the primary source before relying on it"
+    },
+    {
+      "id": "pmc-ai-infrastructure-consultation",
+      "item": "PM&C consultation 'Getting it right: Building AI infrastructure that works for Australia'",
+      "status_at_snapshot": "Not on the register at the 14 August 2026 snapshot",
+      "expected_trigger": "Consultation close (reportedly 9 October 2026) and any resulting exposure draft of the Australian Standards for AI",
+      "primary_sources": [
+        "https://www.pmc.gov.au/domestic-policy/office-ai/getting-it-right-building-ai-infrastructure-works-australia"
+      ],
+      "reviewed_on": "2026-09-24",
+      "status_at_review": "Reported: opened 18 September 2026 and closes 9 October 2026; covers renewable energy and water use of AI infrastructure, data-centre siting, community costs, and conditions for training AI models in Australia including support for copyright holders; feeds the development of the Australian Standards for AI (see standards-for-ai-bill)",
+      "review_basis": "official page seen in search results only, plus secondary sources; confirm against the primary source before relying on it"
     }
   ]
 }

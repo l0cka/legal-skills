@@ -28,7 +28,8 @@ before starting.
    involving relevant program-performed steps. Verify exact current text before
    stating an obligation.
 5. Treat the Children’s Online Privacy Code as developing unless the current
-   official register confirms registration and application. Keep guidance,
+   official register confirms registration and application. The OAIC must
+   register it by 10 December 2026; verify whether it has been registered. Keep guidance,
    discrimination, administrative and employment issues in separate rows.
 
 ## Result contract

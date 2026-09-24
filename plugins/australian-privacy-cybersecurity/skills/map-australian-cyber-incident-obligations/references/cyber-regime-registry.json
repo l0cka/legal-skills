@@ -11,7 +11,8 @@
       "source_url": "https://www.legislation.gov.au/C2004A03712/latest",
       "trigger_prompt": "suspected or reasonably believed eligible data breach by a covered entity",
       "clock_prompt": "assessment reasonable and expeditious with all reasonable steps within 30 calendar days after suspicion; notification as soon as practicable after reasonable belief",
-      "last_verified": "2026-08-14"
+      "last_verified": "2026-08-14",
+      "watch_note": "Reported after the snapshot (24 September 2026 review, not yet confirmed against the Attorney-General's Department): the exposure draft Privacy Amendment (Personal Data Protection) Bill 2026 (31 August 2026) proposes notifying the Commissioner of an eligible data breach within 72 hours after reasonable grounds to believe one has occurred. Proposal only; current law unchanged. Do not apply a 72-hour NDB deadline unless a later Act and its commencement are verified. Source: https://consultations.ag.gov.au/rights-and-protections/privacy-reform/"
     },
     {
       "id": "soci-part-2b",
@@ -21,14 +22,15 @@
       "source_url": "https://www.legislation.gov.au/C2018A00029/latest",
       "trigger_prompt": "responsible entity, covered asset and reportable cyber incident",
       "clock_prompt": "significant availability impact as soon as practicable and no later than 12 hours; other actual or likely relevant impact no later than 72 hours; verify oral follow-up clocks",
-      "last_verified": "2026-08-14"
+      "last_verified": "2026-08-14",
+      "watch_note": "Reported after the snapshot (24 September 2026 review, not yet confirmed against Home Affairs): following the Independent Review of the SOCI Act (delivered 31 January 2026), Home Affairs released a consultation paper on 3 July 2026 proposing 21 measures to streamline and modernise the Act; submissions closed 31 July 2026. Proposals only; current law unchanged. Verify at use whether a Bill or exposure draft has followed. Source: https://www.homeaffairs.gov.au/help-and-support/how-to-engage-us/consultations/proposed-amendments-to-streamline-and-modernise-the-soci-act-2018"
     },
     {
       "id": "soci-cirmp",
       "title": "Security of Critical Infrastructure (Critical infrastructure risk management program) Rules 2023",
       "register_id": "F2023L00112",
       "latest_checked_compilation": "C02 effective 2026-06-10",
-      "amending_instrument": "Security of Critical Infrastructure Legislation Amendment (Enhanced Critical Infrastructure Risk Management Program) Rules 2026 (LIN 26/075, F2026L00701), made 4 June 2026, registered 9 June 2026, commenced 10 June 2026; grace periods of 12 months (s 6A, ss 8A(2), 9A(2)) and 24 months (ss 8A, 8B, 8C, 9A, 10A, 11A) from commencement or from when an asset becomes a critical infrastructure asset; the spent amending instrument is auto-repealed on 8 September 2026 under s 48A of the Legislation Act 2003",
+      "amending_instrument": "Security of Critical Infrastructure Legislation Amendment (Enhanced Critical Infrastructure Risk Management Program) Rules 2026 (LIN 26/075, F2026L00701), made 4 June 2026, registered 9 June 2026, commenced 10 June 2026; grace periods of 12 months (s 6A, ss 8A(2), 9A(2)) and 24 months (ss 8A, 8B, 8C, 9A, 10A, 11A) from commencement or from when an asset becomes a critical infrastructure asset; the spent amending instrument was auto-repealed on 8 September 2026 under s 48A of the Legislation Act 2003",
       "legal_status": "delegated legislative instrument",
       "source_url": "https://www.legislation.gov.au/Series/F2023L00112",
       "trigger_prompt": "responsible entity for an asset within Part 2A and current Rules",

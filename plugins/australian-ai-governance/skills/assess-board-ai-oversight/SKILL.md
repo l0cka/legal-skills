@@ -28,6 +28,8 @@ profile.
    - For case-law leads including *ASIC v Bekier (Liability Judgment)* [2026]
      FCA 196, use `$route-case-citation` and an official-court verifier, and
      check for appeal or later treatment before relying on any proposition.
+     An appeal by the two executives (notices filed 14 July 2026) was
+     reported as pending at the 24 September 2026 review; verify its status.
      Present Bekier's expectations — board AI use controlled and transparent,
      governed by formally adopted policies, never displacing the director's
      own judgment — as first-instance judicial guidance.
