@@ -71,7 +71,7 @@ Record each flag as `yes`, `no` or `cannot be determined`, with provenance:
 | enduring_guardian_2_full_name, enduring_guardian_2_address | no | |
 | guardian_appointment_mode | conditional | jointly, severally, or jointly and severally — required when more than one guardian |
 | substitute_enduring_guardian_full_name, substitute_enduring_guardian_address | no | |
-| guardianship_functions | yes | functions given, limited or excluded — Guardianship Act 1987 (NSW) s 6E list as the checklist |
+| guardianship_functions | yes | functions given, limited or excluded — Guardianship Act 1987 (NSW) s 6E list as the checklist; verify the functions in prescribed Form 1 under the Guardianship Regulation 2026 before drafting (see the NSW formalities reference) |
 | guardianship_directions | no | verbatim from instructions |
 
 ## Missing required fields

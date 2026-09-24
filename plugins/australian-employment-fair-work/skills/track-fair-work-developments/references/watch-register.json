@@ -14,11 +14,15 @@
       "id": "closing-loopholes-tranches",
       "item": "Closing Loopholes tranches",
       "status_at_snapshot": "All tranches commenced: 15 Dec 2023 (delegates, labour hire applications, discrimination), 1 Jul 2024 (award delegates terms), 26 Aug 2024 (s 15AA employee, s 15A casual, employee choice, right to disconnect for non-small business), 1 Nov 2024 (first labour hire orders), 1 Jan 2025 (s 327A wage theft and the Voluntary Small Business Wage Compliance Code), 26 Feb 2025 (employee choice for small business), 26 Aug 2025 (right to disconnect for small business)",
-      "expected_trigger": "None; retained for transitional disputes about casuals engaged before 26 August 2024",
+      "expected_trigger": "Government response to the Closing Loopholes Review final report, or an implementing Bill; retained also for transitional disputes about casuals engaged before 26 August 2024",
       "primary_sources": [
         "https://www.fairwork.gov.au/about-us/workplace-laws/legislation-changes/closing-loopholes",
-        "https://www.dewr.gov.au/closing-loopholes"
-      ]
+        "https://www.dewr.gov.au/closing-loopholes",
+        "https://www.dewr.gov.au/workplace-relations-australia/review-closing-loopholes-acts"
+      ],
+      "reviewed_on": "2026-09-24",
+      "status_at_review": "Not recorded at the snapshot; reported at the 24 September 2026 review: the independent statutory review of the Closing Loopholes Acts and the Paid Family and Domestic Violence Leave Act (reviewer Susan Booth) delivered its final report to the Minister on 15 Jun 2026 and it was tabled on 20 Aug 2026 (draft report 18 May 2026); the review covered the s 15A casual definition, labour hire and the right to disconnect; no government response located",
+      "review_basis": "Official page seen in search results only; confirm against the primary source before relying on it"
     },
     {
       "id": "protecting-penalty-rates-2025",
@@ -86,15 +90,34 @@
       "id": "non-compete-ban-2027",
       "item": "Proposed ban on non-compete clauses for workers under the high income threshold",
       "status_at_snapshot": "Treasury states the reforms should take effect from 2027 following consultation and passage; consultation closed 5 Sep 2025; no exposure draft or Bill located",
-      "expected_trigger": "Exposure draft or Bill introduction",
-      "primary_sources": ["https://treasury.gov.au/review/competition-review-2023/non-compete-clauses"]
+      "expected_trigger": "Close of exposure draft consultation (2 Oct 2026); Bill introduction and passage; commencement date fixed by Royal Assent",
+      "primary_sources": ["https://treasury.gov.au/review/competition-review-2023/non-compete-clauses"],
+      "reviewed_on": "2026-09-24",
+      "status_at_review": "Reported after the snapshot: exposure draft Competition and Fair Work Legislation Amendment (Banning Unfair Non-Competes) Bill 2026 published 7 Sep 2026, consultation closing 2 Oct 2026. As reported: bans non-compete terms for employees below the high income threshold and for all casuals and pieceworkers, bans co-worker non-solicitation terms, restricts cascading restraints, and extends cartel prohibitions to no-poach and wage-fixing agreements; commencement reported as the first 1 January, 1 April, 1 July or 1 October after Royal Assent, applying to arrangements made or varied on or after commencement. Exposure draft only, not introduced and not law",
+      "review_basis": "Secondary sources; confirm against the primary source before relying on it"
     },
     {
       "id": "gender-undervaluation-priority-awards",
       "item": "FWC gender-based undervaluation - priority awards review",
       "status_at_snapshot": "Initial decision [2025] FWCFB 74 (16 Apr 2025; Pharmacy finalised); Health Professionals and Support Services dental and pathology 24 Dec 2025; Children's Services changes from 1 Mar 2026; HPSS health professionals 26 May 2026; SCHADS finalised 1 Jun 2026 (AM2024/21); variation [2026] FWCFB 123; page updated 5 Aug 2026",
-      "expected_trigger": "Phased wage-increase dates in each determination; any further awards referred",
-      "primary_sources": ["https://www.fwc.gov.au/hearings-decisions/major-cases/gender-undervaluation-priority-awards-review"]
+      "expected_trigger": "Phased wage-increase dates in each determination, including the Health Services Award changes reported from 1 Oct 2026; any further awards referred",
+      "primary_sources": [
+        "https://www.fwc.gov.au/hearings-decisions/major-cases/gender-based-undervaluation-priority-awards-review",
+        "https://www.fairwork.gov.au/about-us/workplace-laws/award-changes/major-award-changes/gender-undervaluation-priority-awards-review/changes-to-the-health-services-award"
+      ],
+      "reviewed_on": "2026-09-24",
+      "status_at_review": "Reported after the snapshot: on 7 Sep 2026 the Expert Panel issued a decision and determination implementing phase 1 of the 26 May 2026 health professionals decision, and on 11 Sep 2026 a decision finalising the Health Professionals and Support Services Award matter; Health Services Award changes reported to apply from 1 Oct 2026",
+      "review_basis": "Official page seen in search results only; confirm against the primary source before relying on it"
+    },
+    {
+      "id": "clerks-award-working-from-home",
+      "item": "Working from home term in the Clerks - Private Sector Award 2020 (AM2024/34)",
+      "status_at_snapshot": "Not on the register at the 26 August 2026 snapshot",
+      "expected_trigger": "Final determination varying the Clerks Award after the draft-determination submissions; operative date of the new term",
+      "primary_sources": ["https://www.fwc.gov.au/about-us/news-and-media/news/working-home-clerks-award-decision-issued"],
+      "reviewed_on": "2026-09-24",
+      "status_at_review": "Reported after the snapshot: Full Bench decision issued 27 Aug 2026 (reported citation [2026] FWCFB 225) declining a term compelling employers to allow working from home and proposing a right-to-request working from home term; draft determination published with submissions due 17 Sep 2026; no final determination located",
+      "review_basis": "Official page seen in search results only; confirm against the primary source before relying on it"
     },
     {
       "id": "on-demand-delivery-mso",

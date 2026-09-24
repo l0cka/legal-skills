@@ -105,10 +105,23 @@ Version line at verification: "Current version for 27 March 2021 to date
   with the prescribed form itself `VERIFIED WITH QUALIFICATIONS`
   (form-prescription) — check the current Guardianship Regulation before
   execution.
+- **Verify — Guardianship Regulation 2026.** Reported after the snapshot
+  (24 September 2026 review, not yet confirmed against
+  legislation.nsw.gov.au): the Guardianship Regulation 2016 was replaced on
+  1 September 2026 by the Guardianship Regulation 2026, with Forms 1
+  (appointment), 2 (revocation) and 3 (resignation) remade. Form 1 is
+  reported to add a standard function to consent to, or withhold consent to,
+  the use of restrictive practices, and the prescribed eligible-witness
+  categories are reported to have changed (Service NSW employees removed).
+  Confirm the prescribed form, its functions and the witness categories
+  against the 2026 Regulation before drafting; flag a firm precedent built on
+  the 2016 form for the solicitor.
 - **s 5 — eligible witness.** An Australian legal practitioner, a
   registrar of the Local Court, or a person prescribed by the regulations
   — and, for these instruments, not an appointee or substitute enduring
-  guardian. Evidence state: `VERIFIED`.
+  guardian. Evidence state: `VERIFIED`. The prescribed categories are
+  reported to have changed on 1 September 2026 — see the Guardianship
+  Regulation 2026 verify item above.
 - **ss 6D–6DA — multiple and substitute guardians.** Two or more enduring
   guardians may be appointed jointly, severally, or jointly and severally,
   with different functions each; a substitute requires their own endorsed
@@ -117,7 +130,9 @@ Version line at verification: "Current version for 27 March 2021 to date
   health care, personal services, Part 5 medical and dental consent, other
   specified functions) may be limited or excluded by the instrument — use
   as the checklist for `guardianship_functions`. Evidence state:
-  `VERIFIED`.
+  `VERIFIED`. Verify before drafting: Form 1 under the Guardianship
+  Regulation 2026 is reported to add a restrictive-practices function (see
+  the verify item above); do not add it to the checklist until confirmed.
 
 ## Remote witnessing — Electronic Transactions Act 2000 No 8 (NSW)
 

@@ -63,8 +63,10 @@ lists the statutory points the drafts must leave for the solicitor.
      recording the document, location, issue, provenance and required
      solicitor decision.
    - The responsible solicitor must review the drafts and resolve every marked
-     issue. Never state that a document is approved or ready to sign, or select
-     physical or remote execution.
+     issue. Never state that a document is approved or ready to sign, or
+     choose an execution method. Queensland wills and enduring powers of
+     attorney have no remote witnessing in force and are executed in physical
+     presence.
    - Execution, witnessing, attorney acceptance, registration and filing occur
      outside this workflow.
 
@@ -96,5 +98,5 @@ a visibly marked `PARTIAL DRAFT – UNRESOLVED ISSUES`, not a blank document.
 Route self-represented parties, non-Queensland matters, advance health
 directives, superannuation death benefit nominations, trusts, probate and any
 other stated exclusion to `OUTSIDE SCOPE`. Never modify the source, invent
-content, select physical or remote execution, or mark a document approved or
-ready to sign.
+content, choose an execution method, or mark a document approved or ready to
+sign.
