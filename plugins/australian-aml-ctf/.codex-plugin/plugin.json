@@ -1,6 +1,6 @@
 {
   "name": "australian-aml-ctf",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Map, review and monitor AML/CTF obligations for Australian legal practices under the tranche 2 reforms using verified official sources, designated-service mapping, legal-professional-privilege handling and human-review gates.",
   "author": {
     "name": "l0cka",
@@ -20,7 +20,7 @@
   "interface": {
     "displayName": "Australian AML/CTF",
     "shortDescription": "Finds the AML/CTF obligations of an Australian legal practice under the tranche 2 reforms. A person must approve each report and decision.",
-    "longDescription": "Creates an approved AML/CTF practice profile, maps described legal services to the designated services in table 6 of the amended Anti-Money Laundering and Counter-Terrorism Financing Act 2006, issue-spots a practice's AML/CTF program and customer-due-diligence framework against the Act and the AML/CTF Rules 2025, maps reporting obligations including the tipping-off offence and legal-professional-privilege carve-outs, and monitors pending AUSTRAC guidance. It verifies official publishers, fails closed on unmapped services, and never lodges anything with AUSTRAC or concludes that a matter is suspicious.",
+    "longDescription": "Creates an approved AML/CTF practice profile, maps described legal services to the designated services in table 6 of the amended Anti-Money Laundering and Counter-Terrorism Financing Act 2006, issue-spots a practice's AML/CTF program and customer-due-diligence framework against the Act and the AML/CTF Rules 2025, maps reporting obligations including the tipping-off offence and legal-professional-privilege carve-outs, and monitors AUSTRAC guidance, Rules amendments and pending instruments. It verifies official publishers, fails closed on unmapped services, and never lodges anything with AUSTRAC or concludes that a matter is suspicious.",
     "developerName": "l0cka",
     "category": "Productivity",
     "capabilities": [

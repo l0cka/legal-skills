@@ -16,7 +16,12 @@ Scope: all eleven plugins and sixty-one skills, 29 days after the 26 August
 - **Every finding is a lead to confirm against the primary source.** None of
   them justifies moving `lawCheckedOn`, which asserts a check against the
   official publishers.
-- Nothing in the plugins was changed by this audit.
+- The findings were then applied across seven plugins, as recorded in
+  `CHANGELOG.md` under Unreleased. Post-snapshot developments are worded
+  as reported, pending confirmation. Not applied: the NSW, Vic and Qld
+  tables' `checked` dates (they record the actual check), a replacement
+  Corporations Act compilation ID (unconfirmed), whistleblower and omnibus
+  items (weak evidence), and AUSTRAC starter-kit URL changes.
 
 ## Priority 1 — the law or its status has moved
 

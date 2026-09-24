@@ -38,6 +38,43 @@ plugin manifests contain their intended release versions.
   README banner with light and dark variants, replacing the stock network
   banner.
 
+### Fixed
+
+- Currency review of 24 September 2026 (`docs/audits/2026-09-24-currency-audit.md`).
+  The official publishers were unreachable during the review, so each
+  post-snapshot development is recorded as reported and to be confirmed
+  against its primary source; watch-register items carry `reviewed_on`,
+  `status_at_review` and `review_basis`, and no `lawCheckedOn` date moved.
+  Patch bumps: `australian-ai-governance` 0.1.1 → 0.1.2,
+  `australian-aml-ctf` 0.1.1 → 0.1.2,
+  `australian-corporations-governance` 0.1.1 → 0.1.2,
+  `australian-employment-fair-work` 0.1.0 → 0.1.1,
+  `australian-estate-planning` 0.5.0 → 0.5.1,
+  `australian-litigation-deadlines` 0.3.0 → 0.3.1,
+  `australian-privacy-cybersecurity` 0.3.2 → 0.3.3.
+  - Privacy and AI governance: Privacy Act tranche 2 exposure draft
+    (including the proposed 72-hour breach notification), National Cabinet's
+    data-centre standards decision and the PM&C AI infrastructure
+    consultation, the Joint Select Committee on AI, the closed ASX fifth
+    edition consultation, Bunnings and Bekier status, SOCI tranche 2
+    consultation, Children's Online Privacy Code registration deadline, and
+    APP 1.7–1.9 numbering aligned across plugins.
+  - AML/CTF: AML/CTF Amendment Bill 2026 watch item and its proposed
+    LPP-form change, draft LPP guidelines recorded as consulted, the
+    financial-year compliance report cycle, and past deadlines restated in
+    the past tense.
+  - Corporations: superseded Corporations Act compilation flagged, closed
+    ASX and CPS 510 consultations, and future-change notes for External
+    Reporting Australia and director IDs.
+  - Employment: non-compete exposure draft, Clerks Award working-from-home
+    decision, tabled Closing Loopholes review, HPSS decisions, the s 772
+    unlawful-termination row and flexible-work section cites.
+  - Estate planning: NSW Guardianship Regulation 2026 flagged for
+    verification before drafting enduring guardianship instruments;
+    Queensland skill no longer implies remote execution is available.
+  - Litigation deadlines: WA public holiday Bill caveat, WA and NT
+    defamation single-publication exception, and stale snapshot wording.
+
 ### Removed
 
 - `docs/harvey/`: the Harvey Agent Builder guides and framework notes. The
