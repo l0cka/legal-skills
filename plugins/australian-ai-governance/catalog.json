@@ -37,5 +37,12 @@
       "applicable version",
       "decisive fact"
     ]
+  },
+  "requires": {
+    "australian-legal-research": "Verifies the Commonwealth legislation and case-law leads the workflow relies on."
+  },
+  "handsOffTo": {
+    "australian-corporations-governance": "Takes general director-duty and board-process depth beyond AI oversight.",
+    "australian-privacy-cybersecurity": "Takes privacy, cybersecurity and automated-decision transparency depth for AI use cases."
   }
 }

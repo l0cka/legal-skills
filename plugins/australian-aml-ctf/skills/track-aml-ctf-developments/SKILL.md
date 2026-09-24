@@ -62,3 +62,20 @@ status cannot be established — an unreachable source is `NOT VERIFIED`,
 never assumed unchanged. Never assert a pending instrument as in force,
 never drop a watch item without evidence it resolved, and never present the
 bundled register as current without checking.
+
+<!-- generated:plugin-dependencies -->
+## Other plugins
+
+This skill names skills from other Legal Skills plugins. Install a required
+plugin alongside this one; install a hand-off plugin when the matter needs
+that depth.
+
+- `australian-legal-research` (required): `check-commonwealth-legislation`,
+  `trace-commonwealth-legislative-change`. Verifies the AML/CTF Act, Rules and
+  amending instruments against the Federal Register of Legislation.
+
+If a named skill is not available in this session, say so and name the plugin
+to install. Treat the step it would have performed as not done: record the
+affected proposition as not verified, or the hand-off as not made. Never
+perform that step from memory or substitute a different skill.
+<!-- end:plugin-dependencies -->

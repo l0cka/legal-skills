@@ -67,3 +67,20 @@ criteria, document versions or evidence base is materially incomplete. Grade
 untested operation `NOT TESTED`, not satisfied. Never infer implementation from
 a document title, treat a draft standard as current, certify compliance or mark
 an action closed without human-approved completion evidence.
+
+<!-- generated:plugin-dependencies -->
+## Other plugins
+
+This skill names skills from other Legal Skills plugins. Install a required
+plugin alongside this one; install a hand-off plugin when the matter needs
+that depth.
+
+- `australian-legal-research` (required): `check-commonwealth-legislation`.
+  Verifies Corporations Act provisions and case-law leads against the official
+  sources.
+
+If a named skill is not available in this session, say so and name the plugin
+to install. Treat the step it would have performed as not done: record the
+affected proposition as not verified, or the hand-off as not made. Never
+perform that step from memory or substitute a different skill.
+<!-- end:plugin-dependencies -->

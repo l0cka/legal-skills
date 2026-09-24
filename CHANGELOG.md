@@ -15,11 +15,34 @@ plugin manifests contain their intended release versions.
   publisher-only network allowlist; `score.py`) with 140 answer-keyed cases
   (citations, quotes, legislation, deadlines — genuine and fabricated, keyed
   against the official publishers or the deadlines script on 26 August 2026)
-  and 36 rubric-scored scenarios across every plugin. Headline metrics: the
+  and 37 rubric-scored scenarios across every plugin. Headline metrics: the
   with/without delta and the false-verification rate.
+
+- Plugin dependencies. `catalog.json` now declares the other plugins a plugin
+  `requires` (for example `australian-legal-research` for official-source
+  verification, `australian-litigation-deadlines` for Fair Work Commission
+  time limits) or `handsOffTo`. `generate_registry.py` derives every
+  cross-plugin skill reference, fails when a declaration is missing or
+  unused, and stamps an "Other plugins" section into each affected skill and
+  a "Plugin dependencies" section into each plugin README. Each section tells
+  the agent to report a missing plugin and treat its step as not done rather
+  than perform it from memory. `plugins/README.md` and the router's skill map
+  list the dependencies.
 
 ### Changed
 
+- `legal-workflow-router` 0.2.0: `route-legal-fact-pattern` checks which
+  routed skills are installed in the session, adds each routed plugin's
+  required plugins as prerequisites, and lists missing plugins under
+  "Install first". A missing plugin is no longer silently skipped or
+  substituted, and a plan with uninstalled steps is at most `READY WITH
+  QUALIFICATIONS`. New rubric scenario `route-legal-fact-pattern-004`.
+- Patch bumps for the generated dependency sections:
+  `australian-ai-governance` 0.1.2, `australian-aml-ctf` 0.1.2,
+  `australian-corporations-governance` 0.1.2,
+  `australian-employment-fair-work` 0.1.1,
+  `australian-litigation-deadlines` 0.3.1,
+  `australian-privacy-cybersecurity` 0.3.3.
 - `skills.json` is now `registry_version` 2: a hand-edited map of plugin →
   skill → provenance sentence. The derived `path`, `plugin`,
   `plugin_version` and `targets` fields are gone (read them from the plugin

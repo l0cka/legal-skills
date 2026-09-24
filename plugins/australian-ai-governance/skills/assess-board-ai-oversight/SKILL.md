@@ -79,3 +79,23 @@ versions or the current text of a material provision cannot be established.
 Never state that a director has complied with or breached a duty, never treat
 an unverified case citation or professional-body guidance as law, and never
 infer that a board policy exists from the fact that AI is in use.
+
+<!-- generated:plugin-dependencies -->
+## Other plugins
+
+This skill names skills from other Legal Skills plugins. Install a required
+plugin alongside this one; install a hand-off plugin when the matter needs
+that depth.
+
+- `australian-legal-research` (required): `check-commonwealth-legislation`,
+  `route-case-citation`. Verifies the Commonwealth legislation and case-law
+  leads the workflow relies on.
+- `australian-corporations-governance` (hand-off):
+  `assess-director-duties-governance`. Takes general director-duty and
+  board-process depth beyond AI oversight.
+
+If a named skill is not available in this session, say so and name the plugin
+to install. Treat the step it would have performed as not done: record the
+affected proposition as not verified, or the hand-off as not made. Never
+perform that step from memory or substitute a different skill.
+<!-- end:plugin-dependencies -->

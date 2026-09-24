@@ -34,7 +34,8 @@ Use these terms exactly in docs, scripts and reviews.
 - **Canonical source** — a hand-edited file that owns a fact. Per plugin:
   `.claude-plugin/plugin.json` (name, version, description, keywords) and
   `catalog.json` (presentation metadata, plus the optional `evidenceStates`
-  qualification lists). Per skill: the skill package itself and its
+  qualification lists and the optional `requires` and `handsOffTo`
+  dependency declarations). Per skill: the skill package itself and its
   provenance sentence in `skills.json`.
 - **Distribution surface** — a machine-owned file emitted by
   `scripts/generate_registry.py`: the `.codex-plugin/plugin.json` wrapper,
@@ -50,8 +51,15 @@ Use these terms exactly in docs, scripts and reviews.
   closed until every shipped skill has one.
 - **Generated region** — a span of a hand-written Markdown file between
   `<!-- generated:x -->` and `<!-- end:x -->` markers that the generator
-  owns: the README badges, counts, table and install blocks, and each method
-  document's evidence-states block.
+  owns: the README badges, counts, table and install blocks, each method
+  document's evidence-states block, and the trailing `plugin-dependencies`
+  section of a plugin README or `SKILL.md` that names another plugin's skills.
+- **Plugin dependency** — a declared cross-plugin link in `catalog.json`:
+  `requires` when a skill invokes another plugin's skills as a workflow step,
+  `handsOffTo` when it routes part of a matter there for depth. Plugins
+  install separately; the generator derives the links from the skill text and
+  fails when the declarations drift. The router is exempt because it names
+  every skill by design.
 - **Method core** — the shared convention for `*-source-and-control-method.md`
   documents, recorded in
   [source-and-control-method-core.md](source-and-control-method-core.md).

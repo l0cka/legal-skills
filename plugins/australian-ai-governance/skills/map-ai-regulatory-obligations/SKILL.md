@@ -73,3 +73,24 @@ Return `NOT READY` when the use case, a decisive profile overlay or the
 current text of a material instrument cannot be established. Never present a
 watch item, consultation draft or announcement as a current obligation, never
 default an overlay to `no`, and never restate regulator guidance as statute.
+
+<!-- generated:plugin-dependencies -->
+## Other plugins
+
+This skill names skills from other Legal Skills plugins. Install a required
+plugin alongside this one; install a hand-off plugin when the matter needs
+that depth.
+
+- `australian-legal-research` (required): `check-commonwealth-legislation`.
+  Verifies the Commonwealth legislation and case-law leads the workflow relies
+  on.
+- `australian-privacy-cybersecurity` (hand-off):
+  `assess-ai-privacy-cybersecurity-use-case`,
+  `assess-automated-decision-transparency`. Takes privacy, cybersecurity and
+  automated-decision transparency depth for AI use cases.
+
+If a named skill is not available in this session, say so and name the plugin
+to install. Treat the step it would have performed as not done: record the
+affected proposition as not verified, or the hand-off as not made. Never
+perform that step from memory or substitute a different skill.
+<!-- end:plugin-dependencies -->

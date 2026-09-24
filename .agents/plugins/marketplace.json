@@ -17,7 +17,7 @@
       },
       "category": "Productivity",
       "description": "Map, assess and monitor Australian AI governance obligations using verified official sources, current-versus-superseded guidance labelling and human-review gates.",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "keywords": [
         "australian-law",
         "ai-governance",
@@ -38,7 +38,7 @@
       },
       "category": "Productivity",
       "description": "Map, review and monitor AML/CTF obligations for Australian legal practices under the tranche 2 reforms using verified official sources, designated-service mapping, legal-professional-privilege handling and human-review gates.",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "keywords": [
         "australian-law",
         "aml-ctf",
@@ -59,7 +59,7 @@
       },
       "category": "Productivity",
       "description": "Configure, assess and document Australian company governance using verified Corporations Act sources and approved organisational controls.",
-      "version": "0.1.1",
+      "version": "0.1.2",
       "keywords": [
         "australian-law",
         "corporate-governance",
@@ -80,7 +80,7 @@
       },
       "category": "Productivity",
       "description": "Map the Fair Work Act, National Employment Standards, modern award and enterprise agreement layers that apply to an Australian employment arrangement; issue-spot termination exposure; review workplace policies against current statutory hooks; and track Fair Work developments. Every conclusion stays with the responsible lawyer.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "keywords": [
         "legal-workflows",
         "employment-law",
@@ -147,7 +147,7 @@
       },
       "category": "Productivity",
       "description": "Map limitation periods and compute candidate procedural deadlines for Australian civil litigation using script-only date arithmetic, evidence-gated computation-rule tables, official-publisher sources and human-confirmation gates — every date is provisional until the responsible lawyer confirms it.",
-      "version": "0.3.0",
+      "version": "0.3.1",
       "keywords": [
         "australian-law",
         "litigation",
@@ -168,7 +168,7 @@
       },
       "category": "Productivity",
       "description": "Route and verify Australian privacy, cyber incident, statutory tort, automated-decision and AI-use-case issues using current legislation.",
-      "version": "0.3.2",
+      "version": "0.3.3",
       "keywords": [
         "australian-law",
         "privacy",
@@ -237,7 +237,7 @@
       },
       "category": "Productivity",
       "description": "Route an Australian legal fact pattern to the Legal Skills plugins and skills it engages, in a defensible order, with the human decision points named. Never answers the legal question itself.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "keywords": [
         "legal-workflows",
         "routing",

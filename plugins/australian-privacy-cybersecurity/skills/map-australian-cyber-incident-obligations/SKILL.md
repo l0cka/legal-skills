@@ -57,3 +57,20 @@ Overlap or non-duplication rule | Source | Missing fact | Decision owner
 Show the earliest plausible deadline prominently but label it provisional when
 any trigger fact is unresolved. State that case law was outside scope and do
 not submit any notification.
+
+<!-- generated:plugin-dependencies -->
+## Other plugins
+
+This skill names skills from other Legal Skills plugins. Install a required
+plugin alongside this one; install a hand-off plugin when the matter needs
+that depth.
+
+- `australian-legal-research` (required): `check-commonwealth-legislation`,
+  `trace-commonwealth-legislative-change`. Verifies the Commonwealth, state
+  and territory legislation the privacy, breach and cyber workflows rely on.
+
+If a named skill is not available in this session, say so and name the plugin
+to install. Treat the step it would have performed as not done: record the
+affected proposition as not verified, or the hand-off as not made. Never
+perform that step from memory or substitute a different skill.
+<!-- end:plugin-dependencies -->

@@ -34,5 +34,8 @@
       "organisational document",
       "decisive fact"
     ]
+  },
+  "requires": {
+    "australian-legal-research": "Verifies Corporations Act provisions and case-law leads against the official sources."
   }
 }

@@ -59,3 +59,24 @@ Overlap or exclusion | Missing fact | Next verification action
 State the legal as-at date, registry verification date, sources inspected and
 that case law was outside scope. Routing is issue spotting, not a conclusion
 that a law applies.
+
+<!-- generated:plugin-dependencies -->
+## Other plugins
+
+This skill names skills from other Legal Skills plugins. Install a required
+plugin alongside this one; install a hand-off plugin when the matter needs
+that depth.
+
+- `australian-legal-research` (required): `check-act-legislation`,
+  `check-commonwealth-legislation`, `check-northern-territory-legislation`,
+  `check-nsw-legislation`, `check-queensland-legislation`,
+  `check-south-australia-legislation`, `check-tasmania-legislation`,
+  `check-victoria-legislation`, `check-western-australia-legislation`.
+  Verifies the Commonwealth, state and territory legislation the privacy,
+  breach and cyber workflows rely on.
+
+If a named skill is not available in this session, say so and name the plugin
+to install. Treat the step it would have performed as not done: record the
+affected proposition as not verified, or the hand-off as not made. Never
+perform that step from memory or substitute a different skill.
+<!-- end:plugin-dependencies -->

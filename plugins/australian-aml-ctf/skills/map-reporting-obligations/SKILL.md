@@ -81,3 +81,20 @@ or a decisive statutory trigger cannot be established. Never conclude that a
 matter is or is not suspicious, never conclude that privilege applies or is
 waived, never draft SMR narrative content, never advise delaying or shaping
 a report, and never map IFTI obligations.
+
+<!-- generated:plugin-dependencies -->
+## Other plugins
+
+This skill names skills from other Legal Skills plugins. Install a required
+plugin alongside this one; install a hand-off plugin when the matter needs
+that depth.
+
+- `australian-legal-research` (required): `check-commonwealth-legislation`.
+  Verifies the AML/CTF Act, Rules and amending instruments against the Federal
+  Register of Legislation.
+
+If a named skill is not available in this session, say so and name the plugin
+to install. Treat the step it would have performed as not done: record the
+affected proposition as not verified, or the hand-off as not made. Never
+perform that step from memory or substitute a different skill.
+<!-- end:plugin-dependencies -->
