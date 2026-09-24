@@ -23,6 +23,32 @@ Scope: all eleven plugins and sixty-one skills, 29 days after the 26 August
   Corporations Act compilation ID (unconfirmed), whistleblower and omnibus
   items (weak evidence), and AUSTRAC starter-kit URL changes.
 
+## Primary-source check (24 September 2026)
+
+A later pass read the official publishers directly. Results:
+
+- **Confirmed:** 1 (content, including 72-hour notification), 3 (existence
+  only), 4 (financial-year cycle; tranche 2 application is an inference), 6,
+  7 (decision [2026] FWCFB 225; "right-to-request" still secondary), 8, 12
+  (Bekier appeals, OAIC guidance; [2026] ARTA 130 citation unverified), the
+  ASX and CPS 510 dates, the Joint Select Committee on AI, APP 1.7–1.9,
+  director IDs from 1 July 2027, s 772 scope, flexible-work sections, the
+  WA holidays Bill (not yet passed) and Queensland (no remote witnessing of
+  wills or enduring documents).
+- **Corrected:** 2 — the House passed the Bill on 16 Sep 2026 with 25
+  Government amendments; not yet in the Senate. 5 — the Regulation adds a
+  Form 1 option, not a new s 6E function. 9 — the 11 Sep 2026 decision
+  ([2026] FWCFB 232) is SCHADS; HPSS is 7 Sep ([2026] FWCFB 231). 10 —
+  National Cabinet agreed to develop standards, not endorsed them. 11 — the
+  current compilation is C2026C00382 (No 148), with a 19 Sep 2026 amendment
+  uncompiled. External Reporting Australia commences 1 Dec 2026. The NT
+  **has** adopted the single-publication rule (Limitation Act 1981 (NT)
+  s 44AAB); only WA has not. No starter-kit release after v1.1.
+- **Still unverified** (publisher unreachable): the draft LPP guidelines
+  close date and final status, the NSW Guardianship Regulation 2026 number
+  and commencement, whether the House amendments change the LPP items,
+  the SOCI tranche 2 close date, and the Kmart determination date.
+
 ## Priority 1 — the law or its status has moved
 
 | # | Plugin | Location | What moved | Confidence |
@@ -75,7 +101,8 @@ be rewritten.
   should name the Public and Bank Holidays Amendment Bill 2025. Its changes
   start 1 Jan 2028; the 2026–27 dates are unaffected.
 - litigation-deadlines `map-limitation-periods/references/limitation-registry.json:16`:
-  the single-publication defamation rule is not in force in WA or NT.
+  the single-publication defamation rule is not in force in WA (corrected
+  on primary-source check: the NT has adopted it).
 - corporations-governance: director ID reporting through ASIC annual reviews
   starts 1 Jul 2027 (Business Registries Act 2026). The AASB, AUASB and FRC
   merge into External Reporting Australia (Financial Reporting System Reform
@@ -86,8 +113,6 @@ be rewritten.
 - ai-governance: add the Joint Select Committee on AI (report due
   30 Nov 2026) and the Sep 2026 revision of the eSafety codes regulatory
   guidance (medium-low confidence).
-- aml-ctf: the legal profession starter kit appears to have been revised
-  after v1.1 (Aug–Sep 2026); content not confirmed.
 - employment-fair-work `references/termination-exposure.md:42`: unlawful
   termination (s 772) is not limited to non-national-system employees.
   `framework-layers.md:25` and `policy-statutory-hooks.md:11` cite different

@@ -36,13 +36,13 @@ exist: one for reporting obligations (lodged with the SMR or TTR through
 AUSTRAC Online) and one for notices and requests for information (lodged by
 email).
 
-**Verify at use — pending change.** Reported after the snapshot (24 September
-2026 review, not yet confirmed against the Parliament of Australia or the
-Federal Register): the *Anti-Money Laundering and Counter-Terrorism Financing
-Amendment Bill 2026* would require an LPP form given in response to a notice
+**Verify at use — pending change.** At the 24 September 2026 review (checked
+against the Parliament of Australia bill page and Bills Digest), the
+*Anti-Money Laundering and Counter-Terrorism Financing Amendment Bill 2026*
+as introduced would require an LPP form given in response to a notice
 to be given to the agency that issued the notice rather than to the AUSTRAC
-CEO. Whether the Bill has passed, received assent or commenced was
-unconfirmed at review. Check its status before mapping where any LPP form
+CEO. The House passed it with 25 Government amendments on 16 September 2026;
+it had not reached the Senate at review and is not law. Check its status before mapping where any LPP form
 goes, and treat the position above as current only until the change is
 verified in force.
 

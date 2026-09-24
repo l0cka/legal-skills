@@ -60,10 +60,12 @@ snapshot, not a cached rule; every live workflow must recheck each source:
    copyright protections. National Cabinet's August 2026 consideration was
    unresolved at the snapshot date. This is a proposal, never current law.
    <https://www.pmc.gov.au/domestic-policy/office-ai>. Reported after the
-   snapshot (24 September 2026 review, not yet confirmed against PM&C or
-   pm.gov.au): National Cabinet on 26 August 2026 endorsed nationally
-   consistent mandatory standards for large data centres, with legislation
-   targeted for early 2027; PM&C's consultation "Getting it right: Building AI
+   snapshot (24 September 2026 review, confirmed against pm.gov.au and
+   pmc.gov.au): National Cabinet on 26 August 2026 agreed the Commonwealth
+   will work with the States and Territories to develop nationally
+   consistent mandatory standards for large data centres (energy, water and
+   land use), and the Commonwealth intends to legislate in early 2027;
+   PM&C's consultation "Getting it right: Building AI
    infrastructure that works for Australia" runs to 9 October 2026 and also
    covers conditions for AI training and copyright holders; and a reported
    opt-out model for AI training means the copyright limb should be treated

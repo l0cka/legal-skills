@@ -6,7 +6,7 @@
     {
       "id": "standards-for-ai-bill",
       "item": "Legislated 'Australian Standards for AI' and Office of AI",
-      "status_at_snapshot": "Announced 15 July 2026; Office of AI established in PM&C; legislation targeted early 2027; confirmed scope so far limited to large-AI-data-centre requirements and creator-consent copyright protections; National Cabinet outcome not published on pmc.gov.au or pm.gov.au as at 26 August 2026",
+      "status_at_snapshot": "Announced 15 July 2026; Office of AI established in PM&C; legislation targeted early 2027; confirmed scope so far limited to large-AI-data-centre requirements and creator-consent copyright protections; National Cabinet outcome not yet published at the snapshot (the 26 August 2026 communique is now on pm.gov.au)",
       "expected_trigger": "PM&C consultation outcome, exposure draft or Bill introduction (targeted early 2027)",
       "primary_sources": [
         "https://www.pmc.gov.au/domestic-policy/office-ai",
@@ -15,8 +15,8 @@
         "https://www.pmc.gov.au/domestic-policy/office-ai/getting-it-right-building-ai-infrastructure-works-australia"
       ],
       "reviewed_on": "2026-09-24",
-      "status_at_review": "Reported: National Cabinet met on 26 August 2026 and endorsed developing nationally consistent mandatory standards for large data centres (energy, water, land use, skills), with the Commonwealth committing to legislate in early 2027; a renewables requirement was reportedly not agreed. PM&C then opened the consultation 'Getting it right: Building AI infrastructure that works for Australia' (18 September to 9 October 2026), which also covers conditions for training AI models and support for copyright holders. Separately, a reported (leaked) Attorney-General's Department paper floats an opt-out model for AI training, so the copyright limb should be treated as under consultation, not as settled creator-consent protection",
-      "review_basis": "official pages seen in search results only, plus secondary sources; confirm against the primary source before relying on it"
+      "status_at_review": "Confirmed: National Cabinet met on 26 August 2026 and agreed the Commonwealth will work with the States and Territories to develop nationally consistent mandatory standards for large data centres (energy, water, land use), with the Commonwealth intending to legislate in early 2027; commentary (not the communique) reports that a renewables requirement was not agreed. PM&C then opened the consultation 'Getting it right: Building AI infrastructure that works for Australia' (18 September to 9 October 2026), which also covers conditions for training AI models and support for copyright holders. Separately, a reported (leaked) Attorney-General's Department paper floats an opt-out model for AI training, so the copyright limb should be treated as under consultation, not as settled creator-consent protection",
+      "review_basis": "National Cabinet communique and PM&C consultation page read on 24 Sep 2026; the opt-out copyright paper rests on secondary sources"
     },
     {
       "id": "oaic-adm-guidance",

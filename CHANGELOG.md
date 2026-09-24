@@ -100,8 +100,19 @@ plugin manifests contain their intended release versions.
   - Estate planning: NSW Guardianship Regulation 2026 flagged for
     verification before drafting enduring guardianship instruments;
     Queensland skill no longer implies remote execution is available.
-  - Litigation deadlines: WA public holiday Bill caveat, WA and NT
-    defamation single-publication exception, and stale snapshot wording.
+  - Litigation deadlines: WA public holiday Bill caveat, WA defamation
+    single-publication exception, and stale snapshot wording.
+  - Primary-source check of the review on 24 September 2026: the NT has
+    adopted the Stage 1 defamation reforms (the WA-only exception is
+    corrected); the 11 September 2026 gender-undervaluation decision is
+    SCHADS, not HPSS; the Corporations Act compilation is C2026C00382
+    (No 148); External Reporting Australia commences 1 December 2026;
+    National Cabinet agreed to develop, not endorsed, data-centre
+    standards; the AML/CTF Amendment Bill 2026 passed the House on
+    16 September 2026; no starter-kit release after v1.1; and the
+    non-compete watch item id no longer presumes a 2027 start. Home Affairs,
+    NSW legislation and parlinfo pages remained unreachable, so items
+    resting on them stay marked as reported.
 
 ### Removed
 

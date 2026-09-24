@@ -59,12 +59,12 @@ workflow must recheck each source:
    Affairs as a consultation draft (Draft Legal Professional Privilege
    Guidelines 2026; consultation closed 24 June 2026) with the final
    guidelines still pending — confirm at use — and AUSTRAC continues to publish sector
-   guidance in waves. Reported after the snapshot (24 September 2026
-   review, not yet confirmed against the Parliament of Australia or the
-   Federal Register): the *Anti-Money Laundering and Counter-Terrorism
+   guidance in waves. At the 24 September 2026 review (checked
+   against the Parliament of Australia bill page): the *Anti-Money Laundering and Counter-Terrorism
    Financing Amendment Bill 2026*, introduced 12 March 2026, would make
-   further changes including to LPP processes; its passage and assent were
-   unconfirmed at review, so verify its status at use. Record pending items
+   further changes including to LPP processes; the House passed it on
+   16 September 2026 and it had not reached the Senate, so verify its status
+   at use. Record pending items
    in the watch register, never as obligations.
 
 ## Source hierarchy
