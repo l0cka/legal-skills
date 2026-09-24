@@ -7,10 +7,15 @@
       "id": "lpp-ministerial-guidelines",
       "item": "Ministerial guidelines on legal professional privilege claims under section 242A",
       "status_at_snapshot": "AUSTRAC's LPP guidance (last updated 1 July 2026) states the Minister for Home Affairs will issue guidelines covering review and challenge of LPP claims, further-information requests, handling of privileged information in searches and dispute resolution; not released at snapshot",
-      "expected_trigger": "Publication of the guidelines by the Minister or AUSTRAC",
+      "expected_trigger": "Making of the final guidelines by the Minister as a notifiable instrument under section 242A",
       "primary_sources": [
-        "https://www.austrac.gov.au/industry-and-business/obligations-and-guidance/your-amlctf-program/reporting-us/legal-professional-privilege"
-      ]
+        "https://www.austrac.gov.au/industry-and-business/obligations-and-guidance/your-amlctf-program/reporting-us/legal-professional-privilege",
+        "https://www.homeaffairs.gov.au/reports-and-publications/submissions-and-discussion-papers/draft-legal-professional-privilege-guidelines-2026",
+        "https://www.austrac.gov.au/industry-and-business/obligations-and-guidance/your-amlctf-program/reporting-us/legal-professional-privilege-reform"
+      ],
+      "reviewed_on": "2026-09-24",
+      "status_at_review": "Reported after the snapshot: the Department of Home Affairs had already published Draft Legal Professional Privilege Guidelines 2026 for consultation (a first targeted round closed 1 August 2025; the public consultation on the current draft closed 24 June 2026). AUSTRAC's LPP (Reform) page reports that Home Affairs and AUSTRAC are working to finalise the guidelines. No final guidelines made as a notifiable instrument were located at review. Status: draft consulted, final pending",
+      "review_basis": "Official pages seen in search results only; confirm against the primary source before relying on it"
     },
     {
       "id": "austrac-professional-services-guidance-waves",
@@ -19,8 +24,12 @@
       "expected_trigger": "Updates to the professional designated-services guidance, the legal profession program starter kit or new sector-specific releases",
       "primary_sources": [
         "https://www.austrac.gov.au/new-austrac/designated-services-newly-regulated-entities/professional-designated-services",
-        "https://www.austrac.gov.au/industry-and-business/obligations-and-guidance/program-starter-kits/legal-profession-program-starter-kit"
-      ]
+        "https://www.austrac.gov.au/industry-and-business/obligations-and-guidance/program-starter-kits/legal-profession-program-starter-kit",
+        "https://www.austrac.gov.au/industry-and-business/obligations-and-guidance/latest-guidance-updates"
+      ],
+      "reviewed_on": "2026-09-24",
+      "status_at_review": "Reported after the snapshot: the legal profession program starter kit moved from v1.0 (January 2026) to v1.1 (June 2026), which among other changes extended the conveyancing initial-CDD delay window and added a first-independent-evaluation section; secondary sources also report a further revision around August to September 2026 whose version and content were not confirmed. AUSTRAC also appears to publish legal-profession guidance under a newer reforms path. Verify the current starter-kit version and the guidance last-updated dates at use",
+      "review_basis": "Secondary sources and official pages seen in search results only; confirm against the primary source before relying on it"
     },
     {
       "id": "amlctf-rules-amendments",
@@ -32,17 +41,37 @@
         "https://www.legislation.gov.au/F2025L01026/latest/text",
         "https://www.austrac.gov.au/about-us/legislation/updates-legislation/amlctf-transitional-rules-2026",
         "https://www.legislation.gov.au/F2026L00393/asmade/text"
-      ]
+      ],
+      "reviewed_on": "2026-09-24",
+      "status_at_review": "The 29 July 2026 fixed date for compliance-officer notification by newly regulated entities has passed; for entities enrolling later, only the 14-days-after-enrolment limb now operates. No amendment instrument or compilation of the AML/CTF Rules 2025 later than F2026C00274 was located at review, but the official register could not be reached: recheck the latest compilation and any new amendment or transitional instruments at use",
+      "review_basis": "Official pages seen in search results only; confirm against the primary source before relying on it"
     },
     {
       "id": "first-compliance-report-cycle",
       "item": "First annual compliance report cycle for tranche 2 reporting entities",
       "status_at_snapshot": "AUSTRAC's obligations summary describes an annual compliance report about how obligations were met the previous calendar year; the first cycle covering tranche 2 entities' 2026 obligations, and its lodgement window, had not been the subject of dedicated tranche 2 guidance located at snapshot",
-      "expected_trigger": "AUSTRAC guidance or AUSTRAC Online notice fixing the first tranche 2 compliance-report window",
+      "expected_trigger": "AUSTRAC Online opening of the first financial-year compliance-report window, or any AUSTRAC notice changing the reporting period",
       "primary_sources": [
         "https://www.austrac.gov.au/amlctf-reform/reforms-guidance/before-you-start/summary-obligations-reform",
-        "https://www.austrac.gov.au/industry-and-business/obligations-and-guidance/your-amlctf-program/reporting-us"
-      ]
+        "https://www.austrac.gov.au/industry-and-business/obligations-and-guidance/your-amlctf-program/reporting-us",
+        "https://www.austrac.gov.au/industry-and-business/obligations-and-guidance/your-amlctf-program/reporting-us/annual-compliance-reports"
+      ],
+      "reviewed_on": "2026-09-24",
+      "status_at_review": "Reported after the snapshot: AUSTRAC's annual compliance reports page states that compliance reporting is moving from calendar years to financial years, with the next reporting period 1 July 2026 to 30 June 2027 and reports due within 3 months of the period ending (a 1 July to 30 September submission window); newly regulated entities do not report for 2025. On that basis the first tranche 2 report would cover 1 July 2026 to 30 June 2027 and fall due by 30 September 2027. The snapshot's calendar-year description is superseded if confirmed",
+      "review_basis": "Official page seen in search results only; confirm against the primary source before relying on it"
+    },
+    {
+      "id": "amlctf-amendment-bill-2026",
+      "item": "Anti-Money Laundering and Counter-Terrorism Financing Amendment Bill 2026",
+      "status_at_snapshot": "Not on the register at the 14 August 2026 snapshot",
+      "expected_trigger": "Passage by both Houses, Royal Assent and commencement, followed by any AUSTRAC guidance on the changed LPP-form process",
+      "primary_sources": [
+        "https://www.homeaffairs.gov.au/reports-and-publications/submissions-and-discussion-papers/2026-reforms-aml-ctf-act",
+        "https://www.austrac.gov.au/amlctf-amendment-bill-announcement"
+      ],
+      "reviewed_on": "2026-09-24",
+      "status_at_review": "Reported: introduced by the Minister for Home Affairs on 12 March 2026 and reviewed by the Parliamentary Joint Committee on Intelligence and Security, which has reported. It would give the AUSTRAC CEO power to restrict or prohibit high-risk mechanisms such as crypto ATMs (the committee recommended that the Minister exercise that power), amend the definition of 'financing of terrorism', and make technical amendments to KYC requirements, politically exposed person definitions and LPP processes, including requiring LPP forms to be given to the agency that issued the notice rather than the AUSTRAC CEO. House debate was reported on 9, 10 and 16 September 2026. Sources conflict on whether it has passed both Houses; no Royal Assent was confirmed. Treat as a bill, not law",
+      "review_basis": "Secondary sources and official pages seen in search results only; confirm against the primary source before relying on it"
     }
   ]
 }
