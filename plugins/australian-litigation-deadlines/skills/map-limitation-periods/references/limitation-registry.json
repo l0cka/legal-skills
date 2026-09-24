@@ -13,7 +13,7 @@
   ],
   "special_regimes": [
     {"regime": "Child abuse claims", "flag": "No-limitation reforms apply in every jurisdiction; never state a limitation candidate for these claims — flag for the responsible lawyer."},
-    {"regime": "Defamation", "flag": "One-year single-publication regimes with extension provisions under the uniform defamation reforms; jurisdiction and publication date drive the candidate."},
+    {"regime": "Defamation", "flag": "A one-year limitation period from publication applies in every jurisdiction, subject to extension provisions; jurisdiction and publication date drive the candidate. Reported (24 September 2026 review, not yet confirmed against the WA or NT legislation publishers): the Stage 1 uniform defamation reforms, including the single-publication rule and the associated extension changes, are not in force in Western Australia or the Northern Territory — verify the current WA and NT provisions before relying on either rule there."},
     {"regime": "Personal injury", "flag": "Discoverability-based and scheme-specific periods (including motor accident and workers compensation schemes) displace the general period."},
     {"regime": "Contribution claims", "flag": "Separate contribution periods run from judgment or settlement, not from the underlying wrong."},
     {"regime": "Deceased estates", "flag": "Survival-of-actions and family-provision periods are separate and short; flag whenever a party has died."},
