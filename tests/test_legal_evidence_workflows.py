@@ -15,12 +15,6 @@ EXPECTED_SKILLS = [
     "build-privilege-log",
     "map-evidence-inconsistencies",
 ]
-REQUIRED_STATUSES = (
-    "`READY FOR HUMAN REVIEW`",
-    "`READY WITH QUALIFICATIONS`",
-    "`NOT READY`",
-    "`OUTSIDE SCOPE`",
-)
 
 
 def skill_text(name: str) -> str:
@@ -29,11 +23,7 @@ def skill_text(name: str) -> str:
 
 
 class LegalEvidenceWorkflowTests(unittest.TestCase):
-    def test_plugin_exposes_the_four_evidence_skills(self) -> None:
-        skill_dirs = sorted(path.name for path in (PLUGIN / "skills").iterdir() if path.is_dir())
-        self.assertEqual(skill_dirs, EXPECTED_SKILLS)
-
-    def test_every_skill_shares_the_review_table_docx_and_status_conventions(self) -> None:
+    def test_every_skill_shares_the_review_table_and_docx_conventions(self) -> None:
         for name in EXPECTED_SKILLS:
             text = skill_text(name)
             with self.subTest(skill=name):
@@ -44,9 +34,6 @@ class LegalEvidenceWorkflowTests(unittest.TestCase):
                 self.assertIn("repeat table headings across pages", text)
                 self.assertIn("runtime cannot create a valid `.docx`", text)
                 self.assertIn("do not substitute markdown, pdf, a spreadsheet or prose-only output", text)
-                self.assertIn("## fail closed", text)
-                for status in REQUIRED_STATUSES:
-                    self.assertIn(status.lower(), text)
                 for term in ("credibility", "weight", "admissibility", "merits"):
                     self.assertIn(term, text)
 

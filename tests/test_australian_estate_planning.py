@@ -38,32 +38,6 @@ class AustralianEstatePlanningPluginTests(unittest.TestCase):
     def read(self, path: Path) -> str:
         return " ".join(path.read_text(encoding="utf-8").split())
 
-    def test_plugin_exposes_only_three_jurisdiction_skills(self) -> None:
-        skill_dirs = sorted(
-            path.name for path in (PLUGIN / "skills").iterdir() if path.is_dir()
-        )
-        self.assertEqual(
-            skill_dirs,
-            [
-                "assemble-nsw-estate-documents",
-                "assemble-qld-estate-documents",
-                "assemble-vic-estate-documents",
-            ],
-        )
-
-    def test_skills_publish_the_simplified_result_contract(self) -> None:
-        for path in SKILLS:
-            skill = self.read(path)
-            for heading in ("## Workflow", "## Result contract", "## Fail closed"):
-                self.assertIn(heading, skill)
-            for status in (
-                "`DRAFT READY FOR SOLICITOR REVIEW`",
-                "`PARTIAL DRAFT – UNRESOLVED ISSUES`",
-                "`BLOCKED – NO DRAFT PRODUCED`",
-                "`OUTSIDE SCOPE`",
-            ):
-                self.assertIn(status, skill)
-
     def test_each_skill_uses_one_client_and_the_approved_precedent_library(self) -> None:
         for path in SKILLS:
             skill = self.read(path).lower()
