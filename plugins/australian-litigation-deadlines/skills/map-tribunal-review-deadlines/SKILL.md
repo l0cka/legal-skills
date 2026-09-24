@@ -67,3 +67,20 @@ Return `NOT READY` when the decision, tribunal or notification date cannot
 be established. Never compute around a script refusal, never conclude a
 period has expired or been extended, never omit the migration warning from
 a migration matter, and route criminal matters `OUTSIDE SCOPE`.
+
+<!-- generated:plugin-dependencies -->
+## Other plugins
+
+This skill names skills from other Legal Skills plugins. Install a required
+plugin alongside this one; install a hand-off plugin when the matter needs
+that depth.
+
+- `australian-legal-research` (required): `check-commonwealth-legislation`.
+  Verifies the Commonwealth and state legislation behind limitation periods
+  and deadline rules.
+
+If a named skill is not available in this session, say so and name the plugin
+to install. Treat the step it would have performed as not done: record the
+affected proposition as not verified, or the hand-off as not made. Never
+perform that step from memory or substitute a different skill.
+<!-- end:plugin-dependencies -->

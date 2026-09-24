@@ -66,3 +66,20 @@ source, anchor date or accountable owner is missing for a material item. Use
 `TBC`, not an estimated deadline. Never rely on a cached deadline, silently
 apply a draft or future rule, create a regulator filing, send a notice or mark
 an obligation complete without human-supplied evidence.
+
+<!-- generated:plugin-dependencies -->
+## Other plugins
+
+This skill names skills from other Legal Skills plugins. Install a required
+plugin alongside this one; install a hand-off plugin when the matter needs
+that depth.
+
+- `australian-legal-research` (required): `check-commonwealth-legislation`.
+  Verifies Corporations Act provisions and case-law leads against the official
+  sources.
+
+If a named skill is not available in this session, say so and name the plugin
+to install. Treat the step it would have performed as not done: record the
+affected proposition as not verified, or the hand-off as not made. Never
+perform that step from memory or substitute a different skill.
+<!-- end:plugin-dependencies -->

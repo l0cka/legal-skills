@@ -69,3 +69,20 @@ document status or approval authority is unknown. Never invent a constitution,
 replaceable-rule posture, delegation, committee, reviewer or approval date.
 Never place privileged advice, confidential board content, credentials or
 personal data in a reusable profile or this public repository.
+
+<!-- generated:plugin-dependencies -->
+## Other plugins
+
+This skill names skills from other Legal Skills plugins. Install a required
+plugin alongside this one; install a hand-off plugin when the matter needs
+that depth.
+
+- `australian-legal-research` (required): `check-commonwealth-legislation`.
+  Verifies Corporations Act provisions and case-law leads against the official
+  sources.
+
+If a named skill is not available in this session, say so and name the plugin
+to install. Treat the step it would have performed as not done: record the
+affected proposition as not verified, or the hand-off as not made. Never
+perform that step from memory or substitute a different skill.
+<!-- end:plugin-dependencies -->

@@ -15,10 +15,15 @@ matters.
    [references/skill-map.md](references/skill-map.md), which is generated from
    the marketplace registry by `scripts/generate_registry.py` and lists every
    skill with its trigger description.
-3. Sequence: configuration and profile skills first, official-source
+3. Check availability: each routed skill is marked installed, not installed
+   or cannot be determined, and the plugins still to install, including the
+   plugins a routed plugin requires, are listed under "Install first".
+   `scripts/generate_registry.py` derives those dependencies from the skills
+   and fails when a plugin's `catalog.json` does not declare them.
+4. Sequence: configuration and profile skills first, official-source
    verification next, assessment and mapping skills after, deliverable skills
    last. Name the human decision owner at each hand-off.
-4. Report gaps: a fact pattern that no shipped skill covers is reported as a
+5. Report gaps: a fact pattern that no shipped skill covers is reported as a
    gap, never routed to the nearest skill.
 
 ## Boundary
@@ -26,7 +31,7 @@ matters.
 The router never answers the legal question, never runs the routed skills and
 never treats a routing plan as advice. Each routed skill keeps its own scope,
 fail-closed rules and human-review points. Install the routed plugins
-separately; the router only names them.
+separately; the router only names them and says which are missing.
 
 ## Permissions
 

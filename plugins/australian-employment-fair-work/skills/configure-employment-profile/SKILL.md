@@ -76,3 +76,20 @@ never decide award or national system coverage, never characterise a worker,
 and never set a status other than `draft`. Route state-system employers and
 contractor characterisation to `OUTSIDE SCOPE` with the specialist review
 named.
+
+<!-- generated:plugin-dependencies -->
+## Other plugins
+
+This skill names skills from other Legal Skills plugins. Install a required
+plugin alongside this one; install a hand-off plugin when the matter needs
+that depth.
+
+- `australian-legal-research` (required): `check-commonwealth-legislation`.
+  Verifies the Fair Work Act and related legislation and case-law leads
+  against the official sources.
+
+If a named skill is not available in this session, say so and name the plugin
+to install. Treat the step it would have performed as not done: record the
+affected proposition as not verified, or the hand-off as not made. Never
+perform that step from memory or substitute a different skill.
+<!-- end:plugin-dependencies -->

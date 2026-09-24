@@ -62,3 +62,16 @@ official public sources and the documents the practitioner supplies.
 
 MIT. Statutory text is reproduced only by section reference; regulator
 material is cited, not copied.
+
+<!-- generated:plugin-dependencies -->
+## Plugin dependencies
+
+- `australian-legal-research` (required) — Verifies the Fair Work Act and
+  related legislation and case-law leads against the official sources.
+- `australian-litigation-deadlines` (required) — Computes the Fair Work
+  Commission time limits the termination assessment flags.
+
+Install every required plugin with this one. A skill whose required or
+hand-off plugin is missing reports the step as not done rather than performing
+it from memory.
+<!-- end:plugin-dependencies -->

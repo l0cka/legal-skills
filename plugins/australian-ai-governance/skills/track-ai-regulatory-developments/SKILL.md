@@ -62,3 +62,20 @@ record the item as unresolved rather than assuming no change. Never report a
 change on the strength of a discovery index or commentary alone, never
 present a pending instrument as in force, and never silently drop a register
 item that could not be checked.
+
+<!-- generated:plugin-dependencies -->
+## Other plugins
+
+This skill names skills from other Legal Skills plugins. Install a required
+plugin alongside this one; install a hand-off plugin when the matter needs
+that depth.
+
+- `australian-legal-research` (required): `check-commonwealth-legislation`.
+  Verifies the Commonwealth legislation and case-law leads the workflow relies
+  on.
+
+If a named skill is not available in this session, say so and name the plugin
+to install. Treat the step it would have performed as not done: record the
+affected proposition as not verified, or the hand-off as not made. Never
+perform that step from memory or substitute a different skill.
+<!-- end:plugin-dependencies -->
