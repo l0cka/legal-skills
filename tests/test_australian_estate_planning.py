@@ -12,9 +12,6 @@ QLD_SKILL = PLUGIN / "skills" / "assemble-qld-estate-documents" / "SKILL.md"
 SKILLS = (NSW_SKILL, VIC_SKILL, QLD_SKILL)
 REFERENCES = PLUGIN / "references"
 METHOD = REFERENCES / "estate-planning-source-and-control-method.md"
-NSW_HARVEY_GUIDE = ROOT / "docs" / "harvey" / "prepare-nsw-estate-planning-drafts.md"
-VIC_HARVEY_GUIDE = ROOT / "docs" / "harvey" / "prepare-victorian-estate-planning-drafts.md"
-QLD_HARVEY_GUIDE = ROOT / "docs" / "harvey" / "prepare-queensland-estate-planning-drafts.md"
 DEPLOYMENT_ADR = ROOT / "docs" / "adr" / "0003-private-deployment-estate-drafting.md"
 
 FORBIDDEN_PLATFORM_NAMES = (
@@ -87,33 +84,7 @@ class AustralianEstatePlanningPluginTests(unittest.TestCase):
             for name in FORBIDDEN_PLATFORM_NAMES:
                 self.assertNotIn(name, lowered, f"{path.name} names a platform")
 
-    def test_harvey_guides_use_supported_vault_configuration(self) -> None:
-        expected = (
-            (NSW_HARVEY_GUIDE, "Prepare NSW Estate Planning Drafts", "jurisdiction: NSW"),
-            (
-                VIC_HARVEY_GUIDE,
-                "Prepare Victorian Estate Planning Drafts",
-                "jurisdiction: VIC",
-            ),
-            (
-                QLD_HARVEY_GUIDE,
-                "Prepare Queensland Estate Planning Drafts",
-                "jurisdiction: QLD",
-            ),
-        )
-        for path, agent_name, jurisdiction in expected:
-            guide = self.read(path)
-            self.assertIn(agent_name, guide)
-            self.assertIn(jurisdiction, guide)
-            self.assertIn("one client", guide.lower())
-            self.assertIn("embedded Vault", guide)
-            self.assertIn("<ADD EXACT", guide)
-            self.assertIn("Do not permit a user-uploaded precedent", guide)
-            self.assertNotIn("Copy-paste build request", guide)
-            self.assertNotIn("## Private configuration", guide)
-            self.assertNotIn("```yaml", guide)
-            self.assertNotIn("instruction confirmation", guide.lower())
-
+    def test_deployment_adr_embeds_jurisdiction_vaults(self) -> None:
         adr = self.read(DEPLOYMENT_ADR)
         self.assertIn("status: accepted", adr)
         self.assertIn("separate jurisdictional agents", adr)

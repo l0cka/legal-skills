@@ -45,10 +45,6 @@ chronology is event-oriented. If no native table is available, the same schema
 is used as an internal structured extraction with the reduced-verifiability
 limitation stated in the `.docx`.
 
-For a manually configured Harvey Workflow agent, use the
-[Review Table import guide](../../docs/harvey/build-evidence-chronology.md).
-That guide is a platform adapter; the canonical skill remains provider-neutral.
-
 ## Permissions
 
 No MCP server, app, hook or write action is bundled. Users choose the documents

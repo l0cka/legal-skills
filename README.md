@@ -1,4 +1,7 @@
-![Legal Skills banner](docs/assets/legal-skills-banner.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/legal-skills-banner-dark.png">
+  <img alt="Legal Skills: portable, governed legal workflows for Claude Cowork and ChatGPT Work" src="docs/assets/legal-skills-banner-light.png">
+</picture>
 
 <p align="center">
   <a href="https://github.com/l0cka/legal-skills/actions/workflows/ci.yml"><img alt="CI status" src="https://img.shields.io/github/actions/workflow/status/l0cka/legal-skills/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
