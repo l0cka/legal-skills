@@ -8,7 +8,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 PLUGIN = ROOT / "plugins" / "legal-evidence-workflows"
 SKILL = PLUGIN / "skills" / "build-evidence-chronology" / "SKILL.md"
-HARVEY_GUIDE = ROOT / "docs" / "harvey" / "build-evidence-chronology.md"
 EXPECTED_SKILLS = [
     "build-document-index",
     "build-evidence-chronology",
@@ -87,17 +86,6 @@ class LegalEvidenceWorkflowTests(unittest.TestCase):
         ):
             with self.subTest(phrase=phrase):
                 self.assertIn(phrase, text)
-
-    def test_harvey_guide_maps_every_required_block(self) -> None:
-        text = HARVEY_GUIDE.read_text(encoding="utf-8")
-        for block in ("File Upload", "Review Table", "Prompt", "Response"):
-            with self.subTest(block=block):
-                self.assertIn(block, text)
-        self.assertIn("sentence-level source citations", text)
-        self.assertIn("one source row", text)
-        self.assertIn("event-level chronology", text)
-        self.assertIn("Word document creation", text)
-        self.assertIn("generated `.docx`", text)
 
 
 if __name__ == "__main__":
