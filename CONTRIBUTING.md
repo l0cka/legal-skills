@@ -21,6 +21,57 @@ efficient are welcome.
 See [docs/adding-a-plugin.md](docs/adding-a-plugin.md) for the repository
 contract.
 
+## Repository layout
+
+```text
+legal-skills/
+├── plugins/<plugin-name>/             # canonical plugin packages and skills
+├── skills.json                        # per-skill provenance sentences
+├── .claude-plugin/marketplace.json    # Claude marketplace (generated)
+├── .agents/plugins/marketplace.json   # ChatGPT and Codex marketplace (generated)
+├── scripts/                           # generator, validator, link checker
+├── benchmarks/                        # with/without-plugin benchmark harness
+└── docs/
+```
+
+Shared instructions have one canonical copy; the provider manifests wrap that
+copy without creating different versions. External tools start in read-only
+mode when practical, and write actions need clear approval boundaries.
+
+## Testing
+
+Every change must pass:
+
+```bash
+python3 scripts/validate_repository.py
+python3 scripts/generate_registry.py --check
+python3 -m unittest discover -s tests
+git diff --check
+```
+
+Behavioural evals live under `plugins/<name>/evals/` (`claude plugin eval` is
+in early access; CI only checks that the cases load). Each suite has a
+happy-path case and at least one fail-closed case, so a prompt change that
+makes a skill verify a fabricated citation, compute a date outside the script
+or hand a help-seeker legal advice fails the run:
+
+```bash
+claude plugin eval plugins/australian-legal-research --allow-tools Bash WebFetch --no-publish
+```
+
+A weekly workflow runs `python3 scripts/check_links.py`, which probes every
+URL cited under `plugins/` and fails on a dead link.
+
+Benchmarks compare answers with and without the plugins (see
+[benchmarks/README.md](benchmarks/README.md)). Keyed pass rates require the
+skill's status vocabulary, so the false-verification rate and the rubric score
+are the fair cross-arm comparisons:
+
+```bash
+python3 benchmarks/run.py --set citations --arm with,without --model opus
+python3 benchmarks/score.py benchmarks/results/<timestamp>/
+```
+
 ## Public-content boundary
 
 Do not submit client or matter information, privileged or confidential

@@ -57,6 +57,11 @@ plugin manifests contain their intended release versions.
 - `CONTEXT.md` and `CONTEXT-MAP.md` are folded into `docs/architecture.md`,
   and the README's layout, validation and benchmark sections are condensed.
 
+- The README is rewritten for users: a plain-language intro, one-step
+  install by asking your assistant, terminal commands folded away, and a
+  short "Before you rely on it" section. Repository layout, validation,
+  eval and benchmark commands move to `CONTRIBUTING.md`.
+
 - New brand: a section-sign logo (`docs/assets/legal-skills-logo.svg`) and a
   README banner with light and dark variants, replacing the stock network
   banner.
