@@ -33,9 +33,10 @@ tables cannot express — court-fixed dates, "as soon as practicable",
 periods counted backwards from a future event — is identified but never
 computed. Computation activates for a rule-table entry only after it is
 verified against the official publisher through `verify-deadline-basis`.
-The shipped tables carry the initial verification of 2026-08-14: the
-Federal Court, NSW court, Queensland court, ART, NCAT, QCAT and Victorian
-defence rules are verified and compute. FCR r 1.61(5) is expressed as a declared excluded
+The shipped tables carry verifications dated 2026-08-14 (Federal Court,
+NSW, Queensland and Victorian courts, ART, NCAT, QCAT and VCAT) and
+2026-08-26 (ACT, NT, SA, Tasmanian and WA courts); each entry records its
+own check date, and every verified entry computes. FCR r 1.61(5) is expressed as a declared excluded
 range (24 December to 14 January not counted) and r 1.61(3) as a
 short-period threshold that fails calendar-day rules of 5 days or less
 closed; where rolling a last day would enter the excluded range, the
@@ -47,8 +48,8 @@ enactment always fixes it. The Queensland UCPR has no time-reckoning rule
 of its own — the Acts Interpretation Act 1954 s 38 governs through the
 Statutory Instruments Act 1992 bridge, and the Queensland holiday table is
 Brisbane-area based, with district show holidays and the Christmas Eve
-part-day holiday recorded as caveats. Holiday tables for NSW, Victoria and
-Queensland ship verified against the official government publications
+part-day holiday recorded as caveats. Holiday tables for every State and
+Territory ship verified against the official government publications
 listed in each table.
 
 The plugin never determines when a cause of action accrued, when a fact

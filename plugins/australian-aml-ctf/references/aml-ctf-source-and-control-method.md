@@ -41,7 +41,10 @@ workflow must recheck each source:
    at 31 March 2026), as amended, carry the program, CDD and reporting
    detail:
    <https://www.austrac.gov.au/about-us/legislation/amlctf-rules>. Check for
-   amendment instruments and transitional rules at use time.
+   amendment instruments and transitional rules at use time. At the
+   24 September 2026 review the Federal Register could not be reached, so
+   the compilation number above was not reconfirmed: recheck the latest
+   compilation before relying on it.
 3. **AUSTRAC guidance** — the reform hub
    (<https://www.austrac.gov.au/industry-and-business/about-amlctf-reforms/about-reforms>),
    the tranche 2 obligations summary
@@ -51,10 +54,18 @@ workflow must recheck each source:
    and the LPP guidance
    (<https://www.austrac.gov.au/industry-and-business/obligations-and-guidance/your-amlctf-program/reporting-us/legal-professional-privilege>)
    are regulator interpretation, never statute.
-4. **Pending layer** — the ministerial LPP guidelines under section 242A are
-   announced but unreleased, and AUSTRAC continues to publish sector guidance
-   in waves. Record pending items in the watch register, never as
-   obligations.
+4. **Pending layer** — the ministerial LPP guidelines under section 242A
+   were, as reported at the 24 September 2026 review, released by Home
+   Affairs as a consultation draft (Draft Legal Professional Privilege
+   Guidelines 2026; consultation closed 24 June 2026) with the final
+   guidelines still pending — confirm at use — and AUSTRAC continues to publish sector
+   guidance in waves. At the 24 September 2026 review (checked
+   against the Parliament of Australia bill page): the *Anti-Money Laundering and Counter-Terrorism
+   Financing Amendment Bill 2026*, introduced 12 March 2026, would make
+   further changes including to LPP processes; the House passed it on
+   16 September 2026 and it had not reached the Senate, so verify its status
+   at use. Record pending items
+   in the watch register, never as obligations.
 
 ## Source hierarchy
 

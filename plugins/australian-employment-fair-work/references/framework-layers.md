@@ -22,7 +22,7 @@ The Fair Work Ombudsman lists twelve entitlements (page checked 26 August
 | # | Entitlement | Division and sections | Effect | Evidence state |
 | --- | --- | --- | --- | --- |
 | 1 | Maximum weekly hours | Div 3, ss 62–64 | 38 hours plus reasonable additional hours | `VERIFIED WITH QUALIFICATIONS` |
-| 2 | Requests for flexible working arrangements | Div 4, ss 65–66 | Eligible employees may request; 21-day written response; refusal only on reasonable business grounds after discussion; FWC may arbitrate | `VERIFIED` |
+| 2 | Requests for flexible working arrangements | Div 4, ss 65–66 (requests, responses and FWC disputes ss 65–65C; s 66 preserves State and Territory laws that are not excluded) | Eligible employees may request; 21-day written response; refusal only on reasonable business grounds after discussion; FWC may arbitrate | `VERIFIED` |
 | 3 | Casual employment and employee choice | Div 4A, ss 66A–66K (with s 15A) | Casual may notify a choice to convert after 6 months (12 for small business); employer must respond | `VERIFIED WITH QUALIFICATIONS` |
 | 4 | Parental leave | Div 5, ss 67–85 | Unpaid parental leave and related entitlements | `VERIFIED` (list) |
 | 5 | Annual leave | Div 6, ss 86–94 | 4 weeks paid; 5 for shiftworkers | `VERIFIED` (list) |

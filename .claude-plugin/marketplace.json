@@ -70,7 +70,7 @@
       "name": "australian-estate-planning",
       "source": "./plugins/australian-estate-planning",
       "description": "Prepare solicitor-review drafts for one NSW, Victorian or Queensland client from centrally maintained approved estate planning precedents, an approved drafting playbook and provenance-cited instructions. Draft supported content, visibly flag every unresolved issue and return a matching drafting-issues register.",
-      "version": "0.5.0",
+      "version": "0.5.1",
       "category": "Productivity",
       "tags": [
         "australian-law",

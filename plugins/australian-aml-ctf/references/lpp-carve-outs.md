@@ -8,6 +8,8 @@ verify through `$check-commonwealth-legislation` at use time. AUSTRAC's LPP
 guidance page (last updated 1 July 2026 at the snapshot date) is the
 regulator's interpretation:
 <https://www.austrac.gov.au/industry-and-business/obligations-and-guidance/your-amlctf-program/reporting-us/legal-professional-privilege>.
+Record the page's current last-updated date at use; it may have changed
+since the snapshot.
 
 ## The protection
 
@@ -33,6 +35,16 @@ failure to submit a required LPP form may attract civil penalties. Two forms
 exist: one for reporting obligations (lodged with the SMR or TTR through
 AUSTRAC Online) and one for notices and requests for information (lodged by
 email).
+
+**Verify at use — pending change.** At the 24 September 2026 review (checked
+against the Parliament of Australia bill page and Bills Digest), the
+*Anti-Money Laundering and Counter-Terrorism Financing Amendment Bill 2026*
+as introduced would require an LPP form given in response to a notice
+to be given to the agency that issued the notice rather than to the AUSTRAC
+CEO. The House passed it with 25 Government amendments on 16 September 2026;
+it had not reached the Senate at review and is not law. Check its status before mapping where any LPP form
+goes, and treat the position above as current only until the change is
+verified in force.
 
 Obligations AUSTRAC identifies as carrying an LPP-form requirement include
 sections 26Q(3) (program documentation requests), 41(4) (SMRs), 43(4)
@@ -65,8 +77,11 @@ lodged with the TTR within the 10-business-day TTR timeframe.
 
 Section 242A provides for ministerial guidelines on the handling of LPP
 claims — review and challenge processes, further-information requests,
-search handling and dispute resolution. At the snapshot date the guidelines
-were announced but not released: a watch item in the
+search handling and dispute resolution. As reported at the 24 September 2026
+review (confirm against Home Affairs at use), Home Affairs released Draft
+Legal Professional Privilege Guidelines 2026 for consultation, which closed
+24 June 2026; the final guidelines were still pending. They remain a watch
+item in the
 [watch register](../skills/track-aml-ctf-developments/references/watch-register.json),
 never a current obligation.
 

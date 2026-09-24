@@ -39,6 +39,6 @@ never computed here: name the provision and route to
 
 | Proposition | Section | Effect | Evidence state |
 | --- | --- | --- | --- |
-| Unlawful termination | s 772 | Non-national-system employees; FWC certificate route, now delegable | `VERIFIED WITH QUALIFICATIONS` |
+| Unlawful termination | s 772 | Prohibited termination reasons apply to all employees, but s 723 bars an unlawful termination application where a general protections dismissal claim is available, so the route is used mainly by non-national-system employees; FWC certificate route, now delegable | `VERIFIED WITH QUALIFICATIONS` |
 | Stop bullying and stop sexual harassment | Part 6-4B; Part 3-5A (from 6 March 2023) | Identify as flags; never assess conduct | `VERIFIED WITH QUALIFICATIONS` |
 | Civil penalties | — | Maximum penalties for certain contraventions index from 1 July 2026; figures not extracted | `NOT VERIFIED` |

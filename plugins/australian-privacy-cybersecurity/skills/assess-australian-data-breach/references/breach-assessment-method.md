@@ -36,7 +36,13 @@ registry to identify candidate rows. Verify, rather than assume:
   Data Right, government contracts, professional obligations and other
   verified sector-specific duties.
 
-Do not use a 30-day NDB assessment period as a notification deadline. Preserve
+Do not use a 30-day NDB assessment period as a notification deadline. Watch
+note: a 72-hour Commissioner notification for eligible data breaches was
+reported after the snapshot (24 September 2026 review, not yet confirmed
+against the Attorney-General's Department) as proposed in the exposure draft
+Privacy Amendment (Personal Data Protection) Bill 2026. It is a proposal only;
+current law is unchanged, so do not apply it unless a later Act and its
+commencement are verified. Preserve
 the SOCI 12-hour and 72-hour branches, Cyber Security Act 72-hour payment
 report, CPS 234/CPS 230 interaction, telco DFV two-day branch, CDR NDB-plus-ACSC
 overlap and My Health Record section 26WD interaction where relevant. Route

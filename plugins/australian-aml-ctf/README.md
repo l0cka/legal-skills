@@ -11,7 +11,8 @@ regulated under the tranche 2 AML/CTF reforms:
 - `map-reporting-obligations` maps SMR, TTR and compliance-report triggers,
   the tipping-off offence and the legal-professional-privilege carve-outs for
   a described scenario; and
-- `track-aml-ctf-developments` monitors the pending-guidance watch-list.
+- `track-aml-ctf-developments` monitors the watch-list of AUSTRAC guidance,
+  Rules amendments and pending instruments.
 
 ## Boundary
 

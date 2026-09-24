@@ -20,6 +20,15 @@ checker.
 | Pay secrecy | ss 333B–333D: pay-secrecy terms in instruments void; contract transition; FWO may litigate | 7 December 2022 | FWO page | `VERIFIED` |
 | Casual conversion and information statements | ss 15A, 66AAB–66AAE, 125–125B | 26 August 2024; small business pathway 26 February 2025 | FWO casual pages | `VERIFIED WITH QUALIFICATIONS` |
 
+Reported after the snapshot (24 September 2026 review, not yet confirmed
+against dewr.gov.au or fwc.gov.au): the Closing Loopholes Review final report,
+covering the casual definition, labour hire and the right to disconnect, was
+tabled on 20 August 2026 with no government response located; and a Full Bench
+decision of 27 August 2026 proposes a right-to-request working from home term
+for the Clerks – Private Sector Award 2020, with no final determination
+located. Verify both at use and check the watch register before treating
+either as affecting a hook.
+
 A policy set is reviewed against these hooks as a gap and consistency
 check. The review never concludes that a policy is compliant, that a
 practice is lawful, or that the positive duty has been met.

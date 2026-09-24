@@ -41,7 +41,7 @@ by hand, and never present model arithmetic as a computed date.
 
 ## Snapshot of the framework
 
-At 14 August 2026 — a research snapshot, not a cached rule; every live
+At 26 August 2026 — a research snapshot, not a cached rule; every live
 workflow must recheck each source:
 
 1. **Limitation statutes** — each jurisdiction has its own Limitation Act

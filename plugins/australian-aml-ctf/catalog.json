@@ -1,7 +1,7 @@
 {
   "displayName": "Australian AML/CTF",
   "shortDescription": "Finds the AML/CTF obligations of an Australian legal practice under the tranche 2 reforms. A person must approve each report and decision.",
-  "longDescription": "Creates an approved AML/CTF practice profile, maps described legal services to the designated services in table 6 of the amended Anti-Money Laundering and Counter-Terrorism Financing Act 2006, issue-spots a practice's AML/CTF program and customer-due-diligence framework against the Act and the AML/CTF Rules 2025, maps reporting obligations including the tipping-off offence and legal-professional-privilege carve-outs, and monitors pending AUSTRAC guidance. It verifies official publishers, fails closed on unmapped services, and never lodges anything with AUSTRAC or concludes that a matter is suspicious.",
+  "longDescription": "Creates an approved AML/CTF practice profile, maps described legal services to the designated services in table 6 of the amended Anti-Money Laundering and Counter-Terrorism Financing Act 2006, issue-spots a practice's AML/CTF program and customer-due-diligence framework against the Act and the AML/CTF Rules 2025, maps reporting obligations including the tipping-off offence and legal-professional-privilege carve-outs, and monitors AUSTRAC guidance, Rules amendments and pending instruments. It verifies official publishers, fails closed on unmapped services, and never lodges anything with AUSTRAC or concludes that a matter is suspicious.",
   "lawCheckedOn": "2026-08-26",
   "defaultPrompt": [
     "Create a controlled AML/CTF practice profile for this legal practice before assessing its obligations.",
@@ -15,7 +15,7 @@
     "Maps described legal services to the table 6 designated services under the tranche 2 reforms",
     "Issue-spots AML/CTF programs and customer-due-diligence frameworks against the Act and the AML/CTF Rules 2025",
     "Maps reporting triggers with legal-professional-privilege carve-outs and LPP-form mechanics",
-    "Monitors the pending AUSTRAC guidance watch-list"
+    "Monitors the AML/CTF watch-list of AUSTRAC guidance, Rules amendments and pending instruments"
   ],
   "boundaries": [
     "Legal practices only — other tranche 2 sectors and tranche 1 entities fail closed to human review",

@@ -19,7 +19,9 @@ against official sources at the legal as-at date.
 The OAIC code register identified the Australian Government Agencies Governance
 APP Code 2017, Market and Social Research APP Code 2021 and CR Code 2025 as
 registered codes at the snapshot date. The Children's Online Privacy Code was
-still developing. Always recheck the register.
+still developing; the OAIC must register it by 10 December 2026 (verify the
+statutory deadline and whether registration has occurred). Always recheck the
+register.
 
 ## Versioned guidance
 
@@ -37,3 +39,15 @@ expanded definitions, a fair-and-reasonable processing test, erasure or other
 agreed-in-principle Privacy Act Review proposals are current law unless a later
 Bill, Act and commencement are verified. Keep policy commitments, exposure
 drafts and Bills separate from enacted current and future law.
+
+Reported after the snapshot (24 September 2026 review, not yet confirmed
+against the Attorney-General's Department): an exposure draft Privacy
+Amendment (Personal Data Protection) Bill 2026 was released on 31 August 2026,
+with submissions closing 18 September 2026. Reported proposals include a
+fair-and-reasonable test, an expanded personal-information definition, a
+72-hour Commissioner notification for eligible data breaches and a right to
+erasure against large digital platforms; removal of the small-business and
+employee-records exemptions is reportedly not included. An exposure draft is
+a proposal, not law. Verify its status at
+<https://consultations.ag.gov.au/rights-and-protections/privacy-reform/>
+before use.

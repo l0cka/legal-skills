@@ -38,17 +38,41 @@ continuing.
 5. Treat commentary, templates, search results and model memory as discovery
    material, never authority.
 
-At 14 August 2026, the Federal Register identifies C2026C00339, compilation 147
-from 1 July 2026, as the latest *Corporations Act* compilation. This is a
-research snapshot, not a cached rule: every live workflow must recheck it.
+At 14 August 2026, the Federal Register identified C2026C00339, compilation
+147 from 1 July 2026, as the latest *Corporations Act* compilation. At the
+24 September 2026 review the Federal Register showed C2026C00382, compilation
+148, in force from 27 August 2026, with an uncompiled amendment from
+19 September 2026 (*Regulatory Reform Omnibus Act 2026* Sch 4 item 10), so a
+later compilation is expected. Confirm the latest compilation and its
+identifier at use.
+This is a research snapshot, not a cached rule: every live workflow must
+recheck it.
 ASX's 4th edition (2019) remains operative; a draft 5th edition was released
-for consultation on 21 July 2026 (submissions close 14 September 2026; ASX
-response expected Q1 2027; proposed first reporting period is the financial
+for consultation on 21 July 2026 (submissions closed 14 September 2026; as
+reported at the 24 September 2026 review, the Advisory Group intends to
+recommend a final version to the ASX board by December 2026 — confirm the
+release timing with ASX; proposed first reporting period is the financial
 year commencing 1 July 2027, or 1 January 2028 for December balancers).
-APRA's draft CPS 510 (released 16 June 2026, consultation closes 28 August
+APRA's draft CPS 510 (released 16 June 2026, consultation closed 28 August
 2026, final standard planned late 2026, effect expected early 2028) is also
 a draft; the in-force standard must be checked separately. Never apply a
 draft as current law.
+
+Future-change notes, reported at the 24 September 2026 review and not yet
+confirmed against the Federal Register or ASIC — verify each at use and keep
+it out of current-law analysis until verified in force:
+
+- the *Treasury Laws Amendment (Financial Reporting System Reform) Act 2026*
+  (assented 6 July 2026) merges the FRC, AASB and AUASB into a new body,
+  External Reporting Australia, with Schedule 1 Parts 1 and 3 commencing
+  1 December 2026 (per the Act's commencement table; the Act gives both 6
+  and 7 July 2026 as the assent date, so confirm it); standard-setter references such as AASB S2
+  may need re-identification after commencement; and
+- the *Treasury Laws Amendment (Business Registries Stabilisation and Uplift)
+  Act 2026* requires companies to provide director IDs to ASIC through
+  company reporting processes, such as annual reviews and changes to director
+  details, from 1 July 2027, with transitional lodgement rules for existing
+  directors.
 
 Official starting points, whose currency and application must still be checked:
 
