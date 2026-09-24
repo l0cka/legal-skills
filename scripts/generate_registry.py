@@ -8,10 +8,10 @@ Canonical, hand-edited sources per plugin:
                                               defaultPrompt, whatItDoes,
                                               boundaries)
   plugins/<name>/skills/<skill>/...          (the skill packages)
-  skills.json                                (per-skill `source` provenance only)
 
-Everything else this script writes is machine-owned: do not edit those files
-by hand. Run with --check (CI does) to fail when any generated file is stale.
+skills.json (per-skill provenance) is also hand-edited but not generated.
+Everything this script writes is machine-owned: do not edit those files by
+hand. Run with --check (CI does) to fail when any generated file is stale.
 """
 
 from __future__ import annotations
@@ -38,13 +38,14 @@ CATEGORY = "Productivity"
 CAPABILITIES = ["Read"]
 BRAND_COLOR = "#1C3C63"
 POLICY = {"installation": "AVAILABLE", "authentication": "ON_INSTALL"}
-TARGETS = ["claude-cowork", "chatgpt-work"]
 TARGETS_BADGE = (
     '  <img alt="Claude Cowork and ChatGPT Work" '
     'src="https://img.shields.io/badge/works%20with-'
     'Claude%20Cowork%20%2B%20ChatGPT%20Work-c59a46?style=flat-square">'
 )
 
+SEMVER = re.compile(r"^(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-[0-9A-Za-z.-]+)?(?:\+[0-9A-Za-z.-]+)?$")
+SLUG = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 MANIFEST_DATA_FIELDS = ("name", "version", "description", "keywords")
 CATALOG_STRING_FIELDS = ("displayName", "shortDescription", "longDescription", "lawCheckedOn")
 CATALOG_LIST_FIELDS = ("defaultPrompt", "whatItDoes", "boundaries")
@@ -114,28 +115,33 @@ def load_json(path: Path) -> dict[str, Any]:
     return data
 
 
+def is_text(value: Any) -> bool:
+    return isinstance(value, str) and bool(value.strip())
+
+
+def is_text_list(value: Any) -> bool:
+    return isinstance(value, list) and bool(value) and all(is_text(item) for item in value)
+
+
 def load_plugin(plugin_dir: Path) -> dict[str, Any]:
+    manifest_path = f"{plugin_dir.name}/.claude-plugin/plugin.json"
     manifest = load_json(plugin_dir / ".claude-plugin" / "plugin.json")
     for field in MANIFEST_DATA_FIELDS:
-        value = manifest.get(field)
-        ok = isinstance(value, list) and value if field == "keywords" else (
-            isinstance(value, str) and value.strip()
+        check_field = is_text_list if field == "keywords" else is_text
+        if not check_field(manifest.get(field)):
+            raise GenerationError(f"{manifest_path}: field {field!r} is required")
+    if manifest["name"] != plugin_dir.name or not SLUG.fullmatch(plugin_dir.name):
+        raise GenerationError(
+            f"{manifest_path}: name must equal the directory name and be lowercase and hyphenated"
         )
-        if not ok:
-            raise GenerationError(
-                f"{plugin_dir.name}/.claude-plugin/plugin.json: field {field!r} is required"
-            )
+    if not SEMVER.fullmatch(manifest["version"]):
+        raise GenerationError(f"{manifest_path}: version must be a semantic version")
     catalog = load_json(plugin_dir / "catalog.json")
     for field in CATALOG_STRING_FIELDS:
-        if not isinstance(catalog.get(field), str) or not catalog[field].strip():
+        if not is_text(catalog.get(field)):
             raise GenerationError(f"{plugin_dir.name}/catalog.json: field {field!r} is required")
     for field in CATALOG_LIST_FIELDS:
-        value = catalog.get(field)
-        if (
-            not isinstance(value, list)
-            or not value
-            or not all(isinstance(item, str) and item.strip() for item in value)
-        ):
+        if not is_text_list(catalog.get(field)):
             raise GenerationError(
                 f"{plugin_dir.name}/catalog.json: field {field!r} must be a "
                 "non-empty array of strings"
@@ -144,12 +150,7 @@ def load_plugin(plugin_dir: Path) -> dict[str, Any]:
     method_path = None
     if states is not None:
         for key in EVIDENCE_STATE_KEYS:
-            value = states.get(key) if isinstance(states, dict) else None
-            if (
-                not isinstance(value, list)
-                or not value
-                or not all(isinstance(item, str) and item.strip() for item in value)
-            ):
+            if not isinstance(states, dict) or not is_text_list(states.get(key)):
                 raise GenerationError(
                     f"{plugin_dir.name}/catalog.json: evidenceStates.{key} must be "
                     "a non-empty array of strings"
@@ -186,13 +187,7 @@ def load_plugins(root: Path) -> list[dict[str, Any]]:
         for path in (root / "plugins").iterdir()
         if path.is_dir() and not path.name.startswith(".")
     )
-    plugins = [load_plugin(path) for path in plugin_dirs]
-    for plugin, path in zip(plugins, plugin_dirs):
-        if plugin["name"] != path.name:
-            raise GenerationError(
-                f"{path.name}/.claude-plugin/plugin.json: name must equal the directory name"
-            )
-    return plugins
+    return [load_plugin(path) for path in plugin_dirs]
 
 
 def claude_manifest(plugin: dict[str, Any]) -> dict[str, Any]:
@@ -265,33 +260,6 @@ def agents_marketplace(plugins: list[dict[str, Any]]) -> dict[str, Any]:
             for plugin in plugins
         ],
     }
-
-
-def skills_registry(root: Path, plugins: list[dict[str, Any]]) -> dict[str, Any]:
-    existing: dict[str, str] = {}
-    registry_path = root / "skills.json"
-    if registry_path.is_file():
-        for entry in load_json(registry_path).get("skills", []):
-            if isinstance(entry, dict) and isinstance(entry.get("name"), str):
-                existing[entry["name"]] = entry.get("source", "")
-    entries = []
-    for plugin in plugins:
-        for skill in plugin["skills"]:
-            entries.append(
-                {
-                    "name": skill,
-                    "path": f"plugins/{plugin['name']}/skills/{skill}",
-                    "plugin": f"plugins/{plugin['name']}",
-                    "plugin_version": plugin["version"],
-                    "targets": TARGETS,
-                    # Provenance is the one hand-written registry field. A new
-                    # skill is scaffolded with "" and validation fails closed
-                    # until a human records where the workflow came from.
-                    "source": existing.get(skill, ""),
-                }
-            )
-    entries.sort(key=lambda entry: entry["path"])
-    return {"registry_version": 1, "skills": entries}
 
 
 def plugins_readme(plugins: list[dict[str, Any]]) -> str:
@@ -501,7 +469,6 @@ def generate(root: Path = ROOT) -> dict[Path, str]:
     outputs[root / ".agents" / "plugins" / "marketplace.json"] = dumps(
         agents_marketplace(plugins)
     )
-    outputs[root / "skills.json"] = dumps(skills_registry(root, plugins))
     if (root / "plugins" / ROUTER_PLUGIN).is_dir():
         outputs[root / "plugins" / ROUTER_PLUGIN / "references" / "skill-map.md"] = skill_map(root, plugins)
     outputs[root / "plugins" / "README.md"] = plugins_readme(plugins)

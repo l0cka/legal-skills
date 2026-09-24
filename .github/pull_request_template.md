@@ -11,5 +11,6 @@
 ## Validation
 
 - [ ] `python3 scripts/validate_repository.py`
+- [ ] `python3 scripts/generate_registry.py --check`
 - [ ] `python3 -m unittest discover -s tests`
 - [ ] `git diff --check`

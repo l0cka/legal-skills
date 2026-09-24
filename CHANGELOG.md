@@ -18,6 +18,22 @@ plugin manifests contain their intended release versions.
   and 36 rubric-scored scenarios across every plugin. Headline metrics: the
   with/without delta and the false-verification rate.
 
+### Changed
+
+- `skills.json` is now `registry_version` 2: a hand-edited map of plugin →
+  skill → provenance sentence. The derived `path`, `plugin`,
+  `plugin_version` and `targets` fields are gone (read them from the plugin
+  directories and manifests), and the generator no longer writes the file.
+  Validation fails when a shipped skill has no provenance sentence or the
+  file names a skill that does not exist.
+- `validate_repository.py` reuses the generator's plugin loader and no longer
+  re-checks the marketplace catalogs and Codex wrappers that
+  `generate_registry.py --check` already guarantees.
+- `tests/test_plugin_structure.py` pins the skill set and result vocabulary of
+  every plugin in one table; the privacy tests are merged into one file.
+- `CONTEXT.md` and `CONTEXT-MAP.md` are folded into `docs/architecture.md`,
+  and the README's layout, validation and benchmark sections are condensed.
+
 ## 2026-08-26 - Evals, currency, coverage and three new plugins
 
 ### Released versions

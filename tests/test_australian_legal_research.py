@@ -31,28 +31,6 @@ def load_script(name: str, path: Path):
 
 
 class AustralianLegalResearchPluginTests(unittest.TestCase):
-    def test_unified_plugin_contains_every_expected_skill(self) -> None:
-        expected = {
-            "check-commonwealth-legislation",
-            "trace-commonwealth-legislative-change",
-            "check-nsw-legislation",
-            "check-victoria-legislation",
-            "check-queensland-legislation",
-            "check-western-australia-legislation",
-            "check-south-australia-legislation",
-            "check-tasmania-legislation",
-            "check-act-legislation",
-            "check-northern-territory-legislation",
-            "route-case-citation",
-            "verify-hca-judgment",
-            "verify-nsw-judgment",
-            "verify-federal-judgment",
-            "verify-case-quote",
-            "format-aglc4-citations",
-        }
-        actual = {path.parent.name for path in (PLUGIN / "skills").glob("*/SKILL.md")}
-        self.assertEqual(actual, expected)
-
     JURISDICTION_CHECKERS = (
         "check-commonwealth-legislation",
         "check-nsw-legislation",
@@ -518,10 +496,6 @@ class AustralianCaseLawPluginTests(unittest.TestCase):
         "Limitations and review:",
     )
 
-    def test_plugin_contains_expected_skills(self) -> None:
-        actual = {path.parent.name for path in (PLUGIN / "skills").glob("*/SKILL.md")}
-        self.assertLessEqual(self.EXPECTED_SKILLS, actual)
-
     def test_every_verification_skill_has_workflow_contract_and_fail_closed(self) -> None:
         for name in self.VERIFICATION_SKILLS:
             path = PLUGIN / "skills" / name / "SKILL.md"
@@ -623,10 +597,6 @@ CITATION_REQUIRED_HEADINGS = (
 
 
 class AustralianLegalCitationPluginTests(unittest.TestCase):
-    def test_plugin_contains_citation_skill(self) -> None:
-        skills = {path.name for path in (PLUGIN / "skills").iterdir() if path.is_dir()}
-        self.assertIn("format-aglc4-citations", skills)
-
     def test_skill_has_required_headings(self) -> None:
         text = (CITATION_SKILL / "SKILL.md").read_text(encoding="utf-8")
         for heading in CITATION_REQUIRED_HEADINGS:

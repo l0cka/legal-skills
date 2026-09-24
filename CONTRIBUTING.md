@@ -9,9 +9,9 @@ efficient are welcome.
    sources, expected output, and material risks.
 2. Keep the canonical skill under its owning plugin and hand-edit only the
    canonical sources: `.claude-plugin/plugin.json`, `catalog.json`, and the
-   per-skill `source` sentences in `skills.json`.
+   per-skill provenance sentences in `skills.json`.
 3. Run `python3 scripts/generate_registry.py` to regenerate the marketplace
-   catalogs, Codex wrapper, README regions, and registry in the same change.
+   catalogs, Codex wrapper, and README regions in the same change.
 4. Add focused tests for scripts and any rule that could silently change legal
    meaning.
 5. Run `python3 scripts/validate_repository.py`,

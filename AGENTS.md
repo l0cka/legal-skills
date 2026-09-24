@@ -11,13 +11,12 @@ between Claude Cowork and ChatGPT Work.
   manifest names must match.
 - Hand-edit only the canonical sources: each plugin's
   `.claude-plugin/plugin.json` (name, version, description, keywords) and
-  `catalog.json` (presentation metadata), plus the per-skill `source`
+  `catalog.json` (presentation metadata), plus the per-skill provenance
   sentences in `skills.json`. Keep shared content provider-neutral.
 - Regenerate the distribution surfaces with
   `python3 scripts/generate_registry.py` after changing a canonical source.
   Never hand-edit `.codex-plugin/plugin.json`, either marketplace catalog,
-  `plugins/README.md`, the generated README regions, or the derived fields of
-  `skills.json`.
+  `plugins/README.md`, or the generated regions of Markdown files.
 - Update `CHANGELOG.md` under **Unreleased** for user-facing workflow changes,
   plugin additions or removals, version changes, and material fixes. Move an
   entry into a dated section only when the relevant release is published or
