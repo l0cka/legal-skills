@@ -114,29 +114,42 @@ settings. The `.agents` catalog is the OpenAI marketplace package.
 
 ```text
 legal-skills/
-├── .agents/plugins/marketplace.json   # ChatGPT and Codex marketplace
-├── .claude-plugin/marketplace.json    # Claude marketplace
-├── plugins/                           # canonical plugin packages
-├── skills.json                        # portable skill registry
-├── scripts/validate_repository.py     # offline validation
+├── plugins/<plugin-name>/             # canonical plugin packages and skills
+├── skills.json                        # per-skill provenance sentences
+├── .claude-plugin/marketplace.json    # Claude marketplace (generated)
+├── .agents/plugins/marketplace.json   # ChatGPT and Codex marketplace (generated)
+├── scripts/                           # generator, validator, link checker
+├── benchmarks/                        # with/without-plugin benchmark harness
 └── docs/
 ```
 
-Each plugin uses this structure:
+[docs/adding-a-plugin.md](docs/adding-a-plugin.md) describes the plugin
+package and [docs/architecture.md](docs/architecture.md) explains which files
+are hand-edited and which are generated.
 
-```text
-plugins/<plugin-name>/
-├── .codex-plugin/plugin.json
-├── .claude-plugin/plugin.json
-├── README.md
-└── skills/
-    └── <skill-name>/
-        ├── SKILL.md
-        ├── agents/openai.yaml    # required
-        ├── references/           # optional
-        ├── scripts/              # optional
-        └── assets/               # optional
+## Validate
+
+Every change must pass:
+
+```bash
+python3 scripts/validate_repository.py
+python3 scripts/generate_registry.py --check
+python3 -m unittest discover -s tests
+git diff --check
 ```
+
+Behavioural evals live under `plugins/<name>/evals/` (`claude plugin eval` is
+in early access; CI only checks that the cases load). Each suite has a
+happy-path case and at least one fail-closed case, so a prompt change that
+makes a skill verify a fabricated citation, compute a date outside the script
+or hand a help-seeker legal advice fails the run:
+
+```bash
+claude plugin eval plugins/australian-legal-research --allow-tools Bash WebFetch --no-publish
+```
+
+A weekly workflow runs `python3 scripts/check_links.py`, which probes every
+URL cited under `plugins/` and fails on a dead link.
 
 ## Benchmarks
 
@@ -145,59 +158,18 @@ tasks (see [benchmarks/README.md](benchmarks/README.md)). Keyed pass rates
 require the skill's status vocabulary, so the false-verification rate and the
 rubric score are the fair cross-arm comparisons.
 
-<!-- benchmarks:start -->
-_No benchmark run recorded yet._
-<!-- benchmarks:end -->
-
-## Validate
-
-```bash
-python3 scripts/validate_repository.py
-```
-
-The validator checks both marketplace catalogs and the paired provider
-manifests. It also checks plugin versions, skill frontmatter, and the canonical
-registry.
-
-Run the focused tests:
-
-```bash
-python3 -m unittest discover -s tests
-```
-
-Run the behavioural evals for a plugin (`claude plugin eval` is in early
-access; the cases live under `plugins/<name>/evals/` and CI only checks that
-they load):
-
-```bash
-claude plugin eval plugins/australian-legal-research --allow-tools Bash WebFetch --no-publish
-```
-
-Each suite has a happy-path case and at least one fail-closed case, so a
-prompt change that makes a skill verify a fabricated citation, compute a date
-outside the script or hand a help-seeker legal advice fails the run.
-
-Benchmark the plugins against answer-keyed and rubric-scored Australian legal
-tasks, with and without the plugin loaded (see [benchmarks/README.md](benchmarks/README.md)):
-
 ```bash
 python3 benchmarks/run.py --set citations --arm with,without --model opus
 python3 benchmarks/score.py benchmarks/results/<timestamp>/
 ```
 
-A weekly workflow probes every URL cited under `plugins/` and fails on a dead
-link; publishers that block non-browser clients are reported as warnings:
-
-```bash
-python3 scripts/check_links.py
-```
+<!-- benchmarks:start -->
+_No benchmark run recorded yet._
+<!-- benchmarks:end -->
 
 ## Contributing
 
-Use [CONTRIBUTING.md](CONTRIBUTING.md) and
-[docs/adding-a-plugin.md](docs/adding-a-plugin.md) for contribution
-instructions. [docs/architecture.md](docs/architecture.md) explains the
-repository architecture and provider boundaries. [CHANGELOG.md](CHANGELOG.md)
+See [CONTRIBUTING.md](CONTRIBUTING.md). [CHANGELOG.md](CHANGELOG.md)
 records the release history.
 
 ## Licence

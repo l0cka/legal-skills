@@ -8,7 +8,7 @@ distribution wrappers.
 ```text
         canonical sources (hand-edited)
    plugins/<name>/.claude-plugin/plugin.json     plugins/<name>/catalog.json
-   plugins/<name>/skills/                        skills.json `source` fields
+   plugins/<name>/skills/                        skills.json (provenance)
                                   |
                     scripts/generate_registry.py
                                   |
@@ -22,19 +22,54 @@ distribution wrappers.
 
 The shared skill package is authoritative. Each plugin's
 `.claude-plugin/plugin.json` and `catalog.json` are the only hand-edited
-registry sources; `scripts/generate_registry.py` emits every distribution
+plugin sources; `scripts/generate_registry.py` emits every distribution
 surface from them, so a plugin fact exists in exactly one place. Provider
 manifests describe the same package using each provider's schema; they must
 not fork the legal logic.
 
-## Canonical registry
+## Vocabulary
 
-`skills.json` records each skill, owning plugin, plugin version, supported
-targets, and source provenance. The generator derives every field except the
-per-skill `source` sentence, which is hand-written provenance: a new skill is
-scaffolded with an empty `source` and validation fails until a human records
-where the workflow came from. CI runs `generate_registry.py --check`, so a
-stale generated file fails the build instead of drifting.
+Use these terms exactly in docs, scripts and reviews.
+
+- **Canonical source** — a hand-edited file that owns a fact. Per plugin:
+  `.claude-plugin/plugin.json` (name, version, description, keywords) and
+  `catalog.json` (presentation metadata, plus the optional `evidenceStates`
+  qualification lists). Per skill: the skill package itself and its
+  provenance sentence in `skills.json`.
+- **Distribution surface** — a machine-owned file emitted by
+  `scripts/generate_registry.py`: the `.codex-plugin/plugin.json` wrapper,
+  both marketplace catalogs, `plugins/README.md`, the router's
+  `skill-map.md`, and the generated regions of hand-written Markdown. Never
+  hand-edited; CI fails when one is stale.
+- **Presentation metadata** — the editorial prose in `catalog.json`
+  (`displayName`, `shortDescription`, `longDescription`, `defaultPrompt`,
+  `whatItDoes`, `boundaries`), rendered into the ChatGPT Work interface and
+  the root README table.
+- **Provenance sentence** — the per-skill entry in `skills.json` recording
+  where the workflow came from. Only a human can write it, so validation fails
+  closed until every shipped skill has one.
+- **Generated region** — a span of a hand-written Markdown file between
+  `<!-- generated:x -->` and `<!-- end:x -->` markers that the generator
+  owns: the README badges, counts, table and install blocks, and each method
+  document's evidence-states block.
+- **Method core** — the shared convention for `*-source-and-control-method.md`
+  documents, recorded in
+  [source-and-control-method-core.md](source-and-control-method-core.md).
+
+Plugin-specific vocabularies live beside their plugins and never redefine
+these terms:
+[estate planning](../plugins/australian-estate-planning/CONTEXT.md) and
+[evidence workflows](../plugins/legal-evidence-workflows/CONTEXT.md).
+
+## Checks
+
+- `generate_registry.py` loads and shape-checks the canonical plugin sources;
+  with `--check` (run in CI) it fails when any distribution surface is stale.
+- `validate_repository.py` covers what generation cannot: law-check currency,
+  plugin READMEs, skill frontmatter, relative links, `agents/openai.yaml`, and
+  a provenance sentence for exactly the shipped skills.
+- `tests/test_plugin_structure.py` pins each plugin's skill set and result
+  vocabulary; each plugin's own test file holds its legal invariants.
 
 ## Provider boundaries
 
@@ -50,10 +85,5 @@ stale generated file fails the build instead of drifting.
 
 A plugin version is written once, in the plugin's
 `.claude-plugin/plugin.json`, and propagated by the generator to the Codex
-wrapper, both catalogs, and the skill registry. A release bumps that one
-field, regenerates, passes offline validation, and is then tested from each
-consumer surface.
-
-The legislation packages demonstrate the model with provider-neutral skills,
-paired manifests and optional helpers for official-source navigation or
-metadata retrieval.
+wrapper and both catalogs. A release bumps that one field, regenerates, passes
+offline validation, and is then tested from each consumer surface.

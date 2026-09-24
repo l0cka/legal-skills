@@ -74,14 +74,24 @@ python3 scripts/generate_registry.py
 ```
 
 This regenerates both marketplace catalogs, the `.codex-plugin/plugin.json`
-wrapper, the root README badges, counts, plugin table and install blocks,
-`plugins/README.md`, and `skills.json`. Never edit those files by hand.
+wrapper, the root README badges, counts, plugin table and install blocks, and
+`plugins/README.md`. Never edit those files by hand.
 
-A new skill is scaffolded into `skills.json` with an empty `source`. Fill in
-the provenance sentence — it is the one registry field only a human can write,
-and validation fails until it is present.
+## 5. Record provenance
 
-## 5. Validate
+Add one sentence per new skill to `skills.json`, under the plugin's name,
+recording where the workflow came from:
+
+```json
+"<plugin-name>": {
+  "<skill-name>": "Original workflow based on the official ... sources."
+}
+```
+
+Validation fails until every shipped skill has a provenance sentence and
+`skills.json` names no skill that does not exist.
+
+## 6. Validate
 
 ```bash
 python3 scripts/validate_repository.py
