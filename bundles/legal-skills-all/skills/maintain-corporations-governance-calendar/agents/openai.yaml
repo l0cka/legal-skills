@@ -1,0 +1,4 @@
+interface:
+  display_name: "Maintain Corporations Governance Calendar"
+  short_description: "Build a source-linked Australian governance calendar"
+  default_prompt: "Use $maintain-corporations-governance-calendar to build or update a source-linked governance calendar without filing anything."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Configure AML/CTF Practice Profile"
+  short_description: "Create a controlled AML/CTF profile for a legal practice"
+  default_prompt: "Use $configure-aml-ctf-practice-profile to draft a controlled AML/CTF practice profile for this legal practice for human approval."

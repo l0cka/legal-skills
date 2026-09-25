@@ -1,0 +1,4 @@
+interface:
+  display_name: "Assess Director Duties Governance"
+  short_description: "Issue-spot governance risks for an Australian company decision"
+  default_prompt: "Use $assess-director-duties-governance to assess the governance process and director-duty issues for this decision."

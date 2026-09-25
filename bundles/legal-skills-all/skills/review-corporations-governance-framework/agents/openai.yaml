@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Corporations Governance Framework"
+  short_description: "Review an Australian company governance control framework"
+  default_prompt: "Use $review-corporations-governance-framework to compare this governance framework with verified requirements and approved documents."

@@ -16,7 +16,8 @@ between Claude Cowork and ChatGPT Work.
 - Regenerate the distribution surfaces with
   `python3 scripts/generate_registry.py` after changing a canonical source.
   Never hand-edit `.codex-plugin/plugin.json`, either marketplace catalog,
-  `plugins/README.md`, or the generated regions of Markdown files.
+  `plugins/README.md`, the `bundles/legal-skills-all/` bundle, or the
+  generated regions of Markdown files.
 - Update `CHANGELOG.md` under **Unreleased** for user-facing workflow changes,
   plugin additions or removals, version changes, and material fixes. Move an
   entry into a dated section only when the relevant release is published or

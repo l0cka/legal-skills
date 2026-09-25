@@ -1,0 +1,4 @@
+interface:
+  display_name: "Track Fair Work Developments"
+  short_description: "Verify the Fair Work watch register against its primary sources"
+  default_prompt: "Use $track-fair-work-developments to check every watch item against its primary source, report what moved since the snapshot, propose new items, and flag which obligations maps, termination assessments or policy reviews should be re-run."

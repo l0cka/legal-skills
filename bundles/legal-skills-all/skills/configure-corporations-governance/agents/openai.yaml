@@ -1,0 +1,4 @@
+interface:
+  display_name: "Configure Corporations Governance"
+  short_description: "Draft a controlled Australian company governance profile"
+  default_prompt: "Use $configure-corporations-governance to create or validate a governance profile for this Australian company."

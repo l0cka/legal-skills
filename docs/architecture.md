@@ -18,6 +18,9 @@ distribution wrappers.
   plugin.json      (.claude-plugin)  (.agents/plugins)  badges, install
                         |                 |             blocks, plugins/
                   Claude Cowork      ChatGPT Work       README.md
+                                          |
+                    also lists bundles/legal-skills-all
+                    (generated: every skill, one plugin)
 ```
 
 The shared skill package is authoritative. Each plugin's
@@ -40,8 +43,15 @@ Use these terms exactly in docs, scripts and reviews.
 - **Distribution surface** — a machine-owned file emitted by
   `scripts/generate_registry.py`: the `.codex-plugin/plugin.json` wrapper,
   both marketplace catalogs, `plugins/README.md`, the router's
-  `skill-map.md`, and the generated regions of hand-written Markdown. Never
-  hand-edited; CI fails when one is stale.
+  `skill-map.md`, the all-in-one bundle, and the generated regions of
+  hand-written Markdown. Never hand-edited; CI fails when one is stale.
+- **All-in-one bundle** — `bundles/legal-skills-all/`, a generated plugin
+  holding a copy of every plugin's `skills/` and `references/` trees, listed
+  only in the `.agents` marketplace. The layout mirrors a plugin, so the
+  skills' `../../references/` links and script paths resolve unchanged, and
+  copying both trees into an `.agents/` directory installs every skill. Its
+  version is the per-component sum of the plugin versions, so any plugin
+  release raises it. It adds no legal logic and is not a canonical source.
 - **Presentation metadata** — the editorial prose in `catalog.json`
   (`displayName`, `shortDescription`, `longDescription`, `defaultPrompt`,
   `whatItDoes`, `boundaries`), rendered into the ChatGPT Work interface and

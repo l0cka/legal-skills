@@ -246,6 +246,26 @@
         "australia",
         "responsible-ai"
       ]
+    },
+    {
+      "name": "legal-skills-all",
+      "source": {
+        "source": "local",
+        "path": "./bundles/legal-skills-all"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity",
+      "description": "Every Legal Skills workflow in one plugin: all sixty-one skills from the eleven plugins, generated from their canonical sources. Install this or the individual plugins, not both.",
+      "version": "0.21.15",
+      "keywords": [
+        "legal-workflows",
+        "australian-law",
+        "bundle",
+        "responsible-ai"
+      ]
     }
   ]
 }

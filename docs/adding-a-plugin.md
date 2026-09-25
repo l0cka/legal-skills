@@ -92,7 +92,10 @@ python3 scripts/generate_registry.py
 
 This regenerates both marketplace catalogs, the `.codex-plugin/plugin.json`
 wrapper, the root README badges, counts, plugin table and install blocks,
-`plugins/README.md`, the router's skill map, and the dependency sections. Never edit those files by hand.
+`plugins/README.md`, the router's skill map, the dependency sections, and the
+`bundles/legal-skills-all/` bundle, which copies every plugin's `skills/` and
+`references/` trees into one plugin. File paths under those trees must not
+collide across plugins. Never edit those files by hand.
 
 ## 5. Record provenance
 

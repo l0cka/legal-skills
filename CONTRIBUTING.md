@@ -29,6 +29,7 @@ legal-skills/
 ├── skills.json                        # per-skill provenance sentences
 ├── .claude-plugin/marketplace.json    # Claude marketplace (generated)
 ├── .agents/plugins/marketplace.json   # ChatGPT and Codex marketplace (generated)
+├── bundles/legal-skills-all/          # every skill in one plugin (generated)
 ├── scripts/                           # generator, validator, link checker
 ├── benchmarks/                        # with/without-plugin benchmark harness
 └── docs/

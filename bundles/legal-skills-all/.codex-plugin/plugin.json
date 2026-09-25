@@ -1,0 +1,36 @@
+{
+  "name": "legal-skills-all",
+  "version": "0.21.15",
+  "description": "Every Legal Skills workflow in one plugin: all sixty-one skills from the eleven plugins, generated from their canonical sources. Install this or the individual plugins, not both.",
+  "author": {
+    "name": "l0cka",
+    "url": "https://github.com/l0cka"
+  },
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/bundles/legal-skills-all",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": [
+    "legal-workflows",
+    "australian-law",
+    "bundle",
+    "responsible-ai"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Legal Skills (all)",
+    "shortDescription": "Every Legal Skills plugin's skills in one install.",
+    "longDescription": "Bundles the skills and shared references of every Legal Skills plugin: Australian AI Governance, Australian AML/CTF, Australian Corporations Governance, Australian Employment & Fair Work, Australian Estate Planning, Australian Legal Research, Australian Litigation Deadlines, Australian Privacy & Cybersecurity, Legal Evidence Workflows, Legal Triage, Legal Workflow Router. Each skill keeps its own sources, result contract and human-review gates; the bundle adds no legal logic. It is regenerated from the individual plugins on every change, so it never drifts from them.",
+    "developerName": "l0cka",
+    "category": "Productivity",
+    "capabilities": [
+      "Read"
+    ],
+    "websiteURL": "https://github.com/l0cka/legal-skills",
+    "defaultPrompt": [
+      "Route this fact pattern: which Legal Skills workflows does it engage, and in what order?",
+      "Check these Australian citations against the official publishers.",
+      "Which skills in this bundle apply to a data breach at an Australian company?"
+    ],
+    "brandColor": "#1C3C63"
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Configure AI Governance Profile"
+  short_description: "Create a controlled Australian AI-governance profile"
+  default_prompt: "Use $configure-ai-governance-profile to create a controlled AI-governance profile for this organisation."

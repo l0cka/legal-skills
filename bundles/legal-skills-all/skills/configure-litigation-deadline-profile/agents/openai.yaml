@@ -1,0 +1,4 @@
+interface:
+  display_name: "Configure Litigation Deadline Profile"
+  short_description: "Set up the controlled deadline practice profile"
+  default_prompt: "Use $configure-litigation-deadline-profile to create the practice profile for the litigation-deadlines workflows, including the named confirmer and diary system of record."

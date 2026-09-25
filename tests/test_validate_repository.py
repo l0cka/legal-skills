@@ -17,7 +17,7 @@ SPEC.loader.exec_module(validate_repository)
 
 PLUGIN = "demo-plugin"
 SKILL = "demo-skill"
-README_REGIONS = ("badges", "counts", "plugin-table", "install-agent", "install-codex", "install-claude")
+README_REGIONS = ("badges", "counts", "plugin-table", "install-agent", "install-codex", "install-claude", "install-bundle")
 
 
 def write(path: Path, text: str) -> None:

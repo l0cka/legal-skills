@@ -1,0 +1,31 @@
+{
+  "table_id": "ncat",
+  "jurisdiction": "NSW",
+  "forums": ["NSW Civil and Administrative Tribunal"],
+  "holiday_table": "nsw",
+  "note": "Verified against legislation.nsw.gov.au on 2026-08-14. Time limits for particular divisions and decision types sit in the enabling legislation, which displaces the general rule (r 25(4)(a)); a 14-day period applies to internal appeals against decisions in residential proceedings (r 25(4)(b)).",
+  "computation_provisions": [
+    {
+      "id": "nsw-ia-s36",
+      "citation": "Interpretation Act 1987 (NSW) s 36",
+      "role": "time_computation_and_rollover",
+      "summary": "Reckoning of time: a period dating from a day, act or event excludes that day (s 36(1)); where the last day falls on a Saturday, Sunday or public or bank holiday in the place where the thing is to be done, it may be done on the first following day that is not such a day (s 36(2)); extension powers survive expiry (s 36(3)).",
+      "source_url": "https://legislation.nsw.gov.au/view/whole/html/inforce/current/act-1987-015#sec.36",
+      "evidence": {"state": "verified", "checked": "2026-08-14", "method": "Firecrawl scrape of the official current in-force text.", "version": "Current version for 1 July 2026 to date"}
+    }
+  ],
+  "period_rules": [
+    {
+      "id": "ncat-internal-appeal",
+      "label": "Internal appeal to the NCAT Appeal Panel (general period)",
+      "citation": "Civil and Administrative Tribunal Rules 2014 (NSW) r 25(4)(c)",
+      "trigger": "The later of notification of the decision and the day reasons are first given, orally or in writing (r 25(4)(c), r 25(4A))",
+      "period": {"length": 28, "unit": "calendar_days"},
+      "rollover": "next_business_day",
+      "applies_provisions": ["nsw-ia-s36"],
+      "source_url": "https://legislation.nsw.gov.au/view/whole/html/inforce/current/sl-2014-0026#sec.25",
+      "warnings": ["A 14-day period applies to an internal appeal against a decision made in residential proceedings (r 25(4)(b)), and any period specified by the enabling legislation displaces this rule (r 25(4)(a)).", "The Tribunal may extend time under s 41 of the Civil and Administrative Tribunal Act 2013 (NSW)."],
+      "evidence": {"state": "verified", "checked": "2026-08-14", "method": "Firecrawl scrape of the official current in-force text; trigger corrected to the later of notification and first giving of reasons.", "version": "Current version for 27 May 2022 to date"}
+    }
+  ]
+}

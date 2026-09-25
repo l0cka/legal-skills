@@ -10,6 +10,16 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- `legal-skills-all`: an all-in-one plugin bundling every skill and shared
+  reference from all eleven plugins, listed in the `.agents` marketplace
+  (`codex plugin add legal-skills-all@legal-skills`). Its `skills/` and
+  `references/` trees can also be copied straight into an `.agents/`
+  directory. `generate_registry.py` builds it under `bundles/` from the
+  canonical plugins, mirrors script file modes, removes orphaned files, fails
+  on path collisions between plugins, and derives its version from the plugin
+  versions; `--check` fails when it is stale. Install the bundle or the
+  individual plugins, not both.
+
 - `benchmarks/`: a with/without-plugin benchmark harness (`run.py` over
   `claude -p` with a scratch working directory, plugin isolation and a
   publisher-only network allowlist; `score.py`) with 140 answer-keyed cases

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prepare Board Decision Record"
+  short_description: "Draft controlled Australian board decision materials"
+  default_prompt: "Use $prepare-board-decision-record to prepare draft board decision materials without inventing what occurred."

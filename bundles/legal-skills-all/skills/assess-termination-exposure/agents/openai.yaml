@@ -1,0 +1,4 @@
+interface:
+  display_name: "Assess Termination Exposure"
+  short_description: "Issue-spot unfair dismissal, general protections, redundancy and notice exposure"
+  default_prompt: "Use $assess-termination-exposure on this proposed or completed dismissal: identify each claim path with the facts for and against, the notice and redundancy pay leads, and the Commission time limits routed to the deadlines script, leaving every finding to the responsible lawyer."

@@ -216,6 +216,68 @@ class GenerateRegistryTests(unittest.TestCase):
         self.assertIn(f"Plugin dependencies: Requires `{PLUGIN}`.", skill_map)
         self.assertNotIn(skill_dir / "SKILL.md", outputs)
 
+    def bundle(self) -> Path:
+        return self.root / generate_registry.BUNDLE_DIR
+
+    def test_bundle_carries_every_skill_and_reference(self) -> None:
+        add_other_plugin(self.root)
+        write(self.root / "plugins" / PLUGIN / "references" / "shared.md", "# Shared\n")
+        generate_registry.apply(self.generate())
+        bundle = self.bundle()
+        for skill in (SKILL, OTHER_SKILL):
+            self.assertTrue((bundle / "skills" / skill / "SKILL.md").is_file(), skill)
+            self.assertTrue((bundle / "skills" / skill / "agents" / "openai.yaml").is_file(), skill)
+        self.assertEqual((bundle / "references" / "shared.md").read_text(encoding="utf-8"), "# Shared\n")
+        manifest = json.loads((bundle / ".codex-plugin" / "plugin.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["name"], generate_registry.BUNDLE_NAME)
+        self.assertEqual(manifest["version"], "0.2.0")
+        catalog = json.loads((self.root / ".agents" / "plugins" / "marketplace.json").read_text(encoding="utf-8"))
+        entry = catalog["plugins"][-1]
+        self.assertEqual(entry["name"], generate_registry.BUNDLE_NAME)
+        self.assertEqual(entry["source"]["path"], "./bundles/legal-skills-all")
+        claude = json.loads((self.root / ".claude-plugin" / "marketplace.json").read_text(encoding="utf-8"))
+        self.assertNotIn(generate_registry.BUNDLE_NAME, [plugin["name"] for plugin in claude["plugins"]])
+
+    def test_bundle_copies_regenerated_skill_text(self) -> None:
+        add_other_plugin(self.root)
+        update_json(self.root / "plugins" / PLUGIN / "catalog.json", requires={OTHER: "Verifies."})
+        write(
+            self.root / "plugins" / PLUGIN / "skills" / SKILL / "SKILL.md",
+            skill_markdown() + f"\nVerify with `${OTHER_SKILL}`.\n",
+        )
+        outputs = self.generate()
+        source = self.root / "plugins" / PLUGIN / "skills" / SKILL / "SKILL.md"
+        copy = self.bundle() / "skills" / SKILL / "SKILL.md"
+        self.assertIn("## Other plugins", outputs[copy])
+        self.assertEqual(outputs[copy], outputs[source])
+
+    def test_bundle_removes_orphans_and_mirrors_mode(self) -> None:
+        script = self.root / "plugins" / PLUGIN / "skills" / SKILL / "scripts" / "run.py"
+        write(script, "#!/usr/bin/env python3\n")
+        script.chmod(0o755)
+        copies: dict[Path, Path] = {}
+        generate_registry.apply(generate_registry.generate(self.root, copies), copies)
+        copy = self.bundle() / "skills" / SKILL / "scripts" / "run.py"
+        self.assertTrue(generate_registry.is_executable(copy))
+        script.unlink()
+        copies = {}
+        outputs = generate_registry.generate(self.root, copies)
+        self.assertEqual(generate_registry.check(outputs, copies), [copy])
+        generate_registry.apply(outputs, copies)
+        self.assertFalse(copy.exists())
+        self.assertEqual(generate_registry.check(generate_registry.generate(self.root)), [])
+
+    def test_bundle_path_collision_fails(self) -> None:
+        add_other_plugin(self.root)
+        for plugin in (PLUGIN, OTHER):
+            write(self.root / "plugins" / plugin / "references" / "method.md", "# Method\n")
+        with self.assertRaisesRegex(generate_registry.GenerationError, "both map to"):
+            self.generate()
+
+    def test_bundle_version_sums_plugin_versions(self) -> None:
+        plugins = [{"version": "0.1.2"}, {"version": "0.3.0"}, {"version": "1.0.1"}]
+        self.assertEqual(generate_registry.bundle_version(plugins), "1.4.3")
+
     def test_number_word(self) -> None:
         self.assertEqual(generate_registry.number_word(7), "seven")
         self.assertEqual(generate_registry.number_word(48), "forty-eight")

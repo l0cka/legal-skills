@@ -114,6 +114,28 @@ codex plugin add legal-workflow-router@legal-skills
 
 You only need the plugins you'll use. Each command installs one plugin.
 
+### Everything at once (`.agents`)
+
+`legal-skills-all` bundles every skill from every plugin into one plugin,
+listed in the `.agents` marketplace for Codex and ChatGPT Work. You can also
+copy it straight into an `.agents` directory. Install the bundle or the
+individual plugins, not both. See
+[bundles/legal-skills-all](bundles/legal-skills-all/README.md).
+
+<!-- generated:install-bundle -->
+```bash
+# Codex or ChatGPT Work: one plugin from the .agents marketplace
+codex plugin marketplace add l0cka/legal-skills
+codex plugin add legal-skills-all@legal-skills
+
+# Or copy the skills straight into an .agents directory
+# (~/.agents for your user, or .agents at a project root)
+git clone --depth 1 https://github.com/l0cka/legal-skills.git
+mkdir -p ~/.agents
+cp -R legal-skills/bundles/legal-skills-all/skills legal-skills/bundles/legal-skills-all/references ~/.agents/
+```
+<!-- end:install-bundle -->
+
 ## Before you rely on it
 
 - **A person stays in charge.** Every plugin prepares work for a lawyer or

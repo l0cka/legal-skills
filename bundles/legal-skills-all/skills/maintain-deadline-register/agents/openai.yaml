@@ -1,0 +1,4 @@
+interface:
+  display_name: "Maintain Deadline Register"
+  short_description: "Keep a source-linked deadline register for a matter"
+  default_prompt: "Use $maintain-deadline-register to assemble the candidate deadlines for this matter into a source-linked register with per-entry confirmation status."

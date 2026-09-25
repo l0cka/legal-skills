@@ -1,0 +1,55 @@
+{
+  "table_id": "cth-federal-courts",
+  "jurisdiction": "Cth",
+  "forums": ["Federal Court of Australia", "Federal Circuit and Family Court of Australia (Division 2, general federal law)"],
+  "holiday_table": "nsw",
+  "note": "Verified against legislation.gov.au on 2026-08-14. FCR r 1.61(5) is expressed as a declared excluded range (24 December to 14 January, not counted) and r 1.61(3) as a short-period threshold: calendar-day rules of 5 days or less fail closed because they count business days only. Where rolling a last day under r 1.61(4) would enter the excluded range, the interaction with r 1.61(5) is not settled by the tables and the script refuses — the responsible lawyer resolves it. The holiday_table must match the registry in which the act is to be done; the shipped default is a placeholder the profile must confirm.",
+  "computation_provisions": [
+    {
+      "id": "aia-s36",
+      "citation": "Acts Interpretation Act 1901 (Cth) s 36",
+      "role": "trigger_day_and_weekend_holiday_rollover",
+      "summary": "s 36(1) fixes trigger-day rules by a table (a period beginning 'from' or 'after' a day excludes that day; one ending 'at, on or with' a day includes it); s 36(2) provides that where the last day for doing a thing is a Saturday, Sunday or holiday, it may be done on the next day that is not; s 36(3) defines holiday to include a public holiday in the relevant place and a day the office or place is closed for the whole day.",
+      "source_url": "https://www.legislation.gov.au/C1901A00002/latest/text",
+      "evidence": {"state": "verified", "checked": "2026-08-14", "method": "Firecrawl scrape of the official current compilation text.", "version": "C2026C00117, Compilation No. 39, 28 March 2026"}
+    },
+    {
+      "id": "fcr-1-61",
+      "citation": "Federal Court Rules 2011 (Cth) r 1.61",
+      "role": "time_computation",
+      "summary": "Calculation of time: the trigger day or event day is not counted (r 1.61(2)); for periods of 5 days or less, days that are not business days in the relevant place are not counted (r 1.61(3)); if the last day is not a business day and the act may only be done on a business day, it may be done on the next business day (r 1.61(4)); and the days from 24 December to 14 January are not counted (r 1.61(5)).",
+      "source_url": "https://www.legislation.gov.au/F2011L01551/latest/text",
+      "time_computation_effects": {
+        "excluded_ranges": [{"from": "12-24", "to": "01-14"}],
+        "short_period_threshold_days": 5
+      },
+      "evidence": {"state": "verified", "checked": "2026-08-14", "method": "Firecrawl scrape of the official current compilation text.", "version": "F2026C00512, Compilation No. 11, 11 June 2026"}
+    }
+  ],
+  "period_rules": [
+    {
+      "id": "fcr-defence-after-service",
+      "label": "Defence after service of statement of claim",
+      "citation": "Federal Court Rules 2011 (Cth) r 16.32",
+      "trigger": "Service of the statement of claim",
+      "period": {"length": 28, "unit": "calendar_days"},
+      "rollover": "next_business_day",
+      "applies_provisions": ["fcr-1-61", "aia-s36"],
+      "source_url": "https://www.legislation.gov.au/F2011L01551/latest/text",
+      "warnings": ["Days from 24 December to 14 January are not counted (r 1.61(5)); the computation applies this as a declared excluded range."],
+      "evidence": {"state": "verified", "checked": "2026-08-14", "method": "Firecrawl scrape of the official current compilation text; period and trigger confirmed exactly. Excluded-range reckoning under r 1.61(5) activated when table-driven support landed.", "version": "F2026C00512, Compilation No. 11, 11 June 2026"}
+    },
+    {
+      "id": "fcr-notice-of-appeal",
+      "label": "Notice of appeal from a Federal Court judgment (no leave path)",
+      "citation": "Federal Court Rules 2011 (Cth) r 36.03",
+      "trigger": "Date the judgment was pronounced or the order made (r 36.03(a)(i)); alternative triggers are the grant of leave to appeal (r 36.03(a)(ii)) or a date fixed by the court appealed from (r 36.03(b))",
+      "period": {"length": 28, "unit": "calendar_days"},
+      "rollover": "next_business_day",
+      "applies_provisions": ["fcr-1-61", "aia-s36"],
+      "source_url": "https://www.legislation.gov.au/F2011L01551/latest/text",
+      "warnings": ["Extension of time is available under r 36.05, during or after the period.", "Days from 24 December to 14 January are not counted (r 1.61(5)); the computation applies this as a declared excluded range."],
+      "evidence": {"state": "verified", "checked": "2026-08-14", "method": "Firecrawl scrape of the official current compilation text; period and alternative triggers confirmed. Excluded-range reckoning under r 1.61(5) activated when table-driven support landed.", "version": "F2026C00512, Compilation No. 11, 11 June 2026"}
+    }
+  ]
+}

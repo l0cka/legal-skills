@@ -1,0 +1,4 @@
+interface:
+  display_name: "Map AI Regulatory Obligations"
+  short_description: "Map binding versus pending Australian AI instruments"
+  default_prompt: "Use $map-ai-regulatory-obligations to map which Australian instruments currently apply to this AI use case."

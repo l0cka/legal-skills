@@ -1,0 +1,4 @@
+interface:
+  display_name: "Configure Legal Triage"
+  short_description: "Create a governed CLC triage profile"
+  default_prompt: "Use $configure-legal-triage to create a governed staff-facing triage profile for this community legal centre."

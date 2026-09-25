@@ -12,7 +12,9 @@ Canonical, hand-edited sources per plugin:
 
 skills.json (per-skill provenance) is also hand-edited but not generated.
 Everything this script writes is machine-owned: do not edit those files by
-hand. Run with --check (CI does) to fail when any generated file is stale.
+hand. That includes the all-in-one bundle under bundles/, a copy of every
+plugin's skills/ and references/ trees. Run with --check (CI does) to fail
+when any generated file is stale.
 """
 
 from __future__ import annotations
@@ -20,6 +22,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import stat
 import sys
 import textwrap
 from pathlib import Path
@@ -74,6 +77,17 @@ EVIDENCE_STATE_UNVERIFIED = "`NOT VERIFIED` — the {unverifiable} could not be 
 EVIDENCE_STATE_OUTSIDE = (
     "`OUTSIDE SCOPE` — the issue needs another legal or regulatory workflow."
 )
+
+# The all-in-one bundle: every shipped skill in one plugin, listed only in the
+# .agents marketplace. Its skills/ and references/ trees mirror the plugins'
+# own, so the skills' ../../references/ links resolve unchanged, and copying
+# both trees into an .agents/ directory installs every skill without a
+# marketplace.
+BUNDLE_NAME = "legal-skills-all"
+BUNDLE_DIR = Path("bundles") / BUNDLE_NAME
+BUNDLE_TREES = ("skills", "references")
+BUNDLE_SKIPPED = ("__pycache__",)
+BUNDLE_KEYWORDS = ["legal-workflows", "australian-law", "bundle", "responsible-ai"]
 
 ONES = (
     "zero one two three four five six seven eight nine ten eleven twelve "
@@ -263,7 +277,8 @@ def claude_marketplace(plugins: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
-def agents_marketplace(plugins: list[dict[str, Any]]) -> dict[str, Any]:
+def agents_marketplace(plugins: list[dict[str, Any]], bundle: dict[str, Any]) -> dict[str, Any]:
+    """The .agents catalog: every plugin, then the all-in-one bundle."""
     return {
         "name": MARKETPLACE_NAME,
         "interface": {
@@ -273,14 +288,14 @@ def agents_marketplace(plugins: list[dict[str, Any]]) -> dict[str, Any]:
         "plugins": [
             {
                 "name": plugin["name"],
-                "source": {"source": "local", "path": f"./plugins/{plugin['name']}"},
+                "source": {"source": "local", "path": plugin.get("path", f"./plugins/{plugin['name']}")},
                 "policy": POLICY,
                 "category": CATEGORY,
                 "description": plugin["description"],
                 "version": plugin["version"],
                 "keywords": plugin["keywords"],
             }
-            for plugin in plugins
+            for plugin in [*plugins, bundle]
         ],
     }
 
@@ -382,6 +397,171 @@ def install_claude_region(plugins: list[dict[str, Any]]) -> str:
     return "```bash\n" + "\n".join(lines) + "\n```"
 
 
+def install_bundle_region() -> str:
+    bundle = BUNDLE_DIR.as_posix()
+    return "\n".join(
+        [
+            "```bash",
+            "# Codex or ChatGPT Work: one plugin from the .agents marketplace",
+            f"codex plugin marketplace add {OWNER}/{MARKETPLACE_NAME}",
+            f"codex plugin add {BUNDLE_NAME}@{MARKETPLACE_NAME}",
+            "",
+            "# Or copy the skills straight into an .agents directory",
+            "# (~/.agents for your user, or .agents at a project root)",
+            f"git clone --depth 1 {REPOSITORY}.git",
+            "mkdir -p ~/.agents",
+            f"cp -R {MARKETPLACE_NAME}/{bundle}/skills {MARKETPLACE_NAME}/{bundle}/references ~/.agents/",
+            "```",
+        ]
+    )
+
+
+def bundle_version(plugins: list[dict[str, Any]]) -> str:
+    """Sum each version component across the plugins.
+
+    Any plugin release raises the bundle version, because a bump either raises
+    a component's sum or raises a more significant one while resetting a lower.
+    """
+    parts = [
+        [int(part) for part in SEMVER.fullmatch(plugin["version"]).groups()[:3]]  # type: ignore[union-attr]
+        for plugin in plugins
+    ]
+    return ".".join(str(sum(column)) for column in zip(*parts))
+
+
+def bundle_plugin(plugins: list[dict[str, Any]], skill_count: int) -> dict[str, Any]:
+    return {
+        "name": BUNDLE_NAME,
+        "path": f"./{BUNDLE_DIR.as_posix()}",
+        "version": bundle_version(plugins),
+        "description": (
+            f"Every Legal Skills workflow in one plugin: all {number_word(skill_count)} "
+            f"skills from the {number_word(len(plugins))} plugins, generated from their "
+            "canonical sources. Install this or the individual plugins, not both."
+        ),
+        "keywords": BUNDLE_KEYWORDS,
+    }
+
+
+def bundle_manifest(bundle: dict[str, Any], plugins: list[dict[str, Any]]) -> dict[str, Any]:
+    names = ", ".join(plugin["catalog"]["displayName"] for plugin in plugins)
+    return {
+        "name": bundle["name"],
+        "version": bundle["version"],
+        "description": bundle["description"],
+        "author": AUTHOR,
+        "homepage": f"{REPOSITORY}/tree/main/{BUNDLE_DIR.as_posix()}",
+        "repository": REPOSITORY,
+        "license": LICENSE,
+        "keywords": bundle["keywords"],
+        "skills": SKILLS_PATH,
+        "interface": {
+            "displayName": f"{MARKETPLACE_DISPLAY_NAME} (all)",
+            "shortDescription": "Every Legal Skills plugin's skills in one install.",
+            "longDescription": (
+                f"Bundles the skills and shared references of every Legal Skills plugin: {names}. "
+                "Each skill keeps its own sources, result contract and human-review gates; the "
+                "bundle adds no legal logic. It is regenerated from the individual plugins on "
+                "every change, so it never drifts from them."
+            ),
+            "developerName": OWNER,
+            "category": CATEGORY,
+            "capabilities": CAPABILITIES,
+            "websiteURL": REPOSITORY,
+            "defaultPrompt": [
+                "Route this fact pattern: which Legal Skills workflows does it engage, and in what order?",
+                "Check these Australian citations against the official publishers.",
+                "Which skills in this bundle apply to a data breach at an Australian company?",
+            ],
+            "brandColor": BRAND_COLOR,
+        },
+    }
+
+
+def bundle_readme(bundle: dict[str, Any], plugins: list[dict[str, Any]], skill_count: int) -> str:
+    lines = [
+        "<!-- GENERATED FILE - do not edit. Built from plugins/ by",
+        "     scripts/generate_registry.py -->",
+        "",
+        f"# {MARKETPLACE_DISPLAY_NAME} (all)",
+        "",
+        *wrap_paragraph(
+            f"`{BUNDLE_NAME}` installs every Legal Skills workflow at once: "
+            f"{number_word(skill_count)} skills from {number_word(len(plugins))} plugins. "
+            "It is a generated copy of each plugin's `skills/` and `references/` "
+            "trees, so every skill behaves exactly as it does in its own plugin, "
+            "with the same sources, result contract and human-review gates."
+        ),
+        "",
+        *wrap_paragraph(
+            "Install either this bundle or the individual plugins, not both: "
+            "installing both loads every skill twice."
+        ),
+        "",
+        "## Install",
+        "",
+        install_bundle_region(),
+        "",
+        *wrap_paragraph(
+            "Copying into `.agents/` needs both trees: the skills link to shared "
+            "files at `../../references/`. Copy again to update."
+        ),
+        "",
+        "## Included plugins",
+        "",
+    ]
+    for plugin in plugins:
+        skills = ", ".join(f"`{skill}`" for skill in plugin["skills"])
+        lines.extend(
+            textwrap.wrap(
+                f"- [**{plugin['catalog']['displayName']}**](../../plugins/{plugin['name']}/README.md) "
+                f"{plugin['version']}, law checked {plugin['catalog']['lawCheckedOn']}: {skills}",
+                width=78,
+                subsequent_indent="  ",
+                break_on_hyphens=False,
+                break_long_words=False,
+            )
+        )
+    lines += [
+        "",
+        "## Before you rely on it",
+        "",
+        *wrap_paragraph(
+            "Every skill prepares work for a lawyer or other qualified person to "
+            "check and approve. None of them gives legal advice or replaces "
+            "professional judgment. Each plugin's README states its jurisdiction, "
+            "sources and currency limits."
+        ),
+        "",
+        "Licence: MIT. See [LICENSE](../../LICENSE).",
+    ]
+    return "\n".join(lines) + "\n"
+
+
+def bundle_sources(root: Path, plugins: list[dict[str, Any]]) -> dict[Path, Path]:
+    """Map each bundle file to the plugin file it copies."""
+    sources: dict[Path, Path] = {}
+    for plugin in plugins:
+        plugin_dir = root / "plugins" / plugin["name"]
+        for tree in BUNDLE_TREES:
+            for path in sorted((plugin_dir / tree).rglob("*")):
+                relative = path.relative_to(plugin_dir)
+                if (
+                    not path.is_file()
+                    or path.suffix == ".pyc"
+                    or any(part in BUNDLE_SKIPPED for part in relative.parts)
+                ):
+                    continue
+                target = root / BUNDLE_DIR / relative
+                if target in sources:
+                    raise GenerationError(
+                        f"{describe(path)} and {describe(sources[target])} both map to "
+                        f"{describe(target)} in the {BUNDLE_NAME} bundle; rename one"
+                    )
+                sources[target] = path
+    return sources
+
+
 def joined(items: list[str]) -> str:
     if len(items) == 1:
         return items[0]
@@ -441,6 +621,7 @@ def root_readme(root: Path, plugins: list[dict[str, Any]], skill_count: int) -> 
         "install-agent": install_agent_region(plugins),
         "install-codex": install_codex_region(plugins),
         "install-claude": install_claude_region(plugins),
+        "install-bundle": install_bundle_region(),
     }
     for region, content in regions.items():
         text = replace_region(text, region, content, "README.md")
@@ -658,7 +839,9 @@ def dependency_summary(declared: dict[str, dict[str, str]]) -> str:
     return "; ".join(parts)
 
 
-def generate(root: Path = ROOT) -> dict[Path, str]:
+def generate(root: Path = ROOT, copies: dict[Path, Path] | None = None) -> dict[Path, str]:
+    """Build every generated file. Bundle copies are also recorded in ``copies``
+    (bundle path -> plugin path) so apply and check can mirror the file mode."""
     plugins = load_plugins(root)
     skill_count = sum(len(plugin["skills"]) for plugin in plugins)
     dependencies = plugin_dependencies(root, plugins)
@@ -686,32 +869,82 @@ def generate(root: Path = ROOT) -> dict[Path, str]:
         if plugin["method_path"] is not None:
             outputs[plugin["method_path"]] = method_document(plugin)
     outputs[root / ".claude-plugin" / "marketplace.json"] = dumps(claude_marketplace(plugins))
+    bundle = bundle_plugin(plugins, skill_count)
     outputs[root / ".agents" / "plugins" / "marketplace.json"] = dumps(
-        agents_marketplace(plugins)
+        agents_marketplace(plugins, bundle)
     )
     if (root / "plugins" / ROUTER_PLUGIN).is_dir():
         outputs[root / "plugins" / ROUTER_PLUGIN / "references" / "skill-map.md"] = skill_map(root, plugins)
     outputs[root / "plugins" / "README.md"] = plugins_readme(plugins)
     outputs[root / "README.md"] = root_readme(root, plugins, skill_count)
+    sources = bundle_sources(root, plugins)
+    for target, source in sources.items():
+        # A plugin file this run regenerates is copied in its regenerated form.
+        outputs[target] = outputs.get(source) or source.read_text(encoding="utf-8")
+    bundle_dir = root / BUNDLE_DIR
+    outputs[bundle_dir / ".codex-plugin" / "plugin.json"] = dumps(bundle_manifest(bundle, plugins))
+    outputs[bundle_dir / "README.md"] = bundle_readme(bundle, plugins, skill_count)
+    if copies is not None:
+        copies.update(sources)
     return outputs
 
 
-def apply(outputs: dict[Path, str]) -> list[Path]:
+def is_executable(path: Path) -> bool:
+    return bool(path.stat().st_mode & stat.S_IXUSR)
+
+
+def orphans(outputs: dict[Path, str]) -> list[Path]:
+    """Files in a generated bundle that no plugin file produces any more."""
+    manifest = Path(".codex-plugin") / "plugin.json"
+    bundle_dirs = [
+        path.parents[1]
+        for path in outputs
+        if path.parts[-len(BUNDLE_DIR.parts) - 2:] == (*BUNDLE_DIR.parts, *manifest.parts)
+    ]
+    return sorted(
+        path
+        for bundle_dir in bundle_dirs
+        if bundle_dir.is_dir()
+        for path in bundle_dir.rglob("*")
+        if path.is_file()
+        and path not in outputs
+        and path.suffix != ".pyc"
+        and not any(part in BUNDLE_SKIPPED for part in path.parts)
+    )
+
+
+def mode_differs(path: Path, copies: dict[Path, Path]) -> bool:
+    return path in copies and is_executable(path) != is_executable(copies[path])
+
+
+def apply(outputs: dict[Path, str], copies: dict[Path, Path] | None = None) -> list[Path]:
+    copies = copies or {}
     changed = []
     for path, content in sorted(outputs.items()):
         path.parent.mkdir(parents=True, exist_ok=True)
         if not path.is_file() or path.read_text(encoding="utf-8") != content:
             path.write_text(content, encoding="utf-8")
             changed.append(path)
+        if mode_differs(path, copies):
+            path.chmod(copies[path].stat().st_mode)
+            if path not in changed:
+                changed.append(path)
+    for path in orphans(outputs):
+        path.unlink()
+        changed.append(path)
     return changed
 
 
-def check(outputs: dict[Path, str]) -> list[Path]:
-    return [
+def check(outputs: dict[Path, str], copies: dict[Path, Path] | None = None) -> list[Path]:
+    copies = copies or {}
+    stale = [
         path
         for path, content in sorted(outputs.items())
-        if not path.is_file() or path.read_text(encoding="utf-8") != content
+        if not path.is_file()
+        or path.read_text(encoding="utf-8") != content
+        or mode_differs(path, copies)
     ]
+    return stale + orphans(outputs)
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -722,13 +955,14 @@ def main(argv: list[str] | None = None) -> int:
         help="verify generated files are current instead of writing them",
     )
     args = parser.parse_args(argv)
+    copies: dict[Path, Path] = {}
     try:
-        outputs = generate()
+        outputs = generate(copies=copies)
     except GenerationError as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
     if args.check:
-        stale = check(outputs)
+        stale = check(outputs, copies)
         if stale:
             for path in stale:
                 print(f"STALE: {path.relative_to(ROOT)}", file=sys.stderr)
@@ -739,7 +973,7 @@ def main(argv: list[str] | None = None) -> int:
             return 1
         print(f"All {len(outputs)} generated file(s) are current.")
         return 0
-    changed = apply(outputs)
+    changed = apply(outputs, copies)
     for path in changed:
         print(f"wrote {path.relative_to(ROOT)}")
     print(f"Generated {len(outputs)} file(s); {len(changed)} changed.")

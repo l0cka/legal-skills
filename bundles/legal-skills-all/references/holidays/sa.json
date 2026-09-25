@@ -1,0 +1,26 @@
+{
+  "table_id": "sa",
+  "jurisdiction": "SA",
+  "description": "South Australian public holidays under the Public Holidays Act 2023 (SA), as published by SafeWork SA (statewide list).",
+  "source_url": "https://www.safework.sa.gov.au/resources/public-holidays",
+  "checked": "2026-08-26",
+  "evidence": {"state": "verified", "method": "Firecrawl scrape of the official SafeWork SA public-holidays page on the checked date; page last modified 2026-06-24 and covering 2025 to 2028."},
+  "coverage": {"from": "2026-01-01", "to": "2027-12-31"},
+  "holidays": [
+    "2026-01-01", "2026-01-26", "2026-03-09", "2026-04-03", "2026-04-04",
+    "2026-04-05", "2026-04-06", "2026-04-25", "2026-06-08", "2026-10-05",
+    "2026-12-25", "2026-12-26", "2026-12-28",
+    "2027-01-01", "2027-01-26", "2027-03-08", "2027-03-26", "2027-03-27",
+    "2027-03-28", "2027-03-29", "2027-04-25", "2027-06-14", "2027-10-04",
+    "2027-12-25", "2027-12-26", "2027-12-27", "2027-12-28"
+  ],
+  "uncertain_windows": [],
+  "caveats": [
+    "Christmas Eve and New Year's Eve are part-day public holidays (7pm to midnight) and are not included as non-business days.",
+    "Proclamation Day is 28 December but the Proclamation Day holiday is observed on 26 December; when 26 December falls on a Saturday that day and the following Monday are public holidays (Saturday 26 and Monday 28 December 2026), and when it falls on a Sunday or Monday that day and the following Tuesday are public holidays (Sunday 26 and Tuesday 28 December 2027, with Monday 27 December 2027 the additional Christmas Day holiday), all as published.",
+    "Adelaide Cup Day is Monday 9 March 2026 and Monday 8 March 2027; the King's Birthday is Monday 8 June 2026 and Monday 14 June 2027; Labour Day is Monday 5 October 2026 and Monday 4 October 2027.",
+    "Anzac Day is a public holiday on 25 April whatever the day of the week, with no substitute or additional holiday: Saturday 25 April 2026 and Sunday 25 April 2027 are listed but fall on weekends.",
+    "Easter Saturday and Easter Sunday are public holidays from 1 January 2024 and are listed although they fall on weekends.",
+    "Uniform Civil Rules 2020 r 2.2(4) turns on days the Registry is closed, which may differ from gazetted public holidays — confirm the Registry was open on the candidate date."
+  ]
+}

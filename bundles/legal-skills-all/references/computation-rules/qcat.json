@@ -1,0 +1,35 @@
+{
+  "table_id": "qcat",
+  "jurisdiction": "QLD",
+  "forums": ["Queensland Civil and Administrative Tribunal"],
+  "holiday_table": "qld",
+  "note": "Verified against legislation.qld.gov.au on 2026-08-14. The general review period sits in s 33(3) of the QCAT Act (28 days after the relevant day), but an enabling Act that is an Act may provide a different period (s 6(7); s 33 note 1) — the conferring Act must be checked before any candidate is relied on. The QCAT Rules 2009 (SL 2009 No. 253) govern form, content and filing only and do not qualify the s 33(3) period. Extension is available under s 61, but is barred where it would cause prejudice or detriment not remediable by an appropriate order for costs or damages (s 61(3)).",
+  "computation_provisions": [
+    {
+      "id": "qld-aia-s38",
+      "citation": "Acts Interpretation Act 1954 (Qld) s 38",
+      "role": "time_computation_and_rollover",
+      "summary": "Reckoning of time: a period beginning on a day, act or event excludes that day (s 38(1)); where the time or last day falls on an excluded day it moves to the next day that is not an excluded day (s 38(2)); 'excluded day' means, for filing or registering a document, a day the office is closed, and otherwise a day that is not a business day in the place (s 38(5)); 'business day' (sch 1) excludes Saturdays, Sundays and public, special and bank holidays. Applies to the QCAT Act directly as an Act.",
+      "source_url": "https://www.legislation.qld.gov.au/view/whole/html/inforce/current/act-1954-003",
+      "evidence": {"state": "verified", "checked": "2026-08-14", "method": "Firecrawl scrape of the official current reprint.", "version": "Reprint current from 1 February 2024 to date (accessed 14 August 2026)"}
+    }
+  ],
+  "period_rules": [
+    {
+      "id": "qcat-review-application",
+      "label": "Application to review a reviewable decision (general period, subject to the enabling Act)",
+      "citation": "Queensland Civil and Administrative Tribunal Act 2009 (Qld) s 33(3)",
+      "trigger": "The relevant day (s 33(4)): the day the applicant is notified of the decision, or where a written statement of reasons was sought under s 158 or ordered under s 159, the earlier of the day the statement is given and the day it was required to be given",
+      "period": {"length": 28, "unit": "calendar_days"},
+      "rollover": "next_business_day",
+      "applies_provisions": ["qld-aia-s38"],
+      "source_url": "https://www.legislation.qld.gov.au/view/whole/html/inforce/current/act-2009-023",
+      "warnings": [
+        "An enabling Act that is an Act may provide a different period for the application (s 6(7); s 33 note 1) — verify the Act conferring the reviewable decision before reliance.",
+        "The statement-of-reasons branches shift the relevant day (s 33(4)(b)-(c)) — confirm which branch applies to the lawyer-supplied notification facts.",
+        "The tribunal may extend the period under s 61, even after it has passed (s 61(2)), but not where the extension would cause prejudice or detriment not remediable by an appropriate order for costs or damages (s 61(3))."
+      ],
+      "evidence": {"state": "verified", "checked": "2026-08-14", "method": "Firecrawl scrape of the official current reprint; period, relevant-day definition and extension mechanics confirmed exactly.", "version": "Reprint current from 19 September 2024 to date (accessed 14 August 2026)"}
+    }
+  ]
+}
