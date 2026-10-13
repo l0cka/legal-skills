@@ -33,9 +33,12 @@ version, effective date, checked date, observation and evidence state. If unavai
 4. Check s 132 product-related-services reporting and s 128 voluntary recall notice separately;
    a recall and an injury report are not interchangeable. Verify their own events, periods,
    notices and any compulsory recall instrument before drafting an action matrix.
-5. For a general safety provision record announced/proposed only in the linked ACCC advocacy
-   material; current enactment status is unconfirmed. Verify against legislation.gov.au and
-   current official reform sources before asserting a duty, absence or commencement.
+5. For a general safety provision record announced/proposed only; not in the ACL as at
+   compilation 167 (16 September 2026). This bounded snapshot does not displace existing
+   guarantees, standards, bans, recalls or reporting. Re-verify current ACL text and
+   official reform publications before asserting any later duty or commencement. The
+   source register includes a Treasury reform lead: verify against that publication
+   before asserting ministerial priorities; its page was unavailable at this check.
 6. Route concurrent guarantees to `$assess-consumer-guarantees` and incident personal-data
    issues to `$assess-australian-data-breach`. Name specialist food, therapeutic goods,
    electrical and workplace regimes for separate review rather than claiming ACL exhausts them.

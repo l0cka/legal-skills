@@ -1,4 +1,4 @@
 interface:
   display_name: "Review Marketing Claims"
-  short_description: "Review Marketing Claims for Australian lawyer review"
+  short_description: "Check green, comparative and pricing claim evidence"
   default_prompt: "Use $review-marketing-claims for this Australian matter, recording sources, assumptions and decisions for qualified lawyer review."

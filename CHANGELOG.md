@@ -43,6 +43,13 @@ plugin manifests contain their intended release versions.
 
 ### Changed
 
+- `australian-consumer-competition` 0.1.1: adds consumer-definition and s 45
+  verification pathways, explicit competition exceptions and immunity leads,
+  compilation-bounded general safety proposal status, specific watch triggers
+  and a merger-forms watch item. Clarifies profile reuse and jurisdiction,
+  improves metadata, adds a happy-path eval, tightens merger/safety graders
+  and tests resolved cross-plugin links.
+
 - `legal-workflow-router` 0.2.0: `route-legal-fact-pattern` checks which
   routed skills are installed in the session, adds each routed plugin's
   required plugins as prerequisites, and lists missing plugins under

@@ -5,7 +5,8 @@ description: Map Australian mandatory merger notification, threshold, exemption,
 
 # Map Merger Notification
 
-Australian Commonwealth law and ACL application in the identified state or territory.
+Australian Commonwealth merger law under CCA Part IV Division 1A and Part IVA.
+Confirm Australian nexus, parties, territorial reach and any sectoral overlay.
 Snapshot 2026-10-13; verify law at the conduct date and intended decision horizon.
 Record assumptions explicitly; no missing fact defaults to a favourable answer.
 Every output requires review by a qualified lawyer and does not replace professional judgment.

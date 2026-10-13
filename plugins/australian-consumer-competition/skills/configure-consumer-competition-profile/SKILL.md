@@ -21,8 +21,13 @@ version, effective date, checked date, observation and evidence state. If unavai
 
 1. Confirm entity, Australian jurisdictions, factual as-at date, scope and responsible lawyer.
 2. Read the [profile schema](../../references/consumer-competition-profile-schema.md).
-   Reuse the employment profile schema and `$configure-employment-profile` for control
-   fields only. Preserve IDs and version history; never silently amend approved material.
+   Take the employment profile schema's Profile ID, Profile version, Status,
+   As-at date, Approved by role, Approved at and Review due fields, and the
+   `$configure-employment-profile` workflow's existing-profile/version capture,
+   requester/approving-role check, unknown-field handling and human decision gate.
+   Apply those controls to this business profile only; do not create an employment
+   assessment or import workforce, award, headcount or coverage fields.
+   Model status stays draft; preserve IDs/version history and leave approval blank.
 3. Inventory products, supplier/manufacturer/importer roles, customer cohorts, markets,
    representations, transactions, financial evidence, safety systems and document versions.
    Record each as evidenced, disputed or unknown with source/date/confirmer.

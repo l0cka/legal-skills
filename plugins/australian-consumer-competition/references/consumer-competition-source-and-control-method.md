@@ -50,8 +50,9 @@ while legal conclusions remain unresolved.
 ## Profile control and reuse
 
 Read the [profile schema](consumer-competition-profile-schema.md). Reuse the
-employment profile schema and `$configure-employment-profile` for version, draft,
-approval and review controls, not consumer or competition coverage. If profile content conflicts with a verified source, surface the conflict and stop the affected conclusion.
+employment profile schema and `$configure-employment-profile` for the control fields
+and steps enumerated in the profile schema, not an employment assessment or consumer
+or competition coverage. If profile content conflicts with a verified source, surface the conflict and stop the affected conclusion.
 The model may draft a profile but cannot mark it approved. Unknown facts remain
 unknown; each supplied fact has a source, confirmer, date and evidence state.
 

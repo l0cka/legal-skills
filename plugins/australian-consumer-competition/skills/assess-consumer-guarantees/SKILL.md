@@ -21,7 +21,12 @@ version, effective date, checked date, observation and evidence state. If unavai
 
 1. Fix supply date, jurisdiction, goods/services/mixed classification, price and purpose,
    supplier/manufacturer/importer roles, contract, warranty, defects and repair history.
-   Verify ACL consumer coverage and exclusions before applying any guarantee.
+   Verify ACL s 3 and Competition and Consumer Regulations 2010 reg 77A at
+   legislation.gov.au before applying any guarantee: amount paid/payable calculation,
+   prescribed amount, ordinary personal/domestic/household type, vehicle/trailer limb
+   where relevant, and exclusions. Business purchase alone does not exclude consumer
+   status. Verify the monetary amount at the supply date rather than assuming the
+   Act's printed base figure is the operative threshold.
 2. Verify ACL ss 51–64A in the official CCA Schedule 2 text. Map each relevant guarantee
    to an evidenced failure; do not collapse all guarantees into acceptable quality.
 3. Assess major versus non-major/remediable failure separately for goods (ss 259–260)

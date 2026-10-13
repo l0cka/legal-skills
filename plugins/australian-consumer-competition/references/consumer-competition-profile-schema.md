@@ -1,8 +1,12 @@
 # Consumer and competition profile schema
 
-Reuse the controlled version/approval fields from Australian Employment & Fair
-Work's employment profile schema and `configure-employment-profile`. This schema
-adds consumer and competition facts, not a second approval mechanism.
+Take Profile ID, Profile version, Status, As-at date, Approved by role, Approved at
+and Review due from Australian Employment & Fair Work's employment profile schema.
+Use `configure-employment-profile`'s existing-profile/version capture, requester and
+approver identification, unknown-field handling and human decision gate as the
+control procedure. Apply it to the consumer business profile; do not run an employment
+assessment or import workforce, award, headcount or coverage fields. The consumer
+fields below extend that procedure, not its approval mechanism.
 
 | Field | Required content |
 | --- | --- |

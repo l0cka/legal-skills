@@ -1,4 +1,4 @@
 interface:
   display_name: "Assess Cartel and RPM Risk"
-  short_description: "Assess Cartel and RPM Risk for Australian lawyer review"
+  short_description: "Separate cartel, concerted practice and RPM risks"
   default_prompt: "Use $assess-cartel-and-rpm-risk for this Australian matter, recording sources, assumptions and decisions for qualified lawyer review."

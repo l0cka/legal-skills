@@ -39,8 +39,9 @@ this public repository or public search queries.
 
 ## Verification
 
-Repository gates check packaging and fixtures. Synthetic evals cover all seven
-skills, including unavailable-source and unsafe-instruction scenarios. They have
+Repository gates check packaging and fixtures. Eight synthetic evals cover all seven
+skills, including a complete profile reaching human review, unavailable-source
+and unsafe-instruction scenarios, merger threshold arithmetic and safety recipients. They have
 not been run against live clients; installation and live model behaviour require
 separate evaluation. There is no executable application build for this plugin.
 
