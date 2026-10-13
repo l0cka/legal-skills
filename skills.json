@@ -91,6 +91,15 @@
     },
     "legal-workflow-router": {
       "route-legal-fact-pattern": "Original cross-plugin routing workflow; its skill map is generated from every shipped SKILL.md description by scripts/generate_registry.py."
+    },
+    "australian-consumer-competition": {
+      "configure-consumer-competition-profile": "Original Australian controlled-profile configuration workflow based on official legislation and ACCC publications, with dated source verification, explicit assumptions and qualified lawyer review.",
+      "assess-consumer-guarantees": "Original Australian consumer guarantee and remedy assessment workflow based on official legislation and ACCC publications, with dated source verification, explicit assumptions and qualified lawyer review.",
+      "review-marketing-claims": "Original Australian marketing substantiation and pricing review workflow based on official legislation and ACCC publications, with dated source verification, explicit assumptions and qualified lawyer review.",
+      "map-merger-notification": "Original Australian merger threshold and waiver mapping workflow based on official legislation and ACCC publications, with dated source verification, explicit assumptions and qualified lawyer review.",
+      "assess-cartel-and-rpm-risk": "Original Australian cartel and resale price maintenance issue-spotting workflow based on official legislation and ACCC publications, with dated source verification, explicit assumptions and qualified lawyer review.",
+      "map-product-safety-obligations": "Original Australian product safety and incident-reporting mapping workflow based on official legislation and ACCC publications, with dated source verification, explicit assumptions and qualified lawyer review.",
+      "track-accc-developments": "Original Australian on-demand ACCC development tracking workflow based on official legislation and ACCC publications, with dated source verification, explicit assumptions and qualified lawyer review."
     }
   }
 }

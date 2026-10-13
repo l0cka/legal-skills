@@ -1,0 +1,51 @@
+{
+  "displayName": "Australian Consumer & Competition",
+  "shortDescription": "Maps consumer guarantees, marketing, merger notification, competition conduct and product safety for lawyer review.",
+  "longDescription": "Seven practitioner-led workflows with controlled profiles, point-in-time official-source checks, separate current and future reforms, merger threshold and waiver pathways, urgent safety escalation and an on-demand ACCC watch register. Every conclusion requires qualified lawyer review.",
+  "lawCheckedOn": "2026-10-13",
+  "defaultPrompt": [
+    "Use configure-consumer-competition-profile for this Australian business.",
+    "Use assess-consumer-guarantees for this Australian business.",
+    "Use review-marketing-claims for this Australian business.",
+    "Use map-merger-notification for this Australian business.",
+    "Use assess-cartel-and-rpm-risk for this Australian business.",
+    "Use map-product-safety-obligations for this Australian business.",
+    "Use track-accc-developments for this Australian business."
+  ],
+  "whatItDoes": [
+    "Configures controlled factual profiles",
+    "Assesses guarantees, remedies and warranty documents",
+    "Reviews environmental, comparative and pricing claims",
+    "Maps merger thresholds, waivers and standstill issues",
+    "Separates cartel, RPM, exclusive dealing and market power risks",
+    "Maps product safety instruments and reporting candidates",
+    "Checks developments against official sources on demand"
+  ],
+  "boundaries": [
+    "Qualified lawyer review required; no compliance certification",
+    "No filing, publication, recall execution, competitor contact or acquisition completion",
+    "Snapshot sources require verification at use; proposals are not obligations"
+  ],
+  "evidenceStates": {
+    "qualifications": [
+      "commencement",
+      "amendment",
+      "application",
+      "jurisdiction",
+      "fact"
+    ],
+    "unverifiable": [
+      "official source",
+      "applicable version",
+      "decisive fact"
+    ]
+  },
+  "requires": {
+    "australian-legal-research": "Verifies legislation, instruments, commencement and case-law leads at official publishers."
+  },
+  "handsOffTo": {
+    "australian-employment-fair-work": "Reuses controlled profile approval and versioning patterns without importing coverage conclusions.",
+    "australian-commercial-drafting": "Reuses the UCT checklist, UTPA 2026 notes and operative website/services drafting.",
+    "australian-privacy-cybersecurity": "Assesses advertising data, decision transparency and safety-incident privacy issues."
+  }
+}

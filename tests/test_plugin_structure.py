@@ -70,6 +70,31 @@ PLUGINS: dict[str, dict] = {
         ),
         "every_skill_mentions": ("drafting-source-and-control-method.md",),
     },
+    "australian-consumer-competition": {
+        "skills": {
+            "configure-consumer-competition-profile",
+            "assess-consumer-guarantees",
+            "review-marketing-claims",
+            "map-merger-notification",
+            "assess-cartel-and-rpm-risk",
+            "map-product-safety-obligations",
+            "track-accc-developments",
+        },
+        "statuses": READY,
+        "reference_files": (
+            "consumer-competition-source-and-control-method.md",
+            "consumer-competition-profile-schema.md",
+            "official-source-register.md",
+            "merger-pathways.md",
+        ),
+        "every_skill_mentions": (
+            "consumer-competition-source-and-control-method.md",
+            "official-source-register.md",
+            "$check-commonwealth-legislation",
+            "qualified lawyer",
+            "2026-10-13",
+        ),
+    },
     "australian-corporations-governance": {
         "skills": {
             "configure-corporations-governance",

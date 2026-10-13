@@ -1,0 +1,4 @@
+interface:
+  display_name: "Track ACCC Developments"
+  short_description: "Track ACCC Developments for Australian lawyer review"
+  default_prompt: "Use $track-accc-developments for this Australian matter, recording sources, assumptions and decisions for qualified lawyer review."

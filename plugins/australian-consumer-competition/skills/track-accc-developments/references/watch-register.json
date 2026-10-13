@@ -1,0 +1,79 @@
+{
+  "registry_version": 1,
+  "as_at": "2026-10-13",
+  "note": "Research snapshot, not an obligation or unattended monitor. Verify each source at use; unavailable sources mean cannot be determined. Qualified lawyer review required.",
+  "watch_items": [
+    {
+      "id": "cca-compilation",
+      "item": "CCA and ACL amendments",
+      "status_at_snapshot": "C2026C00405, 16 September 2026 compilation; verify changes and temporal application",
+      "expected_trigger": "New text, commencement, guidance, instrument or official status update",
+      "primary_sources": [
+        "https://www.legislation.gov.au/C2004A00109/latest/versions"
+      ]
+    },
+    {
+      "id": "merger-instruments",
+      "item": "Merger thresholds, forms and waivers",
+      "status_at_snapshot": "F2026C00002 threshold determination inspected; recheck current Act, forms, fees and application dates",
+      "expected_trigger": "New text, commencement, guidance, instrument or official status update",
+      "primary_sources": [
+        "https://www.legislation.gov.au/F2025L00753/latest"
+      ]
+    },
+    {
+      "id": "merger-guidance",
+      "item": "ACCC merger guidance",
+      "status_at_snapshot": "Guidance updates are distinct from statutory amendments; inspect current dated version",
+      "expected_trigger": "New text, commencement, guidance, instrument or official status update",
+      "primary_sources": [
+        "https://www.accc.gov.au/business/mergers-and-acquisitions/guidance-documents-for-the-merger-control-regime"
+      ]
+    },
+    {
+      "id": "utpa-2026",
+      "item": "Unfair trading, drip pricing and subscriptions",
+      "status_at_snapshot": "Enacted, not yet in force (commences 1 July 2027); verify regulations and transition; reuse commercial-drafting UTPA 2026 notes",
+      "expected_trigger": "New text, commencement, guidance, instrument or official status update",
+      "primary_sources": [
+        "https://www.legislation.gov.au/C2026A00064/asmade/text"
+      ]
+    },
+    {
+      "id": "environmental-claims",
+      "item": "Environmental claims guidance",
+      "status_at_snapshot": "ACCC guide published 12 December 2023; guidance only and subject to updates",
+      "expected_trigger": "New text, commencement, guidance, instrument or official status update",
+      "primary_sources": [
+        "https://www.accc.gov.au/about-us/publications/a-guide-to-making-environmental-claims-for-business"
+      ]
+    },
+    {
+      "id": "product-instruments",
+      "item": "Product standards, bans and recalls",
+      "status_at_snapshot": "Product-specific discovery source; no completeness or compliance conclusion",
+      "expected_trigger": "New text, commencement, guidance, instrument or official status update",
+      "primary_sources": [
+        "https://www.productsafety.gov.au/"
+      ]
+    },
+    {
+      "id": "general-safety",
+      "item": "General safety provision reform",
+      "status_at_snapshot": "Announced/proposed only in cited advocacy; current enactment status UNCONFIRMED; verify against legislation.gov.au",
+      "expected_trigger": "New text, commencement, guidance, instrument or official status update",
+      "primary_sources": [
+        "https://www.accc.gov.au/media-release/accc-product-safety-priorities-announced-at-national-consumer-congress"
+      ]
+    },
+    {
+      "id": "enforcement-priorities",
+      "item": "ACCC enforcement priorities and proceedings",
+      "status_at_snapshot": "Watch source only; priorities are guidance and allegations are not findings",
+      "expected_trigger": "New text, commencement, guidance, instrument or official status update",
+      "primary_sources": [
+        "https://www.accc.gov.au/about-us/accc-priorities"
+      ]
+    }
+  ]
+}

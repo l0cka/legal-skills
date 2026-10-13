@@ -10,6 +10,12 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- `australian-consumer-competition` 0.1.0: seven practitioner-led skills for
+  controlled profiles, consumer guarantees, marketing claims, merger notification,
+  cartel and RPM risk, product safety and on-demand ACCC developments. Includes
+  official-source controls, separate current/future reform status, merger pathways,
+  urgent safety reporting candidates, specialist hand-offs and synthetic evals.
+
 - `australian-commercial-drafting` 0.1.0: six practitioner-led skills for
   controlled drafting profiles, NDAs, SaaS/subscription terms, privacy policies,
   B2B services agreements and draft reviews. Includes original clause examples,
