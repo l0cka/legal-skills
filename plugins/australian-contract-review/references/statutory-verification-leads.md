@@ -8,25 +8,16 @@ citation on the named official source before applying it. Record decisive facts.
 ## ACL unfair contract terms
 
 Official source: [Competition and Consumer Act 2010, Schedule 2](https://www.legislation.gov.au/C2004A00109/latest/text),
-compilation C2026C00405, 16 September 2026, Volume 4. Verify ACL ss 23–27,
-exclusions and transitions. Reuse Australian Commercial Drafting's
-`unfair-contract-terms-checklist.md` through `$review-draft-against-checklist`.
-
-Section 23(3) concerns an individual's wholly or predominantly personal,
-domestic or household acquisition. Section 23(4) small-business coverage tests
-supply/land and whether at least one party satisfies either the fewer-than-100
-employees business limb or turnover below $10 million for the last income year
-ending at or before contract making. Sections 23(5)–(7) supply employee-counting
-and turnover rules. There is no upfront-price ceiling in that ACL test.
-
-Verify all three s 24 unfairness elements, transparency, whole-contract context
-and the necessity presumption; s 25 examples are illustrative. Check s 26
-excluded terms and s 27 standard-form presumption/factors, including minor changes
-and preset options; do not stop at a clause being written clearly. Check wider
-contract exclusions and making/renewal/variation application separately.
-The [2022 amending Act](https://www.legislation.gov.au/C2022A00054/latest/text),
-s 2 and Schedule 2, records the 9 November 2023 reform commencement; verify the
-applicable transition rather than applying the new regime to every old term.
+compilation C2026C00405, 16 September 2026, Volume 4. Verify ACL ss 23–28,
+including term-level and contract-level exclusions, and the applicable transition.
+Australian Commercial Drafting owns the coverage, unfairness and standard-form
+paraphrase and grey list in `unfair-contract-terms-checklist.md`; read that
+installed reference rather than maintaining another copy here. If
+`$review-draft-against-checklist` is needed to locate it, request only the checklist
+and source leads; a separate review or drafting output is not wanted. If retrieval
+is unavailable or declined, report that step as not done and never reproduce the
+checklist from memory. Independently verify statutory conclusions with
+`$check-commonwealth-legislation`. Keep the ASIC test below separate from the ACL.
 
 ## Financial products and services
 
@@ -57,18 +48,32 @@ This is not authority for a general monetary cap merely because a deal is B2B.
 Official source: [Competition and Consumer Amendment (Unfair Trading Practices) Act 2026](https://www.legislation.gov.au/C2026A00064/asmade/text),
 s 2 and Schedule 1. Enacted, not yet in force (commences 1 July 2027).
 Reuse the UTPA 2026 notes in Australian Commercial Drafting's
-`drafting-source-and-control-method.md` through `$draft-website-terms`.
+`drafting-source-and-control-method.md` as an installed reference resource.
+If `$draft-website-terms` is needed to retrieve it, request only those source notes
+and application leads; no website terms or other drafting output is wanted.
+Unavailable or declined retrieval is not done; never reconstruct it from memory.
 
 Verify future ACL ss 48B–48H: subscription definitions, exclusions, offer-stage
 disclosures, ongoing information, exit method, cohort and standard form.
-Section 48E depends on prescribed contracts, information and times; verify actual
-regulations rather than inventing reminders. Section 48F addresses straightforward
-exit and online exit where s 48F(2) applies. The s 48G small-business cohort is
+Section 48D's offer-stage scope is not limited by the consumer/small-business
+requirements: test whether the offered contract would be a subscription contract,
+with its own exclusions and prescribed exceptions. Sections 48E and 48F do use
+those cohort requirements. Do not exempt a large-business offer merely because
+its subscriber fails s 48G. Section 48E depends on prescribed contracts,
+information and times; verify actual regulations rather than inventing reminders.
+Section 48F addresses straightforward exit and online exit where s 48F(2) applies. The s 48G small-business cohort is
 subscriber-based and standard-form, not simply either party satisfying ACL s 23.
 
 Section 312 lists ss 48B, 48E and 48F for new contracts and pre-commencement
-contracts renewed, extended, otherwise continued or varied after commencement,
-from the effective change date. Check s 48D offers separately: it is not listed
-in s 312. Do not treat a future rule as current or assume an older contract is
-permanently exempt. Any unverified extension or reform stays announced/proposed
+contracts renewed, extended or otherwise continued on or after commencement,
+including 1 July 2027 itself, from the effective change date. The variation limb
+in s 312(2)(b) applies to a variation on or after commencement only if the
+renewal/extension/continuation limb in s 312(2)(a) has not already applied.
+Check s 48D offers separately: it is not listed in s 312. Do not treat a future
+rule as current or assume an older contract is permanently exempt. Any unverified extension or reform stays announced/proposed
 only, with an official source and no statement that it is enacted.
+
+The same 2026 Act inserts ACL ss 28B (unfair trading practices) and 48A
+(transaction-based charges), also from 1 July 2027. Use the drafting owner's UTPA
+notes for these adjacent conduct risks; do not treat subscription fairness as a
+complete conduct/pricing review or describe these provisions as current duties.

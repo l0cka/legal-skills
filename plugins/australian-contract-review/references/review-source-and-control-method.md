@@ -64,9 +64,16 @@ for the affected conclusion. No green rating permits signing or serving a notice
 ## Reuse and permissions
 
 Australian Commercial Drafting owns the UCT checklist and UTPA 2026 notes in
-`drafting-source-and-control-method.md`. Invoke `$review-draft-against-checklist`
-and `$draft-website-terms` for those steps; use `$draft-services-agreement` for
-services structure and `$configure-drafting-profile` for existing positions.
+`drafting-source-and-control-method.md`. Read the installed owner's reference
+resources by name. A hand-off to `$review-draft-against-checklist` for the UCT
+checklist or `$draft-website-terms` for UTPA notes requests only reference material
+and official-source leads: no drafting output or separate full review is wanted.
+Do not start the full drafting workflow to retrieve a reference. If access is
+unavailable or the scoped request is declined, mark reference retrieval not done;
+never reconstruct the owner's content from memory. Verify any independently
+supported statutory conclusion through the legal-research owner and distinguish
+it from reference reuse. Use `$draft-services-agreement` for services structure
+and `$configure-drafting-profile` for existing positions.
 Employment profiles and classification belong to `$configure-employment-profile`
 and `$map-fair-work-obligations`. Privacy belongs to
 `$route-australian-privacy-jurisdiction`, `$check-australian-privacy-principles`,

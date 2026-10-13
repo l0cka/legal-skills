@@ -106,7 +106,7 @@
       "triage-inbound-nda": "Original inbound NDA triage workflow using evidenced review positions, the existing NDA drafting workflow and clause-level escalation controls.",
       "review-commercial-agreement": "Original inbound MSA, SaaS, supply and services review workflow reusing services drafting, document checklist, employment and privacy assessments.",
       "check-unfair-contract-terms": "Original UCT screening workflow reusing the commercial drafting UCT checklist and verifying distinct ACL and ASIC Act coverage against official Federal Register text.",
-      "review-limitation-and-indemnity-regime": "Original liability, indemnity and insurance interaction workflow based on official ACL and Queensland legislation with expressly unverified state-law leads.",
+      "review-limitation-and-indemnity-regime": "Original liability, indemnity and insurance interaction workflow using official Commonwealth, state and territory Act/Part checks, with inspected-version limits and expressly unverified permission leads.",
       "build-negotiation-redline-memo": "Original clause-referenced negotiation memo workflow linking proposed wording, rationale and authorised fallbacks to the existing NDA and services drafting skills.",
       "track-contract-renewals": "Original evidenced contract renewal register workflow reusing the commercial drafting UTPA notes and verifying future subscription commencement and application against the official amending Act."
     }

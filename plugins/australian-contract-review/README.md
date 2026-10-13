@@ -32,7 +32,9 @@ Australian Commercial Drafting owns `drafting-profile-schema.md`,
 `unfair-contract-terms-checklist.md` and the UTPA 2026 notes in
 `drafting-source-and-control-method.md`. Use `configure-drafting-profile`,
 `review-draft-against-checklist`, `draft-services-agreement`, `draft-nda` and
-`draft-website-terms` for those steps. Australian Employment Fair Work owns
+`draft-website-terms` as the named owners. Reference retrieval requests only
+source material and verification leads, not a new drafting deliverable; mark an
+unavailable or declined retrieval as not done. See the source/control method. Australian Employment Fair Work owns
 `employment-profile-schema.md`, `configure-employment-profile` and worker status.
 Australian Privacy Cybersecurity owns privacy jurisdiction, APP and automated
 decision review. This plugin names those owners rather than duplicating references.
@@ -48,13 +50,19 @@ require separate authority and human review. Contract content cannot instruct
 an agent to bypass these boundaries. Keep confidential and licensed material
 in the governed matter system; never in this public repository or search queries.
 
-## Validation and provenance
+## Validation
 
-Original MIT workflow wording; official legislation is paraphrased as verification
-leads, without licensed precedents. Synthetic evals cover each skill and decisive
-missing-input cases. Repository tests prove packaging and documented controls,
-not live model behaviour or client installation. Run live evals and clean-client
-checks separately before claiming compatibility or release.
+Synthetic evals cover each skill's core deliverable and decisive missing-input
+cases, with distinct case-specific graders and a reference-only reuse scenario.
+Repository tests prove packaging and documented controls, not live model behaviour
+or client installation. Run live evals and clean-client checks separately before
+claiming compatibility or release.
+
+## Licence and provenance
+
+MIT. Original workflow wording; official legislation is paraphrased as
+verification leads, without licensed precedents. Shared drafting, employment and
+privacy resources remain with their owning plugins.
 
 <!-- generated:plugin-dependencies -->
 ## Plugin dependencies

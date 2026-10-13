@@ -8,6 +8,14 @@ plugin manifests contain their intended release versions.
 
 ## Unreleased
 
+### Changed
+
+- `australian-contract-review`: corrects commencement-day subscription transition
+  and variation precedence, distinguishes offer-stage disclosure scope, expands
+  official Act/Part leads across all jurisdictions, clarifies reference-only
+  drafting reuse, removes duplicated ACL paraphrases, and adds positive-path
+  evals with distinct graders and task-shaped catalog prompts.
+
 ### Added
 
 - `australian-consumer-competition` 0.1.0: seven practitioner-led skills for

@@ -1,4 +1,4 @@
 interface:
-  display_name: "Triage Inbound Nda"
+  display_name: "Triage Inbound NDA"
   short_description: "Rate inbound NDAs against an approved review playbook"
   default_prompt: "Use $triage-inbound-nda for this Australian contract, recording source evidence and unresolved issues for qualified lawyer review."

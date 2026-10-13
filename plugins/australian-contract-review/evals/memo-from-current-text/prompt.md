@@ -1,0 +1,6 @@
+---
+name: build-negotiation-redline-memo memo-from-current-text
+tags: [contract-review, positive-path]
+max_turns: 12
+---
+Use build-negotiation-redline-memo. Complete supplied synthetic recipient-side NSW NDA N1 has clause 4 exactly: "The Recipient must keep Confidential Information confidential for five years from disclosure." Clause 5 exactly: "The Recipient must destroy all Confidential Information immediately on request, including every backup copy." Approved RP-N, version 1, Legal Counsel approval 12 October 2026, prefers clause 4 duration two years, fallback three with Procurement Lead approval; prefers clause 5 return or deletion within ten calendar days on request, allowing legally required records and routine secure backups provided they stay confidential and are not used. Fallback twenty calendar days only with Legal Counsel approval. Confidential Information and Recipient are defined in supplied clause 1; no cross-references depend on clauses 4/5. Instructions I-N, confirmed by Legal Counsel 13 October, authorise proposing preferred wording in an internal memo only; no fallback approval, saving or sending authorised. Produce the current/proposed/rationale/fallback table. No legal conclusion about mandatory retention periods is requested.
