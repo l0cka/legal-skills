@@ -20,24 +20,6 @@ DRAFT = (
 )
 
 PLUGINS: dict[str, dict] = {
-    "australian-commercial-drafting": {
-        "skills": {
-            "configure-drafting-profile",
-            "draft-nda",
-            "draft-website-terms",
-            "draft-privacy-policy",
-            "draft-services-agreement",
-            "review-draft-against-checklist",
-        },
-        "statuses": (),
-        "reference_files": (
-            "drafting-source-and-control-method.md",
-            "drafting-profile-schema.md",
-            "clause-bank.md",
-            "unfair-contract-terms-checklist.md",
-        ),
-        "every_skill_mentions": ("drafting-source-and-control-method.md",),
-    },
     "australian-ai-governance": {
         "skills": {
             "configure-ai-governance-profile",
@@ -69,6 +51,24 @@ PLUGINS: dict[str, dict] = {
             "lpp-carve-outs.md",
         ),
         "every_skill_mentions": ("aml-ctf-source-and-control-method.md",),
+    },
+    "australian-commercial-drafting": {
+        "skills": {
+            "configure-drafting-profile",
+            "draft-nda",
+            "draft-website-terms",
+            "draft-privacy-policy",
+            "draft-services-agreement",
+            "review-draft-against-checklist",
+        },
+        "statuses": (),
+        "reference_files": (
+            "drafting-source-and-control-method.md",
+            "drafting-profile-schema.md",
+            "clause-bank.md",
+            "unfair-contract-terms-checklist.md",
+        ),
+        "every_skill_mentions": ("drafting-source-and-control-method.md",),
     },
     "australian-corporations-governance": {
         "skills": {

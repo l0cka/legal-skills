@@ -9,8 +9,9 @@ Jurisdiction: Australian Commonwealth law and the identified governing state or
 territory. Record the legal as-at and intended use dates. The 2026-10-13 source
 snapshot is a currency limit, not live verification. Verify every applicable
 statutory provision on legislation.gov.au (NSW overlays on legislation.nsw.gov.au)
-using `$check-commonwealth-legislation` or the corresponding state workflow;
-never rely on model memory. Record assumptions and input provenance. A qualified
+using `$check-commonwealth-legislation` and, for NSW, `$check-nsw-legislation`;
+use the corresponding official-source workflow for other states or territories.
+Never rely on model memory. Record assumptions and input provenance. A qualified
 lawyer must review every output before use.
 
 Read the [source and control method](../../references/drafting-source-and-control-method.md)
@@ -48,11 +49,11 @@ for standing positions and transaction instructions.
    consumer guarantees and statutory-rights carve-outs independently. A generic
    savings sentence cannot cure conflicting no-refund, cap or termination text.
 6. For privacy policy coverage or automated-decision questions hand off to
-   [check-australian-privacy-principles](../../../australian-privacy-cybersecurity/skills/check-australian-privacy-principles/SKILL.md)
+   `$check-australian-privacy-principles`
    or
-   [assess-automated-decision-transparency](../../../australian-privacy-cybersecurity/skills/assess-automated-decision-transparency/SKILL.md).
+   `$assess-automated-decision-transparency`.
    For worker-status/sham-contracting questions hand off to
-   [map-fair-work-obligations](../../../australian-employment-fair-work/skills/map-fair-work-obligations/SKILL.md).
+   `$map-fair-work-obligations`.
    Record unavailable assessments and statutory verification as not performed.
 7. Prioritise consequential risks first, then substantive choices and drafting
    defects. Give proposed corrections or decision options without silently
@@ -89,8 +90,9 @@ This skill names skills from other Legal Skills plugins. Install a required
 plugin alongside this one; install a hand-off plugin when the matter needs
 that depth.
 
-- `australian-legal-research` (required): `check-commonwealth-legislation`.
-  Verifies Commonwealth and state legislation at the relevant drafting date.
+- `australian-legal-research` (required): `check-commonwealth-legislation`,
+  `check-nsw-legislation`. Verifies Commonwealth and state legislation at the
+  relevant drafting date.
 - `australian-employment-fair-work` (hand-off): `map-fair-work-obligations`.
   Assesses worker classification and sham-contracting concerns before
   contractor wording is settled.

@@ -28,8 +28,8 @@ Privacy Act small-business threshold or assume B2B is exempt.
 Assess standard form under s 27: bargaining power, repeat use, pre-preparation,
 real opportunity to negotiate and particular transaction characteristics.
 Minor edits, selecting preset options or negotiating someone else's contract
-do not necessarily remove standard-form status. Verify exclusions under ss 26,
-28 and 28A; financial products/services need their separate statutory regime.
+do not necessarily remove standard-form status. Verify exclusions under ss 26–28 on legislation.gov.au at the relevant date;
+financial products/services need their separate statutory regime.
 
 ## Assess the term and whole contract
 

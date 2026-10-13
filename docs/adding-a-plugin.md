@@ -125,6 +125,9 @@ describing the plugin as released.
 `tests/test_plugin_structure.py` pins each plugin’s exact skill set so directory-
 derived registry generation cannot hide an accidental deletion. Its table also
 records result vocabularies, required references and shared-method invariants.
+`every_skill_mentions` lists text that must occur in every skill in that plugin.
+`statuses: ()` skips the shared result-vocabulary check because the plugin uses
+family-specific vocabularies checked in its own test file.
 Family-specific vocabularies stay in plugin-specific tests; estate drafting uses
 approved precedents rather than the source-research method invariants.
 

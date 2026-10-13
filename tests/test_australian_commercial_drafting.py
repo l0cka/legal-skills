@@ -35,7 +35,34 @@ class AustralianCommercialDraftingTests(unittest.TestCase):
                 if target.startswith(("http://", "https://", "#", "mailto:")):
                     continue
                 with self.subTest(document=str(path.relative_to(ROOT)), target=target):
-                    self.assertTrue((path.parent / target.split("#", 1)[0]).resolve().is_file())
+                    resolved = (path.parent / target.split("#", 1)[0]).resolve()
+                    self.assertTrue(resolved.is_relative_to(PLUGIN))
+                    self.assertTrue(resolved.is_file())
+
+    def test_cross_plugin_handoffs_use_skill_names(self) -> None:
+        expected = {
+            "draft-privacy-policy": {
+                "route-australian-privacy-jurisdiction",
+                "assess-australian-privacy-issues",
+                "check-australian-privacy-principles",
+                "assess-automated-decision-transparency",
+            },
+            "draft-services-agreement": {
+                "configure-employment-profile",
+                "map-fair-work-obligations",
+            },
+            "review-draft-against-checklist": {
+                "check-australian-privacy-principles",
+                "assess-automated-decision-transparency",
+                "map-fair-work-obligations",
+            },
+        }
+        for skill, handoffs in expected.items():
+            path = PLUGIN / "skills" / skill / "SKILL.md"
+            text = path.read_text(encoding="utf-8").split("<!-- generated:plugin-dependencies -->")[0]
+            for handoff in handoffs:
+                with self.subTest(skill=skill, handoff=handoff):
+                    self.assertIn(f"`${handoff}`", text)
 
 
 if __name__ == "__main__":

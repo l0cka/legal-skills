@@ -9,8 +9,9 @@ Jurisdiction: Australian Commonwealth law and the identified governing state or
 territory. Record the legal as-at and intended use dates. The 2026-10-13 source
 snapshot is a currency limit, not live verification. Verify every applicable
 statutory provision on legislation.gov.au (NSW overlays on legislation.nsw.gov.au)
-using `$check-commonwealth-legislation` or the corresponding state workflow;
-never rely on model memory. Record assumptions and input provenance. A qualified
+using `$check-commonwealth-legislation` and, for NSW, `$check-nsw-legislation`;
+use the corresponding official-source workflow for other states or territories.
+Never rely on model memory. Record assumptions and input provenance. A qualified
 lawyer must review every output before use.
 
 Read the [source and control method](../../references/drafting-source-and-control-method.md)
@@ -45,6 +46,7 @@ for standing positions and transaction instructions.
    if standard-form consumer/small-business coverage is possible. Verify any
    statutory proposition with `$check-commonwealth-legislation`. Run
    `review-draft-against-checklist` before handing over.
+
 ## Result contract
 
 Use one status per requested document: `DRAFT READY FOR SOLICITOR REVIEW`,
@@ -77,8 +79,9 @@ This skill names skills from other Legal Skills plugins. Install a required
 plugin alongside this one; install a hand-off plugin when the matter needs
 that depth.
 
-- `australian-legal-research` (required): `check-commonwealth-legislation`.
-  Verifies Commonwealth and state legislation at the relevant drafting date.
+- `australian-legal-research` (required): `check-commonwealth-legislation`,
+  `check-nsw-legislation`. Verifies Commonwealth and state legislation at the
+  relevant drafting date.
 
 If a named skill is not available in this session, say so and name the plugin
 to install. Treat the step it would have performed as not done: record the

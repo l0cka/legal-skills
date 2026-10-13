@@ -9,8 +9,9 @@ Jurisdiction: Australian Commonwealth law and the identified governing state or
 territory. Record the legal as-at and intended use dates. The 2026-10-13 source
 snapshot is a currency limit, not live verification. Verify every applicable
 statutory provision on legislation.gov.au (NSW overlays on legislation.nsw.gov.au)
-using `$check-commonwealth-legislation` or the corresponding state workflow;
-never rely on model memory. Record assumptions and input provenance. A qualified
+using `$check-commonwealth-legislation` and, for NSW, `$check-nsw-legislation`;
+use the corresponding official-source workflow for other states or territories.
+Never rely on model memory. Record assumptions and input provenance. A qualified
 lawyer must review every output before use.
 
 Read the [source and control method](../../references/drafting-source-and-control-method.md)
@@ -26,9 +27,9 @@ for standing positions and transaction instructions.
 2. If an individual supplies labour or facts suggest employee-like control,
    flag classification and sham contracting. An ABN, invoice or contractor label
    is not decisive. Hand off to
-   [configure-employment-profile](../../../australian-employment-fair-work/skills/configure-employment-profile/SKILL.md)
+   `$configure-employment-profile`
    and
-   [map-fair-work-obligations](../../../australian-employment-fair-work/skills/map-fair-work-obligations/SKILL.md).
+   `$map-fair-work-obligations`.
    Verify Fair Work Act 2009 ss 15AA–15AC and 357–359 on legislation.gov.au
    with `$check-commonwealth-legislation`. Mark classification-dependent clauses
    unresolved pending specialist/lawyer review; continue independent B2B sections.
@@ -63,6 +64,7 @@ for standing positions and transaction instructions.
    relevant: B2B services can attract consumer guarantees and small-business
    UCT protection. Reconcile the SOW, IP, cap, indemnity and exit provisions.
    Run `review-draft-against-checklist` before handover.
+
 ## Result contract
 
 Use one status per requested document: `DRAFT READY FOR SOLICITOR REVIEW`,
@@ -96,8 +98,9 @@ This skill names skills from other Legal Skills plugins. Install a required
 plugin alongside this one; install a hand-off plugin when the matter needs
 that depth.
 
-- `australian-legal-research` (required): `check-commonwealth-legislation`.
-  Verifies Commonwealth and state legislation at the relevant drafting date.
+- `australian-legal-research` (required): `check-commonwealth-legislation`,
+  `check-nsw-legislation`. Verifies Commonwealth and state legislation at the
+  relevant drafting date.
 - `australian-employment-fair-work` (hand-off):
   `configure-employment-profile`, `map-fair-work-obligations`. Assesses worker
   classification and sham-contracting concerns before contractor wording is

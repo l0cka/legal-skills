@@ -9,8 +9,9 @@ Jurisdiction: Australian Commonwealth law and the identified governing state or
 territory. Record the legal as-at and intended use dates. The 2026-10-13 source
 snapshot is a currency limit, not live verification. Verify every applicable
 statutory provision on legislation.gov.au (NSW overlays on legislation.nsw.gov.au)
-using `$check-commonwealth-legislation` or the corresponding state workflow;
-never rely on model memory. Record assumptions and input provenance. A qualified
+using `$check-commonwealth-legislation` and, for NSW, `$check-nsw-legislation`;
+use the corresponding official-source workflow for other states or territories.
+Never rely on model memory. Record assumptions and input provenance. A qualified
 lawyer must review every output before use.
 
 Read the [source and control method](../../references/drafting-source-and-control-method.md)
@@ -27,19 +28,24 @@ for standing positions and transaction instructions.
    Separate actual practices from proposed changes; never promise universal
    security, deletion, consent or a right the business has not established.
 2. Route coverage to
-   [route-australian-privacy-jurisdiction](../../../australian-privacy-cybersecurity/skills/route-australian-privacy-jurisdiction/SKILL.md)
+   `$route-australian-privacy-jurisdiction`
    and depth to
-   [assess-australian-privacy-issues](../../../australian-privacy-cybersecurity/skills/assess-australian-privacy-issues/SKILL.md).
+   `$assess-australian-privacy-issues`.
    Verify Privacy Act 1988 ss 6C–6EA on legislation.gov.au with
    `$check-commonwealth-legislation`. A turnover of $3 million or less is only
    a starting point: assess related entities, health services/data, personal
    information trading and exceptions, Commonwealth contracted services,
    opt-in and other statutory coverage. Do not infer exemption from turnover
    alone or conflate it with the ACL small-business threshold. Record uncertain
-   coverage and specialist state/health overlays. An exempt business may request
+   coverage and specialist state/health overlays. For NSW health information,
+   use `$check-nsw-legislation` to verify the *Health Records and Information
+   Privacy Act 2002* (NSW), including coverage and Schedule 1 Health Privacy
+   Principles, on legislation.nsw.gov.au at the relevant date. Treat this as a
+   verification lead; do not assume the overlay applies or rely on model memory.
+   An exempt business may request
    a voluntary factual policy; do not imply that every APP legally applies.
 3. Use
-   [check-australian-privacy-principles](../../../australian-privacy-cybersecurity/skills/check-australian-privacy-principles/SKILL.md)
+   `$check-australian-privacy-principles`
    to verify the current Privacy Act Schedule 1 APP 1.3–1.6, APP 8 and relevant
    amendments on legislation.gov.au. Return a checklist mapping APP 1.4(a)–(g)
    to policy clauses and evidence: information kinds; collection and holding;
@@ -58,7 +64,7 @@ for standing positions and transaction instructions.
    practices separately from APP 7. A privacy policy or acceptance of website
    terms does not itself establish valid marketing consent.
 6. Route automated decisions to
-   [assess-automated-decision-transparency](../../../australian-privacy-cybersecurity/skills/assess-automated-decision-transparency/SKILL.md).
+   `$assess-automated-decision-transparency`.
    Verify the Privacy and Other Legislation Amendment Act 2024, s 2 table item 7,
    Schedule 1 Part 15 items 87–89 on legislation.gov.au. APP 1.7–1.9 commence
    on 10 December 2026: separate currently required wording from future wording.
@@ -75,6 +81,7 @@ for standing positions and transaction instructions.
    with the APP checklist and a current/future change ledger for the lawyer.
    Run `review-draft-against-checklist`; do not insert contract liability caps
    into a privacy policy or use policy wording as blanket processing consent.
+
 ## Result contract
 
 Use one status per requested document: `DRAFT READY FOR SOLICITOR REVIEW`,
@@ -108,8 +115,9 @@ This skill names skills from other Legal Skills plugins. Install a required
 plugin alongside this one; install a hand-off plugin when the matter needs
 that depth.
 
-- `australian-legal-research` (required): `check-commonwealth-legislation`.
-  Verifies Commonwealth and state legislation at the relevant drafting date.
+- `australian-legal-research` (required): `check-commonwealth-legislation`,
+  `check-nsw-legislation`. Verifies Commonwealth and state legislation at the
+  relevant drafting date.
 - `australian-privacy-cybersecurity` (hand-off):
   `assess-australian-privacy-issues`,
   `assess-automated-decision-transparency`,

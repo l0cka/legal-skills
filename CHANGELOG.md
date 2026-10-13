@@ -74,6 +74,11 @@ plugin manifests contain their intended release versions.
 
 ### Fixed
 
+- `australian-commercial-drafting`: use installed skill names for privacy and
+  employment hand-offs, explicitly route NSW verification and health-records
+  coverage, narrow the ACL exclusion checklist to ss 26–28, and correct
+  result-contract spacing and structural-test documentation.
+
 - Currency review of 24 September 2026 (`docs/audits/2026-09-24-currency-audit.md`).
   The official publishers were unreachable during the review, so each
   post-snapshot development is recorded as reported and to be confirmed
