@@ -24,6 +24,12 @@ version, effective date, checked date, observation and evidence state. If unavai
 2. Verify ACL ss 18 and 29 at the official CCA source. Analyse the overall impression and
    specific representation categories separately; disclaimers do not substitute for analysis.
 3. For environmental claims consult the linked ACCC environmental claims guide as guidance.
+   Apply ACL s 4 to future representations, including net-zero targets: a representation
+   made without reasonable grounds is taken to be misleading; reasonable grounds alone
+   do not establish that it is not misleading. Check the evidence rules in s 4(2)–(3).
+   Apply ss 33–34 separately to conduct in trade or commerce liable to mislead the public
+   about goods or services, including their nature, characteristics, suitability or quantity,
+   and, for goods, manufacturing process. Verify each provision at the official CCA source.
    Test lifecycle boundaries, evidence date, methodology, certification, offsets, exclusions,
    vague absolute language and evidence for future targets. Record what the evidence supports
    and possible narrower wording; do not label an aspiration proven or ACCC-approved.

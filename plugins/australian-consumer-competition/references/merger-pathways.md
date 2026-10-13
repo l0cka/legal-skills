@@ -11,7 +11,12 @@ These screening figures are not a complete notification decision:
 | Business/share acquisitions | ss 1-9, 1-10, 1-12, 2-1: combined Australian revenue ≥$200m AND (acquired revenue ≥$50m OR transaction value ≥$250m) |
 | Very large acquirer | ss 1-10, 1-13, 2-2: acquirer group Australian revenue ≥$500m and acquired revenue ≥$10m |
 | Serial acquisitions | ss 1-11, 1-14, 2-3: examine 3-year competitive/substitutable acquisitions, accumulated revenue ≥$50m/≥$10m respectively, with the small-acquisition test (<$2m) and other exclusions; do not apply a geographic shortcut |
-| Standalone assets | ss 1-12, 2-4: combined revenue ≥$200m with value ≥$200m, or acquirer revenue ≥$500m with value ≥$50m; verify asset scope |
+| Standalone assets | ss 1-9, 1-12, 1-13, 2-4: acquirer group Australian revenue ≥$200m AND transaction value ≥$200m, or acquirer group Australian revenue ≥$500m AND transaction value ≥$50m; verify asset scope |
+
+Under s 10-6(2)–(3), the standalone-asset rules in s 2-4 and the voting-power
+classes in Part 3 Division 2 apply to acquisitions put into effect on or after
+1 April 2026. Section 2-4 excludes acquisitions of all or substantially all of
+the assets of a business; establish the asset perimeter before selecting a route.
 
 Also verify the current [Notification of Acquisitions—Forms Determination 2025](https://www.legislation.gov.au/F2025L01604/latest) for notification and public-benefit forms; current form text was unavailable in this snapshot and remains not verified.
 

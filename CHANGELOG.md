@@ -43,6 +43,11 @@ plugin manifests contain their intended release versions.
 
 ### Changed
 
+- `australian-consumer-competition`: corrects standalone-asset screening to
+  acquirer group Australian revenue, records the 1 April 2026 asset/voting-power
+  application date, and adds ACL s 4 and ss 33–34 to marketing claim review.
+  Official text checked for these follow-up claims; lawCheckedOn is unchanged.
+
 - `australian-consumer-competition` 0.1.1: adds consumer-definition and s 45
   verification pathways, explicit competition exceptions and immunity leads,
   compilation-bounded general safety proposal status, specific watch triggers
