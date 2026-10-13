@@ -84,6 +84,12 @@ plugin manifests contain their intended release versions.
   improves metadata, adds a happy-path eval, tightens merger/safety graders
   and tests resolved cross-plugin links.
 
+- `australian-employment-fair-work`: label the non-compete watch entry as the
+  26 August 2026 position, distinguish the positive duty's 13 December 2022
+  commencement from later AHRC powers, and identify s 327B as the small-business
+  Code provision separately from s 327C criminal proceedings. Law-check dates
+  remain unchanged.
+
 - `legal-workflow-router` 0.2.0: `route-legal-fact-pattern` checks which
   routed skills are installed in the session, adds each routed plugin's
   required plugins as prerequisites, and lists missing plugins under

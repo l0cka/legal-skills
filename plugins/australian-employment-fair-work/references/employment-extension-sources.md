@@ -30,7 +30,7 @@ Verify at legislation.gov.au before reliance:
 | Sham contracting | s 357: misrepresentation prohibition and employer's reasonable-belief defence; inspect belief evidence and context. |
 | General protections | Part 3-1: workplace-right and discrimination tracks remain separate from discrimination statutes; s 351 includes exceptions. |
 | Intentional underpayment | s 327A: covered required amounts, exclusions, conduct and payment failure; intention applies to conduct and failure. Arithmetic alone cannot establish guilt. |
-| Small-business code | ss 327B–327C: assess the statutory process and Code, not just headcount; civil powers remain. |
+| Small-business code | s 327B: assess the statutory process and Code, not just headcount; civil powers remain. Section 327C governs commencement of criminal proceedings, including prosecution timing. |
 | Civil limitation | s 544: scoped civil application period of six years from contravention. |
 | Underpayment orders | s 545(5): separate six-year look-back from commencement of proceedings. |
 | Criminal proceedings | s 327C(2): separate six-year period after commission of offence. |
