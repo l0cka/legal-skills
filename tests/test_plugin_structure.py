@@ -1,11 +1,3 @@
-"""Structural convention tests shared by every plugin.
-
-PLUGINS is the one place that pins each plugin's skill set and result
-vocabulary. The skill sets are pinned deliberately: the registry is derived
-from the skill directories, so this is the guard against one being deleted by
-accident. Plugin-specific legal invariants stay in that plugin's own test file.
-"""
-
 from __future__ import annotations
 
 import unittest
@@ -27,15 +19,25 @@ DRAFT = (
     "`OUTSIDE SCOPE`",
 )
 
-# Per plugin:
-#   skills               - the exact shipped skill set
-#   statuses             - every skill carries CONTRACT_HEADINGS and these
-#                          statuses; () when the plugin's skills use
-#                          family-specific vocabularies tested in its own file
-#   reference_files      - shared plugin references; a *source-and-control-
-#                          method.md entry must carry INVARIANT_METHOD_SENTENCES
-#   every_skill_mentions - text every SKILL.md must contain
 PLUGINS: dict[str, dict] = {
+    "australian-commercial-drafting": {
+        "skills": {
+            "configure-drafting-profile",
+            "draft-nda",
+            "draft-website-terms",
+            "draft-privacy-policy",
+            "draft-services-agreement",
+            "review-draft-against-checklist",
+        },
+        "statuses": (),
+        "reference_files": (
+            "drafting-source-and-control-method.md",
+            "drafting-profile-schema.md",
+            "clause-bank.md",
+            "unfair-contract-terms-checklist.md",
+        ),
+        "every_skill_mentions": ("drafting-source-and-control-method.md",),
+    },
     "australian-ai-governance": {
         "skills": {
             "configure-ai-governance-profile",
@@ -109,8 +111,6 @@ PLUGINS: dict[str, dict] = {
             "assemble-vic-estate-documents",
         },
         "statuses": DRAFT,
-        # The estate method drafts from approved precedents rather than
-        # researching law, so it deliberately omits the invariant sentences.
         "reference_files": (),
         "every_skill_mentions": (),
     },
@@ -197,10 +197,6 @@ PLUGINS: dict[str, dict] = {
 }
 
 
-# Sentences every source-and-control method document must carry verbatim
-# (whitespace-normalized). The convention is recorded in
-# docs/source-and-control-method-core.md; the evidence-states block itself is
-# a generated region, so it is not repeated here.
 INVARIANT_METHOD_SENTENCES = (
     "a research snapshot, not a cached rule",
     "search results and model memory as discovery material, never authority",

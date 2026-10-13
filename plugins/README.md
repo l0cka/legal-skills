@@ -16,6 +16,12 @@ Canonical plugin packages live in this directory.
   person must approve each report and decision. (requires
   `australian-legal-research`; hands off to
   `australian-privacy-cybersecurity`; law checked 2026-08-26)
+- [**Australian Commercial
+  Drafting**](australian-commercial-drafting/README.md) — Drafts Australian
+  NDAs, subscription terms, privacy policies and services agreements for
+  lawyer review. (requires `australian-legal-research`; hands off to
+  `australian-employment-fair-work`, `australian-privacy-cybersecurity`; law
+  checked 2026-10-13)
 - [**Australian Corporations
   Governance**](australian-corporations-governance/README.md) — Helps govern
   an Australian company under the Corporations Act. Prepares board records and

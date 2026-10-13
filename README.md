@@ -7,8 +7,8 @@
   <a href="https://github.com/l0cka/legal-skills/actions/workflows/ci.yml"><img alt="CI status" src="https://img.shields.io/github/actions/workflow/status/l0cka/legal-skills/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
   <a href="LICENSE"><img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-1f6f5f?style=flat-square"></a>
   <!-- generated:badges -->
-  <img alt="Eleven plugins" src="https://img.shields.io/badge/plugins-11-31547a?style=flat-square">
-  <img alt="Sixty-one skills" src="https://img.shields.io/badge/skills-61-31547a?style=flat-square">
+  <img alt="Twelve plugins" src="https://img.shields.io/badge/plugins-12-31547a?style=flat-square">
+  <img alt="Sixty-seven skills" src="https://img.shields.io/badge/skills-67-31547a?style=flat-square">
   <img alt="Claude Cowork and ChatGPT Work" src="https://img.shields.io/badge/works%20with-Claude%20Cowork%20%2B%20ChatGPT%20Work-c59a46?style=flat-square">
 <!-- end:badges -->
 </p>
@@ -26,7 +26,7 @@ Free and open source (MIT).
 ## What's included
 
 <!-- generated:counts -->
-The marketplace contains eleven plugins and sixty-one skills:
+The marketplace contains twelve plugins and sixty-seven skills:
 <!-- end:counts -->
 
 <!-- generated:plugin-table -->
@@ -34,6 +34,7 @@ The marketplace contains eleven plugins and sixty-one skills:
 | --- | :---: | --- | :---: |
 | [**Australian AI Governance**](plugins/australian-ai-governance/README.md) | 6 | Maps the AI rules and guidance that apply to an Australian organisation. Shows which items are law and which are only guidance. | 2026-08-26 |
 | [**Australian AML/CTF**](plugins/australian-aml-ctf/README.md) | 5 | Finds the AML/CTF obligations of an Australian legal practice under the tranche 2 reforms. A person must approve each report and decision. | 2026-08-26 |
+| [**Australian Commercial Drafting**](plugins/australian-commercial-drafting/README.md) | 6 | Drafts Australian NDAs, subscription terms, privacy policies and services agreements for lawyer review. | 2026-10-13 |
 | [**Australian Corporations Governance**](plugins/australian-corporations-governance/README.md) | 5 | Helps govern an Australian company under the Corporations Act. Prepares board records and reviews for human approval. | 2026-08-26 |
 | [**Australian Employment & Fair Work**](plugins/australian-employment-fair-work/README.md) | 5 | Maps the Fair Work Act, NES, award and agreement layers for an employment arrangement and issue-spots termination and policy exposure. A lawyer decides every conclusion. | 2026-08-26 |
 | [**Australian Estate Planning**](plugins/australian-estate-planning/README.md) | 3 | Prepares solicitor-review drafts from approved NSW, Victorian and Queensland estate planning precedents. | 2026-08-26 |
@@ -56,7 +57,7 @@ Paste this into Claude or ChatGPT (any version that can manage plugins):
 
 <!-- generated:install-agent -->
 ```text
-Add the plugin marketplace `l0cka/legal-skills` and install all eleven of
+Add the plugin marketplace `l0cka/legal-skills` and install all twelve of
 its plugins (user scope if supported). Verify the plugins are available
 and report the result.
 ```
@@ -76,6 +77,7 @@ workspace plugin settings.
 claude plugin marketplace add l0cka/legal-skills
 claude plugin install australian-ai-governance@legal-skills --scope user
 claude plugin install australian-aml-ctf@legal-skills --scope user
+claude plugin install australian-commercial-drafting@legal-skills --scope user
 claude plugin install australian-corporations-governance@legal-skills --scope user
 claude plugin install australian-employment-fair-work@legal-skills --scope user
 claude plugin install australian-estate-planning@legal-skills --scope user
@@ -98,6 +100,7 @@ claude plugin install legal-workflow-router@legal-skills --scope user
 codex plugin marketplace add l0cka/legal-skills
 codex plugin add australian-ai-governance@legal-skills
 codex plugin add australian-aml-ctf@legal-skills
+codex plugin add australian-commercial-drafting@legal-skills
 codex plugin add australian-corporations-governance@legal-skills
 codex plugin add australian-employment-fair-work@legal-skills
 codex plugin add australian-estate-planning@legal-skills

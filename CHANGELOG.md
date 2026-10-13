@@ -10,6 +10,12 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- `australian-commercial-drafting` 0.1.0: six practitioner-led skills for
+  controlled drafting profiles, NDAs, SaaS/subscription terms, privacy policies,
+  B2B services agreements and draft reviews. Includes original clause examples,
+  an ACL unfair-terms checklist, official-source controls, specialist privacy
+  and employment hand-offs, visible unresolved issues and synthetic evals.
+
 - `benchmarks/`: a with/without-plugin benchmark harness (`run.py` over
   `claude -p` with a scratch working directory, plugin isolation and a
   publisher-only network allowlist; `score.py`) with 140 answer-keyed cases

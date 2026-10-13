@@ -1,0 +1,4 @@
+interface:
+  display_name: "Draft Services Agreement"
+  short_description: "Draft Australian services terms and a statement of work"
+  default_prompt: "Use $draft-services-agreement for this Australian commercial matter, recording unresolved issues for lawyer review."

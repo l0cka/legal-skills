@@ -1,0 +1,4 @@
+interface:
+  display_name: "Draft Privacy Policy"
+  short_description: "Draft an evidenced Australian privacy policy for review"
+  default_prompt: "Use $draft-privacy-policy for this Australian commercial matter, recording unresolved issues for lawyer review."

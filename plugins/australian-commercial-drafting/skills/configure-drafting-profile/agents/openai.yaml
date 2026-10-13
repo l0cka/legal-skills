@@ -1,0 +1,4 @@
+interface:
+  display_name: "Configure Drafting Profile"
+  short_description: "Draft a controlled Australian commercial drafting profile"
+  default_prompt: "Use $configure-drafting-profile for this Australian commercial matter, recording unresolved issues for lawyer review."

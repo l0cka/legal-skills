@@ -119,3 +119,18 @@ git diff --check
 
 Then test a clean installation in Claude Cowork and ChatGPT Work before
 describing the plugin as released.
+
+## Structural and behavioural checks
+
+`tests/test_plugin_structure.py` pins each plugin’s exact skill set so directory-
+derived registry generation cannot hide an accidental deletion. Its table also
+records result vocabularies, required references and shared-method invariants.
+Family-specific vocabularies stay in plugin-specific tests; estate drafting uses
+approved precedents rather than the source-research method invariants.
+
+Every source-and-control method must carry the invariant sentences documented
+in `docs/source-and-control-method-core.md`, with whitespace normalised by the
+structural check. The evidence-state text is generated rather than duplicated
+in tests. Synthetic evals must exercise every new skill, including missing-input
+and unsupported-approval behaviour. Fixture success demonstrates the tested
+package contract; live model evals and client installation checks are separate.
