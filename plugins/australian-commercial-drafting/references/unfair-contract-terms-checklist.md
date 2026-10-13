@@ -5,7 +5,7 @@
 Verify the *Competition and Consumer Act 2010* (Cth), Schedule 2 (Australian
 Consumer Law), ss 23–28 and 224 against the current or point-in-time text on
 [legislation.gov.au](https://www.legislation.gov.au/C2004A00109/latest/text).
-Checked snapshot: C2026C00405, 16 September 2026, inspected on 2026-10-14 (official Volume 4 PDF).
+Checked snapshot: C2026C00405, 16 September 2026, inspected on 2026-10-13 (official Volume 4 PDF).
 This checklist paraphrases the statutory leads; it is not legal authority.
 A qualified lawyer must confirm application and any unfairness conclusion.
 

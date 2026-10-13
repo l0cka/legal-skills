@@ -79,7 +79,7 @@ plugin manifests contain their intended release versions.
   with cohort, regulations and existing-contract transition checks. Add current
   privacy tort, code, overseas-prescription and penalty-tier controls; verify
   Fair Work commencement dates and clarify UCT and moral-rights citations.
-  Refresh the scoped official-source snapshot to 14 October 2026 and expand
+  Refresh the scoped official-source snapshot to 13 October 2026 and expand
   synthetic workflow rubrics for these distinctions.
 
 - `australian-commercial-drafting`: use installed skill names for privacy and

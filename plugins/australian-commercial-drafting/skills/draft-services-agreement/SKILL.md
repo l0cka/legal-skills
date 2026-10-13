@@ -6,7 +6,7 @@ description: Prepare a first-draft Australian B2B services or contractor agreeme
 # Draft Services Agreement
 
 Jurisdiction: Australian Commonwealth law and the identified governing state or
-territory. Record the legal as-at and intended use dates. The 2026-10-14 source
+territory. Record the legal as-at and intended use dates. The 2026-10-13 source
 snapshot is a currency limit, not live verification. Verify every applicable
 statutory provision on legislation.gov.au (NSW overlays on legislation.nsw.gov.au)
 using `$check-commonwealth-legislation` and, for NSW, `$check-nsw-legislation`;

@@ -40,7 +40,7 @@ page/clause, instruction date and confirmer. A link alone is not verification.
 
 ## Currency snapshot and verification leads
 
-Checked on 2026-10-14: a research snapshot, not a cached rule; every live
+Checked on 2026-10-13: a research snapshot, not a cached rule; every live
 workflow must recheck each source. These are scoped verification leads, not a
 claim that all Australian contract law has been reviewed.
 
