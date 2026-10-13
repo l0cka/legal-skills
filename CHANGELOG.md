@@ -10,6 +10,10 @@ plugin manifests contain their intended release versions.
 
 ### Changed
 
+- `australian-contract-review`: names the unverified NSW s 3A(2) lead and
+  separates verified Queensland and Victorian contracting-out text from
+  unconfirmed prohibition conclusions and commentary.
+
 - `australian-contract-review`: corrects commencement-day subscription transition
   and variation precedence, distinguishes offer-stage disclosure scope, expands
   official Act/Part leads across all jurisdictions, clarifies reference-only
