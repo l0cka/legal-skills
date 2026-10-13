@@ -16,6 +16,14 @@
       "review-aml-ctf-program": "Original AML/CTF program and CDD framework gap-review workflow, based on the amended AML/CTF Act, the AML/CTF Rules 2025 and AUSTRAC's legal profession program starter kit.",
       "track-aml-ctf-developments": "Original primary-source watch-register workflow for pending Australian AML/CTF instruments and AUSTRAC guidance affecting legal practices."
     },
+    "australian-commercial-drafting": {
+      "configure-drafting-profile": "Original controlled Australian commercial drafting-profile workflow adapted from the repository governance-profile pattern, using evidenced party details and human-approved standard positions.",
+      "draft-nda": "Original practitioner-led Australian NDA drafting workflow and original clause examples, with instruction provenance, visible unresolved decisions and official-source verification.",
+      "draft-website-terms": "Original Australian SaaS and subscription terms drafting workflow informed by the official ACL and ACCC contracts guidance, preserving consumer rights and testing unfair terms.",
+      "draft-privacy-policy": "Original policy-drafting workflow based on verified Privacy Act and Spam Act sources, linked to the existing Australian Privacy Cybersecurity assessments rather than duplicating them.",
+      "draft-services-agreement": "Original Australian B2B services drafting workflow and clause examples informed by official ACL, copyright, GST and Fair Work source leads, with a specialist worker-status hand-off.",
+      "review-draft-against-checklist": "Original commercial-draft review workflow checking instruction consistency, document mechanics, visible placeholders and official-source-linked unfair-terms risks."
+    },
     "australian-corporations-governance": {
       "assess-director-duties-governance": "Original Australian director-duty governance issue-spotting workflow based on verified official legislation and organisation-controlled evidence.",
       "configure-corporations-governance": "Original governance-profile workflow informed by the official Federal Register of Legislation and public ASIC, ASX, APRA, ACNC and ORIC materials.",

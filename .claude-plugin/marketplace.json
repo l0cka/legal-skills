@@ -36,6 +36,20 @@
       ]
     },
     {
+      "name": "australian-commercial-drafting",
+      "source": "./plugins/australian-commercial-drafting",
+      "description": "Prepare lawyer-review first drafts of Australian commercial documents using controlled instructions, original clauses and verified official sources.",
+      "version": "0.1.0",
+      "category": "Productivity",
+      "tags": [
+        "australian-law",
+        "commercial-drafting",
+        "contracts",
+        "privacy-policy",
+        "unfair-contract-terms"
+      ]
+    },
+    {
       "name": "australian-corporations-governance",
       "source": "./plugins/australian-corporations-governance",
       "description": "Configure, assess and document Australian company governance using verified Corporations Act sources and approved organisational controls.",

@@ -10,6 +10,12 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- `australian-commercial-drafting` 0.1.0: six practitioner-led skills for
+  controlled drafting profiles, NDAs, SaaS/subscription terms, privacy policies,
+  B2B services agreements and draft reviews. Includes original clause examples,
+  an ACL unfair-terms checklist, official-source controls, specialist privacy
+  and employment hand-offs, visible unresolved issues and synthetic evals.
+
 - `benchmarks/`: a with/without-plugin benchmark harness (`run.py` over
   `claude -p` with a scratch working directory, plugin isolation and a
   publisher-only network allowlist; `score.py`) with 140 answer-keyed cases
@@ -67,6 +73,19 @@ plugin manifests contain their intended release versions.
   banner.
 
 ### Fixed
+
+- `australian-commercial-drafting`: distinguish current ACL controls from enacted
+  unfair trading, drip-pricing and subscription reforms commencing 1 July 2027,
+  with cohort, regulations and existing-contract transition checks. Add current
+  privacy tort, code, overseas-prescription and penalty-tier controls; verify
+  Fair Work commencement dates and clarify UCT and moral-rights citations.
+  Refresh the scoped official-source snapshot to 13 October 2026 and expand
+  synthetic workflow rubrics for these distinctions.
+
+- `australian-commercial-drafting`: use installed skill names for privacy and
+  employment hand-offs, explicitly route NSW verification and health-records
+  coverage, narrow the ACL exclusion checklist to ss 26–28, and correct
+  result-contract spacing and structural-test documentation.
 
 - Currency review of 24 September 2026 (`docs/audits/2026-09-24-currency-audit.md`).
   The official publishers were unreachable during the review, so each

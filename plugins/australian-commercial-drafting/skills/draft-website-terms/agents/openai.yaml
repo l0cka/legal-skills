@@ -1,0 +1,4 @@
+interface:
+  display_name: "Draft Website Terms"
+  short_description: "Draft Australian subscription terms for lawyer review"
+  default_prompt: "Use $draft-website-terms for this Australian commercial matter, recording unresolved issues for lawyer review."

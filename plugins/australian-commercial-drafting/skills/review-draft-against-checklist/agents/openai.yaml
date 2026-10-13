@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Draft Against Checklist"
+  short_description: "Check a commercial draft and return an issues table"
+  default_prompt: "Use $review-draft-against-checklist for this Australian commercial matter, recording unresolved issues for lawyer review."

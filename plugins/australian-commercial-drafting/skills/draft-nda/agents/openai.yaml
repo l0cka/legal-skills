@@ -1,0 +1,4 @@
+interface:
+  display_name: "Draft NDA"
+  short_description: "Draft an Australian NDA with visible review issues"
+  default_prompt: "Use $draft-nda for this Australian commercial matter, recording unresolved issues for lawyer review."
