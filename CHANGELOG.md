@@ -40,6 +40,10 @@ plugin manifests contain their intended release versions.
   and underpayment exposure frameworks. Reuses the employment profile, commercial
   and privacy resources; adds official-source controls and synthetic evals.
   Separates proposed non-compete reforms and uncommenced Queensland amendments.
+  Review fixes restore the August plugin-wide law-check date, disclose unverified
+  NSW limbs, reuse proposal/commencement owners, identify the DDA amendment,
+  broaden deadline hand-offs, add record-burden and sexual-harassment routing,
+  and track Queensland positive-duty proclamation status.
 
 - `australian-commercial-drafting` 0.1.0: six practitioner-led skills for
   controlled drafting profiles, NDAs, SaaS/subscription terms, privacy policies,

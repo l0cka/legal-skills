@@ -8,7 +8,9 @@
       "item": "Fair Work Act 2009 current compilation",
       "status_at_snapshot": "C2026C00355 (Compilation No. 73, 7 July 2026) incorporating the Workplace Relations Legislation Amendment (Building Cooperative Workplaces No. 1) Act 2026 sch 1 items 1-9 and 19-62",
       "expected_trigger": "New compilation registered on the Federal Register of Legislation",
-      "primary_sources": ["https://www.legislation.gov.au/C2009A00028/latest/versions"]
+      "primary_sources": [
+        "https://www.legislation.gov.au/C2009A00028/latest/versions"
+      ]
     },
     {
       "id": "closing-loopholes-tranches",
@@ -29,14 +31,18 @@
       "item": "Fair Work Amendment (Protecting Penalty and Overtime Rates) Act 2025 (No. 37)",
       "status_at_snapshot": "Assent 29 Aug 2025, in force 30 Aug 2025; the FWC must not reduce award penalty or overtime rates or substitute terms that pay less",
       "expected_trigger": "FWC award variation decisions applying the principle",
-      "primary_sources": ["https://www.legislation.gov.au/C2025A00037/latest"]
+      "primary_sources": [
+        "https://www.legislation.gov.au/C2025A00037/latest"
+      ]
     },
     {
       "id": "baby-priya-act-2025",
       "item": "Fair Work Amendment (Baby Priya's) Act 2025 (No. 56)",
       "status_at_snapshot": "Assent 6 Nov 2025, in force 7 Nov 2025 (sch 1 items 1-7): employer-funded paid parental leave cannot be refused or cancelled on stillbirth or infant death",
       "expected_trigger": "None",
-      "primary_sources": ["https://www.legislation.gov.au/C2025A00056/latest"]
+      "primary_sources": [
+        "https://www.legislation.gov.au/C2025A00056/latest"
+      ]
     },
     {
       "id": "fairer-fuel-act-2026",
@@ -53,7 +59,9 @@
       "item": "Treasury Laws Amendment (Payday Superannuation) Act 2025 sch 1 items 73-74 amending the NES superannuation entitlement",
       "status_at_snapshot": "Commenced 1 Jul 2026 (Compilation No. 72); the substance of the Div 10A amendment has not been read",
       "expected_trigger": "Verify the amended Div 10A text before relying on the NES superannuation entitlement",
-      "primary_sources": ["https://www.legislation.gov.au/C2025A00057/latest"]
+      "primary_sources": [
+        "https://www.legislation.gov.au/C2025A00057/latest"
+      ]
     },
     {
       "id": "building-cooperative-workplaces-no1-2026",
@@ -70,31 +78,41 @@
       "item": "Fair Work Amendment (Exclusion of State and Territory Laws) Regulations 2026 (F2026L00766)",
       "status_at_snapshot": "Registered 19 Jun 2026; disallowable; content not read",
       "expected_trigger": "Disallowance period; text review",
-      "primary_sources": ["https://www.legislation.gov.au/F2026L00766/latest/text"]
+      "primary_sources": [
+        "https://www.legislation.gov.au/F2026L00766/latest/text"
+      ]
     },
     {
       "id": "state-declaration-endorsement-2026",
       "item": "Fair Work (State Declarations - Employer Not To Be National System Employer) Endorsement (No. 1) 2026 (F2026L00414)",
       "status_at_snapshot": "Registered 8 Apr 2026 under s 14(5); moves the named employer or employers out of the national system; employer names not read",
       "expected_trigger": "Further endorsements naming an employer in the profile",
-      "primary_sources": ["https://www.legislation.gov.au/F2026L00414/latest/text"]
+      "primary_sources": [
+        "https://www.legislation.gov.au/F2026L00414/latest/text"
+      ]
     },
     {
       "id": "annual-wage-review-2026-27",
       "item": "Annual Wage Review 2026-27",
       "status_at_snapshot": "AWR 2026 decided [2026] FWCFB 3500 on 2 Jun 2026 (award minimum wages +4.75%; National Minimum Wage $1,004.90 per week from 1 Jul 2026; high income threshold $190,100 and compensation cap $95,050 from 1 Jul 2026). Next review runs March-June 2027, operative 1 Jul 2027; thresholds re-index 1 Jul 2027",
       "expected_trigger": "FWC timetable statement, usually February-March 2027",
-      "primary_sources": ["https://www.fwc.gov.au/hearings-decisions/major-cases/annual-wage-reviews"]
+      "primary_sources": [
+        "https://www.fwc.gov.au/hearings-decisions/major-cases/annual-wage-reviews"
+      ]
     },
     {
       "id": "non-compete-ban",
-      "item": "Proposed ban on non-compete clauses for workers under the high income threshold",
+      "item": "Proposed Commonwealth restrictions on non-compete and other worker restraints",
       "status_at_snapshot": "Treasury states the reforms should take effect from 2027 following consultation and passage; consultation closed 5 Sep 2025; no exposure draft or Bill located",
-      "expected_trigger": "Close of exposure draft consultation (2 Oct 2026); Bill introduction and passage; commencement date fixed by Royal Assent",
-      "primary_sources": ["https://treasury.gov.au/review/competition-review-2023/non-compete-clauses", "https://consult.treasury.gov.au/c2026-801178"],
-      "reviewed_on": "2026-09-24",
-      "status_at_review": "Reported after the snapshot: exposure draft Competition and Fair Work Legislation Amendment (Banning Unfair Non-Competes) Bill 2026 published 7 Sep 2026, consultation closing 2 Oct 2026. As reported: bans non-compete terms for employees below the high income threshold and for all casuals and pieceworkers, bans co-worker non-solicitation terms, restricts cascading restraints, and extends cartel prohibitions to no-poach and wage-fixing agreements; commencement the first 1 January, 1 April, 1 July or 1 October after Royal Assent (draft cl 2; no fixed 2027 start), applying to arrangements made or varied on or after commencement. Exposure draft only, not introduced and not law",
-      "review_basis": "Dates and commencement confirmed on consult.treasury.gov.au on 24 Sep 2026; substantive content from secondary sources"
+      "expected_trigger": "Bill introduction/passage; enacted commencement and provision-specific application rules; no fixed 2027 start assumed",
+      "primary_sources": [
+        "https://treasury.gov.au/review/competition-review-2023/non-compete-clauses",
+        "https://consult.treasury.gov.au/c2026-801178",
+        "https://storage.googleapis.com/files-au-treasury/treasury/p/prj3f00a298602dd09b72b97/page/fil3f010c3d46553e4672a63_c2026_801178_ed.pdf"
+      ],
+      "reviewed_on": "2026-10-13",
+      "status_at_review": "Announced/proposed only: official exposure draft Competition and Fair Work Legislation Amendment (Banning Unfair Non-Competes) Bill 2026. Draft cl 2 proposes Schedules 1 and 2 commencing on the first 1 January, 1 April, 1 July or 1 October after Royal Assent, not a fixed 2027 start. Proposed ss 333Z and 333ZA use annualised full-time equivalent earnings at or below the employee high income threshold, and cover casuals and pieceworkers irrespective of that threshold, subject to draft exceptions. Proposed ss 333ZF-333ZH prohibit co-worker non-solicitation terms; proposed s 333ZJ(5) restricts cascading restraints; Schedule 1 extends cartel provisions to no-poach and wage-fixing arrangements. Proposed application cl 143 must be read provision by provision: rights/no-effect rules address terms included in arrangements on or after commencement and later variation of earlier arrangements; certain inclusion civil-remedy provisions have a six-month delay. Do not reduce these rules to a universal new-contract-only test. No enacted Act or legal start date confirmed.",
+      "review_basis": "Official Treasury-hosted exposure draft PDF inspected on 2026-10-13: cl 2, Schedule 1, Schedule 2 proposed ss 333Z, 333ZA, 333ZF-333ZH, 333ZJ(5) and application cl 143. VERIFIED as draft content only, not enacted law; recheck Parliament and legislation.gov.au at use."
     },
     {
       "id": "gender-undervaluation-priority-awards",
@@ -114,7 +132,9 @@
       "item": "Working from home term in the Clerks - Private Sector Award 2020 (AM2024/34)",
       "status_at_snapshot": "Not on the register at the 26 August 2026 snapshot",
       "expected_trigger": "Final determination varying the Clerks Award after the draft-determination submissions; operative date of the new term",
-      "primary_sources": ["https://www.fwc.gov.au/about-us/news-and-media/news/working-home-clerks-award-decision-issued"],
+      "primary_sources": [
+        "https://www.fwc.gov.au/about-us/news-and-media/news/working-home-clerks-award-decision-issued"
+      ],
       "reviewed_on": "2026-09-24",
       "status_at_review": "Reported after the snapshot: Full Bench decision issued 27 Aug 2026 (reported citation [2026] FWCFB 225) declining a term compelling employers to allow working from home and proposing a right-to-request working from home term; draft determination published with submissions due 17 Sep 2026; no final determination located",
       "review_basis": "Official page seen in search results only; confirm against the primary source before relying on it"
@@ -124,21 +144,41 @@
       "item": "Interim On-Demand Delivery Employee-like Worker Minimum Standards Order",
       "status_at_snapshot": "Made 11 Aug 2026 ([2026] FWCFB 211); operates from 17 Aug 2026",
       "expected_trigger": "Final order; other employee-like minimum standards applications",
-      "primary_sources": ["https://www.fwc.gov.au/node/5373"]
+      "primary_sources": [
+        "https://www.fwc.gov.au/node/5373"
+      ]
     },
     {
       "id": "fwo-priorities-2026-27",
       "item": "Fair Work Ombudsman compliance priorities",
       "status_at_snapshot": "Priority sectors: aged care, agriculture, building and construction, disability support, fast food, restaurants and cafes, large corporates, universities; Criminal Investigations Branch active; the year label on the page was not confirmed",
       "expected_trigger": "Priorities page update or Corporate Plan 2026-27",
-      "primary_sources": ["https://www.fairwork.gov.au/about-us/our-role-and-purpose/our-priorities"]
+      "primary_sources": [
+        "https://www.fairwork.gov.au/about-us/our-role-and-purpose/our-priorities"
+      ]
     },
     {
       "id": "rtd-fwc-guidelines",
       "item": "FWC written guidelines on the right to disconnect",
       "status_at_snapshot": "Not located on fwc.gov.au on the as-at date; only the fact sheet and dispute page found",
       "expected_trigger": "Publication on fwc.gov.au",
-      "primary_sources": ["https://www.fwc.gov.au/workplace-disputes/other-workplace-disputes/right-disconnect-disputes"]
+      "primary_sources": [
+        "https://www.fwc.gov.au/workplace-disputes/other-workplace-disputes/right-disconnect-disputes"
+      ]
+    },
+    {
+      "id": "qld-positive-duty-commencement",
+      "item": "Queensland 2024 positive-duty reforms awaiting proclamation",
+      "status_at_snapshot": "Not included in the 26 August 2026 register; item added through the extension review",
+      "expected_trigger": "Proclamation commencing the relevant amendments or a further amending Act; recheck individual provisions before policy or discrimination advice",
+      "primary_sources": [
+        "https://www.legislation.qld.gov.au/view/whole/html/asmade/act-2024-047/lh",
+        "https://www.legislation.qld.gov.au/view/whole/html/asmade/act-2024-047",
+        "https://www.legislation.qld.gov.au/view/html/inforce/current/act-1991-085"
+      ],
+      "reviewed_on": "2026-10-13",
+      "status_at_review": "Enacted, not yet in force: the official history lists ss 4-27, including the s 25 insertion of the new positive-duty chapter, among amendments not yet proclaimed into force. Commencement date unconfirmed; do not treat the former 1 July 2025 target as commencement. Other amendments have separate commenced statuses.",
+      "review_basis": "Official Queensland legislative history rechecked on 2026-10-13; new chapter content inspected in the extension baseline. Follow the extension reference for provision leads and verify current proclamation status at legislation.qld.gov.au."
     }
   ]
 }

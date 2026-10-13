@@ -44,7 +44,7 @@ Canonical plugin packages live in this directory.
   restraints and underpayment frameworks for lawyers. (requires
   `australian-legal-research`, `australian-litigation-deadlines`; hands off to
   `australian-commercial-drafting`, `australian-privacy-cybersecurity`; law
-  checked 2026-10-13)
+  checked 2026-08-26)
 - [**Australian Estate Planning**](australian-estate-planning/README.md) —
   Prepares solicitor-review drafts from approved NSW, Victorian and Queensland
   estate planning precedents. (law checked 2026-08-26)

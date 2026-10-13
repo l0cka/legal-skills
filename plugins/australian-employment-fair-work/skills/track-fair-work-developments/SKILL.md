@@ -1,6 +1,6 @@
 ---
 name: track-fair-work-developments
-description: Check the Australian Fair Work watch register on demand — new Fair Work Act compilations and amending Acts, the Building Cooperative Workplaces reforms, Closing Loopholes transitional issues, the Annual Wage Review and threshold indexation, proposed non-compete reforms, gender-undervaluation award reviews, employee-like minimum standards orders and Fair Work Ombudsman priorities — verifying each item against its primary source and reporting what moved since the register snapshot. Use for periodic horizon reviews or before advice that depends on a pending instrument or a figure that indexes on 1 July. Do not use to assert a pending instrument as law, to run as an unattended monitor, or to replace the obligations map for a specific arrangement.
+description: Check the Australian Fair Work watch register on demand — new Fair Work Act compilations and amending Acts, the Building Cooperative Workplaces reforms, Closing Loopholes transitional issues, the Annual Wage Review and threshold indexation, proposed non-compete reforms, Queensland positive-duty proclamation status, gender-undervaluation award reviews, employee-like minimum standards orders and Fair Work Ombudsman priorities — verifying each item against its primary source and reporting what moved since the register snapshot. Use for periodic horizon reviews or before advice that depends on a pending instrument or a figure that indexes on 1 July. Do not use to assert a pending instrument as law, to run as an unattended monitor, or to replace the obligations map for a specific arrangement.
 ---
 
 # Track Fair Work Developments
@@ -24,7 +24,10 @@ and work from the [watch register](references/watch-register.json).
      `cannot be determined` when the source is unavailable.
    - For legislative items, verify commencement and current text through
      `$check-commonwealth-legislation` and trace amendments with
-     `$trace-commonwealth-legislative-change`.
+     `$trace-commonwealth-legislative-change`. For the Queensland positive-duty
+     item, use `$check-queensland-legislation` to verify individual amendments
+     and proclamation status at legislation.qld.gov.au; do not apply the
+     Commonwealth checker to state legislation.
 3. Sweep for new items.
    - Check the Federal Register for new Fair Work Act compilations and
      amending Acts, the Fair Work Commission's major cases and legislation
@@ -71,8 +74,9 @@ plugin alongside this one; install a hand-off plugin when the matter needs
 that depth.
 
 - `australian-legal-research` (required): `check-commonwealth-legislation`,
-  `trace-commonwealth-legislative-change`. Verifies the Fair Work Act and
-  related legislation and case-law leads against the official sources.
+  `check-queensland-legislation`, `trace-commonwealth-legislative-change`.
+  Verifies the Fair Work Act and related legislation and case-law leads
+  against the official sources.
 
 If a named skill is not available in this session, say so and name the plugin
 to install. Treat the step it would have performed as not done: record the

@@ -93,8 +93,9 @@ that depth.
   Verifies the Fair Work Act and related legislation and case-law leads
   against the official sources.
 - `australian-litigation-deadlines` (required):
-  `compute-procedural-deadlines`. Computes the Fair Work Commission time
-  limits the termination assessment flags.
+  `compute-procedural-deadlines`. Computes candidate FWC, AHRC and court
+  deadlines only where a verified rule is available; otherwise identifies the
+  provision without calculating a date.
 
 If a named skill is not available in this session, say so and name the plugin
 to install. Treat the step it would have performed as not done: record the

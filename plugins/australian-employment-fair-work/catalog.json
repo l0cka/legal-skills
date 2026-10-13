@@ -2,7 +2,7 @@
   "displayName": "Australian Employment & Fair Work",
   "shortDescription": "Maps Fair Work obligations and reviews contracts, classification, discrimination, restraints and underpayment frameworks for lawyers.",
   "longDescription": "Ten controlled Australian employment workflows using an approved employment profile and official-source evidence. Adds contract review, worker-classification and high-income opt-out screening, discrimination and positive-duty controls, restraint review with proposed reform status, and an underpayment framework without invented rates or final calculations. Every conclusion remains with a qualified lawyer.",
-  "lawCheckedOn": "2026-10-13",
+  "lawCheckedOn": "2026-08-26",
   "defaultPrompt": [
     "Create a controlled employment profile for this employer before mapping its Fair Work obligations.",
     "Map the NES, award and agreement entitlements that apply to this employee's arrangement.",
@@ -28,12 +28,19 @@
     "Prepares underpayment evidence and back-pay methodology without invented rates"
   ],
   "boundaries": [
-    "Never concludes that a dismissal was unfair, that adverse action occurred, or that an employer is compliant",
-    "Never computes a Fair Work Commission time limit itself — candidate dates come from the litigation-deadlines script",
-    "Never drafts or lodges an application, response or agreement with the Commission or the Ombudsman",
-    "State-system wage/contract merits, other statutory classification tests and industrial action strategy require specialist review; discrimination overlays cover Commonwealth, NSW, Victoria and Queensland.",
-    "Never certifies worker classification, discrimination liability, restraint enforceability or positive-duty compliance",
-    "Underpayment framework only: no final exposure calculation, invented award rate, payment or offence finding"
+    "Qualified lawyer review required for every conclusion",
+    "Never decides unfair dismissal, adverse action or employer compliance",
+    "Never certifies discrimination liability or positive-duty compliance",
+    "Never certifies worker status, restraint enforceability or monetary exposure",
+    "Candidate dates require verified litigation-deadlines rules",
+    "Uncovered deadline rules remain identify-only",
+    "Never drafts or lodges Commission or Ombudsman applications or agreements",
+    "State-system wage and contract merits require specialist review",
+    "Other statutory classification tests and industrial action need specialists",
+    "Discrimination overlays cover Commonwealth, NSW, Victoria and Queensland",
+    "NSW Restraints of Trade Act and NSW ADA limbs are unverified at this snapshot",
+    "Verify NSW limbs against legislation.nsw.gov.au before reliance",
+    "Underpayment framework only: no invented rates, payment or offence finding"
   ],
   "evidenceStates": {
     "qualifications": [
@@ -50,7 +57,7 @@
   },
   "requires": {
     "australian-legal-research": "Verifies the Fair Work Act and related legislation and case-law leads against the official sources.",
-    "australian-litigation-deadlines": "Computes the Fair Work Commission time limits the termination assessment flags."
+    "australian-litigation-deadlines": "Computes candidate FWC, AHRC and court deadlines only where a verified rule is available; otherwise identifies the provision without calculating a date."
   },
   "handsOffTo": {
     "australian-commercial-drafting": "Provides services drafting, clause review and the existing UCT checklist and UTPA 2026 notes.",

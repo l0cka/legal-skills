@@ -5,46 +5,105 @@ description: Issue-spot Australian employment restraints against verified common
 
 # Assess Restraint of Trade
 
-Jurisdiction: Australia; Fair Work application requires a verified national
-system basis. State overlays are separately identified. Snapshot: 2026-10-13;
-this is a research baseline, not a current-law assurance. Verify every relied-on
-provision, threshold and commencement at its official publisher for the relevant
-date, using `$check-commonwealth-legislation` for Commonwealth law.
+Jurisdiction: Australian employment restraints under applicable common law, with
+a separate NSW statutory limb and a Commonwealth proposal-status track. Verify
+judgments at official court publishers with `$route-case-citation`, NSW
+legislation at legislation.nsw.gov.au with `$check-nsw-legislation`, and any
+Commonwealth enactment at legislation.gov.au with
+`$check-commonwealth-legislation`. Determine governing law separately from Fair
+Work coverage. Currency is limited to the linked extension reference.
 
-Read the [source and control method](../../references/fair-work-source-and-control-method.md),
-reuse the [employment profile schema](../../references/employment-profile-schema.md)
-and consult the [extension source checklist](../../references/employment-extension-sources.md).
-Assume only evidenced instructions and documents; unknown facts stay unknown.
-Every output requires review by a qualified lawyer before reliance.
+The NSW Restraints of Trade Act 1976 limb is unverified at this snapshot because
+NSW sites block automated retrieval: verify against legislation.nsw.gov.au
+before asserting its statutory content or effect.
+
+Read the [source and control
+method](../../references/fair-work-source-and-control-method.md), reuse the
+[employment profile schema](../../references/employment-profile-schema.md) and
+consult the [extension source
+checklist](../../references/employment-extension-sources.md). Assume only
+evidenced instructions and documents; unknown facts stay unknown. Every output
+requires review by a qualified lawyer before reliance.
 
 ## Workflow
 
-1. Reuse `$configure-employment-profile` and the employment profile schema. Obtain the full contract, variation and execution dates, governing law, work locations, role, income year/basis, departure circumstances, intended activity and exact restraint wording. Separate non-compete, client/worker non-solicitation, non-dealing, confidentiality and IP protections.
-2. Build a common-law reasonableness issues table: claimed legitimate interest and evidence, employee access/influence, duration, geography, restricted activities/persons, public interest, bargaining context and narrower alternatives. Distinguish employment from sale-of-business restraints. Verify applicable judgments using `$route-case-citation` at their official court publishers before asserting rules, severance or enforceability. Unverified case leads remain discovery only; cascading alternatives do not guarantee enforcement.
-3. For NSW, verify Restraints of Trade Act 1976 s 4 at legislation.nsw.gov.au with `$check-nsw-legislation`. Do not import that statutory treatment into other states. The official text could not be retrieved for this snapshot: verify against legislation.nsw.gov.au before asserting its effect, public-policy test or remedial powers. Keep any NSW-specific outcome unresolved until the official provision is checked.
-4. Check Commonwealth reform status using Treasury's non-compete review and consultation pages, Parliament and legislation.gov.au with `$trace-commonwealth-legislative-change`. At the snapshot the ban for employees below the high income threshold is announced/proposed only; Treasury describes 2027 as intended timing contingent on legislation. No enacted Act or commencement date was confirmed. Do not tell an employee their current clause is void because of a promised 2027 change. Record any later verified enactment as enacted, not yet in force (commences <verified date>) where applicable; do not infer commencement from a press release.
-5. Distinguish the relevant employee high income threshold from the contractor threshold and verify the relevant year/earnings rules; do not cache a dollar figure or assume all restraint types/cohorts share the proposed ban. Use `$assess-employee-vs-contractor` where worker status is disputed. Examine transition, making/variation dates and scope of any enacted reform before applying it.
-6. For confidentiality/data issues use `$assess-australian-privacy-issues`; for clause options name `$review-draft-against-checklist` and the commercial-drafting clause-bank.md. Record urgent litigation and interim-relief questions for a qualified lawyer; route candidate procedural dates to `$compute-procedural-deadlines`.
-7. Return clause-specific arguments, evidence gaps, reform status and proportionate options. Qualified lawyer review is required before advice, demands or enforcement; no enforceability certificate.
+1. Reuse `$configure-employment-profile` and the employment profile schema.
+   Obtain the full contract, variation and execution dates, governing law, work
+   locations, role, income year/basis, departure circumstances, intended
+   activity and exact restraint wording. Separate non-compete, client/worker
+   non-solicitation, non-dealing, confidentiality and IP protections. Flag the
+   co-worker non-solicitation row for the announced/proposed only reform track
+   in step 4; do not treat client and co-worker terms as the same category.
+2. Build a common-law reasonableness issues table: claimed legitimate interest
+   and evidence, employee access/influence, duration, geography, restricted
+   activities/persons, public interest, bargaining context and narrower
+   alternatives. Distinguish employment from sale-of-business restraints. Verify
+   applicable judgments using `$route-case-citation` at their official court
+   publishers before asserting rules, severance or enforceability. Unverified
+   case leads remain discovery only; cascading alternatives do not guarantee
+   enforcement. Flag each cascading row for the announced/proposed only
+   restriction in the watch-register item; keep the current-law and proposal
+   analyses separate.
+3. For NSW, verify Restraints of Trade Act 1976 s 4 at legislation.nsw.gov.au
+   with `$check-nsw-legislation`. Do not import that statutory treatment into
+   other states. The official text could not be retrieved for this snapshot:
+   verify against legislation.nsw.gov.au before asserting its effect,
+   public-policy test or remedial powers. Keep any NSW-specific outcome
+   unresolved until the official provision is checked.
+4. Use `$track-fair-work-developments` and the [watch
+   register](../track-fair-work-developments/references/watch-register.json),
+   item `non-compete-ban`, as the owner of proposal status. Recheck its official
+   Treasury draft and any later Parliament/Federal Register record with
+   `$trace-commonwealth-legislative-change`. The item maps the proposed cohort,
+   co-worker non-solicitation ban, cascading restriction, no-poach/wage-fixing
+   changes, draft commencement and provision-specific application. Treat all of
+   these as announced/proposed only, not current prohibitions. Treasury's 2027
+   policy expectation does not fix a legal start date; draft clause 2 proposes
+   quarter-day commencement after Royal Assent. No enacted Act or commencement
+   date was confirmed. Do not tell an employee their clause is void because of
+   the proposal. Record a later verified enactment as enacted, not yet in force
+   (commences <verified date>) where applicable.
+5. Distinguish the relevant employee high income threshold from the contractor
+   threshold and verify the relevant year/earnings rules; do not cache a dollar
+   figure or assume all restraint types/cohorts share the proposed ban. Use
+   `$assess-employee-vs-contractor` where worker status is disputed. Examine
+   transition, making/variation dates and scope of any enacted reform before
+   applying it.
+6. For confidentiality/data issues use `$assess-australian-privacy-issues`; for
+   clause options name `$review-draft-against-checklist` and the
+   commercial-drafting clause-bank.md. Record urgent litigation and
+   interim-relief questions for a qualified lawyer; route candidate procedural
+   dates to `$compute-procedural-deadlines`.
+7. Return clause-specific arguments, evidence gaps, reform status and
+   proportionate options. Qualified lawyer review is required before advice,
+   demands or enforcement; no enforceability certificate.
 
 ## Result contract
 
-Lead with `READY FOR HUMAN REVIEW`, `READY WITH QUALIFICATIONS`, `NOT READY`
-or `OUTSIDE SCOPE`.
+Lead with `READY FOR HUMAN REVIEW`, `READY WITH QUALIFICATIONS`, `NOT READY` or
+`OUTSIDE SCOPE`.
 
-Return: Exact clause and category; governing-law gate; legitimate-interest/reasonableness evidence; verified case sources; NSW source status; Commonwealth proposal/enactment/commencement record; threshold year/source; options and urgent human decisions. Include scope/date/assumptions, evidence state for each
-proposition, official source URL/identifier, version, provision or clause,
-actual checked date, unresolved issue/resolver and qualified lawyer decisions.
-Snapshot dates never substitute for the date a source was actually accessed.
-An unavailable named skill means its step was not done; name the plugin to install.
+Return: Exact clause and category; governing-law gate;
+legitimate-interest/reasonableness evidence; verified case sources; NSW source
+status; watch-register item and source evidence; co-worker/cascading proposal
+flags; Commonwealth proposal/enactment/commencement record; threshold
+year/source; options and urgent human decisions. Include scope/date/assumptions,
+evidence state for each proposition, official source URL/identifier, version,
+provision or clause, actual checked date, unresolved issue/resolver and
+qualified lawyer decisions. Snapshot dates never substitute for the date a
+source was actually accessed. An unavailable named skill means its step was not
+done; name the plugin to install.
 
 ## Fail closed
 
-No restraint text or governing law: `NOT READY`. Unverified NSW provision or case blocks its legal-effect conclusion. Foreign law or sale-of-business merits: `OUTSIDE SCOPE`. No injunction prediction, sending demands, deleting evidence or assurance that a proposal invalidates existing terms.
-Unverified law is labelled `NOT VERIFIED` with “verify against <official source>”;
-stop the affected conclusion while completing supported issue spotting.
-No saving outside the approved matter system, sending, filing, signing or payment
-is authorised by invocation of this skill.
+No restraint text or governing law: `NOT READY`. Unverified NSW provision or
+case blocks its legal-effect conclusion. Foreign law or sale-of-business merits:
+`OUTSIDE SCOPE`. No injunction prediction, sending demands, deleting evidence or
+assurance that a proposal invalidates existing terms. Unverified law is labelled
+`NOT VERIFIED` with “verify against <official source>”; stop the affected
+conclusion while completing supported issue spotting. No saving outside the
+approved matter system, sending, filing, signing or payment is authorised by
+invocation of this skill.
 
 <!-- generated:plugin-dependencies -->
 ## Other plugins
@@ -58,8 +117,9 @@ that depth.
   `trace-commonwealth-legislative-change`. Verifies the Fair Work Act and
   related legislation and case-law leads against the official sources.
 - `australian-litigation-deadlines` (required):
-  `compute-procedural-deadlines`. Computes the Fair Work Commission time
-  limits the termination assessment flags.
+  `compute-procedural-deadlines`. Computes candidate FWC, AHRC and court
+  deadlines only where a verified rule is available; otherwise identifies the
+  provision without calculating a date.
 - `australian-commercial-drafting` (hand-off):
   `review-draft-against-checklist`. Provides services drafting, clause review
   and the existing UCT checklist and UTPA 2026 notes.
