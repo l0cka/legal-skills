@@ -6,7 +6,7 @@ description: Prepare a first-draft Australian B2B services or contractor agreeme
 # Draft Services Agreement
 
 Jurisdiction: Australian Commonwealth law and the identified governing state or
-territory. Record the legal as-at and intended use dates. The 2026-10-13 source
+territory. Record the legal as-at and intended use dates. The 2026-10-14 source
 snapshot is a currency limit, not live verification. Verify every applicable
 statutory provision on legislation.gov.au (NSW overlays on legislation.nsw.gov.au)
 using `$check-commonwealth-legislation` and, for NSW, `$check-nsw-legislation`;
@@ -30,8 +30,15 @@ for standing positions and transaction instructions.
    `$configure-employment-profile`
    and
    `$map-fair-work-obligations`.
-   Verify Fair Work Act 2009 ss 15AA–15AC and 357–359 on legislation.gov.au
-   with `$check-commonwealth-legislation`. Mark classification-dependent clauses
+   Verify Fair Work Act 2009 ss 15AA–15AD and 357–359 on legislation.gov.au
+   with `$check-commonwealth-legislation`. Section 357(2) requires the employer
+   to prove a reasonable belief that the contract was for services; this defence
+   applies from 27 February 2024. Section 15AA commenced on 26 August 2024;
+   assess the real substance, practical reality and whole relationship, including
+   performance as well as terms, subject to coverage, transition and ss 15AB–15AD
+   opt-out rules (s 15AC addresses effect, s 15AD revocation). Verify the Closing
+   Loopholes No. 2 Act 2024, s 2 table items 11 and 21, Schedule 1 Parts 9 and 15.
+   Mark classification-dependent clauses
    unresolved pending specialist/lawyer review; continue independent B2B sections.
    Do not claim that drafting an independent-contractor recital cures the risk.
 3. Prepare a complete agreement and SOW. Include scope/exclusions, milestones,
@@ -43,8 +50,9 @@ for standing positions and transaction instructions.
 4. Obtain an express ownership OR licence choice for deliverables. Identify
    background IP, newly created rights, third-party/open-source components,
    transfer trigger, licence scope, sublicensing and chain of title. Verify
-   Copyright Act 1968 ss 196–197 and Part IX, especially ss 195AW–195AWB, on
-   legislation.gov.au. Obtain creator-specific written moral rights consents
+   Copyright Act 1968 ss 196–197 and Part IX, especially s 195AW for films/works
+   in films, s 195AWA for other works and s 195AWB for invalidated consents,
+   on legislation.gov.au. Obtain creator-specific written moral rights consents
    for identified acts/omissions and attribution requirements; moral rights
    are not assigned with copyright. Do not presume a company can consent for
    every individual author or replace consents with a blanket waiver.

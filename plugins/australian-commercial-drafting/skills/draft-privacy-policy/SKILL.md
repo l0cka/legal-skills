@@ -6,7 +6,7 @@ description: Draft an Australian private-sector privacy policy from evidenced da
 # Draft Privacy Policy
 
 Jurisdiction: Australian Commonwealth law and the identified governing state or
-territory. Record the legal as-at and intended use dates. The 2026-10-13 source
+territory. Record the legal as-at and intended use dates. The 2026-10-14 source
 snapshot is a currency limit, not live verification. Verify every applicable
 statutory provision on legislation.gov.au (NSW overlays on legislation.nsw.gov.au)
 using `$check-commonwealth-legislation` and, for NSW, `$check-nsw-legislation`;
@@ -57,7 +57,10 @@ for standing positions and transaction instructions.
    inventory. Distinguish use/storage from disclosure through the specialist
    workflow. Identify APP 8 safeguards or relied-on exceptions and unresolved
    processor arrangements for lawyer review. Never invent a country list or
-   describe publication of a list as fulfilling APP 8. Mark unknown locations;
+   describe publication of a list as fulfilling APP 8. Verify APP 8.2(aa),
+   8.3 and s 100(1A)–(1B) before relying on a prescribed country/binding scheme;
+   verify actual regulations and conditions, not merely the enabling power.
+   Mark unknown locations;
    an unexplained worldwide disclosure clause is not a substitute for inquiries.
 5. Verify Spam Act 2003 ss 16–18 and Schedule 2 on legislation.gov.au. Describe
    actual consent collection, sender identification and functional unsubscribe
@@ -77,7 +80,17 @@ for standing positions and transaction instructions.
    specialist legal assessment in this drafting workflow.
 7. Map relevant 2024 enacted reforms and current regulations/codes through the
    privacy workflows, including security/retention, overseas data flows and
-   enforcement. Keep proposals separate from law. Draft the full factual policy
+   enforcement. Verify the current Schedule 2 serious-invasion tort (commenced
+   10 June 2025), its distinct elements/defences/exemptions and exposure even
+   where APP coverage is exempt. Check the 2024 Act's s 2 table item 8 for the
+   tort, separately from item 7 for automated decisions. Check s 26GC's Children's
+   Online Privacy Code development/registration requirement, the actual code's
+   registration, commencement and application, and civil penalty tiers under
+   ss 13G, 13H and 13K. Verify APP 11.3 technical/organisational measures.
+   Enacted mechanisms do not prove an operative code or prescribed-country list.
+   If these instruments cannot be confirmed, write "verify against legislation.gov.au"
+   and mark the affected claims not verified. Keep proposals separate from law.
+   Draft the full factual policy
    with the APP checklist and a current/future change ledger for the lawyer.
    Run `review-draft-against-checklist`; do not insert contract liability caps
    into a privacy policy or use policy wording as blanket processing consent.

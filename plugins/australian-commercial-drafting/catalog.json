@@ -2,7 +2,7 @@
   "displayName": "Australian Commercial Drafting",
   "shortDescription": "Drafts Australian NDAs, subscription terms, privacy policies and services agreements for lawyer review.",
   "longDescription": "Configures controlled drafting profiles, prepares first-draft Australian commercial documents and reviews drafts against an issues checklist. Preserves non-excludable rights, flags unfair terms, separates future privacy amendments and routes specialist privacy and employment questions. Every draft requires a qualified lawyer to review it.",
-  "lawCheckedOn": "2026-10-13",
+  "lawCheckedOn": "2026-10-14",
   "defaultPrompt": [
     "Create a controlled drafting profile for this Australian business.",
     "Draft a mutual or one-way Australian NDA for lawyer review.",

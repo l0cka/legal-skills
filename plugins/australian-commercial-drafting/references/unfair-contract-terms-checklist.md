@@ -5,7 +5,7 @@
 Verify the *Competition and Consumer Act 2010* (Cth), Schedule 2 (Australian
 Consumer Law), ss 23–28 and 224 against the current or point-in-time text on
 [legislation.gov.au](https://www.legislation.gov.au/C2004A00109/latest/text).
-Checked snapshot: C2026C00405, 16 September 2026, inspected on 2026-10-13.
+Checked snapshot: C2026C00405, 16 September 2026, inspected on 2026-10-14 (official Volume 4 PDF).
 This checklist paraphrases the statutory leads; it is not legal authority.
 A qualified lawyer must confirm application and any unfairness conclusion.
 
@@ -21,7 +21,8 @@ small business contracts. For the latter, test the supply/land criterion and
 whether at least one party meets either limb: fewer than 100 employees or
 turnover below $10 million for the specified preceding income year. Record
 employee counting (regular/systematic casuals and part-time full-time equivalents)
-and statutory turnover adjustments under s 23(5)–(7). There is no post-reform
+under s 23(5), turnover adjustments under s 23(6) and GST definitions
+under s 23(7); the coverage test itself is s 23(4). There is no post-reform
 upfront-price ceiling for this ACL small-business test. Do not substitute the
 Privacy Act small-business threshold or assume B2B is exempt.
 
@@ -69,6 +70,15 @@ suspension, acceleration of future fees, unlimited customer indemnities,
 low/zero supplier caps, discretionary refunds, conclusive certificates and
 exclusive distant forums. A generic savings clause does not repair conflicting
 operative wording. Do not call a term fair merely because this bank supplied it.
+
+Keep this current UCT review separate from future unfair trading, drip-pricing
+and subscription duties under the [2026 amending Act](https://www.legislation.gov.au/C2026A00064/asmade/text):
+enacted, commences 1 July 2027. Verify future ss 28B, 48A–48H, 311 and 312,
+cohort/exclusion rules, regulations and effective renewal/extension/continuation/
+variation dates. Section 312 lists ss 48B, 48E and 48F; assess s 48D separately.
+A fair-term analysis does not establish compliant checkout or cancellation
+conduct. Label pre-commencement changes as preparation, and keep any proposed
+small-business extension of the unfair trading ban separate from enacted law.
 
 Return: issue ID; priority; clause; coverage evidence; s 24 analysis and s 25
 lead; consumer impact; source/version/date/evidence state; proposed rewrite or

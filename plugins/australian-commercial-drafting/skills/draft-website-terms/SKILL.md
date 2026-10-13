@@ -6,7 +6,7 @@ description: Prepare first-draft Australian SaaS or subscription website terms f
 # Draft Website Terms
 
 Jurisdiction: Australian Commonwealth law and the identified governing state or
-territory. Record the legal as-at and intended use dates. The 2026-10-13 source
+territory. Record the legal as-at and intended use dates. The 2026-10-14 source
 snapshot is a currency limit, not live verification. Verify every applicable
 statutory provision on legislation.gov.au (NSW overlays on legislation.nsw.gov.au)
 using `$check-commonwealth-legislation` and, for NSW, `$check-nsw-legislation`;
@@ -31,6 +31,8 @@ for standing positions and transaction instructions.
    Verify ss 60–64A and 267–269 before describing guarantees, limits or remedies.
    Non-excludable consumer guarantees and remedies survive all caps and refund
    rules; B2B customers can also be consumers. Do not insert a blanket exclusion.
+   Verify ss 18 and 29(1)(m): statements about guarantee rights, exclusions and
+   remedies must not mislead, including in refund and support processes.
 3. Apply the [UCT checklist](../../references/unfair-contract-terms-checklist.md).
    Verify ACL ss 23–28, 224 and the 2022 amending Act's transition on
    legislation.gov.au: penalties from 9 November 2023; relevant making, renewal
@@ -49,6 +51,20 @@ for standing positions and transaction instructions.
    defined reasons, meaningful advance notice and a right to cancel without
    penalty for material disadvantage, including unused prepaid refunds. Confirm
    notice periods and implementation rather than choose arbitrary numbers.
+   Separate these current ACL controls from the 2026 unfair trading reforms:
+   enacted, commences 1 July 2027. Verify the amending Act's s 2 and Schedule 1
+   on legislation.gov.au: future ss 28B and 48A, subscription definitions and
+   exclusions in ss 48B–48C, disclosure in s 48D, prescribed ongoing notices in
+   s 48E, and straightforward exit in s 48F (online where s 48F(2) applies).
+   Check ss 48G–48H cohort tests, regulations and s 312 transition for new and
+   existing contracts renewed, extended, continued or varied after commencement;
+   s 312 lists ss 48B, 48E and 48F, so assess s 48D separately. Check s 311 for
+   future s 28B conduct. Produce a current/future implementation ledger matching
+   intended use dates and actual checkout, notice and cancellation processes.
+   Treat a Treasury small-business extension of the unfair trading ban as a
+   proposal, separately from enacted small-business subscription protections.
+   Unconfirmed regulations or application need visible review markers, not
+   invented timing rules or a claim that future duties are already operative.
 6. State cap amount/formula, period, aggregation and indemnity interaction.
    Carve out non-excludable rights and obtain instructions for fraud, wilful
    misconduct, injury, IP, confidentiality and privacy treatment. Do not use a

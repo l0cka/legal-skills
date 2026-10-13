@@ -74,6 +74,14 @@ plugin manifests contain their intended release versions.
 
 ### Fixed
 
+- `australian-commercial-drafting`: distinguish current ACL controls from enacted
+  unfair trading, drip-pricing and subscription reforms commencing 1 July 2027,
+  with cohort, regulations and existing-contract transition checks. Add current
+  privacy tort, code, overseas-prescription and penalty-tier controls; verify
+  Fair Work commencement dates and clarify UCT and moral-rights citations.
+  Refresh the scoped official-source snapshot to 14 October 2026 and expand
+  synthetic workflow rubrics for these distinctions.
+
 - `australian-commercial-drafting`: use installed skill names for privacy and
   employment hand-offs, explicitly route NSW verification and health-records
   coverage, narrow the ACL exclusion checklist to ss 26–28, and correct

@@ -36,6 +36,10 @@ and retrospective disclosures separately; never backdate the agreement.
 > Nothing in this agreement restricts a protected disclosure or lawful report to
 > a regulator.
 
+Verify the Corporations Act 2001 Part 9.4AAA on legislation.gov.au where relevant
+to protected disclosures. Check eligibility, recipients and confidentiality
+protections before adding notice or consent requirements.
+
 ## NDA: duration, return, no licence and relief
 
 > Disclosures are covered during <disclosure period>. The recipient's use and
@@ -60,7 +64,9 @@ injunctions, absolute deletion or unlimited secrecy for all information.
 > a remedy; this process does not restrict your legal remedies.
 
 Verify ACL Schedule 2 ss 60–64A and 267–269 on legislation.gov.au before applying
-this wording. Do not use it to excuse contradictory exclusions elsewhere.
+this wording. Verify ss 18 and 29(1)(m) for misleading statements about the
+existence, exclusion or effect of guarantee rights and remedies. Do not use
+a savings clause to excuse contradictory exclusions or refund/support messages.
 
 > Before you subscribe we will show the price, billing interval, initial term,
 > trial conversion terms and whether renewal is automatic. If you choose
@@ -78,7 +84,20 @@ this wording. Do not use it to excuse contradictory exclusions elsewhere.
 
 The notice periods and cancellation/refund choices require instructions and UCT
 review. Confirm the business can implement the offered process and keep records
-of pre-contract disclosure, acceptance and notices.
+of pre-contract disclosure, acceptance and notices. The example is an instructed
+commercial option, not proof of statutory compliance.
+
+For intended use from 1 July 2027, verify the [2026 unfair trading Act](https://www.legislation.gov.au/C2026A00064/asmade/text):
+enacted, commences 1 July 2027. Adapt the offer flow to future s 48D disclosure,
+ongoing information to s 48E and applicable regulations, and cancellation to
+s 48F, including its online-exit trigger. Check subscription coverage/exclusions
+and cohort tests in ss 48B–48C and 48G–48H. Under s 312, ss 48B, 48E and 48F
+also reach older contracts renewed, extended, otherwise continued or varied on
+or after commencement, from the effective change date. Assess s 48D separately.
+Review pricing displays against future s 48A and conduct against s 28B and
+s 311. Until commencement, label this as preparation and apply current law.
+Keep statutory requirements, instructed extra protections and unresolved
+implementation choices separate; do not invent prescribed reminder intervals.
 
 ## Services: SOW, GST and IP alternatives
 
@@ -91,10 +110,13 @@ of pre-contract disclosure, acceptance and notices.
 > on a taxable supply is added where the agreed price is GST-exclusive and the
 > supplier provides a valid tax invoice. The parties must account for applicable
 > adjustments. Invoice timing, payment dates and disputed amounts follow <agreed
-> procedure>. No GST is charged merely because a supplier has an ABN.
+> procedure>.
 
 Check the GST Act on legislation.gov.au where relying on tax requirements;
-consumer-facing total-price presentation needs separate review.
+an ABN does not establish GST registration or justify charging GST. Verify ACL
+s 48 single-price requirements and exceptions for customer-facing price displays,
+including quantifiable taxes/charges; GST-exclusive B2B wording is not a
+universal permission to display a price without GST.
 
 Choose one deliverable approach; do not silently combine them:
 
@@ -119,7 +141,8 @@ transfer only rights it holds or obtains.
 > permitted by law, and provide evidence of them on request. Attribution and
 > editing requirements are <agreed requirements>.
 
-Verify Copyright Act Part IX, including ss 195AW–195AWB, on legislation.gov.au.
+Verify Copyright Act Part IX, including s 195AW (films/works in films),
+s 195AWA (other works) and s 195AWB (invalidated consents), on legislation.gov.au.
 Moral rights are not assigned with copyright; a company cannot supply an
 individual's consent merely by promising that all rights are waived.
 
