@@ -1,0 +1,4 @@
+interface:
+  display_name: "Assess Discrimination and Positive Duty"
+  short_description: "Map discrimination and positive-duty issues for lawyers"
+  default_prompt: "Use $assess-discrimination-and-positive-duty on these synthetic or authorised facts, verify official sources and return the evidence matrix and unresolved decisions for qualified lawyer review."

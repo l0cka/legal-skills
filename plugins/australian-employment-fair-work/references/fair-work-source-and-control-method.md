@@ -7,10 +7,15 @@ plugin. The plugin serves Australian legal practitioners and in-house
 lawyers advising national system employers under the Fair Work Act 2009
 (Cth). It maps and issue-spots; it never concludes that a dismissal was
 unfair, that adverse action occurred, that a redundancy was genuine, or
-that an employer is compliant. Contractor characterisation, state-system
-employers, discrimination merits, workers compensation, work health and
-safety, superannuation guarantee and industrial action strategy are
-identified and routed to human or specialist review.
+that an employer is compliant. Contractor characterisation, discrimination, positive duties and restraints
+are issue-spotted by dedicated extension skills, never decided conclusively.
+Discrimination overlays cover Commonwealth, NSW, Victoria and Queensland.
+State-system wage and contract merits, workers compensation, work health and
+safety, superannuation guarantee, other statutory classification regimes and
+industrial action strategy are routed to human or specialist review.
+Underpayment work supplies methodology only, without invented rates or final
+calculations. See [extension sources](employment-extension-sources.md) for the
+2026-10-13 baseline; the August references retain their older snapshot.
 
 Section numbers, thresholds, dollar figures and dates in this plugin are
 a research snapshot, not a cached rule. Each is a routing lead until the

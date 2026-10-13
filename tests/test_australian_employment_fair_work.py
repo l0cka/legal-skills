@@ -1,10 +1,11 @@
-"""Plugin-specific controls for australian-employment-fair-work."""
-
 from __future__ import annotations
 
 import json
+import re
 import unittest
 from pathlib import Path
+
+from test_plugin_structure import PLUGINS
 
 ROOT = Path(__file__).resolve().parents[1]
 PLUGIN = ROOT / "plugins" / "australian-employment-fair-work"
@@ -63,6 +64,28 @@ class FairWorkPluginTests(unittest.TestCase):
                 self.assertTrue(item["primary_sources"])
                 for url in item["primary_sources"]:
                     self.assertTrue(url.startswith("https://"))
+
+
+class AustralianEmploymentFairWorkTests(unittest.TestCase):
+    def test_each_skill_has_eval_coverage(self) -> None:
+        skills = PLUGINS[PLUGIN.name]["skills"]
+        prompts = [path.read_text(encoding="utf-8") for path in (PLUGIN / "evals").glob("*/prompt.md")]
+        covered = {
+            name
+            for name in skills
+            if any(re.search(rf"(?m)^name: {re.escape(name)} ", prompt) for prompt in prompts)
+        }
+        self.assertEqual(covered, skills)
+
+    def test_local_document_links_stay_within_plugin(self) -> None:
+        for path in PLUGIN.rglob("*.md"):
+            for target in re.findall(r"\[[^\]]*\]\(([^)\s]+)\)", path.read_text(encoding="utf-8")):
+                if target.startswith(("http://", "https://", "#", "mailto:")):
+                    continue
+                with self.subTest(document=str(path.relative_to(ROOT)), target=target):
+                    resolved = (path.parent / target.split("#", 1)[0]).resolve()
+                    self.assertTrue(resolved.is_relative_to(PLUGIN))
+                    self.assertTrue(resolved.is_file())
 
 
 if __name__ == "__main__":

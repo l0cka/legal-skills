@@ -35,6 +35,12 @@ plugin manifests contain their intended release versions.
   future subscription rules, records unverified state-law leads, and includes
   qualified-lawyer review controls and synthetic evals.
 
+- `australian-employment-fair-work` 0.2.0: five new workflows for contract
+  review, worker classification, discrimination and positive duties, restraints
+  and underpayment exposure frameworks. Reuses the employment profile, commercial
+  and privacy resources; adds official-source controls and synthetic evals.
+  Separates proposed non-compete reforms and uncommenced Queensland amendments.
+
 - `australian-commercial-drafting` 0.1.0: six practitioner-led skills for
   controlled drafting profiles, NDAs, SaaS/subscription terms, privacy policies,
   B2B services agreements and draft reviews. Includes original clause examples,

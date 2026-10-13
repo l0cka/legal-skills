@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Employment Contract"
+  short_description: "Review contract clauses and fixed-term limits for lawyers"
+  default_prompt: "Use $review-employment-contract on these synthetic or authorised facts, verify official sources and return the evidence matrix and unresolved decisions for qualified lawyer review."

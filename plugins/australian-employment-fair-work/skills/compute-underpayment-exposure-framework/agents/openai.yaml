@@ -1,0 +1,4 @@
+interface:
+  display_name: "Compute Underpayment Exposure Framework"
+  short_description: "Build an auditable underpayment framework without invented rates"
+  default_prompt: "Use $compute-underpayment-exposure-framework on these synthetic or authorised facts, verify official sources and return the evidence matrix and unresolved decisions for qualified lawyer review."
