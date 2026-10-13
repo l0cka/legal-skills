@@ -16,6 +16,13 @@ plugin manifests contain their intended release versions.
   official-source controls, separate current/future reform status, merger pathways,
   urgent safety reporting candidates, specialist hand-offs and synthetic evals.
 
+- `australian-contract-review` 0.1.0: seven skills for controlled review
+  playbooks, inbound NDA triage, commercial agreement review, ACL/ASIC UCT
+  screening, liability and indemnity analysis, negotiation memos and renewal
+  registers. Reuses drafting, employment and privacy workflows, separates
+  future subscription rules, records unverified state-law leads, and includes
+  qualified-lawyer review controls and synthetic evals.
+
 - `australian-commercial-drafting` 0.1.0: six practitioner-led skills for
   controlled drafting profiles, NDAs, SaaS/subscription terms, privacy policies,
   B2B services agreements and draft reviews. Includes original clause examples,

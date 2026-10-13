@@ -1,0 +1,42 @@
+{
+  "name": "australian-contract-review",
+  "version": "0.1.0",
+  "description": "Review inbound Australian contracts against controlled playbooks, verified statutory sources and approval thresholds for qualified lawyer review.",
+  "author": {
+    "name": "l0cka",
+    "url": "https://github.com/l0cka"
+  },
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/australian-contract-review",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": [
+    "australian-law",
+    "contract-review",
+    "nda",
+    "unfair-contract-terms",
+    "indemnities",
+    "renewals"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Australian Contract Review",
+    "shortDescription": "Reviews inbound Australian contracts against standard positions, fallbacks and approval thresholds.",
+    "longDescription": "Configures review playbooks, triages NDAs, reviews commercial agreements, screens ACL and ASIC unfair terms, maps liability and indemnity regimes, prepares negotiation memos and tracks renewals. Keeps future subscription rules separate from current law and requires qualified lawyer review.",
+    "developerName": "l0cka",
+    "category": "Productivity",
+    "capabilities": [
+      "Read"
+    ],
+    "websiteURL": "https://github.com/l0cka/legal-skills",
+    "defaultPrompt": [
+      "Use configure-review-playbook for this Australian contract review.",
+      "Use triage-inbound-nda for this Australian contract review.",
+      "Use review-commercial-agreement for this Australian contract review.",
+      "Use check-unfair-contract-terms for this Australian contract review.",
+      "Use review-limitation-and-indemnity-regime for this Australian contract review.",
+      "Use build-negotiation-redline-memo for this Australian contract review.",
+      "Use track-contract-renewals for this Australian contract review."
+    ],
+    "brandColor": "#1C3C63"
+  }
+}

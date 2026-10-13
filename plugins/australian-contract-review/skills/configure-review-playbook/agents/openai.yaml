@@ -1,0 +1,4 @@
+interface:
+  display_name: "Configure Review Playbook"
+  short_description: "Record standard positions, fallbacks and approval thresholds"
+  default_prompt: "Use $configure-review-playbook for this Australian contract, recording source evidence and unresolved issues for qualified lawyer review."

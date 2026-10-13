@@ -90,6 +90,28 @@
       ]
     },
     {
+      "name": "australian-contract-review",
+      "source": {
+        "source": "local",
+        "path": "./plugins/australian-contract-review"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity",
+      "description": "Review inbound Australian contracts against controlled playbooks, verified statutory sources and approval thresholds for qualified lawyer review.",
+      "version": "0.1.0",
+      "keywords": [
+        "australian-law",
+        "contract-review",
+        "nda",
+        "unfair-contract-terms",
+        "indemnities",
+        "renewals"
+      ]
+    },
+    {
       "name": "australian-corporations-governance",
       "source": {
         "source": "local",

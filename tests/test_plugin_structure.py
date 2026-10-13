@@ -95,6 +95,25 @@ PLUGINS: dict[str, dict] = {
             "2026-10-13",
         ),
     },
+    "australian-contract-review": {
+        "skills": {
+            "configure-review-playbook",
+            "triage-inbound-nda",
+            "review-commercial-agreement",
+            "check-unfair-contract-terms",
+            "review-limitation-and-indemnity-regime",
+            "build-negotiation-redline-memo",
+            "track-contract-renewals",
+        },
+        "statuses": READY,
+        "reference_files": (
+            "review-source-and-control-method.md",
+            "review-playbook-schema.md",
+            "statutory-verification-leads.md",
+            "state-liability-verification-route.md",
+        ),
+        "every_skill_mentions": ("review-source-and-control-method.md",),
+    },
     "australian-corporations-governance": {
         "skills": {
             "configure-corporations-governance",

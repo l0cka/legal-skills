@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Commercial Agreement"
+  short_description: "Return clause-referenced commercial contract review issues"
+  default_prompt: "Use $review-commercial-agreement for this Australian contract, recording source evidence and unresolved issues for qualified lawyer review."

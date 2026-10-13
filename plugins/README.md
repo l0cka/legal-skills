@@ -28,6 +28,11 @@ Canonical plugin packages live in this directory.
   safety for lawyer review. (requires `australian-legal-research`; hands off
   to `australian-commercial-drafting`, `australian-employment-fair-work`,
   `australian-privacy-cybersecurity`; law checked 2026-10-13)
+- [**Australian Contract Review**](australian-contract-review/README.md) —
+  Reviews inbound Australian contracts against standard positions, fallbacks
+  and approval thresholds. (requires `australian-commercial-drafting`,
+  `australian-legal-research`; hands off to `australian-employment-fair-work`,
+  `australian-privacy-cybersecurity`; law checked 2026-10-13)
 - [**Australian Corporations
   Governance**](australian-corporations-governance/README.md) — Helps govern
   an Australian company under the Corporations Act. Prepares board records and

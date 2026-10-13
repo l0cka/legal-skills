@@ -36,6 +36,7 @@ The marketplace contains thirteen plugins and seventy-four skills:
 | [**Australian AML/CTF**](plugins/australian-aml-ctf/README.md) | 5 | Finds the AML/CTF obligations of an Australian legal practice under the tranche 2 reforms. A person must approve each report and decision. | 2026-08-26 |
 | [**Australian Commercial Drafting**](plugins/australian-commercial-drafting/README.md) | 6 | Drafts Australian NDAs, subscription terms, privacy policies and services agreements for lawyer review. | 2026-10-13 |
 | [**Australian Consumer & Competition**](plugins/australian-consumer-competition/README.md) | 7 | Maps consumer guarantees, marketing, merger notification, competition conduct and product safety for lawyer review. | 2026-10-13 |
+| [**Australian Contract Review**](plugins/australian-contract-review/README.md) | 7 | Reviews inbound Australian contracts against standard positions, fallbacks and approval thresholds. | 2026-10-13 |
 | [**Australian Corporations Governance**](plugins/australian-corporations-governance/README.md) | 5 | Helps govern an Australian company under the Corporations Act. Prepares board records and reviews for human approval. | 2026-08-26 |
 | [**Australian Employment & Fair Work**](plugins/australian-employment-fair-work/README.md) | 5 | Maps the Fair Work Act, NES, award and agreement layers for an employment arrangement and issue-spots termination and policy exposure. A lawyer decides every conclusion. | 2026-08-26 |
 | [**Australian Estate Planning**](plugins/australian-estate-planning/README.md) | 3 | Prepares solicitor-review drafts from approved NSW, Victorian and Queensland estate planning precedents. | 2026-08-26 |
@@ -80,6 +81,7 @@ claude plugin install australian-ai-governance@legal-skills --scope user
 claude plugin install australian-aml-ctf@legal-skills --scope user
 claude plugin install australian-commercial-drafting@legal-skills --scope user
 claude plugin install australian-consumer-competition@legal-skills --scope user
+claude plugin install australian-contract-review@legal-skills --scope user
 claude plugin install australian-corporations-governance@legal-skills --scope user
 claude plugin install australian-employment-fair-work@legal-skills --scope user
 claude plugin install australian-estate-planning@legal-skills --scope user
@@ -104,6 +106,7 @@ codex plugin add australian-ai-governance@legal-skills
 codex plugin add australian-aml-ctf@legal-skills
 codex plugin add australian-commercial-drafting@legal-skills
 codex plugin add australian-consumer-competition@legal-skills
+codex plugin add australian-contract-review@legal-skills
 codex plugin add australian-corporations-governance@legal-skills
 codex plugin add australian-employment-fair-work@legal-skills
 codex plugin add australian-estate-planning@legal-skills

@@ -100,6 +100,15 @@
       "assess-cartel-and-rpm-risk": "Original CCA cartel, s 45 concerted-practice, RPM, exclusive-dealing and market-power screening based on Parts IV, VII and VIII, with separate exception, authorisation, notification and class-exemption verification.",
       "map-product-safety-obligations": "Original ACL Part 3-3 instrument and incident workflow checking standards, bans, recalls and s 131 notice at the Federal Register; ACCC and Treasury reform leads remain distinct from enacted duties.",
       "track-accc-developments": "Original on-demand watch register following the track-fair-work-developments comparison pattern, with item-specific Federal Register, ACCC, Product Safety and Treasury triggers and human-owned updates."
+    },
+    "australian-contract-review": {
+      "configure-review-playbook": "Original review-playbook workflow adapting the existing commercial drafting profile and employment profile governance pattern for human-approved positions, fallbacks and thresholds.",
+      "triage-inbound-nda": "Original inbound NDA triage workflow using evidenced review positions, the existing NDA drafting workflow and clause-level escalation controls.",
+      "review-commercial-agreement": "Original inbound MSA, SaaS, supply and services review workflow reusing services drafting, document checklist, employment and privacy assessments.",
+      "check-unfair-contract-terms": "Original UCT screening workflow reusing the commercial drafting UCT checklist and verifying distinct ACL and ASIC Act coverage against official Federal Register text.",
+      "review-limitation-and-indemnity-regime": "Original liability, indemnity and insurance interaction workflow based on official ACL and Queensland legislation with expressly unverified state-law leads.",
+      "build-negotiation-redline-memo": "Original clause-referenced negotiation memo workflow linking proposed wording, rationale and authorised fallbacks to the existing NDA and services drafting skills.",
+      "track-contract-renewals": "Original evidenced contract renewal register workflow reusing the commercial drafting UTPA notes and verifying future subscription commencement and application against the official amending Act."
     }
   }
 }
