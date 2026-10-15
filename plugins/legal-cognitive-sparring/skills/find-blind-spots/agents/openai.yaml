@@ -1,0 +1,4 @@
+interface:
+  display_name: "Find Blind Spots"
+  short_description: "Separate must-check gaps from nice-to-have"
+  default_prompt: "Use $find-blind-spots on this analysis. Separate must-check gaps from nice-to-have. Do not answer the gaps or invent an authority."

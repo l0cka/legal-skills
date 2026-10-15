@@ -84,6 +84,20 @@
       "map-australian-cyber-incident-obligations": "Original concurrent Australian cyber incident obligations workflow based on official legislation, instruments and regulator sources.",
       "route-australian-privacy-jurisdiction": "Original Australia-wide privacy, health, breach and surveillance routing workflow based on official legislation and regulator sources."
     },
+    "legal-cognitive-sparring": {
+      "pressure-test-argument": "Original jurisdiction-agnostic critique workflow. The lawyer supplies the argument, jurisdiction, and record. The skill returns premises, leaps, missing authorities, adverse facts, and weaker framings, and does not rewrite them as final advice.",
+      "test-understanding": "Original jurisdiction-agnostic probe. Short questions demand sources the lawyer holds. The skill marks gaps and does not lecture or supply an authority from memory.",
+      "oppose-as-counsel": "Original jurisdiction-agnostic opposing-counsel drill. Counters are grounded or marked speculation. The skill does not advise the opposing party.",
+      "steelman-then-attack": "Original jurisdiction-agnostic two-phase workflow. The steelman uses only the supplied record, and the attack is kept in a separate phase.",
+      "role-play-decision-maker": "Original jurisdiction-agnostic decision-maker drill. The lawyer names the decision-maker. The skill says what would persuade or fail on the supplied record and does not predict an outcome as certainty.",
+      "map-assumptions": "Original jurisdiction-agnostic assumption map. Explicit and hidden assumptions are ranked by whether the conclusion falls with them, and each has a falsifier or a labelled gap.",
+      "find-blind-spots": "Original jurisdiction-agnostic gap list. Unaddressed questions, facts, parties, procedures, and authorities are split into must-check and nice-to-have, and are not answered.",
+      "clarify-burden-and-standard": "Original jurisdiction-agnostic burden worksheet. Bearer, standard, and the evidence that would meet or fail it come from the lawyer. A missing standard is not invented.",
+      "red-team-evidence": "Original jurisdiction-agnostic evidence challenge. Provenance, the lawyer's own hearsay or weight frame, and opponent attacks stay on the supplied record. Admissibility is not decided.",
+      "pressure-test-strategy": "Original jurisdiction-agnostic strategy challenge for forum, timing, settlement, and escalation. It names unstated risks and path dependence and does not file or contact a counterparty.",
+      "simplify-without-losing-precision": "Original jurisdiction-agnostic plain-language check. The restatement is for the lawyer, and every material nuance the plain version drops is flagged.",
+      "drill-oral-advocacy": "Original jurisdiction-agnostic oral drill. Hostile questions or a short opening or closing are scored for clarity, concessions, and recovery. No transcript is invented."
+    },
     "legal-evidence-workflows": {
       "build-document-index": "Original source-linked document index workflow using a structured document-review table and a Word deliverable, sharing the evidence-chronology conventions.",
       "build-evidence-chronology": "Original jurisdiction-neutral source-linked evidence chronology workflow designed for native structured review tables, Word-document output and human verification.",

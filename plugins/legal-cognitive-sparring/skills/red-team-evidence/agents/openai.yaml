@@ -1,0 +1,4 @@
+interface:
+  display_name: "Red-Team Evidence"
+  short_description: "Challenge provenance and the opponent's attacks"
+  default_prompt: "Use $red-team-evidence on this evidence. Challenge provenance and what an opponent would attack. Do not decide admissibility."

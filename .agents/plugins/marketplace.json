@@ -246,6 +246,27 @@
       ]
     },
     {
+      "name": "legal-cognitive-sparring",
+      "source": {
+        "source": "local",
+        "path": "./plugins/legal-cognitive-sparring"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity",
+      "description": "Spar with a qualified lawyer on arguments, understanding, opposing positions, assumptions, evidence, and strategy. Jurisdiction is lawyer-supplied. The plugin does not give final legal advice or invent citations.",
+      "version": "0.1.0",
+      "keywords": [
+        "cognitive-sparring",
+        "legal-reasoning",
+        "jurisdiction-agnostic",
+        "lawyer-review",
+        "responsible-ai"
+      ]
+    },
+    {
       "name": "legal-evidence-workflows",
       "source": {
         "source": "local",

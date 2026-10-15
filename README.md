@@ -7,8 +7,8 @@
   <a href="https://github.com/l0cka/legal-skills/actions/workflows/ci.yml"><img alt="CI status" src="https://img.shields.io/github/actions/workflow/status/l0cka/legal-skills/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
   <a href="LICENSE"><img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-1f6f5f?style=flat-square"></a>
   <!-- generated:badges -->
-  <img alt="Fourteen plugins" src="https://img.shields.io/badge/plugins-14-31547a?style=flat-square">
-  <img alt="Eighty-six skills" src="https://img.shields.io/badge/skills-86-31547a?style=flat-square">
+  <img alt="Fifteen plugins" src="https://img.shields.io/badge/plugins-15-31547a?style=flat-square">
+  <img alt="Ninety-eight skills" src="https://img.shields.io/badge/skills-98-31547a?style=flat-square">
   <img alt="Claude Cowork and ChatGPT Work" src="https://img.shields.io/badge/works%20with-Claude%20Cowork%20%2B%20ChatGPT%20Work-c59a46?style=flat-square">
 <!-- end:badges -->
 </p>
@@ -26,7 +26,7 @@ Free and open source (MIT).
 ## What's included
 
 <!-- generated:counts -->
-The marketplace contains fourteen plugins and eighty-six skills:
+The marketplace contains fifteen plugins and ninety-eight skills:
 <!-- end:counts -->
 
 <!-- generated:plugin-table -->
@@ -43,6 +43,7 @@ The marketplace contains fourteen plugins and eighty-six skills:
 | [**Australian Legal Research**](plugins/australian-legal-research/README.md) | 16 | Checks Australian legislation and case citations against the official publishers. Writes and reviews AGLC4 citations. | 2026-08-26 |
 | [**Australian Litigation Deadlines**](plugins/australian-litigation-deadlines/README.md) | 6 | Maps limitation periods and computes candidate court deadlines. A lawyer must confirm each date. | 2026-08-26 |
 | [**Australian Privacy & Cybersecurity**](plugins/australian-privacy-cybersecurity/README.md) | 8 | Maps the Australian privacy and cyber rules that can apply to a set of facts, a data breach or an AI use case. | 2026-08-26 |
+| [**Legal Cognitive Sparring**](plugins/legal-cognitive-sparring/README.md) | 12 | Spars with a qualified lawyer on reasoning, gaps, and strategy. Jurisdiction is lawyer-supplied. It does not give final advice or invent citations. | 2026-10-15 |
 | [**Legal Evidence Workflows**](plugins/legal-evidence-workflows/README.md) | 4 | Builds source-linked Word document indexes, chronologies, privilege logs and inconsistency maps from supplied matter documents without deciding credibility, privilege or merits. | 2026-08-26 |
 | [**Legal Triage**](plugins/legal-triage/README.md) | 2 | Helps community legal centre staff record and triage legal enquiries under an approved profile. | 2026-08-26 |
 | [**Legal Workflow Router**](plugins/legal-workflow-router/README.md) | 1 | Maps a fact pattern to the Legal Skills plugins and skills it engages, in order, with the human decision points named. | 2026-08-26 |
@@ -59,8 +60,8 @@ Paste this into Claude or ChatGPT (any version that can manage plugins):
 
 <!-- generated:install-agent -->
 ```text
-Add the plugin marketplace `l0cka/legal-skills` and install all fourteen
-of its plugins (user scope if supported). Verify the plugins are available
+Add the plugin marketplace `l0cka/legal-skills` and install all fifteen of
+its plugins (user scope if supported). Verify the plugins are available
 and report the result.
 ```
 <!-- end:install-agent -->
@@ -88,6 +89,7 @@ claude plugin install australian-estate-planning@legal-skills --scope user
 claude plugin install australian-legal-research@legal-skills --scope user
 claude plugin install australian-litigation-deadlines@legal-skills --scope user
 claude plugin install australian-privacy-cybersecurity@legal-skills --scope user
+claude plugin install legal-cognitive-sparring@legal-skills --scope user
 claude plugin install legal-evidence-workflows@legal-skills --scope user
 claude plugin install legal-triage@legal-skills --scope user
 claude plugin install legal-workflow-router@legal-skills --scope user
@@ -113,6 +115,7 @@ codex plugin add australian-estate-planning@legal-skills
 codex plugin add australian-legal-research@legal-skills
 codex plugin add australian-litigation-deadlines@legal-skills
 codex plugin add australian-privacy-cybersecurity@legal-skills
+codex plugin add legal-cognitive-sparring@legal-skills
 codex plugin add legal-evidence-workflows@legal-skills
 codex plugin add legal-triage@legal-skills
 codex plugin add legal-workflow-router@legal-skills

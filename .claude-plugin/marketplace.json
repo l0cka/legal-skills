@@ -171,6 +171,20 @@
       ]
     },
     {
+      "name": "legal-cognitive-sparring",
+      "source": "./plugins/legal-cognitive-sparring",
+      "description": "Spar with a qualified lawyer on arguments, understanding, opposing positions, assumptions, evidence, and strategy. Jurisdiction is lawyer-supplied. The plugin does not give final legal advice or invent citations.",
+      "version": "0.1.0",
+      "category": "Productivity",
+      "tags": [
+        "cognitive-sparring",
+        "legal-reasoning",
+        "jurisdiction-agnostic",
+        "lawyer-review",
+        "responsible-ai"
+      ]
+    },
+    {
       "name": "legal-evidence-workflows",
       "source": "./plugins/legal-evidence-workflows",
       "description": "Build source-linked document indexes, evidence chronologies, candidate-only privilege logs and inconsistency maps as Word documents from supplied legal matter documents while preserving conflicts, uncertainty and human review.",

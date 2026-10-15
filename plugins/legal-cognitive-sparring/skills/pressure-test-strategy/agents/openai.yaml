@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pressure-Test Strategy"
+  short_description: "Challenge forum, timing, and settlement choices"
+  default_prompt: "Use $pressure-test-strategy on this choice. Name unstated risks and path dependence. Do not file or contact anyone."
