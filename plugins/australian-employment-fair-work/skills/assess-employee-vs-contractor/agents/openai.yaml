@@ -1,0 +1,4 @@
+interface:
+  display_name: "Assess Employee vs Contractor"
+  short_description: "Screen worker classification and high-income opt-out evidence"
+  default_prompt: "Use $assess-employee-vs-contractor on these synthetic or authorised facts, verify official sources and return the evidence matrix and unresolved decisions for qualified lawyer review."

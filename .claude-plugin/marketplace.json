@@ -95,8 +95,8 @@
     {
       "name": "australian-employment-fair-work",
       "source": "./plugins/australian-employment-fair-work",
-      "description": "Map the Fair Work Act, National Employment Standards, modern award and enterprise agreement layers that apply to an Australian employment arrangement; issue-spot termination exposure; review workplace policies against current statutory hooks; and track Fair Work developments. Every conclusion stays with the responsible lawyer.",
-      "version": "0.1.1",
+      "description": "Map Australian Fair Work obligations and review employment contracts, worker classification, discrimination and positive duties, restraints and underpayment exposure frameworks against official sources for qualified lawyer review.",
+      "version": "0.2.0",
       "category": "Productivity",
       "tags": [
         "legal-workflows",
@@ -106,7 +106,11 @@
         "modern-awards",
         "unfair-dismissal",
         "australia",
-        "responsible-ai"
+        "responsible-ai",
+        "worker-classification",
+        "positive-duty",
+        "restraint-of-trade",
+        "underpayments"
       ]
     },
     {

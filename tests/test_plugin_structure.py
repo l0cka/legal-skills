@@ -140,6 +140,11 @@ PLUGINS: dict[str, dict] = {
             "assess-termination-exposure",
             "review-workplace-policy",
             "track-fair-work-developments",
+            "review-employment-contract",
+            "assess-employee-vs-contractor",
+            "assess-discrimination-and-positive-duty",
+            "assess-restraint-of-trade",
+            "compute-underpayment-exposure-framework",
         },
         "statuses": READY,
         "reference_files": (

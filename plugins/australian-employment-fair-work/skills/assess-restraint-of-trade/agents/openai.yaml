@@ -1,0 +1,4 @@
+interface:
+  display_name: "Assess Restraint of Trade"
+  short_description: "Review employment restraints and proposed reform status"
+  default_prompt: "Use $assess-restraint-of-trade on these synthetic or authorised facts, verify official sources and return the evidence matrix and unresolved decisions for qualified lawyer review."

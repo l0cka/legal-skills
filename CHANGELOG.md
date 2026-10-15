@@ -35,6 +35,16 @@ plugin manifests contain their intended release versions.
   future subscription rules, records unverified state-law leads, and includes
   qualified-lawyer review controls and synthetic evals.
 
+- `australian-employment-fair-work` 0.2.0: five new workflows for contract
+  review, worker classification, discrimination and positive duties, restraints
+  and underpayment exposure frameworks. Reuses the employment profile, commercial
+  and privacy resources; adds official-source controls and synthetic evals.
+  Separates proposed non-compete reforms and uncommenced Queensland amendments.
+  Review fixes restore the August plugin-wide law-check date, disclose unverified
+  NSW limbs, reuse proposal/commencement owners, identify the DDA amendment,
+  broaden deadline hand-offs, add record-burden and sexual-harassment routing,
+  and track Queensland positive-duty proclamation status.
+
 - `australian-commercial-drafting` 0.1.0: six practitioner-led skills for
   controlled drafting profiles, NDAs, SaaS/subscription terms, privacy policies,
   B2B services agreements and draft reviews. Includes original clause examples,
@@ -73,6 +83,12 @@ plugin manifests contain their intended release versions.
   and a merger-forms watch item. Clarifies profile reuse and jurisdiction,
   improves metadata, adds a happy-path eval, tightens merger/safety graders
   and tests resolved cross-plugin links.
+
+- `australian-employment-fair-work`: label the non-compete watch entry as the
+  26 August 2026 position, distinguish the positive duty's 13 December 2022
+  commencement from later AHRC powers, and identify s 327B as the small-business
+  Code provision separately from s 327C criminal proceedings. Law-check dates
+  remain unchanged.
 
 - `legal-workflow-router` 0.2.0: `route-legal-fact-pattern` checks which
   routed skills are installed in the session, adds each routed plugin's

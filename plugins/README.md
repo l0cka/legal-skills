@@ -39,11 +39,12 @@ Canonical plugin packages live in this directory.
   reviews for human approval. (requires `australian-legal-research`; law
   checked 2026-08-26)
 - [**Australian Employment & Fair
-  Work**](australian-employment-fair-work/README.md) — Maps the Fair Work Act,
-  NES, award and agreement layers for an employment arrangement and
-  issue-spots termination and policy exposure. A lawyer decides every
-  conclusion. (requires `australian-legal-research`,
-  `australian-litigation-deadlines`; law checked 2026-08-26)
+  Work**](australian-employment-fair-work/README.md) — Maps Fair Work
+  obligations and reviews contracts, classification, discrimination,
+  restraints and underpayment frameworks for lawyers. (requires
+  `australian-legal-research`, `australian-litigation-deadlines`; hands off to
+  `australian-commercial-drafting`, `australian-privacy-cybersecurity`; law
+  checked 2026-08-26)
 - [**Australian Estate Planning**](australian-estate-planning/README.md) —
   Prepares solicitor-review drafts from approved NSW, Victorian and Queensland
   estate planning precedents. (law checked 2026-08-26)
