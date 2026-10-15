@@ -8,7 +8,7 @@
   <a href="LICENSE"><img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-1f6f5f?style=flat-square"></a>
   <!-- generated:badges -->
   <img alt="Fourteen plugins" src="https://img.shields.io/badge/plugins-14-31547a?style=flat-square">
-  <img alt="Eighty-one skills" src="https://img.shields.io/badge/skills-81-31547a?style=flat-square">
+  <img alt="Eighty-six skills" src="https://img.shields.io/badge/skills-86-31547a?style=flat-square">
   <img alt="Claude Cowork and ChatGPT Work" src="https://img.shields.io/badge/works%20with-Claude%20Cowork%20%2B%20ChatGPT%20Work-c59a46?style=flat-square">
 <!-- end:badges -->
 </p>
@@ -26,7 +26,7 @@ Free and open source (MIT).
 ## What's included
 
 <!-- generated:counts -->
-The marketplace contains fourteen plugins and eighty-one skills:
+The marketplace contains fourteen plugins and eighty-six skills:
 <!-- end:counts -->
 
 <!-- generated:plugin-table -->
