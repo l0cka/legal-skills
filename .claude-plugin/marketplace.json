@@ -50,6 +50,20 @@
       ]
     },
     {
+      "name": "australian-consumer-competition",
+      "source": "./plugins/australian-consumer-competition",
+      "description": "Map Australian consumer guarantees, marketing claims, merger notification, competition conduct and product safety for qualified lawyer review.",
+      "version": "0.1.1",
+      "category": "Productivity",
+      "tags": [
+        "australian-law",
+        "consumer-law",
+        "competition",
+        "mergers",
+        "product-safety"
+      ]
+    },
+    {
       "name": "australian-corporations-governance",
       "source": "./plugins/australian-corporations-governance",
       "description": "Configure, assess and document Australian company governance using verified Corporations Act sources and approved organisational controls.",

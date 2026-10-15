@@ -69,6 +69,27 @@
       ]
     },
     {
+      "name": "australian-consumer-competition",
+      "source": {
+        "source": "local",
+        "path": "./plugins/australian-consumer-competition"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity",
+      "description": "Map Australian consumer guarantees, marketing claims, merger notification, competition conduct and product safety for qualified lawyer review.",
+      "version": "0.1.1",
+      "keywords": [
+        "australian-law",
+        "consumer-law",
+        "competition",
+        "mergers",
+        "product-safety"
+      ]
+    },
+    {
       "name": "australian-corporations-governance",
       "source": {
         "source": "local",

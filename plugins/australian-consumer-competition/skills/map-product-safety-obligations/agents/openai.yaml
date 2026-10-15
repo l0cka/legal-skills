@@ -1,0 +1,4 @@
+interface:
+  display_name: "Map Product Safety Obligations"
+  short_description: "Map safety instruments, incident clocks and recall issues"
+  default_prompt: "Use $map-product-safety-obligations for this Australian matter, recording sources, assumptions and decisions for qualified lawyer review."

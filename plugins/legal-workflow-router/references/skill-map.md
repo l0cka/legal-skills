@@ -41,6 +41,20 @@ Plugin dependencies: Requires `australian-legal-research`; hands off to
 - **`draft-website-terms`** — Prepare first-draft Australian SaaS or subscription website terms for consumers and small businesses, preserving consumer guarantees and flagging unfair terms, renewal, refunds and liability choices. Use for practitioner-led terms drafting, not financial products, regulated-sector compliance certification or publication.
 - **`review-draft-against-checklist`** — Review an Australian commercial draft for missing clauses, inconsistent instructions, undefined terms, broken references, placeholders and unfair-contract-terms risk. Return a prioritised issues table for a qualified lawyer; do not certify enforceability or silently rewrite the supplied draft.
 
+## Australian Consumer & Competition (`australian-consumer-competition`)
+
+Plugin dependencies: Requires `australian-legal-research`; hands off to
+`australian-commercial-drafting`, `australian-employment-fair-work`,
+`australian-privacy-cybersecurity`.
+
+- **`assess-cartel-and-rpm-risk`** — Issue-spot Australian cartel, anti-competitive agreements/concerted practices, resale price maintenance, exclusive dealing and misuse-of-market-power risk with separate immunity pathways. Use for competitor contacts, distribution restraints and pricing pressure. Do not use to contact competitors, grant immunity or conclude a criminal offence occurred.
+- **`assess-consumer-guarantees`** — Assess Australian goods and services consumer-guarantee issues, remedy candidates, manufacturer exposure and warranty documents for lawyer review. Use for defects, failed services, refund disputes and limitation clauses. Do not use to decide entitlement, direct payment or treat a commercial warranty as the limit of statutory rights.
+- **`configure-consumer-competition-profile`** — Create or validate a controlled Australian consumer and competition business profile before assessment. Use for scope, evidence owners and approval controls. Do not use to approve a profile, determine coverage or import confidential matter data into the public repository.
+- **`map-merger-notification`** — Map Australian mandatory merger notification, threshold, exemption, waiver and stay pathways from transaction evidence. Use before signing or completion planning under the 2026 regime. Do not use to lodge an application, approve closing or substitute historic voluntary-clearance practice.
+- **`map-product-safety-obligations`** — Map Australian product safety standards, bans, recalls and mandatory incident reporting from product and event evidence. Use for supply checks, injury reports or recall planning. Do not use to execute a recall, file a report or assume a proposed general safety provision is enacted.
+- **`review-marketing-claims`** — Review Australian marketing, environmental, comparative and pricing claims across the full purchase journey. Use before campaign or subscription review and to distinguish current drip-pricing rules from future UTPA reforms. Do not use to publish advertisements, certify claims or determine privacy compliance.
+- **`track-accc-developments`** — Check the Australian ACCC watch register on demand against official legislation, guidance and reform sources. Use before advice or a periodic horizon review to identify changed merger, consumer, competition and safety positions. Do not use as an unattended monitor, auto-update a register or treat proposals and allegations as obligations.
+
 ## Australian Corporations Governance (`australian-corporations-governance`)
 
 Plugin dependencies: Requires `australian-legal-research`.

@@ -22,6 +22,12 @@ Canonical plugin packages live in this directory.
   lawyer review. (requires `australian-legal-research`; hands off to
   `australian-employment-fair-work`, `australian-privacy-cybersecurity`; law
   checked 2026-10-13)
+- [**Australian Consumer &
+  Competition**](australian-consumer-competition/README.md) — Maps consumer
+  guarantees, marketing, merger notification, competition conduct and product
+  safety for lawyer review. (requires `australian-legal-research`; hands off
+  to `australian-commercial-drafting`, `australian-employment-fair-work`,
+  `australian-privacy-cybersecurity`; law checked 2026-10-13)
 - [**Australian Corporations
   Governance**](australian-corporations-governance/README.md) — Helps govern
   an Australian company under the Corporations Act. Prepares board records and

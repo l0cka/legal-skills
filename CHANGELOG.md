@@ -10,6 +10,12 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- `australian-consumer-competition` 0.1.0: seven practitioner-led skills for
+  controlled profiles, consumer guarantees, marketing claims, merger notification,
+  cartel and RPM risk, product safety and on-demand ACCC developments. Includes
+  official-source controls, separate current/future reform status, merger pathways,
+  urgent safety reporting candidates, specialist hand-offs and synthetic evals.
+
 - `australian-commercial-drafting` 0.1.0: six practitioner-led skills for
   controlled drafting profiles, NDAs, SaaS/subscription terms, privacy policies,
   B2B services agreements and draft reviews. Includes original clause examples,
@@ -36,6 +42,18 @@ plugin manifests contain their intended release versions.
   list the dependencies.
 
 ### Changed
+
+- `australian-consumer-competition`: corrects standalone-asset screening to
+  acquirer group Australian revenue, records the 1 April 2026 asset/voting-power
+  application date, and adds ACL s 4 and ss 33–34 to marketing claim review.
+  Official text checked for these follow-up claims; lawCheckedOn is unchanged.
+
+- `australian-consumer-competition` 0.1.1: adds consumer-definition and s 45
+  verification pathways, explicit competition exceptions and immunity leads,
+  compilation-bounded general safety proposal status, specific watch triggers
+  and a merger-forms watch item. Clarifies profile reuse and jurisdiction,
+  improves metadata, adds a happy-path eval, tightens merger/safety graders
+  and tests resolved cross-plugin links.
 
 - `legal-workflow-router` 0.2.0: `route-legal-fact-pattern` checks which
   routed skills are installed in the session, adds each routed plugin's

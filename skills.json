@@ -91,6 +91,15 @@
     },
     "legal-workflow-router": {
       "route-legal-fact-pattern": "Original cross-plugin routing workflow; its skill map is generated from every shipped SKILL.md description by scripts/generate_registry.py."
+    },
+    "australian-consumer-competition": {
+      "configure-consumer-competition-profile": "Original consumer business profile workflow adapting the named employment profile schema control fields and configure-employment-profile human approval procedure; no employment coverage conclusions are imported.",
+      "assess-consumer-guarantees": "Original ACL s 3, ss 51\u201364A and supplier/manufacturer remedy workflow, checking Regulations reg 77A and reg 90 at the Federal Register and reusing commercial-drafting UCT review and services drafting.",
+      "review-marketing-claims": "Original ACL ss 18, 29 and 48 substantiation review using ACCC environmental/pricing guidance, reusing commercial-drafting UCT checklist and UTPA 2026 notes, with specialist privacy hand-offs.",
+      "map-merger-notification": "Original CCA notification and standstill workflow using the 2024 merger reform Act, current compilation and threshold/waiver determinations at the Federal Register; unresolved forms remain explicit.",
+      "assess-cartel-and-rpm-risk": "Original CCA cartel, s 45 concerted-practice, RPM, exclusive-dealing and market-power screening based on Parts IV, VII and VIII, with separate exception, authorisation, notification and class-exemption verification.",
+      "map-product-safety-obligations": "Original ACL Part 3-3 instrument and incident workflow checking standards, bans, recalls and s 131 notice at the Federal Register; ACCC and Treasury reform leads remain distinct from enacted duties.",
+      "track-accc-developments": "Original on-demand watch register following the track-fair-work-developments comparison pattern, with item-specific Federal Register, ACCC, Product Safety and Treasury triggers and human-owned updates."
     }
   }
 }

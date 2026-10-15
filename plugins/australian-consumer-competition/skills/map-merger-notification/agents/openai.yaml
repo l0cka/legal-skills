@@ -1,0 +1,4 @@
+interface:
+  display_name: "Map Merger Notification"
+  short_description: "Test merger thresholds, waivers and standstill evidence"
+  default_prompt: "Use $map-merger-notification for this Australian matter, recording sources, assumptions and decisions for qualified lawyer review."
