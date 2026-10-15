@@ -55,6 +55,20 @@ Plugin dependencies: Requires `australian-legal-research`; hands off to
 - **`review-marketing-claims`** — Review Australian marketing, environmental, comparative and pricing claims across the full purchase journey. Use before campaign or subscription review and to distinguish current drip-pricing rules from future UTPA reforms. Do not use to publish advertisements, certify claims or determine privacy compliance.
 - **`track-accc-developments`** — Check the Australian ACCC watch register on demand against official legislation, guidance and reform sources. Use before advice or a periodic horizon review to identify changed merger, consumer, competition and safety positions. Do not use as an unattended monitor, auto-update a register or treat proposals and allegations as obligations.
 
+## Australian Contract Review (`australian-contract-review`)
+
+Plugin dependencies: Requires `australian-commercial-drafting`,
+`australian-legal-research`; hands off to `australian-employment-fair-work`,
+`australian-privacy-cybersecurity`.
+
+- **`build-negotiation-redline-memo`** — Prepare a draft Australian contract negotiation memo with current text, proposed text, rationale and authorised fallbacks linked to clause references and review issues. Use after review of a supplied version. Do not send a memo, alter a live document or accept departures.
+- **`check-unfair-contract-terms`** — Screen supplied Australian contract terms for potential unfair-contract-terms risk under the ACL or ASIC Act financial-services regime using official-source coverage, standard-form and unfairness tests. Use for consumer or small-business contract review. Do not declare a term invalid or equate a playbook position with lawful wording.
+- **`configure-review-playbook`** — Create, revise or validate a controlled Australian contract-review playbook recording standard positions, fallbacks, risk appetite and approval thresholds by clause type. Use before inbound review or when standing instructions change. Do not approve the playbook or invent firm positions.
+- **`review-commercial-agreement`** — Review a supplied Australian MSA, SaaS, supply or services agreement against approved standard positions and fallbacks. Return a clause-referenced issues table with risk ratings and playbook positions for lawyer review. Do not silently rewrite or approve execution.
+- **`review-limitation-and-indemnity-regime`** — Review interacting caps, exclusions, indemnities, insurance, ACL guarantee limitations and state proportionate-liability issues in a supplied Australian commercial contract. Use for risk-allocation review against a playbook. Do not assume contracting out is nationally permitted or insurance covers assumed liability.
+- **`track-contract-renewals`** — Build or review a source-linked register of Australian contract renewal and notice dates, auto-renewal risks and future UTPA subscription readiness. Use for a supplied contract portfolio or impending renewal. Do not send notices, update live diaries or invent reminder periods.
+- **`triage-inbound-nda`** — Triage a supplied inbound Australian NDA as green, yellow or red against an evidenced review playbook, with clause references, reasons and escalation. Use for mutual or one-way commercial confidentiality intake. Do not clear execution or certify enforceability.
+
 ## Australian Corporations Governance (`australian-corporations-governance`)
 
 Plugin dependencies: Requires `australian-legal-research`.

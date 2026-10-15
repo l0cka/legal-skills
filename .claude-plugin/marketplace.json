@@ -64,6 +64,21 @@
       ]
     },
     {
+      "name": "australian-contract-review",
+      "source": "./plugins/australian-contract-review",
+      "description": "Review inbound Australian contracts against controlled playbooks, verified statutory sources and approval thresholds for qualified lawyer review.",
+      "version": "0.1.0",
+      "category": "Productivity",
+      "tags": [
+        "australian-law",
+        "contract-review",
+        "nda",
+        "unfair-contract-terms",
+        "indemnities",
+        "renewals"
+      ]
+    },
+    {
       "name": "australian-corporations-governance",
       "source": "./plugins/australian-corporations-governance",
       "description": "Configure, assess and document Australian company governance using verified Corporations Act sources and approved organisational controls.",

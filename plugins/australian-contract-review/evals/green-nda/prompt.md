@@ -1,0 +1,6 @@
+---
+name: triage-inbound-nda green-nda
+tags: [contract-review, positive-path]
+max_turns: 12
+---
+Use triage-inbound-nda for this complete synthetic two-clause NSW NDA, version NDA-G1. Reviewing side is recipient, purpose evaluating a potential B2B services purchase, disclosure one-way, no personal data; Legal Counsel is reviewer. Approved review playbook RP-2 version 2, Legal Counsel approval 12 October 2026, accepts exactly these positions and no additional terms: clause 1 confines use and disclosure to the evaluation and advisers bound to confidentiality; excludes public, previously known, independently developed and lawfully third-party received information; permits legally compelled disclosure with notice where lawful. Clause 2 lasts two years, requires return/deletion on request except legally required retention and secure backup copies that remain confidential, and uses NSW law/courts. Those are the supplied contract's entire clauses verbatim as summarised above; no incorporated documents, restraints, IP transfer, indemnities, publicity or other remedies terms. No approval departure or legal finding is requested. Return green/yellow/red with clause reasons and review readiness.

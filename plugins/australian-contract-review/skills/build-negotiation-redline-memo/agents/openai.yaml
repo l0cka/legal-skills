@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Negotiation Redline Memo"
+  short_description: "Prepare proposed text, rationale and negotiation fallbacks"
+  default_prompt: "Use $build-negotiation-redline-memo for this Australian contract, recording source evidence and unresolved issues for qualified lawyer review."

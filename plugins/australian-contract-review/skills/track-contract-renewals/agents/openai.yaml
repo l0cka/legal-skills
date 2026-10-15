@@ -1,0 +1,4 @@
+interface:
+  display_name: "Track Contract Renewals"
+  short_description: "Track evidenced renewal dates and notice risks"
+  default_prompt: "Use $track-contract-renewals for this Australian contract, recording source evidence and unresolved issues for qualified lawyer review."

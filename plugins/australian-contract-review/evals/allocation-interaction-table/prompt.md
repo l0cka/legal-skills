@@ -1,0 +1,6 @@
+---
+name: review-limitation-and-indemnity-regime allocation-interaction-table
+tags: [contract-review, positive-path]
+max_turns: 12
+---
+Use review-limitation-and-indemnity-regime as at 13 October 2026. Synthetic NSW supplier-side services agreement L1 has clause 9: all aggregate liability, including clause 10 indemnity, capped at fees paid during the previous 12 months, except liability that cannot lawfully be limited. Clause 10: indemnity for third-party IP claims caused by supplier's supplied deliverables, customer must promptly notify and permit supplier defence/settlement control, no double recovery. Clause 11: exclude loss of profit but expressly preserve direct rectification costs. The evidenced fees paid are $120,000 for that 12-month period. Approved RP-L, version 2, Legal Counsel approval 12 October, matches clauses 9-11 exactly. Insurance policy P1 supplied by authorised broker, confirmed 13 October, says $1 million aggregate claims-made PI cover, $10,000 deductible, IP excluded; no representation that assumed contractual liability is covered. There is no contracting-out clause. Provide the interaction table and a disclosed $200,000 third-party IP demand stress scenario; leave any legal coverage/enforceability question needing verification unresolved, rather than refusing commercial mapping.

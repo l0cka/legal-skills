@@ -8,6 +8,18 @@ plugin manifests contain their intended release versions.
 
 ## Unreleased
 
+### Changed
+
+- `australian-contract-review`: names the unverified NSW s 3A(2) lead and
+  separates verified Queensland and Victorian contracting-out text from
+  unconfirmed prohibition conclusions and commentary.
+
+- `australian-contract-review`: corrects commencement-day subscription transition
+  and variation precedence, distinguishes offer-stage disclosure scope, expands
+  official Act/Part leads across all jurisdictions, clarifies reference-only
+  drafting reuse, removes duplicated ACL paraphrases, and adds positive-path
+  evals with distinct graders and task-shaped catalog prompts.
+
 ### Added
 
 - `australian-consumer-competition` 0.1.0: seven practitioner-led skills for
@@ -15,6 +27,13 @@ plugin manifests contain their intended release versions.
   cartel and RPM risk, product safety and on-demand ACCC developments. Includes
   official-source controls, separate current/future reform status, merger pathways,
   urgent safety reporting candidates, specialist hand-offs and synthetic evals.
+
+- `australian-contract-review` 0.1.0: seven skills for controlled review
+  playbooks, inbound NDA triage, commercial agreement review, ACL/ASIC UCT
+  screening, liability and indemnity analysis, negotiation memos and renewal
+  registers. Reuses drafting, employment and privacy workflows, separates
+  future subscription rules, records unverified state-law leads, and includes
+  qualified-lawyer review controls and synthetic evals.
 
 - `australian-commercial-drafting` 0.1.0: six practitioner-led skills for
   controlled drafting profiles, NDAs, SaaS/subscription terms, privacy policies,

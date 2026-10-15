@@ -1,0 +1,4 @@
+interface:
+  display_name: "Check Unfair Contract Terms"
+  short_description: "Screen ACL and financial-services unfair term risks"
+  default_prompt: "Use $check-unfair-contract-terms for this Australian contract, recording source evidence and unresolved issues for qualified lawyer review."

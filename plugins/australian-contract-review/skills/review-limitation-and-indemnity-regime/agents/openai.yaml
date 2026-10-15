@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Limitation And Indemnity Regime"
+  short_description: "Map caps, indemnities, insurance and liability overlays"
+  default_prompt: "Use $review-limitation-and-indemnity-regime for this Australian contract, recording source evidence and unresolved issues for qualified lawyer review."
