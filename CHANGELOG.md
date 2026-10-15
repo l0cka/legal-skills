@@ -22,6 +22,17 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- `legal-cognitive-sparring` 0.1.0: twelve skills that spar with a qualified
+  lawyer. Core sparring pressure-tests an argument, probes understanding,
+  opposes as counsel, steelmans and then attacks, and role-plays a named
+  decision-maker. Structure and gaps maps assumptions, lists blind spots,
+  clarifies burden and standard, and red-teams evidence. Strategy challenges
+  forum, timing, and settlement choices, checks a plain restatement for lost
+  nuance, and runs a short oral drill. Jurisdiction, forum, and governing law
+  are lawyer-supplied. The plugin states no legal rule, invents no citation,
+  and leaves the outcome with the qualified lawyer. Includes a shared sparring
+  contract and one synthetic eval per skill.
+
 - `australian-consumer-competition` 0.1.0: seven practitioner-led skills for
   controlled profiles, consumer guarantees, marketing claims, merger notification,
   cartel and RPM risk, product safety and on-demand ACCC developments. Includes

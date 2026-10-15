@@ -1,0 +1,4 @@
+interface:
+  display_name: "Steelman Then Attack"
+  short_description: "Strengthen the position, then attack that steelman"
+  default_prompt: "Use $steelman-then-attack on my position. Keep the steelman and the attack in separate phases. Do not invent an authority or declare a winner."

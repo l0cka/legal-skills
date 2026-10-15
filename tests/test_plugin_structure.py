@@ -220,6 +220,30 @@ PLUGINS: dict[str, dict] = {
         "reference_files": (),
         "every_skill_mentions": (),
     },
+    "legal-cognitive-sparring": {
+        "skills": {
+            "pressure-test-argument",
+            "test-understanding",
+            "oppose-as-counsel",
+            "steelman-then-attack",
+            "role-play-decision-maker",
+            "map-assumptions",
+            "find-blind-spots",
+            "clarify-burden-and-standard",
+            "red-team-evidence",
+            "pressure-test-strategy",
+            "simplify-without-losing-precision",
+            "drill-oral-advocacy",
+        },
+        "statuses": READY,
+        "reference_files": ("sparring-contract.md",),
+        "every_skill_mentions": (
+            "jurisdiction is lawyer-supplied",
+            "qualified lawyer",
+            "cannot tell from the supplied record",
+            "sparring-contract.md",
+        ),
+    },
     "legal-evidence-workflows": {
         "skills": {
             "build-document-index",

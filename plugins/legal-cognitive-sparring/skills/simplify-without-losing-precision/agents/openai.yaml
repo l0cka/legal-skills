@@ -1,0 +1,4 @@
+interface:
+  display_name: "Simplify without Losing Precision"
+  short_description: "Restate plainly, then flag the hidden nuance"
+  default_prompt: "Use $simplify-without-losing-precision on this position. Give a plain restatement, then flag where it hid a material nuance. Do not send it to the client."

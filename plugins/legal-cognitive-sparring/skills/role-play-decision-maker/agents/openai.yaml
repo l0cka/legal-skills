@@ -1,0 +1,4 @@
+interface:
+  display_name: "Role-Play Decision-Maker"
+  short_description: "Answer as the skeptical decision-maker the lawyer names"
+  default_prompt: "Use $role-play-decision-maker as the decision-maker I name. Say what would persuade or fail on my record. Do not predict the outcome as a certainty."

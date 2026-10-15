@@ -1,0 +1,38 @@
+{
+  "name": "legal-cognitive-sparring",
+  "version": "0.1.0",
+  "description": "Spar with a qualified lawyer on arguments, understanding, opposing positions, assumptions, evidence, and strategy. Jurisdiction is lawyer-supplied. The plugin does not give final legal advice or invent citations.",
+  "author": {
+    "name": "l0cka",
+    "url": "https://github.com/l0cka"
+  },
+  "homepage": "https://github.com/l0cka/legal-skills/tree/main/plugins/legal-cognitive-sparring",
+  "repository": "https://github.com/l0cka/legal-skills",
+  "license": "MIT",
+  "keywords": [
+    "cognitive-sparring",
+    "legal-reasoning",
+    "jurisdiction-agnostic",
+    "lawyer-review",
+    "responsible-ai"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Legal Cognitive Sparring",
+    "shortDescription": "Spars with a qualified lawyer on reasoning, gaps, and strategy. Jurisdiction is lawyer-supplied. It does not give final advice or invent citations.",
+    "longDescription": "Twelve workflows that pressure a qualified lawyer's own thinking. Core sparring stress-tests an argument, probes understanding, argues the other side, steelmans and then attacks, and answers as a named decision-maker. Structure and gaps extracts assumptions, lists what has not been addressed, forces a burden and standard, and red-teams the evidence. Strategy challenges forum, timing, and settlement choices, checks a plain-language restatement for lost nuance, and runs a short oral drill. The lawyer supplies the jurisdiction, forum, governing law, facts, and authorities. The plugin states no legal rule of any legal system. A qualified lawyer owns every outcome.",
+    "developerName": "l0cka",
+    "category": "Productivity",
+    "capabilities": [
+      "Read"
+    ],
+    "websiteURL": "https://github.com/l0cka/legal-skills",
+    "defaultPrompt": [
+      "Pressure-test this argument. Jurisdiction and sources are as I supply them. Do not rewrite it as final advice.",
+      "Steelman my position, then attack that steelman in a separate phase.",
+      "List the assumptions this analysis turns on, and how I could falsify each one.",
+      "Red-team the evidence. Do not rule on admissibility."
+    ],
+    "brandColor": "#1C3C63"
+  }
+}

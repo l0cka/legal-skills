@@ -1,0 +1,4 @@
+interface:
+  display_name: "Oppose as Counsel"
+  short_description: "Put the other side's best counters to the lawyer"
+  default_prompt: "Use $oppose-as-counsel against my position. Label speculation. Do not advise the opposing party or invent a citation."

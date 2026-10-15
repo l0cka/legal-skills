@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pressure-Test Argument"
+  short_description: "Critique an argument without rewriting it as advice"
+  default_prompt: "Use $pressure-test-argument on this argument. Jurisdiction and sources are only as I supply them. Do not rewrite it as final advice or invent a citation."

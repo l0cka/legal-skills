@@ -60,6 +60,10 @@ Canonical plugin packages live in this directory.
   Australian privacy and cyber rules that can apply to a set of facts, a data
   breach or an AI use case. (requires `australian-legal-research`; law checked
   2026-08-26)
+- [**Legal Cognitive Sparring**](legal-cognitive-sparring/README.md) — Spars
+  with a qualified lawyer on reasoning, gaps, and strategy. Jurisdiction is
+  lawyer-supplied. It does not give final advice or invent citations. (law
+  checked 2026-10-15)
 - [**Legal Evidence Workflows**](legal-evidence-workflows/README.md) — Builds
   source-linked Word document indexes, chronologies, privilege logs and
   inconsistency maps from supplied matter documents without deciding
