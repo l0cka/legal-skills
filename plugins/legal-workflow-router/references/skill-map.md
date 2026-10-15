@@ -54,6 +54,7 @@ Plugin dependencies: Requires `australian-legal-research`; hands off to
 - **`map-product-safety-obligations`** — Map Australian product safety standards, bans, recalls and mandatory incident reporting from product and event evidence. Use for supply checks, injury reports or recall planning. Do not use to execute a recall, file a report or assume a proposed general safety provision is enacted.
 - **`review-marketing-claims`** — Review Australian marketing, environmental, comparative and pricing claims across the full purchase journey. Use before campaign or subscription review and to distinguish current drip-pricing rules from future UTPA reforms. Do not use to publish advertisements, certify claims or determine privacy compliance.
 - **`track-accc-developments`** — Check the Australian ACCC watch register on demand against official legislation, guidance and reform sources. Use before advice or a periodic horizon review to identify changed merger, consumer, competition and safety positions. Do not use as an unattended monitor, auto-update a register or treat proposals and allegations as obligations.
+
 ## Australian Contract Review (`australian-contract-review`)
 
 Plugin dependencies: Requires `australian-commercial-drafting`,

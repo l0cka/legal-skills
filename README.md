@@ -7,8 +7,8 @@
   <a href="https://github.com/l0cka/legal-skills/actions/workflows/ci.yml"><img alt="CI status" src="https://img.shields.io/github/actions/workflow/status/l0cka/legal-skills/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
   <a href="LICENSE"><img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-1f6f5f?style=flat-square"></a>
   <!-- generated:badges -->
-  <img alt="Thirteen plugins" src="https://img.shields.io/badge/plugins-13-31547a?style=flat-square">
-  <img alt="Seventy-four skills" src="https://img.shields.io/badge/skills-74-31547a?style=flat-square">
+  <img alt="Fourteen plugins" src="https://img.shields.io/badge/plugins-14-31547a?style=flat-square">
+  <img alt="Eighty-one skills" src="https://img.shields.io/badge/skills-81-31547a?style=flat-square">
   <img alt="Claude Cowork and ChatGPT Work" src="https://img.shields.io/badge/works%20with-Claude%20Cowork%20%2B%20ChatGPT%20Work-c59a46?style=flat-square">
 <!-- end:badges -->
 </p>
@@ -26,7 +26,7 @@ Free and open source (MIT).
 ## What's included
 
 <!-- generated:counts -->
-The marketplace contains thirteen plugins and seventy-four skills:
+The marketplace contains fourteen plugins and eighty-one skills:
 <!-- end:counts -->
 
 <!-- generated:plugin-table -->
@@ -59,7 +59,7 @@ Paste this into Claude or ChatGPT (any version that can manage plugins):
 
 <!-- generated:install-agent -->
 ```text
-Add the plugin marketplace `l0cka/legal-skills` and install all thirteen
+Add the plugin marketplace `l0cka/legal-skills` and install all fourteen
 of its plugins (user scope if supported). Verify the plugins are available
 and report the result.
 ```
