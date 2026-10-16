@@ -200,6 +200,22 @@ class ValidateRepositoryTests(unittest.TestCase):
         update_area(self.plugin_dir, lawCheckedOn=(dt.date.today() - dt.timedelta(days=200)).isoformat())
         self.assert_error("areas.demo-area.lawCheckedOn")
 
+    def test_law_check_due_within_warning_window(self) -> None:
+        today = dt.date(2026, 10, 16)
+        update_area(self.plugin_dir, lawCheckedOn=(today - dt.timedelta(days=160)).isoformat())
+        self.assertEqual(
+            validate_repository.law_checks_due(self.root, today),
+            [
+                f"{PLUGIN} area {AREA}: lawCheckedOn 2026-05-09 expires in 23 day(s); "
+                "re-check it against the official sources"
+            ],
+        )
+
+    def test_recent_law_check_is_not_due(self) -> None:
+        today = dt.date(2026, 10, 16)
+        update_area(self.plugin_dir, lawCheckedOn=(today - dt.timedelta(days=100)).isoformat())
+        self.assertEqual(validate_repository.law_checks_due(self.root, today), [])
+
     def test_area_malformed_law_check_fails(self) -> None:
         update_area(self.plugin_dir, lawCheckedOn="26 August 2026")
         self.assert_error("lawCheckedOn")

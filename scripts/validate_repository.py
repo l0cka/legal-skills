@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -20,6 +21,7 @@ PLACEHOLDER = re.compile(r"\bTODO\b|\bTBD\b", re.I)
 OPENAI_AGENT_KEYS = ("display_name", "short_description", "default_prompt")
 REGISTRY_VERSION = 3
 LAW_CHECK_MAX_AGE_DAYS = 183
+LAW_CHECK_WARNING_DAYS = 30
 
 
 class ValidationError(Exception):
@@ -99,6 +101,20 @@ def validate_law_checked_on(relative: str, value: str, today: dt.date | None = N
         )
 
 
+def law_checks_due(root: Path = ROOT, today: dt.date | None = None) -> list[str]:
+    today = today or dt.date.today()
+    due = []
+    for plugin in load_plugins(root):
+        for area in plugin["areas"]:
+            remaining = LAW_CHECK_MAX_AGE_DAYS - (today - dt.date.fromisoformat(area["lawCheckedOn"])).days
+            if remaining <= LAW_CHECK_WARNING_DAYS:
+                due.append(
+                    f"{plugin['name']} area {area['id']}: lawCheckedOn {area['lawCheckedOn']} "
+                    f"expires in {remaining} day(s); re-check it against the official sources"
+                )
+    return due
+
+
 def load_sources(root: Path) -> dict[str, Any]:
     try:
         registry = json.loads((root / "skills.json").read_text(encoding="utf-8"))
@@ -156,6 +172,9 @@ def main() -> int:
     except (OSError, ValidationError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         return 1
+    prefix = "::warning title=Law check due::" if os.environ.get("GITHUB_ACTIONS") else "WARNING: "
+    for message in law_checks_due():
+        print(f"{prefix}{message}", file=sys.stderr)
     print(f"Validated {plugin_count} plugin(s) and {skill_count} skill(s).")
     return 0
 
