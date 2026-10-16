@@ -1,0 +1,4 @@
+interface:
+  display_name: "Map Assumptions"
+  short_description: "Rank the assumptions the analysis turns on"
+  default_prompt: "Use $map-assumptions on this analysis. Rank the assumptions the case turns on and say how I could falsify each one. Do not decide that any assumption is true."

@@ -31,6 +31,7 @@ Each area guide lists its skills, scope, sources, permissions and validation.
 | [**Legal Evidence Workflows**](areas/evidence-workflows/README.md) | 4 | Builds source-linked Word document indexes, chronologies, privilege logs and inconsistency maps from supplied matter documents without deciding credibility, privilege or merits. | 2026-08-26 |
 | [**Legal Triage**](areas/triage/README.md) | 2 | Helps community legal centre staff record and triage legal enquiries under an approved profile. | 2026-08-26 |
 | [**Legal Workflow Router**](areas/workflow-router/README.md) | 1 | Maps a fact pattern to the skills it engages, in order, with the human decision points named. | 2026-08-26 |
+| [**Legal Cognitive Sparring**](areas/cognitive-sparring/README.md) | 12 | Spars with a qualified lawyer on reasoning, gaps, and strategy. Jurisdiction is lawyer-supplied. It does not give final advice or invent citations. | 2026-10-15 |
 <!-- end:area-table -->
 
 ## Layout

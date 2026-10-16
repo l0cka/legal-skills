@@ -2,16 +2,16 @@
 
 This changelog records all notable repository changes.
 
-Each plugin has an independent version. The repository does not have release
-tags. The current pull request remains under **Unreleased**, even when its
+The repository ships one plugin, `legal-skills`, with one version. The
+repository does not have release tags. The current pull request remains under **Unreleased**, even when its
 plugin manifests contain their intended release versions.
 
 ## Unreleased
 
 ### Changed
 
-- **Breaking: one plugin.** The fourteen `australian-*` and `legal-*` plugins
-  are merged into a single plugin, `legal-skills` 1.0.0. All 86 skills keep
+- **Breaking: one plugin.** The fifteen `australian-*` and `legal-*` plugins
+  are merged into a single plugin, `legal-skills` 1.0.0. All 98 skills keep
   their names and behaviour and now install together, so cross-area
   hand-offs always resolve. The former plugins become practice areas listed
   in `catalog.json`, each with its own guide under `areas/` and its own
@@ -38,6 +38,17 @@ plugin manifests contain their intended release versions.
   evals with distinct graders and task-shaped catalog prompts.
 
 ### Added
+
+- `legal-cognitive-sparring` 0.1.0: twelve skills that spar with a qualified
+  lawyer. Core sparring pressure-tests an argument, probes understanding,
+  opposes as counsel, steelmans and then attacks, and role-plays a named
+  decision-maker. Structure and gaps maps assumptions, lists blind spots,
+  clarifies burden and standard, and red-teams evidence. Strategy challenges
+  forum, timing, and settlement choices, checks a plain restatement for lost
+  nuance, and runs a short oral drill. Jurisdiction, forum, and governing law
+  are lawyer-supplied. The plugin states no legal rule, invents no citation,
+  and leaves the outcome with the qualified lawyer. Includes a shared sparring
+  contract and one synthetic eval per skill.
 
 - `australian-consumer-competition` 0.1.0: seven practitioner-led skills for
   controlled profiles, consumer guarantees, marketing claims, merger notification,

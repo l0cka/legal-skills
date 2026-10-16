@@ -53,6 +53,30 @@ AREAS: dict[str, dict] = {
         ),
         "every_skill_mentions": ("aml-ctf-source-and-control-method.md",),
     },
+    "cognitive-sparring": {
+        "skills": {
+            "clarify-burden-and-standard",
+            "drill-oral-advocacy",
+            "find-blind-spots",
+            "map-assumptions",
+            "oppose-as-counsel",
+            "pressure-test-argument",
+            "pressure-test-strategy",
+            "red-team-evidence",
+            "role-play-decision-maker",
+            "simplify-without-losing-precision",
+            "steelman-then-attack",
+            "test-understanding",
+        },
+        "statuses": READY,
+        "reference_files": ("sparring-contract.md",),
+        "every_skill_mentions": (
+            "jurisdiction is lawyer-supplied",
+            "qualified lawyer",
+            "cannot tell from the supplied record",
+            "sparring-contract.md",
+        ),
+    },
     "commercial-drafting": {
         "skills": {
             "configure-drafting-profile",

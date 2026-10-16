@@ -1,7 +1,7 @@
 {
   "displayName": "Legal Skills",
   "shortDescription": "Governed Australian legal workflows with official-source verification and lawyer review gates.",
-  "longDescription": "One plugin for Australian legal research, contract review and drafting, employment, privacy, consumer and competition, corporations, AI governance, AML/CTF, estate planning, litigation deadlines, evidence handling and matter triage. Every workflow verifies against official sources at use, labels pending law separately from current law, fails closed on missing inputs and returns drafts for qualified human review.",
+  "longDescription": "One plugin for Australian legal research, contract review and drafting, employment, privacy, consumer and competition, corporations, AI governance, AML/CTF, estate planning, litigation deadlines, evidence handling and matter triage, plus jurisdiction-neutral sparring that pressure-tests a lawyer's own reasoning. Every research workflow verifies against official sources at use, labels pending law separately from current law, fails closed on missing inputs and returns drafts for qualified human review.",
   "defaultPrompt": [
     "Route this matter to the skills it engages and tell me what to run first.",
     "Verify this Commonwealth provision as in force on a given date.",
@@ -337,6 +337,26 @@
       "lawCheckedOn": "2026-08-26",
       "skills": [
         "route-legal-fact-pattern"
+      ]
+    },
+    {
+      "id": "cognitive-sparring",
+      "displayName": "Legal Cognitive Sparring",
+      "shortDescription": "Spars with a qualified lawyer on reasoning, gaps, and strategy. Jurisdiction is lawyer-supplied. It does not give final advice or invent citations.",
+      "lawCheckedOn": "2026-10-15",
+      "skills": [
+        "clarify-burden-and-standard",
+        "drill-oral-advocacy",
+        "find-blind-spots",
+        "map-assumptions",
+        "oppose-as-counsel",
+        "pressure-test-argument",
+        "pressure-test-strategy",
+        "red-team-evidence",
+        "role-play-decision-maker",
+        "simplify-without-losing-precision",
+        "steelman-then-attack",
+        "test-understanding"
       ]
     }
   ]

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Test Understanding"
+  short_description: "Probe grasp with short questions and demanded sources"
+  default_prompt: "Use $test-understanding to quiz me on this concept. Ask short questions, demand my sources, and do not lecture or invent an authority."

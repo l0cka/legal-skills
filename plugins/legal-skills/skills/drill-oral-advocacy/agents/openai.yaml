@@ -1,0 +1,4 @@
+interface:
+  display_name: "Drill Oral Advocacy"
+  short_description: "Score a short hostile oral drill"
+  default_prompt: "Use $drill-oral-advocacy on this issue. Run a short hostile drill and score clarity, concessions, and recovery. Do not invent a transcript."

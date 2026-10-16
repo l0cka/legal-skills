@@ -1,0 +1,4 @@
+interface:
+  display_name: "Clarify Burden and Standard"
+  short_description: "State who bears the burden and on what standard"
+  default_prompt: "Use $clarify-burden-and-standard on these facts. State who bears which burden and what evidence would meet or fail it. Do not invent a standard I did not supply."
