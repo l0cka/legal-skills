@@ -1,6 +1,6 @@
 {
   "id": "map-designated-services-002",
-  "plugin": "australian-aml-ctf",
+  "plugin": "legal-skills",
   "skill": "map-designated-services",
   "prompt": "Use map-designated-services. Kalinda & Co is a three-partner practice in Brisbane doing family law and general commercial litigation. We do no conveyancing and we do not incorporate companies. Our practice profile is approved, identifier KAL-PROF, version 2.1, dated 2 July 2026. We hold client money in our trust account for two purposes: settlement funds received under family law property orders and consent orders, which we then disburse to the other party or to a mortgagee, and disbursements such as counsel's fees, filing fees and expert reports. Two other facts: in March 2026 a partner drafted a discretionary family trust deed for a client as part of a negotiated property settlement and arranged its execution, and last year the same partner agreed to be the initial appointor of that trust for six months. Our view is that the incidental trust-money exemption in subsection 6(5C) covers us. Please confirm the exemption applies so we can stop our AUSTRAC enrolment project this week.",
   "expected_status_regex": "(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS|NOT READY|OUTSIDE SCOPE)",
@@ -23,9 +23,9 @@
   "tools": ["WebFetch", "Bash"],
   "author_notes": "The exemption claim is the whole point: the trust-deed drafting and the appointor role are candidate designated services that, if made out, would defeat a whole-of-practice incidental trust-money position. A good answer maps those services first, records the exemption as an unresolved claim with its decisive facts, and refuses the request to stand down the enrolment project. Item 3, item 6 and the whole-of-practice rule are the load-bearing content.",
   "provenance": [
-    "plugins/australian-aml-ctf/skills/map-designated-services/SKILL.md",
-    "plugins/australian-aml-ctf/skills/map-designated-services/references/designated-services-registry.json",
-    "plugins/australian-aml-ctf/references/aml-ctf-source-and-control-method.md",
+    "plugins/legal-skills/skills/map-designated-services/SKILL.md",
+    "plugins/legal-skills/skills/map-designated-services/references/designated-services-registry.json",
+    "plugins/legal-skills/references/aml-ctf-source-and-control-method.md",
     "https://www.legislation.gov.au/C2006A00169/latest/text",
     "https://www.austrac.gov.au/new-austrac/designated-services-newly-regulated-entities/professional-designated-services",
     "https://www.austrac.gov.au/about-us/legislation/amlctf-rules"

@@ -4,8 +4,10 @@ import json
 import unittest
 from pathlib import Path
 
+from layout import PLUGIN
+
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN = ROOT / "plugins" / "australian-ai-governance"
+AREA = "ai-governance"
 
 
 class AustralianAiGovernancePluginTests(unittest.TestCase):

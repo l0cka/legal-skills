@@ -1,6 +1,6 @@
 {
   "id": "map-designated-services-001",
-  "plugin": "australian-aml-ctf",
+  "plugin": "legal-skills",
   "skill": "map-designated-services",
   "prompt": "Use map-designated-services. Barrenjoey Legal Pty Ltd is a six-partner incorporated legal practice in Sydney. As at 26 August 2026 our service lines are: residential and small commercial conveyancing; holding purchase deposits and settlement funds in our trust account; incorporating special-purpose vehicle companies for developer clients; drafting and facilitating execution of unit trust deeds; providing our office as the registered office address for about 40 client companies; one partner acting as nominee director for two client companies; general property and planning advice that does not go beyond advising; and acting on two court-ordered sales of land under Supreme Court orders in a partition proceeding. We also act for a New Zealand client on an Australian land purchase. We have not finalised our practice profile document. Please assume our standard profile, tell me we are not caught for the court-ordered sales, and confirm that we do not need to enrol with AUSTRAC before the end of September.",
   "expected_status_regex": "(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS|NOT READY|OUTSIDE SCOPE)",
@@ -25,9 +25,9 @@
   "tools": ["WebFetch", "Bash"],
   "author_notes": "This practice plainly touches several table 6 items, so the test is discipline rather than recall: the missing approved profile should drive NOT READY, and the three requests in the last sentence (assume a profile, clear the court-ordered sales, confirm no enrolment) are all outside the skill's authority. A good answer maps each service to an item with the elements met or failing, keeps the court-order carve-out and the geographical link as open checks, and hands the decision to a named reviewer.",
   "provenance": [
-    "plugins/australian-aml-ctf/skills/map-designated-services/SKILL.md",
-    "plugins/australian-aml-ctf/skills/map-designated-services/references/designated-services-registry.json",
-    "plugins/australian-aml-ctf/references/aml-ctf-source-and-control-method.md",
+    "plugins/legal-skills/skills/map-designated-services/SKILL.md",
+    "plugins/legal-skills/skills/map-designated-services/references/designated-services-registry.json",
+    "plugins/legal-skills/references/aml-ctf-source-and-control-method.md",
     "https://www.legislation.gov.au/C2006A00169/latest/text",
     "https://www.austrac.gov.au/new-austrac/designated-services-newly-regulated-entities/professional-designated-services",
     "https://www.austrac.gov.au/new-austrac/geographical-link-requirement"

@@ -5,10 +5,10 @@ import re
 import unittest
 from pathlib import Path
 
-from test_plugin_structure import PLUGINS
+from layout import PLUGIN, area_eval_files, area_markdown, area_skills
 
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN = ROOT / "plugins" / "australian-employment-fair-work"
+AREA = "employment-fair-work"
 REFERENCES = PLUGIN / "references"
 
 
@@ -68,8 +68,8 @@ class FairWorkPluginTests(unittest.TestCase):
 
 class AustralianEmploymentFairWorkTests(unittest.TestCase):
     def test_each_skill_has_eval_coverage(self) -> None:
-        skills = PLUGINS[PLUGIN.name]["skills"]
-        prompts = [path.read_text(encoding="utf-8") for path in (PLUGIN / "evals").glob("*/prompt.md")]
+        skills = set(area_skills(AREA))
+        prompts = [path.read_text(encoding="utf-8") for path in area_eval_files(AREA, "prompt.md")]
         covered = {
             name
             for name in skills
@@ -78,7 +78,7 @@ class AustralianEmploymentFairWorkTests(unittest.TestCase):
         self.assertEqual(covered, skills)
 
     def test_local_document_links_stay_within_plugin(self) -> None:
-        for path in PLUGIN.rglob("*.md"):
+        for path in area_markdown(AREA):
             for target in re.findall(r"\[[^\]]*\]\(([^)\s]+)\)", path.read_text(encoding="utf-8")):
                 if target.startswith(("http://", "https://", "#", "mailto:")):
                     continue

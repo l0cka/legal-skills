@@ -1,26 +1,29 @@
 # Repository instructions
 
-This repository is the canonical public source for Legal Skills plugins shared
-between Claude Cowork and ChatGPT Work.
+This repository is the canonical public source for the Legal Skills plugin
+shared between Claude Cowork and ChatGPT Work. It ships one plugin,
+`legal-skills`; skills are grouped into practice areas in its `catalog.json`.
+See `docs/architecture.md`.
 
 ## Rules
 
 - Store every skill once at
-  `plugins/<plugin-name>/skills/<skill-name>/SKILL.md`.
-- Keep skill and plugin names lowercase and hyphenated. Directory names and
-  manifest names must match.
-- Hand-edit only the canonical sources: each plugin's
+  `plugins/legal-skills/skills/<skill-name>/SKILL.md` and list it in exactly
+  one practice area in `plugins/legal-skills/catalog.json`.
+- Keep skill, area and plugin names lowercase and hyphenated. Directory
+  names and manifest names must match.
+- Hand-edit only the canonical sources: the plugin's
   `.claude-plugin/plugin.json` (name, version, description, keywords) and
-  `catalog.json` (presentation metadata), plus the per-skill provenance
-  sentences in `skills.json`. Keep shared content provider-neutral.
+  `catalog.json` (presentation metadata and practice areas), plus the
+  per-skill provenance sentences in `skills.json`. Keep shared content provider-neutral.
 - Regenerate the distribution surfaces with
   `python3 scripts/generate_registry.py` after changing a canonical source.
   Never hand-edit `.codex-plugin/plugin.json`, either marketplace catalog,
-  `plugins/README.md`, or the generated regions of Markdown files.
+  `references/skill-map.md`, or the generated regions of Markdown files.
 - Update `CHANGELOG.md` under **Unreleased** for user-facing workflow changes,
-  plugin additions or removals, version changes, and material fixes. Move an
-  entry into a dated section only when the relevant release is published or
-  tagged.
+  skill or practice-area additions or removals, version changes, and
+  material fixes. Move an entry into a dated section only when the relevant
+  release is published or tagged.
 - Never commit client data, matter data, privileged or confidential material,
   credentials, tokens, private endpoints, or licensed source text without
   redistribution rights.

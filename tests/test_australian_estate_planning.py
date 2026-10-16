@@ -4,8 +4,10 @@ import re
 import unittest
 from pathlib import Path
 
+from layout import PLUGIN, area_dir
+
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN = ROOT / "plugins" / "australian-estate-planning"
+AREA = "estate-planning"
 NSW_SKILL = PLUGIN / "skills" / "assemble-nsw-estate-documents" / "SKILL.md"
 VIC_SKILL = PLUGIN / "skills" / "assemble-vic-estate-documents" / "SKILL.md"
 QLD_SKILL = PLUGIN / "skills" / "assemble-qld-estate-documents" / "SKILL.md"
@@ -26,7 +28,7 @@ FORBIDDEN_PLATFORM_NAMES = (
 
 
 def shipped_files() -> list[Path]:
-    files = [*SKILLS, PLUGIN / "README.md", PLUGIN / "CONTEXT.md", PLUGIN / "catalog.json"]
+    files = [*SKILLS, area_dir(AREA) / "README.md", area_dir(AREA) / "CONTEXT.md", PLUGIN / "catalog.json"]
     files.extend(sorted(REFERENCES.glob("*.md")))
     return files
 

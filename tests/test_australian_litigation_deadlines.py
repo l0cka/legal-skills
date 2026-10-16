@@ -9,8 +9,10 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from layout import PLUGIN
+
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN = ROOT / "plugins" / "australian-litigation-deadlines"
+AREA = "litigation-deadlines"
 SCRIPT = PLUGIN / "skills" / "compute-procedural-deadlines" / "scripts" / "compute_deadline.py"
 SPEC = importlib.util.spec_from_file_location("compute_deadline", SCRIPT)
 assert SPEC and SPEC.loader

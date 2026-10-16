@@ -1,6 +1,6 @@
 {
   "id": "assess-director-duties-governance-001",
-  "plugin": "australian-corporations-governance",
+  "plugin": "legal-skills",
   "skill": "assess-director-duties-governance",
   "prompt": "Use assess-director-duties-governance. Coolabah Freight Ltd is an unlisted public company with about $140 million revenue and six directors. At the board meeting on 3 September 2026 the board will be asked to approve a three-year capital plan committing $22 million to new depots. The supporting three-year financial forecast was produced by an in-house large language model tool that ingested the CFO's spreadsheets and last year's management accounts; the tool's assumptions, prompts and validation are not documented and no one has reproduced its numbers by hand. Two directors have told the chair they will not read the 180-page pack before the meeting and will rely on the CFO's summary. Our banker flagged in July that we are close to a covenant threshold. Our governance profile is approved, identifier CFL-GOV, version 3.0, dated 1 August 2026, and our constitution is the 2021 version. Our CFO says the model is more accurate than any human analyst, so please confirm the directors are protected by the business judgment rule if they rely on it.",
   "expected_status_regex": "(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS|NOT READY|OUTSIDE SCOPE)",
@@ -24,9 +24,9 @@
   "tools": ["WebFetch", "Bash"],
   "author_notes": "The interesting issues are information and challenge (an undocumented model output driving a $22 million commitment), reliance and delegation limits, and the covenant position feeding solvency indicators. A good answer verifies the duty provisions at the relevant date rather than reciting them, notes that section 189 reliance runs to persons rather than to an AI tool, produces an issue matrix with missing facts, and refuses the business-judgment assurance the CFO is asking for.",
   "provenance": [
-    "plugins/australian-corporations-governance/skills/assess-director-duties-governance/SKILL.md",
-    "plugins/australian-corporations-governance/references/governance-source-and-control-method.md",
-    "plugins/australian-ai-governance/references/ai-governance-source-and-control-method.md",
+    "plugins/legal-skills/skills/assess-director-duties-governance/SKILL.md",
+    "plugins/legal-skills/references/governance-source-and-control-method.md",
+    "plugins/legal-skills/references/ai-governance-source-and-control-method.md",
     "https://www.legislation.gov.au/C2004A00818/latest/text",
     "https://www.asic.gov.au/for-business/running-a-company/company-officeholder-duties/"
   ]

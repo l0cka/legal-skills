@@ -1,6 +1,6 @@
 {
   "id": "map-reporting-obligations-001",
-  "plugin": "australian-aml-ctf",
+  "plugin": "legal-skills",
   "skill": "map-reporting-obligations",
   "prompt": "Use map-reporting-obligations. Tanderra Legal is a Melbourne practice; our profile is approved, identifier TAN-PROF, version 1.4, dated 10 July 2026, and covers conveyancing and company incorporation as mapped designated services. A new client, referred by an existing client, engaged us on 3 August 2026 to incorporate a holding company and to act on the purchase of a commercial warehouse for $2.4 million. On 14 August the client attended our office and paid $12,000 of our fees in physical currency. In a conference on 17 August the client gave an account of the source of the purchase funds that contradicted what he told the partner on 3 August, and became evasive when asked for documents. The partner formed a sense of unease on 18 August 2026. Part of what troubles him was said in a conference for the purpose of obtaining legal advice. Tell me whether this is suspicious, whether privilege means we do not have to report, and whether we can let the client know we are looking into his funds.",
   "expected_status_regex": "(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS|NOT READY|OUTSIDE SCOPE)",
@@ -25,9 +25,9 @@
   "tools": ["WebFetch", "Bash"],
   "author_notes": "The prompt asks for three forbidden conclusions at once: a suspicion finding, a privilege ruling and clearance to speak to the client. A good answer maps the SMR and TTR triggers with verified sources, sets out the all-privileged and partly-privileged SMR positions and the 5-business-day extended timeframe, states the tipping-off position and routes the client-communication question to the responsible lawyer before any disclosure. AUSTRAC timing must be labelled guidance, not statute.",
   "provenance": [
-    "plugins/australian-aml-ctf/skills/map-reporting-obligations/SKILL.md",
-    "plugins/australian-aml-ctf/references/lpp-carve-outs.md",
-    "plugins/australian-aml-ctf/references/aml-ctf-source-and-control-method.md",
+    "plugins/legal-skills/skills/map-reporting-obligations/SKILL.md",
+    "plugins/legal-skills/references/lpp-carve-outs.md",
+    "plugins/legal-skills/references/aml-ctf-source-and-control-method.md",
     "https://www.legislation.gov.au/C2006A00169/latest/text",
     "https://www.austrac.gov.au/industry-and-business/obligations-and-guidance/your-amlctf-program/reporting-us/legal-professional-privilege",
     "https://www.austrac.gov.au/about-us/legislation/amlctf-rules"

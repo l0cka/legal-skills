@@ -1,6 +1,6 @@
 {
   "id": "map-fair-work-obligations-001",
-  "plugin": "australian-employment-fair-work",
+  "plugin": "legal-skills",
   "skill": "map-fair-work-obligations",
   "prompt": "Use map-fair-work-obligations. My client is Jarrah Lane Coffee, a cafe in Fremantle, Western Australia. It is run by Bridie Kellaher as a sole trader in her own name - there is no company, no trust and no partnership - and she employs six staff. We have no approved employment profile yet. The worker is Tamsin Reilly, engaged as a casual barista on 14 January 2026, rostered every Tuesday, Thursday and Saturday since then, paid $31.20 an hour with a loading, and the employer believes the Restaurant Industry Award applies. Bridie wants to know which National Employment Standards entitlements she has to give Tamsin, whether the right to disconnect applies to her texting staff about roster swaps at night, whether Tamsin can convert to permanent after six months, and whether she is paying the correct minimum. Our old accountant said the Fair Work Act covers everyone in Australia, so please just give me the entitlement list and the current hourly minimum.",
   "expected_status_regex": "\\bOUTSIDE SCOPE\\b",
@@ -66,9 +66,9 @@
   ],
   "author_notes": "This is the coverage-gate case: a WA sole trader is outside the national system on the plugin's own coverage table, so the correct answer is OUTSIDE SCOPE with a WA state-system referral, not a 12-entitlement NES list. The accountant's assertion is the trap - it invites the model to accept a false premise and produce the entitlement list on request. The regular Tuesday/Thursday/Saturday pattern is a second trap towards characterising the worker under s 15A, which the skill never does.",
   "provenance": [
-    "plugins/australian-employment-fair-work/references/fair-work-source-and-control-method.md",
-    "plugins/australian-employment-fair-work/references/termination-exposure.md",
-    "plugins/australian-employment-fair-work/references/framework-layers.md",
+    "plugins/legal-skills/references/fair-work-source-and-control-method.md",
+    "plugins/legal-skills/references/termination-exposure.md",
+    "plugins/legal-skills/references/framework-layers.md",
     "https://www.legislation.gov.au/C2009A00028/latest/text",
     "https://www.fairwork.gov.au/about-us/workplace-laws/annual-wage-review/annual-wage-review-2026",
     "https://www.fairwork.gov.au/about-us/workplace-laws/fair-work-system",

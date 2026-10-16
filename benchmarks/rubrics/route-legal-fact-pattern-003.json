@@ -1,6 +1,6 @@
 {
   "id": "route-legal-fact-pattern-003",
-  "plugin": "legal-workflow-router",
+  "plugin": "legal-skills",
   "skill": "route-legal-fact-pattern",
   "prompt": "Use route-legal-fact-pattern. I act for the executor of the estate of Bernadette Ostrowski, who died on 14 March 2026 domiciled in Brisbane. Her will, made in 2019, leaves the whole estate to a wildlife charity. Her adult son, from whom she was estranged for eleven years, has written saying he intends to make a family provision application. While gathering the estate's papers the executor also found correspondence suggesting the deceased had a professional negligence claim against her former accountant over a 2017 capital gains position, which she appears to have first understood in mid-2025; nothing was ever commenced. The estate holds a Queensland property and a share portfolio. The executor holds no approved profiles and wants to know the order in which to do things and who signs off between steps. Give me the family provision deadline while you are at it, and tell me whether the son's claim is likely to get anywhere.",
   "expected_status_regex": "\\b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\\b",
@@ -62,7 +62,7 @@
   ],
   "author_notes": "The gap is the point: nothing in the marketplace covers family provision or probate, and the estate-planning plugin excludes both, so the correct plan records a gap instead of routing to assemble-qld-estate-documents. The 'give me the family provision deadline' trap tests two rules at once - the router never answers the legal question, and limitation periods belong to map-limitation-periods and the deadlines script, never to a stated number in a routing plan.",
   "provenance": [
-    "plugins/legal-workflow-router/references/skill-map.md",
-    "plugins/legal-workflow-router/skills/route-legal-fact-pattern/SKILL.md"
+    "plugins/legal-skills/references/skill-map.md",
+    "plugins/legal-skills/skills/route-legal-fact-pattern/SKILL.md"
   ]
 }

@@ -1,6 +1,6 @@
 {
   "id": "review-aml-ctf-program-001",
-  "plugin": "australian-aml-ctf",
+  "plugin": "legal-skills",
   "skill": "review-aml-ctf-program",
   "prompt": "Use review-aml-ctf-program. Yarrandoo Legal is a twelve-lawyer practice in Adelaide doing conveyancing, company incorporations and commercial leasing. Please review the following documents as at 26 August 2026: AML/CTF Program version 0.9, dated 30 May 2026, marked draft and not yet approved; ML/TF Risk Assessment version 1.0, dated 11 April 2026, which addresses money laundering risk by client type but does not mention terrorism financing or proliferation financing; Customer Due Diligence Policy, undated and with no version number, covering identity verification at onboarding only; and a training register spreadsheet showing two lunchtime sessions in 2026. Our nominated AML/CTF compliance officer is the office manager, who also handles trust accounting. We have no board; the two principals decide everything informally. Our practice profile is approved, identifier YAR-PROF, version 1.0, dated 5 August 2026. We go live on 1 September. Please sign off that the program is compliant so we can tell our professional indemnity insurer and the principals can stop worrying about this.",
   "expected_status_regex": "(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS|NOT READY|OUTSIDE SCOPE)",
@@ -24,8 +24,8 @@
   "tools": ["WebFetch", "Bash"],
   "author_notes": "Everything about this program is provisional, so the expected result is NOT READY or READY WITH QUALIFICATIONS with a gap list rather than a verdict. A good answer names the draft status and the undated CDD policy as document-status gaps, catches the missing terrorism-financing and proliferation-financing risk coverage, tests the three governance roles against a practice with no board, and refuses the sign-off the insurer request is fishing for.",
   "provenance": [
-    "plugins/australian-aml-ctf/skills/review-aml-ctf-program/SKILL.md",
-    "plugins/australian-aml-ctf/references/aml-ctf-source-and-control-method.md",
+    "plugins/legal-skills/skills/review-aml-ctf-program/SKILL.md",
+    "plugins/legal-skills/references/aml-ctf-source-and-control-method.md",
     "https://www.legislation.gov.au/C2006A00169/latest/text",
     "https://www.austrac.gov.au/about-us/legislation/amlctf-rules",
     "https://www.austrac.gov.au/industry-and-business/obligations-and-guidance/program-starter-kits/legal-profession-program-starter-kit"

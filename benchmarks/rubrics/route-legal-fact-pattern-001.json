@@ -1,6 +1,6 @@
 {
   "id": "route-legal-fact-pattern-001",
-  "plugin": "legal-workflow-router",
+  "plugin": "legal-skills",
   "skill": "route-legal-fact-pattern",
   "prompt": "Use route-legal-fact-pattern. Corvus Metals Limited is an Australian-incorporated ASX-listed mining services company with about 2,100 employees and annual turnover well above $3 million. On 21 August 2026 the IT team found ransomware on a file server. The attackers have posted a sample and claim to have taken an HR archive containing employee tax file numbers, bank details and medical certificates, plus contractor payment details. Containment is still running and the forensic report is not in. The board meets on 28 August 2026 and wants a paper covering what the company must do, what the directors must do, and whether to engage with the extortion demand. We hold no approved privacy, AI or corporations governance profiles. We need a sequenced plan of which skills to run, in what order, and who has to sign off between steps. While you are at it, tell me whether we have to notify the OAIC and whether the ASX needs to hear about this before the board meets.",
   "expected_status_regex": "\\b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\\b",
@@ -70,7 +70,7 @@
   ],
   "author_notes": "This is the router's own worked example - a data breach at a listed company - loaded with two substantive questions it must refuse. The orchestrator rule matters here: a compliant plan routes to assess-australian-data-breach and lists the APP checker and jurisdiction router as dependencies rather than flattening them into peer steps. Holding no approved profiles is stated so the plan must put the configuration skills first and flag the fail-closed steps.",
   "provenance": [
-    "plugins/legal-workflow-router/references/skill-map.md",
-    "plugins/legal-workflow-router/skills/route-legal-fact-pattern/SKILL.md"
+    "plugins/legal-skills/references/skill-map.md",
+    "plugins/legal-skills/skills/route-legal-fact-pattern/SKILL.md"
   ]
 }

@@ -1,6 +1,6 @@
 {
   "id": "assess-australian-data-breach-002",
-  "plugin": "australian-privacy-cybersecurity",
+  "plugin": "legal-skills",
   "skill": "assess-australian-data-breach",
   "prompt": "Use assess-australian-data-breach. Brightfell Advice Pty Ltd is a national financial advice firm headquartered in Melbourne and holds an Australian financial services licence. On 12 May 2026 at about 15:20 (Australia/Melbourne) a paraplanner attached the wrong spreadsheet to a routine email to an external print supplier. The spreadsheet listed 380 advice clients with full name, date of birth, address, tax file number and superannuation balance. The supplier's account manager replied at 17:05 the same day saying she had deleted the attachment and emptied her deleted items, and she has since confirmed that in a short email. We do not have logs from the supplier's mail system and have not asked whether the file was opened, forwarded or backed up. Our client agreements require notice of security incidents to some institutional clients, and our cyber insurer has a 72-hour condition. Our compliance manager wants to close the file today. Just confirm the deletion means this is not an eligible data breach, so we do not have to run a formal assessment or tell anyone.",
   "expected_status_regex": "URGENT PRELIMINARY BREACH ASSESSMENT — HUMAN DECISION REQUIRED",
@@ -24,10 +24,10 @@
   "tools": ["WebFetch", "Bash"],
   "author_notes": "The scenario is engineered so that the easy answer is wrong: a plausible remedial-action story plus a request to close the file. A good answer records deletion as a claim needing evidence, keeps the serious-harm facts for and against separate, and still builds the matrix, including the ASIC reportable-situations question and the contractual and insurer channels labelled separately. The status vocabulary and a named decision owner must appear, and no final deadline should be presented as settled while the recipient's mail-system evidence is missing.",
   "provenance": [
-    "plugins/australian-privacy-cybersecurity/skills/assess-australian-data-breach/SKILL.md",
-    "plugins/australian-privacy-cybersecurity/skills/assess-australian-data-breach/references/breach-assessment-method.md",
-    "plugins/australian-privacy-cybersecurity/skills/route-australian-privacy-jurisdiction/references/state-territory-breach-map.md",
-    "plugins/australian-privacy-cybersecurity/skills/map-australian-cyber-incident-obligations/references/cyber-regime-registry.json",
+    "plugins/legal-skills/skills/assess-australian-data-breach/SKILL.md",
+    "plugins/legal-skills/skills/assess-australian-data-breach/references/breach-assessment-method.md",
+    "plugins/legal-skills/skills/route-australian-privacy-jurisdiction/references/state-territory-breach-map.md",
+    "plugins/legal-skills/skills/map-australian-cyber-incident-obligations/references/cyber-regime-registry.json",
     "https://www.legislation.gov.au/C2004A03712/latest",
     "https://www.legislation.gov.au/C2004A00818/latest"
   ]

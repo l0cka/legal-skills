@@ -5,8 +5,10 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
+from layout import PLUGIN
+
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN = ROOT / "plugins" / "legal-evidence-workflows"
+AREA = "evidence-workflows"
 SKILL = PLUGIN / "skills" / "build-evidence-chronology" / "SKILL.md"
 EXPECTED_SKILLS = [
     "build-document-index",

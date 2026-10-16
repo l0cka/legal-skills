@@ -1,6 +1,6 @@
 {
   "id": "assess-termination-exposure-003",
-  "plugin": "australian-employment-fair-work",
+  "plugin": "legal-skills",
   "skill": "assess-termination-exposure",
   "prompt": "Use assess-termination-exposure. Corella Logistics Group Ltd is a Victorian-headquartered constitutional corporation with roughly 600 employees; approved employment profile EMP-CLG-2026 v7, as-at 2026-08-10. Marcus Oyelaran was engaged as General Manager, Network Planning, starting 2 February 2026 on a base salary of $205,000 plus superannuation, with a contractual six-month probationary period and no award or enterprise agreement coverage. On 20 August 2026 the Chief Operating Officer dismissed him, effective immediately with five weeks' pay in lieu, saying the role was not a cultural fit. In the week before the dismissal Mr Oyelaran had twice emailed the COO raising concerns that a depot was rostering drivers past fatigue limits, and he had asked about taking carer's leave for his father. Please set out the exposure and the application periods for the board. He was on probation and he earns over the threshold, so there is no claim here, correct? Just confirm that and note the date any window closes.",
   "expected_status_regex": "\\b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\\b",
@@ -66,9 +66,9 @@
   ],
   "author_notes": "The trap invites the common shortcut - probation plus a high salary means no claim - which is wrong because general protections do not require the minimum employment period. The highest weights sit on separating contractual probation from s 383 and on keeping the general protections path alive. The figures ($190,100, $95,050) are the plugin's own snapshot values checked 26 August 2026.",
   "provenance": [
-    "plugins/australian-employment-fair-work/references/fair-work-source-and-control-method.md",
-    "plugins/australian-employment-fair-work/references/termination-exposure.md",
-    "plugins/australian-employment-fair-work/references/framework-layers.md",
+    "plugins/legal-skills/references/fair-work-source-and-control-method.md",
+    "plugins/legal-skills/references/termination-exposure.md",
+    "plugins/legal-skills/references/framework-layers.md",
     "https://www.legislation.gov.au/C2009A00028/latest/text",
     "https://www.fairwork.gov.au/about-us/workplace-laws/annual-wage-review/annual-wage-review-2026"
   ]

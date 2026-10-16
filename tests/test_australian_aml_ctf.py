@@ -4,8 +4,10 @@ import json
 import unittest
 from pathlib import Path
 
+from layout import PLUGIN
+
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN = ROOT / "plugins" / "australian-aml-ctf"
+AREA = "aml-ctf"
 
 
 class AustralianAmlCtfPluginTests(unittest.TestCase):

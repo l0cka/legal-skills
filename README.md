@@ -7,7 +7,7 @@
   <a href="https://github.com/l0cka/legal-skills/actions/workflows/ci.yml"><img alt="CI status" src="https://img.shields.io/github/actions/workflow/status/l0cka/legal-skills/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
   <a href="LICENSE"><img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-1f6f5f?style=flat-square"></a>
   <!-- generated:badges -->
-  <img alt="Fourteen plugins" src="https://img.shields.io/badge/plugins-14-31547a?style=flat-square">
+  <img alt="Fourteen practice areas" src="https://img.shields.io/badge/practice%20areas-14-31547a?style=flat-square">
   <img alt="Eighty-six skills" src="https://img.shields.io/badge/skills-86-31547a?style=flat-square">
   <img alt="Claude Cowork and ChatGPT Work" src="https://img.shields.io/badge/works%20with-Claude%20Cowork%20%2B%20ChatGPT%20Work-c59a46?style=flat-square">
 <!-- end:badges -->
@@ -26,30 +26,30 @@ Free and open source (MIT).
 ## What's included
 
 <!-- generated:counts -->
-The marketplace contains fourteen plugins and eighty-six skills:
+One plugin, `legal-skills`, holds eighty-six skills across fourteen practice areas:
 <!-- end:counts -->
 
-<!-- generated:plugin-table -->
-| Plugin | Skills | Description | Law checked |
+<!-- generated:area-table -->
+| Practice area | Skills | Description | Law checked |
 | --- | :---: | --- | :---: |
-| [**Australian AI Governance**](plugins/australian-ai-governance/README.md) | 6 | Maps the AI rules and guidance that apply to an Australian organisation. Shows which items are law and which are only guidance. | 2026-08-26 |
-| [**Australian AML/CTF**](plugins/australian-aml-ctf/README.md) | 5 | Finds the AML/CTF obligations of an Australian legal practice under the tranche 2 reforms. A person must approve each report and decision. | 2026-08-26 |
-| [**Australian Commercial Drafting**](plugins/australian-commercial-drafting/README.md) | 6 | Drafts Australian NDAs, subscription terms, privacy policies and services agreements for lawyer review. | 2026-10-13 |
-| [**Australian Consumer & Competition**](plugins/australian-consumer-competition/README.md) | 7 | Maps consumer guarantees, marketing, merger notification, competition conduct and product safety for lawyer review. | 2026-10-13 |
-| [**Australian Contract Review**](plugins/australian-contract-review/README.md) | 7 | Reviews inbound Australian contracts against standard positions, fallbacks and approval thresholds. | 2026-10-13 |
-| [**Australian Corporations Governance**](plugins/australian-corporations-governance/README.md) | 5 | Helps govern an Australian company under the Corporations Act. Prepares board records and reviews for human approval. | 2026-08-26 |
-| [**Australian Employment & Fair Work**](plugins/australian-employment-fair-work/README.md) | 10 | Maps Fair Work obligations and reviews contracts, classification, discrimination, restraints and underpayment frameworks for lawyers. | 2026-08-26 |
-| [**Australian Estate Planning**](plugins/australian-estate-planning/README.md) | 3 | Prepares solicitor-review drafts from approved NSW, Victorian and Queensland estate planning precedents. | 2026-08-26 |
-| [**Australian Legal Research**](plugins/australian-legal-research/README.md) | 16 | Checks Australian legislation and case citations against the official publishers. Writes and reviews AGLC4 citations. | 2026-08-26 |
-| [**Australian Litigation Deadlines**](plugins/australian-litigation-deadlines/README.md) | 6 | Maps limitation periods and computes candidate court deadlines. A lawyer must confirm each date. | 2026-08-26 |
-| [**Australian Privacy & Cybersecurity**](plugins/australian-privacy-cybersecurity/README.md) | 8 | Maps the Australian privacy and cyber rules that can apply to a set of facts, a data breach or an AI use case. | 2026-08-26 |
-| [**Legal Evidence Workflows**](plugins/legal-evidence-workflows/README.md) | 4 | Builds source-linked Word document indexes, chronologies, privilege logs and inconsistency maps from supplied matter documents without deciding credibility, privilege or merits. | 2026-08-26 |
-| [**Legal Triage**](plugins/legal-triage/README.md) | 2 | Helps community legal centre staff record and triage legal enquiries under an approved profile. | 2026-08-26 |
-| [**Legal Workflow Router**](plugins/legal-workflow-router/README.md) | 1 | Maps a fact pattern to the Legal Skills plugins and skills it engages, in order, with the human decision points named. | 2026-08-26 |
-<!-- end:plugin-table -->
+| [**Australian AI Governance**](plugins/legal-skills/areas/ai-governance/README.md) | 6 | Maps the AI rules and guidance that apply to an Australian organisation. Shows which items are law and which are only guidance. | 2026-08-26 |
+| [**Australian AML/CTF**](plugins/legal-skills/areas/aml-ctf/README.md) | 5 | Finds the AML/CTF obligations of an Australian legal practice under the tranche 2 reforms. A person must approve each report and decision. | 2026-08-26 |
+| [**Australian Commercial Drafting**](plugins/legal-skills/areas/commercial-drafting/README.md) | 6 | Drafts Australian NDAs, subscription terms, privacy policies and services agreements for lawyer review. | 2026-10-13 |
+| [**Australian Consumer & Competition**](plugins/legal-skills/areas/consumer-competition/README.md) | 7 | Maps consumer guarantees, marketing, merger notification, competition conduct and product safety for lawyer review. | 2026-10-13 |
+| [**Australian Contract Review**](plugins/legal-skills/areas/contract-review/README.md) | 7 | Reviews inbound Australian contracts against standard positions, fallbacks and approval thresholds. | 2026-10-13 |
+| [**Australian Corporations Governance**](plugins/legal-skills/areas/corporations-governance/README.md) | 5 | Helps govern an Australian company under the Corporations Act. Prepares board records and reviews for human approval. | 2026-08-26 |
+| [**Australian Employment & Fair Work**](plugins/legal-skills/areas/employment-fair-work/README.md) | 10 | Maps Fair Work obligations and reviews contracts, classification, discrimination, restraints and underpayment frameworks for lawyers. | 2026-08-26 |
+| [**Australian Estate Planning**](plugins/legal-skills/areas/estate-planning/README.md) | 3 | Prepares solicitor-review drafts from approved NSW, Victorian and Queensland estate planning precedents. | 2026-08-26 |
+| [**Australian Legal Research**](plugins/legal-skills/areas/legal-research/README.md) | 16 | Checks Australian legislation and case citations against the official publishers. Writes and reviews AGLC4 citations. | 2026-08-26 |
+| [**Australian Litigation Deadlines**](plugins/legal-skills/areas/litigation-deadlines/README.md) | 6 | Maps limitation periods and computes candidate court deadlines. A lawyer must confirm each date. | 2026-08-26 |
+| [**Australian Privacy & Cybersecurity**](plugins/legal-skills/areas/privacy-cybersecurity/README.md) | 8 | Maps the Australian privacy and cyber rules that can apply to a set of facts, a data breach or an AI use case. | 2026-08-26 |
+| [**Legal Evidence Workflows**](plugins/legal-skills/areas/evidence-workflows/README.md) | 4 | Builds source-linked Word document indexes, chronologies, privilege logs and inconsistency maps from supplied matter documents without deciding credibility, privilege or merits. | 2026-08-26 |
+| [**Legal Triage**](plugins/legal-skills/areas/triage/README.md) | 2 | Helps community legal centre staff record and triage legal enquiries under an approved profile. | 2026-08-26 |
+| [**Legal Workflow Router**](plugins/legal-skills/areas/workflow-router/README.md) | 1 | Maps a fact pattern to the skills it engages, in order, with the human decision points named. | 2026-08-26 |
+<!-- end:area-table -->
 
-"Law checked" is the date each plugin's sources were last reviewed against
-the law. Most plugins cover Australian law.
+"Law checked" is the date each practice area's sources were last reviewed
+against the law. Most areas cover Australian law.
 
 ## Install
 
@@ -59,9 +59,9 @@ Paste this into Claude or ChatGPT (any version that can manage plugins):
 
 <!-- generated:install-agent -->
 ```text
-Add the plugin marketplace `l0cka/legal-skills` and install all fourteen
-of its plugins (user scope if supported). Verify the plugins are available
-and report the result.
+Add the plugin marketplace `l0cka/legal-skills` and install its
+`legal-skills` plugin (user scope if supported). Verify the plugin is
+available and report the result.
 ```
 <!-- end:install-agent -->
 
@@ -77,20 +77,7 @@ workspace plugin settings.
 <!-- generated:install-claude -->
 ```bash
 claude plugin marketplace add l0cka/legal-skills
-claude plugin install australian-ai-governance@legal-skills --scope user
-claude plugin install australian-aml-ctf@legal-skills --scope user
-claude plugin install australian-commercial-drafting@legal-skills --scope user
-claude plugin install australian-consumer-competition@legal-skills --scope user
-claude plugin install australian-contract-review@legal-skills --scope user
-claude plugin install australian-corporations-governance@legal-skills --scope user
-claude plugin install australian-employment-fair-work@legal-skills --scope user
-claude plugin install australian-estate-planning@legal-skills --scope user
-claude plugin install australian-legal-research@legal-skills --scope user
-claude plugin install australian-litigation-deadlines@legal-skills --scope user
-claude plugin install australian-privacy-cybersecurity@legal-skills --scope user
-claude plugin install legal-evidence-workflows@legal-skills --scope user
-claude plugin install legal-triage@legal-skills --scope user
-claude plugin install legal-workflow-router@legal-skills --scope user
+claude plugin install legal-skills@legal-skills --scope user
 ```
 <!-- end:install-claude -->
 
@@ -102,30 +89,19 @@ claude plugin install legal-workflow-router@legal-skills --scope user
 <!-- generated:install-codex -->
 ```bash
 codex plugin marketplace add l0cka/legal-skills
-codex plugin add australian-ai-governance@legal-skills
-codex plugin add australian-aml-ctf@legal-skills
-codex plugin add australian-commercial-drafting@legal-skills
-codex plugin add australian-consumer-competition@legal-skills
-codex plugin add australian-contract-review@legal-skills
-codex plugin add australian-corporations-governance@legal-skills
-codex plugin add australian-employment-fair-work@legal-skills
-codex plugin add australian-estate-planning@legal-skills
-codex plugin add australian-legal-research@legal-skills
-codex plugin add australian-litigation-deadlines@legal-skills
-codex plugin add australian-privacy-cybersecurity@legal-skills
-codex plugin add legal-evidence-workflows@legal-skills
-codex plugin add legal-triage@legal-skills
-codex plugin add legal-workflow-router@legal-skills
+codex plugin add legal-skills@legal-skills
 ```
 <!-- end:install-codex -->
 
 </details>
 
-You only need the plugins you'll use. Each command installs one plugin.
+One install gives you every skill. Upgrading from the separate
+`australian-*` and `legal-*` plugins? Uninstall them first; see the
+[changelog](CHANGELOG.md).
 
 ## Before you rely on it
 
-- **A person stays in charge.** Every plugin prepares work for a lawyer or
+- **A person stays in charge.** Every skill prepares work for a lawyer or
   other qualified person to check and approve. None of them gives legal
   advice or replaces professional judgment.
 - **Sources are shown.** Outputs state the jurisdiction, the sources used,
@@ -139,7 +115,7 @@ You only need the plugins you'll use. Each command installs one plugin.
 
 ## Benchmarks
 
-We measure how answers change with and without the plugins on answer-keyed
+We measure how answers change with and without the plugin on answer-keyed
 and rubric-scored Australian legal tasks. See
 [benchmarks/README.md](benchmarks/README.md) for the method.
 
@@ -150,7 +126,7 @@ _No benchmark run recorded yet._
 ## Contributing
 
 Contributions are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md),
-then see [docs/adding-a-plugin.md](docs/adding-a-plugin.md) and
+then see [docs/adding-a-skill.md](docs/adding-a-skill.md) and
 [docs/architecture.md](docs/architecture.md) for how the repository fits
 together. [CHANGELOG.md](CHANGELOG.md) records what has changed.
 

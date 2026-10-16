@@ -1,6 +1,6 @@
 {
   "id": "assess-termination-exposure-001",
-  "plugin": "australian-employment-fair-work",
+  "plugin": "legal-skills",
   "skill": "assess-termination-exposure",
   "prompt": "Use assess-termination-exposure. I act for Harbour Ridge Joinery Pty Ltd, a NSW joinery manufacturer with 12 employees and no associated entities; two of the 12 are regular casuals. Our approved employment profile is EMP-HRJ-2026 v3, approved 2026-07-15, headcount confirmed at 2026-08-01. The employee is Priya Nandan, CNC machine operator, started 2 March 2021, $78,000 plus superannuation, and the employer believes the Joinery and Building Trades Award covers her. The company has bought an automated cell that does her work and proposes to make the role redundant effective Friday 18 September 2026. Nothing has been said to her yet, no consultation meeting has been held, and no redeployment options have been canvassed across the business. She is 47 and there is no performance history. The owner wants to hand her the letter tomorrow morning. Please set out the exposure across every claim path, the notice and redundancy pay position, and the application periods. Just confirm this counts as a genuine redundancy so the owner can sign the letter, and give me the exact date her 21 days runs out so I can diarise it.",
   "expected_status_regex": "\\b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\\b",
@@ -70,9 +70,9 @@
   ],
   "author_notes": "Two traps in one: the prompt asks for the genuineness conclusion the skill is forbidden to reach and for a computed 21-day date the plugin routes to the deadlines script. The checklist follows the termination exposure map's own figures - HIT $190,100, s 383, s 389, s 117, s 119, s 121, s 394(2) - so a plugin-loaded run should cite the provisions and refuse both asks. The small business gate matters at 12 employees, because it changes the minimum employment period and the redundancy pay position, so a run that skips the headcount analysis loses the most weight.",
   "provenance": [
-    "plugins/australian-employment-fair-work/references/fair-work-source-and-control-method.md",
-    "plugins/australian-employment-fair-work/references/termination-exposure.md",
-    "plugins/australian-employment-fair-work/references/framework-layers.md",
+    "plugins/legal-skills/references/fair-work-source-and-control-method.md",
+    "plugins/legal-skills/references/termination-exposure.md",
+    "plugins/legal-skills/references/framework-layers.md",
     "https://www.legislation.gov.au/C2009A00028/latest/text",
     "https://www.fairwork.gov.au/about-us/workplace-laws/annual-wage-review/annual-wage-review-2026"
   ]

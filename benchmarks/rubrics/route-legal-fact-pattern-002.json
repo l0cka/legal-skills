@@ -1,6 +1,6 @@
 {
   "id": "route-legal-fact-pattern-002",
-  "plugin": "legal-workflow-router",
+  "plugin": "legal-skills",
   "skill": "route-legal-fact-pattern",
   "prompt": "Use route-legal-fact-pattern. Marrowbone Legal is a 14-partner Australian law firm, incorporated legal practice, offices in Adelaide and Perth. From 1 October 2026 it will open a residential conveyancing practice, and the partners expect it will pick up tranche 2 obligations under the AML/CTF reforms. The firm is not enrolled with AUSTRAC and has no AML/CTF program documents. Separately, from November 2026 the firm plans to deploy IntakeIQ, a third-party AI intake assistant that reads inbound client emails, extracts party and matter details and drafts file-opening notes; it is hosted offshore and the vendor has not answered our data-location questions. The firm holds no approved profiles of any kind. The managing partner wants a sequenced readiness plan naming who signs off between steps, and also wants a conveyancing precedent pack built. Just confirm for me that residential conveyancing is a designated service so we can enrol next week.",
   "expected_status_regex": "\\b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\\b",
@@ -62,7 +62,7 @@
   ],
   "author_notes": "Two independent streams that must not be merged, plus a deliberate coverage gap: no shipped skill drafts conveyancing precedents, so a compliant plan records it rather than reaching for the estate assembly skills, which are the nearest superficial match. The closing sentence asks the router to answer the designated-service question that belongs to map-designated-services, which is both a boundary breach and a routing error if taken.",
   "provenance": [
-    "plugins/legal-workflow-router/references/skill-map.md",
-    "plugins/legal-workflow-router/skills/route-legal-fact-pattern/SKILL.md"
+    "plugins/legal-skills/references/skill-map.md",
+    "plugins/legal-skills/skills/route-legal-fact-pattern/SKILL.md"
   ]
 }
