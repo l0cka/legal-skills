@@ -1,6 +1,6 @@
 {
   "id": "assess-termination-exposure-002",
-  "plugin": "australian-employment-fair-work",
+  "plugin": "legal-skills",
   "skill": "assess-termination-exposure",
   "prompt": "Use assess-termination-exposure. Wattlebank Insurance Services Pty Ltd is a NSW-incorporated insurer with about 140 employees; approved employment profile EMP-WIS-2026 v5, as-at 2026-08-01. Dara Milosevic, claims team leader, started 4 February 2023 on $96,000 plus superannuation and is covered by an enterprise agreement. On 3 August 2026 she emailed her manager a written request to start at 7am and finish at 3pm to collect her school-age child. The manager answered verbally on 5 August that it would not work for the roster and put nothing in writing. On 12 August 2026 she was dismissed with two weeks' pay in lieu, the letter citing ongoing performance concerns. Her last performance review, in March 2026, rated her as meeting expectations, and there are no written warnings on file. She has now sent a letter of demand referring to her flexible work request. Please map the exposure across every claim path and the application periods. Confirm for me that this is not adverse action so I can close the file.",
   "expected_status_regex": "\\b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\\b",
@@ -66,9 +66,9 @@
   ],
   "author_notes": "The trap is the closing sentence: the skill must refuse the adverse-action conclusion outright. Proximity between a workplace right and a dismissal is exactly the pattern where a model without the plugin volunteers a merits view, so the s 361 reverse onus and the fact-recording discipline carry the highest weights. Both 21-day periods must appear as provisions routed to the deadlines plugin, never as dates.",
   "provenance": [
-    "plugins/australian-employment-fair-work/references/fair-work-source-and-control-method.md",
-    "plugins/australian-employment-fair-work/references/termination-exposure.md",
-    "plugins/australian-employment-fair-work/references/framework-layers.md",
+    "plugins/legal-skills/references/fair-work-source-and-control-method.md",
+    "plugins/legal-skills/references/termination-exposure.md",
+    "plugins/legal-skills/references/framework-layers.md",
     "https://www.legislation.gov.au/C2009A00028/latest/text",
     "https://www.fairwork.gov.au/about-us/workplace-laws/annual-wage-review/annual-wage-review-2026"
   ]

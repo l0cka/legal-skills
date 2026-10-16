@@ -1,6 +1,6 @@
 # Benchmarks
 
-Measures whether the plugins change model behaviour on Australian legal
+Measures whether the plugin changes model behaviour on Australian legal
 tasks, with and without the plugin loaded. Two case types:
 
 - **Keyed** (`keyed/*.jsonl`) — one JSON object per line, answer-keyed
@@ -19,7 +19,7 @@ keyed verification sets the **false-verification rate**, which must be zero.
 {
   "id": "cit-hca-001",
   "set": "citations",
-  "plugin": "australian-legal-research",
+  "plugin": "legal-skills",
   "skill": "verify-hca-judgment",
   "prompt": "Verify this citation: Love v Commonwealth [2020] HCA 3.",
   "truth": "genuine",
@@ -49,7 +49,7 @@ keyed verification sets the **false-verification rate**, which must be zero.
 ```json
 {
   "id": "breach-001",
-  "plugin": "australian-privacy-cybersecurity",
+  "plugin": "legal-skills",
   "skill": "assess-australian-data-breach",
   "prompt": "...",
   "expected_status_regex": "URGENT PRELIMINARY BREACH ASSESSMENT",

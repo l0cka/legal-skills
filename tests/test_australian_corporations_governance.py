@@ -3,8 +3,10 @@ from __future__ import annotations
 import unittest
 from pathlib import Path
 
+from layout import PLUGIN
+
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN = ROOT / "plugins" / "australian-corporations-governance"
+AREA = "corporations-governance"
 
 
 class AustralianCorporationsGovernancePluginTests(unittest.TestCase):

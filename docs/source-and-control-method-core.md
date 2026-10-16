@@ -1,8 +1,8 @@
 # Source and control method core
 
-Every plugin that uses the READY result vocabulary ships a
+Every practice area that uses the READY result vocabulary ships a
 `references/<domain>-source-and-control-method.md` document. This file records
-the parts of that document that are convention, so the next plugin copies them
+the parts of that document that are convention, so the next area copies them
 deliberately instead of by drift. Conformance is enforced twice: the
 evidence-states block is a generated region (`generate_registry.py --check`
 fails CI when it drifts), and the invariant sentences below are asserted by
@@ -26,9 +26,11 @@ be `READY FOR HUMAN REVIEW` while individual propositions inside it are
 Each method document wraps its four-bullet evidence-state list in
 `<!-- generated:evidence-states -->` / `<!-- end:evidence-states -->` markers.
 The canonical bullet text lives in `scripts/generate_registry.py`; the
-per-plugin qualification lists are declared in the plugin's `catalog.json`:
+per-area qualification lists are declared on the area in `catalog.json`,
+beside `methodDocument`:
 
 ```json
+"methodDocument": "<domain>-source-and-control-method.md",
 "evidenceStates": {
   "qualifications": ["commencement", "amendment", "application", "document-status"],
   "unverifiable": ["official source", "applicable version", "decisive fact"]
@@ -60,13 +62,14 @@ Every method document must carry, verbatim:
 Everything else is the domain's own: the scope and routing list, the
 framework snapshot, the source hierarchy, the profile-precedence factual map,
 and the human-control list of determinations the workflows never make. Write
-them fresh for the domain; do not copy another plugin's wording for content
+them fresh for the domain; do not copy another area's wording for content
 that is supposed to differ.
 
-## Adding a plugin with a method document
+## Adding an area with a method document
 
 1. Write `references/<domain>-source-and-control-method.md` with the section
    skeleton above and the marker pair around an empty evidence-states region.
-2. Declare `evidenceStates` in the plugin's `catalog.json`.
+2. Declare `methodDocument` and `evidenceStates` on the area in
+   `catalog.json`.
 3. Run `python3 scripts/generate_registry.py` to stamp the block.
-4. Register the plugin in `tests/test_plugin_structure.py`.
+4. Register the area in `tests/test_plugin_structure.py`.

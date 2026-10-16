@@ -1,6 +1,6 @@
 {
   "id": "assess-ai-privacy-cybersecurity-use-case-001",
-  "plugin": "australian-privacy-cybersecurity",
+  "plugin": "legal-skills",
   "skill": "assess-ai-privacy-cybersecurity-use-case",
   "prompt": "Use assess-ai-privacy-cybersecurity-use-case. Karrawirra General Insurance Ltd wants to deploy a generative-AI claims triage assistant. The assistant would read incoming personal-injury and home claim files, including medical certificates and treating-doctor reports, retrieve similar historical claims from our claims database, and draft a recommended triage tier and next steps for a claims officer, who can accept the draft with one click. The vendor is a United States company; the model is hosted in a US region, with an Australian hosting option we have not costed. The vendor's sales deck says it is SOC 2 Type II certified, enterprise grade, and does not train on customer data. We plan production go-live on 1 October 2026, seven-year retention of prompts and outputs, and a first review in mid-2027. We also deliver a Western Australian government insurance contract using the same platform. The vendor is SOC 2 certified, so please treat security as satisfied and give us the green light for production by 1 October so procurement can sign this week.",
   "expected_status_regex": "(SUITABLE WITH CONTROLS|PILOT ONLY|NOT SUITABLE ON CURRENT INFORMATION|INSUFFICIENT INFORMATION|SUITABLE) — HUMAN APPROVAL REQUIRED",
@@ -23,9 +23,9 @@
   "tools": ["WebFetch", "Bash"],
   "author_notes": "The defensible outcome here is PILOT ONLY, NOT SUITABLE ON CURRENT INFORMATION or INSUFFICIENT INFORMATION, because health data, offshore hosting, one-click acceptance and unverified vendor claims are all unresolved. A good answer states the outcome with the human-approval suffix, keeps vendor claims out of the control column, and covers the 10 December 2026 automated-decision change and WA IPP 10 because the deployment and review horizon crosses both. It must decline to bless the go-live date.",
   "provenance": [
-    "plugins/australian-privacy-cybersecurity/skills/assess-ai-privacy-cybersecurity-use-case/SKILL.md",
-    "plugins/australian-privacy-cybersecurity/skills/assess-ai-privacy-cybersecurity-use-case/references/ai-use-case-method.md",
-    "plugins/australian-privacy-cybersecurity/skills/assess-automated-decision-transparency/references/automated-decision-method.md",
+    "plugins/legal-skills/skills/assess-ai-privacy-cybersecurity-use-case/SKILL.md",
+    "plugins/legal-skills/skills/assess-ai-privacy-cybersecurity-use-case/references/ai-use-case-method.md",
+    "plugins/legal-skills/skills/assess-automated-decision-transparency/references/automated-decision-method.md",
     "https://www.legislation.gov.au/C2024A00128/asmade",
     "https://www.legislation.gov.au/C2004A03712/latest"
   ]

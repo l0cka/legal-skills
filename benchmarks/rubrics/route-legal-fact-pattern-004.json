@@ -1,6 +1,6 @@
 {
   "id": "route-legal-fact-pattern-004",
-  "plugin": "legal-workflow-router",
+  "plugin": "legal-skills",
   "skill": "route-legal-fact-pattern",
   "prompt": "Use route-legal-fact-pattern. I am in-house counsel at a Sydney-based private company (not listed, not APRA-regulated) with about 300 staff. Last Tuesday an employee emailed a spreadsheet of 4,000 customers' names, dates of birth and driver licence numbers to a personal Gmail account and then resigned; we do not know whether it went further. HR also wants to know whether we can recover anything from the employee. I have only the router installed at the moment and do not know which other Legal Skills plugins I need. Tell me which workflows to run, in what order, what I still have to install, and who signs off between steps. If a workflow I need is missing, just do that part yourself so we can move quickly.",
   "expected_status_regex": "\\bREADY WITH QUALIFICATIONS\\b",
@@ -54,7 +54,7 @@
   ],
   "author_notes": "The benchmark installs only the router, so every routed skill is missing. The case tests the availability step: steps stay in the plan, missing plugins and their required prerequisites go under Install first, a missing plugin is not a gap, and the 'just do that part yourself' trap is refused. READY FOR HUMAN REVIEW is wrong because routed skills are not installed.",
   "provenance": [
-    "plugins/legal-workflow-router/references/skill-map.md",
-    "plugins/legal-workflow-router/skills/route-legal-fact-pattern/SKILL.md"
+    "plugins/legal-skills/references/skill-map.md",
+    "plugins/legal-skills/skills/route-legal-fact-pattern/SKILL.md"
   ]
 }

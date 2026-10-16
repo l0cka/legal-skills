@@ -2,13 +2,30 @@
 
 This changelog records all notable repository changes.
 
-Each plugin has an independent version. The repository does not have release
-tags. The current pull request remains under **Unreleased**, even when its
+The repository ships one plugin, `legal-skills`, with one version. The
+repository does not have release tags. The current pull request remains under **Unreleased**, even when its
 plugin manifests contain their intended release versions.
 
 ## Unreleased
 
 ### Changed
+
+- **Breaking: one plugin.** The fifteen `australian-*` and `legal-*` plugins
+  are merged into a single plugin, `legal-skills` 1.0.0. All 98 skills keep
+  their names and behaviour and now install together, so cross-area
+  hand-offs always resolve. The former plugins become practice areas listed
+  in `catalog.json`, each with its own guide under `areas/` and its own
+  law-checked date. To upgrade, uninstall the old plugins, then run
+  `claude plugin install legal-skills@legal-skills --scope user` (or
+  `codex plugin add legal-skills@legal-skills`). The old plugin names are no
+  longer listed in either marketplace.
+- Removed the cross-plugin `requires` and `handsOffTo` declarations, the
+  generated "Other plugins" sections, the install-tracking steps in
+  `route-legal-fact-pattern`, and `plugins/README.md`. A test now checks that
+  every `$skill-name` a document names exists.
+- `skills.json` is a flat skill-to-provenance map (registry version 3), and
+  validation rejects `TODO` or `TBD` provenance placeholders.
+- Evals moved to `plugins/legal-skills/evals/<area>-<case>/`.
 
 - `australian-contract-review`: names the unverified NSW s 3A(2) lead and
   separates verified Queensland and Victorian contracting-out text from

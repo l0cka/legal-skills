@@ -1,0 +1,363 @@
+{
+  "displayName": "Legal Skills",
+  "shortDescription": "Governed Australian legal workflows with official-source verification and lawyer review gates.",
+  "longDescription": "One plugin for Australian legal research, contract review and drafting, employment, privacy, consumer and competition, corporations, AI governance, AML/CTF, estate planning, litigation deadlines, evidence handling and matter triage, plus jurisdiction-neutral sparring that pressure-tests a lawyer's own reasoning. Every research workflow verifies against official sources at use, labels pending law separately from current law, fails closed on missing inputs and returns drafts for qualified human review.",
+  "defaultPrompt": [
+    "Route this matter to the skills it engages and tell me what to run first.",
+    "Verify this Commonwealth provision as in force on a given date.",
+    "Review this MSA against our contract-review playbook and return an issues table.",
+    "Assess whether this incident is an eligible data breach under the Privacy Act.",
+    "Compute the procedural deadlines that run from this filing.",
+    "Map our AI governance obligations, separating binding from pending instruments."
+  ],
+  "whatItDoes": [
+    "Verifies legislation, cases and regulator guidance at the relevant date",
+    "Reviews and drafts contracts against controlled playbooks and profiles",
+    "Maps privacy, employment, consumer, corporate, AI and AML/CTF obligations",
+    "Routes multi-area matters and records human decision owners"
+  ],
+  "boundaries": [
+    "Drafts for qualified lawyer review; never legal advice or approval",
+    "No signing, filing, sending or live-system writes without separate authority",
+    "Official-source verification at use; discovery leads are not authority"
+  ],
+  "areas": [
+    {
+      "id": "ai-governance",
+      "displayName": "Australian AI Governance",
+      "shortDescription": "Maps the AI rules and guidance that apply to an Australian organisation. Shows which items are law and which are only guidance.",
+      "lawCheckedOn": "2026-08-26",
+      "skills": [
+        "assess-board-ai-oversight",
+        "check-ai-guidance-alignment",
+        "configure-ai-governance-profile",
+        "map-ai-regulatory-obligations",
+        "track-ai-regulatory-developments",
+        "triage-government-ai-use-case"
+      ],
+      "methodDocument": "ai-governance-source-and-control-method.md",
+      "evidenceStates": {
+        "qualifications": [
+          "commencement",
+          "supersession",
+          "application",
+          "document-status"
+        ],
+        "unverifiable": [
+          "official source",
+          "applicable version",
+          "decisive fact"
+        ]
+      }
+    },
+    {
+      "id": "aml-ctf",
+      "displayName": "Australian AML/CTF",
+      "shortDescription": "Finds the AML/CTF obligations of an Australian legal practice under the tranche 2 reforms. A person must approve each report and decision.",
+      "lawCheckedOn": "2026-08-26",
+      "skills": [
+        "configure-aml-ctf-practice-profile",
+        "map-designated-services",
+        "map-reporting-obligations",
+        "review-aml-ctf-program",
+        "track-aml-ctf-developments"
+      ],
+      "methodDocument": "aml-ctf-source-and-control-method.md",
+      "evidenceStates": {
+        "qualifications": [
+          "commencement",
+          "amendment",
+          "application",
+          "document-status"
+        ],
+        "unverifiable": [
+          "official source",
+          "applicable version",
+          "decisive fact"
+        ]
+      }
+    },
+    {
+      "id": "commercial-drafting",
+      "displayName": "Australian Commercial Drafting",
+      "shortDescription": "Drafts Australian NDAs, subscription terms, privacy policies and services agreements for lawyer review.",
+      "lawCheckedOn": "2026-10-13",
+      "skills": [
+        "configure-drafting-profile",
+        "draft-nda",
+        "draft-privacy-policy",
+        "draft-services-agreement",
+        "draft-website-terms",
+        "review-draft-against-checklist"
+      ],
+      "methodDocument": "drafting-source-and-control-method.md",
+      "evidenceStates": {
+        "qualifications": [
+          "commencement",
+          "application",
+          "jurisdiction",
+          "document-status",
+          "fact"
+        ],
+        "unverifiable": [
+          "official source",
+          "applicable version",
+          "instruction",
+          "decisive fact"
+        ]
+      }
+    },
+    {
+      "id": "consumer-competition",
+      "displayName": "Australian Consumer & Competition",
+      "shortDescription": "Maps consumer guarantees, marketing, merger notification, competition conduct and product safety for lawyer review.",
+      "lawCheckedOn": "2026-10-13",
+      "skills": [
+        "assess-cartel-and-rpm-risk",
+        "assess-consumer-guarantees",
+        "configure-consumer-competition-profile",
+        "map-merger-notification",
+        "map-product-safety-obligations",
+        "review-marketing-claims",
+        "track-accc-developments"
+      ],
+      "methodDocument": "consumer-competition-source-and-control-method.md",
+      "evidenceStates": {
+        "qualifications": [
+          "commencement",
+          "amendment",
+          "application",
+          "jurisdiction",
+          "fact"
+        ],
+        "unverifiable": [
+          "official source",
+          "applicable version",
+          "decisive fact"
+        ]
+      }
+    },
+    {
+      "id": "contract-review",
+      "displayName": "Australian Contract Review",
+      "shortDescription": "Reviews inbound Australian contracts against standard positions, fallbacks and approval thresholds.",
+      "lawCheckedOn": "2026-10-13",
+      "skills": [
+        "build-negotiation-redline-memo",
+        "check-unfair-contract-terms",
+        "configure-review-playbook",
+        "review-commercial-agreement",
+        "review-limitation-and-indemnity-regime",
+        "track-contract-renewals",
+        "triage-inbound-nda"
+      ],
+      "methodDocument": "review-source-and-control-method.md",
+      "evidenceStates": {
+        "qualifications": [
+          "commencement",
+          "application",
+          "jurisdiction",
+          "document-status",
+          "fact"
+        ],
+        "unverifiable": [
+          "official source",
+          "applicable version",
+          "instruction",
+          "decisive fact"
+        ]
+      }
+    },
+    {
+      "id": "corporations-governance",
+      "displayName": "Australian Corporations Governance",
+      "shortDescription": "Helps govern an Australian company under the Corporations Act. Prepares board records and reviews for human approval.",
+      "lawCheckedOn": "2026-08-26",
+      "skills": [
+        "assess-director-duties-governance",
+        "configure-corporations-governance",
+        "maintain-corporations-governance-calendar",
+        "prepare-board-decision-record",
+        "review-corporations-governance-framework"
+      ],
+      "methodDocument": "governance-source-and-control-method.md",
+      "evidenceStates": {
+        "qualifications": [
+          "commencement",
+          "application",
+          "overlay",
+          "document-status",
+          "fact"
+        ],
+        "unverifiable": [
+          "official source",
+          "applicable version",
+          "organisational document",
+          "decisive fact"
+        ]
+      }
+    },
+    {
+      "id": "employment-fair-work",
+      "displayName": "Australian Employment & Fair Work",
+      "shortDescription": "Maps Fair Work obligations and reviews contracts, classification, discrimination, restraints and underpayment frameworks for lawyers.",
+      "lawCheckedOn": "2026-08-26",
+      "skills": [
+        "assess-discrimination-and-positive-duty",
+        "assess-employee-vs-contractor",
+        "assess-restraint-of-trade",
+        "assess-termination-exposure",
+        "compute-underpayment-exposure-framework",
+        "configure-employment-profile",
+        "map-fair-work-obligations",
+        "review-employment-contract",
+        "review-workplace-policy",
+        "track-fair-work-developments"
+      ],
+      "methodDocument": "fair-work-source-and-control-method.md",
+      "evidenceStates": {
+        "qualifications": [
+          "commencement",
+          "amendment",
+          "application",
+          "document-status"
+        ],
+        "unverifiable": [
+          "official source",
+          "applicable version",
+          "decisive fact"
+        ]
+      }
+    },
+    {
+      "id": "estate-planning",
+      "displayName": "Australian Estate Planning",
+      "shortDescription": "Prepares solicitor-review drafts from approved NSW, Victorian and Queensland estate planning precedents.",
+      "lawCheckedOn": "2026-08-26",
+      "skills": [
+        "assemble-nsw-estate-documents",
+        "assemble-qld-estate-documents",
+        "assemble-vic-estate-documents"
+      ]
+    },
+    {
+      "id": "legal-research",
+      "displayName": "Australian Legal Research",
+      "shortDescription": "Checks Australian legislation and case citations against the official publishers. Writes and reviews AGLC4 citations.",
+      "lawCheckedOn": "2026-08-26",
+      "skills": [
+        "check-act-legislation",
+        "check-commonwealth-legislation",
+        "check-northern-territory-legislation",
+        "check-nsw-legislation",
+        "check-queensland-legislation",
+        "check-south-australia-legislation",
+        "check-tasmania-legislation",
+        "check-victoria-legislation",
+        "check-western-australia-legislation",
+        "format-aglc4-citations",
+        "route-case-citation",
+        "trace-commonwealth-legislative-change",
+        "verify-case-quote",
+        "verify-federal-judgment",
+        "verify-hca-judgment",
+        "verify-nsw-judgment"
+      ]
+    },
+    {
+      "id": "litigation-deadlines",
+      "displayName": "Australian Litigation Deadlines",
+      "shortDescription": "Maps limitation periods and computes candidate court deadlines. A lawyer must confirm each date.",
+      "lawCheckedOn": "2026-08-26",
+      "skills": [
+        "compute-procedural-deadlines",
+        "configure-litigation-deadline-profile",
+        "maintain-deadline-register",
+        "map-limitation-periods",
+        "map-tribunal-review-deadlines",
+        "verify-deadline-basis"
+      ],
+      "methodDocument": "litigation-deadlines-source-and-control-method.md",
+      "evidenceStates": {
+        "qualifications": [
+          "commencement",
+          "amendment",
+          "application",
+          "coverage"
+        ],
+        "unverifiable": [
+          "official source",
+          "applicable version",
+          "decisive fact"
+        ]
+      }
+    },
+    {
+      "id": "privacy-cybersecurity",
+      "displayName": "Australian Privacy & Cybersecurity",
+      "shortDescription": "Maps the Australian privacy and cyber rules that can apply to a set of facts, a data breach or an AI use case.",
+      "lawCheckedOn": "2026-08-26",
+      "skills": [
+        "assess-ai-privacy-cybersecurity-use-case",
+        "assess-australian-data-breach",
+        "assess-australian-privacy-issues",
+        "assess-automated-decision-transparency",
+        "assess-statutory-privacy-tort",
+        "check-australian-privacy-principles",
+        "map-australian-cyber-incident-obligations",
+        "route-australian-privacy-jurisdiction"
+      ]
+    },
+    {
+      "id": "evidence-workflows",
+      "displayName": "Legal Evidence Workflows",
+      "shortDescription": "Builds source-linked Word document indexes, chronologies, privilege logs and inconsistency maps from supplied matter documents without deciding credibility, privilege or merits.",
+      "lawCheckedOn": "2026-08-26",
+      "skills": [
+        "build-document-index",
+        "build-evidence-chronology",
+        "build-privilege-log",
+        "map-evidence-inconsistencies"
+      ]
+    },
+    {
+      "id": "triage",
+      "displayName": "Legal Triage",
+      "shortDescription": "Helps community legal centre staff record and triage legal enquiries under an approved profile.",
+      "lawCheckedOn": "2026-08-26",
+      "skills": [
+        "configure-legal-triage",
+        "triage-legal-enquiry"
+      ]
+    },
+    {
+      "id": "workflow-router",
+      "displayName": "Legal Workflow Router",
+      "shortDescription": "Maps a fact pattern to the skills it engages, in order, with the human decision points named.",
+      "lawCheckedOn": "2026-08-26",
+      "skills": [
+        "route-legal-fact-pattern"
+      ]
+    },
+    {
+      "id": "cognitive-sparring",
+      "displayName": "Legal Cognitive Sparring",
+      "shortDescription": "Spars with a qualified lawyer on reasoning, gaps, and strategy. Jurisdiction is lawyer-supplied. It does not give final advice or invent citations.",
+      "lawCheckedOn": "2026-10-15",
+      "skills": [
+        "clarify-burden-and-standard",
+        "drill-oral-advocacy",
+        "find-blind-spots",
+        "map-assumptions",
+        "oppose-as-counsel",
+        "pressure-test-argument",
+        "pressure-test-strategy",
+        "red-team-evidence",
+        "role-play-decision-maker",
+        "simplify-without-losing-precision",
+        "steelman-then-attack",
+        "test-understanding"
+      ]
+    }
+  ]
+}

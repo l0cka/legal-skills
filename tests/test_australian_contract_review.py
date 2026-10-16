@@ -1,20 +1,21 @@
 from __future__ import annotations
 
-import json
 import re
 import unittest
 from pathlib import Path
 
+from layout import PLUGIN, area_eval_files, area_markdown, area_skill_files
+
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN = ROOT / "plugins" / "australian-contract-review"
+AREA = "contract-review"
 
 
 class AustralianContractReviewTests(unittest.TestCase):
     def test_each_skill_has_failure_eval_and_review_controls(self) -> None:
-        prompts = [path.read_text(encoding="utf-8") for path in (PLUGIN / "evals").glob("*/prompt.md")]
-        for path in (PLUGIN / "skills").glob("*/SKILL.md"):
+        prompts = [path.read_text(encoding="utf-8") for path in area_eval_files(AREA, "prompt.md")]
+        for path in area_skill_files(AREA):
             with self.subTest(skill=path.parent.name):
-                text = " ".join(path.read_text(encoding="utf-8").split("<!-- generated:plugin-dependencies -->")[0].split())
+                text = " ".join(path.read_text(encoding="utf-8").split())
                 for control in (
                     "DRAFT - LAWYER REVIEW REQUIRED",
                     "2026-10-13",
@@ -29,7 +30,7 @@ class AustralianContractReviewTests(unittest.TestCase):
                 self.assertTrue(any("fail-closed" in prompt for prompt in cases))
 
     def test_local_links_stay_within_owner_plugin(self) -> None:
-        for path in PLUGIN.rglob("*.md"):
+        for path in area_markdown(AREA):
             for target in re.findall(r"\[[^\]]*\]\(([^)\s]+)\)", path.read_text(encoding="utf-8")):
                 if target.startswith(("http://", "https://", "#", "mailto:")):
                     continue
@@ -38,23 +39,18 @@ class AustralianContractReviewTests(unittest.TestCase):
                     self.assertTrue(resolved.is_relative_to(PLUGIN))
                     self.assertTrue(resolved.is_file())
 
-    def test_shared_workflows_are_named_and_dependencies_declared(self) -> None:
-        catalog = json.loads((PLUGIN / "catalog.json").read_text(encoding="utf-8"))
-        self.assertEqual(set(catalog["requires"]), {"australian-commercial-drafting", "australian-legal-research"})
-        self.assertEqual(set(catalog["handsOffTo"]), {"australian-employment-fair-work", "australian-privacy-cybersecurity"})
+    def test_shared_workflows_are_named_and_exist(self) -> None:
         expected = {
             "configure-review-playbook": ("configure-drafting-profile", "configure-employment-profile"),
             "review-commercial-agreement": ("draft-services-agreement", "assess-australian-privacy-issues", "map-fair-work-obligations"),
             "track-contract-renewals": ("draft-website-terms", "check-commonwealth-legislation"),
         }
         for name, owners in expected.items():
-            text = (PLUGIN / "skills" / name / "SKILL.md").read_text(encoding="utf-8").split("<!-- generated:plugin-dependencies -->")[0]
+            text = (PLUGIN / "skills" / name / "SKILL.md").read_text(encoding="utf-8")
             for owner in owners:
                 with self.subTest(skill=name, owner=owner):
                     self.assertIn(f"`${owner}`", text)
-        references = {path.name for path in (PLUGIN / "references").iterdir()}
-        self.assertNotIn("unfair-contract-terms-checklist.md", references)
-        self.assertNotIn("employment-profile-schema.md", references)
+                    self.assertTrue((PLUGIN / "skills" / owner / "SKILL.md").is_file())
 
     def test_statutory_limits_and_unverified_state_leads_remain_explicit(self) -> None:
         leads = " ".join((PLUGIN / "references" / "statutory-verification-leads.md").read_text(encoding="utf-8").split())
@@ -77,10 +73,10 @@ class AustralianContractReviewTests(unittest.TestCase):
     def test_positive_eval_covers_each_skill(self) -> None:
         positive_prompts = [
             path.read_text(encoding="utf-8")
-            for path in (PLUGIN / "evals").glob("*/prompt.md")
+            for path in area_eval_files(AREA, "prompt.md")
             if "positive-path" in path.read_text(encoding="utf-8")
         ]
-        for path in (PLUGIN / "skills").glob("*/SKILL.md"):
+        for path in area_skill_files(AREA):
             with self.subTest(skill=path.parent.name):
                 self.assertTrue(any(
                     re.search(rf"(?m)^name: {re.escape(path.parent.name)} ", prompt)
@@ -90,7 +86,7 @@ class AustralianContractReviewTests(unittest.TestCase):
     def test_graders_have_distinct_case_specific_bodies(self) -> None:
         bodies = [
             " ".join(path.read_text(encoding="utf-8").split("\n---\n", 1)[1].split())
-            for path in (PLUGIN / "evals").glob("*/graders/workflow.md")
+            for path in area_eval_files(AREA, "graders/workflow.md")
         ]
         self.assertEqual(len(bodies), len(set(bodies)))
         self.assertGreaterEqual(len(bodies), 19)
@@ -115,7 +111,7 @@ class AustralianContractReviewTests(unittest.TestCase):
                 self.assertTrue("VERIFIED" in row or "verify against" in row)
 
     def test_reference_only_reuse_and_boundary_scenarios_are_exercised(self) -> None:
-        case = PLUGIN / "evals" / "renewal-on-commencement"
+        case = PLUGIN / "evals" / f"{AREA}-renewal-on-commencement"
         prompt = (case / "prompt.md").read_text(encoding="utf-8")
         grader = (case / "graders" / "workflow.md").read_text(encoding="utf-8")
         self.assertIn("reference-only", prompt)

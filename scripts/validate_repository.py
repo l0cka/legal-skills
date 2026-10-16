@@ -1,11 +1,4 @@
 #!/usr/bin/env python3
-"""Validate the hand-edited Legal Skills sources.
-
-The canonical plugin sources are loaded (and shape-checked) by
-generate_registry.py; `generate_registry.py --check` then guarantees every
-generated surface matches them. This script covers what generation does not:
-law-check currency, plugin READMEs, skill packages, and skills.json provenance.
-"""
 
 from __future__ import annotations
 
@@ -23,16 +16,14 @@ ROOT = Path(__file__).resolve().parents[1]
 FRONTMATTER_LINE = re.compile(r"^([A-Za-z0-9_-]+):\s*(.*)$")
 MARKDOWN_LINK = re.compile(r"\[[^\]]*\]\(([^)\s]+)\)")
 MAX_DESCRIPTION_LENGTH = 1024
+PLACEHOLDER = re.compile(r"\bTODO\b|\bTBD\b", re.I)
 OPENAI_AGENT_KEYS = ("display_name", "short_description", "default_prompt")
-REGISTRY_VERSION = 2
-# A plugin whose legal content has not been re-checked within this window fails
-# validation: re-verify the plugin against the official sources, fix anything
-# stale, then set catalog.json lawCheckedOn to the check date.
+REGISTRY_VERSION = 3
 LAW_CHECK_MAX_AGE_DAYS = 183
 
 
 class ValidationError(Exception):
-    """Raised when repository state violates the marketplace contract."""
+    pass
 
 
 def parse_frontmatter(relative: Path, text: str) -> dict[str, str]:
@@ -104,7 +95,7 @@ def validate_law_checked_on(relative: str, value: str, today: dt.date | None = N
     if (today - checked).days > LAW_CHECK_MAX_AGE_DAYS:
         raise ValidationError(
             f"{relative}.lawCheckedOn: {value} is older than {LAW_CHECK_MAX_AGE_DAYS} days; "
-            "re-check the plugin against the official sources and update the date"
+            "re-check the area against the official sources and update the date"
         )
 
 
@@ -118,8 +109,8 @@ def load_sources(root: Path) -> dict[str, Any]:
     if not isinstance(registry, dict) or registry.get("registry_version") != REGISTRY_VERSION:
         raise ValidationError(f"skills.json.registry_version: must be {REGISTRY_VERSION}")
     sources = registry.get("sources")
-    if not isinstance(sources, dict) or not all(isinstance(v, dict) for v in sources.values()):
-        raise ValidationError("skills.json.sources: expected an object of plugin objects")
+    if not isinstance(sources, dict):
+        raise ValidationError("skills.json.sources: expected an object of skill provenance sentences")
     return sources
 
 
@@ -134,30 +125,28 @@ def validate(root: Path = ROOT) -> tuple[int, int]:
     for plugin in plugins:
         name = plugin["name"]
         plugin_dir = root / "plugins" / name
-        validate_law_checked_on(f"plugins/{name}/catalog.json", plugin["catalog"]["lawCheckedOn"])
         if not (plugin_dir / "README.md").is_file():
             raise ValidationError(f"plugins/{name}/README.md: missing plugin README")
-
+        for area in plugin["areas"]:
+            where = f"plugins/{name}/catalog.json areas.{area['id']}"
+            validate_law_checked_on(where, area["lawCheckedOn"])
+            if not (plugin_dir / "areas" / area["id"] / "README.md").is_file():
+                raise ValidationError(f"plugins/{name}/areas/{area['id']}/README.md: missing area guide")
         for skill_dir in sorted(path for path in (plugin_dir / "skills").iterdir() if path.is_dir()):
             validate_skill(root, skill_dir)
             if skill_dir.name in seen_skills:
                 raise ValidationError(f"duplicate skill name: {skill_dir.name}")
             seen_skills.add(skill_dir.name)
-
-        recorded = sources.get(name, {})
-        for skill in plugin["skills"]:
-            if not is_text(recorded.get(skill)):
-                raise ValidationError(
-                    f"skills.json: source provenance required for {name}/{skill}; add a "
-                    "sentence recording where the workflow came from"
-                )
-        stale = sorted(set(recorded) - set(plugin["skills"]))
-        if stale:
-            raise ValidationError(f"skills.json: {name} lists unknown skill(s) {stale}")
-
-    unknown_plugins = sorted(set(sources) - {plugin["name"] for plugin in plugins})
-    if unknown_plugins:
-        raise ValidationError(f"skills.json: unknown plugin(s) {unknown_plugins}")
+    for skill in sorted(seen_skills):
+        sentence = sources.get(skill)
+        if not is_text(sentence) or PLACEHOLDER.search(sentence):
+            raise ValidationError(
+                f"skills.json: source provenance required for {skill}; add a "
+                "sentence recording where the workflow came from"
+            )
+    stale = sorted(set(sources) - seen_skills)
+    if stale:
+        raise ValidationError(f"skills.json: lists unknown skill(s) {stale}")
     return len(plugins), len(seen_skills)
 
 

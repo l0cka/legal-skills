@@ -15,8 +15,10 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from layout import PLUGIN, area_dir
+
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN = ROOT / "plugins" / "australian-privacy-cybersecurity"
+AREA = "privacy-cybersecurity"
 SKILLS = PLUGIN / "skills"
 
 
@@ -66,7 +68,7 @@ class AustralianPrivacyCybersecurityTests(unittest.TestCase):
             self.assertIn(phrase, normalized)
 
     def test_harvey_influence_is_attributed_without_bundled_task_material(self) -> None:
-        readme = (PLUGIN / "README.md").read_text(encoding="utf-8")
+        readme = (area_dir(AREA) / "README.md").read_text(encoding="utf-8")
         readme = " ".join(readme.split())
         self.assertIn("MIT-licensed Harvey AI `harvey-labs`", readme)
         self.assertIn("No task facts, client artefacts or legal answers", readme)

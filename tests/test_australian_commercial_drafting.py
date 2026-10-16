@@ -4,16 +4,17 @@ import re
 import unittest
 from pathlib import Path
 
+from layout import PLUGIN, area_eval_files, area_markdown, area_skill_files
 from test_plugin_structure import CONTRACT_HEADINGS, DRAFT, READY
 
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN = ROOT / "plugins" / "australian-commercial-drafting"
+AREA = "commercial-drafting"
 
 
 class AustralianCommercialDraftingTests(unittest.TestCase):
     def test_each_skill_has_eval_coverage(self) -> None:
-        skills = {path.parent.name for path in (PLUGIN / "skills").glob("*/SKILL.md")}
-        prompts = [path.read_text(encoding="utf-8") for path in (PLUGIN / "evals").glob("*/prompt.md")]
+        skills = {path.parent.name for path in area_skill_files(AREA)}
+        prompts = [path.read_text(encoding="utf-8") for path in area_eval_files(AREA, "prompt.md")]
         covered = {
             name
             for name in skills
@@ -22,7 +23,7 @@ class AustralianCommercialDraftingTests(unittest.TestCase):
         self.assertEqual(covered, skills)
 
     def test_result_contracts_match_document_family(self) -> None:
-        for path in (PLUGIN / "skills").glob("*/SKILL.md"):
+        for path in area_skill_files(AREA):
             vocabulary = DRAFT if path.parent.name.startswith("draft-") else READY
             with self.subTest(skill=path.parent.name):
                 text = " ".join(path.read_text(encoding="utf-8").split())
@@ -30,7 +31,7 @@ class AustralianCommercialDraftingTests(unittest.TestCase):
                     self.assertIn(required, text)
 
     def test_all_local_document_links_resolve(self) -> None:
-        for path in PLUGIN.rglob("*.md"):
+        for path in area_markdown(AREA):
             for target in re.findall(r"\[[^\]]*\]\(([^)\s]+)\)", path.read_text(encoding="utf-8")):
                 if target.startswith(("http://", "https://", "#", "mailto:")):
                     continue
@@ -59,7 +60,7 @@ class AustralianCommercialDraftingTests(unittest.TestCase):
         }
         for skill, handoffs in expected.items():
             path = PLUGIN / "skills" / skill / "SKILL.md"
-            text = path.read_text(encoding="utf-8").split("<!-- generated:plugin-dependencies -->")[0]
+            text = path.read_text(encoding="utf-8")
             for handoff in handoffs:
                 with self.subTest(skill=skill, handoff=handoff):
                     self.assertIn(f"`${handoff}`", text)

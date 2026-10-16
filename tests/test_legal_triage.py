@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SKILL_ROOT = (
     ROOT
     / "plugins"
-    / "legal-triage"
+    / "legal-skills"
     / "skills"
     / "configure-legal-triage"
 )
@@ -23,7 +23,7 @@ TEMPLATE = SKILL_ROOT / "assets" / "centre-profile.template.json"
 TRIAGE_SKILL = (
     ROOT
     / "plugins"
-    / "legal-triage"
+    / "legal-skills"
     / "skills"
     / "triage-legal-enquiry"
     / "SKILL.md"
@@ -211,7 +211,7 @@ class LegalTriageSkillTests(unittest.TestCase):
             manifest_path = (
                 ROOT
                 / "plugins"
-                / "legal-triage"
+                / "legal-skills"
                 / f".{provider}-plugin"
                 / "plugin.json"
             )
@@ -223,7 +223,7 @@ class LegalTriageSkillTests(unittest.TestCase):
             (
                 ROOT
                 / "plugins"
-                / "legal-triage"
+                / "legal-skills"
                 / ".codex-plugin"
                 / "plugin.json"
             ).read_text(encoding="utf-8")

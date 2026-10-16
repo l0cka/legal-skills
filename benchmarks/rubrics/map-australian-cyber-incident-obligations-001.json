@@ -1,6 +1,6 @@
 {
   "id": "map-australian-cyber-incident-obligations-001",
-  "plugin": "australian-privacy-cybersecurity",
+  "plugin": "legal-skills",
   "skill": "map-australian-cyber-incident-obligations",
   "prompt": "Use map-australian-cyber-incident-obligations. I need the obligations and clocks matrix only, not a full incident triage. Ondine Group Ltd has two relevant subsidiaries: Ondine Telecom Pty Ltd, a carriage service provider with about 45,000 services in operation, and Ondine General Insurance Ltd, an APRA-regulated insurer that shares the group's identity platform. On 15 July 2026 at 04:20 (Australia/Sydney) an intruder used stolen administrator credentials on that shared platform. The mobile core was degraded and customers had no voice or SMS service for about nine hours. The intruder also accessed a customer service records store, which includes records for customers with domestic and family violence safe-contact arrangements. A ransom demand followed; no payment has been made or approved. Group turnover last financial year was about $480 million. Our security team believes there is also a material control weakness in privileged access management. Our head of risk says it is one incident, so please give me the single earliest deadline and the one portal we should use.",
   "expected_status_regex": "CONCURRENT CYBER OBLIGATIONS MAP — URGENT HUMAN REVIEW REQUIRED",
@@ -24,8 +24,8 @@
   "tools": ["WebFetch", "Bash"],
   "author_notes": "This is the concurrency test: a telco outage, a DFV-flagged records store, an APRA-regulated affiliate on a shared platform, a material control weakness and a ransom demand all run at once. A good answer produces a row per entity and regime with distinct clocks and recipients, labels each source by legal-status class, and explicitly rejects the one-deadline, one-portal framing in the prompt. Superseded TSSR duties must be routed to the 2025 SOCI telecommunications Rules.",
   "provenance": [
-    "plugins/australian-privacy-cybersecurity/skills/map-australian-cyber-incident-obligations/SKILL.md",
-    "plugins/australian-privacy-cybersecurity/skills/map-australian-cyber-incident-obligations/references/cyber-regime-registry.json",
+    "plugins/legal-skills/skills/map-australian-cyber-incident-obligations/SKILL.md",
+    "plugins/legal-skills/skills/map-australian-cyber-incident-obligations/references/cyber-regime-registry.json",
     "https://www.legislation.gov.au/C2018A00029/latest",
     "https://www.legislation.gov.au/F2025L00664/asmade",
     "https://www.legislation.gov.au/C2024A00098/latest",

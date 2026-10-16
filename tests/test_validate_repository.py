@@ -17,7 +17,8 @@ SPEC.loader.exec_module(validate_repository)
 
 PLUGIN = "demo-plugin"
 SKILL = "demo-skill"
-README_REGIONS = ("badges", "counts", "plugin-table", "install-agent", "install-codex", "install-claude")
+AREA = "demo-area"
+README_REGIONS = ("badges", "counts", "area-table", "install-agent", "install-codex", "install-claude")
 
 
 def write(path: Path, text: str) -> None:
@@ -51,13 +52,28 @@ def openai_agent_yaml() -> str:
     )
 
 
+def demo_area(**changes) -> dict:
+    area = {
+        "id": AREA,
+        "displayName": "Demo Area",
+        "shortDescription": "Demo area for tests.",
+        "lawCheckedOn": dt.date.today().isoformat(),
+        "skills": [SKILL],
+    }
+    area.update(changes)
+    return area
+
+
+def update_area(plugin_dir: Path, **changes) -> None:
+    update_json(plugin_dir / "catalog.json", areas=[demo_area(**changes)])
+
+
 def build_repo(root: Path) -> None:
-    """Write the hand-edited sources only; the generator derives the rest."""
     regions = "\n\n".join(f"<!-- generated:{r} -->\n<!-- end:{r} -->" for r in README_REGIONS)
     write(root / "README.md", f"# Demo marketplace\n\n{regions}\n")
     write_json(
         root / "skills.json",
-        {"registry_version": 2, "sources": {PLUGIN: {SKILL: "Original test fixture."}}},
+        {"registry_version": 3, "sources": {SKILL: "Original test fixture."}},
     )
     plugin_dir = root / "plugins" / PLUGIN
     write_json(
@@ -75,13 +91,14 @@ def build_repo(root: Path) -> None:
             "displayName": "Demo Plugin",
             "shortDescription": "Demo plugin for tests.",
             "longDescription": "A demo plugin used by the validator and generator tests.",
-            "lawCheckedOn": dt.date.today().isoformat(),
             "defaultPrompt": ["Use the demo skill."],
             "whatItDoes": ["Demonstrates the fixture."],
             "boundaries": ["Never leaves the test suite."],
+            "areas": [demo_area()],
         },
     )
-    write(plugin_dir / "README.md", "# Demo plugin\n")
+    write(plugin_dir / "README.md", "# Demo plugin\n\n<!-- generated:area-table -->\n<!-- end:area-table -->\n")
+    write(plugin_dir / "areas" / AREA / "README.md", "# Demo area\n")
     skill_dir = plugin_dir / "skills" / SKILL
     write(skill_dir / "SKILL.md", skill_markdown())
     write(skill_dir / "references" / "method.md", "# Method\n")
@@ -148,26 +165,43 @@ class ValidateRepositoryTests(unittest.TestCase):
         self.assert_error("missing plugin README")
 
     def test_skill_without_source_fails(self) -> None:
-        update_json(self.root / "skills.json", sources={PLUGIN: {SKILL: ""}})
-        self.assert_error(f"source provenance required for {PLUGIN}/{SKILL}")
+        update_json(self.root / "skills.json", sources={SKILL: ""})
+        self.assert_error(f"source provenance required for {SKILL}")
+
+    def test_placeholder_source_fails(self) -> None:
+        update_json(self.root / "skills.json", sources={SKILL: "TODO(human): provenance sentence"})
+        self.assert_error(f"source provenance required for {SKILL}")
 
     def test_new_skill_without_source_fails(self) -> None:
         skill_dir = self.plugin_dir / "skills" / "new-skill"
         write(skill_dir / "SKILL.md", "---\nname: new-skill\ndescription: New.\n---\n")
         write(skill_dir / "agents" / "openai.yaml", openai_agent_yaml())
-        self.assert_error(f"source provenance required for {PLUGIN}/new-skill")
+        update_area(self.plugin_dir, skills=[SKILL, "new-skill"])
+        self.assert_error("source provenance required for new-skill")
+
+    def test_skill_outside_every_area_fails(self) -> None:
+        skill_dir = self.plugin_dir / "skills" / "new-skill"
+        write(skill_dir / "SKILL.md", "---\nname: new-skill\ndescription: New.\n---\n")
+        self.assert_error("skills in no area ['new-skill']")
+
+    def test_area_naming_unknown_skill_fails(self) -> None:
+        update_area(self.plugin_dir, skills=[SKILL, "ghost-skill"])
+        self.assert_error("areas name unknown skills ['ghost-skill']")
+
+    def test_missing_area_guide_fails(self) -> None:
+        (self.plugin_dir / "areas" / AREA / "README.md").unlink()
+        self.assert_error("missing area guide")
 
     def test_source_for_removed_skill_fails(self) -> None:
-        update_json(self.root / "skills.json", sources={PLUGIN: {SKILL: "x", "gone-skill": "y"}})
+        update_json(self.root / "skills.json", sources={SKILL: "x", "gone-skill": "y"})
         self.assert_error("unknown skill(s) ['gone-skill']")
 
-    def test_plugin_catalog_stale_law_check_fails(self) -> None:
-        stale = (dt.date.today() - dt.timedelta(days=200)).isoformat()
-        update_json(self.plugin_dir / "catalog.json", lawCheckedOn=stale)
-        self.assert_error("lawCheckedOn")
+    def test_area_stale_law_check_fails(self) -> None:
+        update_area(self.plugin_dir, lawCheckedOn=(dt.date.today() - dt.timedelta(days=200)).isoformat())
+        self.assert_error("areas.demo-area.lawCheckedOn")
 
-    def test_plugin_catalog_malformed_law_check_fails(self) -> None:
-        update_json(self.plugin_dir / "catalog.json", lawCheckedOn="26 August 2026")
+    def test_area_malformed_law_check_fails(self) -> None:
+        update_area(self.plugin_dir, lawCheckedOn="26 August 2026")
         self.assert_error("lawCheckedOn")
 
     def test_missing_plugin_catalog_fails(self) -> None:

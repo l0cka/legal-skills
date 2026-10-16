@@ -15,8 +15,10 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
+from layout import PLUGIN, area_dir
+
 ROOT = Path(__file__).resolve().parents[1]
-PLUGIN = ROOT / "plugins" / "australian-legal-research"
+AREA = "legal-research"
 
 
 def load_script(name: str, path: Path):
@@ -611,7 +613,7 @@ class AustralianLegalCitationPluginTests(unittest.TestCase):
     def test_no_firm_specific_branding_remains(self) -> None:
         for path in [
             CITATION_SKILL / "SKILL.md",
-            PLUGIN / "README.md",
+            area_dir(AREA) / "README.md",
             *sorted((CITATION_SKILL / "references").iterdir()),
         ]:
             text = path.read_text(encoding="utf-8")
