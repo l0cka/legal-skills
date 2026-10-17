@@ -105,6 +105,8 @@ and [evidence workflows](../plugins/legal-skills/areas/evidence-workflows/CONTEX
   for exactly the shipped skills, and law-check currency. An area whose
   `lawCheckedOn` is more than 183 days old fails: re-verify the area against
   the official sources, fix anything stale, then set the date.
+  Within 30 days of that limit it prints a warning (a GitHub annotation in
+  CI) naming each area due, so the re-check happens before CI goes red.
 - `tests/test_plugin_structure.py` pins each area's skill set, result
   vocabulary and method invariants, and checks that every `$skill-name` a
   document names exists. Each area's own test file holds its legal
