@@ -43,6 +43,10 @@ to a skill that is not in it.
      later steps rely on; (c) assessment, mapping and computation skills;
      (d) deliverable and record skills (registers, chronologies, drafts,
      board papers).
+   - Put an urgent assessment first, ahead of (a), when a notification or
+     preservation duty may already be running: a workplace incident to
+     `$assess-notifiable-incident` or a data breach to
+     `$assess-australian-data-breach`. Say why it comes first.
    - Mark each step with its inputs (including outputs of earlier steps), the
      practice area it belongs to, and the human decision owner who must act on
      its output before the next step runs.

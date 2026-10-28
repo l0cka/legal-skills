@@ -39,6 +39,23 @@ plugin manifests contain their intended release versions.
 
 ### Added
 
+- `work-health-safety` practice area: five skills that map WHS duty holders
+  (`map-whs-duties`), prepare an urgent preliminary assessment of a workplace
+  incident with notification and site preservation first
+  (`assess-notifiable-incident`), map officer due diligence evidence
+  (`assess-officer-due-diligence`), gap-check psychosocial risk controls
+  (`review-psychosocial-risk-controls`) and track WHS developments, including
+  each jurisdiction's adoption of the December 2025 model incident
+  notification amendments (`track-whs-developments`). Victoria stays on its
+  OHS Act 2004 concepts; model-law amendments stay separate from enacted law.
+  Includes a method document, a framework reference recording what was
+  checked on 28 October 2026, five synthetic evals and three rubric benchmark
+  cases. `review-workplace-policy` and the Fair Work method now hand WHS work
+  to the new area, and `route-legal-fact-pattern` puts an urgent incident or
+  breach assessment first.
+- The registry generator spells counts up to 999, so the README counts read
+  "one hundred and three skills".
+
 - `legal-cognitive-sparring` 0.1.0: twelve skills that spar with a qualified
   lawyer. Core sparring pressure-tests an argument, probes understanding,
   opposes as counsel, steelmans and then attacks, and role-plays a named

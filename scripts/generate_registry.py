@@ -73,8 +73,12 @@ def describe(path: Path) -> str:
 
 
 def number_word(value: int) -> str:
-    if not 0 <= value <= 99:
-        raise GenerationError(f"number_word supports 0-99, got {value}")
+    if not 0 <= value <= 999:
+        raise GenerationError(f"number_word supports 0-999, got {value}")
+    hundreds, rest = divmod(value, 100)
+    if hundreds:
+        word = f"{ONES[hundreds]} hundred"
+        return f"{word} and {number_word(rest)}" if rest else word
     if value < 20:
         return ONES[value]
     tens, ones = divmod(value, 10)

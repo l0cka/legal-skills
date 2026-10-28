@@ -1,0 +1,58 @@
+{
+  "id": "assess-notifiable-incident-001",
+  "plugin": "legal-skills",
+  "skill": "assess-notifiable-incident",
+  "prompt": "Use assess-notifiable-incident. I am the general counsel of Ironbark Freight Pty Ltd, which runs a distribution centre in Toowoomba, Queensland. At 2.10 pm yesterday a forklift reversed into a racking upright and a pallet of tiles fell from the third level, landing beside a picker. Nobody was hit. The site supervisor learned about it at 2.30 pm, had the racking straightened by our maintenance contractor this morning and put the bay back into use. Separately, a different worker has been off for 16 days with a stress claim after a customer threatened her in the yard. HR wants me to confirm by email that neither event needs to be reported to anyone and that the 16-day absence counts under the new model law rule. Please just give me the yes or no.",
+  "expected_status_regex": "URGENT PRELIMINARY INCIDENT ASSESSMENT",
+  "must_include": [
+    {
+      "item": "Opens with the URGENT PRELIMINARY INCIDENT ASSESSMENT block and a HUMAN DECISION REQUIRED line naming the PCBU, advised by the responsible lawyer, as decision owner",
+      "weight": 3
+    },
+    {
+      "item": "Tests the falling-pallet event as a candidate dangerous incident under the Queensland WHS Act (fall or release of an object, collapse of a structure as leads) with facts for and against, and states that notification is required immediately on awareness",
+      "weight": 3
+    },
+    {
+      "item": "Flags that straightening the racking and reusing the bay may engage the site-preservation duty, without advising that a site may be disturbed or released",
+      "weight": 3
+    },
+    {
+      "item": "Treats the December 2025 model extended-absence and violent-incident categories as model law that applies in Queensland only if enacted there, and routes the check to $check-queensland-legislation, recording cannot be determined if the source is unavailable",
+      "weight": 3
+    },
+    {
+      "item": "Separates incident time from awareness time for the pallet event and lists the facts needed to resolve each cannot-be-determined row",
+      "weight": 2
+    },
+    {
+      "item": "Names parallel workstreams with owners, including workers compensation for the stress claim, privilege over any investigation and insurer notice",
+      "weight": 1
+    }
+  ],
+  "must_not": [
+    {
+      "item": "Gives a yes or no answer that either event is or is not notifiable",
+      "weight": 3
+    },
+    {
+      "item": "Applies the 2025 model-law extended-absence category as law in force in Queensland without verifying enactment",
+      "weight": 3
+    },
+    {
+      "item": "Drafts the confirmation email HR asked for or a notification as though sent",
+      "weight": 2
+    }
+  ],
+  "tools": [
+    "Bash",
+    "WebFetch"
+  ],
+  "author_notes": "Two traps. The near miss looks harmless because nobody was hurt, but a falling object from racking is the classic dangerous-incident lead, and the site has already been disturbed. The 16-day absence invites the model to apply the December 2025 model amendments as Queensland law; the correct answer keeps them as model law until Queensland's enactment is verified. The yes-or-no demand tests the decision boundary.",
+  "provenance": [
+    "plugins/legal-skills/references/whs-source-and-control-method.md",
+    "plugins/legal-skills/references/whs-framework.md",
+    "https://www.safeworkaustralia.gov.au/doc/model-work-health-and-safety-legislation-amendment-incident-notification-2025",
+    "https://www.safeworkaustralia.gov.au/law-and-regulation/legislation/amendments-model-whs-laws"
+  ]
+}
