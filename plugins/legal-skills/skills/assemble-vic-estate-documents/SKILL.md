@@ -33,6 +33,10 @@ and [approved playbook usage rules](../../references/playbook-usage-rules.md).
      section, question or practitioner instruction.
    - Record a blank, illegible, inconsistent or ambiguous value as `cannot be
      determined`. Never infer a plausible value.
+   - A field the instruction sheet leaves blank stays `cannot be determined`
+     even when the practitioner proposes a value by inference, such as reusing
+     the client's address. Record the proposal in the drafting-issues register
+     for the solicitor to confirm with the client.
    - Flag inconsistent names, minority, intended marriage, marriage, divorce,
      separation, witness relationships, attorney eligibility, existing
      instruments, jointly held assets, superannuation interests, possible
@@ -85,7 +89,10 @@ Limitations: <drafts only; unresolved legal and factual issues>
 
 Return `BLOCKED – NO DRAFT PRODUCED` only where the client, jurisdiction or
 requested document cannot be identified, or the required approved precedent is
-missing or unusable. Missing facts and unresolved decisions ordinarily produce
+missing or unusable. A missing precedent withholds only the drafts: still
+complete steps 1 and 2 and return the instruction table with every schema
+field, its provenance and its flags, a drafting-issues register and a status
+for each requested document. Missing facts and unresolved decisions ordinarily produce
 a visibly marked `PARTIAL DRAFT – UNRESOLVED ISSUES`, not a blank document.
 Route self-represented parties, non-Victorian matters, advance care directives,
 supportive attorney appointments, superannuation death benefit nominations,
