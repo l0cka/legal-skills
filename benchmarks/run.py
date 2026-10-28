@@ -20,6 +20,7 @@ import argparse
 import concurrent.futures
 import datetime as dt
 import json
+import os
 import re
 import subprocess
 import sys
@@ -82,6 +83,18 @@ def session_settings(allowed_domains: list[str]) -> str:
     })
 
 
+# Plugins and skills the operator installed or synced would load into both arms (a legal skill there makes the
+# baseline meaningless), so each run gets an empty config dir and plugin sync is off.
+CLEAN_CONFIG = Path(tempfile.gettempdir()) / "legal-skills-bench" / "claude-config"
+
+
+def isolated_env() -> dict[str, str]:
+    CLEAN_CONFIG.mkdir(parents=True, exist_ok=True)
+    env = {k: v for k, v in os.environ.items() if k not in ("CLAUDE_CODE_SYNC_PLUGINS", "CLAUDE_CODE_SYNC_SKILLS")}
+    env["CLAUDE_CONFIG_DIR"] = str(CLEAN_CONFIG)
+    return env
+
+
 def claude(prompt: str, *, model: str, max_turns: int, tools: list[str], plugin_dir: Path | None,
            timeout: int, cwd: Path, json_schema: dict | None = None, allowed_domains: list[str] | None = None) -> dict:
     """Run one headless session from a scratch cwd so the repository itself never leaks into the context."""
@@ -91,11 +104,13 @@ def claude(prompt: str, *, model: str, max_turns: int, tools: list[str], plugin_
     if tools:
         cmd += ["--allowedTools", *tools]
     if plugin_dir:
-        cmd += ["--plugin-dir", str(plugin_dir.resolve())]
+        # Without --add-dir the skills' own reference files sit outside the session and every Read is denied.
+        cmd += ["--plugin-dir", str(plugin_dir.resolve()), "--add-dir", str(plugin_dir.resolve())]
     if json_schema:
         cmd += ["--json-schema", json.dumps(json_schema)]
     try:
-        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, cwd=cwd, check=False, stdin=subprocess.DEVNULL)
+        proc = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout, cwd=cwd, check=False, stdin=subprocess.DEVNULL,
+                              env=isolated_env())
     except subprocess.TimeoutExpired:
         return {"error": f"timeout after {timeout}s"}
     payload: dict = {}
@@ -228,7 +243,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--out")
     parser.add_argument("--cases", help="run a single JSONL/JSON file of cases instead of --set")
     parser.add_argument("--allowed-domains", help="comma-separated hosts Bash may reach (default: the official publishers)")
-    parser.add_argument("--extra-tools", default="Bash", help="comma-separated tools added to every case (Bash lets the verifiers curl publishers that refuse WebFetch redirects)")
+    parser.add_argument("--extra-tools", default="Bash,Read,Glob,Grep", help="comma-separated tools added to every case (Bash lets the verifiers curl publishers that refuse WebFetch redirects)")
     args = parser.parse_args(argv)
 
     if args.cases:
