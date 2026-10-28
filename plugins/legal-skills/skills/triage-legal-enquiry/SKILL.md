@@ -25,8 +25,13 @@ record.
 
 If any precondition fails, do not process further substantive facts. Return
 `URGENT HUMAN ESCALATION` when facts already supplied indicate apparent urgent
-risk; otherwise return `HUMAN TRIAGE REQUIRED`. Record the failed precondition
-and the next authorised step.
+risk; otherwise return `HUMAN TRIAGE REQUIRED`. Check all four preconditions
+and record each one that fails, not only the first. Still return the record
+under its `DRAFT - HUMAN CONFIRMATION REQUIRED` label with its limitations line,
+and name the next authorised step. With no approved profile there are no
+configured pathways, so name no organisation, hotline, website or emergency
+contact from general knowledge. Point the person to an authorised staff member
+or a human legal assistance service, with no promise of availability.
 
 ## Workflow
 

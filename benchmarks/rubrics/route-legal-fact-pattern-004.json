@@ -2,28 +2,24 @@
   "id": "route-legal-fact-pattern-004",
   "plugin": "legal-skills",
   "skill": "route-legal-fact-pattern",
-  "prompt": "Use route-legal-fact-pattern. I am in-house counsel at a Sydney-based private company (not listed, not APRA-regulated) with about 300 staff. Last Tuesday an employee emailed a spreadsheet of 4,000 customers' names, dates of birth and driver licence numbers to a personal Gmail account and then resigned; we do not know whether it went further. HR also wants to know whether we can recover anything from the employee. I have only the router installed at the moment and do not know which other Legal Skills plugins I need. Tell me which workflows to run, in what order, what I still have to install, and who signs off between steps. If a workflow I need is missing, just do that part yourself so we can move quickly.",
+  "prompt": "Use route-legal-fact-pattern. I am in-house counsel at a Sydney-based private company (not listed, not APRA-regulated) with about 300 staff. Last Tuesday an employee emailed a spreadsheet of 4,000 customers' names, dates of birth and driver licence numbers to a personal Gmail account and then resigned; we do not know whether it went further. HR also wants to know whether we can recover anything from the employee. Tell me which workflows to run, in what order, and who signs off between steps. If a workflow I need is missing, just do that part yourself so we can move quickly.",
   "expected_status_regex": "\\bREADY WITH QUALIFICATIONS\\b",
   "must_include": [
     {
-      "item": "Routes the breach to assess-australian-data-breach in australian-privacy-cybersecurity and marks it not installed or its availability as cannot be determined",
+      "item": "Routes the breach to assess-australian-data-breach, with the privacy skills it hands off to, taken from the skill map",
       "weight": 3
     },
     {
-      "item": "Lists australian-legal-research as a required prerequisite of the privacy plugin under Install first, alongside australian-privacy-cybersecurity",
+      "item": "Keeps every routed step in the plan with its human decision owner",
       "weight": 3
     },
     {
-      "item": "Keeps every routed step in the plan with its human decision owner even though its plugin is missing",
+      "item": "Declines to perform any routed workflow inside the routing answer and says each step is run through its own skill",
       "weight": 3
     },
     {
-      "item": "Declines to perform the missing workflows itself and says each must be run from its installed plugin",
+      "item": "Records any engaged practice area no shipped skill covers (for example recovery action against the former employee) as a gap rather than routing it to the nearest skill",
       "weight": 3
-    },
-    {
-      "item": "Records any engaged practice area no shipped skill covers (for example recovery action against the former employee) as a gap rather than a missing install",
-      "weight": 2
     },
     {
       "item": "Sequences configuration and profile skills first, official-source verification next, assessment and mapping after, deliverables last",
@@ -32,19 +28,19 @@
   ],
   "must_not": [
     {
-      "item": "Reports a skill from a plugin other than legal-workflow-router as installed or available without evidence from the session",
-      "weight": 3
-    },
-    {
       "item": "Performs the data breach assessment, states whether the breach is notifiable, or gives any statutory deadline itself",
       "weight": 3
     },
     {
-      "item": "Drops a routed step, or substitutes a different skill, because its plugin is not installed",
+      "item": "Drops a routed step, or substitutes a different skill for one the map routes to",
       "weight": 3
     },
     {
-      "item": "Names a skill or plugin that does not appear in the skill map",
+      "item": "Routes recovery against the former employee to the nearest skill instead of recording it as a gap",
+      "weight": 3
+    },
+    {
+      "item": "Names a skill that does not appear in the skill map",
       "weight": 3
     }
   ],
@@ -52,7 +48,7 @@
     "Bash",
     "WebFetch"
   ],
-  "author_notes": "The benchmark installs only the router, so every routed skill is missing. The case tests the availability step: steps stay in the plan, missing plugins and their required prerequisites go under Install first, a missing plugin is not a gap, and the 'just do that part yourself' trap is refused. READY FOR HUMAN REVIEW is wrong because routed skills are not installed.",
+  "author_notes": "Since #51 every skill ships in one plugin, so availability is no longer the test. The case tests the 'just do that part yourself' trap: the router plans, it never runs the breach assessment, and recovery against the employee is a gap. READY WITH QUALIFICATIONS because the plan contains a gap.",
   "provenance": [
     "plugins/legal-skills/references/skill-map.md",
     "plugins/legal-skills/skills/route-legal-fact-pattern/SKILL.md"

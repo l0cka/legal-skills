@@ -26,6 +26,11 @@ profile.
      in the method reference. Treat the practice and guardrail names in this
      plugin as routing leads; assess against the verified current text, not
      from memory.
+   - When the publisher cannot be reached, still state each layer's
+     publication and supersession dates from the method reference's
+     framework snapshot, labelled as a snapshot and `NOT VERIFIED`, and still
+     work through the practice structure below. Record what the documents
+     show against each practice name without asserting the guidance wording.
 3. Assess against AI6 first.
    - Work through the six essential practices (accountability; stakeholder
      engagement and redress; risk management; transparency, including an AI

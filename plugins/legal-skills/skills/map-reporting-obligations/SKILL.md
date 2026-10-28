@@ -80,4 +80,7 @@ Return `NOT READY` when the scenario facts, the designated-service context
 or a decisive statutory trigger cannot be established. Never conclude that a
 matter is or is not suspicious, never conclude that privilege applies or is
 waived, never draft SMR narrative content, never advise delaying or shaping
-a report, and never map IFTI obligations.
+a report, and never map IFTI obligations. Never answer whether the client
+may be told about the firm's inquiries, and never draft words to the client:
+under the tipping-off position that call belongs to the responsible lawyer
+before anyone communicates.

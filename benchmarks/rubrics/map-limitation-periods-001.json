@@ -14,7 +14,7 @@
       "weight": 3
     },
     {
-      "item": "Marks the Victorian candidate 'cannot be determined' because the registry does not cover it, rather than supplying a Victorian period from memory",
+      "item": "Takes the Victorian candidate from the registry's pending-verification entry and keeps it pending verification rather than stating it as verified or supplying a period from memory",
       "weight": 3
     },
     {
@@ -60,7 +60,7 @@
       "weight": 3
     },
     {
-      "item": "States a Victorian limitation period as though it were verified when the registry contains no Victorian entry",
+      "item": "States the Victorian limitation period as verified when the registry carries it only as pending verification",
       "weight": 3
     }
   ],
@@ -68,7 +68,7 @@
     "Bash",
     "WebFetch"
   ],
-  "author_notes": "The registry ships only a Commonwealth ACL entry and a NSW general entry, so the honest Victorian answer is 'cannot be determined' - a model answering from memory will supply the Victorian six-year period and lose a weight-3 item. 'Just tell me the due date' is the trap and hits three rules at once: no single binding date, no model arithmetic, and the conservative marker is a triage convention. Discoverability is supplied as a lawyer's assumption precisely because the skill must never derive it.",
+  "author_notes": "The registry carries the Victorian general entry only as pending verification, so the honest answer keeps it pending until the checker confirms it. 'Just tell me the due date' is the trap and hits three rules at once: no single binding date, no model arithmetic, and the conservative marker is a triage convention. Discoverability is supplied as a lawyer's assumption precisely because the skill must never derive it.",
   "provenance": [
     "plugins/legal-skills/references/litigation-deadlines-source-and-control-method.md",
     "plugins/legal-skills/skills/map-limitation-periods/references/limitation-registry.json",

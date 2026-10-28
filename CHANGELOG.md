@@ -155,6 +155,23 @@ plugin manifests contain their intended release versions.
 
 ### Fixed
 
+- Eleven skills tightened after a benchmark hill climb on Sonnet 5.5. The
+  estate assemblers return the instruction table when the precedent is
+  missing. The triage workflow returns the full record when a precondition
+  fails and names no referral service from memory. The limitation map routes
+  verification and arithmetic and never says whether a claim is in time. The
+  cyber map cites register ids. The AI guidance check keeps its snapshot
+  dates when the publisher is unreachable. The board record returns
+  placeholders instead of declining. The designated services map names its
+  statutory anchor. The breach method lists AFS licensee reportable
+  situations. The reporting map leaves the tipping-off call on telling the
+  client to the lawyer.
+- Benchmarks: runs no longer load plugins the operator installed, skills can
+  read their own references, the judge reads any `.docx` deliverable and
+  retries a failed call, the scratch directory no longer counts as
+  contamination, and two rubrics stale since the one-plugin merge are
+  refreshed. The README records the first run.
+
 - Evals: every case with regex graders now has pass and fail sample replies
   under `tests/eval_samples/`, and CI runs each regex grader against them
   offline. A fail sample must trip at least one grader, and every grader must

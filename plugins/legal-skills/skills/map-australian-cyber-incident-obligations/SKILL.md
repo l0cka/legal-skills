@@ -54,6 +54,11 @@ Awareness/trigger fact | Clock and counting rule | Recipient | Verification |
 Overlap or non-duplication rule | Source | Missing fact | Decision owner
 ```
 
+Fill `Source` with the registry entry's register id and source URL as a
+routing lead, and `Verification` with the evidence state and checked date. A
+register id cited as a lead with `NOT VERIFIED` does not claim the instrument
+was checked.
+
 Show the earliest plausible deadline prominently but label it provisional when
 any trigger fact is unresolved. State that case law was outside scope and do
 not submit any notification.
