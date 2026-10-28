@@ -51,7 +51,8 @@ git diff --check
 ```
 
 Behavioural evals live under `plugins/legal-skills/evals/<area>-<case>/` (`claude plugin eval` is
-in early access; CI only checks that the cases load). Each suite has a
+in early access; CI checks that the cases load and runs each regex grader
+against the pass and fail sample replies in `tests/eval_samples/<case>/`). Each suite has a
 happy-path case and at least one fail-closed case, so a prompt change that
 makes a skill verify a fabricated citation, compute a date outside the script
 or hand a help-seeker legal advice fails the run:
