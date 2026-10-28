@@ -110,9 +110,9 @@
         "https://consult.treasury.gov.au/c2026-801178",
         "https://storage.googleapis.com/files-au-treasury/treasury/p/prj3f00a298602dd09b72b97/page/fil3f010c3d46553e4672a63_c2026_801178_ed.pdf"
       ],
-      "reviewed_on": "2026-10-13",
-      "status_at_review": "Announced/proposed only: official exposure draft Competition and Fair Work Legislation Amendment (Banning Unfair Non-Competes) Bill 2026. Draft cl 2 proposes Schedules 1 and 2 commencing on the first 1 January, 1 April, 1 July or 1 October after Royal Assent, not a fixed 2027 start. Proposed ss 333Z and 333ZA use annualised full-time equivalent earnings at or below the employee high income threshold, and cover casuals and pieceworkers irrespective of that threshold, subject to draft exceptions. Proposed ss 333ZF-333ZH prohibit co-worker non-solicitation terms; proposed s 333ZJ(5) restricts cascading restraints; Schedule 1 extends cartel provisions to no-poach and wage-fixing arrangements. Proposed application cl 143 must be read provision by provision: rights/no-effect rules address terms included in arrangements on or after commencement and later variation of earlier arrangements; certain inclusion civil-remedy provisions have a six-month delay. Do not reduce these rules to a universal new-contract-only test. No enacted Act or legal start date confirmed.",
-      "review_basis": "Official Treasury-hosted exposure draft PDF inspected on 2026-10-13: cl 2, Schedule 1, Schedule 2 proposed ss 333Z, 333ZA, 333ZF-333ZH, 333ZJ(5) and application cl 143. VERIFIED as draft content only, not enacted law; recheck Parliament and legislation.gov.au at use."
+      "reviewed_on": "2026-10-28",
+      "status_at_review": "Announced/proposed only. The Treasury exposure draft consultation closed 2 Oct 2026 (reported). No Bill introduced into Parliament was located at the 28 Oct 2026 review. The 13 Oct 2026 reading of the exposure draft still governs: draft cl 2 proposes commencement on the first 1 January, 1 April, 1 July or 1 October after Royal Assent, not a fixed 2027 start; proposed ss 333Z and 333ZA tie the ban to annualised full-time equivalent earnings at or below the high income threshold and cover casuals and pieceworkers irrespective of it; proposed ss 333ZF-333ZH prohibit co-worker non-solicitation terms; proposed s 333ZJ(5) restricts cascading restraints; Schedule 1 extends cartel provisions to no-poach and wage-fixing arrangements; application cl 143 must be read provision by provision. No enacted Act or legal start date confirmed.",
+      "review_basis": "Official Treasury-hosted exposure draft PDF inspected on 2026-10-13 (draft content only); Bill-introduction status from web search on 2026-10-28, not from aph.gov.au. Recheck Parliament and legislation.gov.au at use."
     },
     {
       "id": "gender-undervaluation-priority-awards",
@@ -123,21 +123,22 @@
         "https://www.fwc.gov.au/hearings-decisions/major-cases/gender-based-undervaluation-priority-awards-review",
         "https://www.fairwork.gov.au/about-us/workplace-laws/award-changes/major-award-changes/gender-undervaluation-priority-awards-review/changes-to-the-health-services-award"
       ],
-      "reviewed_on": "2026-09-24",
-      "status_at_review": "Reported after the snapshot: on 7 Sep 2026 the Expert Panel issued the HPSS phase 1 decision and determination ([2026] FWCFB 231) implementing the 26 May 2026 health professionals decision, with Health Services Award changes from 1 Oct 2026 and further increases each 30 June from 2027 to 2030; on 11 Sep 2026 a separate decision ([2026] FWCFB 232) finalised the SCHADS Award matter (the 1 Jun 2026 SCHADS decision recorded at snapshot was subject to comment, not final)",
-      "review_basis": "Confirmed on fwc.gov.au and fairwork.gov.au on 24 Sep 2026"
+      "reviewed_on": "2026-10-28",
+      "status_at_review": "Unchanged since the 24 Sep 2026 review except that the first Health Services Award phase under [2026] FWCFB 231 is now operative (1 Oct 2026; date passed, not re-read). Further increases are scheduled each 30 June from 2027 to 2030; SCHADS finalised by [2026] FWCFB 232 (11 Sep 2026)",
+      "review_basis": "Date-driven update only; the 24 Sep 2026 confirmation on fwc.gov.au and fairwork.gov.au stands. Recheck pay guides at use"
     },
     {
       "id": "clerks-award-working-from-home",
       "item": "Working from home term in the Clerks - Private Sector Award 2020 (AM2024/34)",
       "status_at_snapshot": "Not on the register at the 26 August 2026 snapshot",
-      "expected_trigger": "Final determination varying the Clerks Award after the draft-determination submissions; operative date of the new term",
+      "expected_trigger": "Operation of clause 5A from 26 Oct 2026 (reported); any FWC dispute decisions under the award dispute clause; any extension of the term to other awards",
       "primary_sources": [
-        "https://www.fwc.gov.au/about-us/news-and-media/news/working-home-clerks-award-decision-issued"
+        "https://www.fwc.gov.au/about-us/news-and-media/news/working-home-clerks-award-decision-issued",
+        "https://www.fairwork.gov.au/about-us/workplace-laws/award-changes/major-award-changes/new-working-from-home-rules-in-the-clerks-award"
       ],
-      "reviewed_on": "2026-09-24",
-      "status_at_review": "Reported after the snapshot: Full Bench decision issued 27 Aug 2026 (reported citation [2026] FWCFB 225) declining a term compelling employers to allow working from home and proposing a right-to-request working from home term; draft determination published with submissions due 17 Sep 2026; no final determination located",
-      "review_basis": "Official page seen in search results only; confirm against the primary source before relying on it"
+      "reviewed_on": "2026-10-28",
+      "status_at_review": "Reported (secondary sources, 28 Oct 2026 review): a Full Bench (AM2024/34; reported citation [2026] FWCFB 281, 19 Oct 2026) made the final determination inserting clause 5A 'Requests for working from home arrangements' into the Clerks - Private Sector Award 2020, operative 26 Oct 2026. As reported, a request must be in writing and specify the days or pattern of days; the employer and employee may agree to modify specified award terms; agreement must be free of coercion or duress; disputes may go to the award dispute clause; and the clause sets no response time, reasons requirement or refusal grounds (the Full Bench did not adopt a union right-to-request model). Section 65 flexible working requests remain available to eligible employees. The fwc.gov.au news page still shows only the 27 Aug 2026 draft-determination stage, and the Fair Work Ombudsman page on the new rules was seen only as a search title",
+      "review_basis": "Secondary sources only; the final determination, its citation and operative date were not read on fwc.gov.au. Confirm against the determination and the current award text before relying on it"
     },
     {
       "id": "on-demand-delivery-mso",

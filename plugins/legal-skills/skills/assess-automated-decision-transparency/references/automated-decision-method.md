@@ -16,6 +16,13 @@ Verify the commencement table, amending provisions and current Privacy Act at
 the decision date. The ledger prevents a future change being missed before a
 future compilation exists; it is not a substitute for verification.
 
+OAIC guidance: on 30 September 2026 the OAIC updated its APP 1 Guidelines and
+published an APP 1.7–1.9 transparency fact sheet, a supplementary government
+fact sheet and a flowchart. Use the current version to frame scope questions
+(what counts as a computer program, when a human-reviewed output is still a
+substantially and directly related step, who must disclose). It is guidance,
+not law; cite it separately from the APP text.
+
 ## Decision inventory
 
 For every system-mediated decision capture:
