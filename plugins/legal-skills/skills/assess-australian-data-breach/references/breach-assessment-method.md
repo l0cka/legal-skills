@@ -33,8 +33,9 @@ registry to identify candidate rows. Verify, rather than assume:
 - *Cyber Security Act 2024* (Cth) and instruments: cyber-extortion reporting
   coverage, threshold, trigger, recipient and timing.
 - Sectoral requirements: APRA, telecommunications, My Health Record, Consumer
-  Data Right, government contracts, professional obligations and other
-  verified sector-specific duties.
+  Data Right, government contracts, Corporations Act 2001 (Cth) ss 912D and
+  912DAA reportable situations for AFS licensees, professional obligations and
+  other verified sector-specific duties, each a lead to verify.
 
 Do not use a 30-day NDB assessment period as a notification deadline. Watch
 note: a 72-hour Commissioner notification for eligible data breaches was
