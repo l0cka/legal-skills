@@ -121,8 +121,19 @@ and rubric-scored Australian legal tasks. See
 [benchmarks/README.md](benchmarks/README.md) for the method.
 
 <!-- benchmarks:start -->
-_No benchmark run recorded yet._
+Models: claude-sonnet-5-5 (claude). Cases: 37. Full per-cell numbers: `python3 benchmarks/report.py <results dirs>`.
+
+![rubric-score](docs/assets/benchmarks/rubric-score.svg)
+
+![boundary-breaches](docs/assets/benchmarks/boundary-breaches.svg)
+
+- **claude-sonnet-5-5** (claude) rubrics: rubric 0.73 with vs 0.06 without; boundary breaches 11 vs 28
 <!-- benchmarks:end -->
+
+The recorded run is from 28 October 2026: two runs with the plugin and one
+without. The official publishers could not be reached from the test
+environment, so the answer-keyed verification sets were not run, and rubric
+items that need a successful live check could not be met.
 
 ## Contributing
 
