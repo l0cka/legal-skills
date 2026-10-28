@@ -29,10 +29,12 @@ This targeted source check does not re-date the August snapshot.
 Reported after the snapshot (24 September 2026 review, not yet confirmed
 against dewr.gov.au or fwc.gov.au): the Closing Loopholes Review final report,
 covering the casual definition, labour hire and the right to disconnect, was
-tabled on 20 August 2026 with no government response located; and a Full Bench
-decision of 27 August 2026 proposes a right-to-request working from home term
-for the Clerks – Private Sector Award 2020, with no final determination
-located. Verify both at use and check the watch register before treating
+tabled on 20 August 2026 with no government response located. Reported at
+the 28 October 2026 review (secondary sources only): the Full Bench's final
+determination inserts clause 5A, a request-and-agree working from home term,
+into the Clerks – Private Sector Award 2020 from 26 October 2026. A policy
+covering Clerks Award employees should be checked against clause 5A alongside
+s 65. Verify both items at use and check the watch register before treating
 either as affecting a hook.
 
 A policy set is reviewed against these hooks as a gap and consistency

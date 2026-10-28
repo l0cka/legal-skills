@@ -66,8 +66,8 @@ snapshot, not a cached rule; every live workflow must recheck each source:
    consistent mandatory standards for large data centres (energy, water and
    land use), and the Commonwealth intends to legislate in early 2027;
    PM&C's consultation "Getting it right: Building AI
-   infrastructure that works for Australia" runs to 9 October 2026 and also
-   covers conditions for AI training and copyright holders; and a reported
+   infrastructure that works for Australia" closed on 9 October 2026 (no
+   outcome located at the 28 October 2026 review) and also covers conditions for AI training and copyright holders; and a reported
    opt-out model for AI training means the copyright limb should be treated
    as under consultation. Verify each point at use; see the watch register.
 6. **Mandatory guardrails for high-risk AI proposals paper** — DISR, September

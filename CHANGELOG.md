@@ -37,6 +37,13 @@ plugin manifests contain their intended release versions.
   drafting reuse, removes duplicated ACL paraphrases, and adds positive-path
   evals with distinct graders and task-shaped catalog prompts.
 
+- Currency refresh 28 October 2026 (`docs/audits/2026-10-28-currency-audit.md`):
+  the employment area records the Clerks Award working from home clause 5A
+  (reported operative 26 October 2026) and the closed non-compete
+  consultation; the AI governance and privacy areas record the OAIC's final
+  automated-decision transparency guidance of 30 September 2026 and the closed
+  PM&C AI-infrastructure consultation. Leads only; `lawCheckedOn` is unchanged.
+
 ### Added
 
 - `legal-cognitive-sparring` 0.1.0: twelve skills that spar with a qualified
