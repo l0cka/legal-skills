@@ -64,8 +64,11 @@ Limitations: <not evidence of events and not legally effective>
 
 ## Fail closed
 
-Return `NOT READY` rather than drafting operative wording when decision
-authority, required participation, a material conflict, current source or
-decisive fact is unresolved. Never invent attendance, quorum, notice,
+Return `NOT READY` when decision authority, required participation, a
+material conflict, current source or decisive fact is unresolved, and still
+return the whole result contract: the record type, the draft structure with
+`[NOT PROVIDED – HUMAN INPUT REQUIRED]` in place of every unresolved fact, the
+approval checklist and the limitations. Withhold only operative wording that
+would record an event no supplied evidence shows. Never invent attendance, quorum, notice,
 disclosure, abstention, discussion, vote, reason, signature or approval. Never
 backdate, execute, circulate, send, enter in a minute book or file any record.
