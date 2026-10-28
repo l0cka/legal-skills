@@ -62,6 +62,8 @@ or `OUTSIDE SCOPE`.
 ```text
 Services assessed: <service; current or proposed; assessment date>
 Profile: <approved identifier and version>
+Statutory anchor: <Act, provision and amending Act from the registry; Rules
+  and their register id; commencement; evidence state>
 Mapping: <service → designated (item, elements met) | not designated
   (failing element) | cannot be determined (missing fact)>
 Exemption claims: <claimed basis; decisive facts; evidence state>
