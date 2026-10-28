@@ -158,6 +158,8 @@ class GenerateRegistryTests(unittest.TestCase):
         self.assertEqual(generate_registry.number_word(7), "seven")
         self.assertEqual(generate_registry.number_word(48), "forty-eight")
         self.assertEqual(generate_registry.number_word(30), "thirty")
+        self.assertEqual(generate_registry.number_word(103), "one hundred and three")
+        self.assertEqual(generate_registry.number_word(200), "two hundred")
 
 
 if __name__ == "__main__":

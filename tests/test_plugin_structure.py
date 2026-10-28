@@ -245,6 +245,24 @@ AREAS: dict[str, dict] = {
         "reference_files": (),
         "every_skill_mentions": (),
     },
+    "work-health-safety": {
+        "skills": {
+            "map-whs-duties",
+            "assess-notifiable-incident",
+            "assess-officer-due-diligence",
+            "review-psychosocial-risk-controls",
+            "track-whs-developments",
+        },
+        "statuses": READY,
+        "reference_files": (
+            "whs-source-and-control-method.md",
+            "whs-framework.md",
+        ),
+        "every_skill_mentions": (
+            "whs-source-and-control-method.md",
+            "responsible lawyer",
+        ),
+    },
     "evidence-workflows": {
         "skills": {
             "build-document-index",

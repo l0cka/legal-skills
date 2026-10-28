@@ -1,0 +1,4 @@
+interface:
+  display_name: "Review Psychosocial Risk Controls"
+  short_description: "Gap-check psychosocial risk management against the regulations and code"
+  default_prompt: "Use $review-psychosocial-risk-controls on these documents: identify the governing psychosocial regulations and code for each jurisdiction, check hazard identification, controls, consultation and review, and list each gap with its source and evidence state."

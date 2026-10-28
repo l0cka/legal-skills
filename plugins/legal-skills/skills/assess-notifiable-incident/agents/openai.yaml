@@ -1,0 +1,4 @@
+interface:
+  display_name: "Assess Notifiable Incident"
+  short_description: "Urgent preliminary assessment of a workplace incident"
+  default_prompt: "Use $assess-notifiable-incident on this workplace incident: put the urgent notification and site-preservation steps first, test each notifiable category for the governing Act with evidence states, and leave the notification decision to the named decision owner."

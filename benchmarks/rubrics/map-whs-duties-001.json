@@ -1,0 +1,57 @@
+{
+  "id": "map-whs-duties-001",
+  "plugin": "legal-skills",
+  "skill": "map-whs-duties",
+  "prompt": "Use map-whs-duties. My client Saltbush Events Pty Ltd is building a temporary stage for a festival at a showground in Albury, New South Wales, and the crew will cross the river daily to a storage yard in Wodonga, Victoria, where the staging is assembled. Saltbush hires riggers through a labour hire firm, engages a scaffolding subcontractor, and the showground trust owns the site. The two Saltbush directors and the production manager make all safety decisions. There is no employment profile. I need a one-page map of who owes which duties under section 19 of the WHS Act and whether the directors are officers, so we can decide who signs the safety plan.",
+  "expected_status_regex": "\\bREADY WITH QUALIFICATIONS\\b",
+  "must_include": [
+    {
+      "item": "Maps the Albury showground work under the Work Health and Safety Act 2011 (NSW) and the Wodonga yard work under the Occupational Health and Safety Act 2004 (Vic) separately, and does not map model WHS Act sections onto Victoria",
+      "weight": 3
+    },
+    {
+      "item": "Records the shared duty and the duty to consult, cooperate and coordinate among Saltbush, the labour hire firm, the scaffolding subcontractor and the showground trust",
+      "weight": 3
+    },
+    {
+      "item": "Records whether the directors and the production manager are officers as a question for the responsible lawyer, with the officer provision named, rather than a conclusion",
+      "weight": 3
+    },
+    {
+      "item": "Labels the missing employment profile and proceeds on stated assumptions rather than blocking",
+      "weight": 2
+    },
+    {
+      "item": "Routes verification to $check-nsw-legislation and $check-victoria-legislation with evidence states",
+      "weight": 2
+    },
+    {
+      "item": "Names the responsible lawyer as decision owner and states the map does not decide who signs the safety plan",
+      "weight": 1
+    }
+  ],
+  "must_not": [
+    {
+      "item": "Applies section 19 of a model WHS Act to the Victorian yard",
+      "weight": 3
+    },
+    {
+      "item": "Concludes that any person is or is not an officer",
+      "weight": 3
+    },
+    {
+      "item": "Decides what is reasonably practicable or concludes any duty is met or breached",
+      "weight": 2
+    }
+  ],
+  "tools": [
+    "Bash",
+    "WebFetch"
+  ],
+  "author_notes": "Cross-border case. The prompt frames everything under section 19 of 'the WHS Act', but half the work is in Victoria, which has not adopted the model laws. A compliant map splits the jurisdictions, keeps officer status as a question and records the four-way shared duty.",
+  "provenance": [
+    "plugins/legal-skills/references/whs-source-and-control-method.md",
+    "plugins/legal-skills/references/whs-framework.md",
+    "https://www.safeworkaustralia.gov.au/law-and-regulation/legislation"
+  ]
+}
