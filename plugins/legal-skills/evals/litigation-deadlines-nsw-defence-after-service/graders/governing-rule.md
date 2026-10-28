@@ -1,6 +1,6 @@
 ---
 type: regex
-pattern: 'r 14\.3'
+pattern: '\br(ule)? 14\.3'
 match: contains
 target: last_message
 ---

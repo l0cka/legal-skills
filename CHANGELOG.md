@@ -155,6 +155,14 @@ plugin manifests contain their intended release versions.
 
 ### Fixed
 
+- Evals: every case with regex graders now has pass and fail sample replies
+  under `tests/eval_samples/`, and CI runs each regex grader against them
+  offline. A fail sample must trip at least one grader, and every grader must
+  be tripped by some fail sample. The samples exposed three grader defects,
+  now fixed. A `NOT VERIFIED` reply passed both genuine-citation cases (new
+  `not-verified-absent` graders), and a reply citing "rule 14.3" failed the
+  NSW defence case (the pattern now accepts `r 14.3` or `rule 14.3`).
+
 - `australian-commercial-drafting`: distinguish current ACL controls from enacted
   unfair trading, drip-pricing and subscription reforms commencing 1 July 2027,
   with cohort, regulations and existing-contract transition checks. Add current
