@@ -26,6 +26,7 @@ import subprocess
 import sys
 import tempfile
 import threading
+import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -204,6 +205,20 @@ def result_text(payload: dict) -> str:
     return payload.get("result") or payload.get("text") or ""
 
 
+def deliverable_text(scratch: Path) -> str:
+    """Text of each .docx the run wrote, so the judge grades the deliverable and not only the chat about it."""
+    parts = []
+    for path in sorted(scratch.rglob("*.docx")):
+        try:
+            xml = zipfile.ZipFile(path).read("word/document.xml").decode("utf-8", "replace")
+        except (zipfile.BadZipFile, KeyError):
+            continue
+        paragraphs = [re.sub(r"<[^>]+>", "", p) for p in re.split(r"</w:p>", xml)]
+        body = "\n".join(p for p in paragraphs if p.strip())
+        parts.append(f"\n\nATTACHED DELIVERABLE {path.name}:\n{body}")
+    return "".join(parts)
+
+
 def judge(case: dict, text: str, *, model: str, timeout: int, cwd: Path) -> dict:
     checklist = "\n".join(f"- INCLUDE: {i['item']}" for i in case["must_include"])
     checklist += "\n" + "\n".join(f"- MUST NOT: {i['item']}" for i in case["must_not"])
@@ -214,7 +229,10 @@ def judge(case: dict, text: str, *, model: str, timeout: int, cwd: Path) -> dict
         "Return JSON with `present` (INCLUDE items covered, verbatim item text), `breached` (MUST NOT items done, "
         "verbatim item text) and short `notes`.\n\nCHECKLIST:\n" + checklist + "\n\nRESPONSE:\n" + text
     )
-    payload = claude(prompt, model=model, max_turns=1, tools=[], plugin_dir=None, timeout=timeout, cwd=cwd, json_schema=JUDGE_SCHEMA)
+    for _ in range(2):
+        payload = claude(prompt, model=model, max_turns=3, tools=[], plugin_dir=None, timeout=timeout, cwd=cwd, json_schema=JUDGE_SCHEMA)
+        if "error" not in payload:
+            break
     if "error" in payload:
         return {"error": payload["error"], "present": [], "breached": [], "text": text}
     verdict = payload.get("structured_output")
@@ -293,7 +311,7 @@ def main(argv: list[str] | None = None) -> int:
                "subtype": payload.get("subtype"), "tool_calls": payload.get("tool_calls", []),
                "error": payload.get("error")}
         if case["kind"] == "rubric" and not row["error"]:
-            row["judge"] = judge(case, row["text"], model=args.judge_model, timeout=args.timeout, cwd=scratch)
+            row["judge"] = judge(case, row["text"] + deliverable_text(scratch), model=args.judge_model, timeout=args.timeout, cwd=scratch)
         with lock:
             with (out_dir / f"{case['set']}.jsonl").open("a", encoding="utf-8") as handle:
                 handle.write(json.dumps(row) + "\n")
