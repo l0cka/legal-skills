@@ -30,15 +30,28 @@ work from the [limitation registry](references/limitation-registry.json).
      leads: verify each period relied on through the jurisdiction's checker
      (`$check-commonwealth-legislation`, `$check-nsw-legislation`,
      `$check-victoria-legislation` or the applicable sibling) at the
-     assessment date and record the evidence state.
+     assessment date and record the evidence state. Run the checker for
+     each jurisdiction relied on. When it cannot reach the publisher, record
+     `pending-verification` with the checked date; never upgrade a registry
+     entry to verified on its own.
+   - A claim type that appears only under the registry's special regimes has
+     no general-period candidate. Mark it `cannot be determined`, quote the
+     flag, and give each jurisdiction and each publication or event its own
+     line.
    - Flag every potentially engaged special regime and every postponement
      or extension provision as a flag, never a conclusion.
-3. Rank conservatively.
+3. Compute through the script only.
+   - Never do date arithmetic yourself. Pass each candidate to
+     `$compute-procedural-deadlines` and its bundled `compute_deadline.py`.
+     Where it returns `identify_only` or has no rule for the period, record
+     the candidate expiry as `not computed - no verified computation rule`
+     and leave the arithmetic to the confirmer.
+4. Rank conservatively.
    - Order candidates by date and mark the earliest as the conservative
      marker. State plainly that the marker is a triage convention and that
      characterisation, accrual and any extension are the responsible
      lawyer's calls.
-4. Set the human decision gate.
+5. Set the human decision gate.
    - Name the confirmer who must resolve characterisation, confirm the
      controlling candidate and enter dates in the diary system of record.
 
@@ -65,4 +78,6 @@ Return `NOT READY` when characterisation, jurisdiction or a lawyer-supplied
 accrual date cannot be established — never pick one to keep going. Mark any
 claim type the registry does not cover `cannot be determined`, route
 criminal matters and foreign limitation law `OUTSIDE SCOPE`, and never
-present the conservative marker as the controlling date.
+present the conservative marker as the controlling date. Never answer
+whether a claim is in or out of time, and never give "the due date", even
+when asked for one: report the candidates and the conservative marker only.
