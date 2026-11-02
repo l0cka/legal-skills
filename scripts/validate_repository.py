@@ -22,6 +22,13 @@ OPENAI_AGENT_KEYS = ("display_name", "short_description", "default_prompt")
 REGISTRY_VERSION = 3
 LAW_CHECK_MAX_AGE_DAYS = 183
 LAW_CHECK_WARNING_DAYS = 30
+# Anthropic plugin directory limits for the plugin folder (pre-submission checklist).
+DIRECTORY_MIN_README_WORDS = 40
+DIRECTORY_MAX_FILES = 512
+DIRECTORY_MAX_TEXT_BYTES = 256 * 1024
+DIRECTORY_MEDIA_SUFFIXES = {".png", ".jpg", ".jpeg", ".gif", ".webp", ".ttf", ".otf", ".woff", ".woff2"}
+DIRECTORY_SYSTEM_FILES = {".DS_Store", "Thumbs.db", "desktop.ini", "__MACOSX"}
+UNTRACKED_DIRS = {"__pycache__", "results"}
 
 
 class ValidationError(Exception):
@@ -115,6 +122,62 @@ def law_checks_due(root: Path = ROOT, today: dt.date | None = None) -> list[str]
     return due
 
 
+def shipped_files(plugin_dir: Path) -> list[Path]:
+    files = []
+    for path in sorted(plugin_dir.rglob("*")):
+        relative = path.relative_to(plugin_dir)
+        if UNTRACKED_DIRS & set(relative.parts) or path.suffix == ".pyc":
+            continue
+        if path.is_symlink() or path.is_file():
+            files.append(path)
+    return files
+
+
+def validate_directory_blockers(root: Path, plugin_dir: Path) -> None:
+    """Fail on what blocks an Anthropic plugin directory submission."""
+    where = plugin_dir.relative_to(root)
+    for path in shipped_files(plugin_dir):
+        relative = path.relative_to(root)
+        if DIRECTORY_SYSTEM_FILES & set(path.relative_to(plugin_dir).parts):
+            raise ValidationError(f"{relative}: remove the operating-system file from the plugin")
+        if path.is_symlink():
+            raise ValidationError(f"{relative}: commit a regular file, not a symbolic link")
+    readme = (plugin_dir / "README.md").read_text(encoding="utf-8")
+    words = len(re.sub(r"```.*?```", " ", readme, flags=re.DOTALL).split())
+    if words < DIRECTORY_MIN_README_WORDS:
+        raise ValidationError(
+            f"{where}/README.md: needs at least {DIRECTORY_MIN_README_WORDS} words outside code blocks"
+        )
+    licence = plugin_dir / "LICENSE"
+    if not licence.is_file() or licence.read_bytes() != (root / "LICENSE").read_bytes():
+        raise ValidationError(f"{where}/LICENSE: must be a copy of the repository LICENSE")
+
+
+def directory_holds(root: Path = ROOT) -> list[str]:
+    """Warn on what makes the directory hold each version for a human reviewer."""
+    holds = []
+    for plugin in load_plugins(root):
+        plugin_dir = root / "plugins" / plugin["name"]
+        files = shipped_files(plugin_dir)
+        if len(files) > DIRECTORY_MAX_FILES:
+            holds.append(
+                f"plugins/{plugin['name']}: {len(files)} files exceeds the plugin directory's "
+                f"{DIRECTORY_MAX_FILES}-file limit; each version will be held for review"
+            )
+        for path in files:
+            if path.suffix.lower() in DIRECTORY_MEDIA_SUFFIXES:
+                continue
+            data = path.read_bytes()
+            if b"\0" in data:
+                holds.append(f"{path.relative_to(root)}: binary file; the plugin directory holds it for review")
+            elif len(data) > DIRECTORY_MAX_TEXT_BYTES:
+                holds.append(
+                    f"{path.relative_to(root)}: over {DIRECTORY_MAX_TEXT_BYTES // 1024} KiB; "
+                    "the plugin directory holds it for review"
+                )
+    return holds
+
+
 def load_sources(root: Path) -> dict[str, Any]:
     try:
         registry = json.loads((root / "skills.json").read_text(encoding="utf-8"))
@@ -143,6 +206,7 @@ def validate(root: Path = ROOT) -> tuple[int, int]:
         plugin_dir = root / "plugins" / name
         if not (plugin_dir / "README.md").is_file():
             raise ValidationError(f"plugins/{name}/README.md: missing plugin README")
+        validate_directory_blockers(root, plugin_dir)
         for area in plugin["areas"]:
             where = f"plugins/{name}/catalog.json areas.{area['id']}"
             validate_law_checked_on(where, area["lawCheckedOn"])
@@ -175,6 +239,9 @@ def main() -> int:
     prefix = "::warning title=Law check due::" if os.environ.get("GITHUB_ACTIONS") else "WARNING: "
     for message in law_checks_due():
         print(f"{prefix}{message}", file=sys.stderr)
+    directory_prefix = "::warning title=Plugin directory hold::" if os.environ.get("GITHUB_ACTIONS") else "WARNING: "
+    for message in directory_holds():
+        print(f"{directory_prefix}{message}", file=sys.stderr)
     print(f"Validated {plugin_count} plugin(s) and {skill_count} skill(s).")
     return 0
 

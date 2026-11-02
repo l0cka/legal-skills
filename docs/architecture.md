@@ -45,15 +45,31 @@ logic.
 ```text
 plugins/legal-skills/
 ├── .claude-plugin/plugin.json   canonical: name, version, description, keywords
+├── .claude-plugin/icon.png      plugin directory listing icon (set once)
 ├── .codex-plugin/plugin.json    generated
 ├── catalog.json                 canonical: presentation metadata and areas
-├── README.md                    hand-written, with a generated area table
+├── README.md                    directory listing text; hand-written, with
+│                                generated install, example-prompt and area regions
+├── LICENSE                      copy of the repository LICENSE
+├── PRIVACY.md                   what the plugin sends, stores and collects
 ├── areas/<area>/README.md       practice-area guide
 ├── areas/<area>/CONTEXT.md      optional area vocabulary
 ├── references/                  shared method documents, schemas, registers
 ├── skills/<skill>/              skill packages
 └── evals/<area>-<case>/         synthetic behavioural evals
 ```
+
+## Plugin directory listing
+
+The plugin folder is what Anthropic's plugin directory validates, scans and
+installs, and its `README.md` is the listing text. When a change adds a script
+that makes a network request, a hook, an MCP server or a stored file, update
+the README's "What it runs and connects to" section and `PRIVACY.md` in the
+same change, because the security scan fails behaviour the README does not
+disclose. `validate_repository.py` fails on the directory's blocking checks
+and warns when a version would be held for a reviewer, such as more than 512
+files in the plugin folder. The listing icon is fixed at first submission, so
+do not expect a later change to `icon.png` to show.
 
 ## Vocabulary
 
