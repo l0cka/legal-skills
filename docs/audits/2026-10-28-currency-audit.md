@@ -14,8 +14,8 @@ pass followed on 2 November 2026.
 - On 28 October the egress proxy blocked the official publishers, so the first
   pass rested on web search and one OAIC page.
 - On 2 November the official publishers were read directly from another
-  machine. Home Affairs and PM&C blocked automated access; those two items
-  still need a browser check.
+  machine. Home Affairs blocked automated access and has no archived copy;
+  the PM&C page was read through a search-result scrape.
 - None of this moves `lawCheckedOn`, which is an area-wide assertion.
 
 ## Results
@@ -26,14 +26,13 @@ pass followed on 2 November 2026.
 | employment-fair-work | `gender-undervaluation-priority-awards` | Stage 1 of five under [2026] FWCFB 231 / PR814029 operates from 1 Oct 2026. The award is the Health Professionals and Support Services Award 2020 (health professionals only), not the Health Services Award | Corrected from fwc.gov.au |
 | employment-fair-work | `non-compete-ban` | Exposure draft only; an APH search found no Bill introduced. Treasury and law firms use different Bill titles | Strong evidence, not confirmation |
 | aml-ctf | `amlctf-amendment-bill-2026` | Before the Senate (second reading moved 12 Oct 2026); no assent. The revised EM keeps the LPP-form change; the supplementary EM describes no House amendment to it | Verified on aph.gov.au (passed text not read) |
-| aml-ctf | `lpp-ministerial-guidelines` | No final guidelines on the Federal Register; Home Affairs page unreachable | Absence only |
+| aml-ctf | `lpp-ministerial-guidelines` | No final guidelines on the Federal Register (three searches); AUSTRAC still says the Minister "will issue" them; Home Affairs page unreachable | Not made on the public record (register lag possible) |
 | ai-governance, privacy-cybersecurity | `oaic-adm-guidance`; `automated-decision-method.md` | APP Guidelines chapter 1 Version 2.0 updated 30 Sep 2026, with APP 1.7–1.9 fact sheets and flowchart | Verified on oaic.gov.au |
-| ai-governance | `pmc-ai-infrastructure-consultation`; source-and-control method | Closed 5 pm AEDT 9 Oct 2026; no outcome located | Close date from search snippet; page blocked |
+| ai-governance | `pmc-ai-infrastructure-consultation`; source-and-control method | Closed 5 pm AEDT 9 Oct 2026; page says outcomes "will be made available in due course" | Verified on pmc.gov.au |
 
 ## Next steps
 
-- Check the Home Affairs LPP guidelines page and the PM&C consultation page in
-  a browser.
+- Recheck the Federal Register for the s 242A guidelines at the next audit.
 - Read the AML/CTF Bill's third-reading text to confirm the LPP items.
 - Close `oaic-adm-guidance` once the privacy skills have been run against the
   new guidance.

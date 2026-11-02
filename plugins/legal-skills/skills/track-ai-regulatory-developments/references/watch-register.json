@@ -115,8 +115,8 @@
         "https://www.pmc.gov.au/domestic-policy/office-ai/getting-it-right-building-ai-infrastructure-works-australia"
       ],
       "reviewed_on": "2026-11-02",
-      "status_at_review": "Closed 5 pm AEDT Friday 9 Oct 2026. No outcome, submissions summary or exposure draft located; PM&C's own pages could not be read. Feeds the development of the Australian Standards for AI (see standards-for-ai-bill)",
-      "review_basis": "Close date from the pmc.gov.au page's search snippet; the page itself blocked automated access on 2026-11-02. Outcome absence rests on search only"
+      "status_at_review": "Closed 5 pm AEDT Friday 9 Oct 2026. The consultation page says 'Submissions to this consultation have now closed' and that more information on the outcomes 'will be made available in due course'; no outcome, submissions or exposure draft published. Feeds the development of the Australian Standards for AI (see standards-for-ai-bill)",
+      "review_basis": "pmc.gov.au consultation page read through a search-result scrape on 2026-11-02 (no update date shown); pm.gov.au media releases checked by title only"
     }
   ]
 }
