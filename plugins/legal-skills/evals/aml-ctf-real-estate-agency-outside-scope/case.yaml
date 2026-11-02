@@ -1,0 +1,16 @@
+schema_version: '1.1'
+name: map-designated-services rejects other tranche 2 sectors
+tags:
+- aml-ctf
+- fail-closed
+execution:
+  max_turns: 6
+  prompt: |-
+    We are a real estate agency selling residential property. Use map-designated-services to map our designated services.
+graders:
+# The AML/CTF area covers Australian legal practices only.
+- name: outside-scope
+  type: regex
+  pattern: OUTSIDE SCOPE
+  match: contains
+  target: last_message

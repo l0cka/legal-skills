@@ -5,7 +5,7 @@ import re
 import unittest
 from pathlib import Path
 
-from layout import PLUGIN, area_eval_files, area_skills
+from layout import PLUGIN, area_cases, area_skills, case_prompt
 
 AREA = "work-health-safety"
 REFERENCES = PLUGIN / "references"
@@ -93,7 +93,7 @@ class WorkHealthSafetyTests(unittest.TestCase):
                     self.assertTrue(re.match(r"https://(www\.)?[a-z.]+\.gov\.au/", url), url)
 
     def test_every_skill_has_an_eval(self) -> None:
-        prompts = " ".join(read(path) for path in area_eval_files(AREA, "prompt.md"))
+        prompts = " ".join(case_prompt(case) for case in area_cases(AREA))
         for name in area_skills(AREA):
             with self.subTest(skill=name):
                 self.assertIn(name, prompts)

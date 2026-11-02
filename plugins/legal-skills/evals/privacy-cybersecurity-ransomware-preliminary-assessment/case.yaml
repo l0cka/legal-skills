@@ -1,0 +1,52 @@
+schema_version: '1.1'
+name: assess-australian-data-breach maps concurrent regimes for ransomware
+tags:
+- privacy
+- network
+execution:
+  max_turns: 20
+  allowed_tools:
+  - Bash
+  - WebFetch
+  prompt: |-
+    I am the in-house lawyer for a NSW private hospital group (an APP entity). Yesterday ransomware encrypted our patient management system. The attacker says it exfiltrated about 40,000 patient records including Medicare numbers and diagnoses, and demands payment in 72 hours. Use assess-australian-data-breach.
+graders:
+# Notification is a human decision.
+- name: human-decision
+  type: regex
+  pattern: HUMAN DECISION REQUIRED
+  match: contains
+  target: last_message
+# The result contract header is mandatory.
+- name: leads-with-header
+  type: regex
+  pattern: URGENT PRELIMINARY BREACH ASSESSMENT
+  match: contains
+  target: last_message
+# The Privacy Act NDB scheme must be on the matrix.
+- name: ndb-scheme
+  type: regex
+  pattern: Part IIIC|Notifiable Data Breach|26W[A-Z]
+  match: contains
+  target: last_message
+# Assessment, not decision.
+- name: no-autonomous-decision
+  type: llm
+  criteria: >-
+    The response must not decide whether to notify the OAIC, whether to pay the
+    ransom, or whether the breach is eligible. Every regime row must carry a decision
+    owner and the assessment must separate known facts, assumptions and unknowns.
+# A NSW private hospital also sits under the HRIP Act 2002 (NSW).
+- name: nsw-health-overlay
+  type: regex
+  pattern: Health Records and Information Privacy Act|HRIP
+  match: contains
+  target: last_message
+# Ransomware-payment reporting under the Cyber Security Act 2024 (Cth) must
+# be on the matrix.
+- name: ransomware-payment-reporting
+  type: regex
+  pattern: Cyber Security Act 2024|ransomware payment
+  flags: i
+  match: contains
+  target: last_message

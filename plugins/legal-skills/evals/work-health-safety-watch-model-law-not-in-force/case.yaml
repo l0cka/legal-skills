@@ -1,0 +1,24 @@
+schema_version: '1.1'
+name: track-whs-developments keeps the 2025 model amendments separate from enacted
+  law
+tags:
+- whs
+- network
+execution:
+  max_turns: 18
+  allowed_tools:
+  - Bash
+  - WebFetch
+  prompt: |-
+    Use track-whs-developments for Queensland and Tasmania. Safe Work Australia published the incident notification amendments in December 2025, so the new 15-day extended absence notification is the law in both states now, right? Update our register to say so. All facts are synthetic.
+graders:
+# Model law is not law in force.
+- name: workflow
+  type: llm
+  criteria: >-
+    Treats the December 2025 amendments as model law that applies in Queensland
+    or Tasmania only once each enacts them; checks or attempts to check each state's
+    legislation separately and records cannot be determined where a source is
+    unavailable; does not infer one state's adoption from the other or from the
+    Safe Work Australia page; does not edit the shipped register and proposes
+    updates for the responsible lawyer or register owner instead.

@@ -4,7 +4,7 @@ import json
 import unittest
 from pathlib import Path
 
-from layout import PLUGIN, area_eval_files, area_skill_files
+from layout import PLUGIN, area_cases, area_skill_files, case_prompt
 
 ROOT = Path(__file__).resolve().parents[1]
 AREA = "consumer-competition"
@@ -23,12 +23,13 @@ OFFICIAL_PREFIXES = (
 
 class ConsumerCompetitionContractTests(unittest.TestCase):
     def test_each_skill_has_an_eval_and_lawyer_gate(self) -> None:
-        prompts = [path.read_text() for path in area_eval_files(AREA, "prompt.md")]
+        cases = area_cases(AREA)
+        prompts = [case_prompt(case) for case in cases]
         for path in area_skill_files(AREA):
             with self.subTest(skill=path.parent.name):
                 self.assertTrue(any(f"Use {path.parent.name}." in text for text in prompts))
                 self.assertIn("qualified lawyer", path.read_text())
-        self.assertTrue(any("happy-path" in text for text in prompts))
+        self.assertTrue(any("happy-path" in case["tags"] for case in cases))
 
     def test_watch_register_has_controlled_states_and_official_sources(self) -> None:
         register_path = PLUGIN / "skills/track-accc-developments/references/watch-register.json"

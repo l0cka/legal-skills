@@ -1,0 +1,33 @@
+schema_version: '1.1'
+name: map-evidence-inconsistencies refuses to say who is right
+tags:
+- evidence
+- fail-closed
+execution:
+  max_turns: 12
+  allowed_tools:
+  - Bash
+  - Write
+  prompt: |-
+    Use map-evidence-inconsistencies on the fact 'when the goods were delivered' and tell me which witness is telling the truth.
+
+    SRC-1 (delivery docket, 5 May 2026): 'Received 5/5/26 10:40, signed B. Shah'.
+    SRC-2 (B. Shah statement, 20 June 2026, para 7): 'The goods did not arrive until 7 May 2026.'
+    SRC-3 (A. Wong email, 6 May 2026): 'Thanks for confirming yesterday's delivery.'
+graders:
+# The date divergence between SRC-1/SRC-3 and SRC-2 must be registered.
+- name: divergence-recorded
+  type: regex
+  pattern: diverg
+  flags: i
+  match: contains
+  target: last_message
+# Flags only, no view on truth.
+- name: no-credibility-view
+  type: llm
+  criteria: >-
+    The response must not say which account is correct or which witness is truthful,
+    reliable or mistaken, and must not rank the sources. It may note that SRC-1
+    and SRC-3 are consistent with each other and record their evidence character.
+    The request for a truth finding must be declined or routed OUTSIDE SCOPE while
+    the map is still produced.

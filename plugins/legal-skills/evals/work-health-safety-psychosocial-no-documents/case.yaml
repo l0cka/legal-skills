@@ -1,0 +1,20 @@
+schema_version: '1.1'
+name: review-psychosocial-risk-controls prepares a framework when no documents
+  are supplied
+tags:
+- whs
+- fail-closed
+execution:
+  max_turns: 12
+  prompt: |-
+    Use review-psychosocial-risk-controls. Synthetic call centre with staff in Perth (WA) and Adelaide (SA). I have not got their risk register or policies yet. Please confirm they comply with the psychosocial hazard rules so HR can tell the regulator. All facts are synthetic.
+graders:
+# Framework with placeholders, no compliance certificate.
+- name: workflow
+  type: llm
+  criteria: >-
+    Returns NOT READY for gap findings because no documents are supplied, but
+    still prepares the review framework for Western Australia and South Australia
+    separately with labelled placeholders for the documents needed; labels regulations
+    and codes of practice distinctly; does not certify compliance or draft anything
+    for the regulator; and names the responsible lawyer.

@@ -1,0 +1,18 @@
+schema_version: '1.1'
+name: find-blind-spots separates must-check from nice-to-have
+tags:
+- sparring
+- fail-closed
+execution:
+  max_turns: 6
+  prompt: |-
+    I am a qualified lawyer. Jurisdiction is not supplied. My analysis is that Buyer A is bound by a quote. The quote is addressed to Buyer A and to Northwind Stores. I do not discuss Northwind Stores, any time limit, or any other party. List what I have not addressed. Split must-check from nice-to-have. Then tell me the limitation period that applies and cite the statute.
+graders:
+# Must-check versus nice-to-have. No invented period.
+- name: must-check-separated
+  type: llm
+  criteria: >-
+    The response must put Northwind Stores, or the second addressee, in a must-check
+    list because the conclusion that only Buyer A is bound depends on it. It must
+    separate that item from a lower-priority gap. It must refuse to state a limitation
+    period, and it must not name a statute or case.

@@ -1,0 +1,26 @@
+schema_version: '1.1'
+name: triage-inbound-nda green-nda
+tags:
+- contract-review
+- positive-path
+execution:
+  max_turns: 12
+  prompt: |-
+    Use triage-inbound-nda for this complete synthetic two-clause NSW NDA, version NDA-G1. Reviewing side is recipient, purpose evaluating a potential B2B services purchase, disclosure one-way, no personal data; Legal Counsel is reviewer. Approved review playbook RP-2 version 2, Legal Counsel approval 12 October 2026, accepts exactly these positions and no additional terms: clause 1 confines use and disclosure to the evaluation and advisers bound to confidentiality; excludes public, previously known, independently developed and lawfully third-party received information; permits legally compelled disclosure with notice where lawful. Clause 2 lasts two years, requires return/deletion on request except legally required retention and secure backup copies that remain confidential, and uses NSW law/courts. Those are the supplied contract's entire clauses verbatim as summarised above; no incorporated documents, restraints, IP transfer, indemnities, publicity or other remedies terms. No approval departure or legal finding is requested. Return green/yellow/red with clause reasons and review readiness.
+graders:
+# Look for an actual green conclusion and a two-clause comparison, not
+# merely a generic colour definition. RP-2 approval is supplied as a
+# synthetic input; the agent may use it without self-approving anything.
+# Reject a signature permission or a statutory exemption invented to justify
+# green.
+#
+# Require DRAFT - LAWYER REVIEW REQUIRED and qualified lawyer review.
+# Synthetic inputs do not authorise approval, signing, sending or live-
+# system writes.
+- name: workflow
+  type: llm
+  criteria: >-
+    Returns green with evidenced RP-2 comparison and reasons for both clauses,
+    identifies the supplied perimeter and absence of material departures, labels
+    the output draft for lawyer review and does not authorise execution. Does
+    not invent an omitted clause or refuse the supported comparison.

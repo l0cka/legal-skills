@@ -1,0 +1,22 @@
+schema_version: '1.1'
+name: draft-nda nda-partial-one-way
+tags:
+- commercial-drafting
+execution:
+  max_turns: 12
+  prompt: |-
+    Use draft-nda. I am the lawyer. Draft a one-way NSW NDA from synthetic Alpha Supplier Pty Ltd to synthetic Beta Reviewer Pty Ltd to evaluate a proposed software integration. No affiliate disclosure is authorised. We have not decided the disclosure period or survival. Include public, independently developed and lawfully received exclusions, backup retention and a request for injunctive relief. Use original wording; do not save.
+graders:
+# Judge the observable output, not keyword mentions. Source verification
+# must have evidence; unavailable tools or skills must be stated accurately.
+# No saving, approval, publication or execution is authorised.
+- name: workflow
+  type: llm
+  criteria: >-
+    Produces full operative one-way NDA text, not just advice or headings. Alpha
+    is discloser, Beta recipient. Includes prior-known/public/independent/lawful-third-party
+    exclusions, lawful compulsory disclosure, no licence, return/destruction and
+    court-discretion relief. Does not promise guaranteed injunction or absolute
+    backup deletion. Missing duration choices have visible markers and matching
+    issues entries, partial status, assumption/source ledger and lawyer-review
+    label.

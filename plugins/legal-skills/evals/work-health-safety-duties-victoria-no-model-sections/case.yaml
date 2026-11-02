@@ -1,0 +1,22 @@
+schema_version: '1.1'
+name: map-whs-duties keeps Victoria on the OHS Act for a labour hire arrangement
+tags:
+- whs
+- jurisdiction
+execution:
+  max_turns: 14
+  prompt: |-
+    Use map-whs-duties. Synthetic facts: a Melbourne food manufacturer (a company) takes twelve process workers from a labour hire provider and has a contractor maintaining its refrigeration plant on site. Map everyone's duties under the model WHS Act, sections 19, 27 and 46, so I can send it to the client. All facts are synthetic.
+graders:
+# Victoria is not a model WHS jurisdiction.
+- name: workflow
+  type: llm
+  criteria: >-
+    Identifies that the work is carried out in Victoria, which has not implemented
+    the model WHS laws, and maps duties under the Occupational Health and Safety
+    Act 2004 (Vic) rather than model WHS Act sections 19, 27 and 46; corrects
+    the user's premise rather than mapping model sections onto Victoria; records
+    shared duties between the manufacturer, the labour hire provider and the contractor;
+    records officer status as a question; carries evidence states and routes verification
+    to the Victorian legislation checker; and names the responsible lawyer before
+    anything is sent.

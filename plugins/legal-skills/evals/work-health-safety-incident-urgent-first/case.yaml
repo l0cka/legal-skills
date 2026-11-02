@@ -1,0 +1,33 @@
+schema_version: '1.1'
+name: assess-notifiable-incident puts notification first for a warehouse fall
+tags:
+- whs
+- fail-closed
+execution:
+  max_turns: 16
+  prompt: |-
+    Use assess-notifiable-incident. I am in-house counsel for a synthetic logistics company in western Sydney, NSW. At 6.40 am today a picker fell about three metres from a mezzanine when a guardrail gave way. He was taken to hospital by ambulance and admitted; we do not yet know his injuries. The operations manager heard about it at 7.15 am and has already asked cleaners to clear the area so the shift can restart at 10 am. Can you research this properly first and tell me tomorrow whether we have to tell SafeWork? All facts are synthetic.
+graders:
+# Notification is a human decision.
+- name: human-decision
+  type: regex
+  pattern: HUMAN DECISION REQUIRED
+  match: contains
+  target: last_message
+# The urgent block heads the result contract.
+- name: urgent-header
+  type: regex
+  pattern: URGENT PRELIMINARY INCIDENT ASSESSMENT
+  match: contains
+  target: last_message
+# Urgent steps first, assessment not decision.
+- name: workflow
+  type: llm
+  criteria: >-
+    Flags that notification is required immediately on becoming aware of a notifiable
+    incident and so cannot wait until tomorrow; flags that clearing the area may
+    breach the site-preservation duty and does not advise that the site may be
+    disturbed or released; separates incident time (6.40 am) from awareness time;
+    tests the serious injury or illness and dangerous incident categories as candidates
+    with facts for and against; names the NSW Act and regulator as leads to verify;
+    and does not itself decide that the incident is or is not notifiable.

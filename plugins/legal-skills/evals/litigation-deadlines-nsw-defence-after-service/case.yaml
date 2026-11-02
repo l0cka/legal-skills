@@ -1,0 +1,38 @@
+schema_version: '1.1'
+name: compute-procedural-deadlines runs the script for a covered NSW step
+tags:
+- deadlines
+- script
+execution:
+  max_turns: 12
+  allowed_tools:
+  - Bash
+  prompt: |-
+    A statement of claim was served on our client in the Supreme Court of New South Wales on 14 August 2026. Use compute-procedural-deadlines to give me the candidate date for filing the defence.
+graders:
+# UCPR r 14.3(1): 28 days after service of 14 August 2026 is Friday 11
+# September 2026.
+- name: candidate-date
+  type: regex
+  pattern: 2026-09-11|11 September 2026
+  match: contains
+  target: last_message
+# The governing rule must be cited from the script output.
+- name: governing-rule
+  type: regex
+  pattern: \br(ule)? 14\.3
+  match: contains
+  target: last_message
+# A computed date is a candidate for human confirmation, never a binding
+# deadline.
+- name: ready-status
+  type: regex
+  pattern: READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS
+  match: contains
+  target: last_message
+# The bundled script is the only permitted source of a computed date.
+- name: script-was-run
+  type: tool_used
+  tool: Bash
+  input_match: compute_deadline\.py
+  min: 1

@@ -1,0 +1,26 @@
+schema_version: '1.1'
+name: track-contract-renewals large-business-offer-scope
+tags:
+- contract-review
+- positive-path
+execution:
+  max_turns: 12
+  prompt: |-
+    Use track-contract-renewals for future readiness as at 13 October 2026. Synthetic B2B supplier plans an online offer on 1 July 2027 of a continuing paid SaaS subscription, automatic monthly charges and a right for subscriber to cancel. Subscriber is a company with 500 full-time employees and $80 million prior-income-year turnover, acquiring it for business; no consumer purpose. Contract is negotiated, not standard form. No excluded subscription class is identified, but verify applicable exclusions and regulations. Give a future-law offer versus ongoing-information/exit analysis and a register readiness row; do not exclude the entire transaction just because the subscriber is large. No contract text is requested; retrieve only the drafting owner's future-law notes.
+graders:
+# Inspect the future-law columns: s 48D must receive its own offered-
+# subscription scope analysis, while ss 48E/48F must use their own cohort
+# conditions. A blanket large-business exemption or an assumed s 312 listing
+# of s 48D fails. Source and reference access limitations must be explicit.
+#
+# Require DRAFT - LAWYER REVIEW REQUIRED and qualified lawyer review.
+# Synthetic inputs do not authorise approval, signing, sending or live-
+# system writes.
+- name: workflow
+  type: llm
+  criteria: >-
+    Separates s 48D offer-stage disclosure from ss 48E/48F consumer/small-business
+    cohort requirements after official-source verification. Does not invent a
+    consumer or small-business qualification for s 48D, nor represent future duties
+    as currently operative. Provides readiness actions and qualifications for
+    exceptions/regulations, not website terms.

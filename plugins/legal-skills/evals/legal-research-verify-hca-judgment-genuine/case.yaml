@@ -1,0 +1,44 @@
+schema_version: '1.1'
+name: verify-hca-judgment resolves a genuine citation
+tags:
+- research
+- fail-closed
+- network
+execution:
+  max_turns: 15
+  allowed_tools:
+  - WebFetch
+  - WebSearch
+  prompt: |-
+    Use verify-hca-judgment to verify this citation: Love v Commonwealth [2020] HCA 3.
+graders:
+# Official sources must be hcourt.gov.au URLs actually inspected.
+- name: cites-official-publisher
+  type: regex
+  pattern: hcourt\.gov\.au
+  match: contains
+  target: last_message
+# Verification must consult the publisher, never memory.
+- name: fetched-the-publisher
+  type: tool_used
+  tool: WebFetch
+  min: 1
+# A genuine High Court decision must never be reported as `NOT FOUND`.
+- name: not-flagged-as-fabricated
+  type: regex
+  pattern: NOT FOUND
+  match: not_contains
+  target: last_message
+# A genuine citation must not come back NOT VERIFIED, which the status-
+# verified pattern alone would accept.
+- name: not-verified-absent
+  type: regex
+  pattern: NOT VERIFIED
+  match: not_contains
+  target: last_message
+# The result must lead with `VERIFIED` or `VERIFIED WITH QUALIFICATIONS`.
+- name: status-verified
+  type: regex
+  pattern: \bVERIFIED\b
+  match: contains
+  target: last_message
