@@ -10,6 +10,15 @@ plugin manifests contain their intended release versions.
 
 ### Changed
 
+- Prepared `legal-skills` for Anthropic's plugin directory. The plugin
+  folder now ships a listing icon (`.claude-plugin/icon.png`), a copy of the
+  MIT `LICENSE`, and a `PRIVACY.md`. Its README says who the plugin is for,
+  how to install it, gives example prompts, lists every script and the one
+  host the network helpers contact, and names the support and security
+  channels. `validate_repository.py` now fails on directory blockers (system
+  files, symbolic links, a README under 40 words, a missing or drifted
+  `LICENSE`) and warns when a version would be held for review (over 512
+  files, a text file over 256 KiB, or a non-image binary).
 - **Breaking: one plugin.** The fifteen `australian-*` and `legal-*` plugins
   are merged into a single plugin, `legal-skills` 1.0.0. All 98 skills keep
   their names and behaviour and now install together, so cross-area
@@ -49,6 +58,23 @@ plugin manifests contain their intended release versions.
   closed PM&C AI-infrastructure consultation. `lawCheckedOn` is unchanged.
 
 ### Added
+
+- `work-health-safety` practice area: five skills that map WHS duty holders
+  (`map-whs-duties`), prepare an urgent preliminary assessment of a workplace
+  incident with notification and site preservation first
+  (`assess-notifiable-incident`), map officer due diligence evidence
+  (`assess-officer-due-diligence`), gap-check psychosocial risk controls
+  (`review-psychosocial-risk-controls`) and track WHS developments, including
+  each jurisdiction's adoption of the December 2025 model incident
+  notification amendments (`track-whs-developments`). Victoria stays on its
+  OHS Act 2004 concepts; model-law amendments stay separate from enacted law.
+  Includes a method document, a framework reference recording what was
+  checked on 28 October 2026, five synthetic evals and three rubric benchmark
+  cases. `review-workplace-policy` and the Fair Work method now hand WHS work
+  to the new area, and `route-legal-fact-pattern` puts an urgent incident or
+  breach assessment first.
+- The registry generator spells counts up to 999, so the README counts read
+  "one hundred and three skills".
 
 - `legal-cognitive-sparring` 0.1.0: twelve skills that spar with a qualified
   lawyer. Core sparring pressure-tests an argument, probes understanding,

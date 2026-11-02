@@ -73,8 +73,12 @@ def describe(path: Path) -> str:
 
 
 def number_word(value: int) -> str:
-    if not 0 <= value <= 99:
-        raise GenerationError(f"number_word supports 0-99, got {value}")
+    if not 0 <= value <= 999:
+        raise GenerationError(f"number_word supports 0-999, got {value}")
+    hundreds, rest = divmod(value, 100)
+    if hundreds:
+        word = f"{ONES[hundreds]} hundred"
+        return f"{word} and {number_word(rest)}" if rest else word
     if value < 20:
         return ONES[value]
     tens, ones = divmod(value, 10)
@@ -395,9 +399,21 @@ def root_readme(root: Path, plugins: list[dict[str, Any]]) -> str:
     return text
 
 
+def example_prompts_region(plugin: dict[str, Any]) -> str:
+    return "\n".join(f"- {prompt}" for prompt in plugin["catalog"]["defaultPrompt"])
+
+
 def plugin_readme(root: Path, plugin: dict[str, Any]) -> str:
     path = root / "plugins" / plugin["name"] / "README.md"
-    return replace_region(read_required(path), "area-table", area_table([plugin], ""), describe(path))
+    text = read_required(path)
+    regions = {
+        "install-claude": install_claude_region([plugin]),
+        "example-prompts": example_prompts_region(plugin),
+        "area-table": area_table([plugin], ""),
+    }
+    for region, content in regions.items():
+        text = replace_region(text, region, content, describe(path))
+    return text
 
 
 def skill_description(root: Path, plugin: str, skill: str) -> str:

@@ -1,0 +1,74 @@
+{
+  "registry_version": 1,
+  "as_at": "2026-10-28",
+  "note": "Research snapshot of Australian work health and safety developments. Every item is a watch item, not an obligation; confirm each against its primary source at use time and record 'cannot be determined' where the source is unavailable. Items marked 'not verified at snapshot' were not confirmed at a primary source on the as-at date.",
+  "watch_items": [
+    {
+      "id": "model-incident-notification-2025",
+      "item": "Model Work Health and Safety Legislation Amendment (Incident Notification) 2025: adoption by each model WHS jurisdiction",
+      "status_at_snapshot": "Model WHS Act amended in December 2025 to add extended-absence, violent-incident and work-related suicide and attempted suicide notification duties and a duty to notify the holder of a corresponding duty; no jurisdiction's enactment confirmed at snapshot",
+      "expected_trigger": "Amending Bill introduced, passed or commenced in any model WHS jurisdiction",
+      "primary_sources": [
+        "https://www.safeworkaustralia.gov.au/doc/model-work-health-and-safety-legislation-amendment-incident-notification-2025",
+        "https://www.safeworkaustralia.gov.au/law-and-regulation/legislation/amendments-model-whs-laws"
+      ]
+    },
+    {
+      "id": "cth-whs-act-compilation",
+      "item": "Work Health and Safety Act 2011 (Cth) current compilation",
+      "status_at_snapshot": "Latest compilation C2024C00243 (1 July 2024), with s 30A industrial manslaughter in the table of contents",
+      "expected_trigger": "New compilation registered on the Federal Register of Legislation",
+      "primary_sources": [
+        "https://www.legislation.gov.au/C2011A00137/latest/text"
+      ]
+    },
+    {
+      "id": "industrial-manslaughter-by-jurisdiction",
+      "item": "Industrial and workplace manslaughter offences in each jurisdiction",
+      "status_at_snapshot": "Not verified at snapshot for each jurisdiction. Commonwealth s 30A heading confirmed; a NSW Parliamentary Research Service paper of 19 January 2024 recorded six states and territories with such offences at that date. Confirm each jurisdiction's provision and commencement with its checker",
+      "expected_trigger": "Enactment, commencement or amendment of an offence in any jurisdiction, or a first prosecution outcome",
+      "primary_sources": [
+        "https://www.legislation.gov.au/C2011A00137/latest/text",
+        "https://www.parliament.nsw.gov.au/parliamentary-business/research-and-library/research-publications-data/industrial-manslaughter-laws"
+      ]
+    },
+    {
+      "id": "vic-psychological-health-regulations",
+      "item": "Occupational Health and Safety (Psychological Health) Regulations 2025 (Vic) and compliance code",
+      "status_at_snapshot": "Commenced 1 December 2025 according to the Premier of Victoria's release of that date; regulation text and compliance code version not verified at snapshot",
+      "expected_trigger": "Amendment of the regulations, a revised compliance code, or WorkSafe Victoria enforcement guidance",
+      "primary_sources": [
+        "https://www.premier.vic.gov.au/new-regulations-start-today-protect-workers",
+        "https://www.worksafe.vic.gov.au/psychological-health"
+      ]
+    },
+    {
+      "id": "model-whs-adoption",
+      "item": "Implementation of the model WHS laws, including Victoria",
+      "status_at_snapshot": "Safe Work Australia states that Victoria is the only jurisdiction that has not implemented the model WHS laws",
+      "expected_trigger": "Any Victorian move to adopt the model laws, or a jurisdiction departing from them",
+      "primary_sources": [
+        "https://www.safeworkaustralia.gov.au/law-and-regulation/legislation"
+      ]
+    },
+    {
+      "id": "psychosocial-codes-of-practice",
+      "item": "Approved codes of practice on managing psychosocial hazards in each model WHS jurisdiction",
+      "status_at_snapshot": "Not verified at snapshot. Confirm each jurisdiction's approved code and its version at the regulator",
+      "expected_trigger": "Approval of a new or revised code in any jurisdiction",
+      "primary_sources": [
+        "https://www.safeworkaustralia.gov.au/law-and-regulation/legislation"
+      ]
+    },
+    {
+      "id": "model-whs-amendments-other",
+      "item": "Other amendments to the model WHS Act and Regulations",
+      "status_at_snapshot": "Tracked through Safe Work Australia's amendments page; amendments apply in a jurisdiction only once enacted there",
+      "expected_trigger": "Safe Work Australia publishes a further model-law amendment",
+      "primary_sources": [
+        "https://www.safeworkaustralia.gov.au/law-and-regulation/legislation/amendments-model-whs-laws",
+        "https://www.safeworkaustralia.gov.au/doc/model-work-health-and-safety-act"
+      ]
+    }
+  ]
+}

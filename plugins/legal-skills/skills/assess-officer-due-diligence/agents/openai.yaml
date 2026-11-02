@@ -1,0 +1,4 @@
+interface:
+  display_name: "Assess Officer Due Diligence"
+  short_description: "Map officer WHS due diligence evidence and gaps"
+  default_prompt: "Use $assess-officer-due-diligence on these board and governance documents: map the evidence to each element of the officer duty for the governing Act, list gaps and board questions, and flag manslaughter exposure by jurisdiction without concluding."

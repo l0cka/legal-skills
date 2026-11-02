@@ -19,6 +19,8 @@ PLUGIN = "demo-plugin"
 SKILL = "demo-skill"
 AREA = "demo-area"
 README_REGIONS = ("badges", "counts", "area-table", "install-agent", "install-codex", "install-claude")
+PLUGIN_README_REGIONS = ("install-claude", "example-prompts", "area-table")
+DEMO_README_PROSE = " ".join(["This demo plugin exists only so the validator tests have a plugin to read."] * 4)
 
 
 def write(path: Path, text: str) -> None:
@@ -97,7 +99,10 @@ def build_repo(root: Path) -> None:
             "areas": [demo_area()],
         },
     )
-    write(plugin_dir / "README.md", "# Demo plugin\n\n<!-- generated:area-table -->\n<!-- end:area-table -->\n")
+    plugin_regions = "\n\n".join(f"<!-- generated:{r} -->\n<!-- end:{r} -->" for r in PLUGIN_README_REGIONS)
+    write(plugin_dir / "README.md", f"# Demo plugin\n\n{DEMO_README_PROSE}\n\n{plugin_regions}\n")
+    write(root / "LICENSE", "MIT License\n")
+    write(plugin_dir / "LICENSE", "MIT License\n")
     write(plugin_dir / "areas" / AREA / "README.md", "# Demo area\n")
     skill_dir = plugin_dir / "skills" / SKILL
     write(skill_dir / "SKILL.md", skill_markdown())
@@ -163,6 +168,39 @@ class ValidateRepositoryTests(unittest.TestCase):
     def test_missing_plugin_readme_fails(self) -> None:
         (self.plugin_dir / "README.md").unlink()
         self.assert_error("missing plugin README")
+
+    def test_short_plugin_readme_fails(self) -> None:
+        write(self.plugin_dir / "README.md", "# Demo plugin\n\nToo short.\n\n```\n" + "word " * 50 + "\n```\n")
+        self.assert_error("needs at least 40 words")
+
+    def test_missing_plugin_licence_fails(self) -> None:
+        (self.plugin_dir / "LICENSE").unlink()
+        self.assert_error("LICENSE: must be a copy")
+
+    def test_drifted_plugin_licence_fails(self) -> None:
+        write(self.plugin_dir / "LICENSE", "Apache License\n")
+        self.assert_error("LICENSE: must be a copy")
+
+    def test_system_file_in_plugin_fails(self) -> None:
+        write(self.skill_dir / ".DS_Store", "")
+        self.assert_error("operating-system file")
+
+    def test_symlink_in_plugin_fails(self) -> None:
+        (self.skill_dir / "link.md").symlink_to(self.skill_dir / "SKILL.md")
+        self.assert_error("not a symbolic link")
+
+    def test_directory_holds_flag_file_count_size_and_binaries(self) -> None:
+        self.assertEqual(validate_repository.directory_holds(self.root), [])
+        write(self.skill_dir / "references" / "huge.md", "x" * (256 * 1024 + 1))
+        (self.skill_dir / "references" / "blob.ico").write_bytes(b"\0\1")
+        (self.plugin_dir / "icon.png").write_bytes(b"\0\1")
+        for index in range(512):
+            write(self.plugin_dir / "extra" / f"{index}.md", "x\n")
+        holds = validate_repository.directory_holds(self.root)
+        self.assertEqual(len(holds), 3, holds)
+        self.assertIn("file limit", holds[0])
+        self.assertTrue(any("huge.md" in hold and "KiB" in hold for hold in holds))
+        self.assertTrue(any("blob.ico" in hold and "binary" in hold for hold in holds))
 
     def test_skill_without_source_fails(self) -> None:
         update_json(self.root / "skills.json", sources={SKILL: ""})

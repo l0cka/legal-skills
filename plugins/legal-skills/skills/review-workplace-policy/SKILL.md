@@ -66,8 +66,9 @@ Limitations: <gap review only; no compliance certification; hooks listed only>
 ## Fail closed
 
 Return `NOT READY` when no policy text is supplied or the employer cannot be
-identified. Route discrimination merits, work health and safety, privacy,
-and policies for employers outside the national system to `OUTSIDE SCOPE`
-with the specialist named. Never certify compliance, never conclude the
+identified. Route discrimination merits, privacy, and policies for employers
+outside the national system to `OUTSIDE SCOPE` with the specialist named.
+Route work health and safety policies, including psychosocial hazard
+controls, to `$review-psychosocial-risk-controls`. Never certify compliance, never conclude the
 positive duty is met, never draft or rewrite policy text, and never present
 regulator guidance as a statutory requirement.

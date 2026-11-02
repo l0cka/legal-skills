@@ -1,0 +1,4 @@
+interface:
+  display_name: "Map WHS Duties"
+  short_description: "Map WHS duty holders, the governing Act and engaged codes"
+  default_prompt: "Use $map-whs-duties on this arrangement: select the governing WHS or OHS Act for each workplace, map every duty holder and shared duty with evidence states, flag officer questions and engaged codes, and name the responsible lawyer."
