@@ -10,6 +10,15 @@ plugin manifests contain their intended release versions.
 
 ### Changed
 
+- Prepared `legal-skills` for Anthropic's plugin directory. The plugin
+  folder now ships a listing icon (`.claude-plugin/icon.png`), a copy of the
+  MIT `LICENSE`, and a `PRIVACY.md`. Its README says who the plugin is for,
+  how to install it, gives example prompts, lists every script and the one
+  host the network helpers contact, and names the support and security
+  channels. `validate_repository.py` now fails on directory blockers (system
+  files, symbolic links, a README under 40 words, a missing or drifted
+  `LICENSE`) and warns when a version would be held for review (over 512
+  files, a text file over 256 KiB, or a non-image binary).
 - **Breaking: one plugin.** The fifteen `australian-*` and `legal-*` plugins
   are merged into a single plugin, `legal-skills` 1.0.0. All 98 skills keep
   their names and behaviour and now install together, so cross-area
