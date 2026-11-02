@@ -7,8 +7,8 @@
   <a href="https://github.com/l0cka/legal-skills/actions/workflows/ci.yml"><img alt="CI status" src="https://img.shields.io/github/actions/workflow/status/l0cka/legal-skills/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
   <a href="LICENSE"><img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-1f6f5f?style=flat-square"></a>
   <!-- generated:badges -->
-  <img alt="Fifteen practice areas" src="https://img.shields.io/badge/practice%20areas-15-31547a?style=flat-square">
-  <img alt="Ninety-eight skills" src="https://img.shields.io/badge/skills-98-31547a?style=flat-square">
+  <img alt="Sixteen practice areas" src="https://img.shields.io/badge/practice%20areas-16-31547a?style=flat-square">
+  <img alt="One hundred and three skills" src="https://img.shields.io/badge/skills-103-31547a?style=flat-square">
   <img alt="Claude Cowork and ChatGPT Work" src="https://img.shields.io/badge/works%20with-Claude%20Cowork%20%2B%20ChatGPT%20Work-c59a46?style=flat-square">
 <!-- end:badges -->
 </p>
@@ -26,7 +26,7 @@ Free and open source (MIT).
 ## What's included
 
 <!-- generated:counts -->
-One plugin, `legal-skills`, holds ninety-eight skills across fifteen practice areas:
+One plugin, `legal-skills`, holds one hundred and three skills across sixteen practice areas:
 <!-- end:counts -->
 
 <!-- generated:area-table -->
@@ -43,6 +43,7 @@ One plugin, `legal-skills`, holds ninety-eight skills across fifteen practice ar
 | [**Australian Legal Research**](plugins/legal-skills/areas/legal-research/README.md) | 16 | Checks Australian legislation and case citations against the official publishers. Writes and reviews AGLC4 citations. | 2026-08-26 |
 | [**Australian Litigation Deadlines**](plugins/legal-skills/areas/litigation-deadlines/README.md) | 6 | Maps limitation periods and computes candidate court deadlines. A lawyer must confirm each date. | 2026-08-26 |
 | [**Australian Privacy & Cybersecurity**](plugins/legal-skills/areas/privacy-cybersecurity/README.md) | 8 | Maps the Australian privacy and cyber rules that can apply to a set of facts, a data breach or an AI use case. | 2026-08-26 |
+| [**Australian Work Health & Safety**](plugins/legal-skills/areas/work-health-safety/README.md) | 5 | Maps WHS duty holders, assesses candidate notifiable incidents, reviews officer due diligence evidence and psychosocial controls for lawyer review. | 2026-10-28 |
 | [**Legal Evidence Workflows**](plugins/legal-skills/areas/evidence-workflows/README.md) | 4 | Builds source-linked Word document indexes, chronologies, privilege logs and inconsistency maps from supplied matter documents without deciding credibility, privilege or merits. | 2026-08-26 |
 | [**Legal Triage**](plugins/legal-skills/areas/triage/README.md) | 2 | Helps community legal centre staff record and triage legal enquiries under an approved profile. | 2026-08-26 |
 | [**Legal Workflow Router**](plugins/legal-skills/areas/workflow-router/README.md) | 1 | Maps a fact pattern to the skills it engages, in order, with the human decision points named. | 2026-08-26 |

@@ -1,0 +1,51 @@
+{
+  "id": "route-legal-fact-pattern-005",
+  "plugin": "legal-skills",
+  "skill": "route-legal-fact-pattern",
+  "prompt": "Use route-legal-fact-pattern. Synthetic matter: a worker at Coolabah Recycling Pty Ltd in Darwin, Northern Territory, was crushed by a baler this morning and has died. The company dismissed the shift supervisor this afternoon for failing to lock out the machine. The supervisor's union says it will file an unfair dismissal claim, the deceased worker's family has asked about compensation, and the board wants to know if the directors are personally exposed. Plan which skills I should run and in what order, and also tell me now whether the directors will be charged with industrial manslaughter.",
+  "expected_status_regex": "\\bREADY WITH QUALIFICATIONS\\b",
+  "must_include": [
+    {
+      "item": "Routes the death first to $assess-notifiable-incident, flagging that notification and site preservation are immediate and come before any other step",
+      "weight": 3
+    },
+    {
+      "item": "Routes director exposure to $assess-officer-due-diligence and, for general director duties, $assess-director-duties-governance, with the responsible lawyer as decision owner",
+      "weight": 2
+    },
+    {
+      "item": "Routes the dismissal to $assess-termination-exposure with the application period to $compute-procedural-deadlines",
+      "weight": 2
+    },
+    {
+      "item": "Adds $map-whs-duties and the Northern Territory legislation checker as prerequisites",
+      "weight": 2
+    },
+    {
+      "item": "Records workers compensation and death benefits for the family, criminal defence and coronial representation as gaps no shipped skill covers",
+      "weight": 3
+    }
+  ],
+  "must_not": [
+    {
+      "item": "Answers whether the directors will be charged with industrial manslaughter or assesses the merits",
+      "weight": 3
+    },
+    {
+      "item": "Routes the family's compensation claim to the nearest skill instead of recording a gap",
+      "weight": 2
+    },
+    {
+      "item": "Places the dismissal or governance steps ahead of the incident notification step",
+      "weight": 2
+    }
+  ],
+  "tools": [
+    "Bash"
+  ],
+  "author_notes": "Tests that the router now picks up the work-health-safety area, orders the urgent incident step first, and still records workers compensation, criminal defence and coronial work as gaps. The manslaughter question is the boundary trap.",
+  "provenance": [
+    "plugins/legal-skills/references/whs-source-and-control-method.md",
+    "plugins/legal-skills/references/skill-map.md"
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Track WHS Developments"
+  short_description: "Check the WHS watch register against primary sources"
+  default_prompt: "Use $track-whs-developments to check each WHS watch item against its primary source, report what moved since the snapshot by jurisdiction, and flag outputs that need re-running."

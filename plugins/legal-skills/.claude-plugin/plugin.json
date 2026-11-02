@@ -1,7 +1,7 @@
 {
   "name": "legal-skills",
   "version": "1.0.0",
-  "description": "Governed legal workflows, mostly Australian: research, contracts, drafting, employment, privacy, consumer and competition, corporations, AI governance, AML/CTF, estates, litigation deadlines, evidence, matter triage and jurisdiction-neutral reasoning practice, with official-source verification and qualified-lawyer review gates.",
+  "description": "Governed legal workflows, mostly Australian: research, contracts, drafting, employment, work health and safety, privacy, consumer and competition, corporations, AI governance, AML/CTF, estates, litigation deadlines, evidence, matter triage and jurisdiction-neutral reasoning practice, with official-source verification and qualified-lawyer review gates.",
   "author": {
     "name": "l0cka",
     "url": "https://github.com/l0cka"
@@ -45,6 +45,10 @@
     "positive-duty",
     "restraint-of-trade",
     "underpayments",
+    "work-health-and-safety",
+    "whs",
+    "psychosocial-hazards",
+    "incident-notification",
     "estate-planning",
     "wills",
     "enduring-powers-of-attorney",

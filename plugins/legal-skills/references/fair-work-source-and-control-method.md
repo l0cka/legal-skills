@@ -10,9 +10,10 @@ occurred, that a redundancy was genuine, or that an employer is compliant.
 Contractor characterisation, discrimination, positive duties and restraints are
 issue-spotted by dedicated extension skills, never decided conclusively.
 Discrimination overlays cover Commonwealth, NSW, Victoria and Queensland.
-State-system wage and contract merits, workers compensation, work health and
-safety, superannuation guarantee, other statutory classification regimes and
-industrial action strategy are routed to human or specialist review.
+State-system wage and contract merits, workers compensation, superannuation
+guarantee, other statutory classification regimes and industrial action
+strategy are routed to human or specialist review. Work health and safety
+belongs to the work-health-safety area, starting with `$map-whs-duties`.
 Underpayment work supplies methodology only, without invented rates or final
 calculations. See [extension sources](employment-extension-sources.md) for the
 2026-10-13 baseline; the August references retain their older snapshot.

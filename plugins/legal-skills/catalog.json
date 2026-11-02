@@ -1,7 +1,7 @@
 {
   "displayName": "Legal Skills",
   "shortDescription": "Governed Australian legal workflows with official-source verification and lawyer review gates.",
-  "longDescription": "One plugin for Australian legal research, contract review and drafting, employment, privacy, consumer and competition, corporations, AI governance, AML/CTF, estate planning, litigation deadlines, evidence handling and matter triage, plus jurisdiction-neutral sparring that pressure-tests a lawyer's own reasoning. Every research workflow verifies against official sources at use, labels pending law separately from current law, fails closed on missing inputs and returns drafts for qualified human review.",
+  "longDescription": "One plugin for Australian legal research, contract review and drafting, employment, work health and safety, privacy, consumer and competition, corporations, AI governance, AML/CTF, estate planning, litigation deadlines, evidence handling and matter triage, plus jurisdiction-neutral sparring that pressure-tests a lawyer's own reasoning. Every research workflow verifies against official sources at use, labels pending law separately from current law, fails closed on missing inputs and returns drafts for qualified human review.",
   "defaultPrompt": [
     "Route this matter to the skills it engages and tell me what to run first.",
     "Verify this Commonwealth provision as in force on a given date.",
@@ -13,7 +13,7 @@
   "whatItDoes": [
     "Verifies legislation, cases and regulator guidance at the relevant date",
     "Reviews and drafts contracts against controlled playbooks and profiles",
-    "Maps privacy, employment, consumer, corporate, AI and AML/CTF obligations",
+    "Maps privacy, employment, WHS, consumer, corporate, AI and AML/CTF obligations",
     "Routes multi-area matters and records human decision owners"
   ],
   "boundaries": [
@@ -307,6 +307,33 @@
         "map-australian-cyber-incident-obligations",
         "route-australian-privacy-jurisdiction"
       ]
+    },
+    {
+      "id": "work-health-safety",
+      "displayName": "Australian Work Health & Safety",
+      "shortDescription": "Maps WHS duty holders, assesses candidate notifiable incidents, reviews officer due diligence evidence and psychosocial controls for lawyer review.",
+      "lawCheckedOn": "2026-10-28",
+      "skills": [
+        "assess-notifiable-incident",
+        "assess-officer-due-diligence",
+        "map-whs-duties",
+        "review-psychosocial-risk-controls",
+        "track-whs-developments"
+      ],
+      "methodDocument": "whs-source-and-control-method.md",
+      "evidenceStates": {
+        "qualifications": [
+          "commencement",
+          "jurisdiction adoption",
+          "model-law status",
+          "document-status"
+        ],
+        "unverifiable": [
+          "official source",
+          "applicable version",
+          "decisive fact"
+        ]
+      }
     },
     {
       "id": "evidence-workflows",
