@@ -10,6 +10,35 @@ Start with `route-legal-fact-pattern` when a matter spans several areas or
 you are unsure which skill to run. It returns the skills to run in order and
 names the human decision owner at each step.
 
+## Who it is for
+
+Lawyers, law firm and in-house legal teams, and supervised staff such as
+community legal centre workers. It is not a consumer legal advice service.
+Every output is a draft for a qualified person to review before anyone relies
+on it.
+
+## Install
+
+In Claude Code:
+
+<!-- generated:install-claude -->
+```bash
+claude plugin marketplace add l0cka/legal-skills
+claude plugin install legal-skills@legal-skills --scope user
+```
+<!-- end:install-claude -->
+
+## Try it
+
+<!-- generated:example-prompts -->
+- Route this matter to the skills it engages and tell me what to run first.
+- Verify this Commonwealth provision as in force on a given date.
+- Review this MSA against our contract-review playbook and return an issues table.
+- Assess whether this incident is an eligible data breach under the Privacy Act.
+- Compute the procedural deadlines that run from this filing.
+- Map our AI governance obligations, separating binding from pending instruments.
+<!-- end:example-prompts -->
+
 ## Practice areas
 
 Each area guide lists its skills, scope, sources, permissions and validation.
@@ -44,10 +73,41 @@ Each area guide lists its skills, scope, sources, permissions and validation.
   its vocabulary (`CONTEXT.md`).
 - `evals/<area>-<case>/` holds synthetic behavioural evals.
 
-## Permissions
+## What it runs and connects to
 
 No MCP server, app, hook, scheduled monitor or write integration is bundled.
 Research is read-only and deliverables are draft text. Saving, sending,
 signing, filing, serving and updating live systems each need separate
-authority from the user and human review. Keep confidential, privileged and
-licensed material in the governed matter system, never in search queries.
+authority from the user and human review.
+
+- **Web lookups.** Research skills tell the assistant to read official
+  publishers, such as the Federal Register of Legislation, state legislation
+  sites, court and tribunal sites and regulators, through the host app's own
+  web tools. Those requests are made by the host app under its own terms.
+- **Two network helpers.** `check-commonwealth-legislation/scripts/frl_lookup.py`
+  and `trace-commonwealth-legislative-change/scripts/frl_change_trace.py`
+  send read-only HTTPS GET requests to the Federal Register of Legislation
+  API (`api.prod.legislation.gov.au`). They send only a title search phrase,
+  a Title ID and dates.
+- **Offline helpers.** The other five scripts (`compute_deadline.py`,
+  `parse_citation.py`, `nsw_lookup.py`, `compare_app_inventory.py` and
+  `validate_triage_profile.py`) make no network requests. `nsw_lookup.py`
+  only builds `legislation.nsw.gov.au` links for the assistant to open.
+- **Nothing is sent to the author.** There is no telemetry, analytics,
+  account or remote storage. See [PRIVACY.md](PRIVACY.md).
+
+Keep confidential, privileged and licensed material in the governed matter
+system, never in search queries.
+
+## Support
+
+Report a bug or ask a question in
+[GitHub issues](https://github.com/l0cka/legal-skills/issues). Report a
+security problem privately through
+[GitHub security advisories](https://github.com/l0cka/legal-skills/security/advisories/new).
+The [changelog](https://github.com/l0cka/legal-skills/blob/main/CHANGELOG.md)
+records each release.
+
+## Licence
+
+MIT. See [LICENSE](LICENSE).

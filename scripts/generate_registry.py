@@ -399,9 +399,21 @@ def root_readme(root: Path, plugins: list[dict[str, Any]]) -> str:
     return text
 
 
+def example_prompts_region(plugin: dict[str, Any]) -> str:
+    return "\n".join(f"- {prompt}" for prompt in plugin["catalog"]["defaultPrompt"])
+
+
 def plugin_readme(root: Path, plugin: dict[str, Any]) -> str:
     path = root / "plugins" / plugin["name"] / "README.md"
-    return replace_region(read_required(path), "area-table", area_table([plugin], ""), describe(path))
+    text = read_required(path)
+    regions = {
+        "install-claude": install_claude_region([plugin]),
+        "example-prompts": example_prompts_region(plugin),
+        "area-table": area_table([plugin], ""),
+    }
+    for region, content in regions.items():
+        text = replace_region(text, region, content, describe(path))
+    return text
 
 
 def skill_description(root: Path, plugin: str, skill: str) -> str:
