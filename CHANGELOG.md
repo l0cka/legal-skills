@@ -10,6 +10,14 @@ plugin manifests contain their intended release versions.
 
 ### Changed
 
+- Each of the 81 eval cases is now one `case.yaml` file holding its prompt
+  and graders, in place of `prompt.md` plus one file per grader. The plugin
+  folder drops from 533 files to 420, under the plugin directory's 512-file
+  limit, so versions are no longer held for manual review on that ground.
+  The runner loads the same prompts and graders. Two cases that the runner
+  refused to load (an unsupported `target` key on a `tool_used` grader) now
+  load. `tests/test_evals.py` rejects any key the runner rejects. The tests
+  now need PyYAML (`requirements-dev.txt`).
 - Prepared `legal-skills` for Anthropic's plugin directory. The plugin
   folder now ships a listing icon (`.claude-plugin/icon.png`), a copy of the
   MIT `LICENSE`, and a `PRIVACY.md`. Its README says who the plugin is for,

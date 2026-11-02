@@ -1,0 +1,38 @@
+schema_version: '1.1'
+name: check-commonwealth-legislation identifies the Privacy Act
+tags:
+- research
+- network
+execution:
+  max_turns: 15
+  allowed_tools:
+  - Bash
+  - WebFetch
+  prompt: |-
+    Use check-commonwealth-legislation to check the Privacy Act 1988 (Cth) as at 2026-01-01. I need the official title, Title ID and the applicable compilation.
+graders:
+# Official sources must be Federal Register of Legislation URLs.
+- name: cites-register
+  type: regex
+  pattern: legislation\.gov\.au
+  match: contains
+  target: last_message
+# The Federal Register Title ID for the Privacy Act 1988 is C2004A03712.
+- name: correct-title-id
+  type: regex
+  pattern: C2004A03712
+  match: contains
+  target: last_message
+# A genuine citation must not come back NOT VERIFIED, which the status-
+# verified pattern alone would accept.
+- name: not-verified-absent
+  type: regex
+  pattern: NOT VERIFIED
+  match: not_contains
+  target: last_message
+# Lead status must be `VERIFIED` or `VERIFIED WITH QUALIFICATIONS`.
+- name: status-verified
+  type: regex
+  pattern: \bVERIFIED\b
+  match: contains
+  target: last_message

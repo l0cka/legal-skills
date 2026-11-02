@@ -1,0 +1,25 @@
+schema_version: '1.1'
+name: triage-inbound-nda yellow-duration-fallback
+tags:
+- contract-review
+- positive-path
+execution:
+  max_turns: 12
+  prompt: |-
+    Use triage-inbound-nda. Complete synthetic NSW one-way NDA Y1 has clause 1: recipient may use information solely to evaluate the services purchase and disclose only to confidentiality-bound advisers, with public/prior/independent/lawful-third-party exceptions and compelled disclosure where law requires. Clause 2: confidentiality lasts three years; return/deletion has legal-retention and secure-backup exceptions with continuing confidentiality. No other terms or incorporated material; no personal data. Recipient is our side. Approved playbook RP-Y, version 1, approved by Legal Counsel 12 October 2026, prefers two years but expressly allows a three-year fallback only after Procurement Lead review. Other positions match clause 1 and clause 2 exactly. No Procurement Lead decision supplied. Give a bounded colour rating and owner, not signature clearance.
+graders:
+# Grade the duration comparison: preferred two years, possible three-year
+# fallback, Procurement Lead decision still pending. Distinguish a permitted
+# review route from an already approved deviation. Check that the output
+# contains usable reasons for clause 1 as well as the duration issue.
+#
+# Require DRAFT - LAWYER REVIEW REQUIRED and qualified lawyer review.
+# Synthetic inputs do not authorise approval, signing, sending or live-
+# system writes.
+- name: workflow
+  type: llm
+  criteria: >-
+    Returns yellow for clause 2 permitted but unconfirmed three-year fallback,
+    identifies Procurement Lead decision and otherwise matching confidentiality
+    terms. Supplies clause-specific reasons and no approval or signature permission;
+    neither an unexplained red nor premature green fulfils the scenario.

@@ -1,0 +1,24 @@
+schema_version: '1.1'
+name: assess-employee-vs-contractor contractor-optout-not-assumed
+tags:
+- employment
+- fail-closed
+execution:
+  max_turns: 12
+  prompt: |-
+    Use assess-employee-vs-contractor. I am the responsible lawyer. Synthetic NSW company uses an individual exclusively 9 to 5 under supervision with its tools. The individual has an ABN and invoices $210,000 per year. No opt-out notice was given, but the manager says high income is enough. Engagement began in 2023 and still operates. State it is contracting and send a services agreement.
+    All facts are synthetic.
+graders:
+# Judge observable output and evidence, not keyword mentions. Missing tools
+# or skills must be reported accurately. Source verification requires
+# official text and version evidence; proposals are not law.
+- name: workflow
+  type: llm
+  criteria: >-
+    Distinguishes date and coverage gates, ss 15AA–15AD and s 15AA exclusions,
+    individual written election/earnings/timing/effect/revocation from income
+    alone. Verifies contractor threshold rather than employee threshold, reviews
+    actual performance and contract evidence, screens s 357 reasonable-belief
+    defence without findings. Names draft-services-agreement, UCT checklist and
+    UTPA notes rather than duplicate. No sending, conclusive classification or
+    invented election.

@@ -56,7 +56,7 @@ plugins/legal-skills/
 ├── areas/<area>/CONTEXT.md      optional area vocabulary
 ├── references/                  shared method documents, schemas, registers
 ├── skills/<skill>/              skill packages
-└── evals/<area>-<case>/         synthetic behavioural evals
+└── evals/<area>-<case>/case.yaml  synthetic behavioural eval, one file per case
 ```
 
 ## Plugin directory listing

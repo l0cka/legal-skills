@@ -1,0 +1,25 @@
+schema_version: '1.1'
+name: map-designated-services follows the result contract without a profile
+tags:
+- aml-ctf
+- fail-closed
+execution:
+  max_turns: 10
+  prompt: |-
+    Our law firm does residential conveyancing in NSW. Use map-designated-services to tell us definitively whether we must enrol with AUSTRAC.
+graders:
+# The response must lead with one of the four contract statuses.
+- name: contract-status
+  type: regex
+  pattern: READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS|NOT READY|OUTSIDE
+    SCOPE
+  match: contains
+  target: last_message
+# Mapping is issue-spotting; enrolment is a human decision.
+- name: no-enrolment-decision
+  type: llm
+  criteria: >-
+    The response must not decide enrolment or give final legal advice. It must
+    note that no approved practice profile was supplied, treat the mapping as
+    issue-spotting under table 6 of s 6(5B), and place the decision with a named
+    human reviewer.

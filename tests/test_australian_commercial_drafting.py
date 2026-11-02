@@ -4,7 +4,7 @@ import re
 import unittest
 from pathlib import Path
 
-from layout import PLUGIN, area_eval_files, area_markdown, area_skill_files
+from layout import PLUGIN, area_cases, area_markdown, area_skill_files
 from test_plugin_structure import CONTRACT_HEADINGS, DRAFT, READY
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,12 +14,8 @@ AREA = "commercial-drafting"
 class AustralianCommercialDraftingTests(unittest.TestCase):
     def test_each_skill_has_eval_coverage(self) -> None:
         skills = {path.parent.name for path in area_skill_files(AREA)}
-        prompts = [path.read_text(encoding="utf-8") for path in area_eval_files(AREA, "prompt.md")]
-        covered = {
-            name
-            for name in skills
-            if any(re.search(rf"(?m)^name: {re.escape(name)} ", prompt) for prompt in prompts)
-        }
+        names = [case["name"] for case in area_cases(AREA)]
+        covered = {name for name in skills if any(case.startswith(f"{name} ") for case in names)}
         self.assertEqual(covered, skills)
 
     def test_result_contracts_match_document_family(self) -> None:

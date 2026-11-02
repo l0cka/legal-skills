@@ -4,7 +4,7 @@ import re
 import unittest
 from pathlib import Path
 
-from layout import PLUGIN, area_eval_files, area_markdown, area_skill_files
+from layout import PLUGIN, area_cases, area_markdown, area_skill_files, case_prompt, load_case
 
 ROOT = Path(__file__).resolve().parents[1]
 AREA = "contract-review"
@@ -12,7 +12,7 @@ AREA = "contract-review"
 
 class AustralianContractReviewTests(unittest.TestCase):
     def test_each_skill_has_failure_eval_and_review_controls(self) -> None:
-        prompts = [path.read_text(encoding="utf-8") for path in area_eval_files(AREA, "prompt.md")]
+        all_cases = area_cases(AREA)
         for path in area_skill_files(AREA):
             with self.subTest(skill=path.parent.name):
                 text = " ".join(path.read_text(encoding="utf-8").split())
@@ -25,9 +25,9 @@ class AustralianContractReviewTests(unittest.TestCase):
                     "Never infer",
                 ):
                     self.assertIn(control, text)
-                cases = [prompt for prompt in prompts if re.search(rf"(?m)^name: {re.escape(path.parent.name)} ", prompt)]
+                cases = [case for case in all_cases if case["name"].startswith(f"{path.parent.name} ")]
                 self.assertTrue(cases)
-                self.assertTrue(any("fail-closed" in prompt for prompt in cases))
+                self.assertTrue(any("fail-closed" in case["tags"] for case in cases))
 
     def test_local_links_stay_within_owner_plugin(self) -> None:
         for path in area_markdown(AREA):
@@ -71,22 +71,17 @@ class AustralianContractReviewTests(unittest.TestCase):
             self.assertIn(control, route)
 
     def test_positive_eval_covers_each_skill(self) -> None:
-        positive_prompts = [
-            path.read_text(encoding="utf-8")
-            for path in area_eval_files(AREA, "prompt.md")
-            if "positive-path" in path.read_text(encoding="utf-8")
-        ]
+        positive = [case["name"] for case in area_cases(AREA) if "positive-path" in case["tags"]]
         for path in area_skill_files(AREA):
             with self.subTest(skill=path.parent.name):
-                self.assertTrue(any(
-                    re.search(rf"(?m)^name: {re.escape(path.parent.name)} ", prompt)
-                    for prompt in positive_prompts
-                ))
+                self.assertTrue(any(name.startswith(f"{path.parent.name} ") for name in positive))
 
     def test_graders_have_distinct_case_specific_bodies(self) -> None:
         bodies = [
-            " ".join(path.read_text(encoding="utf-8").split("\n---\n", 1)[1].split())
-            for path in area_eval_files(AREA, "graders/workflow.md")
+            " ".join(grader["criteria"].split())
+            for case in area_cases(AREA)
+            for grader in case["graders"]
+            if grader["name"] == "workflow"
         ]
         self.assertEqual(len(bodies), len(set(bodies)))
         self.assertGreaterEqual(len(bodies), 19)
@@ -111,12 +106,12 @@ class AustralianContractReviewTests(unittest.TestCase):
                 self.assertTrue("VERIFIED" in row or "verify against" in row)
 
     def test_reference_only_reuse_and_boundary_scenarios_are_exercised(self) -> None:
-        case = PLUGIN / "evals" / f"{AREA}-renewal-on-commencement"
-        prompt = (case / "prompt.md").read_text(encoding="utf-8")
-        grader = (case / "graders" / "workflow.md").read_text(encoding="utf-8")
+        case = load_case(PLUGIN / "evals" / f"{AREA}-renewal-on-commencement" / "case.yaml")
+        prompt = case_prompt(case)
+        grader = next(grader["criteria"] for grader in case["graders"] if grader["name"] == "workflow")
         self.assertIn("reference-only", prompt)
         self.assertIn("1 July 2027", prompt)
-        self.assertIn("website terms fails", grader)
+        self.assertIn("no drafting output", grader)
         for skill in ("track-contract-renewals", "check-unfair-contract-terms"):
             text = " ".join((PLUGIN / "skills" / skill / "SKILL.md").read_text(encoding="utf-8").split())
             with self.subTest(skill=skill):

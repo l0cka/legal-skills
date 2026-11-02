@@ -43,6 +43,12 @@ mode when practical, and write actions need clear approval boundaries.
 
 Every change must pass:
 
+The tests read the eval cases with PyYAML, so install it once:
+
+```bash
+python3 -m pip install -r requirements-dev.txt
+```
+
 ```bash
 python3 scripts/validate_repository.py
 python3 scripts/generate_registry.py --check
@@ -50,8 +56,9 @@ python3 -m unittest discover -s tests
 git diff --check
 ```
 
-Behavioural evals live under `plugins/legal-skills/evals/<area>-<case>/` (`claude plugin eval` is
-in early access; CI checks that the cases load and runs each regex grader
+Behavioural evals live in `plugins/legal-skills/evals/<area>-<case>/case.yaml`, one file per
+case with the prompt and graders inline (`claude plugin eval` is
+in early access; CI checks that the cases use only keys the runner accepts and runs each regex grader
 against the pass and fail sample replies in `tests/eval_samples/<case>/`). Each suite has a
 happy-path case and at least one fail-closed case, so a prompt change that
 makes a skill verify a fabricated citation, compute a date outside the script

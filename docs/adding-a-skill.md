@@ -77,9 +77,12 @@ skill has one, rejects `TODO` or `TBD` placeholders, and fails when
 
 ## 5. Add evals and tests
 
-Add synthetic evals at `plugins/legal-skills/evals/<area>-<case>/` covering
-the core deliverable and decisive missing-input or unsupported-approval
-cases. Never use client or matter data. Add the skill to its area's entry in
+Add synthetic evals at `plugins/legal-skills/evals/<area>-<case>/case.yaml`
+covering the core deliverable and decisive missing-input or
+unsupported-approval cases. Keep each case in that one file, with the prompt
+under `execution.prompt` and the graders inline under `graders:`, because the
+plugin directory holds every version of a plugin with more than 512 files for
+manual review. Copy an existing case as a template. Never use client or matter data. Add the skill to its area's entry in
 `tests/test_plugin_structure.py`, and put legal invariants in the area's test
 file (`tests/test_<area>.py`, using `tests/layout.py`).
 

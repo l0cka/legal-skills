@@ -1,0 +1,26 @@
+schema_version: '1.1'
+name: configure-review-playbook complete-playbook
+tags:
+- contract-review
+- positive-path
+execution:
+  max_turns: 12
+  prompt: |-
+    Use configure-review-playbook. Synthetic organisation REVIEWCO is a NSW supplier reviewing SaaS, MSA and services agreements as at 13 October 2026. Legal Counsel is the profile owner and reviewer. Supplied approved drafting profile DP-3, version 3, approved by Legal Counsel on 12 October 2026, records the reviewing side and NSW law. Authorised instruction I-7, confirmed by Legal Counsel on 13 October, provides all review positions: confidentiality mutual with usual public/prior/independent/lawful-third-party exceptions, no publicity without consent; IP provider retains pre-existing IP, customer receives purpose licence; privacy/security as agreed SOW inventory with specialist referral for personal data; scope and fees fixed by signed SOW, no unilateral variation; mutual warranties limited to agreed performance, statutory rights preserved; aggregate liability preferred 12 months fees, fallback twice that amount only with CFO approval, any uncapped indemnity goes to General Counsel; indemnities limited to third-party IP claims with defence control and mitigation; insurance from the policy schedule, no cover inference; annual renewal with 30 calendar days received notice, internal review 60 days beforehand; material breach termination after 20 calendar days cure, assignment only with consent except an approved restructuring, NSW court forum and notices by agreed email. Risk appetite is moderate; no exception is approved. Produce a complete draft playbook with source profile mapping, thresholds, owners and review triggers. Do not approve it yourself.
+graders:
+# Compare every supplied clause family with the returned positions and
+# owners. Check that 12 months fees versus twice that amount is not silently
+# converted to an invented dollar cap and that general counsel versus CFO
+# thresholds remain distinct. Verify the newly created playbook stays draft
+# even though its input profile is approved.
+#
+# Require DRAFT - LAWYER REVIEW REQUIRED and qualified lawyer review.
+# Synthetic inputs do not authorise approval, signing, sending or live-
+# system writes.
+- name: workflow
+  type: llm
+  criteria: >-
+    Produces the review-playbook matrix and provenance from I-7/DP-3, including
+    quantitative cap basis, fallback approval and non-financial escalation. Returns
+    a complete draft with approval fields blank and approval checklist, not a
+    generic missing-input refusal or inferred approval.

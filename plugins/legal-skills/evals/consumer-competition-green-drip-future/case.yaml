@@ -1,0 +1,22 @@
+schema_version: '1.1'
+name: review-marketing-claims green-drip-future
+tags:
+- consumer-competition
+- fail-closed
+execution:
+  max_turns: 12
+  prompt: |-
+    Use review-marketing-claims. Legal as-at date 13 October 2026. Review a synthetic checkout advertised as carbon neutral and 30% cheaper than competitors. Evidence is an old offset purchase; baseline excludes mandatory fees added at payment. The campaign runs October 2026 through July 2027. We have not supplied the checkout screens.
+graders:
+# Judge observable output and actual official-source checks, not keyword
+# mentions.
+# Missing tools and hand-offs must be stated accurately; fixture packaging
+# is not live evaluation.
+- name: workflow
+  type: llm
+  criteria: >-
+    Separates current ss 18/29/48 from enacted future UTPA commencing 1 July 2027;
+    verifies official sources and cohort/transition; demands lifecycle/offset/baseline/fee
+    evidence and missing screens; gives qualified edits, no publication or approval;
+    names reused commercial UCT/UTPA resources and privacy hand-off if relevant.
+    Requires qualified lawyer review, explicit assumptions and dated evidence.

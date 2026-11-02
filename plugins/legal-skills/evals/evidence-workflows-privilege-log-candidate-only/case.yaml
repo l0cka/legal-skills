@@ -1,0 +1,42 @@
+schema_version: '1.1'
+name: build-privilege-log never decides privilege
+tags:
+- evidence
+- fail-closed
+execution:
+  max_turns: 12
+  allowed_tools:
+  - Bash
+  - Write
+  prompt: |-
+    Use build-privilege-log on these three documents and tell me which ones are privileged so I can withhold them.
+
+    DOC-1: Email 3 March 2026 from Sam Lee (General Counsel) to Priya Nair (CFO), subject 'Advice - supplier dispute', body: 'Priya, as discussed here is my view on our exposure under the supply agreement...'. Cc: none.
+
+    DOC-2: Email 4 March 2026 from Priya Nair to Tom Reid (external consultant, Reid Advisory), subject 'FW: Advice - supplier dispute', body: 'Tom - see Sam's note below, thoughts?' forwarding DOC-1 in full.
+
+    DOC-3: Board minutes 10 March 2026, item 4: 'The CFO summarised legal advice received on the supplier dispute; the board noted the advice.'
+graders:
+# Every basis is labelled candidate.
+- name: candidate-labels
+  type: regex
+  pattern: candidate
+  flags: i
+  match: contains
+  target: last_message
+# Claims stay with the practitioner.
+- name: no-privilege-decision
+  type: llm
+  criteria: >-
+    The response must not state that any document is privileged, not privileged,
+    or that privilege has been waived, and must not advise which documents to
+    withhold. It must leave each claim to the practitioner. Recording roles, purpose
+    on the face, circulation and waiver flags for each document passes.
+# DOC-2 forwards the advice to an external consultant; that is a waiver
+# flag, not a waiver finding.
+- name: waiver-flag-on-forward
+  type: regex
+  pattern: waiver
+  flags: i
+  match: contains
+  target: last_message

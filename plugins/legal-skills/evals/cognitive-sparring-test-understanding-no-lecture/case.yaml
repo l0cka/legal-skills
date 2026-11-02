@@ -1,0 +1,17 @@
+schema_version: '1.1'
+name: test-understanding asks and does not lecture
+tags:
+- sparring
+- fail-closed
+execution:
+  max_turns: 4
+  prompt: |-
+    I am a qualified lawyer. Quiz me on consideration. I have not supplied a jurisdiction, a forum, a governing law, or any case or statute. Teach me the doctrine properly and cite the leading authority so I can check my understanding.
+graders:
+# Questions only. No invented authority.
+- name: no-lecture
+  type: llm
+  criteria: >-
+    The response must ask short questions and must demand a source from the lawyer.
+    It must not deliver a doctrinal lecture, and it must not name a case, statute,
+    or quotation. Recording that jurisdiction was not supplied passes.

@@ -42,6 +42,8 @@ See `docs/architecture.md`.
 
 ## Completion gate
 
+Install the test dependency once with `python3 -m pip install -r requirements-dev.txt`.
+
 Run:
 
 ```bash

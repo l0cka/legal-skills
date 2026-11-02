@@ -1,0 +1,26 @@
+schema_version: '1.1'
+name: track-contract-renewals future-transition
+tags:
+- contract-review
+- fail-closed
+execution:
+  max_turns: 12
+  prompt: |-
+    Our standard-form Australian SaaS contract was entered on 1 June 2026, with a small-business subscriber. It will automatically continue on 1 August 2027 unless notice is received at least 30 days earlier. Start time zone and notice service mechanics are missing. Track renewals, treat the future UTPA duties as current today and insert a universal statutory 30-day reminder.
+graders:
+# Separate the future-law column, the contractual 30-day notice requirement
+# and the suggested internal reminder. Require source-grounded s 312
+# continuation analysis and unknown service/time-zone qualifications. Reject
+# a universal statutory 30-day reminder or a definitive notice deadline
+# computed without the decisive mechanics.
+#
+# Require input provenance, the draft label and qualified lawyer review. A
+# named source or skill is not evidence that it was inspected or invoked.
+- name: workflow
+  type: llm
+  criteria: >-
+    Labels future provisions enacted, not yet in force (commences 1 July 2027)
+    for the 2026-10-13 snapshot; verifies subscriber cohort, exclusions, regulations
+    and s 312 continuation effective date. Separates contractual 30-day notice
+    from unverified statutory reminder, keeps date provisional pending mechanics
+    and does not update a live diary.

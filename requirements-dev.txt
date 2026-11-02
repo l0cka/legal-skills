@@ -1,0 +1,2 @@
+# Test-only dependency: tests read the eval case.yaml files.
+PyYAML==6.0.3
