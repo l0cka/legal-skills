@@ -46,6 +46,17 @@ plugin manifests contain their intended release versions.
   drafting reuse, removes duplicated ACL paraphrases, and adds positive-path
   evals with distinct graders and task-shaped catalog prompts.
 
+- Currency refresh 28 October to 2 November 2026
+  (`docs/audits/2026-10-28-currency-audit.md`): the employment area records
+  the Clerks Award working from home clause 5A (in operation from
+  26 October 2026), corrects the gender-undervaluation entry to the Health
+  Professionals and Support Services Award, and notes no non-compete Bill has
+  been introduced; the AML/CTF area records that the Amendment Bill is before
+  the Senate with its LPP-form change intact and no final s 242A guidelines;
+  the AI governance and privacy areas record the OAIC's final
+  automated-decision transparency guidance of 30 September 2026 and the
+  closed PM&C AI-infrastructure consultation. `lawCheckedOn` is unchanged.
+
 ### Added
 
 - `work-health-safety` practice area: five skills that map WHS duty holders

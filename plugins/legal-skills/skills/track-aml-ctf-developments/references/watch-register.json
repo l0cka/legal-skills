@@ -13,9 +13,9 @@
         "https://www.homeaffairs.gov.au/reports-and-publications/submissions-and-discussion-papers/draft-legal-professional-privilege-guidelines-2026",
         "https://www.austrac.gov.au/industry-and-business/obligations-and-guidance/your-amlctf-program/reporting-us/legal-professional-privilege-reform"
       ],
-      "reviewed_on": "2026-09-24",
-      "status_at_review": "Reported after the snapshot: the Department of Home Affairs had already published Draft Legal Professional Privilege Guidelines 2026 for consultation (a first targeted round closed 1 August 2025; the public consultation on the current draft closed 24 June 2026). AUSTRAC's LPP (Reform) page reports that Home Affairs and AUSTRAC are working to finalise the guidelines. No final guidelines made as a notifiable instrument were located at review. Status: draft consulted, final pending",
-      "review_basis": "Official pages seen in search results only; confirm against the primary source before relying on it"
+      "reviewed_on": "2026-11-02",
+      "status_at_review": "Draft consulted, final not made on the public record. The Department of Home Affairs published Draft Legal Professional Privilege Guidelines 2026 (a first targeted round closed 1 August 2025; public consultation on the current draft closed 24 June 2026). On 2 Nov 2026 Federal Register of Legislation searches (phrase 'legal professional privilege guidelines', '242A' in notifiable instruments, and the full instrument name) returned no instrument, and AUSTRAC's LPP page (last updated 1 Jul 2026) still says the Minister 'will issue' the guidelines",
+      "review_basis": "Federal Register searches and the AUSTRAC page read on 2026-11-02. The Home Affairs page was unreachable to automated access and has no Wayback copy. Register indexing lag cannot be excluded; recheck at use"
     },
     {
       "id": "austrac-professional-services-guidance-waves",
@@ -70,9 +70,9 @@
         "https://www.homeaffairs.gov.au/reports-and-publications/submissions-and-discussion-papers/2026-reforms-aml-ctf-act",
         "https://www.austrac.gov.au/amlctf-amendment-bill-announcement"
       ],
-      "reviewed_on": "2026-09-24",
-      "status_at_review": "Reported: introduced by the Minister for Home Affairs on 12 March 2026 and reviewed by the Parliamentary Joint Committee on Intelligence and Security, which has reported. It would give the AUSTRAC CEO power to restrict or prohibit high-risk mechanisms such as crypto ATMs (the committee recommended that the Minister exercise that power), amend the definition of 'financing of terrorism', and make technical amendments to KYC requirements, politically exposed person definitions and LPP processes, including requiring LPP forms to be given to the agency that issued the notice rather than the AUSTRAC CEO. The House of Representatives passed it on 16 September 2026 with 25 Government amendments; it had not been introduced in the Senate at review. Whether those amendments change the LPP items was not confirmed. Treat as a bill, not law",
-      "review_basis": "APH bill page and Bills Digest read on 24 Sep 2026 (the LPP change is confirmed for the Bill as introduced); other content from secondary sources"
+      "reviewed_on": "2026-11-02",
+      "status_at_review": "Bill, not law: status 'Before Senate'. Introduced 12 Mar 2026; House third reading 16 Sep 2026 with 25 Government amendments; Senate first reading and second reading moved 12 Oct 2026; no Royal Assent. (Act No. 86, 2026, shown in the 1 Oct 2026 AML/CTF Act compilation, is a different Act.) The revised explanatory memorandum keeps the LPP change, requiring LPP forms to go to the agency that issued the notice ('the recipient must give the issuer', items 16 and 22). The supplementary explanatory memorandum describes the House amendments as moving the high-risk mechanism power to the Minister, adding consultation statements and commencing Schedule 1 on 1 July 2027; it does not describe any change to the LPP items. Also amends the 'financing of terrorism' definition, KYC requirements and politically exposed person definitions",
+      "review_basis": "APH bill page and the revised and supplementary explanatory memoranda read on 2026-11-02; the amendment sheet and third-reading text were not read, so confirm the LPP items against the passed text"
     }
   ]
 }
