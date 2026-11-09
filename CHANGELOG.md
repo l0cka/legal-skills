@@ -3,10 +3,20 @@
 This changelog records all notable repository changes.
 
 The repository ships one plugin, `legal-skills`, with one version. The
-repository does not have release tags. The current pull request remains under **Unreleased**, even when its
-plugin manifests contain their intended release versions.
+repository tags each release as `v<version>`, starting with `v1.1.0`. Work
+that has not been tagged stays under **Unreleased**, even when the plugin
+manifests contain the intended release version.
 
 ## Unreleased
+
+## 2026-11-09 - 1.1.0: one plugin, shorter listing, Queensland judgments and court AI protocols
+
+### Released versions
+
+- `legal-skills` 1.0.0 → 1.1.0, tagged `v1.1.0`. This is the first tagged
+  release. 1.0.0 was the untagged consolidation of the earlier per-area
+  plugins into one plugin, and its entries are in this section.
+- The plugin holds 105 skills across 16 practice areas.
 
 ### Changed
 
