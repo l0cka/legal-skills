@@ -22,6 +22,11 @@ not establish that any rule applies.
 Read the [source and control method](../../references/governance-source-and-control-method.md)
 and [profile schema](../../references/governance-profile-schema.md) first.
 
+To start quickly, edit the matching starter in
+[starter-profiles.md](../../references/starter-profiles.md). The
+[profile guide](../../references/profile-guide.md) says where to keep the
+approved profile and how a person approves it.
+
 ## Workflow
 
 1. Confirm the perimeter.

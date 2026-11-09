@@ -24,6 +24,11 @@ coverage, thresholds or characterisation.
 Read the [source and control method](../../references/fair-work-source-and-control-method.md)
 first, then complete the [employment profile schema](../../references/employment-profile-schema.md).
 
+To start quickly, edit the matching starter in
+[starter-profiles.md](../../references/starter-profiles.md). The
+[profile guide](../../references/profile-guide.md) says where to keep the
+approved profile and how a person approves it.
+
 ## Workflow
 
 1. Establish the profile context.

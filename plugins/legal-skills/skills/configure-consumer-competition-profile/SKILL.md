@@ -24,6 +24,11 @@ for state or territory application use its official legislation publisher. Recor
 version, effective date, checked date, observation and evidence state. If unavailable, say
 'verify against <official source>' and leave the affected proposition not verified.
 
+To start quickly, edit the matching starter in
+[starter-profiles.md](../../references/starter-profiles.md). The
+[profile guide](../../references/profile-guide.md) says where to keep the
+approved profile and how a person approves it.
+
 ## Workflow
 
 1. Confirm entity, Australian jurisdictions, factual as-at date, scope and responsible lawyer.

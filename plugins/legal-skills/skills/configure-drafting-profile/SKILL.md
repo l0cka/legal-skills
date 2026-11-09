@@ -26,6 +26,11 @@ Read the [source and control method](../../references/drafting-source-and-contro
 first. Use the [profile schema](../../references/drafting-profile-schema.md)
 for standing positions and transaction instructions.
 
+To start quickly, edit the matching starter in
+[starter-profiles.md](../../references/starter-profiles.md). The
+[profile guide](../../references/profile-guide.md) says where to keep the
+approved profile and how a person approves it.
+
 ## Workflow
 
 1. Confirm the drafting party, document perimeter, drafting side, governing

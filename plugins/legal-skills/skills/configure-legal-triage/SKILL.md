@@ -24,6 +24,11 @@ before creating or changing a profile. Read
 [references/governance-basis.md](references/governance-basis.md) when assessing
 privacy, accreditation, responsible-AI or source requirements.
 
+To start quickly, edit the matching starter in
+[starter-profiles.md](../../references/starter-profiles.md). The
+[profile guide](../../references/profile-guide.md) says where to keep the
+approved profile and how a person approves it.
+
 ## Workflow
 
 1. Fix the authority and scope.

@@ -26,6 +26,11 @@ first and use the [review playbook
 schema](../../references/review-playbook-schema.md).
 All outputs carry `DRAFT - LAWYER REVIEW REQUIRED`.
 
+To start quickly, edit the matching starter in
+[starter-profiles.md](../../references/starter-profiles.md). The
+[profile guide](../../references/profile-guide.md) says where to keep the
+approved profile and how a person approves it.
+
 ## Workflow
 
 1. Confirm reviewing party and customer/supplier side, contract families,

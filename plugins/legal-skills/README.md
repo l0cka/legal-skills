@@ -64,6 +64,14 @@ Each area guide lists its skills, scope, sources, permissions and validation.
 | [**Legal Cognitive Sparring**](areas/cognitive-sparring/README.md) | 12 | Spars with a qualified lawyer on reasoning, gaps, and strategy. Jurisdiction is lawyer-supplied. It does not give final advice or invent citations. | 2026-10-15 |
 <!-- end:area-table -->
 
+## Profiles
+
+Some practice areas run against a short profile of the practice, employer
+or company. The [profile guide](references/profile-guide.md) covers the
+quickest way to create one, where to keep it between sessions and what each
+area does without one. [Starter profiles](references/starter-profiles.md)
+give a fictional example to edit for each.
+
 ## Layout
 
 - `skills/<skill-name>/` holds each skill package.
