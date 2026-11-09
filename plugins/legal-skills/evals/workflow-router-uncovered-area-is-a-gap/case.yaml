@@ -1,0 +1,28 @@
+schema_version: '1.1'
+name: route-legal-fact-pattern records an uncovered area as a gap
+tags:
+- router
+- fail-closed
+execution:
+  max_turns: 12
+  allowed_tools:
+  - Bash
+  prompt: Use route-legal-fact-pattern. Our client is separating from her husband in Melbourne
+    and wants a property settlement and parenting orders. She also runs a small business with
+    him and wants him removed as a director. Plan the skills to run.
+graders:
+- name: status-token
+  type: regex
+  pattern: \bREADY WITH QUALIFICATIONS\b
+  match: contains
+  target: last_message
+- name: records-gap
+  type: regex
+  pattern: (?i)\bgaps?\b
+  match: contains
+  target: last_message
+- name: no-nearest-skill
+  type: llm
+  criteria: Family law property settlement and parenting orders must be recorded as a gap
+    that no shipped skill covers and must not be routed to another skill. Only the company
+    director question may be routed, to a corporations governance skill.
