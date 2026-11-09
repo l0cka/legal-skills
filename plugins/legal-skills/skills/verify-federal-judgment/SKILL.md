@@ -1,9 +1,21 @@
 ---
 name: verify-federal-judgment
-description: Verify that a cited Federal Court of Australia or Federal Circuit and Family Court decision exists at the courts' official publishers, resolving FCA, FCAFC, FedCFamC, FCCA, FamCA and FCR citations, with an explicit browser-guided or manual path where the Federal Court website challenges automated access. Use when the citation is already known to be a Federal Court or FCFCOA citation (route-case-citation sends federal citations here) and a user asks whether it is genuine, what case a federal citation refers to, or to check federal authorities in a document for fabrication. Do not use for the High Court, State courts, subsequent treatment or legal advice.
+description: Verify that a Federal Court or Federal Circuit and Family Court decision exists at the official publisher, for FCA, FCAFC, FedCFamC, FCCA, FamCA and FCR citations. Use via route-case-citation. Not for case treatment.
 ---
 
 # Verify Federal Judgment
+
+## Scope
+
+Verify that a cited Federal Court of Australia or Federal Circuit and Family
+Court decision exists at the courts' official publishers, resolving FCA,
+FCAFC, FedCFamC, FCCA, FamCA and FCR citations, with an explicit
+browser-guided or manual path where the Federal Court website challenges
+automated access. Use when the citation is already known to be a Federal Court
+or FCFCOA citation (route-case-citation sends federal citations here) and a
+user asks whether it is genuine, what case a federal citation refers to, or to
+check federal authorities in a document for fabrication. Do not use for the
+High Court, State courts, subsequent treatment or legal advice.
 
 Two official publishers control this skill. The Federal Circuit and Family
 Court publishes its judgments at `fcfcoa.gov.au` and answers direct

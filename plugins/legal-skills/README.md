@@ -54,7 +54,7 @@ Each area guide lists its skills, scope, sources, permissions and validation.
 | [**Australian Corporations Governance**](areas/corporations-governance/README.md) | 5 | Helps govern an Australian company under the Corporations Act. Prepares board records and reviews for human approval. | 2026-08-26 |
 | [**Australian Employment & Fair Work**](areas/employment-fair-work/README.md) | 10 | Maps Fair Work obligations and reviews contracts, classification, discrimination, restraints and underpayment frameworks for lawyers. | 2026-08-26 |
 | [**Australian Estate Planning**](areas/estate-planning/README.md) | 3 | Prepares solicitor-review drafts from approved NSW, Victorian and Queensland estate planning precedents. | 2026-08-26 |
-| [**Australian Legal Research**](areas/legal-research/README.md) | 16 | Checks Australian legislation and case citations against the official publishers. Writes and reviews AGLC4 citations. | 2026-08-26 |
+| [**Australian Legal Research**](areas/legal-research/README.md) | 18 | Checks Australian legislation and case citations against the official publishers. Writes and reviews AGLC4 citations. | 2026-08-26 |
 | [**Australian Litigation Deadlines**](areas/litigation-deadlines/README.md) | 6 | Maps limitation periods and computes candidate court deadlines. A lawyer must confirm each date. | 2026-08-26 |
 | [**Australian Privacy & Cybersecurity**](areas/privacy-cybersecurity/README.md) | 8 | Maps the Australian privacy and cyber rules that can apply to a set of facts, a data breach or an AI use case. | 2026-08-26 |
 | [**Australian Work Health & Safety**](areas/work-health-safety/README.md) | 5 | Maps WHS duty holders, assesses candidate notifiable incidents, reviews officer due diligence evidence and psychosocial controls for lawyer review. | 2026-10-28 |
@@ -63,6 +63,14 @@ Each area guide lists its skills, scope, sources, permissions and validation.
 | [**Legal Workflow Router**](areas/workflow-router/README.md) | 1 | Maps a fact pattern to the skills it engages, in order, with the human decision points named. | 2026-08-26 |
 | [**Legal Cognitive Sparring**](areas/cognitive-sparring/README.md) | 12 | Spars with a qualified lawyer on reasoning, gaps, and strategy. Jurisdiction is lawyer-supplied. It does not give final advice or invent citations. | 2026-10-15 |
 <!-- end:area-table -->
+
+## Profiles
+
+Some practice areas run against a short profile of the practice, employer
+or company. The [profile guide](references/profile-guide.md) covers the
+quickest way to create one, where to keep it between sessions and what each
+area does without one. [Starter profiles](references/starter-profiles.md)
+give a fictional example to edit for each.
 
 ## Layout
 

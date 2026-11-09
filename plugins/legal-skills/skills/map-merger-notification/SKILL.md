@@ -1,9 +1,16 @@
 ---
 name: map-merger-notification
-description: Map Australian mandatory merger notification, threshold, exemption, waiver and stay pathways from transaction evidence. Use before signing or completion planning under the 2026 regime. Do not use to lodge an application, approve closing or substitute historic voluntary-clearance practice.
+description: Map Australian mandatory merger notification thresholds, exemptions, waivers and stay pathways from transaction evidence. Use before signing or completion planning. Never lodges an application or approves closing.
 ---
 
 # Map Merger Notification
+
+## Scope
+
+Map Australian mandatory merger notification, threshold, exemption, waiver and
+stay pathways from transaction evidence. Use before signing or completion
+planning under the 2026 regime. Do not use to lodge an application, approve
+closing or substitute historic voluntary-clearance practice.
 
 Australian Commonwealth merger law under CCA Part IV Division 1A and Part IVA.
 Confirm Australian nexus, parties, territorial reach and any sectoral overlay.

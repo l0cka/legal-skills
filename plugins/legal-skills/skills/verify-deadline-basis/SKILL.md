@@ -1,9 +1,22 @@
 ---
 name: verify-deadline-basis
-description: Verify the computation-rule tables and holiday tables that the Australian litigation-deadlines workflows rely on against the official publishers — legislation sites for Interpretation Acts, court rules and tribunal Acts, and government publications for public holidays — recording source URL, version identifier, checked date and a table fingerprint, and detecting changes since the last verification. This is the only path that moves a table entry to the verified state that activates computation. Use before first computed reliance in a matter, on the profile's verification posture, or when a rule amendment is suspected. Do not use to compute dates, to verify Acts that the Australian Legal Research checkers cover, or to bypass a publisher's bot protections.
+description: Verify the court-rule and public-holiday tables behind the litigation-deadlines skills against official publishers. Use before first computed reliance or when a rule change is suspected. Never computes dates.
 ---
 
 # Verify Deadline Basis
+
+## Scope
+
+Verify the computation-rule tables and holiday tables that the Australian
+litigation-deadlines workflows rely on against the official publishers —
+legislation sites for Interpretation Acts, court rules and tribunal Acts, and
+government publications for public holidays — recording source URL, version
+identifier, checked date and a table fingerprint, and detecting changes since
+the last verification. This is the only path that moves a table entry to the
+verified state that activates computation. Use before first computed reliance
+in a matter, on the profile's verification posture, or when a rule amendment
+is suspected. Do not use to compute dates, to verify Acts that the Australian
+Legal Research checkers cover, or to bypass a publisher's bot protections.
 
 Verify the tables computation depends on, entry by entry, against the
 official publishers, and record the evidence. An entry stays

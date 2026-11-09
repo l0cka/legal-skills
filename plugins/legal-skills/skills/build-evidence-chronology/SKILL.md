@@ -1,9 +1,20 @@
 ---
 name: build-evidence-chronology
-description: Build a source-linked evidence chronology as a .docx file from supplied legal matter documents using a native structured document-review table when available, preserving exact date wording, conflicting accounts, allegations, inferences and evidence gaps for human review. Use for litigation, investigations, regulatory responses, disputes or other matters requiring an auditable sequence of events. Do not use to decide credibility, evidentiary weight, admissibility, legal effect or merits, or to claim completeness beyond the supplied documents.
+description: Build a source-linked evidence chronology as a Word file from supplied matter documents, keeping exact date wording, conflicts and gaps. Use for litigation, investigations and disputes. Never decides credibility, weight or merits.
 ---
 
 # Build Evidence Chronology
+
+## Scope
+
+Build a source-linked evidence chronology as a .docx file from supplied legal
+matter documents using a native structured document-review table when
+available, preserving exact date wording, conflicting accounts, allegations,
+inferences and evidence gaps for human review. Use for litigation,
+investigations, regulatory responses, disputes or other matters requiring an
+auditable sequence of events. Do not use to decide credibility, evidentiary
+weight, admissibility, legal effect or merits, or to claim completeness beyond
+the supplied documents.
 
 Organise supplied evidence into a reviewable sequence without turning disputed
 material into an agreed narrative. Keep every material event traceable to the
@@ -72,6 +83,14 @@ as a Word `.docx` file.
      preview or rendering capability when available and inspect every page for
      clipped text, broken tables and unreadable pinpoints. If visual inspection
      is unavailable, state that limitation in the document and result status.
+
+## Court use
+
+If the output will be filed in or served for a court or tribunal, or will
+feed an affidavit, witness statement or expert report, run
+`$check-court-ai-protocol` for that forum first. Several courts prohibit
+using generative AI to generate the content of evidence and require the
+practitioner to verify every reference personally.
 
 ## Result contract
 

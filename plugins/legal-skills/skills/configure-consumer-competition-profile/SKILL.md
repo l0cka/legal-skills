@@ -1,9 +1,16 @@
 ---
 name: configure-consumer-competition-profile
-description: Create or validate a controlled Australian consumer and competition business profile before assessment. Use for scope, evidence owners and approval controls. Do not use to approve a profile, determine coverage or import confidential matter data into the public repository.
+description: Create or validate the business profile the Australian consumer and competition skills run against. Use before assessment for scope, evidence owners and approval controls. Never approves the profile.
 ---
 
 # Configure Consumer Competition Profile
+
+## Scope
+
+Create or validate a controlled Australian consumer and competition business
+profile before assessment. Use for scope, evidence owners and approval
+controls. Do not use to approve a profile, determine coverage or import
+confidential matter data into the public repository.
 
 Australian Commonwealth law and ACL application in the identified state or territory.
 Snapshot 2026-10-13; verify law at the conduct date and intended decision horizon.
@@ -16,6 +23,11 @@ Verify every statutory citation at legislation.gov.au through `$check-commonweal
 for state or territory application use its official legislation publisher. Record provision,
 version, effective date, checked date, observation and evidence state. If unavailable, say
 'verify against <official source>' and leave the affected proposition not verified.
+
+To start quickly, edit the matching starter in
+[starter-profiles.md](../../references/starter-profiles.md). The
+[profile guide](../../references/profile-guide.md) says where to keep the
+approved profile and how a person approves it.
 
 ## Workflow
 

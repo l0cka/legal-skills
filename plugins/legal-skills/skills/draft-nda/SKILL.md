@@ -1,9 +1,17 @@
 ---
 name: draft-nda
-description: Prepare a first-draft mutual or one-way Australian NDA from evidenced party details and commercial instructions, with purpose, exclusions, duration and permitted disclosure. Use for practitioner-led commercial confidentiality drafting; do not use to guarantee secrecy, draft restraints or approve execution.
+description: Prepare a first-draft mutual or one-way Australian NDA from party details and commercial instructions for lawyer review. Not for restraints, guaranteeing secrecy or approving execution.
 ---
 
 # Draft NDA
+
+## Scope
+
+Prepare a first-draft mutual or one-way Australian NDA from evidenced party
+details and commercial instructions, with purpose, exclusions, duration and
+permitted disclosure. Use for practitioner-led commercial confidentiality
+drafting; do not use to guarantee secrecy, draft restraints or approve
+execution.
 
 Jurisdiction: Australian Commonwealth law and the identified governing state or
 territory. Record the legal as-at and intended use dates. The 2026-10-13 source

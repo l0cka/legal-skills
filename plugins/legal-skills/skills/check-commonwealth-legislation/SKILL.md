@@ -1,9 +1,20 @@
 ---
 name: check-commonwealth-legislation
-description: Verify the identity, status, applicable point-in-time version, Register IDs, and currency qualifications of Australian Commonwealth Acts and registered instruments using the Federal Register of Legislation. Use when a user asks whether Commonwealth legislation is current or in force, which compilation applied on a date, whether a citation or supplied provision matches the official text, or for an evidence-linked legislation currency check. Do not use for State or Territory law, Bills, court deadlines, case treatment, or substantive legal advice.
+description: Verify Commonwealth Acts and instruments on the Federal Register of Legislation, covering whether in force, the compilation on a date and whether a citation matches. Not for State or Territory law, Bills or case law.
 ---
 
 # Check Commonwealth Legislation
+
+## Scope
+
+Verify the identity, status, applicable point-in-time version, Register IDs,
+and currency qualifications of Australian Commonwealth Acts and registered
+instruments using the Federal Register of Legislation. Use when a user asks
+whether Commonwealth legislation is current or in force, which compilation
+applied on a date, whether a citation or supplied provision matches the
+official text, or for an evidence-linked legislation currency check. Do not
+use for State or Territory law, Bills, court deadlines, case treatment, or
+substantive legal advice.
 
 Use the Federal Register of Legislation as the controlling source. Produce a
 provenance record, not a bare assertion that legislation is "current".

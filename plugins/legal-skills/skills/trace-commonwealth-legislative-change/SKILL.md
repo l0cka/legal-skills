@@ -1,9 +1,21 @@
 ---
 name: trace-commonwealth-legislative-change
-description: Trace textual changes to provisions of Australian Commonwealth Acts and registered instruments between two dates or compilations using Federal Register versions, compilation endnotes, amendment histories, amending legislation and commencement material. Use when asked what changed in a provision, which amendment made a change, when it commenced, whether it was incorporated, or whether endpoint text stayed the same despite intervening amendments. Do not use for Bills, State or Territory law, case treatment, court deadlines, legal interpretation, transitional operation or application to facts.
+description: Trace what changed in a Commonwealth provision between two dates, which amendment made the change and when it commenced, from Federal Register versions. Not for Bills, State law or interpretation.
 ---
 
 # Trace Commonwealth Legislative Change
+
+## Scope
+
+Trace textual changes to provisions of Australian Commonwealth Acts and
+registered instruments between two dates or compilations using Federal
+Register versions, compilation endnotes, amendment histories, amending
+legislation and commencement material. Use when asked what changed in a
+provision, which amendment made a change, when it commenced, whether it was
+incorporated, or whether endpoint text stayed the same despite intervening
+amendments. Do not use for Bills, State or Territory law, case treatment,
+court deadlines, legal interpretation, transitional operation or application
+to facts.
 
 Use the Federal Register of Legislation to produce an evidence-linked change
 trace. Keep textual change, commencement, incorporation and legal operation as

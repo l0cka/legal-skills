@@ -1,9 +1,16 @@
 ---
 name: draft-services-agreement
-description: Prepare a first-draft Australian B2B services or contractor agreement and SOW covering scope, fees, GST, IP, moral rights, confidentiality, risk allocation and exit. Flag worker classification and sham contracting for employment review; do not label employment as contracting or approve execution.
+description: Prepare a first-draft Australian B2B services or contractor agreement and statement of work for lawyer review. Flags worker classification for employment review. Never approves execution.
 ---
 
 # Draft Services Agreement
+
+## Scope
+
+Prepare a first-draft Australian B2B services or contractor agreement and SOW
+covering scope, fees, GST, IP, moral rights, confidentiality, risk allocation
+and exit. Flag worker classification and sham contracting for employment
+review; do not label employment as contracting or approve execution.
 
 Jurisdiction: Australian Commonwealth law and the identified governing state or
 territory. Record the legal as-at and intended use dates. The 2026-10-13 source

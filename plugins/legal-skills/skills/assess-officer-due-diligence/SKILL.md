@@ -1,9 +1,23 @@
 ---
 name: assess-officer-due-diligence
-description: Review the evidence that an Australian company's directors and other officers exercise WHS due diligence — mapping board papers, reports, audits, resourcing, incident and hazard escalation, legal-compliance processes and verification against each element of the officer duty in the governing model WHS Act (s 27 in the model), or against officer liability in Victoria's OHS Act 2004 — and listing evidence gaps and questions for the board, with industrial manslaughter exposure flagged by jurisdiction. Use for board WHS governance reviews, director inductions, post-incident governance reviews and preparing officer briefings. Do not use to conclude that an officer did or did not exercise due diligence, to defend a prosecution, to decide officer status, or for general director duties (use $assess-director-duties-governance).
+description: Review evidence that an Australian company's officers exercise WHS due diligence, element by element, with gaps and board questions. Use for board WHS reviews and post-incident governance. Never concludes due diligence was met.
 ---
 
 # Assess Officer Due Diligence
+
+## Scope
+
+Review the evidence that an Australian company's directors and other officers
+exercise WHS due diligence — mapping board papers, reports, audits,
+resourcing, incident and hazard escalation, legal-compliance processes and
+verification against each element of the officer duty in the governing model
+WHS Act (s 27 in the model), or against officer liability in Victoria's OHS
+Act 2004 — and listing evidence gaps and questions for the board, with
+industrial manslaughter exposure flagged by jurisdiction. Use for board WHS
+governance reviews, director inductions, post-incident governance reviews and
+preparing officer briefings. Do not use to conclude that an officer did or did
+not exercise due diligence, to defend a prosecution, to decide officer status,
+or for general director duties (use $assess-director-duties-governance).
 
 Map the evidence to each element of the officer duty and show the gaps. The
 review never concludes that due diligence was or was not exercised; that is

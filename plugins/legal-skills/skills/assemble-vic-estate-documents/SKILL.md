@@ -1,9 +1,20 @@
 ---
 name: assemble-vic-estate-documents
-description: Prepare solicitor-review drafts of a Victorian will, enduring power of attorney and appointment of medical treatment decision maker for one client using centrally maintained approved precedents, an approved drafting playbook and provenance-cited instructions. Draft all supported content, visibly mark unresolved facts and decisions, and return a drafting-issues register. Use only for practitioner-led Victorian matters. Do not use for self-represented parties, other jurisdictions, advance care directives, supportive attorney appointments, superannuation death benefit nominations, trusts or probate.
+description: Draft a Victorian will, enduring power of attorney and medical treatment decision maker appointment from a firm's approved precedents for solicitor review. Not for other jurisdictions, trusts or probate.
 ---
 
 # Assemble Victorian Estate Documents
+
+## Scope
+
+Prepare solicitor-review drafts of a Victorian will, enduring power of
+attorney and appointment of medical treatment decision maker for one client
+using centrally maintained approved precedents, an approved drafting playbook
+and provenance-cited instructions. Draft all supported content, visibly mark
+unresolved facts and decisions, and return a drafting-issues register. Use
+only for practitioner-led Victorian matters. Do not use for self-represented
+parties, other jurisdictions, advance care directives, supportive attorney
+appointments, superannuation death benefit nominations, trusts or probate.
 
 Prepare working drafts from the approved precedent library for one client. The
 responsible solicitor controls the instructions, clause choices and final legal

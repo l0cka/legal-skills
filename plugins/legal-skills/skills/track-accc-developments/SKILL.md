@@ -1,9 +1,17 @@
 ---
 name: track-accc-developments
-description: Check the Australian ACCC watch register on demand against official legislation, guidance and reform sources. Use before advice or a periodic horizon review to identify changed merger, consumer, competition and safety positions. Do not use as an unattended monitor, auto-update a register or treat proposals and allegations as obligations.
+description: Check the ACCC watch register on demand against official sources for changed merger, consumer, competition and product safety positions. Use before advice or a horizon review. Not an unattended monitor.
 ---
 
 # Track ACCC Developments
+
+## Scope
+
+Check the Australian ACCC watch register on demand against official
+legislation, guidance and reform sources. Use before advice or a periodic
+horizon review to identify changed merger, consumer, competition and safety
+positions. Do not use as an unattended monitor, auto-update a register or
+treat proposals and allegations as obligations.
 
 Australian Commonwealth law and ACL application in the identified state or territory.
 Snapshot 2026-10-13; verify law at the conduct date and intended decision horizon.

@@ -1,9 +1,21 @@
 ---
 name: maintain-deadline-register
-description: Build and update a source-linked deadline register for one Australian civil litigation matter, where every entry carries its governing rule citation, trigger assumption, script or mapping provenance, evidence state and confirmation status, and unconfirmed entries stay visibly provisional. Use to assemble computed and mapped candidates into a reviewable register, to record the confirmer's confirmations or to update entries after a trigger changes. Do not use as the practice's diary or system of record, to confirm a date, or to recompute dates outside the bundled script — the register mirrors decisions made elsewhere and confirmation is a human act.
+description: Build and update a source-linked deadline register for one Australian civil litigation matter, with each entry's rule, trigger and confirmation status. Not the practice's diary. Never confirms a date.
 ---
 
 # Maintain Deadline Register
+
+## Scope
+
+Build and update a source-linked deadline register for one Australian civil
+litigation matter, where every entry carries its governing rule citation,
+trigger assumption, script or mapping provenance, evidence state and
+confirmation status, and unconfirmed entries stay visibly provisional. Use to
+assemble computed and mapped candidates into a reviewable register, to record
+the confirmer's confirmations or to update entries after a trigger changes. Do
+not use as the practice's diary or system of record, to confirm a date, or to
+recompute dates outside the bundled script — the register mirrors decisions
+made elsewhere and confirmation is a human act.
 
 Assemble candidate dates into one register per matter. The register mirrors
 the outputs of the other workflows and the confirmer's decisions — it never

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Check Court AI Protocol"
+  short_description: "Find the court's generative AI rules for a document being filed"
+  default_prompt: "Use $check-court-ai-protocol to find the generative AI practice note for this court and document, and list what it prohibits, what disclosure it needs and what I must verify myself."

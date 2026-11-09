@@ -1,9 +1,16 @@
 ---
 name: assess-restraint-of-trade
-description: Issue-spot Australian employment restraints against verified common-law reasonableness, NSW restraint legislation and the status of proposed Commonwealth non-compete reforms. Use for exit or clause reviews; never certify enforceability, assume a 2027 ban is in force or send demands.
+description: Issue-spot Australian employment restraints against common-law reasonableness, NSW legislation and proposed non-compete reforms. Use for exit or clause reviews. Never certifies enforceability.
 ---
 
 # Assess Restraint of Trade
+
+## Scope
+
+Issue-spot Australian employment restraints against verified common-law
+reasonableness, NSW restraint legislation and the status of proposed
+Commonwealth non-compete reforms. Use for exit or clause reviews; never
+certify enforceability, assume a 2027 ban is in force or send demands.
 
 Jurisdiction: Australian employment restraints under applicable common law, with
 a separate NSW statutory limb and a Commonwealth proposal-status track. Verify

@@ -1,9 +1,19 @@
 ---
 name: configure-legal-triage
-description: Create, revise or validate a governed staff-facing legal enquiry triage profile for an Australian community legal centre or legal assistance service. Use when a centre needs to translate its approved service scope, urgency pathways, conflict-check process, privacy controls, eligibility factors, accessibility commitments and referral arrangements into a versioned local profile for the Legal Triage workflows. Do not use client or matter data, invent centre policy, or approve a profile on the centre's behalf.
+description: Create or update a community legal centre's enquiry triage profile, recording service scope, urgency pathways, eligibility and referrals. Use before legal triage. Never invents centre policy or approves the profile.
 ---
 
 # Configure Legal Triage
+
+## Scope
+
+Create, revise or validate a governed staff-facing legal enquiry triage
+profile for an Australian community legal centre or legal assistance service.
+Use when a centre needs to translate its approved service scope, urgency
+pathways, conflict-check process, privacy controls, eligibility factors,
+accessibility commitments and referral arrangements into a versioned local
+profile for the Legal Triage workflows. Do not use client or matter data,
+invent centre policy, or approve a profile on the centre's behalf.
 
 Create a centre-local control document for staff-assisted triage. Keep the
 public skill generic and make the approved profile the controlling source for
@@ -13,6 +23,11 @@ Read [references/centre-profile-schema.md](references/centre-profile-schema.md)
 before creating or changing a profile. Read
 [references/governance-basis.md](references/governance-basis.md) when assessing
 privacy, accreditation, responsible-AI or source requirements.
+
+To start quickly, edit the matching starter in
+[starter-profiles.md](../../references/starter-profiles.md). The
+[profile guide](../../references/profile-guide.md) says where to keep the
+approved profile and how a person approves it.
 
 ## Workflow
 

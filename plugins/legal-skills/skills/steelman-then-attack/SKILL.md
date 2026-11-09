@@ -1,9 +1,16 @@
 ---
 name: steelman-then-attack
-description: Restate a qualified lawyer's position in its strongest form, then attack that steelman in a separate phase, using only the lawyer-supplied jurisdiction and record. Use when the lawyer wants both phases kept visible. Do not use to merge the phases, give final legal advice, or invent an authority.
+description: Sparring for a qualified lawyer. Restate the lawyer's position in its strongest form, then attack it in a separate phase. Never merges the phases or invents an authority.
 ---
 
 # Steelman then attack
+
+## Scope
+
+Restate a qualified lawyer's position in its strongest form, then attack that
+steelman in a separate phase, using only the lawyer-supplied jurisdiction and
+record. Use when the lawyer wants both phases kept visible. Do not use to
+merge the phases, give final legal advice, or invent an authority.
 
 First strengthen the lawyer's position. Then attack that strengthened
 position. Keep the phases separate. Jurisdiction is lawyer-supplied. A

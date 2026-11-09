@@ -191,6 +191,7 @@ AREAS: dict[str, dict] = {
     "legal-research": {
         "skills": {
             "check-commonwealth-legislation",
+            "check-court-ai-protocol",
             "trace-commonwealth-legislative-change",
             "check-nsw-legislation",
             "check-victoria-legislation",
@@ -203,6 +204,7 @@ AREAS: dict[str, dict] = {
             "route-case-citation",
             "verify-hca-judgment",
             "verify-nsw-judgment",
+            "verify-qld-judgment",
             "verify-federal-judgment",
             "verify-case-quote",
             "format-aglc4-citations",

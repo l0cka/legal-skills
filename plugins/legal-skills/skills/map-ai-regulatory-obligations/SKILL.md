@@ -1,9 +1,20 @@
 ---
 name: map-ai-regulatory-obligations
-description: Map which Australian regulatory instruments currently bind a described AI use case — privacy, sector regulator, consumer, online-safety and government-use tracks — and separately flag pending instruments such as the proposed Australian Standards for AI as watch items using verified official sources and an approved AI-governance profile. Use for AI adoption decisions, procurement, product launches or governance reviews needing an obligations map. Do not use for privacy or automated-decision depth, EU AI Act analysis, breach conclusions or final legal advice.
+description: Map which Australian regulatory instruments bind a described AI use case and flag pending ones as watch items. Use for AI adoption, procurement and product launches. Not for privacy depth or the EU AI Act.
 ---
 
 # Map AI Regulatory Obligations
+
+## Scope
+
+Map which Australian regulatory instruments currently bind a described AI use
+case — privacy, sector regulator, consumer, online-safety and government-use
+tracks — and separately flag pending instruments such as the proposed
+Australian Standards for AI as watch items using verified official sources and
+an approved AI-governance profile. Use for AI adoption decisions, procurement,
+product launches or governance reviews needing an obligations map. Do not use
+for privacy or automated-decision depth, EU AI Act analysis, breach
+conclusions or final legal advice.
 
 Build an obligations map that separates what binds the organisation now from
 what is only proposed. Never assert a pending instrument as in force.

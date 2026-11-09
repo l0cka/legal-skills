@@ -1,9 +1,17 @@
 ---
 name: find-blind-spots
-description: List material questions, facts, parties, procedures, or authorities a qualified lawyer has not yet addressed, and separate must-check items from nice-to-have, using only the lawyer-supplied jurisdiction and record. Use when the lawyer wants a gap list. Do not use to invent the missing authority or to decide the point.
+description: Sparring for a qualified lawyer. List the questions, facts, parties, procedures and authorities not yet addressed, split into must-check and nice-to-have. Never invents the missing authority or decides the point.
 ---
 
 # Find blind spots
+
+## Scope
+
+List material questions, facts, parties, procedures, or authorities a
+qualified lawyer has not yet addressed, and separate must-check items from
+nice-to-have, using only the lawyer-supplied jurisdiction and record. Use when
+the lawyer wants a gap list. Do not use to invent the missing authority or to
+decide the point.
 
 List what the lawyer has not addressed. Split must-check items from
 nice-to-have. Do not decide the missing points. Jurisdiction is lawyer-supplied.

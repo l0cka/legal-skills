@@ -1,9 +1,21 @@
 ---
 name: review-aml-ctf-program
-description: Issue-spot an Australian legal practice's AML/CTF program — the ML/TF risk assessment, AML/CTF policies, governance roles, personnel due diligence and training, record keeping and the design of initial, ongoing, enhanced and simplified customer due diligence — against the amended AML/CTF Act, the AML/CTF Rules 2025 and AUSTRAC's legal profession program starter kit, using verified official sources. Use for gap reviews of draft or approved programs and CDD frameworks. Do not use to certify compliance, approve a program, perform customer due diligence on a real person or conclude that governance is adequate — approval belongs to senior management.
+description: Issue-spot an Australian legal practice's AML/CTF program, risk assessment, policies, governance and customer due diligence design. Use for gap reviews of draft or approved programs. Never certifies compliance.
 ---
 
 # Review AML/CTF Program
+
+## Scope
+
+Issue-spot an Australian legal practice's AML/CTF program — the ML/TF risk
+assessment, AML/CTF policies, governance roles, personnel due diligence and
+training, record keeping and the design of initial, ongoing, enhanced and
+simplified customer due diligence — against the amended AML/CTF Act, the
+AML/CTF Rules 2025 and AUSTRAC's legal profession program starter kit, using
+verified official sources. Use for gap reviews of draft or approved programs
+and CDD frameworks. Do not use to certify compliance, approve a program,
+perform customer due diligence on a real person or conclude that governance is
+adequate — approval belongs to senior management.
 
 Issue-spot a practice's AML/CTF program and CDD framework design against the
 Act, the Rules and AUSTRAC's published expectations. Find gaps; never

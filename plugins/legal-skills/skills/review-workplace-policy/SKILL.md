@@ -1,9 +1,23 @@
 ---
 name: review-workplace-policy
-description: Review an Australian employer's workplace policy set against the current Fair Work Act and related statutory hooks — right to disconnect, flexible working requests, parental and family and domestic violence leave, fixed-term contract limits, wage theft and the small business code, labour hire orders, delegates' rights, pay secrecy, casual conversion and information statements, and the Sex Discrimination Act positive duty — producing a gap and consistency matrix that labels each hook law or guidance. Use for policy refreshes, onboarding of a new policy set, post-amendment reviews and pre-audit checks. Do not use to certify compliance, conclude that the positive duty has been met, draft policy text, or review discrimination, work health and safety or privacy policies beyond the hooks listed.
+description: Review an Australian employer's workplace policies against Fair Work Act hooks such as right to disconnect, flexible work, leave and delegates' rights. Use for policy refreshes. Never certifies compliance or drafts policy text.
 ---
 
 # Review Workplace Policy
+
+## Scope
+
+Review an Australian employer's workplace policy set against the current Fair
+Work Act and related statutory hooks — right to disconnect, flexible working
+requests, parental and family and domestic violence leave, fixed-term contract
+limits, wage theft and the small business code, labour hire orders, delegates'
+rights, pay secrecy, casual conversion and information statements, and the Sex
+Discrimination Act positive duty — producing a gap and consistency matrix that
+labels each hook law or guidance. Use for policy refreshes, onboarding of a
+new policy set, post-amendment reviews and pre-audit checks. Do not use to
+certify compliance, conclude that the positive duty has been met, draft policy
+text, or review discrimination, work health and safety or privacy policies
+beyond the hooks listed.
 
 Check a policy set against the statutory hooks that must be reflected, and
 say where the policy is silent, inconsistent or out of date. The review

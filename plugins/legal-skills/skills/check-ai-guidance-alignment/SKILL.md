@@ -1,9 +1,21 @@
 ---
 name: check-ai-guidance-alignment
-description: Assess an organisation's AI governance documentation against the current Australian voluntary guidance layers — the National AI Centre's Guidance for AI Adoption (AI6) as primary, the Voluntary AI Safety Standard's 10 guardrails as the superseded-but-current detail catalogue and AS ISO/IEC 42001 as the certifiable management-system crosswalk — labelling every layer voluntary or mandatory-via-regulator. Use for gap assessments, AI policy reviews and pre-certification readiness. Do not use to certify against any standard, conclude legal compliance or assess privacy or board depth owned by other skills.
+description: Assess AI governance documents against Australian voluntary guidance, including Guidance for AI Adoption, the Voluntary AI Safety Standard and ISO/IEC 42001. Use for gap assessments and AI policy reviews. Never certifies or concludes compliance.
 ---
 
 # Check AI Guidance Alignment
+
+## Scope
+
+Assess an organisation's AI governance documentation against the current
+Australian voluntary guidance layers — the National AI Centre's Guidance for
+AI Adoption (AI6) as primary, the Voluntary AI Safety Standard's 10 guardrails
+as the superseded-but-current detail catalogue and AS ISO/IEC 42001 as the
+certifiable management-system crosswalk — labelling every layer voluntary or
+mandatory-via-regulator. Use for gap assessments, AI policy reviews and
+pre-certification readiness. Do not use to certify against any standard,
+conclude legal compliance or assess privacy or board depth owned by other
+skills.
 
 Compare supplied AI governance documentation with the voluntary guidance
 layers, reporting alignment and gaps as evidence for a human reviewer — never

@@ -1,9 +1,17 @@
 ---
 name: pressure-test-strategy
-description: Challenge a qualified lawyer's procedural and commercial strategy choices, including forum, timing, settlement bands, and escalation, for unstated risks and path dependence. Use on the lawyer-supplied jurisdiction and record. Do not use to file, to contact a counterparty, or to pick a forum the lawyer did not name.
+description: Sparring for a qualified lawyer. Challenge procedural and commercial strategy, including forum, timing, settlement bands and escalation, for unstated risks. Never files or contacts a counterparty.
 ---
 
 # Pressure-test strategy
+
+## Scope
+
+Challenge a qualified lawyer's procedural and commercial strategy choices,
+including forum, timing, settlement bands, and escalation, for unstated risks
+and path dependence. Use on the lawyer-supplied jurisdiction and record. Do
+not use to file, to contact a counterparty, or to pick a forum the lawyer did
+not name.
 
 Challenge the lawyer's choice of forum, timing, settlement, or escalation.
 Name unstated risks and path dependence. Do not take the step. Jurisdiction is lawyer-supplied.

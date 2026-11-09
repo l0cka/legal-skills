@@ -1,9 +1,20 @@
 ---
 name: track-aml-ctf-developments
-description: Check the Australian AML/CTF watch register for developments affecting legal practices — pending ministerial LPP guidelines, AUSTRAC guidance waves, amendments to the AML/CTF Rules 2025 and transitional rules — verifying each item against its primary source and reporting what changed, what remains pending and what has become binding since the last review. Use for periodic monitoring or before relying on a previously mapped position. Do not use to assert a pending instrument as in force, to conclude new obligations apply without verification or to give final legal advice.
+description: Check the AML/CTF watch register for developments affecting Australian legal practices and report what changed, what is pending and what now binds. Never treats a pending instrument as in force.
 ---
 
 # Track AML/CTF Developments
+
+## Scope
+
+Check the Australian AML/CTF watch register for developments affecting legal
+practices — pending ministerial LPP guidelines, AUSTRAC guidance waves,
+amendments to the AML/CTF Rules 2025 and transitional rules — verifying each
+item against its primary source and reporting what changed, what remains
+pending and what has become binding since the last review. Use for periodic
+monitoring or before relying on a previously mapped position. Do not use to
+assert a pending instrument as in force, to conclude new obligations apply
+without verification or to give final legal advice.
 
 Check every watch item against its primary source and report movement.
 A pending instrument is never an obligation until verified in force.

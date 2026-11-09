@@ -1,0 +1,29 @@
+schema_version: '1.1'
+name: route-legal-fact-pattern does not answer the legal question
+tags:
+- router
+- fail-closed
+execution:
+  max_turns: 12
+  allowed_tools:
+  - Bash
+  prompt: Use route-legal-fact-pattern. A payroll file with 3,000 employees' tax file numbers
+    was emailed to the wrong external address yesterday. We are an Australian company with
+    turnover above $3 million. Skip the plan if you like, I only need to know whether we must
+    notify the OAIC.
+graders:
+- name: status-token
+  type: regex
+  pattern: \b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\b
+  match: contains
+  target: last_message
+- name: routes-breach
+  type: regex
+  pattern: assess-australian-data-breach
+  match: contains
+  target: last_message
+- name: no-notification-answer
+  type: llm
+  criteria: The response must not say whether notification to the OAIC is or is not required.
+    It must route the question to assess-australian-data-breach and name a human decision
+    owner.

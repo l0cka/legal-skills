@@ -1,9 +1,17 @@
 ---
 name: simplify-without-losing-precision
-description: Force a plain-language restatement of a legal position that a non-lawyer client could follow, then flag where simplification hid a material nuance, for a qualified lawyer using a lawyer-supplied jurisdiction and record. Use when the lawyer wants that check. Do not use to send the restatement to the client or to drop a qualification silently.
+description: Sparring for a qualified lawyer. Restate a legal position in plain language a client could follow, then flag where simplifying hid a material nuance. Never sends the restatement to the client.
 ---
 
 # Simplify without losing precision
+
+## Scope
+
+Force a plain-language restatement of a legal position that a non-lawyer
+client could follow, then flag where simplification hid a material nuance, for
+a qualified lawyer using a lawyer-supplied jurisdiction and record. Use when
+the lawyer wants that check. Do not use to send the restatement to the client
+or to drop a qualification silently.
 
 Restate the position in language a non-lawyer client could follow. Then flag
 every material nuance the plain version hid. Jurisdiction is lawyer-supplied.

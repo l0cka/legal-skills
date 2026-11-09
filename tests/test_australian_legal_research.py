@@ -9,6 +9,7 @@ plugin merge.
 from __future__ import annotations
 
 import importlib.util
+import json
 import subprocess
 import sys
 import unittest
@@ -465,6 +466,7 @@ class AustralianCaseLawPluginTests(unittest.TestCase):
         "route-case-citation",
         "verify-hca-judgment",
         "verify-nsw-judgment",
+        "verify-qld-judgment",
         "verify-federal-judgment",
         "verify-case-quote",
     }
@@ -472,6 +474,7 @@ class AustralianCaseLawPluginTests(unittest.TestCase):
     VERIFICATION_SKILLS = (
         "verify-hca-judgment",
         "verify-nsw-judgment",
+        "verify-qld-judgment",
         "verify-federal-judgment",
         "verify-case-quote",
     )
@@ -530,6 +533,33 @@ class AustralianCaseLawPluginTests(unittest.TestCase):
         self.assertIn("Routing itself never outputs `VERIFIED`", text)
 
 
+class CourtAiProtocolRegisterTests(unittest.TestCase):
+    REGISTER = PLUGIN / "skills" / "check-court-ai-protocol" / "references" / "court-ai-protocol-register.json"
+    READ = "read at the official source"
+
+    def test_every_instrument_has_an_official_source_and_evidence_state(self) -> None:
+        register = json.loads(self.REGISTER.read_text(encoding="utf-8"))
+        ids = [item["id"] for item in register["instruments"]]
+        self.assertEqual(len(ids), len(set(ids)))
+        for item in register["instruments"]:
+            with self.subTest(instrument=item["id"]):
+                self.assertTrue(item["official_source"].startswith("https://"))
+                self.assertNotIn("lawsociety.com.au", item["official_source"])
+                self.assertTrue(item["evidence_state"])
+
+    def test_only_instruments_read_at_source_carry_paragraph_references(self) -> None:
+        register = json.loads(self.REGISTER.read_text(encoding="utf-8"))
+        for item in register["instruments"]:
+            if item["evidence_state"] != self.READ:
+                with self.subTest(instrument=item["id"]):
+                    self.assertNotRegex(" ".join(item["points_at_snapshot"]), r"\bparas? \d")
+
+    def test_skill_never_states_a_requirement_from_the_register_alone(self) -> None:
+        text = " ".join((self.REGISTER.parents[1] / "SKILL.md").read_text(encoding="utf-8").split())
+        self.assertIn("Never state a requirement from the register alone as current", text)
+        self.assertIn("Never say a document complies", text)
+
+
 class ParseCitationTests(unittest.TestCase):
     def test_neutral_hca_citation_routes_to_hca_skill(self) -> None:
         record = parse_citation.parse("[2023] HCA 12")
@@ -542,6 +572,11 @@ class ParseCitationTests(unittest.TestCase):
         record = parse_citation.parse("Smith v Jones [2021] NSWCA 300")
         self.assertEqual(record["jurisdiction"], "New South Wales")
         self.assertEqual(record["route"], "verify-nsw-judgment")
+
+    def test_queensland_citations_route_to_qld_skill(self) -> None:
+        for citation in ("[2023] QCA 1", "R v Smith [2019] QDC 12", "[2022] QCATA 40", "(2023) 14 Qd R 100"):
+            with self.subTest(citation=citation):
+                self.assertEqual(parse_citation.parse(citation)["route"], "verify-qld-judgment")
 
     def test_neutral_fcfcoa_citation_routes_to_federal_skill(self) -> None:
         record = parse_citation.parse("[2022] FedCFamC1A 5")

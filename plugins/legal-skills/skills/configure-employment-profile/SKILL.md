@@ -1,9 +1,21 @@
 ---
 name: configure-employment-profile
-description: Create or update a controlled employment profile for an Australian employer under the Fair Work Act 2009 (Cth) — national system coverage basis, small business status and headcount bands, modern awards and enterprise agreements believed to apply, contract and policy inventory, workforce composition and governance roles — so the other Fair Work skills run against approved employer facts. Use before any other employment workflow or when the employer's instruments, size or policies change. Do not use to decide award or national system coverage, to characterise workers as employees or contractors, or to approve the profile — approval is a human act.
+description: Create or update the employer profile the Fair Work skills run against, recording coverage basis, size, awards, agreements and policies. Use before other employment workflows. Never decides coverage or approves the profile.
 ---
 
 # Configure Employment Profile
+
+## Scope
+
+Create or update a controlled employment profile for an Australian employer
+under the Fair Work Act 2009 (Cth) — national system coverage basis, small
+business status and headcount bands, modern awards and enterprise agreements
+believed to apply, contract and policy inventory, workforce composition and
+governance roles — so the other Fair Work skills run against approved employer
+facts. Use before any other employment workflow or when the employer's
+instruments, size or policies change. Do not use to decide award or national
+system coverage, to characterise workers as employees or contractors, or to
+approve the profile — approval is a human act.
 
 Build the factual map the other skills depend on, and stop there. The
 profile records what the employer believes and holds; it never decides
@@ -11,6 +23,11 @@ coverage, thresholds or characterisation.
 
 Read the [source and control method](../../references/fair-work-source-and-control-method.md)
 first, then complete the [employment profile schema](../../references/employment-profile-schema.md).
+
+To start quickly, edit the matching starter in
+[starter-profiles.md](../../references/starter-profiles.md). The
+[profile guide](../../references/profile-guide.md) says where to keep the
+approved profile and how a person approves it.
 
 ## Workflow
 

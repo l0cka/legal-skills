@@ -1,9 +1,19 @@
 ---
 name: configure-corporations-governance
-description: Create, revise or validate an organisation-controlled governance profile for an Australian company, recording entity type, regulatory overlays, governing documents, replaceable-rules posture, board authority, delegations, committees, records and approval metadata. Use before other corporations-governance skills or when governance inputs change. Do not use to approve the profile, store client or matter data, decide legal application, or configure a CATSI Act corporation or non-company entity.
+description: Create or update the governance profile for an Australian company, recording entity type, governing documents, board authority and delegations. Use before other corporations-governance skills. Never approves the profile.
 ---
 
 # Configure Corporations Governance
+
+## Scope
+
+Create, revise or validate an organisation-controlled governance profile for
+an Australian company, recording entity type, regulatory overlays, governing
+documents, replaceable-rules posture, board authority, delegations,
+committees, records and approval metadata. Use before other
+corporations-governance skills or when governance inputs change. Do not use to
+approve the profile, store client or matter data, decide legal application, or
+configure a CATSI Act corporation or non-company entity.
 
 Create a controlled map of the company and its approved governance sources.
 The profile supplies inputs to later workflows; it is not legal advice and does
@@ -11,6 +21,11 @@ not establish that any rule applies.
 
 Read the [source and control method](../../references/governance-source-and-control-method.md)
 and [profile schema](../../references/governance-profile-schema.md) first.
+
+To start quickly, edit the matching starter in
+[starter-profiles.md](../../references/starter-profiles.md). The
+[profile guide](../../references/profile-guide.md) says where to keep the
+approved profile and how a person approves it.
 
 ## Workflow
 

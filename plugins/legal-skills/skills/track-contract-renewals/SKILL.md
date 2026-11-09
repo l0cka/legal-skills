@@ -1,9 +1,16 @@
 ---
 name: track-contract-renewals
-description: Build or review a source-linked register of Australian contract renewal and notice dates, auto-renewal risks and future UTPA subscription readiness. Use for a supplied contract portfolio or impending renewal. Do not send notices, update live diaries or invent reminder periods.
+description: Build or review a source-linked register of Australian contract renewal and notice dates and auto-renewal risks. Use for a contract portfolio or an impending renewal. Never sends notices or updates live diaries.
 ---
 
 # Track Contract Renewals
+
+## Scope
+
+Build or review a source-linked register of Australian contract renewal and
+notice dates, auto-renewal risks and future UTPA subscription readiness. Use
+for a supplied contract portfolio or impending renewal. Do not send notices,
+update live diaries or invent reminder periods.
 
 Jurisdiction: Australian Commonwealth law and the identified governing state or
 territory. Record legal as-at and intended use dates, reviewing side, input

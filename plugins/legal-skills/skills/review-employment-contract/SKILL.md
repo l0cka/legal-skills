@@ -1,9 +1,16 @@
 ---
 name: review-employment-contract
-description: Review an Australian employment contract against the NES, instrument coverage, set-off wording, IP, confidentiality, termination and fixed-term limits for qualified lawyer review. Use for onboarding or contract refreshes; never certify compliance or approve execution.
+description: Review an Australian employment contract against the NES, award coverage, set-off, IP, confidentiality, termination and fixed-term limits. Use for onboarding or contract refreshes. Never certifies compliance.
 ---
 
 # Review Employment Contract
+
+## Scope
+
+Review an Australian employment contract against the NES, instrument coverage,
+set-off wording, IP, confidentiality, termination and fixed-term limits for
+qualified lawyer review. Use for onboarding or contract refreshes; never
+certify compliance or approve execution.
 
 Jurisdiction: Australian employment contracts with a verified national system
 basis for Fair Work obligations; state-system contract merits need specialist

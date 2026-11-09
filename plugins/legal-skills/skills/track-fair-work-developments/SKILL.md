@@ -1,9 +1,23 @@
 ---
 name: track-fair-work-developments
-description: Check the Australian Fair Work watch register on demand — new Fair Work Act compilations and amending Acts, the Building Cooperative Workplaces reforms, Closing Loopholes transitional issues, the Annual Wage Review and threshold indexation, proposed non-compete reforms, Queensland positive-duty proclamation status, gender-undervaluation award reviews, employee-like minimum standards orders and Fair Work Ombudsman priorities — verifying each item against its primary source and reporting what moved since the register snapshot. Use for periodic horizon reviews or before advice that depends on a pending instrument or a figure that indexes on 1 July. Do not use to assert a pending instrument as law, to run as an unattended monitor, or to replace the obligations map for a specific arrangement.
+description: Check the Fair Work watch register on demand against primary sources, including amending Acts, the Annual Wage Review and indexed thresholds. Use for horizon reviews. Never treats a pending instrument as law.
 ---
 
 # Track Fair Work Developments
+
+## Scope
+
+Check the Australian Fair Work watch register on demand — new Fair Work Act
+compilations and amending Acts, the Building Cooperative Workplaces reforms,
+Closing Loopholes transitional issues, the Annual Wage Review and threshold
+indexation, proposed non-compete reforms, Queensland positive-duty
+proclamation status, gender-undervaluation award reviews, employee-like
+minimum standards orders and Fair Work Ombudsman priorities — verifying each
+item against its primary source and reporting what moved since the register
+snapshot. Use for periodic horizon reviews or before advice that depends on a
+pending instrument or a figure that indexes on 1 July. Do not use to assert a
+pending instrument as law, to run as an unattended monitor, or to replace the
+obligations map for a specific arrangement.
 
 Check every watch item against its primary source and report movement.
 A pending instrument is never an obligation until verified in force.

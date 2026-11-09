@@ -1,15 +1,31 @@
 ---
 name: configure-aml-ctf-practice-profile
-description: Create or update a controlled AML/CTF practice profile for an Australian legal practice regulated, or potentially regulated, under the tranche 2 reforms to the Anti-Money Laundering and Counter-Terrorism Financing Act 2006 (Cth) — practice structure, service lines, enrolment status, claimed exemptions, reporting-group membership, governance roles and program document inventory. Use before any other AML/CTF workflow so mapping and review run against approved practice facts. Do not use to decide whether a service is designated, to enrol with AUSTRAC or to approve the profile — approval is a human act.
+description: Create or update the AML/CTF practice profile for an Australian legal practice under the tranche 2 reforms. Use before any other AML/CTF workflow. Never decides whether a service is designated or approves the profile.
 ---
 
 # Configure AML/CTF Practice Profile
+
+## Scope
+
+Create or update a controlled AML/CTF practice profile for an Australian legal
+practice regulated, or potentially regulated, under the tranche 2 reforms to
+the Anti-Money Laundering and Counter-Terrorism Financing Act 2006 (Cth) —
+practice structure, service lines, enrolment status, claimed exemptions,
+reporting-group membership, governance roles and program document inventory.
+Use before any other AML/CTF workflow so mapping and review run against
+approved practice facts. Do not use to decide whether a service is designated,
+to enrol with AUSTRAC or to approve the profile — approval is a human act.
 
 Build the controlled factual map of the practice that every other AML/CTF skill
 requires. The model drafts; an authorised human approves.
 
 Read the [source and control method](../../references/aml-ctf-source-and-control-method.md)
 and follow the [practice profile schema](../../references/aml-ctf-practice-profile-schema.md).
+
+To start quickly, edit the matching starter in
+[starter-profiles.md](../../references/starter-profiles.md). The
+[profile guide](../../references/profile-guide.md) says where to keep the
+approved profile and how a person approves it.
 
 ## Workflow
 

@@ -1,9 +1,16 @@
 ---
 name: review-commercial-agreement
-description: Review a supplied Australian MSA, SaaS, supply or services agreement against approved standard positions and fallbacks. Return a clause-referenced issues table with risk ratings and playbook positions for lawyer review. Do not silently rewrite or approve execution.
+description: Review a supplied Australian MSA, SaaS, supply or services agreement against approved positions and return a clause-referenced issues table. Never silently rewrites or approves execution.
 ---
 
 # Review Commercial Agreement
+
+## Scope
+
+Review a supplied Australian MSA, SaaS, supply or services agreement against
+approved standard positions and fallbacks. Return a clause-referenced issues
+table with risk ratings and playbook positions for lawyer review. Do not
+silently rewrite or approve execution.
 
 Jurisdiction: Australian Commonwealth law and the identified governing state or
 territory. Record legal as-at and intended use dates, reviewing side, input

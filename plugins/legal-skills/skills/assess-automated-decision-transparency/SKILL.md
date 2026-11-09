@@ -1,9 +1,18 @@
 ---
 name: assess-automated-decision-transparency
-description: Assess current and commencing Australian privacy transparency obligations for automated and AI-assisted decisions, including Privacy Act APP 1.7–1.9 commencing 10 December 2026 and Western Australia PRIS IPP 10 from 1 July 2026. Use for decision inventories, privacy-policy readiness, consequential AI decisions, procurement and deployments spanning those dates. Do not use for case law, discrimination-law conclusions or autonomous deployment approval.
+description: Assess Australian privacy transparency duties for automated and AI-assisted decisions, including APP 1.7 to 1.9 from 10 December 2026 and WA PRIS. Use for decision inventories and privacy policy readiness. Not for discrimination law.
 ---
 
 # Assess Automated Decision Transparency
+
+## Scope
+
+Assess current and commencing Australian privacy transparency obligations for
+automated and AI-assisted decisions, including Privacy Act APP 1.7–1.9
+commencing 10 December 2026 and Western Australia PRIS IPP 10 from 1 July
+2026. Use for decision inventories, privacy-policy readiness, consequential AI
+decisions, procurement and deployments spanning those dates. Do not use for
+case law, discrimination-law conclusions or autonomous deployment approval.
 
 Separate current law, enacted future law and transition work. Read
 [references/automated-decision-method.md](references/automated-decision-method.md)

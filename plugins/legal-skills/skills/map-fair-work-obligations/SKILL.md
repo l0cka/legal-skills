@@ -1,9 +1,23 @@
 ---
 name: map-fair-work-obligations
-description: Map which Fair Work Act 2009 (Cth), National Employment Standards, modern award and enterprise agreement provisions apply to a described Australian employment arrangement — coverage gate, employment type, the twelve NES entitlements, right to disconnect, award or agreement clauses, minimum wage and high income threshold, information statements — using verified official sources and an approved employment profile, with every proposition carrying an evidence state. Use for onboarding, contract design, entitlement queries, award coverage questions and pre-advice research. Do not use to conclude award coverage, characterise a worker as employee or contractor, calculate pay or leave balances, or give final legal advice — coverage and characterisation fail closed to the responsible lawyer.
+description: Map which Fair Work Act, National Employment Standards, award and enterprise agreement provisions apply to an Australian employment arrangement. Use for onboarding, contract design and entitlement queries. Never concludes award coverage or calculates pay.
 ---
 
 # Map Fair Work Obligations
+
+## Scope
+
+Map which Fair Work Act 2009 (Cth), National Employment Standards, modern
+award and enterprise agreement provisions apply to a described Australian
+employment arrangement — coverage gate, employment type, the twelve NES
+entitlements, right to disconnect, award or agreement clauses, minimum wage
+and high income threshold, information statements — using verified official
+sources and an approved employment profile, with every proposition carrying an
+evidence state. Use for onboarding, contract design, entitlement queries,
+award coverage questions and pre-advice research. Do not use to conclude award
+coverage, characterise a worker as employee or contractor, calculate pay or
+leave balances, or give final legal advice — coverage and characterisation
+fail closed to the responsible lawyer.
 
 Lay out the layers that apply to an arrangement and cite each one. The map
 identifies provisions; it never concludes that an instrument covers the

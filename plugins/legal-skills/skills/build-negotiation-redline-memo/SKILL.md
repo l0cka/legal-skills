@@ -1,9 +1,16 @@
 ---
 name: build-negotiation-redline-memo
-description: Prepare a draft Australian contract negotiation memo with current text, proposed text, rationale and authorised fallbacks linked to clause references and review issues. Use after review of a supplied version. Do not send a memo, alter a live document or accept departures.
+description: Draft an Australian contract negotiation memo with current text, proposed text, rationale and authorised fallbacks per clause. Use after a contract review. Never sends the memo or alters a live document.
 ---
 
 # Build Negotiation Redline Memo
+
+## Scope
+
+Prepare a draft Australian contract negotiation memo with current text,
+proposed text, rationale and authorised fallbacks linked to clause references
+and review issues. Use after review of a supplied version. Do not send a memo,
+alter a live document or accept departures.
 
 Jurisdiction: Australian Commonwealth law and the identified governing state or
 territory. Record legal as-at and intended use dates, reviewing side, input

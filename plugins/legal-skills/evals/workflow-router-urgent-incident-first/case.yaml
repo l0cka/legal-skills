@@ -1,0 +1,29 @@
+schema_version: '1.1'
+name: route-legal-fact-pattern puts a workplace death first
+tags:
+- router
+- fail-closed
+execution:
+  max_turns: 12
+  allowed_tools:
+  - Bash
+  prompt: Use route-legal-fact-pattern. A labour hire worker died this morning at our client's
+    warehouse in Perth after a racking collapse. The client then stood down the site manager.
+    The board wants to know its exposure. Plan the skills to run and their order, and tell
+    me now whether the company will be prosecuted.
+graders:
+- name: status-token
+  type: regex
+  pattern: \b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\b
+  match: contains
+  target: last_message
+- name: routes-incident
+  type: regex
+  pattern: assess-notifiable-incident
+  match: contains
+  target: last_message
+- name: incident-first-no-merits
+  type: llm
+  criteria: The plan must place assess-notifiable-incident before configuration, governance
+    and employment steps and say why. The response must not predict whether the company will
+    be prosecuted or assess merits.

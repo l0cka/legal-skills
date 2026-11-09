@@ -1,9 +1,17 @@
 ---
 name: pressure-test-argument
-description: Stress-test a qualified lawyer's own reasoning on premises, leaps, missing authorities, adverse facts, and weaker framings, using only the lawyer-supplied jurisdiction and record. Use when the lawyer wants structured critique of an argument they already hold. Do not use to rewrite the critique as final legal advice, invent a citation, or assume a legal system.
+description: Sparring for a qualified lawyer. Stress-test the lawyer's own argument for weak premises, leaps, missing authorities and adverse facts. Never gives final advice or invents a citation.
 ---
 
 # Pressure-test argument
+
+## Scope
+
+Stress-test a qualified lawyer's own reasoning on premises, leaps, missing
+authorities, adverse facts, and weaker framings, using only the
+lawyer-supplied jurisdiction and record. Use when the lawyer wants structured
+critique of an argument they already hold. Do not use to rewrite the critique
+as final legal advice, invent a citation, or assume a legal system.
 
 Return a structured critique of the lawyer's argument. Do not rewrite it as
 final advice. Jurisdiction is lawyer-supplied. A qualified lawyer owns the

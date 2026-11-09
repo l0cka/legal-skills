@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verify Queensland Judgment"
+  short_description: "Confirm a Queensland court or tribunal citation at Queensland Judgments"
+  default_prompt: "Use $verify-qld-judgment to confirm this Queensland citation exists at Queensland Judgments and record its provenance."

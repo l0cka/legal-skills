@@ -1,9 +1,25 @@
 ---
 name: assess-ai-privacy-cybersecurity-use-case
-description: Assess whether a proposed or existing AI-system use case is suitable from an Australian privacy, cybersecurity and related governance perspective; identify data flows, affected people, legal thresholds, harms, threats, vendor dependencies and controls; perform change-safe Australian Privacy Principles verification; verify relevant Commonwealth and NSW legislation with the corresponding legislation skills; and prepare a reasoned suitability recommendation for lawyer and accountable-owner review. Use for AI intake, procurement, pilots, deployment changes, privacy impact assessments, generative-AI use cases and automated or AI-assisted decisions. Do not use for case law, foreign law, technical penetration testing, final legal opinions, autonomous approval, a complete review of discrimination, consumer, employment, intellectual-property or sector-specific law, or the AI-governance obligations map and board oversight that the AI-governance skills own.
+description: Assess an AI use case for Australian privacy and cybersecurity suitability, covering data flows, harms, vendors and controls. Use for AI intake, procurement, pilots and privacy impact assessments. Not for AI obligations mapping or board oversight.
 ---
 
 # Assess AI Privacy and Cybersecurity Use Case
+
+## Scope
+
+Assess whether a proposed or existing AI-system use case is suitable from an
+Australian privacy, cybersecurity and related governance perspective; identify
+data flows, affected people, legal thresholds, harms, threats, vendor
+dependencies and controls; perform change-safe Australian Privacy Principles
+verification; verify relevant Commonwealth and NSW legislation with the
+corresponding legislation skills; and prepare a reasoned suitability
+recommendation for lawyer and accountable-owner review. Use for AI intake,
+procurement, pilots, deployment changes, privacy impact assessments,
+generative-AI use cases and automated or AI-assisted decisions. Do not use for
+case law, foreign law, technical penetration testing, final legal opinions,
+autonomous approval, a complete review of discrimination, consumer,
+employment, intellectual-property or sector-specific law, or the AI-governance
+obligations map and board oversight that the AI-governance skills own.
 
 Assess a defined AI-system use case, not an AI product in the abstract. Produce
 a provisional recommendation supported by verified law, evidence and controls.

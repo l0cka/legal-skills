@@ -1,9 +1,19 @@
 ---
 name: route-case-citation
-description: Parse an Australian case citation — medium-neutral, reported or bare case name — identify the issuing court and jurisdiction, and route the request to the matching official-source verification skill. Use first whenever a user asks to verify, check or confirm an Australian case citation, judgment or authority, including checking documents for fabricated or hallucinated citations. Do not use for non-Australian citations, treatment analysis (overruled, followed, distinguished), or substantive legal advice.
+description: Use first to verify or check any Australian case citation, judgment or authority, including documents with possibly fabricated citations. Identifies the court and routes to the right verifier. Not for case treatment or foreign citations.
 ---
 
 # Route Case Citation
+
+## Scope
+
+Parse an Australian case citation — medium-neutral, reported or bare case name
+— identify the issuing court and jurisdiction, and route the request to the
+matching official-source verification skill. Use first whenever a user asks to
+verify, check or confirm an Australian case citation, judgment or authority,
+including checking documents for fabricated or hallucinated citations. Do not
+use for non-Australian citations, treatment analysis (overruled, followed,
+distinguished), or substantive legal advice.
 
 Read [../../references/case-law-verification-method.md](../../references/case-law-verification-method.md)
 before routing. It defines the citation grammar, the official-source
@@ -34,8 +44,11 @@ declares a citation verified.
      `NSWDC`, `NSWLEC`, `NSWCATAP`, …) and `NSWLR` → `verify-nsw-judgment`.
    - `FCA`, `FCAFC`, `FedCFamC…`, `FCCA`, `FamCA`, `FamCAFC` and `FCR` →
      `verify-federal-judgment`.
-   - Recognised but unsupported courts (Victoria, Queensland, WA, SA,
-     Tasmania, ACT, NT) → report `UNVERIFIABLE` for that citation, name the
+   - Queensland court and tribunal identifiers (`QSC`, `QCA`, `QDC`,
+     `QMC`, `QCAT`, `QCATA`, `QPEC`, `QLC`, `QIRC`, …) and `Qd R` →
+     `verify-qld-judgment`.
+   - Recognised but unsupported courts (Victoria, WA, SA, Tasmania, ACT,
+     NT) → report `UNVERIFIABLE` for that citation, name the
      court's own website as the manual check, and say the jurisdiction is not
      yet supported.
    - A bare case name with no citation → route by any stated court or

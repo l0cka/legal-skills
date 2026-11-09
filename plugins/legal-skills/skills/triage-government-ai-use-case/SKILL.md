@@ -1,9 +1,20 @@
 ---
 name: triage-government-ai-use-case
-description: Route an Australian government AI use case to the applicable assurance track — the mandatory DTA policy artefacts for Commonwealth entities or the state and territory frameworks for NSW, Victoria, Queensland, WA, SA, Tasmania, the ACT and the NT — with each jurisdiction's escalation threshold, using a verified registry and the national assurance framework. Use for government AI adoption, procurement and assurance planning. Do not use for private-sector obligations mapping, court generative-AI practice directions, privacy depth or a completed risk assessment.
+description: Route an Australian government AI use case to its assurance track, either the Commonwealth DTA policy or a state or territory framework. Use for government AI adoption and procurement. Not for private-sector obligations.
 ---
 
 # Triage Government AI Use Case
+
+## Scope
+
+Route an Australian government AI use case to the applicable assurance track —
+the mandatory DTA policy artefacts for Commonwealth entities or the state and
+territory frameworks for NSW, Victoria, Queensland, WA, SA, Tasmania, the ACT
+and the NT — with each jurisdiction's escalation threshold, using a verified
+registry and the national assurance framework. Use for government AI adoption,
+procurement and assurance planning. Do not use for private-sector obligations
+mapping, court generative-AI practice directions, privacy depth or a completed
+risk assessment.
 
 Route the use case to the right jurisdictional assurance track and name the
 artefacts and escalation threshold that track requires. The triage output is

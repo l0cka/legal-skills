@@ -1,9 +1,16 @@
 ---
 name: review-draft-against-checklist
-description: Review an Australian commercial draft for missing clauses, inconsistent instructions, undefined terms, broken references, placeholders and unfair-contract-terms risk. Return a prioritised issues table for a qualified lawyer; do not certify enforceability or silently rewrite the supplied draft.
+description: Review an Australian commercial draft for missing clauses, undefined terms, broken references, placeholders and unfair-contract-terms risk. Returns a prioritised issues table. Never certifies enforceability.
 ---
 
 # Review Draft Against Checklist
+
+## Scope
+
+Review an Australian commercial draft for missing clauses, inconsistent
+instructions, undefined terms, broken references, placeholders and
+unfair-contract-terms risk. Return a prioritised issues table for a qualified
+lawyer; do not certify enforceability or silently rewrite the supplied draft.
 
 Jurisdiction: Australian Commonwealth law and the identified governing state or
 territory. Record the legal as-at and intended use dates. The 2026-10-13 source

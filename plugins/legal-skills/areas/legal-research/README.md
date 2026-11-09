@@ -51,11 +51,24 @@ reported as fabricated.
 - `verify-nsw-judgment` checks NSW court and tribunal citations on NSW
   Caselaw, preserving restriction notations and the Copyright in Judicial
   Decisions Notice 1995 conditions.
+- `verify-qld-judgment` checks Queensland court and tribunal citations at
+  Queensland Judgments, recording both the date of orders and the date
+  reasons were published.
 - `verify-federal-judgment` checks FCFCOA citations directly and Federal
   Court citations through a human-operated browser or an explicit manual
   path, because the Federal Court website challenges automated clients.
 - `verify-case-quote` confirms a quoted passage appears in the verified
   official text and reports its paragraph location and any divergence.
+
+## Court rules on generative AI
+
+- `check-court-ai-protocol` finds the practice note, practice direction or
+  guideline on generative AI for the court or tribunal a document is headed
+  to, and lists what it prohibits, what statement or disclosure it requires
+  and what the practitioner must verify personally. It works from a dated
+  register of instruments and opens each one at the court's own website
+  before stating a requirement. Run it before filing an affidavit, witness
+  statement, expert report or submission prepared with any AI tool.
 
 ## AGLC4 citation
 

@@ -1,9 +1,22 @@
 ---
 name: map-evidence-inconsistencies
-description: Map where supplied legal matter documents and accounts agree, diverge or are silent on each material fact, as a .docx file — a fact-by-source matrix with pinpoints, a corroboration register and a divergence register that quotes each competing passage, classifies the divergence (date, amount, sequence, participant, wording, omission) and lists the question a reviewer must resolve — without deciding which account is right. Use after a chronology exists, for witness preparation, cross-examination planning, investigations and regulatory responses. Do not use to assess credibility, reliability, weight or admissibility, to decide that a witness is lying or mistaken, or to draft findings.
+description: Map where supplied matter documents and accounts agree, diverge or are silent on each material fact, as a Word file. Use after a chronology, for witness preparation and cross-examination planning. Never decides which account is right.
 ---
 
 # Map Evidence Inconsistencies
+
+## Scope
+
+Map where supplied legal matter documents and accounts agree, diverge or are
+silent on each material fact, as a .docx file — a fact-by-source matrix with
+pinpoints, a corroboration register and a divergence register that quotes each
+competing passage, classifies the divergence (date, amount, sequence,
+participant, wording, omission) and lists the question a reviewer must resolve
+— without deciding which account is right. Use after a chronology exists, for
+witness preparation, cross-examination planning, investigations and regulatory
+responses. Do not use to assess credibility, reliability, weight or
+admissibility, to decide that a witness is lying or mistaken, or to draft
+findings.
 
 Show, fact by fact, what each source says and where the sources part company,
 so a practitioner can decide what to test. The map records agreement,
@@ -71,6 +84,14 @@ documents stay unchanged and the map is delivered as a Word `.docx` file.
      contains the expected sections and rows. Use the runtime's document
      preview when available and inspect every page. If visual inspection is
      unavailable, state that limitation in the document and result status.
+
+## Court use
+
+If the output will be filed in or served for a court or tribunal, or will
+feed an affidavit, witness statement or expert report, run
+`$check-court-ai-protocol` for that forum first. Several courts prohibit
+using generative AI to generate the content of evidence and require the
+practitioner to verify every reference personally.
 
 ## Result contract
 

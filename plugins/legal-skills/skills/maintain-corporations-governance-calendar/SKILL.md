@@ -1,9 +1,19 @@
 ---
 name: maintain-corporations-governance-calendar
-description: Create, validate or update a source-linked governance calendar for an Australian company using verified statutory triggers, an approved governance profile and controlled organisation documents. Use for recurring reviews, meetings, records, appointments, notifications and reporting checkpoints with owners and evidence. Do not calculate dates from cached rules, submit filings, send notices, create regulator reminders without verified application, or cover tax, employment, licensing or sector calendars unless separately scoped.
+description: Create or update a source-linked governance calendar for an Australian company, covering meetings, records, notifications and reporting checkpoints. Never submits filings or sends notices. Not for tax or employment calendars.
 ---
 
 # Maintain Corporations Governance Calendar
+
+## Scope
+
+Create, validate or update a source-linked governance calendar for an
+Australian company using verified statutory triggers, an approved governance
+profile and controlled organisation documents. Use for recurring reviews,
+meetings, records, appointments, notifications and reporting checkpoints with
+owners and evidence. Do not calculate dates from cached rules, submit filings,
+send notices, create regulator reminders without verified application, or
+cover tax, employment, licensing or sector calendars unless separately scoped.
 
 Build a reviewable calendar, not an autonomous compliance system. A date is
 exact only when both its controlling trigger and the entity-specific event are

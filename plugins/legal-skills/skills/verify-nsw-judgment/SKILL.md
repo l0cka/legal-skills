@@ -1,9 +1,21 @@
 ---
 name: verify-nsw-judgment
-description: Verify that a cited New South Wales court or tribunal decision exists on the official NSW Caselaw website, resolving medium-neutral NSW citations and NSWLR references to the published decision while preserving restriction notations and the Copyright in Judicial Decisions Notice 1995 conditions. Use when the citation is already known to be a NSW court or tribunal citation (route-case-citation sends NSW citations here) and a user asks whether it is genuine, what case a NSW citation refers to, or to check NSW authorities in a document for fabrication. Do not use for other jurisdictions, subsequent treatment, case summaries or legal advice.
+description: Verify that a NSW court or tribunal decision exists on NSW Caselaw, for medium-neutral NSW citations and NSWLR. Use via route-case-citation or for a known NSW citation. Not for case treatment.
 ---
 
 # Verify NSW Judgment
+
+## Scope
+
+Verify that a cited New South Wales court or tribunal decision exists on the
+official NSW Caselaw website, resolving medium-neutral NSW citations and NSWLR
+references to the published decision while preserving restriction notations
+and the Copyright in Judicial Decisions Notice 1995 conditions. Use when the
+citation is already known to be a NSW court or tribunal citation
+(route-case-citation sends NSW citations here) and a user asks whether it is
+genuine, what case a NSW citation refers to, or to check NSW authorities in a
+document for fabrication. Do not use for other jurisdictions, subsequent
+treatment, case summaries or legal advice.
 
 Use `caselaw.nsw.gov.au` as the controlling source. NSW Caselaw is the
 official publisher for the Supreme Court, Court of Appeal, Court of Criminal

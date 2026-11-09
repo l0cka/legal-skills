@@ -1,9 +1,20 @@
 ---
 name: check-south-australia-legislation
-description: Verify the identity, status, point-in-time version, commencement and currency of South Australian legislation using the official SA legislation publisher. Use when a user asks whether SA legislation is in force or repealed, which version applied on a date, or whether a citation or supplied provision matches the official text, for current or historical SA Acts, regulations and provisions. Do not use for Commonwealth or other State or Territory legislation, Bills, case law, court deadlines, interpretation, application or final legal advice.
+description: Verify South Australian legislation at the official SA legislation publisher, covering whether it is in force, the version on a date and whether a citation matches. Not for other jurisdictions, Bills, case law or interpretation.
 ---
 
 # Check South Australia Legislation
+
+## Scope
+
+Verify the identity, status, point-in-time version, commencement and currency
+of South Australian legislation using the official SA legislation publisher.
+Use when a user asks whether SA legislation is in force or repealed, which
+version applied on a date, or whether a citation or supplied provision matches
+the official text, for current or historical SA Acts, regulations and
+provisions. Do not use for Commonwealth or other State or Territory
+legislation, Bills, case law, court deadlines, interpretation, application or
+final legal advice.
 
 Use `legislation.sa.gov.au` as the controlling source. Produce a provenance
 record, not a bare assertion that legislation is "current".

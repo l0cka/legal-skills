@@ -1,9 +1,16 @@
 ---
 name: review-marketing-claims
-description: Review Australian marketing, environmental, comparative and pricing claims across the full purchase journey. Use before campaign or subscription review and to distinguish current drip-pricing rules from future UTPA reforms. Do not use to publish advertisements, certify claims or determine privacy compliance.
+description: Review Australian marketing, environmental, comparative and pricing claims across the purchase journey, including drip pricing. Use before a campaign. Never certifies claims or publishes advertisements.
 ---
 
 # Review Marketing Claims
+
+## Scope
+
+Review Australian marketing, environmental, comparative and pricing claims
+across the full purchase journey. Use before campaign or subscription review
+and to distinguish current drip-pricing rules from future UTPA reforms. Do not
+use to publish advertisements, certify claims or determine privacy compliance.
 
 Australian Commonwealth law and ACL application in the identified state or territory.
 Snapshot 2026-10-13; verify law at the conduct date and intended decision horizon.

@@ -1,9 +1,22 @@
 ---
 name: map-tribunal-review-deadlines
-description: Map and compute candidate merits-review and tribunal deadlines for Australian administrative and civil decisions, with computed coverage staged to the ART, NCAT, QCAT and VCAT and identify-only output for other tribunals, using the bundled deterministic script — never model arithmetic. Every migration-review output carries a mandatory non-extendable and jurisdictional-deadline warning with a specialist-review flag. Use when a practitioner needs candidate review or internal-appeal deadlines after a government or tribunal decision. Do not use for criminal matters, to conclude that a period has expired or been extended, or when the notification date is contested — those fail closed to the responsible lawyer.
+description: Map and compute candidate merits-review and tribunal deadlines for Australian decisions with the bundled script, covering the ART, NCAT, QCAT and VCAT. Use after a government or tribunal decision. Never concludes a period has expired.
 ---
 
 # Map Tribunal Review Deadlines
+
+## Scope
+
+Map and compute candidate merits-review and tribunal deadlines for Australian
+administrative and civil decisions, with computed coverage staged to the ART,
+NCAT, QCAT and VCAT and identify-only output for other tribunals, using the
+bundled deterministic script — never model arithmetic. Every migration-review
+output carries a mandatory non-extendable and jurisdictional-deadline warning
+with a specialist-review flag. Use when a practitioner needs candidate review
+or internal-appeal deadlines after a government or tribunal decision. Do not
+use for criminal matters, to conclude that a period has expired or been
+extended, or when the notification date is contested — those fail closed to
+the responsible lawyer.
 
 Map candidate review deadlines from the tribunal computation-rule tables and
 compute only through the bundled script. The enabling enactment frequently

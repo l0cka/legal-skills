@@ -1,9 +1,17 @@
 ---
 name: test-understanding
-description: Quiz a qualified lawyer on a named legal concept or matter with short questions, demand the sources they rely on, and mark gaps, using only the lawyer-supplied jurisdiction and record. Use when the lawyer wants their grasp probed. Do not use to lecture, invent an authority, or treat a missing legal system as assumed.
+description: Sparring for a qualified lawyer. Quiz the lawyer on a named legal concept or matter, demand their sources and mark gaps. Never lectures or invents an authority.
 ---
 
 # Test understanding
+
+## Scope
+
+Quiz a qualified lawyer on a named legal concept or matter with short
+questions, demand the sources they rely on, and mark gaps, using only the
+lawyer-supplied jurisdiction and record. Use when the lawyer wants their grasp
+probed. Do not use to lecture, invent an authority, or treat a missing legal
+system as assumed.
 
 Probe the lawyer's grasp with short questions. Demand sources. Mark gaps. Do
 not lecture. Jurisdiction is lawyer-supplied. A qualified lawyer owns the
