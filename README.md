@@ -8,7 +8,7 @@
   <a href="LICENSE"><img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-1f6f5f?style=flat-square"></a>
   <!-- generated:badges -->
   <img alt="Sixteen practice areas" src="https://img.shields.io/badge/practice%20areas-16-31547a?style=flat-square">
-  <img alt="One hundred and four skills" src="https://img.shields.io/badge/skills-104-31547a?style=flat-square">
+  <img alt="One hundred and five skills" src="https://img.shields.io/badge/skills-105-31547a?style=flat-square">
   <img alt="Claude Cowork, ChatGPT Work and Cursor" src="https://img.shields.io/badge/works%20with-Claude%20Cowork%20%2B%20ChatGPT%20Work%20%2B%20Cursor-c59a46?style=flat-square">
 <!-- end:badges -->
 </p>
@@ -26,7 +26,7 @@ Free and open source (MIT).
 ## What's included
 
 <!-- generated:counts -->
-One plugin, `legal-skills`, holds one hundred and four skills across sixteen practice areas:
+One plugin, `legal-skills`, holds one hundred and five skills across sixteen practice areas:
 <!-- end:counts -->
 
 <!-- generated:area-table -->
@@ -40,7 +40,7 @@ One plugin, `legal-skills`, holds one hundred and four skills across sixteen pra
 | [**Australian Corporations Governance**](plugins/legal-skills/areas/corporations-governance/README.md) | 5 | Helps govern an Australian company under the Corporations Act. Prepares board records and reviews for human approval. | 2026-08-26 |
 | [**Australian Employment & Fair Work**](plugins/legal-skills/areas/employment-fair-work/README.md) | 10 | Maps Fair Work obligations and reviews contracts, classification, discrimination, restraints and underpayment frameworks for lawyers. | 2026-08-26 |
 | [**Australian Estate Planning**](plugins/legal-skills/areas/estate-planning/README.md) | 3 | Prepares solicitor-review drafts from approved NSW, Victorian and Queensland estate planning precedents. | 2026-08-26 |
-| [**Australian Legal Research**](plugins/legal-skills/areas/legal-research/README.md) | 17 | Checks Australian legislation and case citations against the official publishers. Writes and reviews AGLC4 citations. | 2026-08-26 |
+| [**Australian Legal Research**](plugins/legal-skills/areas/legal-research/README.md) | 18 | Checks Australian legislation and case citations against the official publishers. Writes and reviews AGLC4 citations. | 2026-08-26 |
 | [**Australian Litigation Deadlines**](plugins/legal-skills/areas/litigation-deadlines/README.md) | 6 | Maps limitation periods and computes candidate court deadlines. A lawyer must confirm each date. | 2026-08-26 |
 | [**Australian Privacy & Cybersecurity**](plugins/legal-skills/areas/privacy-cybersecurity/README.md) | 8 | Maps the Australian privacy and cyber rules that can apply to a set of facts, a data breach or an AI use case. | 2026-08-26 |
 | [**Australian Work Health & Safety**](plugins/legal-skills/areas/work-health-safety/README.md) | 5 | Maps WHS duty holders, assesses candidate notifiable incidents, reviews officer due diligence evidence and psychosocial controls for lawyer review. | 2026-10-28 |

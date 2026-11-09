@@ -27,6 +27,7 @@
     "check-ai-guidance-alignment": "Original guidance-alignment workflow assessing organisational AI documentation against the official AI6 guidance, VAISS guardrail catalogue and AS ISO/IEC 42001 crosswalk.",
     "check-australian-privacy-principles": "Original layered APP verification workflow based on official Privacy Act compilations, instruments, code metadata, future amendments and separately versioned OAIC guidance.",
     "check-commonwealth-legislation": "Original provenance-first workflow based on the official Federal Register of Legislation website, help guidance and public API.",
+    "check-court-ai-protocol": "Original workflow for finding and applying the court or tribunal instrument on generative AI that governs a filed document. The register was built from the Law Society of NSW index (current as at 14 May 2026) and each entry records whether the instrument itself was read at the court's own website on 2026-11-09.",
     "check-northern-territory-legislation": "Original point-in-time verification workflow based on the official Northern Territory legislation database.",
     "check-nsw-legislation": "Original provenance-first workflow based on the official NSW legislation website and public XML export.",
     "check-queensland-legislation": "Original point-in-time verification workflow based on the official Queensland legislation publisher.",

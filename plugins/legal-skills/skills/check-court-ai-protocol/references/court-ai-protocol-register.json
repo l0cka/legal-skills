@@ -1,0 +1,265 @@
+{
+  "registry_version": 1,
+  "as_at": "2026-11-09",
+  "note": "Research snapshot of Australian court and tribunal instruments on generative AI. Every entry is a lead, not an authority: open the instrument at the court's own website at use time and record 'cannot be determined' where it is unavailable. 'points_at_snapshot' paraphrases the instrument as read on the as-at date and is not a substitute for its text. Entries whose evidence state is not 'read at the official source' were not confirmed on the as-at date.",
+  "index_source": {
+    "title": "Court Protocols on AI, Law Society of New South Wales",
+    "url": "https://www.lawsociety.com.au/AI-hub/court-protocols-ai",
+    "stated_currency": "current as at 14 May 2026",
+    "use": "discovery lead only"
+  },
+  "no_entry_at_snapshot": [
+    "Tasmania",
+    "Australian Capital Territory",
+    "Northern Territory",
+    "Victorian Civil and Administrative Tribunal",
+    "Magistrates' Court of Victoria",
+    "Queensland District and Magistrates Courts",
+    "Western Australian District and Magistrates Courts"
+  ],
+  "no_entry_note": "The index source listed no instrument for these forums on the as-at date. That is not evidence that none exists.",
+  "instruments": [
+    {
+      "id": "fca-gpn-ai",
+      "forum": "Federal Court of Australia",
+      "jurisdiction": "Commonwealth",
+      "instrument": "Use of Generative Artificial Intelligence Practice Note (GPN-AI)",
+      "issued": "2026-04-16",
+      "commences": "not stated in the instrument",
+      "official_source": "https://www.fedcourt.gov.au/law-and-practice/practice-documents/practice-notes/gpn-ai",
+      "evidence_state": "read at the official source",
+      "points_at_snapshot": [
+        "No outright ban. Affidavits and witness statements must reflect the person's own knowledge, and expert reports the expert's own opinion and reasoning (paras 4.7 to 4.9)",
+        "Disclosure where AI summarised or analysed material a witness relies on, or affects admissibility (para 4.10), in the body at the start (para 4.11)",
+        "Authorities must exist and support the proposition (para 4.5(b))",
+        "Confidentiality (paras 4.13 to 4.15)"
+      ]
+    },
+    {
+      "id": "fcfcoa-pd-ai",
+      "forum": "Federal Circuit and Family Court of Australia",
+      "jurisdiction": "Commonwealth",
+      "instrument": "Practice Direction: Use of Artificial Intelligence (PD-AI)",
+      "issued": "not established",
+      "commences": "not established",
+      "official_source": "https://www.fcfcoa.gov.au/sites/default/files/2026-05/fcfcoa_pd_-_use_of_artificial_intelligence_-_pd-ai_-_0526v1.pdf",
+      "evidence_state": "listed by the Law Society of NSW; instrument not read",
+      "points_at_snapshot": []
+    },
+    {
+      "id": "art-gen-ai-pd-2026",
+      "forum": "Administrative Review Tribunal",
+      "jurisdiction": "Commonwealth",
+      "instrument": "Administrative Review Tribunal (Generative AI) Practice Direction 2026",
+      "issued": "2026-08-20",
+      "commences": "on signing (para 1.3)",
+      "official_source": "https://www.art.gov.au/sites/default/files/2026-08/Administrative%20Review%20Tribunal%20%28Generative%20AI%29%20Practice%20Direction.pdf",
+      "evidence_state": "read at the official source",
+      "points_at_snapshot": [
+        "Statutory declarations and witness statements must not have evidence made up, exaggerated, changed or added to by AI (para 3.9)",
+        "Disclosure where AI summarised or analysed witness material or translated evidence (para 3.11), prominently near the start (para 3.13)",
+        "Verify authorities (para 3.6(b)); no reliance on a tool to verify its own output (para 2.4(f))",
+        "Confidentiality (paras 3.17 to 3.21)"
+      ]
+    },
+    {
+      "id": "fwc-draft-guidance",
+      "forum": "Fair Work Commission",
+      "jurisdiction": "Commonwealth",
+      "instrument": "Draft guidance note on the use of generative AI (exposure draft)",
+      "issued": "2026-03-25",
+      "commences": "draft only; comments closed 2026-04-10",
+      "official_source": "https://www.fwc.gov.au/about-us/news-and-media/news/presidents-statement-and-draft-guidance-use-generative-ai-published",
+      "evidence_state": "news item read at the official source; draft guidance note not read",
+      "points_at_snapshot": [
+        "Draft status only at snapshot. Check whether a final guidance note has issued"
+      ]
+    },
+    {
+      "id": "nswsc-sc-gen-23",
+      "forum": "Supreme Court of New South Wales",
+      "jurisdiction": "New South Wales",
+      "instrument": "Practice Note SC Gen 23: Use of Generative Artificial Intelligence (Gen AI)",
+      "issued": "2025-01-28",
+      "commences": "2025-02-03",
+      "official_source": "https://supremecourt.nsw.gov.au/content/dam/dcj/ctsd/supreme-court/documents/Practice-and-Procedure/Practice-Notes/general/current/PN_SC_Gen_23.pdf",
+      "evidence_state": "read at the official source",
+      "points_at_snapshot": [
+        "Gen AI must not be used to generate the content of affidavits, witness statements or character references; preparatory use is allowed (paras 10 to 12)",
+        "Each affidavit, witness statement or character reference must state that Gen AI was not used to generate its content (para 13), with an annexure exception (para 13(b)) and leave (para 15)",
+        "Citations in written submissions must be verified, and not solely by Gen AI (paras 16 to 17)",
+        "Expert reports need prior leave and disclosure in the report (paras 20 to 22)",
+        "Suppressed, implied-undertaking and subpoenaed material only under controlled-environment conditions (para 9A)"
+      ]
+    },
+    {
+      "id": "nswlec-gen-ai-pn",
+      "forum": "Land and Environment Court of New South Wales",
+      "jurisdiction": "New South Wales",
+      "instrument": "Practice Note: Use of Generative Artificial Intelligence (Gen AI)",
+      "issued": "2025-02-11",
+      "commences": "2025-02-12",
+      "official_source": "https://lec.nsw.gov.au/content/dam/dcj/ctsd/lec/documents/practice-notes/Practice_Note_-_Use_of_Generative_Artificial_Intelligence_UPDATED.pdf",
+      "evidence_state": "read at the official source",
+      "points_at_snapshot": [
+        "Paragraphs 9A, 10 to 13, 16 to 17 and 20 to 22 closely track SC Gen 23"
+      ]
+    },
+    {
+      "id": "nswdc-gpn-2",
+      "forum": "District Court of New South Wales",
+      "jurisdiction": "New South Wales",
+      "instrument": "General Practice Note 2: Generative AI Practice Note and Judicial Guidelines",
+      "issued": "2024-12-18",
+      "commences": "2025-02-03",
+      "official_source": "https://districtcourt.nsw.gov.au/content/dam/dcj/ctsd/districtcourt/documents/practice-notes/district-court-pn---general/Gen_AI_Practice_Note.pdf",
+      "evidence_state": "read at the official source",
+      "points_at_snapshot": [
+        "Adopts SC Gen 23 in its current form and as amended from time to time (para 1), so read the current SC Gen 23"
+      ]
+    },
+    {
+      "id": "nswlc-gen-ai-pn",
+      "forum": "Local Court of New South Wales",
+      "jurisdiction": "New South Wales",
+      "instrument": "Practice Note: Generative Artificial Intelligence",
+      "issued": "2025-12-12",
+      "commences": "2026-01-12",
+      "official_source": "https://localcourt.nsw.gov.au/documents/practice-notes/other/Practice_Note_Generative_Artificial_Intelligence_Commences_12.01.26.pdf",
+      "evidence_state": "read at the official source",
+      "points_at_snapshot": [
+        "Adopts SC Gen 23 in its current form and as amended (cl 1.2) for all Local Court proceedings (cl 1.4)"
+      ]
+    },
+    {
+      "id": "ncat-pd-7",
+      "forum": "NSW Civil and Administrative Tribunal",
+      "jurisdiction": "New South Wales",
+      "instrument": "Procedural Direction 7: Use of Generative AI (Gen AI)",
+      "issued": "2025-03-07",
+      "commences": "2025-04-07",
+      "official_source": "https://ncat.nsw.gov.au/content/dam/dcj/ctsd/ncat/documents/procedural-directions/ncat-pd7-use-of-generative-ai.pdf",
+      "evidence_state": "read at the official source",
+      "points_at_snapshot": [
+        "No Gen AI to generate statements, affidavits, statutory declarations or character references, or to rephrase evidence (paras 12 to 14); leave needed for annexures (para 15)",
+        "No affidavit statement equivalent to SC Gen 23 para 13; expert reports need disclosure (para 22(a))",
+        "Verify citations, not solely by Gen AI (paras 16 to 17)",
+        "Material under non-disclosure orders, statutory prohibitions or summonses must not be entered unless conditions are met (para 9)"
+      ]
+    },
+    {
+      "id": "nsw-pic-13",
+      "forum": "Personal Injury Commission of New South Wales",
+      "jurisdiction": "New South Wales",
+      "instrument": "Procedural Direction PIC13: Use of Generative Artificial Intelligence",
+      "issued": "not stated",
+      "commences": "2026-01-01",
+      "official_source": "https://www.pi.nsw.gov.au/resources/procedural-directions/procedural-direction-pic13-use-of-generative-artificial-intelligence",
+      "evidence_state": "read at the official source",
+      "points_at_snapshot": [
+        "Gen AI must not generate the content of written statements or evidence (para 12)",
+        "Statements must carry a disclosure that Gen AI was not used (para 15), with suggested wording (para 17)",
+        "Verify citations in submissions, not with a Gen AI tool (paras 18 to 19)",
+        "Protected material only in controlled environments (para 10); expert report disclosure and records (paras 22 to 23)",
+        "Parties must not use or join AI technology in Commission proceedings (para 27)"
+      ]
+    },
+    {
+      "id": "vsc-sc-gen-25",
+      "forum": "Supreme Court of Victoria",
+      "jurisdiction": "Victoria",
+      "instrument": "Practice Note SC GEN 25: The Use of Artificial Intelligence by Court Users",
+      "issued": "2026-05-14",
+      "commences": "2026-05-14",
+      "official_source": "https://www.supremecourt.vic.gov.au/areas/legal-resources/practice-notes/sc-gen-25-the-use-of-artificial-intelligence-by-court-users",
+      "evidence_state": "read at the official source",
+      "points_at_snapshot": [
+        "Replaces the May 2024 guidelines for litigants",
+        "Particular caution with affidavits, witness statements and expert reports, which must reflect the person's own knowledge and words; no outright ban (paras 6.10 to 6.12)",
+        "No mandatory disclosure; the Court may direct information (para 7.5) and AI-produced portions may need identifying (para 7.6)",
+        "Verify every authority; one AI tool cannot verify another (para 7.4(c) to (e))",
+        "No confidential information into public AI tools; closed tools need checks (paras 6.8 to 6.9)"
+      ]
+    },
+    {
+      "id": "vcc-guidelines",
+      "forum": "County Court of Victoria",
+      "jurisdiction": "Victoria",
+      "instrument": "Guidelines for litigants on the responsible use of AI in litigation",
+      "issued": "not established",
+      "commences": "not established",
+      "official_source": "https://www.countycourt.vic.gov.au/practice-notes",
+      "evidence_state": "listed by the Law Society of NSW; instrument not read",
+      "points_at_snapshot": []
+    },
+    {
+      "id": "qsc-pd-5-2025",
+      "forum": "Supreme Court of Queensland",
+      "jurisdiction": "Queensland",
+      "instrument": "Practice Direction 5 of 2025: Accuracy of References in Submissions",
+      "issued": "2025-09-24",
+      "commences": "not stated in the instrument",
+      "official_source": "https://www.courts.qld.gov.au/__data/assets/pdf_file/0010/882064/sc-pd-5-pf-2025.pdf",
+      "evidence_state": "read at the official source",
+      "points_at_snapshot": [
+        "The responsible person must verify the accuracy and relevance of all legislative and authority references (para 9)",
+        "The responsible person is a named individual practitioner, not only the firm (para 6)",
+        "Referral to the Legal Services Commissioner or a show-cause order on personal costs (para 14)",
+        "No affidavit ban, AI disclosure or confidentiality rule in this instrument"
+      ]
+    },
+    {
+      "id": "qcat-pd-10-2025",
+      "forum": "Queensland Civil and Administrative Tribunal",
+      "jurisdiction": "Queensland",
+      "instrument": "Practice Direction 10 of 2025: Accuracy of References in Submissions",
+      "issued": "2025-10-17",
+      "commences": "not stated in the instrument",
+      "official_source": "https://www.qcat.qld.gov.au/__data/assets/pdf_file/0006/884940/qcat-practice-direction-10-of-2025-accuracy-of-references-in-submissions.pdf",
+      "evidence_state": "read at the official source",
+      "points_at_snapshot": [
+        "Same duties as Supreme Court Practice Direction 5 of 2025 (paras 6, 9 and 14)"
+      ]
+    },
+    {
+      "id": "qld-courts-non-lawyer-guidelines",
+      "forum": "Queensland courts",
+      "jurisdiction": "Queensland",
+      "instrument": "The Use of Generative Artificial Intelligence (AI): Guidelines for Responsible Use by Non-Lawyers",
+      "issued": "not established",
+      "commences": "not established",
+      "official_source": "https://www.courts.qld.gov.au/about/news/news233/2024/the-use-of-generative-artificial-intelligence-ai",
+      "evidence_state": "news page read at the official source; guideline not read",
+      "points_at_snapshot": [
+        "Addressed to self-represented parties, not practitioners"
+      ]
+    },
+    {
+      "id": "sa-courts-guidelines",
+      "forum": "South Australian courts",
+      "jurisdiction": "South Australia",
+      "instrument": "Guidelines concerning the use of Generative Artificial Intelligence in litigation in South Australian Courts",
+      "issued": "not established",
+      "commences": "reported on the courts' page as applying from 2026-01-01",
+      "official_source": "https://www.courts.sa.gov.au/2025/12/24/guidelines-concerning-the-use-of-generative-artificial-intelligence-in-litigation-in-south-australian-courts/",
+      "evidence_state": "announcement page partly read at the official source; guidelines not read",
+      "points_at_snapshot": []
+    },
+    {
+      "id": "wasc-guidelines",
+      "forum": "Supreme Court of Western Australia",
+      "jurisdiction": "Western Australia",
+      "instrument": "Guidelines for the Use of Generative Artificial Intelligence",
+      "issued": "not stated in the instrument",
+      "commences": "not stated in the instrument",
+      "official_source": "https://www.supremecourt.wa.gov.au/_files/Guidelines%20for%20the%20Use%20of%20Generative%20Artificial%20Intelligence.pdf",
+      "evidence_state": "read at the official source",
+      "points_at_snapshot": [
+        "Affidavits and witness statements must be in the witness's own words (para 11(a)); expert reports in the expert's own words (para 11(b))",
+        "Disclosure when directed by the court or where otherwise necessary or appropriate (para 12)",
+        "AI content must be verified by a human who takes legal responsibility (paras 7 to 8)",
+        "Confidential or privileged information not to go into public or unsecured tools (para 10)"
+      ]
+    }
+  ]
+}

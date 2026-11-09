@@ -84,6 +84,14 @@ as a Word `.docx` file.
      clipped text, broken tables and unreadable pinpoints. If visual inspection
      is unavailable, state that limitation in the document and result status.
 
+## Court use
+
+If the output will be filed in or served for a court or tribunal, or will
+feed an affidavit, witness statement or expert report, run
+`$check-court-ai-protocol` for that forum first. Several courts prohibit
+using generative AI to generate the content of evidence and require the
+practitioner to verify every reference personally.
+
 ## Result contract
 
 Lead with `READY FOR HUMAN REVIEW`, `READY WITH QUALIFICATIONS`, `NOT READY` or

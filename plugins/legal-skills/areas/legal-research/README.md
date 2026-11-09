@@ -60,6 +60,16 @@ reported as fabricated.
 - `verify-case-quote` confirms a quoted passage appears in the verified
   official text and reports its paragraph location and any divergence.
 
+## Court rules on generative AI
+
+- `check-court-ai-protocol` finds the practice note, practice direction or
+  guideline on generative AI for the court or tribunal a document is headed
+  to, and lists what it prohibits, what statement or disclosure it requires
+  and what the practitioner must verify personally. It works from a dated
+  register of instruments and opens each one at the court's own website
+  before stating a requirement. Run it before filing an affidavit, witness
+  statement, expert report or submission prepared with any AI tool.
+
 ## AGLC4 citation
 
 - `format-aglc4-citations` applies AGLC4 to Australian cases and
