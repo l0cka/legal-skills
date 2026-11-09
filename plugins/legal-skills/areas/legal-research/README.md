@@ -51,6 +51,9 @@ reported as fabricated.
 - `verify-nsw-judgment` checks NSW court and tribunal citations on NSW
   Caselaw, preserving restriction notations and the Copyright in Judicial
   Decisions Notice 1995 conditions.
+- `verify-qld-judgment` checks Queensland court and tribunal citations at
+  Queensland Judgments, recording both the date of orders and the date
+  reasons were published.
 - `verify-federal-judgment` checks FCFCOA citations directly and Federal
   Court citations through a human-operated browser or an explicit manual
   path, because the Federal Court website challenges automated clients.

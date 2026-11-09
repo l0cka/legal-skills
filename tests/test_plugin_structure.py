@@ -203,6 +203,7 @@ AREAS: dict[str, dict] = {
             "route-case-citation",
             "verify-hca-judgment",
             "verify-nsw-judgment",
+            "verify-qld-judgment",
             "verify-federal-judgment",
             "verify-case-quote",
             "format-aglc4-citations",

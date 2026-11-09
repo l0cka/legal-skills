@@ -465,6 +465,7 @@ class AustralianCaseLawPluginTests(unittest.TestCase):
         "route-case-citation",
         "verify-hca-judgment",
         "verify-nsw-judgment",
+        "verify-qld-judgment",
         "verify-federal-judgment",
         "verify-case-quote",
     }
@@ -472,6 +473,7 @@ class AustralianCaseLawPluginTests(unittest.TestCase):
     VERIFICATION_SKILLS = (
         "verify-hca-judgment",
         "verify-nsw-judgment",
+        "verify-qld-judgment",
         "verify-federal-judgment",
         "verify-case-quote",
     )
@@ -542,6 +544,11 @@ class ParseCitationTests(unittest.TestCase):
         record = parse_citation.parse("Smith v Jones [2021] NSWCA 300")
         self.assertEqual(record["jurisdiction"], "New South Wales")
         self.assertEqual(record["route"], "verify-nsw-judgment")
+
+    def test_queensland_citations_route_to_qld_skill(self) -> None:
+        for citation in ("[2023] QCA 1", "R v Smith [2019] QDC 12", "[2022] QCATA 40", "(2023) 14 Qd R 100"):
+            with self.subTest(citation=citation):
+                self.assertEqual(parse_citation.parse(citation)["route"], "verify-qld-judgment")
 
     def test_neutral_fcfcoa_citation_routes_to_federal_skill(self) -> None:
         record = parse_citation.parse("[2022] FedCFamC1A 5")

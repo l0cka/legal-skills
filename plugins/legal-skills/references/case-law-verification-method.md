@@ -27,7 +27,7 @@ subscriptions (Westlaw, Lexis, Jade professional tiers), or both.
 | NSW courts and tribunals | `caselaw.nsw.gov.au` | Direct requests permitted; see NSW conditions below |
 | Federal Circuit and Family Court | `fcfcoa.gov.au` | Direct requests permitted |
 | Federal Court of Australia | `fedcourt.gov.au` (Federal Law Search) | Bot-challenge WAF; human-operated browser only |
-| Queensland courts | Supreme Court Library Queensland (`sclqld.org.au/caselaw`) | Client-rendered app; judgment text is not served to non-browser clients — human-operated browser only |
+| Queensland courts and tribunals | `queenslandjudgments.com.au` (Incorporated Council of Law Reporting for the State of Queensland and the Supreme Court Library of Queensland) | A direct request returned a decision page on 2026-11-09; return `UNVERIFIABLE` if the page does not render for the client in use. Queensland Reports need a registered account |
 | Other State and Territory courts | Each court's own website | Not yet mapped by these skills |
 
 ## Citation grammar

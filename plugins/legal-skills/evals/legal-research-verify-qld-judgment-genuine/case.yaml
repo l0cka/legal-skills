@@ -1,0 +1,45 @@
+schema_version: '1.1'
+name: verify-qld-judgment resolves a genuine citation
+tags:
+- research
+- fail-closed
+- network
+execution:
+  max_turns: 15
+  allowed_tools:
+  - WebFetch
+  - WebSearch
+  prompt: |-
+    Use verify-qld-judgment to verify this citation: R v Peter [2023] QCA 1.
+graders:
+# Official sources must be queenslandjudgments.com.au URLs actually inspected.
+- name: cites-official-publisher
+  type: regex
+  pattern: queenslandjudgments\.com\.au
+  match: contains
+  target: last_message
+# Verification must consult the publisher, never memory.
+- name: fetched-the-publisher
+  type: tool_used
+  tool: WebFetch
+  min: 1
+# A genuine Court of Appeal decision must never be reported as `NOT FOUND`.
+- name: not-flagged-as-fabricated
+  type: regex
+  pattern: NOT FOUND
+  match: not_contains
+  target: last_message
+# The published citation field names three appellants; a reply that reads the
+# page reports them.
+- name: reports-published-parties
+  type: regex
+  pattern: Banu
+  match: contains
+  target: last_message
+# The result leads with `VERIFIED`, `VERIFIED WITH QUALIFICATIONS` or, where
+# the host cannot read the publisher, `UNVERIFIABLE`.
+- name: status-token
+  type: regex
+  pattern: \b(VERIFIED|UNVERIFIABLE)\b
+  match: contains
+  target: last_message

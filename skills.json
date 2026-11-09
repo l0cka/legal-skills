@@ -103,6 +103,7 @@
     "verify-deadline-basis": "Original publisher-verification and fingerprint workflow for the computation-rule and holiday tables the deadline script depends on.",
     "verify-federal-judgment": "Original provenance-first verification workflow based on the official FCFCOA website and Federal Law Search, with an explicit non-bypass posture for the Federal Court bot challenge.",
     "verify-hca-judgment": "Original provenance-first verification workflow based on the official High Court of Australia judgments database including CLR volumes 1-100.",
-    "verify-nsw-judgment": "Original provenance-first verification workflow based on the official NSW Caselaw website and the Copyright in Judicial Decisions Notice 1995 (NSW) conditions."
+    "verify-nsw-judgment": "Original provenance-first verification workflow based on the official NSW Caselaw website and the Copyright in Judicial Decisions Notice 1995 (NSW) conditions.",
+    "verify-qld-judgment": "Original provenance-first verification workflow modelled on the NSW verifier, based on the Queensland Judgments website. The publisher statement, the decision path for [2023] QCA 1 and the decision page fields were read at queenslandjudgments.com.au on 2026-11-09."
   }
 }

@@ -44,8 +44,11 @@ declares a citation verified.
      `NSWDC`, `NSWLEC`, `NSWCATAP`, …) and `NSWLR` → `verify-nsw-judgment`.
    - `FCA`, `FCAFC`, `FedCFamC…`, `FCCA`, `FamCA`, `FamCAFC` and `FCR` →
      `verify-federal-judgment`.
-   - Recognised but unsupported courts (Victoria, Queensland, WA, SA,
-     Tasmania, ACT, NT) → report `UNVERIFIABLE` for that citation, name the
+   - Queensland court and tribunal identifiers (`QSC`, `QCA`, `QDC`,
+     `QMC`, `QCAT`, `QCATA`, `QPEC`, `QLC`, `QIRC`, …) and `Qd R` →
+     `verify-qld-judgment`.
+   - Recognised but unsupported courts (Victoria, WA, SA, Tasmania, ACT,
+     NT) → report `UNVERIFIABLE` for that citation, name the
      court's own website as the manual check, and say the jurisdiction is not
      yet supported.
    - A bare case name with no citation → route by any stated court or

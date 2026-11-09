@@ -97,6 +97,7 @@ is the skill's own trigger text: what it does, when to use it and when not to.
 - **`verify-federal-judgment`** — Verify that a Federal Court or Federal Circuit and Family Court decision exists at the official publisher, for FCA, FCAFC, FedCFamC, FCCA, FamCA and FCR citations. Use via route-case-citation. Not for case treatment.
 - **`verify-hca-judgment`** — Verify that a High Court of Australia decision exists at the official High Court website, for HCA, CLR and ALJR citations. Use via route-case-citation or for a known High Court citation. Not for case treatment.
 - **`verify-nsw-judgment`** — Verify that a NSW court or tribunal decision exists on NSW Caselaw, for medium-neutral NSW citations and NSWLR. Use via route-case-citation or for a known NSW citation. Not for case treatment.
+- **`verify-qld-judgment`** — Verify that a Queensland court or tribunal decision exists at the Queensland Judgments website, for medium-neutral Queensland citations and Qd R. Use via route-case-citation or for a known Queensland citation. Not for case treatment.
 
 ## Australian Litigation Deadlines (`litigation-deadlines`)
 

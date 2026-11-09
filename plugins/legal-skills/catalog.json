@@ -261,7 +261,8 @@
         "verify-case-quote",
         "verify-federal-judgment",
         "verify-hca-judgment",
-        "verify-nsw-judgment"
+        "verify-nsw-judgment",
+        "verify-qld-judgment"
       ]
     },
     {
