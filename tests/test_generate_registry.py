@@ -71,10 +71,30 @@ class GenerateRegistryTests(unittest.TestCase):
             ".claude-plugin/marketplace.json",
             ".agents/plugins/marketplace.json",
             f"plugins/{PLUGIN}/.codex-plugin/plugin.json",
+            f"plugins/{PLUGIN}/.cursor-plugin/plugin.json",
         ):
             data = json.loads((self.root / relative).read_text(encoding="utf-8"))
             entries = data["plugins"] if "plugins" in data else [data]
             self.assertEqual(entries[0]["version"], "0.2.0", relative)
+
+    def test_cursor_marketplace_resolves_to_plugin_manifest(self) -> None:
+        # Mirrors the checks in Cursor's plugin-template validator.
+        generate_registry.apply(self.generate())
+        (self.root / "plugins" / PLUGIN / ".claude-plugin" / "icon.png").write_bytes(b"\x89PNG")
+        marketplace = json.loads((self.root / ".cursor-plugin" / "marketplace.json").read_text(encoding="utf-8"))
+        self.assertRegex(marketplace["name"], r"^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$")
+        self.assertTrue(marketplace["owner"]["name"])
+        for entry in marketplace["plugins"]:
+            source = Path(entry["source"])
+            self.assertFalse(source.is_absolute() or ".." in source.parts)
+            plugin_dir = self.root / source
+            manifest = json.loads((plugin_dir / ".cursor-plugin" / "plugin.json").read_text(encoding="utf-8"))
+            self.assertEqual(manifest["name"], entry["name"])
+            for field in ("logo", "skills"):
+                path = Path(manifest[field])
+                self.assertFalse(path.is_absolute() or ".." in path.parts, field)
+                self.assertTrue((plugin_dir / path).exists(), field)
+            self.assertTrue(list((plugin_dir / manifest["skills"]).glob("*/SKILL.md")))
 
     def declare_evidence_states(self, method: str | None = "demo-source-and-control-method.md") -> None:
         update_area(

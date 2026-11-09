@@ -9,14 +9,14 @@
   <!-- generated:badges -->
   <img alt="Sixteen practice areas" src="https://img.shields.io/badge/practice%20areas-16-31547a?style=flat-square">
   <img alt="One hundred and three skills" src="https://img.shields.io/badge/skills-103-31547a?style=flat-square">
-  <img alt="Claude Cowork and ChatGPT Work" src="https://img.shields.io/badge/works%20with-Claude%20Cowork%20%2B%20ChatGPT%20Work-c59a46?style=flat-square">
+  <img alt="Claude Cowork, ChatGPT Work and Cursor" src="https://img.shields.io/badge/works%20with-Claude%20Cowork%20%2B%20ChatGPT%20Work%20%2B%20Cursor-c59a46?style=flat-square">
 <!-- end:badges -->
 </p>
 
 # Legal Skills
 
 Ready-made legal workflows for your AI assistant. Install them once and
-Claude (Cowork or Claude Code) or ChatGPT (Work or Codex) can check
+Claude (Cowork or Claude Code), ChatGPT (Work or Codex) or Cursor can check
 Australian citations, map privacy and AML/CTF obligations, compute candidate
 court deadlines, build chronologies and more, always in a way that states
 its sources and leaves the final call to a person.
@@ -94,6 +94,22 @@ codex plugin marketplace add l0cka/legal-skills
 codex plugin add legal-skills@legal-skills
 ```
 <!-- end:install-codex -->
+
+</details>
+
+<details>
+<summary><b>Cursor</b></summary>
+
+The repository is also a Cursor plugin marketplace
+(`.cursor-plugin/marketplace.json`), and the plugin carries its own
+`.cursor-plugin/plugin.json` over the same `skills/` folder.
+
+- **Teams and Enterprise:** in the Cursor dashboard open Plugins & MCPs,
+  then Team Marketplaces, choose Add Marketplace, import
+  `l0cka/legal-skills` from GitHub, and add `legal-skills`.
+- **Just you, locally:** clone the repository and copy or link
+  `plugins/legal-skills` to `~/.cursor/plugins/local/legal-skills`, then
+  run "Developer: Reload Window" and check Customize in the sidebar.
 
 </details>
 

@@ -207,7 +207,7 @@ class LegalTriageSkillTests(unittest.TestCase):
             self.assertIn(status, text)
 
     def test_plugin_has_no_connector_or_write_component(self) -> None:
-        for provider in ("codex", "claude"):
+        for provider in ("codex", "claude", "cursor"):
             manifest_path = (
                 ROOT
                 / "plugins"

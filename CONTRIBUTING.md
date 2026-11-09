@@ -12,7 +12,7 @@ efficient are welcome.
    `.claude-plugin/plugin.json`, `catalog.json`, and the per-skill provenance
    sentences in `skills.json`.
 3. Run `python3 scripts/generate_registry.py` to regenerate the marketplace
-   catalogs, Codex wrapper, and README regions in the same change.
+   catalogs, Codex and Cursor wrappers, and README regions in the same change.
 4. Add focused tests for scripts and any rule that could silently change legal
    meaning.
 5. Run `python3 scripts/validate_repository.py`,
@@ -30,6 +30,7 @@ legal-skills/
 ├── skills.json                        # per-skill provenance sentences
 ├── .claude-plugin/marketplace.json    # Claude marketplace (generated)
 ├── .agents/plugins/marketplace.json   # ChatGPT and Codex marketplace (generated)
+├── .cursor-plugin/marketplace.json    # Cursor marketplace (generated)
 ├── scripts/                           # generator, validator, link checker
 ├── benchmarks/                        # with/without-plugin benchmark harness
 └── docs/

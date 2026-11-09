@@ -10,6 +10,11 @@ plugin manifests contain their intended release versions.
 
 ### Changed
 
+- Added Cursor packaging. The generator now writes
+  `plugins/legal-skills/.cursor-plugin/plugin.json` and a root
+  `.cursor-plugin/marketplace.json`. Both point at the existing `skills/`
+  folder and listing icon, so no skill is copied. The README explains how to
+  install the plugin in Cursor.
 - Each of the 81 eval cases is now one `case.yaml` file holding its prompt
   and graders, in place of `prompt.md` plus one file per grader. The plugin
   folder drops from 533 files to 420, under the plugin directory's 512-file
