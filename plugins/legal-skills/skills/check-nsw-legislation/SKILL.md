@@ -1,9 +1,21 @@
 ---
 name: check-nsw-legislation
-description: Verify the identity, collection, status, applicable point-in-time version, commencement signals, authorisation and currency qualifications of NSW Acts, statutory instruments and environmental planning instruments using the official NSW legislation website. Use when a user asks whether NSW legislation is in force or repealed, which version applied on a date, or whether a citation or supplied provision matches an authorised version. Do not use for Commonwealth or other State or Territory legislation, Bills, Gazettes, as-made-only material, court deadlines, court rules, case treatment or substantive legal advice.
+description: Verify NSW Acts, statutory instruments and planning instruments on the official NSW legislation website, covering whether in force, the version on a date and whether a citation matches. Not for other jurisdictions, Bills, court rules or case law.
 ---
 
 # Check NSW Legislation
+
+## Scope
+
+Verify the identity, collection, status, applicable point-in-time version,
+commencement signals, authorisation and currency qualifications of NSW Acts,
+statutory instruments and environmental planning instruments using the
+official NSW legislation website. Use when a user asks whether NSW legislation
+is in force or repealed, which version applied on a date, or whether a
+citation or supplied provision matches an authorised version. Do not use for
+Commonwealth or other State or Territory legislation, Bills, Gazettes,
+as-made-only material, court deadlines, court rules, case treatment or
+substantive legal advice.
 
 Use the NSW legislation website as the controlling source. Produce a
 provenance record, not a bare assertion that legislation is "current".

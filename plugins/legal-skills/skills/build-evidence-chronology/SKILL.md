@@ -1,9 +1,20 @@
 ---
 name: build-evidence-chronology
-description: Build a source-linked evidence chronology as a .docx file from supplied legal matter documents using a native structured document-review table when available, preserving exact date wording, conflicting accounts, allegations, inferences and evidence gaps for human review. Use for litigation, investigations, regulatory responses, disputes or other matters requiring an auditable sequence of events. Do not use to decide credibility, evidentiary weight, admissibility, legal effect or merits, or to claim completeness beyond the supplied documents.
+description: Build a source-linked evidence chronology as a Word file from supplied matter documents, keeping exact date wording, conflicts and gaps. Use for litigation, investigations and disputes. Never decides credibility, weight or merits.
 ---
 
 # Build Evidence Chronology
+
+## Scope
+
+Build a source-linked evidence chronology as a .docx file from supplied legal
+matter documents using a native structured document-review table when
+available, preserving exact date wording, conflicting accounts, allegations,
+inferences and evidence gaps for human review. Use for litigation,
+investigations, regulatory responses, disputes or other matters requiring an
+auditable sequence of events. Do not use to decide credibility, evidentiary
+weight, admissibility, legal effect or merits, or to claim completeness beyond
+the supplied documents.
 
 Organise supplied evidence into a reviewable sequence without turning disputed
 material into an agreed narrative. Keep every material event traceable to the

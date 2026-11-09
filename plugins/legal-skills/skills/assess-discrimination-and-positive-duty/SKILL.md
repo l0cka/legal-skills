@@ -1,9 +1,17 @@
 ---
 name: assess-discrimination-and-positive-duty
-description: Map Australian workplace discrimination and positive-duty exposure under Commonwealth and NSW, Victorian and Queensland law, AHRC powers and Fair Work general protections. Use for incident or preventive-control review; never determine liability, certify compliance or assume Queensland reforms commenced.
+description: Map Australian workplace discrimination and positive-duty exposure under Commonwealth, NSW, Victorian and Queensland law. Use for incident or preventive-control reviews. Never determines liability or certifies compliance.
 ---
 
 # Assess Discrimination and Positive Duty
+
+## Scope
+
+Map Australian workplace discrimination and positive-duty exposure under
+Commonwealth and NSW, Victorian and Queensland law, AHRC powers and Fair Work
+general protections. Use for incident or preventive-control review; never
+determine liability, certify compliance or assume Queensland reforms
+commenced.
 
 Jurisdiction: Commonwealth and NSW, Victorian and Queensland workplace
 discrimination and preventive-duty issue spotting. Verify Commonwealth law at

@@ -1,9 +1,20 @@
 ---
 name: check-victoria-legislation
-description: Verify the identity, status, point-in-time version, commencement and currency of Victorian Acts and statutory rules using the official Victorian legislation publisher. Use when a user asks whether Victorian legislation is in force or repealed, which version applied on a date, or whether a citation or supplied provision matches the official text, for current or historical Victorian legislative text and provision checks. Do not use for Commonwealth or other State or Territory legislation, Bills, case law, court deadlines, interpretation, application or final legal advice.
+description: Verify Victorian Acts and statutory rules at the official Victorian legislation publisher, covering whether in force, the version on a date and whether a citation matches. Not for other jurisdictions, Bills, case law or interpretation.
 ---
 
 # Check Victoria Legislation
+
+## Scope
+
+Verify the identity, status, point-in-time version, commencement and currency
+of Victorian Acts and statutory rules using the official Victorian legislation
+publisher. Use when a user asks whether Victorian legislation is in force or
+repealed, which version applied on a date, or whether a citation or supplied
+provision matches the official text, for current or historical Victorian
+legislative text and provision checks. Do not use for Commonwealth or other
+State or Territory legislation, Bills, case law, court deadlines,
+interpretation, application or final legal advice.
 
 Use `legislation.vic.gov.au` as the controlling source. Produce a provenance
 record, not a bare assertion that legislation is "current".

@@ -1,9 +1,17 @@
 ---
 name: draft-website-terms
-description: Prepare first-draft Australian SaaS or subscription website terms for consumers and small businesses, preserving consumer guarantees and flagging unfair terms, renewal, refunds and liability choices. Use for practitioner-led terms drafting, not financial products, regulated-sector compliance certification or publication.
+description: Prepare first-draft Australian SaaS or subscription website terms for consumers and small businesses, preserving consumer guarantees and flagging unfair terms. Not for financial products or publication.
 ---
 
 # Draft Website Terms
+
+## Scope
+
+Prepare first-draft Australian SaaS or subscription website terms for
+consumers and small businesses, preserving consumer guarantees and flagging
+unfair terms, renewal, refunds and liability choices. Use for practitioner-led
+terms drafting, not financial products, regulated-sector compliance
+certification or publication.
 
 Jurisdiction: Australian Commonwealth law and the identified governing state or
 territory. Record the legal as-at and intended use dates. The 2026-10-13 source

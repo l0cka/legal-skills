@@ -1,9 +1,20 @@
 ---
 name: assess-director-duties-governance
-description: Issue-spot Australian company governance and director or officer duty risks for a proposed or completed decision using verified Corporations Act provisions, an approved governance profile and version-controlled organisation documents. Use for decision authority, purpose, care, information, reliance, delegation, conflicts, solvency and record-process checks. Do not use to conclude breach, validity, privilege or solvency, provide final legal advice, or substitute for specialist listed, APRA, ACNC, CATSI, transaction or insolvency review.
+description: Issue-spot Australian director and officer duty risks for a proposed or completed company decision. Use for authority, care, reliance, conflicts and solvency checks. Never concludes breach, validity or solvency.
 ---
 
 # Assess Director Duties Governance
+
+## Scope
+
+Issue-spot Australian company governance and director or officer duty risks
+for a proposed or completed decision using verified Corporations Act
+provisions, an approved governance profile and version-controlled organisation
+documents. Use for decision authority, purpose, care, information, reliance,
+delegation, conflicts, solvency and record-process checks. Do not use to
+conclude breach, validity, privilege or solvency, provide final legal advice,
+or substitute for specialist listed, APRA, ACNC, CATSI, transaction or
+insolvency review.
 
 Assess whether the decision process gives the authorised human reviewer the
 evidence needed to address governance and duty issues. Do not predict or declare

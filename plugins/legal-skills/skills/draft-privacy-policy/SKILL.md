@@ -1,9 +1,17 @@
 ---
 name: draft-privacy-policy
-description: Draft an Australian private-sector privacy policy from evidenced data practices, with an APP 1.4 map, exemption analysis, overseas disclosure and marketing controls, and separate future automated-decision transparency. Use with the Australian Privacy Cybersecurity workflows; do not invent data practices or publish a policy.
+description: Draft an Australian private-sector privacy policy from evidenced data practices, with an APP 1.4 map and overseas disclosure and marketing controls. Never invents data practices or publishes the policy.
 ---
 
 # Draft Privacy Policy
+
+## Scope
+
+Draft an Australian private-sector privacy policy from evidenced data
+practices, with an APP 1.4 map, exemption analysis, overseas disclosure and
+marketing controls, and separate future automated-decision transparency. Use
+with the Australian Privacy Cybersecurity workflows; do not invent data
+practices or publish a policy.
 
 Jurisdiction: Australian Commonwealth law and the identified governing state or
 territory. Record the legal as-at and intended use dates. The 2026-10-13 source

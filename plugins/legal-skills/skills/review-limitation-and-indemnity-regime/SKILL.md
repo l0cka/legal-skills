@@ -1,9 +1,17 @@
 ---
 name: review-limitation-and-indemnity-regime
-description: Review interacting caps, exclusions, indemnities, insurance, ACL guarantee limitations and state proportionate-liability issues in a supplied Australian commercial contract. Use for risk-allocation review against a playbook. Do not assume contracting out is nationally permitted or insurance covers assumed liability.
+description: Review interacting caps, exclusions, indemnities, insurance and proportionate liability in an Australian commercial contract. Use for risk-allocation review. Never assumes contracting out is permitted.
 ---
 
 # Review Limitation And Indemnity Regime
+
+## Scope
+
+Review interacting caps, exclusions, indemnities, insurance, ACL guarantee
+limitations and state proportionate-liability issues in a supplied Australian
+commercial contract. Use for risk-allocation review against a playbook. Do not
+assume contracting out is nationally permitted or insurance covers assumed
+liability.
 
 Jurisdiction: Australian Commonwealth law and the identified governing state or
 territory. Record legal as-at and intended use dates, reviewing side, input

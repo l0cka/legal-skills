@@ -1,9 +1,19 @@
 ---
 name: assess-statutory-privacy-tort
-description: Screen facts and AI-system use cases against the legislation-only statutory tort for serious invasions of privacy in Schedule 2 to the Privacy Act 1988 (Cth), including scope, elements, public-interest balancing, defences, exemptions, remedies and limitation issues. Use for surveillance, recording, scraping, profiling, inference, deepfakes, publication, disclosure or handling of intimate, location, health or financial information. Do not use case law or treat APP-entity coverage as a prerequisite.
+description: Screen facts against the statutory tort for serious invasions of privacy in the Privacy Act 1988 (Cth). Use for surveillance, recording, scraping, deepfakes and disclosure of intimate, health or location information. Legislation only, no case law.
 ---
 
 # Assess Statutory Privacy Tort
+
+## Scope
+
+Screen facts and AI-system use cases against the legislation-only statutory
+tort for serious invasions of privacy in Schedule 2 to the Privacy Act 1988
+(Cth), including scope, elements, public-interest balancing, defences,
+exemptions, remedies and limitation issues. Use for surveillance, recording,
+scraping, profiling, inference, deepfakes, publication, disclosure or handling
+of intimate, location, health or financial information. Do not use case law or
+treat APP-entity coverage as a prerequisite.
 
 Conduct a legislation-only screen under Privacy Act Schedule 2. Read
 [references/statutory-tort-method.md](references/statutory-tort-method.md) before

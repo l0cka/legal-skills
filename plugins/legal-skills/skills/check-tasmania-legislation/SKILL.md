@@ -1,9 +1,20 @@
 ---
 name: check-tasmania-legislation
-description: Verify the identity, status, point-in-time version, commencement and currency of Tasmanian legislation using the official Tasmanian legislation publisher. Use when a user asks whether Tasmanian legislation is in force or repealed, which version applied on a date, or whether a citation or supplied provision matches the official text, for current or historical Tasmanian Acts, statutory rules and provisions. Do not use for Commonwealth or other State or Territory legislation, Bills, case law, court deadlines, interpretation, application or final legal advice.
+description: Verify Tasmanian legislation at the official Tasmanian legislation publisher, covering whether it is in force, the version on a date and whether a citation matches. Not for other jurisdictions, Bills, case law or interpretation.
 ---
 
 # Check Tasmania Legislation
+
+## Scope
+
+Verify the identity, status, point-in-time version, commencement and currency
+of Tasmanian legislation using the official Tasmanian legislation publisher.
+Use when a user asks whether Tasmanian legislation is in force or repealed,
+which version applied on a date, or whether a citation or supplied provision
+matches the official text, for current or historical Tasmanian Acts, statutory
+rules and provisions. Do not use for Commonwealth or other State or Territory
+legislation, Bills, case law, court deadlines, interpretation, application or
+final legal advice.
 
 Use `legislation.tas.gov.au` as the controlling source. Produce a provenance
 record, not a bare assertion that legislation is "current".

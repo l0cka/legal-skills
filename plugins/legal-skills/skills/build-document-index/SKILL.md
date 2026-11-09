@@ -1,9 +1,21 @@
 ---
 name: build-document-index
-description: Build a numbered, source-linked document index as a .docx file from supplied legal matter documents — one row per document or coherent file group with a stable source ID, recorded date, type, author, recipients, description taken from the document itself, page count, readability and duplicate or version links — suitable as a court-book or bundle index and as the source register for a chronology or privilege log. Use for litigation, investigations, regulatory responses, disclosure and brief preparation. Do not use to decide relevance, privilege, admissibility or weight, or to claim the set is complete beyond the supplied documents.
+description: Build a numbered, source-linked document index as a Word file from supplied matter documents, usable as a court-book or bundle index. Use for litigation, investigations and disclosure. Never decides relevance, privilege or admissibility.
 ---
 
 # Build Document Index
+
+## Scope
+
+Build a numbered, source-linked document index as a .docx file from supplied
+legal matter documents — one row per document or coherent file group with a
+stable source ID, recorded date, type, author, recipients, description taken
+from the document itself, page count, readability and duplicate or version
+links — suitable as a court-book or bundle index and as the source register
+for a chronology or privilege log. Use for litigation, investigations,
+regulatory responses, disclosure and brief preparation. Do not use to decide
+relevance, privilege, admissibility or weight, or to claim the set is complete
+beyond the supplied documents.
 
 Inventory supplied evidence into a stable, reviewable index without deciding
 what any document proves. Every row is traceable to one supplied file, the

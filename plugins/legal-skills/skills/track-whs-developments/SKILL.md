@@ -1,9 +1,23 @@
 ---
 name: track-whs-developments
-description: Check the Australian work health and safety watch register on demand — each jurisdiction's adoption of the December 2025 model WHS Act incident notification amendments, industrial and workplace manslaughter offences, psychosocial regulations and codes, new or revised codes of practice, Safe Work Australia model-law amendments, the Commonwealth WHS Act compilation and regulator priorities — verifying each item against its primary source and reporting what moved since the register snapshot. Use for periodic horizon reviews, or before advice that depends on whether a jurisdiction has enacted a model-law change. Do not use to assert a model-law amendment, Bill or draft code as law in force, to run as an unattended monitor, or to replace the duty map for a specific arrangement (use $map-whs-duties).
+description: Check the Australian work health and safety watch register on demand, including each jurisdiction's adoption of model WHS law changes. Use for horizon reviews. Never treats a Bill or draft code as law in force.
 ---
 
 # Track WHS Developments
+
+## Scope
+
+Check the Australian work health and safety watch register on demand — each
+jurisdiction's adoption of the December 2025 model WHS Act incident
+notification amendments, industrial and workplace manslaughter offences,
+psychosocial regulations and codes, new or revised codes of practice, Safe
+Work Australia model-law amendments, the Commonwealth WHS Act compilation and
+regulator priorities — verifying each item against its primary source and
+reporting what moved since the register snapshot. Use for periodic horizon
+reviews, or before advice that depends on whether a jurisdiction has enacted a
+model-law change. Do not use to assert a model-law amendment, Bill or draft
+code as law in force, to run as an unattended monitor, or to replace the duty
+map for a specific arrangement (use $map-whs-duties).
 
 Check every watch item against its primary source and report movement. A
 model-law amendment, Bill or draft code is never an obligation until verified

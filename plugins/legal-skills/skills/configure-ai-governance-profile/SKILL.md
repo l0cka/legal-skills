@@ -1,9 +1,19 @@
 ---
 name: configure-ai-governance-profile
-description: Create or update a controlled Australian AI-governance profile recording entity type, sector, regulatory overlays, government track, EU footprint, AI inventory maturity and version-identified governing documents, so the other AI-governance skills run against approved facts. Use for first-time setup, overlay changes, new AI use categories or scheduled profile review. Do not use to assess a use case, conclude that an instrument applies, approve the profile or store matter facts, personal data or privileged content.
+description: Create or update the AI-governance profile the Australian AI-governance skills run against, recording entity type, sector, overlays and governing documents. Use for first setup or changes. Never approves the profile.
 ---
 
 # Configure AI Governance Profile
+
+## Scope
+
+Create or update a controlled Australian AI-governance profile recording
+entity type, sector, regulatory overlays, government track, EU footprint, AI
+inventory maturity and version-identified governing documents, so the other
+AI-governance skills run against approved facts. Use for first-time setup,
+overlay changes, new AI use categories or scheduled profile review. Do not use
+to assess a use case, conclude that an instrument applies, approve the profile
+or store matter facts, personal data or privileged content.
 
 Prepare a draft profile an authorised human can approve. The model records
 facts and gaps; it never supplies approval.

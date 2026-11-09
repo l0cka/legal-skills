@@ -1,9 +1,16 @@
 ---
 name: assess-employee-vs-contractor
-description: Issue-spot Australian worker classification under Fair Work Act ss 15AA–15AD and sham contracting under s 357, including high-income opt-out evidence. Use before contractor drafting or engagement review; never classify conclusively from an ABN, label or income alone.
+description: Issue-spot Australian employee or contractor classification and sham contracting under the Fair Work Act. Use before contractor drafting or an engagement review. Never classifies conclusively from an ABN or label.
 ---
 
 # Assess Employee vs Contractor
+
+## Scope
+
+Issue-spot Australian worker classification under Fair Work Act ss 15AA–15AD
+and sham contracting under s 357, including high-income opt-out evidence. Use
+before contractor drafting or engagement review; never classify conclusively
+from an ABN, label or income alone.
 
 Jurisdiction: Australian worker classification for Fair Work purposes, subject
 to the provision's coverage and date-specific application. Tax, superannuation

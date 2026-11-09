@@ -1,9 +1,17 @@
 ---
 name: map-assumptions
-description: Extract explicit and hidden assumptions in a qualified lawyer's analysis, rank which ones the case turns on, and propose how each could be tested or falsified, using only the lawyer-supplied jurisdiction and record. Use when the lawyer wants the load-bearing assumptions visible. Do not use to fill a gap from memory or to give final legal advice.
+description: Sparring for a qualified lawyer. Extract the explicit and hidden assumptions in an analysis, rank the ones the case turns on and propose how to test each. Never fills a gap from memory.
 ---
 
 # Map assumptions
+
+## Scope
+
+Extract explicit and hidden assumptions in a qualified lawyer's analysis, rank
+which ones the case turns on, and propose how each could be tested or
+falsified, using only the lawyer-supplied jurisdiction and record. Use when
+the lawyer wants the load-bearing assumptions visible. Do not use to fill a
+gap from memory or to give final legal advice.
 
 Pull the assumptions out of the analysis, including the ones the lawyer did
 not state. Rank the ones the case turns on. Say how each could be falsified.

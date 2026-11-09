@@ -6,6 +6,7 @@ import json
 import sys
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -132,8 +133,12 @@ class ValidateRepositoryTests(unittest.TestCase):
         self.assert_error("non-empty description")
 
     def test_overlong_description_fails(self) -> None:
-        write(self.skill_dir / "SKILL.md", skill_markdown(description="x" * 1025))
-        self.assert_error("exceeds 1024")
+        write(self.skill_dir / "SKILL.md", skill_markdown(description="x" * 261))
+        self.assert_error("exceeds 260")
+
+    def test_listing_over_budget_fails(self) -> None:
+        with mock.patch.object(validate_repository, "MAX_LISTING_LENGTH", 5):
+            self.assert_error("listing budget")
 
     def test_malformed_frontmatter_line_fails(self) -> None:
         write(

@@ -1,9 +1,24 @@
 ---
 name: assess-notifiable-incident
-description: Prepare an urgent preliminary assessment of an Australian workplace incident for a lawyer — whether the facts are a candidate notifiable incident (death, serious injury or illness, dangerous incident, and any extended-absence, violent-incident or suicide category the jurisdiction has enacted) under the governing WHS Act or Victoria's OHS Act 2004, who must notify which regulator and how quickly, site-preservation duties, and the parallel workstreams (privilege, insurer, workers compensation, police or coroner, employment) — with known facts, assumptions and unknowns kept apart. Use straight after an incident or when reviewing whether an earlier incident should have been notified. Do not use to decide whether to notify, to notify a regulator, to release a site, to respond to an inspector or to assess officer due diligence (use $assess-officer-due-diligence).
+description: Urgent preliminary assessment of an Australian workplace incident, covering candidate notifiable incident, who notifies which regulator, how fast, and site preservation. Use straight after an incident. Never decides whether to notify.
 ---
 
 # Assess Notifiable Incident
+
+## Scope
+
+Prepare an urgent preliminary assessment of an Australian workplace incident
+for a lawyer — whether the facts are a candidate notifiable incident (death,
+serious injury or illness, dangerous incident, and any extended-absence,
+violent-incident or suicide category the jurisdiction has enacted) under the
+governing WHS Act or Victoria's OHS Act 2004, who must notify which regulator
+and how quickly, site-preservation duties, and the parallel workstreams
+(privilege, insurer, workers compensation, police or coroner, employment) —
+with known facts, assumptions and unknowns kept apart. Use straight after an
+incident or when reviewing whether an earlier incident should have been
+notified. Do not use to decide whether to notify, to notify a regulator, to
+release a site, to respond to an inspector or to assess officer due diligence
+(use $assess-officer-due-diligence).
 
 Put the urgent steps first, then the analysis. Never delay a human escalation
 while researching, and never decide that an incident is or is not notifiable;

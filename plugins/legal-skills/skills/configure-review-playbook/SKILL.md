@@ -1,9 +1,16 @@
 ---
 name: configure-review-playbook
-description: Create, revise or validate a controlled Australian contract-review playbook recording standard positions, fallbacks, risk appetite and approval thresholds by clause type. Use before inbound review or when standing instructions change. Do not approve the playbook or invent firm positions.
+description: Create or update an Australian contract-review playbook of standard positions, fallbacks and approval thresholds by clause type. Use before inbound contract review. Never invents firm positions or approves the playbook.
 ---
 
 # Configure Review Playbook
+
+## Scope
+
+Create, revise or validate a controlled Australian contract-review playbook
+recording standard positions, fallbacks, risk appetite and approval thresholds
+by clause type. Use before inbound review or when standing instructions
+change. Do not approve the playbook or invent firm positions.
 
 Jurisdiction: Australian Commonwealth law and the identified governing state or
 territory. Record legal as-at and intended use dates, reviewing side, input

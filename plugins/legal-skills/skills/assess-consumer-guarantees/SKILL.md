@@ -1,9 +1,17 @@
 ---
 name: assess-consumer-guarantees
-description: Assess Australian goods and services consumer-guarantee issues, remedy candidates, manufacturer exposure and warranty documents for lawyer review. Use for defects, failed services, refund disputes and limitation clauses. Do not use to decide entitlement, direct payment or treat a commercial warranty as the limit of statutory rights.
+description: Assess Australian Consumer Law guarantee issues, remedies, manufacturer exposure and warranty documents for lawyer review. Use for defects, failed services and refund disputes. Never decides entitlement.
 ---
 
 # Assess Consumer Guarantees
+
+## Scope
+
+Assess Australian goods and services consumer-guarantee issues, remedy
+candidates, manufacturer exposure and warranty documents for lawyer review.
+Use for defects, failed services, refund disputes and limitation clauses. Do
+not use to decide entitlement, direct payment or treat a commercial warranty
+as the limit of statutory rights.
 
 Australian Commonwealth law and ACL application in the identified state or territory.
 Snapshot 2026-10-13; verify law at the conduct date and intended decision horizon.

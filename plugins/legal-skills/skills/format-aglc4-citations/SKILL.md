@@ -1,9 +1,20 @@
 ---
 name: format-aglc4-citations
-description: Draft, convert, review, and correct Australian legal citations and bibliographies in Australian Guide to Legal Citation, 4th edition (AGLC4) format. Use for footnotes, pinpoints, subsequent references, cases, legislation, secondary sources, treaties, international materials, foreign legal materials, quotation treatment, citation audits, reference lists, or any document that contains legal or evidentiary citations. Do not use this skill to verify that a cited source exists or says what is claimed; formatting and source verification are separate tasks.
+description: Draft, convert, review and correct Australian legal citations and bibliographies in AGLC4 format. Use for footnotes, pinpoints, subsequent references and citation audits. Does not verify that a cited source exists.
 ---
 
 # AGLC4 legal citation
+
+## Scope
+
+Draft, convert, review, and correct Australian legal citations and
+bibliographies in Australian Guide to Legal Citation, 4th edition (AGLC4)
+format. Use for footnotes, pinpoints, subsequent references, cases,
+legislation, secondary sources, treaties, international materials, foreign
+legal materials, quotation treatment, citation audits, reference lists, or any
+document that contains legal or evidentiary citations. Do not use this skill
+to verify that a cited source exists or says what is claimed; formatting and
+source verification are separate tasks.
 
 Apply AGLC4 to every citation. Preserve the source's substantive details; change only citation form unless the user asks for source verification or correction.
 

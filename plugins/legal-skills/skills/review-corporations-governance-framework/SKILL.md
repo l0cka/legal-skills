@@ -1,9 +1,20 @@
 ---
 name: review-corporations-governance-framework
-description: Review an Australian company's governance framework against verified Corporations Act requirements, an approved governance profile and version-controlled organisation documents, producing an evidence-per-finding gap and action matrix. Use for board and committee authority, delegations, conflicts, information flows, records, policies, review cycles and accountability. Do not certify compliance, assess director liability, treat voluntary guidance as law, or replace specialist listed, APRA, ACNC, CATSI or sector review.
+description: Review an Australian company's governance framework against Corporations Act requirements and produce a gap and action matrix. Use for board authority, delegations, conflicts and records. Never certifies compliance.
 ---
 
 # Review Corporations Governance Framework
+
+## Scope
+
+Review an Australian company's governance framework against verified
+Corporations Act requirements, an approved governance profile and
+version-controlled organisation documents, producing an evidence-per-finding
+gap and action matrix. Use for board and committee authority, delegations,
+conflicts, information flows, records, policies, review cycles and
+accountability. Do not certify compliance, assess director liability, treat
+voluntary guidance as law, or replace specialist listed, APRA, ACNC, CATSI or
+sector review.
 
 Review the design and evidenced operation of governance controls. A policy's
 existence does not prove implementation, and an implementation sample does not

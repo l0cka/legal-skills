@@ -1,9 +1,16 @@
 ---
 name: triage-inbound-nda
-description: Triage a supplied inbound Australian NDA as green, yellow or red against an evidenced review playbook, with clause references, reasons and escalation. Use for mutual or one-way commercial confidentiality intake. Do not clear execution or certify enforceability.
+description: Triage a supplied inbound Australian NDA as green, yellow or red against a review playbook, with clause references and escalation. Never clears execution or certifies enforceability.
 ---
 
 # Triage Inbound NDA
+
+## Scope
+
+Triage a supplied inbound Australian NDA as green, yellow or red against an
+evidenced review playbook, with clause references, reasons and escalation. Use
+for mutual or one-way commercial confidentiality intake. Do not clear
+execution or certify enforceability.
 
 Jurisdiction: Australian Commonwealth law and the identified governing state or
 territory. Record legal as-at and intended use dates, reviewing side, input

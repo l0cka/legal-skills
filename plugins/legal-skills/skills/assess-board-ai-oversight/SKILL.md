@@ -1,9 +1,20 @@
 ---
 name: assess-board-ai-oversight
-description: Issue-spot board and director-duty exposure for Australian AI adoption and board-level AI use — care-and-diligence engagement with AI-influenced information, reliance and delegation limits, board AI policy and record controls, and regulator overlays — using verified Corporations Act provisions, verified case-law leads and an approved AI-governance profile. Use for board AI policies, AI-assisted board packs, oversight reviews and APRA or ASIC-regulated AI adoption. Do not use to conclude breach or compliance, assess general board process outside AI, or give final legal advice.
+description: Issue-spot board and director-duty exposure from AI adoption and board use of AI under the Corporations Act. Use for board AI policies, AI-assisted board packs and oversight reviews. Never concludes breach or compliance.
 ---
 
 # Assess Board AI Oversight
+
+## Scope
+
+Issue-spot board and director-duty exposure for Australian AI adoption and
+board-level AI use — care-and-diligence engagement with AI-influenced
+information, reliance and delegation limits, board AI policy and record
+controls, and regulator overlays — using verified Corporations Act provisions,
+verified case-law leads and an approved AI-governance profile. Use for board
+AI policies, AI-assisted board packs, oversight reviews and APRA or
+ASIC-regulated AI adoption. Do not use to conclude breach or compliance,
+assess general board process outside AI, or give final legal advice.
 
 Assess whether board-level AI governance gives the authorised human reviewer
 the evidence needed to address director-duty exposure. Do not predict or

@@ -1,9 +1,19 @@
 ---
 name: verify-case-quote
-description: Verify that a quoted passage attributed to an Australian judgment actually appears in the decision as published by the official court publisher, reporting the paragraph or page location and itemising any divergence. Use after the citation itself is verified, when a user asks whether a quote is genuine, accurately transcribed or correctly pinpointed, including checking documents for fabricated quotations. Do not use on text from aggregators or memory, for paraphrase assessment, or for interpretation or legal advice.
+description: Verify that a quoted passage attributed to an Australian judgment appears in the decision at the official court publisher, with its paragraph location. Use after the citation is verified. Not for paraphrase or interpretation.
 ---
 
 # Verify Case Quote
+
+## Scope
+
+Verify that a quoted passage attributed to an Australian judgment actually
+appears in the decision as published by the official court publisher,
+reporting the paragraph or page location and itemising any divergence. Use
+after the citation itself is verified, when a user asks whether a quote is
+genuine, accurately transcribed or correctly pinpointed, including checking
+documents for fabricated quotations. Do not use on text from aggregators or
+memory, for paraphrase assessment, or for interpretation or legal advice.
 
 A quote check runs only against judgment text obtained from the official
 publisher in the same session — normally by `verify-hca-judgment`,

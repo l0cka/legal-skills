@@ -1,9 +1,23 @@
 ---
 name: build-privilege-log
-description: Prepare a draft privilege log as a .docx file from supplied legal matter documents — one row per document or family with the source ID, date, author and recipient roles, the basis the practitioner has instructed or the document's own face suggests (legal advice, litigation, without prejudice, confidential), the facts that support or undercut the claim, third-party circulation and possible waiver flags — with every claim left as a practitioner decision. Use for disclosure and discovery, subpoena and notice-to-produce responses, regulatory productions and privilege reviews. Do not use to decide that privilege exists or is lost, to assert a claim to a court or regulator, or for non-Australian privilege rules unless the practitioner supplies them.
+description: Draft a privilege log as a Word file from supplied matter documents, one row per document with the claimed basis and waiver flags. Use for discovery, subpoenas and regulatory productions. Never decides that privilege exists or is lost.
 ---
 
 # Build Privilege Log
+
+## Scope
+
+Prepare a draft privilege log as a .docx file from supplied legal matter
+documents — one row per document or family with the source ID, date, author
+and recipient roles, the basis the practitioner has instructed or the
+document's own face suggests (legal advice, litigation, without prejudice,
+confidential), the facts that support or undercut the claim, third-party
+circulation and possible waiver flags — with every claim left as a
+practitioner decision. Use for disclosure and discovery, subpoena and
+notice-to-produce responses, regulatory productions and privilege reviews. Do
+not use to decide that privilege exists or is lost, to assert a claim to a
+court or regulator, or for non-Australian privilege rules unless the
+practitioner supplies them.
 
 Organise the facts a practitioner needs to decide privilege, document by
 document, without deciding it. The log records what each document shows about

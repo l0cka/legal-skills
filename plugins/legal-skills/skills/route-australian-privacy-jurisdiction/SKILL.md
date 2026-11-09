@@ -1,9 +1,18 @@
 ---
 name: route-australian-privacy-jurisdiction
-description: Route Australian privacy, health-information, mandatory data-breach, surveillance and workplace-monitoring issues to the potentially applicable Commonwealth, State and Territory regimes using entity, role, data, conduct and date facts. Use before substantive privacy, breach or AI analysis where a State or Territory nexus is possible. Do not use for case law, final legal advice or as a substitute for checking current official legislation.
+description: Route Australian privacy, health information, data breach, surveillance and workplace monitoring issues to the Commonwealth, State and Territory regimes that may apply. Use before substantive privacy or breach analysis.
 ---
 
 # Route Australian Privacy Jurisdiction
+
+## Scope
+
+Route Australian privacy, health-information, mandatory data-breach,
+surveillance and workplace-monitoring issues to the potentially applicable
+Commonwealth, State and Territory regimes using entity, role, data, conduct
+and date facts. Use before substantive privacy, breach or AI analysis where a
+State or Territory nexus is possible. Do not use for case law, final legal
+advice or as a substitute for checking current official legislation.
 
 Build a candidate-law map before applying legal tests. Read
 [references/state-territory-coverage.json](references/state-territory-coverage.json)

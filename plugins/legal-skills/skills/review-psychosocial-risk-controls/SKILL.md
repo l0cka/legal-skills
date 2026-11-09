@@ -1,9 +1,25 @@
 ---
 name: review-psychosocial-risk-controls
-description: Gap-check an Australian PCBU's or employer's psychosocial risk management — risk register, hazard identification, control measures, consultation records, bullying, sexual harassment, aggression and violence, work design, remote and isolated work and review triggers — against the governing jurisdiction's WHS Regulations psychosocial provisions and approved code of practice, or Victoria's OHS (Psychological Health) Regulations 2025 and compliance code, with each gap tied to its provision or code clause and evidence state. Use for policy and risk-register reviews, pre-audit preparation and responses to a regulator's information request. Do not use to certify compliance, to decide whether a control is reasonably practicable, to investigate a complaint, or for discrimination and the Sex Discrimination Act positive duty (use $assess-discrimination-and-positive-duty) or workplace policy terms under the Fair Work Act (use $review-workplace-policy).
+description: Gap-check an Australian employer's psychosocial risk management against the governing WHS regulations and code of practice. Use for risk-register reviews and regulator information requests. Never certifies compliance or investigates a complaint.
 ---
 
 # Review Psychosocial Risk Controls
+
+## Scope
+
+Gap-check an Australian PCBU's or employer's psychosocial risk management —
+risk register, hazard identification, control measures, consultation records,
+bullying, sexual harassment, aggression and violence, work design, remote and
+isolated work and review triggers — against the governing jurisdiction's WHS
+Regulations psychosocial provisions and approved code of practice, or
+Victoria's OHS (Psychological Health) Regulations 2025 and compliance code,
+with each gap tied to its provision or code clause and evidence state. Use for
+policy and risk-register reviews, pre-audit preparation and responses to a
+regulator's information request. Do not use to certify compliance, to decide
+whether a control is reasonably practicable, to investigate a complaint, or
+for discrimination and the Sex Discrimination Act positive duty (use
+$assess-discrimination-and-positive-duty) or workplace policy terms under the
+Fair Work Act (use $review-workplace-policy).
 
 Compare the supplied documents with the provisions and codes that apply, and
 list gaps with their source. The review never certifies compliance and never

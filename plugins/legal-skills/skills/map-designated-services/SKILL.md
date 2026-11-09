@@ -1,9 +1,22 @@
 ---
 name: map-designated-services
-description: Map whether services described by an Australian legal practice are designated services under table 6 of subsection 6(5B) of the Anti-Money Laundering and Counter-Terrorism Financing Act 2006 (Cth), applying AUSTRAC's sufficiently-linked principles, the customer definition, standing exemptions and the incidental trust-money exemption, with every item verified against official sources. Use when a practice needs to know if a service line, engagement type or proposed offering may trigger AML/CTF obligations. Do not use for other tranche 2 sectors, for tranche 1 services, to decide enrolment or to give final legal advice — an unmapped service fails closed to human review.
+description: Map whether an Australian legal practice's services are designated services under the AML/CTF Act tranche 2 reforms. Use when a service line may trigger AML/CTF obligations. Not for other sectors. Never decides enrolment.
 ---
 
 # Map Designated Services
+
+## Scope
+
+Map whether services described by an Australian legal practice are designated
+services under table 6 of subsection 6(5B) of the Anti-Money Laundering and
+Counter-Terrorism Financing Act 2006 (Cth), applying AUSTRAC's
+sufficiently-linked principles, the customer definition, standing exemptions
+and the incidental trust-money exemption, with every item verified against
+official sources. Use when a practice needs to know if a service line,
+engagement type or proposed offering may trigger AML/CTF obligations. Do not
+use for other tranche 2 sectors, for tranche 1 services, to decide enrolment
+or to give final legal advice — an unmapped service fails closed to human
+review.
 
 Map described legal services to the designated services in table 6 of the
 amended AML/CTF Act. Separate designated, not designated and cannot be

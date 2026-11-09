@@ -1,9 +1,22 @@
 ---
 name: route-legal-fact-pattern
-description: Route a described Australian legal matter or fact pattern to the Legal Skills practice areas and skills it engages and return a sequenced routing plan — configuration and profile skills first, official-source verification next, assessment and mapping skills after, deliverable skills last — with the human decision owner at each hand-off and the gaps no skill covers, using the generated skill map. Use first when a matter spans more than one practice area (a data breach at a listed company, an AI deployment by a regulated entity, a deceased estate with a limitation question) or when the user is unsure which skill to run. Do not use to answer the legal question, assess merits, run the routed skills, or route a practice area no shipped skill covers.
+description: Use first when an Australian matter spans several practice areas or you are unsure which legal skill to run. Returns the skills to run in order with the human decision at each step. Never answers the legal question.
 ---
 
 # Route Legal Fact Pattern
+
+## Scope
+
+Route a described Australian legal matter or fact pattern to the Legal Skills
+practice areas and skills it engages and return a sequenced routing plan —
+configuration and profile skills first, official-source verification next,
+assessment and mapping skills after, deliverable skills last — with the human
+decision owner at each hand-off and the gaps no skill covers, using the
+generated skill map. Use first when a matter spans more than one practice area
+(a data breach at a listed company, an AI deployment by a regulated entity, a
+deceased estate with a limitation question) or when the user is unsure which
+skill to run. Do not use to answer the legal question, assess merits, run the
+routed skills, or route a practice area no shipped skill covers.
 
 Turn a described matter into an ordered list of the skills to run, and say
 what stays with a human at each step. The router is a map, not an adviser:

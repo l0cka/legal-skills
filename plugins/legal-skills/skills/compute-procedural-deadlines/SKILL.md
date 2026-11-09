@@ -1,9 +1,23 @@
 ---
 name: compute-procedural-deadlines
-description: Compute candidate procedural deadlines for Australian civil litigation from a lawyer-supplied trigger event using the bundled deterministic script and evidence-gated computation-rule tables — the model never performs date arithmetic. Computed coverage spans the federal courts and the superior and lower courts of every State and Territory, each with a verified holiday table; steps without a verified table entry receive identify-only output naming the governing rule. Use when a practitioner needs candidate dates for defences, appeals or other rule-fixed steps after filing, service or judgment. Do not use for criminal procedure, for court-fixed or discretionary dates, or when the trigger date is contested — those fail closed to the responsible lawyer, and every computed date is provisional until confirmed.
+description: Compute candidate Australian civil court deadlines from a lawyer-supplied trigger date with the bundled script, never model arithmetic. Use for defences, appeals and other rule-fixed steps. Not for criminal procedure or contested trigger dates.
 ---
 
 # Compute Procedural Deadlines
+
+## Scope
+
+Compute candidate procedural deadlines for Australian civil litigation from a
+lawyer-supplied trigger event using the bundled deterministic script and
+evidence-gated computation-rule tables — the model never performs date
+arithmetic. Computed coverage spans the federal courts and the superior and
+lower courts of every State and Territory, each with a verified holiday table;
+steps without a verified table entry receive identify-only output naming the
+governing rule. Use when a practitioner needs candidate dates for defences,
+appeals or other rule-fixed steps after filing, service or judgment. Do not
+use for criminal procedure, for court-fixed or discretionary dates, or when
+the trigger date is contested — those fail closed to the responsible lawyer,
+and every computed date is provisional until confirmed.
 
 Compute candidate deadlines with the bundled script and nothing else. A
 refusal from the script is a correct result: report the governing rule and

@@ -1,9 +1,23 @@
 ---
 name: map-limitation-periods
-description: Map a described Australian civil cause of action to candidate limitation periods across every plausibly applicable jurisdiction — the eight state and territory Limitation Acts plus Commonwealth statutory periods — flagging postponement, extension and special regimes (discoverability, disability, fraud or concealment, deceased estates, child abuse, defamation, personal-injury schemes, contribution claims) without resolving them, and marking the earliest candidate as a conservative marker. Use when a practitioner needs the candidate limitation landscape for a claim. Do not use to determine accrual or discoverability, to pick a single binding date, for criminal matters or for foreign limitation law — contested characterisation fails closed to the responsible lawyer.
+description: Map an Australian civil cause of action to candidate limitation periods across state, territory and Commonwealth law, flagging extensions and special regimes. Never determines accrual or picks a binding date. Not for criminal matters.
 ---
 
 # Map Limitation Periods
+
+## Scope
+
+Map a described Australian civil cause of action to candidate limitation
+periods across every plausibly applicable jurisdiction — the eight state and
+territory Limitation Acts plus Commonwealth statutory periods — flagging
+postponement, extension and special regimes (discoverability, disability,
+fraud or concealment, deceased estates, child abuse, defamation,
+personal-injury schemes, contribution claims) without resolving them, and
+marking the earliest candidate as a conservative marker. Use when a
+practitioner needs the candidate limitation landscape for a claim. Do not use
+to determine accrual or discoverability, to pick a single binding date, for
+criminal matters or for foreign limitation law — contested characterisation
+fails closed to the responsible lawyer.
 
 Map a described cause of action to candidate limitation periods with
 assumptions stated, candidates for every plausible characterisation and

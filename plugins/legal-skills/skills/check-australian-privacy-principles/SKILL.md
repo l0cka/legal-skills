@@ -1,9 +1,19 @@
 ---
 name: check-australian-privacy-principles
-description: Verify the Australian Privacy Principles and their application framework from current official sources; distinguish APP text, coverage and exemptions, regulations and registered codes, known future amendments and versioned OAIC guidance; detect change across a decision horizon; and return fail-closed statuses for downstream privacy, breach and AI assessments. Use whenever an Australian workflow relies on an APP or reuses an earlier APP analysis. Do not treat schema-valid user JSON as verified law or use case law.
+description: Verify the Australian Privacy Principles, coverage, exemptions, codes and pending amendments from official sources. Use whenever a workflow relies on an APP or reuses an earlier APP analysis. No case law.
 ---
 
 # Check Australian Privacy Principles
+
+## Scope
+
+Verify the Australian Privacy Principles and their application framework from
+current official sources; distinguish APP text, coverage and exemptions,
+regulations and registered codes, known future amendments and versioned OAIC
+guidance; detect change across a decision horizon; and return fail-closed
+statuses for downstream privacy, breach and AI assessments. Use whenever an
+Australian workflow relies on an APP or reuses an earlier APP analysis. Do not
+treat schema-valid user JSON as verified law or use case law.
 
 Verify every fact-triggered APP framework layer before applying an APP. Never
 assume that the text, application perimeter, instruments, codes, future changes

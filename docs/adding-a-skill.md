@@ -29,10 +29,15 @@ copying.
 
 Names use lowercase words separated by hyphens and must be unique across the
 plugin. Each `SKILL.md` needs frontmatter whose `name` matches its directory
-and a non-empty `description` of at most 1024 characters. Every skill's
-description is visible to the agent at once, so state what the skill does,
-when to use it, and when not to, naming the neighbouring skill to use
-instead. Name another skill in the text as `` `$skill-name` ``; a test fails
+and a non-empty `description` of at most 260 characters. Every skill's
+description is listed to the agent at once, and hosts drop or shorten
+descriptions past a budget (Claude Code allows 1% of the context window,
+Codex 2%), so a dropped description stops the skill triggering. State what
+the skill does, when to use it and the one exclusion that matters most, with
+the trigger words first. Put the full scope, including the neighbouring
+skill to use instead, in a `## Scope` section at the top of the body. The
+validator also fails when all descriptions together pass 26,000 characters.
+Name another skill in the text as `` `$skill-name` ``; a test fails
 when the named skill does not exist.
 
 Each skill also needs `agents/openai.yaml`, the ChatGPT Work interface file.

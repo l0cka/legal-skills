@@ -1,9 +1,23 @@
 ---
 name: assess-termination-exposure
-description: Issue-spot the exposure arising from a proposed or completed termination of an Australian national system employee — unfair dismissal eligibility and the Small Business Fair Dismissal Code, general protections and the reverse onus, genuine redundancy and consultation, notice and redundancy pay, unlawful termination, and the Fair Work Commission's 21-day application periods routed to the litigation-deadlines script — using verified official sources and an approved employment profile. Use before a dismissal decision, after a dismissal when a claim is threatened, or when planning a redundancy. Do not use to conclude that a dismissal was or would be unfair, that adverse action occurred, that a redundancy is genuine, to compute a time limit, or to draft or lodge anything with the Commission.
+description: Issue-spot exposure from an Australian dismissal or redundancy, covering unfair dismissal, general protections, redundancy and notice. Use before a dismissal decision or when a claim is threatened. Never concludes a dismissal was unfair.
 ---
 
 # Assess Termination Exposure
+
+## Scope
+
+Issue-spot the exposure arising from a proposed or completed termination of an
+Australian national system employee — unfair dismissal eligibility and the
+Small Business Fair Dismissal Code, general protections and the reverse onus,
+genuine redundancy and consultation, notice and redundancy pay, unlawful
+termination, and the Fair Work Commission's 21-day application periods routed
+to the litigation-deadlines script — using verified official sources and an
+approved employment profile. Use before a dismissal decision, after a
+dismissal when a claim is threatened, or when planning a redundancy. Do not
+use to conclude that a dismissal was or would be unfair, that adverse action
+occurred, that a redundancy is genuine, to compute a time limit, or to draft
+or lodge anything with the Commission.
 
 Set out, with sources, every claim path a termination could open and the
 facts that bear on each. The assessment identifies exposure; the responsible

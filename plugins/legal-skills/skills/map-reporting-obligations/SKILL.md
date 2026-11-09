@@ -1,9 +1,22 @@
 ---
 name: map-reporting-obligations
-description: Map which AML/CTF reporting obligations — suspicious matter reports, threshold transaction reports, annual compliance reports, AUSTRAC notices — are potentially triggered for a described scenario in an Australian legal practice, including the reformed tipping-off offence and the legal-professional-privilege carve-outs and LPP-form mechanics, using verified official sources. Use when a practice needs to understand what a scenario may require it to report and how privilege interacts. Do not use to decide that a matter is suspicious, to draft or lodge any report or LPP form, to conclude that privilege applies, or for IFTI obligations — those route to human or specialist review.
+description: Map which AML/CTF reports an Australian legal practice may need for a scenario, including suspicious matter reports, tipping-off and legal professional privilege. Never decides a matter is suspicious or drafts a report.
 ---
 
 # Map Reporting Obligations
+
+## Scope
+
+Map which AML/CTF reporting obligations — suspicious matter reports, threshold
+transaction reports, annual compliance reports, AUSTRAC notices — are
+potentially triggered for a described scenario in an Australian legal
+practice, including the reformed tipping-off offence and the
+legal-professional-privilege carve-outs and LPP-form mechanics, using verified
+official sources. Use when a practice needs to understand what a scenario may
+require it to report and how privilege interacts. Do not use to decide that a
+matter is suspicious, to draft or lodge any report or LPP form, to conclude
+that privilege applies, or for IFTI obligations — those route to human or
+specialist review.
 
 Map the reporting triggers a described scenario may engage and how legal
 professional privilege interacts with each. The suspicion judgment, the

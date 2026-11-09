@@ -1,9 +1,20 @@
 ---
 name: verify-hca-judgment
-description: Verify that a cited High Court of Australia decision exists at the official High Court website, resolving medium-neutral HCA citations, CLR volumes 1-100 and ALJR references to the published judgment and recording provenance. Use when the citation is already known to be a High Court citation (route-case-citation sends HCA citations here) and a user asks whether it is genuine, what case a High Court citation refers to, or to check High Court authorities in a document for fabrication. Do not use for other courts, subsequent treatment, case summaries or legal advice.
+description: Verify that a High Court of Australia decision exists at the official High Court website, for HCA, CLR and ALJR citations. Use via route-case-citation or for a known High Court citation. Not for case treatment.
 ---
 
 # Verify HCA Judgment
+
+## Scope
+
+Verify that a cited High Court of Australia decision exists at the official
+High Court website, resolving medium-neutral HCA citations, CLR volumes 1-100
+and ALJR references to the published judgment and recording provenance. Use
+when the citation is already known to be a High Court citation
+(route-case-citation sends HCA citations here) and a user asks whether it is
+genuine, what case a High Court citation refers to, or to check High Court
+authorities in a document for fabrication. Do not use for other courts,
+subsequent treatment, case summaries or legal advice.
 
 Use `hcourt.gov.au` as the controlling source. Produce a provenance record,
 not a bare assertion that a case "exists".

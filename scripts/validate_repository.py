@@ -16,7 +16,12 @@ from generate_registry import SLUG, GenerationError, is_text, load_plugins  # no
 ROOT = Path(__file__).resolve().parents[1]
 FRONTMATTER_LINE = re.compile(r"^([A-Za-z0-9_-]+):\s*(.*)$")
 MARKDOWN_LINK = re.compile(r"\[[^\]]*\]\(([^)\s]+)\)")
-MAX_DESCRIPTION_LENGTH = 1024
+# Hosts list every skill description in the model's context and drop or
+# shorten descriptions past a budget (Claude Code: 1% of the context window;
+# Codex: 2%, or 8,000 characters when the window is unknown). A dropped
+# description stops the skill triggering unless the user names it.
+MAX_DESCRIPTION_LENGTH = 260
+MAX_LISTING_LENGTH = 26_000
 PLACEHOLDER = re.compile(r"\bTODO\b|\bTBD\b", re.I)
 OPENAI_AGENT_KEYS = ("display_name", "short_description", "default_prompt")
 REGISTRY_VERSION = 3
@@ -57,7 +62,7 @@ def parse_frontmatter(relative: Path, text: str) -> dict[str, str]:
     return fields
 
 
-def validate_skill(root: Path, skill_dir: Path) -> None:
+def validate_skill(root: Path, skill_dir: Path) -> int:
     relative = skill_dir.relative_to(root)
     skill_file = skill_dir / "SKILL.md"
     if not skill_file.is_file():
@@ -74,7 +79,8 @@ def validate_skill(root: Path, skill_dir: Path) -> None:
         raise ValidationError(f"{relative}/SKILL.md: frontmatter requires a non-empty description")
     if len(description) > MAX_DESCRIPTION_LENGTH:
         raise ValidationError(
-            f"{relative}/SKILL.md: description exceeds {MAX_DESCRIPTION_LENGTH} characters"
+            f"{relative}/SKILL.md: description exceeds {MAX_DESCRIPTION_LENGTH} characters; "
+            "keep what it does, when to use it and one exclusion, and move the rest to the body"
         )
 
     for match in MARKDOWN_LINK.finditer(text):
@@ -91,6 +97,7 @@ def validate_skill(root: Path, skill_dir: Path) -> None:
     for key in OPENAI_AGENT_KEYS:
         if not re.search(rf"(?m)^\s*{key}:\s*\S", agent_text):
             raise ValidationError(f"{relative}/agents/openai.yaml: missing required key {key}")
+    return len(description)
 
 
 def validate_law_checked_on(relative: str, value: str, today: dt.date | None = None) -> None:
@@ -201,6 +208,7 @@ def validate(root: Path = ROOT) -> tuple[int, int]:
     sources = load_sources(root)
 
     seen_skills: set[str] = set()
+    listing_length = 0
     for plugin in plugins:
         name = plugin["name"]
         plugin_dir = root / "plugins" / name
@@ -213,10 +221,15 @@ def validate(root: Path = ROOT) -> tuple[int, int]:
             if not (plugin_dir / "areas" / area["id"] / "README.md").is_file():
                 raise ValidationError(f"plugins/{name}/areas/{area['id']}/README.md: missing area guide")
         for skill_dir in sorted(path for path in (plugin_dir / "skills").iterdir() if path.is_dir()):
-            validate_skill(root, skill_dir)
+            listing_length += validate_skill(root, skill_dir)
             if skill_dir.name in seen_skills:
                 raise ValidationError(f"duplicate skill name: {skill_dir.name}")
             seen_skills.add(skill_dir.name)
+    if listing_length > MAX_LISTING_LENGTH:
+        raise ValidationError(
+            f"skill descriptions total {listing_length} characters, over the "
+            f"{MAX_LISTING_LENGTH}-character listing budget; shorten descriptions before adding skills"
+        )
     for skill in sorted(seen_skills):
         sentence = sources.get(skill)
         if not is_text(sentence) or PLACEHOLDER.search(sentence):

@@ -1,9 +1,22 @@
 ---
 name: assess-australian-privacy-issues
-description: Identify and structure Australian privacy, data protection and cybersecurity legal issues from facts, contracts, policies, data maps or proposed activities; map each issue to potentially applicable Commonwealth, State or Territory legislation; perform change-safe Australian Privacy Principles verification; verify Commonwealth and NSW legislation with the corresponding legislation skills; and prepare a source-linked issue matrix for lawyer review. Use for privacy scoping, applicability analysis, privacy-policy or DPA issue spotting, data-flow reviews, cyber regulatory scoping and preliminary legal research. Do not use for case law, foreign law, final legal opinions, autonomous compliance decisions or external notifications.
+description: Spot and structure Australian privacy and data protection issues from facts, contracts, policies or data maps into a source-linked issue matrix. Use for privacy scoping and applicability. Not for case law or final opinions.
 ---
 
 # Assess Australian Privacy Issues
+
+## Scope
+
+Identify and structure Australian privacy, data protection and cybersecurity
+legal issues from facts, contracts, policies, data maps or proposed
+activities; map each issue to potentially applicable Commonwealth, State or
+Territory legislation; perform change-safe Australian Privacy Principles
+verification; verify Commonwealth and NSW legislation with the corresponding
+legislation skills; and prepare a source-linked issue matrix for lawyer
+review. Use for privacy scoping, applicability analysis, privacy-policy or DPA
+issue spotting, data-flow reviews, cyber regulatory scoping and preliminary
+legal research. Do not use for case law, foreign law, final legal opinions,
+autonomous compliance decisions or external notifications.
 
 Produce a preliminary issue-and-law map for an Australian lawyer. Do not state
 that a duty applies until its threshold facts and current legislative text have

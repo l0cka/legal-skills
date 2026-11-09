@@ -1,9 +1,21 @@
 ---
 name: track-ai-regulatory-developments
-description: Check the Australian AI regulatory watch-list on demand — the proposed Australian Standards for AI, OAIC automated-decision guidance, the ASX fifth edition, facial-recognition review litigation, privacy tranche 2, eSafety code phases, the Joint Select Committee on AI and the PM&C AI infrastructure consultation — confirming each item against its named primary source and reporting what changed since the register snapshot. Use for periodic regulatory horizon reviews or before advice that depends on a pending instrument. Do not use to assert a pending instrument as law, run as an unattended monitor, or replace obligations mapping for a specific use case.
+description: Check the Australian AI regulatory watch list on demand against primary sources and report what changed. Use for horizon reviews or before advice that depends on a pending instrument. Never treats a pending instrument as law.
 ---
 
 # Track AI Regulatory Developments
+
+## Scope
+
+Check the Australian AI regulatory watch-list on demand — the proposed
+Australian Standards for AI, OAIC automated-decision guidance, the ASX fifth
+edition, facial-recognition review litigation, privacy tranche 2, eSafety code
+phases, the Joint Select Committee on AI and the PM&C AI infrastructure
+consultation — confirming each item against its named primary source and
+reporting what changed since the register snapshot. Use for periodic
+regulatory horizon reviews or before advice that depends on a pending
+instrument. Do not use to assert a pending instrument as law, run as an
+unattended monitor, or replace obligations mapping for a specific use case.
 
 Report what has moved on the watch-list since the register snapshot, item by
 item, from primary sources. A pending instrument remains a watch item until

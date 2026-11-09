@@ -1,9 +1,20 @@
 ---
 name: assemble-nsw-estate-documents
-description: Prepare solicitor-review drafts of a NSW will, enduring power of attorney and appointment of enduring guardian for one client using centrally maintained approved precedents, an approved drafting playbook and provenance-cited instructions. Draft all supported content, visibly mark unresolved facts and decisions, and return a drafting-issues register. Use only for practitioner-led NSW matters. Do not use for self-represented parties, other jurisdictions, advance care directives, superannuation death benefit nominations, trusts or probate.
+description: Draft a NSW will, enduring power of attorney and enduring guardianship from a firm's approved precedents for solicitor review. Not for other jurisdictions, trusts, probate or self-represented people.
 ---
 
 # Assemble NSW Estate Documents
+
+## Scope
+
+Prepare solicitor-review drafts of a NSW will, enduring power of attorney and
+appointment of enduring guardian for one client using centrally maintained
+approved precedents, an approved drafting playbook and provenance-cited
+instructions. Draft all supported content, visibly mark unresolved facts and
+decisions, and return a drafting-issues register. Use only for
+practitioner-led NSW matters. Do not use for self-represented parties, other
+jurisdictions, advance care directives, superannuation death benefit
+nominations, trusts or probate.
 
 Prepare working drafts from the approved precedent library for one client. The
 responsible solicitor controls the instructions, clause choices and final legal

@@ -1,9 +1,19 @@
 ---
 name: configure-litigation-deadline-profile
-description: Create or update the controlled practice profile that the Australian litigation-deadlines workflows require, recording the jurisdictions and forums practised in, the named human confirmer, the practice's actual diary system of record and the verification posture. Use before first use of the other litigation-deadlines skills or when the practice, forums or confirmer change. Do not use to compute any date, to mark a rule table verified or to approve the profile — approval is a human act.
+description: Create or update the practice profile the litigation-deadlines skills require, recording forums, the named confirmer and the diary system. Use before first use. Never computes a date or approves the profile.
 ---
 
 # Configure Litigation Deadline Profile
+
+## Scope
+
+Create or update the controlled practice profile that the Australian
+litigation-deadlines workflows require, recording the jurisdictions and forums
+practised in, the named human confirmer, the practice's actual diary system of
+record and the verification posture. Use before first use of the other
+litigation-deadlines skills or when the practice, forums or confirmer change.
+Do not use to compute any date, to mark a rule table verified or to approve
+the profile — approval is a human act.
 
 Create the controlled profile the deadline workflows depend on. The profile
 is a factual map of the practice, never a source of law, and only a named

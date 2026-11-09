@@ -1,9 +1,24 @@
 ---
 name: map-whs-duties
-description: Map who holds which work health and safety duties for a described Australian business, worksite or arrangement — the governing Act (a model WHS Act jurisdiction or Victoria's OHS Act 2004), each PCBU or employer and its primary duty, shared and overlapping duties between principals, contractors and labour hire, officers, workers and other persons, consultation duties and the regulations and codes the facts engage — with every proposition carrying an evidence state. Use for onboarding a client, contractor or labour hire arrangements, multi-site or multi-state operations and pre-advice research. Do not use to conclude a breach, decide what is reasonably practicable, assess a specific incident (use $assess-notifiable-incident), assess an officer's due diligence (use $assess-officer-due-diligence) or advise on workers compensation.
+description: Map who holds which work health and safety duties for an Australian business, worksite or contractor arrangement under the model WHS Act or Victoria's OHS Act. Use for onboarding and multi-party sites. Never concludes a breach.
 ---
 
 # Map WHS Duties
+
+## Scope
+
+Map who holds which work health and safety duties for a described Australian
+business, worksite or arrangement — the governing Act (a model WHS Act
+jurisdiction or Victoria's OHS Act 2004), each PCBU or employer and its
+primary duty, shared and overlapping duties between principals, contractors
+and labour hire, officers, workers and other persons, consultation duties and
+the regulations and codes the facts engage — with every proposition carrying
+an evidence state. Use for onboarding a client, contractor or labour hire
+arrangements, multi-site or multi-state operations and pre-advice research. Do
+not use to conclude a breach, decide what is reasonably practicable, assess a
+specific incident (use $assess-notifiable-incident), assess an officer's due
+diligence (use $assess-officer-due-diligence) or advise on workers
+compensation.
 
 Lay out every duty holder the facts engage and cite the provision for each.
 The map identifies duties; it never concludes that a duty has been breached or

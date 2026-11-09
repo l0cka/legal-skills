@@ -1,9 +1,16 @@
 ---
 name: drill-oral-advocacy
-description: Run a short hostile question-and-answer or opening or closing drill on a named issue, and score clarity, concessions, and recovery, for a qualified lawyer. Use on the lawyer-supplied jurisdiction and record. Do not use to invent transcript authority or to predict the decision-maker's ruling as certainty.
+description: Sparring for a qualified lawyer. Run a hostile question-and-answer or opening and closing drill on a named issue and score clarity, concessions and recovery. Never invents transcript authority or predicts the ruling.
 ---
 
 # Drill oral advocacy
+
+## Scope
+
+Run a short hostile question-and-answer or opening or closing drill on a named
+issue, and score clarity, concessions, and recovery, for a qualified lawyer.
+Use on the lawyer-supplied jurisdiction and record. Do not use to invent
+transcript authority or to predict the decision-maker's ruling as certainty.
 
 Run a short hostile drill on one named issue. Score clarity, concessions, and
 recovery. Do not invent a transcript. Jurisdiction is lawyer-supplied. A

@@ -1,9 +1,17 @@
 ---
 name: check-unfair-contract-terms
-description: Screen supplied Australian contract terms for potential unfair-contract-terms risk under the ACL or ASIC Act financial-services regime using official-source coverage, standard-form and unfairness tests. Use for consumer or small-business contract review. Do not declare a term invalid or equate a playbook position with lawful wording.
+description: Screen Australian contract terms for unfair-contract-terms risk under the ACL or ASIC Act. Use for consumer or small-business standard-form contracts. Never declares a term invalid.
 ---
 
 # Check Unfair Contract Terms
+
+## Scope
+
+Screen supplied Australian contract terms for potential unfair-contract-terms
+risk under the ACL or ASIC Act financial-services regime using official-source
+coverage, standard-form and unfairness tests. Use for consumer or
+small-business contract review. Do not declare a term invalid or equate a
+playbook position with lawful wording.
 
 Jurisdiction: Australian Commonwealth law and the identified governing state or
 territory. Record legal as-at and intended use dates, reviewing side, input

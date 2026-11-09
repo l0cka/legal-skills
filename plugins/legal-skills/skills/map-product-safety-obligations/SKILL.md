@@ -1,9 +1,16 @@
 ---
 name: map-product-safety-obligations
-description: Map Australian product safety standards, bans, recalls and mandatory incident reporting from product and event evidence. Use for supply checks, injury reports or recall planning. Do not use to execute a recall, file a report or assume a proposed general safety provision is enacted.
+description: Map Australian product safety standards, bans, recalls and mandatory incident reporting from product and event evidence. Use for supply checks, injury reports and recall planning. Never executes a recall or files a report.
 ---
 
 # Map Product Safety Obligations
+
+## Scope
+
+Map Australian product safety standards, bans, recalls and mandatory incident
+reporting from product and event evidence. Use for supply checks, injury
+reports or recall planning. Do not use to execute a recall, file a report or
+assume a proposed general safety provision is enacted.
 
 Australian Commonwealth law and ACL application in the identified state or territory.
 Snapshot 2026-10-13; verify law at the conduct date and intended decision horizon.

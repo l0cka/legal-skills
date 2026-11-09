@@ -1,9 +1,19 @@
 ---
 name: prepare-board-decision-record
-description: Prepare controlled draft Australian company board materials, including an agenda item, board paper, proposed resolution, written-resolution scaffold or draft minutes extract, from verified law, an approved governance profile and supplied evidence. Use before a decision or to document a completed meeting from authorised notes. Do not invent attendance, quorum, disclosures, deliberations, votes, reasons or approval; execute or circulate documents; or determine legal validity.
+description: Prepare draft Australian company board materials, including a board paper, resolution or minutes extract, from verified law and supplied evidence. Never invents attendance, votes or reasons, and never circulates documents.
 ---
 
 # Prepare Board Decision Record
+
+## Scope
+
+Prepare controlled draft Australian company board materials, including an
+agenda item, board paper, proposed resolution, written-resolution scaffold or
+draft minutes extract, from verified law, an approved governance profile and
+supplied evidence. Use before a decision or to document a completed meeting
+from authorised notes. Do not invent attendance, quorum, disclosures,
+deliberations, votes, reasons or approval; execute or circulate documents; or
+determine legal validity.
 
 Draft the smallest record needed for an authorised reviewer. A proposed
 resolution is not a decision. Draft minutes are not evidence of events unless

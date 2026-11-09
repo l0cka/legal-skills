@@ -1,9 +1,17 @@
 ---
 name: configure-drafting-profile
-description: Create, revise or validate an organisation-controlled profile for first-draft Australian commercial documents, recording the drafting party, registrations, GST, governing state, house style, risk appetite and standard positions. Use before commercial drafting or when standing instructions change. Do not approve a profile or treat it as legal advice.
+description: Create or update the profile for first-draft Australian commercial documents, recording the drafting party, governing state, house style and standard positions. Use before commercial drafting. Never approves the profile.
 ---
 
 # Configure Drafting Profile
+
+## Scope
+
+Create, revise or validate an organisation-controlled profile for first-draft
+Australian commercial documents, recording the drafting party, registrations,
+GST, governing state, house style, risk appetite and standard positions. Use
+before commercial drafting or when standing instructions change. Do not
+approve a profile or treat it as legal advice.
 
 Jurisdiction: Australian Commonwealth law and the identified governing state or
 territory. Record the legal as-at and intended use dates. The 2026-10-13 source

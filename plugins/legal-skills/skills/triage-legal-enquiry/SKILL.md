@@ -1,9 +1,21 @@
 ---
 name: triage-legal-enquiry
-description: Prepare a provisional, explainable and staff-reviewed triage record for a legal enquiry using an approved centre-specific Legal Triage profile. Use when authorised staff at an Australian community legal centre or legal assistance service need help identifying urgency, legal issue and jurisdiction, checking configured service pathways, documenting access needs, or preparing a referral. Do not use as a public chatbot, provide legal advice, receive unnecessary identifying information, perform conflict checks, assess credibility or merits, or make final eligibility, acceptance or rejection decisions.
+description: Prepare a provisional triage record for a legal enquiry at an Australian community legal centre under its approved profile, covering urgency, issue and referral. For authorised staff only. Not a public chatbot and never gives legal advice.
 ---
 
 # Triage Legal Enquiry
+
+## Scope
+
+Prepare a provisional, explainable and staff-reviewed triage record for a
+legal enquiry using an approved centre-specific Legal Triage profile. Use when
+authorised staff at an Australian community legal centre or legal assistance
+service need help identifying urgency, legal issue and jurisdiction, checking
+configured service pathways, documenting access needs, or preparing a
+referral. Do not use as a public chatbot, provide legal advice, receive
+unnecessary identifying information, perform conflict checks, assess
+credibility or merits, or make final eligibility, acceptance or rejection
+decisions.
 
 Support authorised staff without replacing their judgment. Use the centre's
 approved profile as the controlling source and treat every outcome as

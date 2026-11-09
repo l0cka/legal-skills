@@ -1,9 +1,16 @@
 ---
 name: compute-underpayment-exposure-framework
-description: Prepare an Australian underpayment exposure framework using verified entitlement sources, payroll evidence, limitation leads and intentional-underpayment offence screening. Framework only: never invent award rates, compute a final liability or equate every error with wage theft.
+description: Prepare an Australian underpayment exposure framework from entitlement sources, payroll evidence and limitation leads. Use for wage underpayment reviews. Never invents award rates or computes a final liability.
 ---
 
 # Compute Underpayment Exposure Framework
+
+## Scope
+
+Prepare an Australian underpayment exposure framework using verified
+entitlement sources, payroll evidence, limitation leads and
+intentional-underpayment offence screening. Framework only: never invent award
+rates, compute a final liability or equate every error with wage theft.
 
 Jurisdiction: Australian national system wage entitlements and related Fair Work
 proceedings, subject to verified coverage and historical instruments.

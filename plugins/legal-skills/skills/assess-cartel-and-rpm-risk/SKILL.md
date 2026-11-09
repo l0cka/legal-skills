@@ -1,9 +1,17 @@
 ---
 name: assess-cartel-and-rpm-risk
-description: Issue-spot Australian cartel, anti-competitive agreements/concerted practices, resale price maintenance, exclusive dealing and misuse-of-market-power risk with separate immunity pathways. Use for competitor contacts, distribution restraints and pricing pressure. Do not use to contact competitors, grant immunity or conclude a criminal offence occurred.
+description: Issue-spot Australian cartel, concerted practice, resale price maintenance, exclusive dealing and market-power risk. Use for competitor contacts, distribution restraints and pricing pressure. Never concludes an offence occurred.
 ---
 
 # Assess Cartel and RPM Risk
+
+## Scope
+
+Issue-spot Australian cartel, anti-competitive agreements/concerted practices,
+resale price maintenance, exclusive dealing and misuse-of-market-power risk
+with separate immunity pathways. Use for competitor contacts, distribution
+restraints and pricing pressure. Do not use to contact competitors, grant
+immunity or conclude a criminal offence occurred.
 
 Australian Commonwealth competition law under CCA Part IV, with Part VII immunity
 and Part VIII RPM provisions. Confirm entity, territorial reach and any sectoral overlay.

@@ -1,9 +1,17 @@
 ---
 name: oppose-as-counsel
-description: Argue the other side against a qualified lawyer's position with the strongest counters the lawyer must answer, labelling speculation, and using only the lawyer-supplied jurisdiction and record. Use when the lawyer wants opposing pressure. Do not use to advise the opposing party, invent a citation, or contact anyone.
+description: Sparring for a qualified lawyer. Argue the other side with the strongest counters the lawyer must answer, labelling speculation. Never advises the opposing party or invents a citation.
 ---
 
 # Oppose as counsel
+
+## Scope
+
+Argue the other side against a qualified lawyer's position with the strongest
+counters the lawyer must answer, labelling speculation, and using only the
+lawyer-supplied jurisdiction and record. Use when the lawyer wants opposing
+pressure. Do not use to advise the opposing party, invent a citation, or
+contact anyone.
 
 Put the other side's best counters in front of the lawyer. Label speculation.
 Stop short of advising the opposing party. Jurisdiction is lawyer-supplied. A

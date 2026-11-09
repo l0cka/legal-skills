@@ -1,9 +1,23 @@
 ---
 name: assess-australian-data-breach
-description: Triage a suspected Australian privacy or cybersecurity incident for lawyers; extract incident facts; identify potentially applicable Commonwealth, State, Territory and sectoral breach regimes; perform change-safe Australian Privacy Principles verification where an APP issue is material; verify Commonwealth and NSW legislation through the corresponding legislation skills; distinguish statutory, regulatory, contractual and voluntary reporting; and prepare a time-sensitive assessment and action matrix. Use for suspected unauthorised access, disclosure or loss, ransomware, cyber extortion, vendor incidents and breach-response planning. Do not use for case law, forensic conclusions, live containment, threat hunting, external reports or autonomous notification decisions.
+description: Triage a suspected Australian data breach or cyber incident for lawyers, mapping breach regimes, reporting clocks and an action matrix. Use for unauthorised access, ransomware and vendor incidents. Never decides whether to notify.
 ---
 
 # Assess Australian Data Breach
+
+## Scope
+
+Triage a suspected Australian privacy or cybersecurity incident for lawyers;
+extract incident facts; identify potentially applicable Commonwealth, State,
+Territory and sectoral breach regimes; perform change-safe Australian Privacy
+Principles verification where an APP issue is material; verify Commonwealth
+and NSW legislation through the corresponding legislation skills; distinguish
+statutory, regulatory, contractual and voluntary reporting; and prepare a
+time-sensitive assessment and action matrix. Use for suspected unauthorised
+access, disclosure or loss, ransomware, cyber extortion, vendor incidents and
+breach-response planning. Do not use for case law, forensic conclusions, live
+containment, threat hunting, external reports or autonomous notification
+decisions.
 
 Prepare a privileged-workstream-ready preliminary assessment for a lawyer. Do
 not conclude that a breach is notifiable merely because a security incident

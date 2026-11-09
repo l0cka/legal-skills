@@ -1,9 +1,20 @@
 ---
 name: check-northern-territory-legislation
-description: Verify the identity, status, point-in-time reprint, commencement and currency of Northern Territory legislation using the official NT legislation database. Use when a user asks whether NT legislation is in force or repealed, which version applied on a date, or whether a citation or supplied provision matches the official text, for current or historical NT Acts, regulations and provisions. Do not use for Commonwealth or other State or Territory legislation, Bills, case law, court deadlines, interpretation, application or final legal advice.
+description: Verify Northern Territory legislation at the official NT legislation database, covering whether it is in force, the version on a date and whether a citation matches. Not for other jurisdictions, Bills, case law or interpretation.
 ---
 
 # Check Northern Territory Legislation
+
+## Scope
+
+Verify the identity, status, point-in-time reprint, commencement and currency
+of Northern Territory legislation using the official NT legislation database.
+Use when a user asks whether NT legislation is in force or repealed, which
+version applied on a date, or whether a citation or supplied provision matches
+the official text, for current or historical NT Acts, regulations and
+provisions. Do not use for Commonwealth or other State or Territory
+legislation, Bills, case law, court deadlines, interpretation, application or
+final legal advice.
 
 Use `legislation.nt.gov.au` as the controlling source. Produce a provenance
 record, not a bare assertion that legislation is "current".
