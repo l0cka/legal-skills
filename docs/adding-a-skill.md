@@ -96,7 +96,8 @@ python3 -m unittest discover -s tests
 git diff --check
 ```
 
-The generator rewrites both marketplace catalogs, the Codex wrapper, the
+The generator rewrites the three marketplace catalogs, the Codex and Cursor
+wrappers, the
 README badges, counts, area tables and install blocks, method-document
 evidence states, and the router's skill map. Never edit those by hand.
 

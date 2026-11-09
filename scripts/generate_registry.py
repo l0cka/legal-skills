@@ -24,10 +24,11 @@ CATEGORY = "Productivity"
 CAPABILITIES = ["Read"]
 BRAND_COLOR = "#1C3C63"
 POLICY = {"installation": "AVAILABLE", "authentication": "ON_INSTALL"}
+LOGO_PATH = ".claude-plugin/icon.png"
 TARGETS_BADGE = (
-    '  <img alt="Claude Cowork and ChatGPT Work" '
+    '  <img alt="Claude Cowork, ChatGPT Work and Cursor" '
     'src="https://img.shields.io/badge/works%20with-'
-    'Claude%20Cowork%20%2B%20ChatGPT%20Work-c59a46?style=flat-square">'
+    'Claude%20Cowork%20%2B%20ChatGPT%20Work%20%2B%20Cursor-c59a46?style=flat-square">'
 )
 ROUTER_AREA = "workflow-router"
 
@@ -230,6 +231,38 @@ def codex_manifest(plugin: dict[str, Any]) -> dict[str, Any]:
         "brandColor": BRAND_COLOR,
     }
     return manifest
+
+
+def cursor_manifest(plugin: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "name": plugin["name"],
+        "displayName": plugin["catalog"]["displayName"],
+        "version": plugin["version"],
+        "description": plugin["description"],
+        "author": {"name": OWNER},
+        "homepage": f"{REPOSITORY}/tree/main/plugins/{plugin['name']}",
+        "repository": REPOSITORY,
+        "license": LICENSE,
+        "logo": LOGO_PATH,
+        "keywords": plugin["keywords"],
+        "skills": SKILLS_PATH,
+    }
+
+
+def cursor_marketplace(plugins: list[dict[str, Any]]) -> dict[str, Any]:
+    return {
+        "name": MARKETPLACE_NAME,
+        "owner": {"name": OWNER},
+        "metadata": {"description": MARKETPLACE_DESCRIPTION},
+        "plugins": [
+            {
+                "name": plugin["name"],
+                "source": f"plugins/{plugin['name']}",
+                "description": plugin["description"],
+            }
+            for plugin in plugins
+        ],
+    }
 
 
 def claude_marketplace(plugins: list[dict[str, Any]]) -> dict[str, Any]:
@@ -452,6 +485,7 @@ def generate(root: Path = ROOT) -> dict[Path, str]:
         plugin_dir = root / "plugins" / plugin["name"]
         outputs[plugin_dir / ".claude-plugin" / "plugin.json"] = dumps(claude_manifest(plugin))
         outputs[plugin_dir / ".codex-plugin" / "plugin.json"] = dumps(codex_manifest(plugin))
+        outputs[plugin_dir / ".cursor-plugin" / "plugin.json"] = dumps(cursor_manifest(plugin))
         outputs[plugin_dir / "README.md"] = plugin_readme(root, plugin)
         for area in plugin["areas"]:
             if "methodDocument" in area:
@@ -466,6 +500,7 @@ def generate(root: Path = ROOT) -> dict[Path, str]:
             outputs[plugin_dir / "references" / "skill-map.md"] = skill_map(root, plugin)
     outputs[root / ".claude-plugin" / "marketplace.json"] = dumps(claude_marketplace(plugins))
     outputs[root / ".agents" / "plugins" / "marketplace.json"] = dumps(agents_marketplace(plugins))
+    outputs[root / ".cursor-plugin" / "marketplace.json"] = dumps(cursor_marketplace(plugins))
     outputs[root / "README.md"] = root_readme(root, plugins)
     return outputs
 

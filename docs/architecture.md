@@ -31,9 +31,10 @@ needs a separate release cadence or licence.
    +-------------+-------+--------+--------------+---------------+
    |             |                |              |               |
  .codex-plugin/  marketplace.json marketplace.json README regions, router
-  plugin.json   (.claude-plugin) (.agents/plugins) plugin README  skill-map.md
-                      |                |           area table
-                Claude Cowork     ChatGPT Work
+ .cursor-plugin/ (.claude-plugin) (.agents/plugins) plugin README skill-map.md
+  plugin.json    (.cursor-plugin)      |           area table
+                      |                |
+           Claude Cowork, Cursor  ChatGPT Work
 ```
 
 The shared skill package is authoritative. Provider manifests describe the
@@ -47,6 +48,7 @@ plugins/legal-skills/
 ├── .claude-plugin/plugin.json   canonical: name, version, description, keywords
 ├── .claude-plugin/icon.png      plugin directory listing icon (set once)
 ├── .codex-plugin/plugin.json    generated
+├── .cursor-plugin/plugin.json   generated; reuses skills/ and the listing icon
 ├── catalog.json                 canonical: presentation metadata and areas
 ├── README.md                    directory listing text; hand-written, with
 │                                generated install, example-prompt and area regions
@@ -87,9 +89,10 @@ Use these terms exactly in docs, scripts and reviews.
   `boundaries`) and the `areas` list. Each skill owns its package and its
   provenance sentence in `skills.json`.
 - **Distribution surface**: a machine-owned file emitted by
-  `scripts/generate_registry.py`: the `.codex-plugin/plugin.json` wrapper,
-  both marketplace catalogs, the router's `skill-map.md`, and the generated
-  regions of hand-written Markdown. Never hand-edited; CI fails when one is
+  `scripts/generate_registry.py`: the `.codex-plugin/plugin.json` and
+  `.cursor-plugin/plugin.json` wrappers, the three marketplace catalogs,
+  the router's `skill-map.md`, and the generated regions of hand-written
+  Markdown. Never hand-edited; CI fails when one is
   stale.
 - **Provenance sentence**: the per-skill entry in `skills.json` recording
   where the workflow came from. Only a human can write it, so validation
@@ -141,6 +144,7 @@ and [evidence workflows](../plugins/legal-skills/areas/evidence-workflows/CONTEX
 ## Release model
 
 The plugin version is written once, in `.claude-plugin/plugin.json`, and
-propagated by the generator to the Codex wrapper and both catalogs. A release
+propagated by the generator to the Codex and Cursor wrappers and the
+marketplace catalogs. A release
 bumps that one field, regenerates, passes offline validation, and is then
 tested from each consumer surface.

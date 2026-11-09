@@ -18,8 +18,8 @@ See `docs/architecture.md`.
   per-skill provenance sentences in `skills.json`. Keep shared content provider-neutral.
 - Regenerate the distribution surfaces with
   `python3 scripts/generate_registry.py` after changing a canonical source.
-  Never hand-edit `.codex-plugin/plugin.json`, either marketplace catalog,
-  `references/skill-map.md`, or the generated regions of Markdown files.
+  Never hand-edit `.codex-plugin/plugin.json`, `.cursor-plugin/plugin.json`,
+  any marketplace catalog, `references/skill-map.md`, or the generated regions of Markdown files.
 - Update `CHANGELOG.md` under **Unreleased** for user-facing workflow changes,
   skill or practice-area additions or removals, version changes, and
   material fixes. Move an entry into a dated section only when the relevant
