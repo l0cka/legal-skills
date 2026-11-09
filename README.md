@@ -152,6 +152,16 @@ without. The official publishers could not be reached from the test
 environment, so the answer-keyed verification sets were not run, and rubric
 items that need a successful live check could not be met.
 
+On 9 November 2026 the keyed deadlines set, which needs no publisher, ran
+once with the plugin and scored 36 of 40. The misses are described in
+[docs/host-compatibility.md](docs/host-compatibility.md). The citation,
+quote and legislation sets are still unrun, because the test environment
+cannot reach the publishers.
+
+What a skill can do depends on the host app, such as whether its web tool
+can read a court's website. [docs/host-compatibility.md](docs/host-compatibility.md)
+has a short smoke set to run in your own app and the results recorded so far.
+
 ## Contributing
 
 Contributions are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md),

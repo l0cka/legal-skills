@@ -28,6 +28,7 @@ subscriptions (Westlaw, Lexis, Jade professional tiers), or both.
 | Federal Circuit and Family Court | `fcfcoa.gov.au` | Direct requests permitted |
 | Federal Court of Australia | `fedcourt.gov.au` (Federal Law Search) | Bot-challenge WAF; human-operated browser only |
 | Queensland courts and tribunals | `queenslandjudgments.com.au` (Incorporated Council of Law Reporting for the State of Queensland and the Supreme Court Library of Queensland) | A direct request returned a decision page on 2026-11-09; return `UNVERIFIABLE` if the page does not render for the client in use. Queensland Reports need a registered account |
+| Victorian courts and VCAT | None operated by the courts. The Supreme Court's case summaries page and VCAT's decisions page each say full decisions are on AustLII (read 2026-11-09) | Not supported: AustLII is excluded above, so Victorian citations return `UNVERIFIABLE` with the manual path |
 | Other State and Territory courts | Each court's own website | Not yet mapped by these skills |
 
 ## Citation grammar

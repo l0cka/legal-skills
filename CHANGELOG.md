@@ -10,6 +10,35 @@ plugin manifests contain their intended release versions.
 
 ### Changed
 
+- Shortened every skill description so the skill listing fits the budgets
+  hosts apply. The 103 descriptions fell from 53,156 characters to 22,036,
+  each now at most 260 characters with its trigger words first. The earlier
+  wording moved unchanged into a `## Scope` section at the top of each skill
+  body. The validator fails a description over 260 characters and a listing
+  over 26,000 characters in total.
+- Added `verify-qld-judgment`, which checks Queensland court and tribunal
+  citations and Queensland Reports references at the Queensland Judgments
+  website. `route-case-citation` and its parser route fourteen Queensland
+  court identifiers and `Qd R` to it. Victorian, Western Australian, South
+  Australian, Tasmanian, ACT and NT citations still return `UNVERIFIABLE`.
+- Added `check-court-ai-protocol`, which finds the court or tribunal
+  instrument on generative AI for a document being filed and lists what it
+  prohibits, what disclosure it needs and what the practitioner must verify.
+  Its register holds seventeen instruments, thirteen read at the court's own
+  website on 9 November 2026. The four evidence skills hand off to it when
+  output is headed for a court.
+- Added a profile guide and starter profiles (`references/profile-guide.md`,
+  `references/starter-profiles.md`). They cover the quickest way to an
+  approved profile, where to keep it between sessions and what each area
+  does without one. Every `configure-*` skill links them. No fail-closed
+  rule changed.
+- Added thirteen eval cases for AI governance, corporations governance, the
+  router, privacy, AML/CTF, estate planning and triage, and one each for the
+  two new skills, with passing and failing sample replies for every regex
+  grader. The suite now has ninety-six cases.
+- Added `docs/host-compatibility.md`: a nine-prompt smoke set for checking
+  what each host can reach and run, a results matrix, and the listing
+  budgets each host documents.
 - Added Cursor packaging. The generator now writes
   `plugins/legal-skills/.cursor-plugin/plugin.json` and a root
   `.cursor-plugin/marketplace.json`. Both point at the existing `skills/`
