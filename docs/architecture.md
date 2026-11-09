@@ -148,3 +148,11 @@ propagated by the generator to the Codex and Cursor wrappers and the
 marketplace catalogs. A release
 bumps that one field, regenerates, passes offline validation, and is then
 tested from each consumer surface.
+
+To release, bump the version, regenerate, and move the **Unreleased**
+changelog entries into a section headed `## <date> - <version>: <summary>`.
+When that reaches `main`, the `Draft release` workflow drafts a GitHub
+Release named `legal-skills <version>` with that section as its notes.
+Publishing the draft creates the `v<version>` tag. Pushing the tag by hand
+drafts the same release. The workflow does nothing while the version has no
+dated changelog section or already has a release.

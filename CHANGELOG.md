@@ -9,6 +9,14 @@ manifests contain the intended release version.
 
 ## Unreleased
 
+### Added
+
+- A `Draft release` workflow drafts a GitHub Release whenever `main` or a
+  `v*` tag is pushed and `CHANGELOG.md` has a dated section for the plugin
+  version with no release yet. The notes are that changelog section, read by
+  `scripts/release_notes.py`. A maintainer publishes the draft, which creates
+  the `v<version>` tag when it does not exist.
+
 ## 2026-11-09 - 1.1.0: one plugin, shorter listing, Queensland judgments and court AI protocols
 
 ### Released versions
