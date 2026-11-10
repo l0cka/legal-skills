@@ -14,7 +14,8 @@
     "Verifies legislation, cases and regulator guidance at the relevant date",
     "Reviews and drafts contracts against controlled playbooks and profiles",
     "Maps privacy, employment, WHS, consumer, corporate, AI and AML/CTF obligations",
-    "Routes multi-area matters and records human decision owners"
+    "Routes multi-area matters and records human decision owners",
+    "Type setup, start, check-citations or help to get going"
   ],
   "boundaries": [
     "Drafts for qualified lawyer review; never legal advice or approval",
@@ -22,6 +23,18 @@
     "Official-source verification at use; discovery leads are not authority"
   ],
   "areas": [
+    {
+      "id": "getting-started",
+      "displayName": "Getting Started",
+      "shortDescription": "Four commands you type to set up profiles, start a matter, check every citation in a draft and see what the plugin covers.",
+      "lawCheckedOn": "2026-11-10",
+      "skills": [
+        "setup",
+        "start",
+        "check-citations",
+        "help"
+      ]
+    },
     {
       "id": "ai-governance",
       "displayName": "Australian AI Governance",

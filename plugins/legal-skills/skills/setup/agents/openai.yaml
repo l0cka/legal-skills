@@ -1,0 +1,6 @@
+interface:
+  display_name: "Set Up Legal Skills"
+  short_description: "Draft the practice profiles your practice areas need"
+  default_prompt: "Use $setup to set up Legal Skills for my practice: ask my role, jurisdictions and practice areas, draft the profiles those areas need from the starter profiles, and offer to save them."
+policy:
+  allow_implicit_invocation: false

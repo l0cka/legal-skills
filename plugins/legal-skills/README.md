@@ -46,6 +46,7 @@ Each area guide lists its skills, scope, sources, permissions and validation.
 <!-- generated:area-table -->
 | Practice area | Skills | Description | Law checked |
 | --- | :---: | --- | :---: |
+| [**Getting Started**](areas/getting-started/README.md) | 4 | Four commands you type to set up profiles, start a matter, check every citation in a draft and see what the plugin covers. | 2026-11-10 |
 | [**Australian AI Governance**](areas/ai-governance/README.md) | 6 | Maps the AI rules and guidance that apply to an Australian organisation. Shows which items are law and which are only guidance. | 2026-08-26 |
 | [**Australian AML/CTF**](areas/aml-ctf/README.md) | 5 | Finds the AML/CTF obligations of an Australian legal practice under the tranche 2 reforms. A person must approve each report and decision. | 2026-08-26 |
 | [**Australian Commercial Drafting**](areas/commercial-drafting/README.md) | 6 | Drafts Australian NDAs, subscription terms, privacy policies and services agreements for lawyer review. | 2026-10-13 |

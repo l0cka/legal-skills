@@ -188,6 +188,12 @@ AREAS: dict[str, dict] = {
         "reference_files": (),
         "every_skill_mentions": (),
     },
+    "getting-started": {
+        "skills": {"setup", "start", "check-citations", "help"},
+        "statuses": (),
+        "reference_files": ("profile-guide.md", "starter-profiles.md", "skill-map.md"),
+        "every_skill_mentions": ("disable-model-invocation: true", "## Fail closed"),
+    },
     "legal-research": {
         "skills": {
             "check-commonwealth-legislation",

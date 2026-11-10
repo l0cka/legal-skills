@@ -1,0 +1,32 @@
+schema_version: '1.1'
+name: check-citations keeps an unsupported court UNVERIFIABLE, not NOT FOUND
+tags:
+- getting-started
+- network
+- fail-closed
+execution:
+  max_turns: 20
+  allowed_tools:
+  - Bash
+  - WebFetch
+  prompt: "/legal-skills:check-citations Paragraph 4 of our submissions: The plaintiff relies
+    on Love v Commonwealth [2020] HCA 3 and on Smith v Jones [2021] VSC 912, and on section
+    18 of the Australian Consumer Law."
+graders:
+- name: overall-status
+  type: regex
+  pattern: \b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\b
+  match: contains
+  target: last_message
+- name: victorian-unverifiable
+  type: regex
+  pattern: UNVERIFIABLE
+  match: contains
+  target: last_message
+- name: table-and-routing
+  type: llm
+  criteria: The response must return one table with a row for each of the three references in
+    document order. The Victorian Supreme Court citation must be reported as UNVERIFIABLE
+    because the jurisdiction is not supported, never as NOT FOUND or fabricated. No row may be
+    reported VERIFIED unless the response shows the official publisher page was read. The
+    response must not say whether the authorities support the submission.

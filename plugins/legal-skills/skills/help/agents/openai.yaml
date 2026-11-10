@@ -1,0 +1,6 @@
+interface:
+  display_name: "Legal Skills Help"
+  short_description: "See the practice areas, commands and loaded profiles"
+  default_prompt: "Use $help to show what Legal Skills covers, the commands and which profiles this session has."
+policy:
+  allow_implicit_invocation: false

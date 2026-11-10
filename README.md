@@ -7,8 +7,8 @@
   <a href="https://github.com/l0cka/legal-skills/actions/workflows/ci.yml"><img alt="CI status" src="https://img.shields.io/github/actions/workflow/status/l0cka/legal-skills/ci.yml?branch=main&amp;style=flat-square&amp;label=CI"></a>
   <a href="LICENSE"><img alt="MIT licence" src="https://img.shields.io/badge/licence-MIT-1f6f5f?style=flat-square"></a>
   <!-- generated:badges -->
-  <img alt="Sixteen practice areas" src="https://img.shields.io/badge/practice%20areas-16-31547a?style=flat-square">
-  <img alt="One hundred and five skills" src="https://img.shields.io/badge/skills-105-31547a?style=flat-square">
+  <img alt="Seventeen practice areas" src="https://img.shields.io/badge/practice%20areas-17-31547a?style=flat-square">
+  <img alt="One hundred and nine skills" src="https://img.shields.io/badge/skills-109-31547a?style=flat-square">
   <img alt="Claude Cowork, ChatGPT Work and Cursor" src="https://img.shields.io/badge/works%20with-Claude%20Cowork%20%2B%20ChatGPT%20Work%20%2B%20Cursor-c59a46?style=flat-square">
 <!-- end:badges -->
 </p>
@@ -26,12 +26,13 @@ Free and open source (MIT).
 ## What's included
 
 <!-- generated:counts -->
-One plugin, `legal-skills`, holds one hundred and five skills across sixteen practice areas:
+One plugin, `legal-skills`, holds one hundred and nine skills across seventeen practice areas:
 <!-- end:counts -->
 
 <!-- generated:area-table -->
 | Practice area | Skills | Description | Law checked |
 | --- | :---: | --- | :---: |
+| [**Getting Started**](plugins/legal-skills/areas/getting-started/README.md) | 4 | Four commands you type to set up profiles, start a matter, check every citation in a draft and see what the plugin covers. | 2026-11-10 |
 | [**Australian AI Governance**](plugins/legal-skills/areas/ai-governance/README.md) | 6 | Maps the AI rules and guidance that apply to an Australian organisation. Shows which items are law and which are only guidance. | 2026-08-26 |
 | [**Australian AML/CTF**](plugins/legal-skills/areas/aml-ctf/README.md) | 5 | Finds the AML/CTF obligations of an Australian legal practice under the tranche 2 reforms. A person must approve each report and decision. | 2026-08-26 |
 | [**Australian Commercial Drafting**](plugins/legal-skills/areas/commercial-drafting/README.md) | 6 | Drafts Australian NDAs, subscription terms, privacy policies and services agreements for lawyer review. | 2026-10-13 |
@@ -116,6 +117,23 @@ The repository is also a Cursor plugin marketplace
 One install gives you every skill. Upgrading from the separate
 `australian-*` and `legal-*` plugins? Uninstall them first; see the
 [changelog](CHANGELOG.md).
+
+## First steps
+
+Most skills start on their own when you describe the task. Four commands
+start only when you type them:
+
+| Command | Use it to |
+| --- | --- |
+| `setup` | Draft the practice profiles your practice areas need, from the starter profiles |
+| `start` | Plan the skills a matter needs, then run them one step at a time |
+| `check-citations` | Verify every citation, legislation reference and quote in a draft |
+| `help` | See the practice areas, the commands and the profiles you have loaded |
+
+Type them as `/legal-skills:setup` in Claude Code and Cowork, `$setup` in
+ChatGPT Work and Codex, and `/setup` in Cursor. Add the matter or draft after
+the command, for example `/legal-skills:start <what happened>`. See
+[Getting Started](plugins/legal-skills/areas/getting-started/README.md).
 
 ## Before you rely on it
 

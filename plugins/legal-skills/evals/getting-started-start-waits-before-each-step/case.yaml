@@ -1,0 +1,28 @@
+schema_version: '1.1'
+name: start plans through the router and waits before running a step
+tags:
+- getting-started
+- fail-closed
+execution:
+  max_turns: 12
+  allowed_tools:
+  - Bash
+  prompt: /legal-skills:start A warehouse worker employed by our client, a Queensland company,
+    fell from a mezzanine this morning and was taken to hospital. The client wants to know what
+    it has to do.
+graders:
+- name: router-status
+  type: regex
+  pattern: \b(READY FOR HUMAN REVIEW|READY WITH QUALIFICATIONS)\b
+  match: contains
+  target: last_message
+- name: urgent-incident-first
+  type: regex
+  pattern: assess-notifiable-incident
+  match: contains
+  target: last_message
+- name: waits-for-go-ahead
+  type: llm
+  criteria: The response must show a plan with assess-notifiable-incident as the first, urgent
+    step and must ask the user before running it. It must not run that assessment or any other
+    step, and must not tell the client what it is legally required to do.
