@@ -17,6 +17,7 @@ sys.path.insert(0, str(BENCH))
 import report  # noqa: E402
 import run  # noqa: E402
 import score  # noqa: E402
+
 SKILLS = {p.parent.name: p.parents[2].name for p in ROOT.glob("plugins/*/skills/*/SKILL.md")}
 KEYED_REQUIRED = ("id", "set", "plugin", "skill", "prompt", "truth", "expected_status", "provenance", "tools")
 RUBRIC_REQUIRED = ("id", "plugin", "skill", "prompt", "expected_status_regex", "must_include", "must_not", "tools", "author_notes", "provenance")
