@@ -155,6 +155,19 @@ class ValidateRepositoryTests(unittest.TestCase):
         (self.skill_dir / "references" / "method.md").unlink()
         self.assert_error("broken relative link")
 
+    def test_link_escaping_the_plugin_fails(self) -> None:
+        outside = self.root / "outside.md"
+        write(outside, "# Outside\n")
+        for target in (str(outside), "../../../../outside.md"):
+            with self.subTest(target=target):
+                write(self.skill_dir / "SKILL.md", skill_markdown() + f"\n[escape]({target})\n")
+                self.assert_error("link escapes the plugin directory")
+
+    def test_link_to_plugin_reference_passes(self) -> None:
+        write(self.plugin_dir / "references" / "shared.md", "# Shared\n")
+        write(self.skill_dir / "SKILL.md", skill_markdown() + "\n[shared](../../references/shared.md)\n")
+        self.assertEqual(validate_repository.validate(self.root), (1, 1))
+
     def test_missing_openai_agent_file_fails(self) -> None:
         (self.skill_dir / "agents" / "openai.yaml").unlink()
         self.assert_error("missing ChatGPT Work interface file")

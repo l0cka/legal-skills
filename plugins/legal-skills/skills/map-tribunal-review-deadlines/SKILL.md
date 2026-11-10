@@ -48,7 +48,10 @@ against the [computation-rule tables](../../references/computation-rules/).
    - For tribunals without a table, produce identify-only output naming the
      enabling Act.
 3. Compute through the script only.
-   - Run the script per candidate. Report `computed` and `identify_only`
+   - Run the script per candidate. For ART steps, pass `holiday_table` from
+     the profile's `registry_holiday_table`; if the profile names none, ask
+     the user which registry the act is to be done in before running the
+     script. Report `computed` and `identify_only`
      results faithfully, with every warning.
    - For any migration matter, always include the warning that migration
      time limits are non-extendable or jurisdictional and have changed

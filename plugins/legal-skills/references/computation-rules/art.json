@@ -2,8 +2,9 @@
   "table_id": "art",
   "jurisdiction": "Cth",
   "forums": ["Administrative Review Tribunal"],
-  "holiday_table": "nsw",
-  "note": "Verified against legislation.gov.au on 2026-08-14. Review periods for particular decisions sit in the Act conferring the reviewable decision; entries here cover only the general ART layer, which the conferring Act can displace. Migration-review periods carry mandatory non-extendable and jurisdictional warnings. The holiday_table is a placeholder the profile must confirm for the place where the act is to be done.",
+  "holiday_table": null,
+  "holiday_table_placeholder": true,
+  "note": "Verified against legislation.gov.au on 2026-08-14. Review periods for particular decisions sit in the Act conferring the reviewable decision; entries here cover only the general ART layer, which the conferring Act can displace. Migration-review periods carry mandatory non-extendable and jurisdictional warnings. The holiday_table binds no holidays itself: a request needing business-day counting or rollover must name the holiday table of the place where the act is to be done, or the script refuses.",
   "computation_provisions": [
     {
       "id": "aia-s36",

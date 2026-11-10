@@ -18,6 +18,7 @@ practice:
   jurisdictions: [<NSW | VIC | QLD | WA | SA | TAS | ACT | NT | Cth>]
   forums: [<courts and tribunals the practice appears in>]
   matter_types: [<civil matter types run>]
+  registry_holiday_table: <holiday table id of the registry where federal court and ART steps are done, e.g. nsw>
 
 confirmation:
   confirmer: <name and role of the person who confirms every date>
@@ -31,6 +32,10 @@ verification:
 ```
 
 ## Rules
+
+0. `registry_holiday_table` is passed to the script as `holiday_table` for
+   federal court and ART steps; without it the script refuses any
+   business-day or rollover computation for those forums.
 
 1. `confirmer` and `diary_system` are mandatory — a profile without a named
    human confirmer and a named system of record cannot be approved.

@@ -44,7 +44,7 @@ def summarise(rows: list[dict]) -> dict[tuple, dict]:
         c = cells[key]
         c["n"] += 1
         c["cost"] += row.get("cost_usd") or 0
-        if row.get("error"):
+        if row.get("error") or (row["kind"] != "keyed" and (row.get("judge") or {}).get("error")):
             c["err"] += 1
             continue
         if contaminated(row):

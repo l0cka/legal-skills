@@ -19,8 +19,7 @@ Request JSON:
     {
       "table_id": "nsw-courts",
       "period_rule_id": "ucpr-defence-after-service",
-      "trigger_date": "2026-08-14",
-      "tables_dir": "optional override of the references directory"
+      "trigger_date": "2026-08-14"
     }
 """
 
@@ -30,6 +29,7 @@ import argparse
 import calendar
 import datetime as dt
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -40,6 +40,8 @@ DISCLAIMER = (
 )
 
 DEFAULT_TABLES_DIR = Path(__file__).resolve().parents[3] / "references"
+
+SLUG = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 
 SUPPORTED_UNITS = ("calendar_days", "clear_days", "business_days", "months", "years")
 
@@ -55,6 +57,12 @@ def load_json(path: Path, label: str) -> dict:
         return json.loads(path.read_text(encoding="utf-8"))
     except json.JSONDecodeError as exc:
         raise ValueError(f"{label} is not valid JSON: {path}: {exc}") from exc
+
+
+def table_path(tables_dir: Path, kind: str, table_id: object) -> Path:
+    if not isinstance(table_id, str) or not SLUG.fullmatch(table_id):
+        raise ValueError(f"{kind} id must be a lowercase hyphenated slug, got {table_id!r}")
+    return tables_dir / kind / f"{table_id}.json"
 
 
 def parse_date(value: str, label: str) -> dt.date:
@@ -190,8 +198,9 @@ def compute(request: dict, tables_dir: Path) -> dict:
         if not request.get(key):
             raise ValueError(f"request is missing required field {key!r}")
 
-    table_path = tables_dir / "computation-rules" / f"{request['table_id']}.json"
-    table = load_json(table_path, "computation-rule table")
+    table = load_json(
+        table_path(tables_dir, "computation-rules", request["table_id"]), "computation-rule table"
+    )
     trigger = parse_date(request["trigger_date"], "trigger_date")
 
     rules = {rule["id"]: rule for rule in table.get("period_rules", [])}
@@ -254,7 +263,15 @@ def compute(request: dict, tables_dir: Path) -> dict:
         needs_holidays = unit == "business_days" or rollover == "next_business_day"
         holiday_table = None
         if needs_holidays:
-            holiday_path = tables_dir / "holidays" / f"{table['holiday_table']}.json"
+            holiday_id = table["holiday_table"]
+            if table.get("holiday_table_placeholder"):
+                holiday_id = request.get("holiday_table")
+                if not holiday_id:
+                    raise Refusal(
+                        "this forum has no fixed holiday table; the request must name the "
+                        "holiday_table of the registry where the act is to be done"
+                    )
+            holiday_path = table_path(tables_dir, "holidays", holiday_id)
             holiday_table = HolidayTable(load_json(holiday_path, "holiday table"))
             warnings.extend(holiday_table.caveats)
 

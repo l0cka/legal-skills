@@ -37,6 +37,12 @@ class AustralianLitigationDeadlinesPluginTests(unittest.TestCase):
             self.assertIn("arithmetic", lowered, name)
             self.assertIn("compute_deadline.py", self.skill_text(name), name)
 
+    def test_skills_that_compute_federal_forums_pass_the_registry_holiday_table(self) -> None:
+        for name in ("compute-procedural-deadlines", "map-tribunal-review-deadlines"):
+            text = self.skill_text(name)
+            self.assertIn("registry_holiday_table", text, name)
+            self.assertIn("`holiday_table`", text, name)
+
     def test_migration_matters_always_carry_warning(self) -> None:
         lowered = self.skill_text("map-tribunal-review-deadlines").lower()
         self.assertIn("migration", lowered)
@@ -113,12 +119,79 @@ class ShippedTableTests(unittest.TestCase):
         self.assertIn("r 14.3(1)", result["citation"])
         self.assertTrue(any("registry" in warning for warning in result["warnings"]), result)
 
+    def test_unsafe_table_ids_are_rejected(self) -> None:
+        for bad in ("../holidays/nsw", "/etc/passwd", "NSW", "a/b"):
+            with self.subTest(table_id=bad):
+                with self.assertRaisesRegex(ValueError, "slug"):
+                    ENGINE.compute(
+                        {"table_id": bad, "period_rule_id": "x", "trigger_date": "2026-08-14"},
+                        PLUGIN / "references",
+                    )
+
+    def test_unsafe_holiday_table_id_is_rejected(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            tables = Path(tmp)
+            shutil.copytree(PLUGIN / "references" / "computation-rules", tables / "computation-rules")
+            shutil.copytree(PLUGIN / "references" / "holidays", tables / "holidays")
+            path = tables / "computation-rules" / "nsw-courts.json"
+            table = json.loads(path.read_text(encoding="utf-8"))
+            table["holiday_table"] = "../computation-rules/nsw-courts"
+            path.write_text(json.dumps(table), encoding="utf-8")
+            with self.assertRaisesRegex(ValueError, "slug"):
+                ENGINE.compute(
+                    {
+                        "table_id": "nsw-courts",
+                        "period_rule_id": "ucpr-defence-after-service",
+                        "trigger_date": "2026-08-14",
+                    },
+                    tables,
+                )
+
+    def test_placeholder_forums_refuse_without_a_registry_holiday_table(self) -> None:
+        for table_id, rule, trigger in (
+            ("cth-federal-courts", "fcr-defence-after-service", "2026-12-10"),
+            ("art", "art-general-review-application", "2026-03-19"),
+        ):
+            with self.subTest(table_id=table_id):
+                request = {"table_id": table_id, "period_rule_id": rule, "trigger_date": trigger}
+                refused = ENGINE.compute(request, PLUGIN / "references")
+                self.assertEqual(refused["status"], "identify_only", refused)
+                self.assertIn("holiday_table", refused["reason"])
+                vic = ENGINE.compute({**request, "holiday_table": "vic"}, PLUGIN / "references")
+                self.assertEqual(vic["status"], "computed", vic)
+                self.assertEqual(vic["holiday_table"], "vic")
+
+    def test_registry_holiday_table_changes_the_date(self) -> None:
+        request = {
+            "table_id": "cth-federal-courts",
+            "period_rule_id": "fcr-defence-after-service",
+            "trigger_date": "2026-09-07",
+        }
+        dates = {
+            key: ENGINE.compute({**request, "holiday_table": key}, PLUGIN / "references")["candidate_date"]
+            for key in ("nsw", "vic")
+        }
+        self.assertEqual(dates, {"nsw": "2026-10-06", "vic": "2026-10-05"})
+
+    def test_registry_holiday_table_must_be_a_slug(self) -> None:
+        with self.assertRaisesRegex(ValueError, "slug"):
+            ENGINE.compute(
+                {
+                    "table_id": "art",
+                    "period_rule_id": "art-general-review-application",
+                    "trigger_date": "2026-03-19",
+                    "holiday_table": "../art",
+                },
+                PLUGIN / "references",
+            )
+
     def test_shipped_fcr_rule_applies_december_exclusion(self) -> None:
         result = ENGINE.compute(
             {
                 "table_id": "cth-federal-courts",
                 "period_rule_id": "fcr-defence-after-service",
                 "trigger_date": "2026-12-10",
+                "holiday_table": "nsw",
             },
             PLUGIN / "references",
         )
