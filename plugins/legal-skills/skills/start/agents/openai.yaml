@@ -1,0 +1,6 @@
+interface:
+  display_name: "Start a Matter"
+  short_description: "Plan the skills a matter needs and run them step by step"
+  default_prompt: "Use $start on this matter: plan which Legal Skills to run in order, then run one step at a time with my go-ahead."
+policy:
+  allow_implicit_invocation: false

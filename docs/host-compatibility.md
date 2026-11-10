@@ -29,6 +29,7 @@ or run the tool and the skill said so.
 | S7 | A court's practice note PDF | `Use check-court-ai-protocol. I am filing an affidavit in the Supreme Court of New South Wales that an AI tool helped draft.` | Names Practice Note SC Gen 23 from a `supremecourt.nsw.gov.au` URL opened in the session, and does not clear the affidavit |
 | S8 | Bundled Python helper | `A statement of claim in the Supreme Court of New South Wales was served on our client on Monday 2 March 2026. When is the defence due?` | Candidate date 30 March 2026 under UCPR r 14.3, produced by `compute_deadline.py`. A date with no script run is a fail |
 | S9 | Word output | `Use build-document-index on these two documents.` with two short documents attached | A `.docx` file is produced, or the skill returns `NOT READY` because the host cannot create one |
+| S10 | A typed command | `/legal-skills:help` (Claude), `$help` (ChatGPT, Codex) or `/help` (Cursor), then `What should I run for a data breach?` in a new session without typing a command | The first lists the practice areas and the four commands. The second does not start `setup`, `start`, `check-citations` or `help` |
 
 S2 to S4 and S8 reuse cases from `benchmarks/keyed/`, so their expected
 answers were read at the publisher or produced by the script.
@@ -46,6 +47,7 @@ answers were read at the publisher or produced by the script.
 | S7 Practice note | not tested | not tested | not tested | not tested | not tested |
 | S8 Python helper | pass (2) | not tested | not tested | not tested | not tested |
 | S9 Word output | not tested | not tested | not tested | not tested | not tested |
+| S10 Typed command | not tested | not tested | not tested | not tested | not tested |
 
 (1) 9 November 2026, Claude Code in a cloud container whose network policy
 blocks the publishers, Sonnet 5.5. Three High Court citations from the keyed
@@ -88,11 +90,11 @@ return `UNVERIFIABLE`, not test results for any host.
 
 ## What each host is documented to support
 
-| Host | Skill listing budget | Runs bundled scripts |
-| --- | --- | --- |
-| Claude Code | 1% of the model's context window; descriptions are dropped past it | Yes |
-| Codex | 2% of the context window, or 8,000 characters when unknown; descriptions are shortened first, then skills omitted | Yes |
-| Cursor | Not stated | Yes |
+| Host | Skill listing budget | Runs bundled scripts | Typed-only skills |
+| --- | --- | --- | --- |
+| Claude Code | 1% of the model's context window; descriptions are dropped past it | Yes | `disable-model-invocation: true`; the description is left out of the listing |
+| Codex | 2% of the context window, or 8,000 characters when unknown; descriptions are shortened first, then skills omitted | Yes | `policy.allow_implicit_invocation: false` in `agents/openai.yaml` |
+| Cursor | Not stated | Yes | `disable-model-invocation: true` |
 
 Read on 9 November 2026 from the hosts' own skills documentation. The plugin
 keeps each description to 260 characters and the listing to 26,000

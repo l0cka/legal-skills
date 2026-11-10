@@ -9,8 +9,27 @@ manifests contain the intended release version.
 
 ## Unreleased
 
+## 2026-11-10 - 1.2.0: typed commands to get started
+
+### Released versions
+
+- `legal-skills` 1.1.0 → 1.2.0. The plugin holds 109 skills across 17
+  practice areas.
+
 ### Added
 
+- A Getting Started practice area with four commands that start only when
+  typed: `setup` drafts the profiles a practice's areas need from the
+  starter profiles and offers to save them in a folder the user names;
+  `start` has `route-legal-fact-pattern` plan a matter and runs the plan one
+  step at a time with the user's go-ahead; `check-citations` sends every
+  case citation, legislation reference and quoted passage in a draft to its
+  verifier and returns one table; `help` lists the practice areas, commands
+  and the profiles the session can see. They are typed as
+  `/legal-skills:<name>` in Claude, `$<name>` in ChatGPT Work and Codex, and
+  `/<name>` in Cursor. Each is marked `disable-model-invocation: true` and
+  `allow_implicit_invocation: false`, so the assistant never starts one
+  unasked. Three evals and a smoke check (S10) cover them.
 - A `Draft release` workflow drafts a GitHub Release whenever `main` or a
   `v*` tag is pushed and `CHANGELOG.md` has a dated section for the plugin
   version with no release yet. The notes are that changelog section, read by

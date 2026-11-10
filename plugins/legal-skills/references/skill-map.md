@@ -6,6 +6,13 @@
 Every skill the router may name, grouped by practice area. The description
 is the skill's own trigger text: what it does, when to use it and when not to.
 
+## Getting Started (`getting-started`)
+
+- **`setup`** — Set up Legal Skills for a practice. Asks role, jurisdictions and practice areas, drafts the profiles those areas need from the starter profiles, and saves them where you choose. Run by typing it; never approves a profile.
+- **`start`** — Start work on a matter. Plans which Legal Skills to run in order with the human decision at each step, then runs one step at a time with your go-ahead. Run by typing it with the facts; never answers the legal question itself.
+- **`check-citations`** — Check every case citation, legislation reference and quoted passage in a draft against the official publishers and return one status table. Run by typing it with the draft; never marks a reference verified itself.
+- **`help`** — Show what Legal Skills covers, the practice areas, what to type for common tasks and which profiles this session has. Run by typing it; gives no legal advice.
+
 ## Australian AI Governance (`ai-governance`)
 
 - **`assess-board-ai-oversight`** — Issue-spot board and director-duty exposure from AI adoption and board use of AI under the Corporations Act. Use for board AI policies, AI-assisted board packs and oversight reviews. Never concludes breach or compliance.

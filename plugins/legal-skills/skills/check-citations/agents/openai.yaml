@@ -1,0 +1,6 @@
+interface:
+  display_name: "Check Citations in a Draft"
+  short_description: "Verify every citation and quote in a draft in one table"
+  default_prompt: "Use $check-citations on this draft: find every case citation, legislation reference and quoted passage, verify each against the official publisher, and return one status table."
+policy:
+  allow_implicit_invocation: false
