@@ -9,6 +9,23 @@ manifests contain the intended release version.
 
 ## Unreleased
 
+### Fixed
+
+- The deadline script rejects table and holiday-table ids that are not
+  lowercase hyphenated slugs instead of reading files outside its tables
+  directory.
+- The deadline script no longer computes federal court and ART business-day
+  or rollover dates with NSW holidays: the request must name the registry's
+  `holiday_table` (the deadline profile gains `registry_holiday_table`) or the
+  script returns identify-only. The `compute-procedural-deadlines` skill no
+  longer says every forum has its own verified holiday table.
+- Benchmark scoring and reports exclude rubric rows whose judge failed instead
+  of counting them as clean responses, `score.py` no longer re-reads
+  `verdicts.jsonl`, the allowlist names the Federal Register API host the
+  helpers use, and the README shows the real command.
+- The repository validator rejects skill links that resolve outside the plugin
+  directory.
+
 ## 2026-11-10 - 1.2.0: typed commands to get started
 
 ### Released versions

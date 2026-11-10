@@ -11,9 +11,11 @@ Compute candidate procedural deadlines for Australian civil litigation from a
 lawyer-supplied trigger event using the bundled deterministic script and
 evidence-gated computation-rule tables — the model never performs date
 arithmetic. Computed coverage spans the federal courts and the superior and
-lower courts of every State and Territory, each with a verified holiday table;
-steps without a verified table entry receive identify-only output naming the
-governing rule. Use when a practitioner needs candidate dates for defences,
+lower courts of every State and Territory. State and Territory forums use
+their own verified holiday table. The federal courts and the ART have none:
+the request must name the registry's holiday table or the script refuses any
+business-day or rollover computation. Steps without a verified table entry
+receive identify-only output naming the governing rule. Use when a practitioner needs candidate dates for defences,
 appeals or other rule-fixed steps after filing, service or judgment. Do not
 use for criminal procedure, for court-fixed or discretionary dates, or when
 the trigger date is contested — those fail closed to the responsible lawyer,
@@ -42,9 +44,11 @@ run [compute_deadline.py](scripts/compute_deadline.py) against the
      if known and route verification to `$verify-deadline-basis`.
 3. Run the script.
    - Call `scripts/compute_deadline.py` with the table id, period rule id
-     and trigger date. Report the script's output faithfully: `computed`
-     results as candidate dates with the provisions applied and every
-     warning; `identify_only` results with the stated reason.
+     and trigger date (plus `holiday_table` from the profile's
+     `registry_holiday_table` for federal court and ART steps). Report the script's output
+     faithfully: `computed` results as candidate dates with the provisions
+     applied and every warning; `identify_only` results with the stated
+     reason.
    - Never adjust, round or re-derive a date the script produced or
      refused. If holiday caveats flag registry-location uncertainty,
      surface them.

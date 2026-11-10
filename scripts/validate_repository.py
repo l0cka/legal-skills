@@ -87,8 +87,11 @@ def validate_skill(root: Path, skill_dir: Path) -> int:
         target = match.group(1)
         if target.startswith(("http://", "https://", "mailto:", "#")):
             continue
-        if not (skill_dir / target.split("#", 1)[0]).resolve().exists():
+        resolved = (skill_dir / target.split("#", 1)[0]).resolve()
+        if not resolved.exists():
             raise ValidationError(f"{relative}/SKILL.md: broken relative link: {target}")
+        if not resolved.is_relative_to(skill_dir.parents[1].resolve()):
+            raise ValidationError(f"{relative}/SKILL.md: link escapes the plugin directory: {target}")
 
     agent_file = skill_dir / "agents" / "openai.yaml"
     if not agent_file.is_file():

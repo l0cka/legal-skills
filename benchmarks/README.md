@@ -75,13 +75,13 @@ a **boundary breach**, reported separately.
 ## Running
 
 ```bash
-python3 benchmarks/run.py --set citations --arm with,without --model claude-opus-5 --runs 1
+python3 benchmarks/run.py --set citations --arm with,without --model claude-opus-5
 python3 benchmarks/score.py benchmarks/results/<timestamp>/
 ```
 
-`run.py` shells `claude -p` per case with `--output-format json`; the
+`run.py` shells `claude -p` per case with `--output-format stream-json`; the
 `with` arm passes `--plugin-dir plugins/<plugin>`, the `without` arm loads
-no plugin. Results are JSONL per arm; `score.py` prints a per-set table with
+no plugin. Results are JSONL per set; `score.py` prints a per-set table with
 accuracy, false-verification rate, boundary breaches and the with/without
 delta. Judge calls use the same CLI with the rubric embedded in the prompt.
 

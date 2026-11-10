@@ -36,7 +36,8 @@ verified against the official publisher through `verify-deadline-basis`.
 The shipped tables carry verifications dated 2026-08-14 (Federal Court,
 NSW, Queensland and Victorian courts, ART, NCAT, QCAT and VCAT) and
 2026-08-26 (ACT, NT, SA, Tasmanian and WA courts); each entry records its
-own check date, and every verified entry computes. FCR r 1.61(5) is expressed as a declared excluded
+own check date, and every verified entry computes (federal court and ART
+business-day or rollover rules also need the registry `holiday_table`). FCR r 1.61(5) is expressed as a declared excluded
 range (24 December to 14 January not counted) and r 1.61(3) as a
 short-period threshold that fails calendar-day rules of 5 days or less
 closed; where rolling a last day would enter the excluded range, the

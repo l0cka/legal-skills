@@ -2,8 +2,9 @@
   "table_id": "cth-federal-courts",
   "jurisdiction": "Cth",
   "forums": ["Federal Court of Australia", "Federal Circuit and Family Court of Australia (Division 2, general federal law)"],
-  "holiday_table": "nsw",
-  "note": "Verified against legislation.gov.au on 2026-08-14. FCR r 1.61(5) is expressed as a declared excluded range (24 December to 14 January, not counted) and r 1.61(3) as a short-period threshold: calendar-day rules of 5 days or less fail closed because they count business days only. Where rolling a last day under r 1.61(4) would enter the excluded range, the interaction with r 1.61(5) is not settled by the tables and the script refuses — the responsible lawyer resolves it. The holiday_table must match the registry in which the act is to be done; the shipped default is a placeholder the profile must confirm.",
+  "holiday_table": null,
+  "holiday_table_placeholder": true,
+  "note": "Verified against legislation.gov.au on 2026-08-14. FCR r 1.61(5) is expressed as a declared excluded range (24 December to 14 January, not counted) and r 1.61(3) as a short-period threshold: calendar-day rules of 5 days or less fail closed because they count business days only. Where rolling a last day under r 1.61(4) would enter the excluded range, the interaction with r 1.61(5) is not settled by the tables and the script refuses — the responsible lawyer resolves it. The holiday_table must match the registry in which the act is to be done: the table binds no holidays itself, and a request needing business-day counting or rollover must name the registry holiday table or the script refuses.",
   "computation_provisions": [
     {
       "id": "aia-s36",

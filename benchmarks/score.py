@@ -76,7 +76,7 @@ def main(argv: list[str]) -> int:
         print(__doc__)
         return 2
     results = Path(argv[1])
-    rows = [json.loads(line) for path in sorted(results.glob("*.jsonl")) for line in path.read_text().splitlines() if line.strip()]
+    rows = [json.loads(line) for path in sorted(results.glob("*.jsonl")) if path.name != "verdicts.jsonl" for line in path.read_text().splitlines() if line.strip()]
     if not rows:
         print("no results")
         return 1
@@ -85,7 +85,7 @@ def main(argv: list[str]) -> int:
         key = (row["set"], row["arm"])
         cell = table[key]
         cell["n"] += 1
-        if row.get("error"):
+        if row.get("error") or (row["kind"] != "keyed" and (row.get("judge") or {}).get("error")):
             cell["errors"] += 1
             continue
         if contaminated(row):

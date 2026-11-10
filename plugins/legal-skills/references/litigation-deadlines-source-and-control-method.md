@@ -34,7 +34,9 @@ rule — whenever:
    the computed range, or has an uncertain window intersecting it; or
 3. the period cannot be expressed by the table — court-fixed dates,
    "as soon as practicable", backwards-counted periods and any unit the
-   script does not support.
+   script does not support; or
+4. the forum is the federal courts or the ART, the rule counts business days
+   or rolls over, and the request names no registry `holiday_table`.
 
 A refusal is a correct result, not an error. Never re-derive a refused date
 by hand, and never present model arithmetic as a computed date.

@@ -66,7 +66,7 @@ PUBLISHER_DOMAINS = [
     "hcourt.gov.au", "www.hcourt.gov.au", "eresources.hcourt.gov.au",
     "www.caselaw.nsw.gov.au", "caselaw.nsw.gov.au",
     "www.fedcourt.gov.au", "fedcourt.gov.au", "www.fcfcoa.gov.au", "fcfcoa.gov.au",
-    "www.legislation.gov.au", "legislation.gov.au", "api.legislation.gov.au",
+    "www.legislation.gov.au", "legislation.gov.au", "api.legislation.gov.au", "api.prod.legislation.gov.au",
     "legislation.nsw.gov.au", "www.legislation.nsw.gov.au",
     "www.legislation.qld.gov.au", "www.legislation.vic.gov.au", "www.legislation.wa.gov.au",
     "www.legislation.sa.gov.au", "www.legislation.tas.gov.au", "www.legislation.act.gov.au",
@@ -240,7 +240,9 @@ def judge(case: dict, text: str, *, model: str, timeout: int, cwd: Path) -> dict
         try:
             verdict = json.loads(result_text(payload))
         except json.JSONDecodeError:
-            verdict = {"present": [], "breached": [], "notes": "judge output unparseable"}
+            verdict = None
+    if not isinstance(verdict, dict) or not isinstance(verdict.get("present"), list) or not isinstance(verdict.get("breached"), list):
+        return {"error": "judge output unparseable", "present": [], "breached": [], "text": text}
     verdict["text"] = text
     return verdict
 
