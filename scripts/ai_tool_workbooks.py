@@ -10,7 +10,7 @@ import zipfile
 from pathlib import Path
 
 from openpyxl import Workbook
-from openpyxl.styles import Alignment, Font, PatternFill
+from openpyxl.styles import Alignment, Font, PatternFill, Protection
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 
@@ -110,7 +110,7 @@ ABOUT_LINES = (
     "",
     "The custom holiday column is for a registry not listed. Enter each holiday date, then set its HolidayTables row to verified, with coverage dates, source and the name of the person who verified it. Until then the sheet refuses any computation that needs it.",
     "",
-    "Limits: day counts and business-day periods are scanned up to 120 days after the trigger, and a rollover up to 15 days; beyond that the sheet refuses. Excluded ranges are written as month and day (1224 is 24 December). The custom holiday column takes up to 100 dates and the Windows sheet up to 40 added windows; anything typed below those rows is ignored. The Rules, Engine, Working and Scope sheets are protected without a password to prevent accidental edits.",
+    "Limits: day counts and business-day periods are scanned up to 120 days after the trigger, and a rollover up to 15 days; beyond that the sheet refuses. Excluded ranges are written as month and day (1224 is 24 December). The custom holiday column takes up to 100 dates and the Windows sheet up to 40 added windows; anything typed below those rows is ignored. Every sheet is protected without a password to prevent accidental edits; only the yellow cells are unlocked.",
     "",
     "Do not overwrite cells on the Rules, Engine or Working sheets. Edit the computation-rule tables instead and use a newer release of this workbook.",
 )
@@ -135,7 +135,13 @@ def iso(value: str) -> dt.date:
 
 def month_day(value: str) -> int:
     month, day = map(int, value.split("-"))
+    dt.date(2000, month, day)
     return month * 100 + day
+
+
+def mark_input(cell) -> None:
+    cell.fill = INPUT_FILL
+    cell.protection = Protection(locked=False)
 
 
 def evidence_message(kind: str, ident: str, state: object) -> str:
@@ -289,7 +295,7 @@ def write_holiday_tables(ws, holiday_tables: list[dict]) -> None:
         row[2].number_format = DATE_FORMAT
         row[3].number_format = DATE_FORMAT
     for col in (2, 3, 4, 5, 6, 8):
-        ws.cell(custom, col).fill = INPUT_FILL
+        mark_input(ws.cell(custom, col))
     state = DataValidation(type="list", formula1='"verified,not verified"', allow_blank=False)
     ws.add_data_validation(state)
     state.add(f"B{custom}")
@@ -307,7 +313,7 @@ def write_holidays(ws, holiday_tables: list[dict], layout: Layout) -> None:
     ws.cell(1, layout.custom_col, CUSTOM_HOLIDAYS).font = BOLD
     for row in range(2, layout.holiday_last + 1):
         cell = ws.cell(row, layout.custom_col)
-        cell.fill = INPUT_FILL
+        mark_input(cell)
         cell.number_format = DATE_FORMAT
     dates = DataValidation(type="date", operator="greaterThan", formula1="1")
     ws.add_data_validation(dates)
@@ -323,7 +329,7 @@ def write_windows(ws, holiday_tables: list[dict], layout: Layout) -> None:
             ws.append([table["table_id"], iso(window["from"]), iso(window["to"]), window.get("reason", "uncertain window")])
     for row in range(ws.max_row + 1, layout.windows_last + 1):
         for col in range(1, 5):
-            ws.cell(row, col).fill = INPUT_FILL
+            mark_input(ws.cell(row, col))
     for row in ws.iter_rows(min_row=2, max_row=layout.windows_last):
         row[1].number_format = DATE_FORMAT
         row[2].number_format = DATE_FORMAT
@@ -358,7 +364,7 @@ def write_calculator_inputs(ws, layout: Layout) -> dict[str, str]:
     for row, (name, label, help_text) in enumerate(CALCULATOR_INPUTS, 4):
         ws.cell(row, 1, label)
         target = ws.cell(row, 2)
-        target.fill = INPUT_FILL
+        mark_input(target)
         ws.cell(row, 3, help_text).alignment = WRAP
         inputs[name] = cell_ref("Calculator", 2, row)
         if name == "trigger":
@@ -520,8 +526,8 @@ def write_engine(ws, inputs: dict[str, str], layout: Layout) -> Formulas:
         (f"{inputs['matter']}<>{quoted(CIVIL)}", "\"OUTSIDE SCOPE\"", f"{inputs['matter']}&\" is outside this workbook: route it to the responsible lawyer\""),
         ("{idx}=0", "\"NOT READY\"", "\"pick a forum and rule; a step not listed is identify-only\""),
         (f"{inputs['approved']}<>\"Yes\"", "\"NOT READY\"", "\"no approved deadline profile\""),
-        (f"OR({inputs['profile']}=\"\",{inputs['confirmer']}=\"\",{inputs['diary']}=\"\")", "\"NOT READY\"", "\"name the approved profile, the confirmer and the diary system of record\""),
-        (f"OR({inputs['event']}=\"\",{{trig}}=0)", "\"NOT READY\"", "\"enter the lawyer-supplied trigger event and date\""),
+        (f"OR(TRIM({inputs['profile']})=\"\",TRIM({inputs['confirmer']})=\"\",TRIM({inputs['diary']})=\"\")", "\"NOT READY\"", "\"name the approved profile, the confirmer and the diary system of record\""),
+        (f"OR(TRIM({inputs['event']})=\"\",{{trig}}=0)", "\"NOT READY\"", "\"enter the lawyer-supplied trigger event and date\""),
         (f"{inputs['contested']}<>\"No\"", "\"NOT READY\"", "\"the trigger date is contested or unknown\""),
         ("{refusal}<>\"\"", f"\"{STATUS_IDENTIFY}\"", "{refusal}"),
     )
@@ -603,9 +609,9 @@ def build_deadline_workbook(rule_tables: list[dict], holiday_tables: list[dict])
     write_window_hits(sheets["Windows"], engine.cells, layout)
     for name in ("Engine", "Working"):
         sheets[name].cell(1, 13, WORKING_NOTE).font = BOLD
-    for name in ("Rules", "Engine", "Working", "Scope"):
-        sheets[name].protection.sheet = True
     outputs = write_calculator_outputs(sheets["Calculator"], inputs, engine.cells)
+    for ws in wb.worksheets:
+        ws.protection.sheet = True
     wb.calculation.fullCalcOnLoad = True
     return wb, {**{f"in_{name}": ref for name, ref in inputs.items()}, **engine.cells, **outputs}
 

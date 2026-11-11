@@ -21,13 +21,18 @@ profile is not ready.
 | Versions are semantic versions; dates are real `YYYY-MM-DD` dates | | |
 | Every policy category the schema requires is present | | |
 | Every operational rule has an owner, version, effective date, review date and source, and its `source_policy_id` names a policy in the profile | | |
-| Mandatory human-review and no-autonomous-rejection controls are unchanged from the template | | |
+| `data_handling`: `staff_facing_only`, `minimum_necessary` and `client_notice_required` are `true`; `public_ai_personal_information`, `model_training_with_client_data` and `model_may_write_client_record` are `false`; `approved_environment` is named | | |
+| `human_review`: `required` and `can_override` are `true`, `automated_rejection_allowed` is `false`, `responsible_role` is named | | |
+| `conflict_check`: `required` and `performed_outside_model` are `true`, `party_names_in_model` is `false`, `responsible_role` is named | | |
+| Every eligibility factor has `human_decision_required: true`; every exclusion has `referral_required: true` | | |
+| Every referral has `consent_required: true` and `warm_referral_available` set to `true` or `false` | | |
 | No client or matter fields appear anywhere in the profile | | |
 | No placeholder text from the template remains | | |
 | No review date precedes its effective, verified or approval date | | |
 | The approval date is not after today's date | | |
 | The profile, every policy and every referral review date is on or after today's date | | |
-| Only the statuses in the schema's allowed list appear in `output_control` | | |
+| `output_control.allowed_statuses` holds exactly the five statuses of the schema's allowed list, in that order | | |
+| `output_control`: `human_approval_required`, `reasons_required` and `policy_citations_required` are `true` | | |
 
 Ask the person for today's date if the host cannot supply it. Any review date
 that has passed means the profile is expired: do not use it for live triage.

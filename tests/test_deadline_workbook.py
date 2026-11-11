@@ -41,7 +41,7 @@ GATES = {
     "diary": "Firm diary",
 }
 SHIPPED_TRIGGERS = ("2026-12-10", "2027-12-20")
-OUTPUTS = ("out_status", "out_candidate", "out_reason")
+OUTPUTS = ("out_status", "out_candidate", "out_reason", "out_provisions", "out_warnings", "out_caveats")
 
 
 def serial(value: str) -> int:
@@ -222,7 +222,12 @@ class ShippedWorkbookTests(WorkbookAgreementMixin, unittest.TestCase):
             request["holiday_table"] = registry
         engine = ENGINE.compute(request, self.references)
         sheet = self.calc.run(f"{table_id} / {rule}", trigger, registry)
-        self.assert_agrees(engine, sheet, f"{table_id} {rule} {trigger} {registry}")
+        context = f"{table_id} {rule} {trigger} {registry}"
+        self.assert_agrees(engine, sheet, context)
+        if engine["status"] == "computed":
+            self.assertEqual(sheet["out_provisions"], "; ".join(engine["provisions_applied"]), context)
+            shown = [part for cell in ("out_warnings", "out_caveats") for part in sheet[cell].split(" | ") if part]
+            self.assertEqual(shown, engine["warnings"], context)
         return sheet
 
     def test_every_shipped_rule_agrees_with_the_engine(self) -> None:
@@ -259,6 +264,8 @@ class ShippedWorkbookTests(WorkbookAgreementMixin, unittest.TestCase):
             ({"approved": ""}, "NOT READY"),
             ({"profile": ""}, "NOT READY"),
             ({"confirmer": ""}, "NOT READY"),
+            ({"confirmer": " "}, "NOT READY"),
+            ({"event": "  "}, "NOT READY"),
             ({"diary": ""}, "NOT READY"),
             ({"event": ""}, "NOT READY"),
             ({"contested": "Yes"}, "NOT READY"),
@@ -331,8 +338,21 @@ class WorkbookFileTests(unittest.TestCase):
         self.assertIn("never the binding deadline", wb["Calculator"]["A2"].value)
         for name in ("Engine", "Working"):
             self.assertEqual(wb[name]["M1"].value, workbooks.WORKING_NOTE)
-        for name in ("Rules", "Engine", "Working", "Scope"):
-            self.assertTrue(wb[name].protection.sheet, name)
+        for ws in wb.worksheets:
+            self.assertTrue(ws.protection.sheet, ws.title)
+        unlocked = {
+            f"{ws.title}!{cell.coordinate}"
+            for ws in wb.worksheets
+            for row in ws.iter_rows()
+            for cell in row
+            if not cell.protection.locked
+        }
+        shipped = len(workbooks.load_tables(PLUGIN / "references")[1])
+        custom, last_shipped = (workbooks.get_column_letter(index) for index in (shipped + 1, shipped))
+        for ref in ("Calculator!B4", "Calculator!B13", f"Holidays!{custom}2", f"Holidays!{custom}101"):
+            self.assertIn(ref, unlocked)
+        for ref in ("Calculator!B16", "Holidays!A2", f"Holidays!{last_shipped}2", "HolidayTables!B2", "Windows!A2", "Rules!A2"):
+            self.assertNotIn(ref, unlocked)
 
 
 if __name__ == "__main__":
