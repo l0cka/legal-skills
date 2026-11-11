@@ -1,2 +1,3 @@
-# Test-only dependency: tests read the eval case.yaml files.
+-r requirements-build.txt
 PyYAML==6.0.3
+formulas==1.3.4

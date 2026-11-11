@@ -14,11 +14,13 @@ from the plugin. The zip has one top-level folder, `legal-skills/`:
 | --- | --- |
 | `ROUTER.md` | Entry point: which skill for which task, by practice area |
 | `skills/<name>/SKILL.md`, `references/`, `assets/` | Every skill and its linked material |
+| `skills/<name>/no-code.md` | The no-code replacement for each skill that needs code |
 | `references/` | Shared source methods, schemas, rule tables, holiday data and `ai-tool-mode.md` |
+| `references/deadline-calculator.xlsx` | Deadline calculator workbook, generated at build time |
 | `reference/firm/README.md` | Empty slot for firm material; nothing firm-specific ships |
 | `catalog.json`, `PRIVACY.md`, `LICENSE`, `VERSION` | Metadata |
 
-Options: `--area <id>` builds one practice-area zip (`legal-skills-ai-<id>-<version>.zip`),
+Building needs openpyxl (`requirements-build.txt`). Options: `--area <id>` builds one practice-area zip (`legal-skills-ai-<id>-<version>.zip`),
 `--all-areas` builds the full zip and every area zip. The version defaults to
 the plugin version. A rebuild of the same tree on the same machine and toolchain is
 byte-identical; a different zlib version can change the compressed bytes.
@@ -30,34 +32,92 @@ relative link does not resolve inside the bundle, if a code-only marker is
 left behind, or if a script-backed skill has no AI-tool section. In an area
 zip, a link into a skill of another area is turned into plain text, so no
 link points outside the zip, and `ROUTER.md` omits the cross-area entry
-skills.
+skills. The build also fails if a skill with an `AI-tool mode` section has no
+`no-code.md`, or its section does not link it.
 
 ## What travels, and what does not
 
 Travels: every workflow instruction, result contract and human-review gate,
 the official-source methods, the profile schemas and starter profiles, the
-computation-rule and holiday tables as reading material, and the profile
-templates.
+computation-rule and holiday tables, the profile templates, and the
+candidate-date computation as a spreadsheet a person fills.
 
-Does not travel: deterministic date computation, the Federal Register helper
-calls, the NSW URL helper, the citation parser, the APP inventory comparison
-and the triage profile validator. Evals and benchmarks stay in the
-repository.
+Does not travel: the Federal Register helper calls, the NSW URL helper, the
+citation parser, the APP inventory comparison, the triage profile validator
+and every hash or fingerprint. Their no-code procedures give the manual
+steps. Evals and benchmarks stay in the repository.
 
-## Identify-only behaviour
+## No-code replacements
 
 Seven skills ship code in the plugin, `map-tribunal-review-deadlines` uses the
 deadline code, and `verify-deadline-basis` needs a code-computed fingerprint.
-In the bundle each of the nine has an `## AI-tool mode` section:
+In the bundle each of the nine has an `## AI-tool mode` section and a
+`no-code.md` procedure beside its `SKILL.md`. A procedure is a spreadsheet
+where a calculation is needed, and a checklist or record table where
+judgement or a manual lookup is enough. Where neither can do the job
+honestly, the procedure says so and keeps `not computed` or `NOT VERIFIED`.
 
-| Skill | In the bundle |
-| --- | --- |
-| `compute-procedural-deadlines`, `map-tribunal-review-deadlines` | Identify-only: the rule, its source, the inputs a person needs and `not computed`. No date is ever stated |
-| `check-commonwealth-legislation`, `check-nsw-legislation`, `trace-commonwealth-legislative-change` | The official source and search steps for a person or a browsing tool; `NOT VERIFIED` when nothing was opened |
-| `check-australian-privacy-principles` | The manual layer-by-layer comparison, reported as manual; no hash is computed |
-| `verify-deadline-basis` | The fingerprint is `not computed`; a person with code computes it before an update is applied |
-| `route-case-citation` | Manual parse with the same routing table |
-| `configure-legal-triage` | Manual check against the schema; the profile is never reported as validated or approved |
+| Skill | Replacement | What stays out |
+| --- | --- | --- |
+| `compute-procedural-deadlines` | Deadline calculator workbook and the steps to fill and read it | The model never states a date; a person reads it |
+| `map-tribunal-review-deadlines` | The same workbook for the ART, NCAT and QCAT general periods; conferring-Act periods and VCAT stay identify-only | Expiry or extension conclusions |
+| `verify-deadline-basis` | Field-by-field change table | The table fingerprint: `not computed` |
+| `check-commonwealth-legislation`, `check-nsw-legislation` | Official-source steps and a record table filled only from pages opened | Live status without browsing: `NOT VERIFIED` |
+| `trace-commonwealth-legislative-change` | Compilation-by-compilation comparison table | Live compilations without browsing: `NOT VERIFIED` |
+| `check-australian-privacy-principles` | Layer-by-layer comparison table | Every digest: `hash not computed` |
+| `route-case-citation` | Manual parse worksheet and the skill's routing table | Proof the decision exists |
+| `configure-legal-triage` | Checklist of the validator's checks, including review dates against today's date | `VALIDATED APPROVED PROFILE` |
+
+## Deadline calculator workbook
+
+`scripts/ai_tool_workbooks.py` generates `references/deadline-calculator.xlsx`
+with openpyxl at build time from the computation-rule and holiday tables of
+the same tree. It is not committed: the generator is the reviewable source.
+Workbook metadata and zip entry times are fixed, so the bundle stays
+byte-identical across rebuilds.
+
+Sheets: Calculator (yellow inputs and the result), Rules (one row per period
+rule, with provision evidence and excluded ranges resolved), HolidayTables
+and Holidays (one column per registry, plus a `custom` column a person fills
+and marks verified), Windows (uncertain holiday windows), Scope (what the
+workbook does not cover), and Engine and Working (the formulas, open for
+review).
+
+Safeguards in the sheet itself:
+
+- No date shows unless the profile is marked approved, the profile, confirmer
+  and diary system are named, the trigger event and date are entered, the
+  date is not contested and the matter type is a civil step fixed by a rule.
+  Otherwise the status is `NOT READY` or `OUTSIDE SCOPE`.
+- Every refusal of the deterministic computation is reproduced, in the same
+  order: unverified rule, provision or holiday table, unsupported unit or
+  rollover, excluded ranges on months or years, short calendar-day periods
+  that count only business days, a missing registry table for federal courts
+  and the ART, dates outside coverage or in an uncertain window, and a
+  rollover into an excluded range. The status is then
+  `IDENTIFY-ONLY - NOT COMPUTED` with the reason.
+- A computed result is labelled `CANDIDATE DATE - NOT BINDING UNTIL CONFIRMED`
+  and carries the human decision gate.
+
+The formulas scan day by day (WEEKDAY, COUNTIF, MATCH, EDATE) rather than
+using WORKDAY.INTL. The scan follows the deterministic computation's walk
+exactly, a reviewer can read it row by row, and it does not depend on how a
+spreadsheet treats a non-business start day in WORKDAY.INTL. Trade-off: the
+count scan covers 120 days after the trigger and a rollover 15 days; longer
+periods are refused. Raise those limits in the generator if a rule needs
+them.
+
+`tests/test_deadline_workbook.py` proves the formulas. It evaluates the
+generated workbook with the formulas package against every case of the
+deadline engine's own tests (hand-derived fixtures, refusals, excluded-range
+cases, unverified tables and every 2026 NSW holiday), against every shipped
+rule for several triggers and registries, and against the gates and the
+custom holiday column. A test fails if a status, date or refusal reason
+differs from the engine. LibreOffice and Excel were not run; a live check
+in the spreadsheet a firm uses is still worth doing before first reliance.
+
+A table verified after a release reaches the workbook only in the next
+release. Build a new bundle when a table changes.
 
 The shared rules are in `references/ai-tool-mode.md`. The JSON rule tables
 carry descriptive notes that mention the computation step; they are data and
@@ -71,13 +131,18 @@ Keep Claude Code behaviour unchanged by editing one `SKILL.md`:
   The bundle drops them. They are invisible comments in the plugin.
 - Write the replacement as a visible `## AI-tool mode` section at the end of
   the skill. In the plugin it is marked as ignorable by hosts that can run code.
+- Write the no-code procedure in `plugins/legal-skills/ai-tool/no-code/<skill>.md`.
+  It ships only in the bundle, as `skills/<skill>/no-code.md`, and the build
+  adds a link to it at the top of the skill's `AI-tool mode` section. Links in
+  it resolve against the bundle layout, not the plugin.
 - `<!-- ai-tool:bundle: ... -->` carries bundle-only wording for a passage the
   bundle replaces. Claude Code reads the raw file, so it sees that text beside
   the original wording; the original gates and commands are intact.
 - Elsewhere, word prose neutrally ("the deterministic computation step").
 
 The validator and `tests/test_ai_tool_bundle.py` fail when a skill with a
-`scripts/` folder lacks the section or the markers. They also fail when any skill marks code-only
+`scripts/` folder lacks the section or the markers, when a skill with the
+section has no no-code procedure, or when a procedure names no such skill. They also fail when any skill marks code-only
 passages without the section, which covers skills that need code steps but ship
 no `scripts/` folder, such as `verify-deadline-basis`.
 
@@ -152,7 +217,7 @@ Nothing below was tested against a live tenant.
 1. Download the release zip and unzip it.
 2. Create a Vault project and upload the `legal-skills` folder's files,
    keeping the folder layout if the Vault allows it. The full bundle is about
-   216 files and 0.5 MB zipped, far below the reported (unverified) Vault limits.
+   226 files and 0.6 MB zipped, far below the reported (unverified) Vault limits.
 3. Attach the project as a knowledge source in Assistant, or embed
    `ROUTER.md` and the skills you want in a custom workflow. A workflow
    embedded-document cap (reported as 50) is smaller than the full bundle, so

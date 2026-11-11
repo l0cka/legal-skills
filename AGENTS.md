@@ -38,15 +38,20 @@ See `docs/architecture.md`.
 - Keep detailed optional material in directly linked `references/` files.
 - Keep the AI-tool bundle in step: a skill that ships a `scripts/` folder
   needs an `## AI-tool mode` section and its code-only passages wrapped in
-  `<!-- ai-tool:code -->` markers. See `docs/portability.md`. Build the bundle
-  with `scripts/build-ai-tool-bundle.sh`; the validator runs its checks.
+  `<!-- ai-tool:code -->` markers, and every skill with that section needs a
+  no-code replacement in `plugins/legal-skills/ai-tool/no-code/<skill>.md`.
+  See `docs/portability.md`. Build the bundle with
+  `scripts/build-ai-tool-bundle.sh`; the validator runs its checks.
 - Preserve upstream attribution and licence notices for imported material.
 - Do not add MCP servers, apps, hooks, or write actions without documenting
   their permissions and approval boundaries.
 
 ## Completion gate
 
-Install the test dependency once with `python3 -m pip install -r requirements-dev.txt`.
+Install the build and test dependencies once with
+`python3 -m pip install -r requirements-dev.txt`: openpyxl
+(`requirements-build.txt`) generates the bundle's deadline workbook, formulas
+evaluates its formulas in the tests, and PyYAML reads the eval case files.
 
 Run:
 

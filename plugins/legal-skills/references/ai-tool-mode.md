@@ -14,8 +14,17 @@ can run code use the plugin and ignore this file.
   `verify-deadline-basis` has a table fingerprint that is not computed here. In
   the bundle each of the nine has an `AI-tool mode` section in place of that
   step.
-- Dates are never computed. A deadline result names the rule, its source, the
-  inputs a person needs and `not computed`.
+- The model never computes a date. A deadline result names the rule, its
+  source, the inputs a person needs and `not computed`, unless a person fills
+  the deadline calculator workbook (`references/deadline-calculator.xlsx`)
+  and supplies its result. That result is a candidate, never the binding
+  deadline, and the workbook keeps every gate and refusal of the
+  deterministic computation.
+- Each skill that needs code has a `no-code.md` procedure beside its
+  `SKILL.md`: a spreadsheet where a calculation is needed, a checklist or
+  record where judgement or a manual lookup is enough. Where neither can do
+  the job honestly, the procedure says so: digests stay not computed,
+  and live legislation status stays `NOT VERIFIED` until a source is opened.
 - Legislation checks give the official source and the search steps. If the
   host cannot browse, the result is `NOT VERIFIED` until a person supplies the
   source text.
@@ -36,7 +45,8 @@ can run code use the plugin and ignore this file.
   confirms it passed outside this host, and compare its review dates with
   today's date (ask the person for it if the host cannot supply it): any date that has passed means do not use it for live triage.
 - Warnings in the rule tables that describe how the computation counts or
-  rounds do not apply: nothing is computed. Read them as the rule's caveats.
+  rounds describe what the workbook does. Without the workbook nothing is
+  computed: read them as the rule's caveats.
 
 ## What does not change
 

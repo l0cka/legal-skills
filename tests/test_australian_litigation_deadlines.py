@@ -355,47 +355,51 @@ def build_rules_table(
     }
 
 
+def write_engine_tables(tables_dir: Path) -> None:
+    (tables_dir / "computation-rules").mkdir()
+    shutil.copytree(PLUGIN / "references" / "holidays", tables_dir / "holidays")
+    cases = FIXTURES + [case[:5] for case in REFUSALS]
+    for table_key in ("nsw", "vic"):
+        combos = {(unit, length, rollover) for key, unit, length, rollover, *_ in cases if key == table_key}
+        table = build_rules_table(table_key, combos)
+        path = tables_dir / "computation-rules" / f"test-{table_key}.json"
+        path.write_text(json.dumps(table), encoding="utf-8")
+
+    effects_cases = EFFECTS_FIXTURES + [case[:5] for case in EFFECTS_REFUSALS]
+    for table_key, holiday_key in (("fcrx", "nsw"), ("winhol", "winhol")):
+        combos = {(unit, length, rollover) for key, unit, length, rollover, *_ in effects_cases if key == table_key}
+        table = build_rules_table(
+            table_key,
+            combos,
+            holiday_table=holiday_key,
+            effects=FCR_EFFECTS,  # gitleaks:allow
+        )
+        path = tables_dir / "computation-rules" / f"test-{table_key}.json"
+        path.write_text(json.dumps(table), encoding="utf-8")
+    (tables_dir / "holidays" / "winhol.json").write_text(
+        json.dumps(
+            {
+                "table_id": "winhol",
+                "jurisdiction": "TEST",
+                "source_url": "https://example.invalid/",
+                "checked": "2026-08-14",
+                "evidence": dict(VERIFIED),
+                "coverage": {"from": "2026-01-01", "to": "2026-12-31"},
+                "holidays": ["2026-12-21", "2026-12-22", "2026-12-23"],
+                "uncertain_windows": [],
+                "caveats": [],
+            }
+        ),
+        encoding="utf-8",
+    )
+
+
 class ComputationEngineTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
         cls._tmp = tempfile.TemporaryDirectory()
         cls.tables_dir = Path(cls._tmp.name)
-        (cls.tables_dir / "computation-rules").mkdir()
-        shutil.copytree(PLUGIN / "references" / "holidays", cls.tables_dir / "holidays")
-        cases = FIXTURES + [case[:5] for case in REFUSALS]
-        for table_key in ("nsw", "vic"):
-            combos = {(unit, length, rollover) for key, unit, length, rollover, *_ in cases if key == table_key}
-            table = build_rules_table(table_key, combos)
-            path = cls.tables_dir / "computation-rules" / f"test-{table_key}.json"
-            path.write_text(json.dumps(table), encoding="utf-8")
-
-        effects_cases = EFFECTS_FIXTURES + [case[:5] for case in EFFECTS_REFUSALS]
-        for table_key, holiday_key in (("fcrx", "nsw"), ("winhol", "winhol")):
-            combos = {(unit, length, rollover) for key, unit, length, rollover, *_ in effects_cases if key == table_key}
-            table = build_rules_table(
-                table_key,
-                combos,
-                holiday_table=holiday_key,
-                effects=FCR_EFFECTS,  # gitleaks:allow
-            )
-            path = cls.tables_dir / "computation-rules" / f"test-{table_key}.json"
-            path.write_text(json.dumps(table), encoding="utf-8")
-        (cls.tables_dir / "holidays" / "winhol.json").write_text(
-            json.dumps(
-                {
-                    "table_id": "winhol",
-                    "jurisdiction": "TEST",
-                    "source_url": "https://example.invalid/",
-                    "checked": "2026-08-14",
-                    "evidence": dict(VERIFIED),
-                    "coverage": {"from": "2026-01-01", "to": "2026-12-31"},
-                    "holidays": ["2026-12-21", "2026-12-22", "2026-12-23"],
-                    "uncertain_windows": [],
-                    "caveats": [],
-                }
-            ),
-            encoding="utf-8",
-        )
+        write_engine_tables(cls.tables_dir)
 
     @classmethod
     def tearDownClass(cls) -> None:

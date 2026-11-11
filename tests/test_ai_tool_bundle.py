@@ -69,6 +69,41 @@ class BundleContentTests(unittest.TestCase):
             self.assertIn("litigation-deadlines-source-and-control-method.md", text, skill)
             self.assertIn("binding deadline", text, skill)
 
+    def test_every_code_dependent_skill_has_a_linked_no_code_replacement(self) -> None:
+        skills = bundle.code_dependent_skills()
+        self.assertEqual(len(skills), 9)
+        router = self.files["ROUTER.md"].decode()
+        for skill in skills:
+            with self.subTest(skill=skill):
+                self.assertIn(f"skills/{skill}/no-code.md", self.files)
+                section = self.files[f"skills/{skill}/SKILL.md"].decode().split(bundle.SECTION_HEADING)[1]
+                self.assertIn("](no-code.md)", section)
+                self.assertIn(f"(skills/{skill}/no-code.md)", router)
+
+    def test_deadline_procedures_use_the_generated_workbook(self) -> None:
+        workbook = bundle.ai_tool_workbooks.DEADLINE_WORKBOOK
+        self.assertEqual(self.files[workbook], bundle.ai_tool_workbooks.deadline_calculator(bundle.PLUGIN / "references"))
+        for skill in ("compute-procedural-deadlines", "map-tribunal-review-deadlines"):
+            text = self.files[f"skills/{skill}/no-code.md"].decode()
+            self.assertIn("deadline-calculator.xlsx", text, skill)
+            self.assertIn("binding deadline", text, skill)
+            self.assertIn("confirmer", text, skill)
+        for area in bundle.load_catalog()["areas"]:
+            self.assertIn(workbook, bundle.build_files(area["id"]), area["id"])
+
+    def test_procedures_that_cannot_compute_say_not_computed(self) -> None:
+        for skill, phrase in (
+            ("verify-deadline-basis", "fingerprint not computed"),
+            ("check-australian-privacy-principles", "hash not computed"),
+            ("check-commonwealth-legislation", "NOT VERIFIED"),
+            ("check-nsw-legislation", "NOT VERIFIED"),
+            ("trace-commonwealth-legislative-change", "NOT VERIFIED"),
+            ("configure-legal-triage", "automated validation not\nrun"),
+            ("route-case-citation", "parsed manually"),
+        ):
+            with self.subTest(skill=skill):
+                self.assertIn(phrase, self.files[f"skills/{skill}/no-code.md"].decode())
+
     def test_fingerprint_is_never_computed_in_the_bundle(self) -> None:
         text = self.files["skills/verify-deadline-basis/SKILL.md"].decode()
         self.assertNotIn("Compute a fingerprint", text)
@@ -213,6 +248,14 @@ class BundleCheckTests(unittest.TestCase):
     def test_flags_leftover_marker(self) -> None:
         self.assertTrue(bundle.check_files({"a.md": b"<!-- ai-tool:code -->\n"}))
 
+    def test_flags_code_dependent_skill_without_its_no_code_file(self) -> None:
+        files = {"skills/demo/SKILL.md": b"# Demo\n\n## AI-tool mode\n\nBy hand.\n"}
+        self.assertTrue(any("no-code.md replacement" in p for p in bundle.check_files(files)))
+        files["skills/demo/no-code.md"] = b"# Steps\n"
+        self.assertTrue(any("does not link no-code.md" in p for p in bundle.check_files(files)))
+        files["skills/demo/SKILL.md"] = bundle.link_no_code(files["skills/demo/SKILL.md"].decode()).encode()
+        self.assertEqual(bundle.check_files(files), [])
+
     def test_flags_script_backed_skill_missing_its_section_in_the_bundle(self) -> None:
         files = {"skills/check-nsw-legislation/SKILL.md": b"# No section\n"}
         self.assertTrue(any("AI-tool mode" in p for p in bundle.check_files(files)))
@@ -227,13 +270,28 @@ class BundleCheckTests(unittest.TestCase):
 
 
 class SourceCheckTests(unittest.TestCase):
-    def make_plugin(self, tmp: str, body: str) -> Path:
+    def make_plugin(self, tmp: str, body: str, no_code: bool = True) -> Path:
         plugin = Path(tmp)
         skill = plugin / "skills" / "demo-skill"
         (skill / "scripts").mkdir(parents=True)
         (skill / "scripts" / "run.py").write_text("print(1)\n", encoding="utf-8")
         (skill / "SKILL.md").write_text(body, encoding="utf-8")
+        if no_code:
+            (plugin / "ai-tool" / "no-code").mkdir(parents=True)
+            (plugin / "ai-tool" / "no-code" / "demo-skill.md").write_text("# Steps\n", encoding="utf-8")
         return plugin
+
+    def test_section_without_no_code_source_fails(self) -> None:
+        body = "# Demo\n<!-- ai-tool:code -->\nrun\n<!-- /ai-tool:code -->\n\n## AI-tool mode\n\nBy hand.\n"
+        with tempfile.TemporaryDirectory() as tmp:
+            problems = bundle.source_problems(self.make_plugin(tmp, body, no_code=False))
+            self.assertTrue(any("no ai-tool/no-code/demo-skill.md replacement" in p for p in problems))
+
+    def test_orphan_no_code_source_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            plugin = self.make_plugin(tmp, "# Demo\n")
+            (plugin / "ai-tool" / "no-code" / "gone-skill.md").write_text("# Steps\n", encoding="utf-8")
+            self.assertTrue(any("gone-skill.md: no skill" in p for p in bundle.source_problems(plugin)))
 
     def test_new_script_backed_skill_without_section_fails(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:

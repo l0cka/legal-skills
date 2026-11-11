@@ -20,9 +20,13 @@ skill states its own jurisdiction.
 
 ## What this bundle cannot do
 
-No code runs here. Deadlines are identify-only: the rule, its source, the
-inputs a person needs and `not computed`. Legislation checks give the
-official source and search steps unless the tool can browse. Read
+No code runs here, and the model never does date arithmetic. Each skill that
+needs code has a `no-code.md` procedure beside its `SKILL.md`, linked below.
+Deadline dates come only from `references/deadline-calculator.xlsx`, a
+spreadsheet a person fills and reads; without it a deadline is identify-only:
+the rule, its source, the inputs a person needs and `not computed`.
+Legislation checks give the official source and search steps unless the tool
+can browse. Hashes and fingerprints are not computed. Read
 `references/ai-tool-mode.md` once before the first task.
 
 ## Skills by practice area
@@ -32,6 +36,8 @@ official source and search steps unless the tool can browse. Read
 ## Files
 
 - `skills/<name>/SKILL.md`: one workflow per skill, with its `references/`.
-- `references/`: shared source methods, schemas, rule tables and holiday data.
+- `skills/<name>/no-code.md`: the replacement for a step that needs code.
+- `references/`: shared source methods, schemas, rule tables, holiday data
+  and the deadline calculator workbook.
 - `catalog.json`: practice areas and their skills.
 - `PRIVACY.md`, `LICENSE`, `VERSION`.

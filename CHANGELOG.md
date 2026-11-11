@@ -21,6 +21,19 @@ manifests contain the intended release version.
   identify-only, legislation checks give official sources and steps, and
   validation is manual. The validator, a test and CI check the bundle, and
   the draft release attaches the zips. See `docs/portability.md`.
+- No-code replacements in the AI-tool bundle for the nine skills that need
+  code: each ships a `no-code.md` procedure beside its `SKILL.md`, linked from
+  its `AI-tool mode` section and from `ROUTER.md`. The deadline skills get a
+  deadline calculator workbook (`references/deadline-calculator.xlsx`),
+  generated at build time from the computation-rule and holiday tables. A
+  person fills the trigger, rule and registry holiday table, and the formulas
+  give a candidate date only when the approved profile, confirmer and diary
+  system are named. The workbook reproduces every refusal of the
+  deterministic computation and flags out-of-scope matters in the sheet.
+  Tests evaluate its formulas against the deadline engine's own cases. The
+  legislation, citation, APP and triage procedures are checklists and record
+  tables; hashes and fingerprints stay `not computed`. Building the bundle now
+  needs openpyxl (`requirements-build.txt`).
 
 ### Changed
 

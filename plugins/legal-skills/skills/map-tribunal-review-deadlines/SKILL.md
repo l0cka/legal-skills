@@ -94,7 +94,10 @@ leaves the code steps out; hosts that can run code ignore it. General rules:
 [AI-tool mode](../../references/ai-tool-mode.md).
 
 This host cannot run the deterministic computation, and the model must never
-do date arithmetic. Deliver identify-only output for each candidate.
+do date arithmetic. Deliver identify-only output for each candidate. A
+candidate date for a tribunal general period may come only from the deadline
+calculator workbook, filled and read by a person as the no-code procedure
+describes.
 
 0. Read the [source and control method](../../references/litigation-deadlines-source-and-control-method.md)
    and use an approved profile per the
@@ -120,11 +123,12 @@ do date arithmetic. Deliver identify-only output for each candidate.
    non-extendable or jurisdictional and have changed repeatedly, and flag
    specialist review before reliance.
 
-Lead with `IDENTIFY-ONLY - NOT COMPUTED`, `NOT READY` or `OUTSIDE SCOPE`.
+Lead with `READY FOR HUMAN REVIEW` (only for a workbook candidate a person
+supplied), `IDENTIFY-ONLY - NOT COMPUTED`, `NOT READY` or `OUTSIDE SCOPE`.
 
 ```text
 Decision: <decision; decision-maker; tribunal; notification date assumption>
-Candidates: <period; basis; source; evidence state; result: not computed>
+Candidates: <period; basis; source; evidence state; result: not computed or workbook candidate as read by <person>>
 Conferring-Act check: <provision named or routed; evidence state>
 Migration warning: <present on every migration matter; specialist review>
 Inputs needed: <notification date, registry holiday table, conferring Act period>

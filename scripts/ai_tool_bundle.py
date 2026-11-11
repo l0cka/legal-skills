@@ -9,11 +9,17 @@ import sys
 import zipfile
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import ai_tool_workbooks  # noqa: E402
+
 ROOT = Path(__file__).resolve().parents[1]
 PLUGIN = ROOT / "plugins" / "legal-skills"
 TEMPLATES = PLUGIN / "ai-tool"
 TOP = "legal-skills"
 SECTION_HEADING = "## AI-tool mode"
+NO_CODE_DIR = "no-code"
+NO_CODE_NAME = "no-code.md"
+NO_CODE_LINE = f"Follow the [no-code procedure]({NO_CODE_NAME}) for this skill.\n\n"
 CODE_REGION = re.compile(
     r"^[ \t]*<!-- ai-tool:code -->.*?<!-- /ai-tool:code -->[ \t]*\n?|<!-- ai-tool:code -->.*?<!-- /ai-tool:code -->",
     re.DOTALL | re.MULTILINE,
@@ -67,8 +73,25 @@ def script_backed_skills(plugin: Path = PLUGIN) -> list[str]:
     return sorted(p.parent.name for p in (plugin / "skills").glob("*/scripts") if p.is_dir())
 
 
+def code_dependent_skills(plugin: Path = PLUGIN) -> list[str]:
+    return sorted(
+        path.parent.name
+        for path in (plugin / "skills").glob("*/SKILL.md")
+        if SECTION_HEADING in path.read_text(encoding="utf-8")
+    )
+
+
+def no_code_problems(plugin: Path) -> list[str]:
+    folder = plugin / "ai-tool" / NO_CODE_DIR
+    needed = set(code_dependent_skills(plugin))
+    present = {path.stem for path in folder.glob("*.md")} if folder.is_dir() else set()
+    problems = [f"skills/{skill}/SKILL.md: has an AI-tool mode section but no ai-tool/{NO_CODE_DIR}/{skill}.md replacement" for skill in sorted(needed - present)]
+    problems += [f"ai-tool/{NO_CODE_DIR}/{skill}.md: no skill with an AI-tool mode section has this name" for skill in sorted(present - needed)]
+    return problems
+
+
 def source_problems(plugin: Path = PLUGIN) -> list[str]:
-    problems: list[str] = []
+    problems: list[str] = no_code_problems(plugin)
     for skill in script_backed_skills(plugin):
         path = plugin / "skills" / skill / "SKILL.md"
         text = path.read_text(encoding="utf-8") if path.is_file() else ""
@@ -99,6 +122,10 @@ def strip_code_regions(text: str) -> str:
     return GENERATED_HEADER.sub("", BUNDLE_TEXT.sub(r"\1", CODE_REGION.sub("", text)))
 
 
+def link_no_code(text: str) -> str:
+    return re.sub(rf"^{re.escape(SECTION_HEADING)}\n\n", lambda m: m.group(0) + NO_CODE_LINE, text, count=1, flags=re.MULTILINE)
+
+
 def tree_files(base: Path, rel_prefix: str) -> dict[str, bytes]:
     files: dict[str, bytes] = {}
     for path in sorted(base.rglob("*")):
@@ -114,7 +141,10 @@ def render_router(areas: list[dict], version: str, whole: bool) -> str:
     for area in areas:
         lines = [f"### {area['displayName']}", "", area["shortDescription"], ""]
         for skill in area["skills"]:
-            lines.append(f"- [`{skill}`](skills/{skill}/SKILL.md): {skill_description(skill)}")
+            line = f"- [`{skill}`](skills/{skill}/SKILL.md): {skill_description(skill)}"
+            if (TEMPLATES / NO_CODE_DIR / f"{skill}.md").is_file():
+                line += f" No-code: [procedure](skills/{skill}/{NO_CODE_NAME})."
+            lines.append(line)
         blocks.append("\n".join(lines))
     template = (TEMPLATES / "ROUTER.template.md").read_text(encoding="utf-8")
     entry = ENTRY_FULL if whole else ENTRY_AREA
@@ -156,7 +186,12 @@ def build_files(area: str | None = None, version: str | None = None) -> dict[str
         for sub in ("references", "assets"):
             if (base / sub).is_dir():
                 files.update(tree_files(base / sub, f"skills/{skill}/{sub}"))
+        no_code = TEMPLATES / NO_CODE_DIR / f"{skill}.md"
+        if no_code.is_file():
+            files[f"skills/{skill}/{NO_CODE_NAME}"] = no_code.read_bytes()
+            files[f"skills/{skill}/SKILL.md"] = link_no_code(files[f"skills/{skill}/SKILL.md"].decode("utf-8")).encode("utf-8")
     files.update(tree_files(PLUGIN / "references", "references"))
+    files.update(ai_tool_workbooks.bundle_workbooks(PLUGIN))
     for name in ("PRIVACY.md", "LICENSE"):
         files[name] = (PLUGIN / name).read_bytes()
 
@@ -238,6 +273,17 @@ def check_files(files: dict[str, bytes]) -> list[str]:
         path = f"skills/{skill}/SKILL.md"
         if path in names and SECTION_HEADING not in files[path].decode("utf-8"):
             problems.append(f"{path}: script-backed skill has no '{SECTION_HEADING}' section")
+    for name in sorted(names):
+        if not (name.startswith("skills/") and name.endswith("/SKILL.md")):
+            continue
+        text = files[name].decode("utf-8")
+        if SECTION_HEADING not in text:
+            continue
+        procedure = name.rsplit("/", 1)[0] + "/" + NO_CODE_NAME
+        if procedure not in names:
+            problems.append(f"{name}: code-dependent skill has no {NO_CODE_NAME} replacement")
+        elif f"]({NO_CODE_NAME})" not in text.split(SECTION_HEADING, 1)[1]:
+            problems.append(f"{name}: AI-tool mode section does not link {NO_CODE_NAME}")
     return problems
 
 

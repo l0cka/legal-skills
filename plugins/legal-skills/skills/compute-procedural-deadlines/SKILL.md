@@ -90,7 +90,9 @@ leaves the code steps out; hosts that can run code ignore it. General rules:
 
 This host cannot run the deterministic computation, and the model must never
 do date arithmetic. Deliver identify-only output: the rule, its source, the
-inputs a person needs and `not computed`.
+inputs a person needs and `not computed`. A candidate date may come only from
+the deadline calculator workbook, filled and read by a person as the no-code
+procedure describes.
 
 0. Read the [source and control method](../../references/litigation-deadlines-source-and-control-method.md)
    and use an approved profile per the
@@ -114,10 +116,12 @@ inputs a person needs and `not computed`.
 4. If no rule matches, or its evidence state is `pending-verification`, say so
    and route verification to `$verify-deadline-basis`.
 5. Never state, estimate or adjust a date, and never present a candidate as
-   the binding deadline. Give the person the inputs to count it themselves or
-   in a diary system.
+   the binding deadline. Give the person the inputs to read it from the
+   workbook or to count it in a diary system. Report a workbook candidate
+   exactly as the person supplied it, with the workbook's reason and warnings.
 
-Lead with `IDENTIFY-ONLY - NOT COMPUTED`, `NOT READY` or `OUTSIDE SCOPE`.
+Lead with `READY FOR HUMAN REVIEW` (only for a workbook candidate a person
+supplied), `IDENTIFY-ONLY - NOT COMPUTED`, `NOT READY` or `OUTSIDE SCOPE`.
 
 ```text
 Step: <forum; procedural step; governing rule citation>
@@ -125,8 +129,8 @@ Trigger: <lawyer-supplied trigger event and date; stated as assumption>
 Rule: <period rule id; period length and unit; rollover>
 Source: <source URL; evidence state and checked date>
 Inputs needed: <trigger date, registry location, holiday table, court directions>
-Result: not computed
+Result: <not computed | workbook candidate date and day, as read by <person>>
 Warnings: <rule warnings; holiday caveats>
 Human decision gate: <confirmer; diary entry pending confirmation>
-Limitations: <identify-only; not a diary system; every date needs confirmation>
+Limitations: <identify-only or workbook candidate; not a diary system; every date needs confirmation>
 ```
