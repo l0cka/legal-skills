@@ -90,6 +90,7 @@ class WorkbookAgreementMixin:
         else:
             self.assertEqual(sheet["out_status"], workbooks.STATUS_IDENTIFY, f"{context}: {engine} {sheet}")
             self.assertEqual(sheet["out_candidate"], "not computed", context)
+            self.assertEqual(sheet["out_reason"], engine["reason"], context)
 
 
 class EngineCaseTests(WorkbookAgreementMixin, unittest.TestCase):
@@ -110,7 +111,24 @@ class EngineCaseTests(WorkbookAgreementMixin, unittest.TestCase):
         unverified["evidence"] = {"state": "pending-verification"}
         (cls.tables_dir / "holidays" / "unv.json").write_text(json.dumps(unverified), encoding="utf-8")
         unv = build_rules_table("unv", {("calendar_days", 1, "next_business_day")})
-        for table in (pending, provision, unv):
+        edge = build_rules_table("vic", {("calendar_days", 1, "next_business_day")})
+        edge["table_id"] = "test-edge"
+        template = edge["period_rules"][0]
+        edge["period_rules"] = [
+            {**template, "id": "bad-rollover", "rollover": "previous_business_day"},
+            {**template, "id": "zero-length", "period": {"length": 0, "unit": "calendar_days"}},
+            {**template, "id": "fraction-length", "period": {"length": 1.5, "unit": "calendar_days"}},
+            {**template, "id": "missing-provision", "applies_provisions": ["no-such-provision"]},
+            {**template, "id": "no-evidence", "evidence": {}},
+            {**template, "id": "window-roll"},
+            {**template, "id": "long-business", "period": {"length": 200, "unit": "business_days"}, "rollover": "none"},
+        ]
+        long_holidays = json.loads((cls.tables_dir / "holidays" / "nsw.json").read_text(encoding="utf-8"))
+        long_holidays["table_id"] = "longhol"
+        long_holidays["holidays"] = sorted({*long_holidays["holidays"], *(f"2026-08-{day:02d}" for day in range(1, 32))})
+        (cls.tables_dir / "holidays" / "longhol.json").write_text(json.dumps(long_holidays), encoding="utf-8")
+        longhol = build_rules_table("longhol", {("calendar_days", 1, "next_business_day")})
+        for table in (pending, provision, unv, edge, longhol):
             path = cls.tables_dir / "computation-rules" / f"{table['table_id']}.json"
             path.write_text(json.dumps(table), encoding="utf-8")
         cls.calc = Calculator(cls.tables_dir, Path(cls._tmp.name))
@@ -148,6 +166,34 @@ class EngineCaseTests(WorkbookAgreementMixin, unittest.TestCase):
             with self.subTest(table_id):
                 engine, sheet = self.compare(table_id, unit, length, rollover, "2026-08-14")
                 self.assertIn(reason, engine["reason"])
+                self.assertIn(reason, sheet["out_reason"])
+
+    def test_edge_refusals_match_the_engine_reason(self) -> None:
+        for rule, trigger in (
+            ("bad-rollover", "2026-08-14"),
+            ("zero-length", "2026-08-14"),
+            ("fraction-length", "2026-08-14"),
+            ("missing-provision", "2026-08-14"),
+            ("no-evidence", "2026-08-14"),
+            ("window-roll", "2027-08-31"),
+        ):
+            with self.subTest(rule):
+                engine = ENGINE.compute({"table_id": "test-edge", "period_rule_id": rule, "trigger_date": trigger}, self.tables_dir)
+                self.assert_agrees(engine, self.calc.run(f"test-edge / {rule}", trigger), rule)
+                self.assertEqual(engine["status"], "identify_only", engine)
+
+    def test_scan_limits_refuse_where_the_engine_computes(self) -> None:
+        for rule, trigger, reason in (
+            ("test-edge / long-business", "2026-08-14", "120-day scan"),
+            ("test-longhol / calendar_days-1-next_business_day", "2026-07-31", "no business day within 15 days"),
+        ):
+            with self.subTest(rule):
+                table_id, rule_name = rule.split(" / ")
+                engine = ENGINE.compute({"table_id": table_id, "period_rule_id": rule_name, "trigger_date": trigger}, self.tables_dir)
+                self.assertEqual(engine["status"], "computed", engine)
+                sheet = self.calc.run(rule, trigger)
+                self.assertEqual(sheet["out_status"], workbooks.STATUS_IDENTIFY, sheet)
+                self.assertEqual(sheet["out_candidate"], "not computed")
                 self.assertIn(reason, sheet["out_reason"])
 
     def test_every_nsw_2026_holiday_rolls_like_the_engine(self) -> None:
@@ -228,12 +274,14 @@ class ShippedWorkbookTests(WorkbookAgreementMixin, unittest.TestCase):
                 self.assertEqual(result["out_status"], status, result)
                 self.assertEqual(result["out_candidate"], "not computed")
 
-    def custom_cells(self, state: str, dates: list[object]) -> dict:
+    def custom_cells(self, state: str, dates: list[object], verifier: str = "Registry clerk") -> dict:
         custom_row = len(self.holiday_tables) + 2
         cells = {
             f"HolidayTables!B{custom_row}": state,
             f"HolidayTables!C{custom_row}": serial("2026-01-01"),
             f"HolidayTables!D{custom_row}": serial("2027-12-31"),
+            f"HolidayTables!E{custom_row}": "https://example.invalid/holidays",
+            f"HolidayTables!H{custom_row}": verifier,
         }
         column = workbooks.get_column_letter(len(self.holiday_tables) + 1)
         for index, value in enumerate(dates):
@@ -253,6 +301,11 @@ class ShippedWorkbookTests(WorkbookAgreementMixin, unittest.TestCase):
         self.assertIn("not 'verified'", unverified["out_reason"])
         verified = self.calc.run(rule, "2026-09-07", "custom", cells=self.custom_cells("verified", dates))
         self.assertEqual(verified["out_candidate"], expected)
+        unnamed = self.calc.run(rule, "2026-09-07", "custom", cells=self.custom_cells("verified", dates, verifier=""))
+        self.assertEqual(unnamed["out_status"], workbooks.STATUS_IDENTIFY)
+        self.assertIn("the person who verified it", unnamed["out_reason"])
+        lower = self.calc.run(rule, "2026-09-07", "custom", cells=self.custom_cells("Verified", dates))
+        self.assertEqual(lower["out_status"], workbooks.STATUS_IDENTIFY)
         typo = self.calc.run(rule, "2026-09-07", "custom", cells=self.custom_cells("verified", [*dates, "2026-13-01"]))
         self.assertEqual(typo["out_status"], workbooks.STATUS_IDENTIFY)
         self.assertIn("not a date", typo["out_reason"])
@@ -276,6 +329,10 @@ class WorkbookFileTests(unittest.TestCase):
         about = " ".join(str(c.value) for row in wb["About"].iter_rows() for c in row)
         self.assertIn("never the binding deadline", about)
         self.assertIn("never the binding deadline", wb["Calculator"]["A2"].value)
+        for name in ("Engine", "Working"):
+            self.assertEqual(wb[name]["M1"].value, workbooks.WORKING_NOTE)
+        for name in ("Rules", "Engine", "Working", "Scope"):
+            self.assertTrue(wb[name].protection.sheet, name)
 
 
 if __name__ == "__main__":

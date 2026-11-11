@@ -52,23 +52,27 @@ Each State and Territory forum uses its own table. For federal courts and the
 ART pick the table of the registry where the act is to be done. For a
 registry not listed, fill the `custom` column of the Holidays sheet and its
 HolidayTables row (evidence `verified`, coverage dates, source and who
-verified it). Until that row says `verified` the workbook refuses.
+verified it). Until that row says `verified` and names the source and the
+verifier, the workbook refuses. It takes up to 100 dates; rows below are
+ignored.
 
 ## Report
 
 Lead with `READY FOR HUMAN REVIEW` when the workbook shows a candidate date,
 otherwise with `IDENTIFY-ONLY - NOT COMPUTED`, `NOT READY` or `OUTSIDE SCOPE`
-as the workbook shows. Use the skill's result contract, with
-`Workbook result:` in place of the computed result line:
+as the workbook shows. Use the result contract in the skill's AI-tool mode
+section, filled from the workbook cells:
 
 ```text
 Step: <forum; procedural step; governing rule citation>
 Trigger: <lawyer-supplied trigger event and date; stated as assumption>
-Workbook result: <candidate date and day as read by <person> | identify-only with the Reason cell>
-Provisions applied: <Provisions applied cell; evidence states>
+Rule: <period rule id; period length and unit; rollover>
+Source: <Source cell; Evidence cell>
+Inputs needed: <trigger date, registry location, holiday table, court directions>
+Result: <workbook candidate date and day, as read by <person> | not computed, with the Reason cell>
 Warnings: <Warnings and Holiday caveats cells>
 Human decision gate: <confirmer; diary entry pending confirmation>
-Limitations: <candidate only; not a diary system; read from the workbook, not computed by the model>
+Limitations: <identify-only or workbook candidate; not a diary system; every date needs confirmation>
 ```
 
 If nobody can open the workbook, fall back to the identify-only output in the

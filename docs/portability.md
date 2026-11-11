@@ -98,6 +98,15 @@ Safeguards in the sheet itself:
   `IDENTIFY-ONLY - NOT COMPUTED` with the reason.
 - A computed result is labelled `CANDIDATE DATE - NOT BINDING UNTIL CONFIRMED`
   and carries the human decision gate.
+- The custom holiday table computes only when its row is marked `verified`
+  (exact lower case) and names its source and the person who verified it.
+- The Engine and Working sheets carry a note that their dates are working
+  values with no gate applied. The Rules, Engine, Working and Scope sheets
+  are protected without a password against accidental edits; protection is
+  not a security control.
+- Known limits: the custom column takes 100 dates and the Windows sheet 40
+  added windows, and rows typed below them are ignored. `TEXT` date formats
+  in reason and day text follow the spreadsheet's locale; the dates do not.
 
 The formulas scan day by day (WEEKDAY, COUNTIF, MATCH, EDATE) rather than
 using WORKDAY.INTL. The scan follows the deterministic computation's walk
@@ -112,8 +121,11 @@ generated workbook with the formulas package against every case of the
 deadline engine's own tests (hand-derived fixtures, refusals, excluded-range
 cases, unverified tables and every 2026 NSW holiday), against every shipped
 rule for several triggers and registries, and against the gates and the
-custom holiday column. A test fails if a status, date or refusal reason
-differs from the engine. LibreOffice and Excel were not run; a live check
+custom holiday column, and edge refusals (unsupported rollover, a zero or
+fractional length, a missing provision, missing evidence and an uncertain
+window met during rollover). A test fails if a status, date or refusal
+reason text differs from the engine. Separate tests prove that the 120-day
+scan and 15-day rollover limits refuse where the engine would compute. LibreOffice and Excel were not run; a live check
 in the spreadsheet a firm uses is still worth doing before first reliance.
 
 A table verified after a release reaches the workbook only in the next

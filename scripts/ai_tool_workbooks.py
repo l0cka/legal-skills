@@ -31,6 +31,7 @@ OUT_OF_SCOPE_TYPES = ("Criminal procedure", "Court-fixed or discretionary date")
 STATUS_CANDIDATE = "CANDIDATE DATE - NOT BINDING UNTIL CONFIRMED"
 STATUS_IDENTIFY = "IDENTIFY-ONLY - NOT COMPUTED"
 DATE_FORMAT = "yyyy-mm-dd"
+WORKING_NOTE = "Working values for review only. No gate is applied here, so no date on this sheet is a result. Read dates only on the Calculator sheet."
 INPUT_FILL = PatternFill("solid", fgColor="FFF2CC")
 OUTPUT_FILL = PatternFill("solid", fgColor="E2EFDA")
 WRAP = Alignment(wrap_text=True, vertical="top")
@@ -76,6 +77,8 @@ RULE_COLUMNS = (
     "short_threshold", "holiday_table", "registry_choice", "warnings", "source_url", "checked", "forums",
 )
 
+NUMERIC_RULE_COLUMNS = {"length", "ex1_from", "ex1_to", "ex2_from", "ex2_to", "short_threshold"}
+
 HOLIDAY_TABLE_COLUMNS = ("table_id", "evidence", "coverage_from", "coverage_to", "source_url", "checked", "caveats", "verified_by")
 
 SCOPE_ROWS = (
@@ -107,7 +110,7 @@ ABOUT_LINES = (
     "",
     "The custom holiday column is for a registry not listed. Enter each holiday date, then set its HolidayTables row to verified, with coverage dates, source and the name of the person who verified it. Until then the sheet refuses any computation that needs it.",
     "",
-    "Limits: day counts and business-day periods are scanned up to 120 days after the trigger, and a rollover up to 15 days; beyond that the sheet refuses. Excluded ranges are written as month and day (1224 is 24 December).",
+    "Limits: day counts and business-day periods are scanned up to 120 days after the trigger, and a rollover up to 15 days; beyond that the sheet refuses. Excluded ranges are written as month and day (1224 is 24 December). The custom holiday column takes up to 100 dates and the Windows sheet up to 40 added windows; anything typed below those rows is ignored. The Rules, Engine, Working and Scope sheets are protected without a password to prevent accidental edits.",
     "",
     "Do not overwrite cells on the Rules, Engine or Working sheets. Edit the computation-rule tables instead and use a newer release of this workbook.",
 )
@@ -182,7 +185,7 @@ def rule_rows(rule_tables: list[dict]) -> list[list[object]]:
                 period.get("length"),
                 period.get("unit") or "",
                 rule.get("rollover", "none"),
-                evidence.get("state") or "missing",
+                evidence.get("state") or "",
                 provision_evidence,
                 "; ".join(applied),
                 *ranges,
@@ -272,7 +275,7 @@ def write_holiday_tables(ws, holiday_tables: list[dict]) -> None:
     for table in holiday_tables:
         ws.append([
             table["table_id"],
-            (table.get("evidence") or {}).get("state") or "missing",
+            (table.get("evidence") or {}).get("state") or "",
             iso(table["coverage"]["from"]),
             iso(table["coverage"]["to"]),
             table.get("source_url") or "",
@@ -390,12 +393,29 @@ def usable_test(day: str, e: dict[str, str], layout: Layout) -> str:
     return f"IF(AND({day}>={e['cover_from']},{day}<={e['cover_to']},{windows}=0),1,0)"
 
 
-def unusable_reason(day: str) -> str:
+def unusable_reason(layout: Layout) -> str:
+    day = "{unusable_day}"
+    window = "INDEX({column},{{window_row}})"
+    start, end, why = (window.format(column=layout.window(column)) for column in (2, 3, 4))
     return (
         f"IF(OR({day}<{{cover_from}},{day}>{{cover_to}}),"
         f"\"holiday table \"&{{hol_id}}&\" covers \"&TEXT({{cover_from}},\"yyyy-mm-dd\")&\" to \"&TEXT({{cover_to}},\"yyyy-mm-dd\")&\" and does not cover \"&TEXT({day},\"yyyy-mm-dd\")&\"; refresh the table before computing dates in that range\","
-        f"TEXT({day},\"yyyy-mm-dd\")&\" falls in an uncertain holiday window of holiday table \"&{{hol_id}}&\"; see the Windows sheet for the reason\")"
+        f"TEXT({day},\"yyyy-mm-dd\")&\" falls in an uncertain holiday window (\"&TEXT({start},\"yyyy-mm-dd\")&\" to \"&TEXT({end},\"yyyy-mm-dd\")&\"): \"&{why})"
     )
+
+
+def state_repr(cell: str) -> str:
+    return f"IF({cell}=\"\",\"None\",\"'\"&{cell}&\"'\")"
+
+
+def not_verified(cell: str) -> str:
+    return f"NOT(EXACT({cell},\"verified\"))"
+
+
+def write_window_hits(ws, e: dict[str, str], layout: Layout) -> None:
+    ws.cell(1, 5, "touches the refused day").font = BOLD
+    for row in range(2, layout.windows_last + 1):
+        ws.cell(row, 5, f"=IF(AND(A{row}<>\"\",A{row}={e['hol_id']},N(B{row})<={e['unusable_day']},N(C{row})>={e['unusable_day']}),1,0)")
 
 
 def write_working(ws, e: dict[str, str], layout: Layout) -> None:
@@ -436,7 +456,8 @@ def write_engine(ws, inputs: dict[str, str], layout: Layout) -> Formulas:
     header = f"Holidays!$A$1:${get_column_letter(layout.custom_col)}$1"
     f.add("idx", f"IF({inputs['rule']}=\"\",0,IFERROR(MATCH({inputs['rule']},{layout.rule('key')},0),0))", "Row of the picked rule in the Rules sheet; 0 when none")
     for name in RULE_COLUMNS[1:]:
-        f.add(name, f"IF({{idx}}=0,\"\",INDEX({layout.rule(name)},{{idx}}))", f"Rules column {name}")
+        text = "" if name in NUMERIC_RULE_COLUMNS else "&\"\""
+        f.add(name, f"IF({{idx}}=0,\"\",INDEX({layout.rule(name)},{{idx}}){text})", f"Rules column {name}")
     f.add("trig", f"IF(ISNUMBER({inputs['trigger']}),INT({inputs['trigger']}),0)", "Trigger date; 0 when not a date", date=True)
     f.add("length_n", "N({length})", "Period length as a number")
     f.add("has_excl", "AND({idx}>0,N({ex1_from})>0)", "An applied provision declares an excluded range")
@@ -444,7 +465,8 @@ def write_engine(ws, inputs: dict[str, str], layout: Layout) -> Formulas:
     f.add("hol_id", f"IF({{registry_choice}}=\"yes\",IF({inputs['registry']}=\"\",\"\",{inputs['registry']}),{{holiday_table}})", "Holiday table: the registry choice for federal courts and the ART, else the forum's own")
     f.add("hol_row", f"IF({{hol_id}}=\"\",0,IFERROR(MATCH({{hol_id}},{layout.table(1)},0),0))", "Row of the holiday table")
     f.add("hol_col", f"IF({{hol_id}}=\"\",0,IFERROR(MATCH({{hol_id}},{header},0),0))", "Column of the holiday table in the Holidays sheet")
-    f.add("hol_ev", f"IF({{hol_row}}=0,\"missing\",INDEX({layout.table(2)},{{hol_row}}))", "Holiday table evidence state")
+    f.add("hol_ev", f"IF({{hol_row}}=0,\"\",INDEX({layout.table(2)},{{hol_row}})&\"\")", "Holiday table evidence state")
+    f.add("hol_named", f"IF({{hol_row}}=0,FALSE,AND(INDEX({layout.table(5)},{{hol_row}})&\"\"<>\"\",OR({{hol_id}}<>\"{CUSTOM_HOLIDAYS}\",INDEX({layout.table(8)},{{hol_row}})&\"\"<>\"\")))", "The table names its source and, for the custom table, who verified it")
     f.add("cover_from", f"IF({{hol_row}}=0,0,N(INDEX({layout.table(3)},{{hol_row}})))", "Holiday table coverage start", date=True)
     f.add("cover_to", f"IF({{hol_row}}=0,0,N(INDEX({layout.table(4)},{{hol_row}})))", "Holiday table coverage end", date=True)
     f.add("hol_caveats", f"IF({{hol_row}}=0,\"\",INDEX({layout.table(7)},{{hol_row}}))", "Holiday table caveats")
@@ -465,25 +487,29 @@ def write_engine(ws, inputs: dict[str, str], layout: Layout) -> Formulas:
     f.add("roll_day", f"IF({{roll_pos}}=0,0,INDEX({layout.roll(2)},{{roll_pos}}))", "That day", date=True)
     f.add("roll_excluded", f"IF({{roll_pos}}=0,0,INDEX({layout.roll(3)},{{roll_pos}}))", "That day is excluded")
     f.add("roll_usable", f"IF({{roll_pos}}=0,0,INDEX({layout.roll(5)},{{roll_pos}}))", "The holiday table answers for that day")
-    f.add("rolled", "IF({apply_roll},{roll_day},{raw})", "Candidate date", date=True)
+    f.add("rolled", "IF({apply_roll},{roll_day},{raw})", "Working value only, not a result: no gate is applied here; read dates on the Calculator sheet", date=True)
+    f.add("count_refused", "AND({count_bad}>0,OR({count_pos}=0,{count_bad}<={count_pos}))", "The business-day count reaches a day the holiday table cannot answer")
+    f.add("unusable_day", "IF({count_refused},{count_bad_day},{roll_day})", "The day the holiday table cannot answer", date=True)
+    f.add("window_row", f"IFERROR(MATCH(1,{layout.window(5)},0),0)", "First uncertain window touching that day")
     units = ",".join(f"{{unit}}=\"{unit}\"" for unit in SUPPORTED_UNITS)
     refusals = (
-        ("{rule_evidence}<>\"verified\"", "\"period rule \"&{rule_id}&\" is in evidence state '\"&{rule_evidence}&\"', not 'verified'; verify it against the official publisher with verify-deadline-basis first\""),
-        ("{provision_evidence}<>\"verified\"", "{provision_evidence}"),
+        (not_verified("{rule_evidence}"), f"\"period rule \"&{{rule_id}}&\" is in evidence state \"&{state_repr('{rule_evidence}')}&\", not 'verified'; verify it against the official publisher with verify-deadline-basis first\""),
+        (not_verified("{provision_evidence}"), "{provision_evidence}"),
         (f"NOT(OR({units}))", "\"unsupported period unit '\"&{unit}&\"'; the period fails closed\""),
         ("NOT(OR({rollover}=\"none\",{rollover}=\"next_business_day\"))", "\"unsupported rollover '\"&{rollover}&\"'; the period fails closed\""),
-        ("NOT(AND(ISNUMBER({length}),{length_n}>=1,{length_n}=INT({length_n})))", "\"period length must be a positive integer\""),
+        ("NOT(AND(ISNUMBER({length}),{length_n}>=1,{length_n}=INT({length_n})))", "\"period length must be a positive integer, got \"&IF({length}=\"\",\"None\",IF(ISNUMBER({length}),{length},\"'\"&{length}&\"'\"))"),
         ("AND({has_excl},{unit}<>\"calendar_days\",{unit}<>\"business_days\")", "\"an applied provision declares excluded ranges, which the tables express only for calendar_days and business_days periods, not '\"&{unit}&\"'; the period fails closed\""),
         ("AND(N({short_threshold})>0,{unit}=\"calendar_days\",{length_n}<=N({short_threshold}))", "\"an applied provision counts only business days in periods of \"&{short_threshold}&\" days or less, which a calendar_days rule cannot express; the period fails closed\""),
-        ("AND({needs_hol},{registry_choice}=\"yes\",{hol_id}=\"\")", "\"this forum has no fixed holiday table; pick the holiday_table of the registry where the act is to be done\""),
+        ("AND({needs_hol},{registry_choice}=\"yes\",{hol_id}=\"\")", "\"this forum has no fixed holiday table; the request must name the holiday_table of the registry where the act is to be done\""),
         ("AND({needs_hol},{hol_row}=0)", "\"holiday table \"&{hol_id}&\" is not in the HolidayTables sheet\""),
-        ("AND({needs_hol},{hol_ev}<>\"verified\")", "\"holiday table \"&{hol_id}&\" is in evidence state '\"&{hol_ev}&\"', not 'verified'; verify it against the official publisher first\""),
+        (f"AND({{needs_hol}},{not_verified('{hol_ev}')})", f"\"holiday table \"&{{hol_id}}&\" is in evidence state \"&{state_repr('{hol_ev}')}&\", not 'verified'; verify it against the official publisher with verify-deadline-basis first\""),
+        ("AND({needs_hol},NOT({hol_named}))", "\"holiday table \"&{hol_id}&\" does not name its source and the person who verified it; fill them in the HolidayTables sheet first\""),
         ("AND({needs_hol},{bad_entries}>0)", "\"holiday table \"&{hol_id}&\" has an entry that is not a date; fix it before computing\""),
-        ("AND({count_bad}>0,OR({count_pos}=0,{count_bad}<={count_pos}))", unusable_reason("{count_bad_day}")),
+        ("{count_refused}", unusable_reason(layout)),
         ("{raw}=0", f"\"the period runs past this workbook's {SCAN_DAYS}-day scan; the period fails closed\""),
         ("AND({apply_roll},{roll_pos}=0)", f"\"no business day within {ROLL_DAYS} days of the last day; the period fails closed\""),
         ("AND({apply_roll},{roll_excluded}=1)", "\"rolling the last day would enter an excluded range at \"&TEXT({roll_day},\"yyyy-mm-dd\")&\"; the interaction of the next-business-day rule with the excluded-days provision is not settled by the tables and needs the responsible lawyer\""),
-        ("AND({apply_roll},{roll_usable}=0)", unusable_reason("{roll_day}")),
+        ("AND({apply_roll},{roll_usable}=0)", unusable_reason(layout)),
     )
     expr = "\"\""
     for condition, message in reversed(refusals):
@@ -574,6 +600,11 @@ def build_deadline_workbook(rule_tables: list[dict], holiday_tables: list[dict])
     inputs = write_calculator_inputs(sheets["Calculator"], layout)
     engine = write_engine(sheets["Engine"], inputs, layout)
     write_working(sheets["Working"], engine.cells, layout)
+    write_window_hits(sheets["Windows"], engine.cells, layout)
+    for name in ("Engine", "Working"):
+        sheets[name].cell(1, 13, WORKING_NOTE).font = BOLD
+    for name in ("Rules", "Engine", "Working", "Scope"):
+        sheets[name].protection.sheet = True
     outputs = write_calculator_outputs(sheets["Calculator"], inputs, engine.cells)
     wb.calculation.fullCalcOnLoad = True
     return wb, {**{f"in_{name}": ref for name, ref in inputs.items()}, **engine.cells, **outputs}
