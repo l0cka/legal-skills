@@ -91,6 +91,10 @@ class WorkbookAgreementMixin:
             self.assertEqual(sheet["out_status"], workbooks.STATUS_IDENTIFY, f"{context}: {engine} {sheet}")
             self.assertEqual(sheet["out_candidate"], "not computed", context)
             self.assertEqual(sheet["out_reason"], engine["reason"], context)
+            shown = [part for part in sheet["out_warnings"].split(" | ") if part]
+            caveats = [part for part in sheet["out_caveats"].split(" | ") if part]
+            self.assertEqual(engine["warnings"][: len(shown)], shown, context)
+            self.assertLessEqual(set(engine["warnings"][len(shown):]), set(caveats), context)
 
 
 class EngineCaseTests(WorkbookAgreementMixin, unittest.TestCase):
@@ -106,6 +110,7 @@ class EngineCaseTests(WorkbookAgreementMixin, unittest.TestCase):
         provision = build_rules_table("nsw", {("calendar_days", 3, "none")})
         provision["table_id"] = "test-provision"
         provision["computation_provisions"][0]["evidence"] = {"state": "pending-verification"}
+        provision["period_rules"][0]["warnings"] = ["Test rule warning kept on refusal."]
         unverified = json.loads((cls.tables_dir / "holidays" / "nsw.json").read_text(encoding="utf-8"))
         unverified["table_id"] = "unv"
         unverified["evidence"] = {"state": "pending-verification"}
@@ -118,7 +123,7 @@ class EngineCaseTests(WorkbookAgreementMixin, unittest.TestCase):
             {**template, "id": "bad-rollover", "rollover": "previous_business_day"},
             {**template, "id": "zero-length", "period": {"length": 0, "unit": "calendar_days"}},
             {**template, "id": "fraction-length", "period": {"length": 1.5, "unit": "calendar_days"}},
-            {**template, "id": "missing-provision", "applies_provisions": ["no-such-provision"]},
+            {**template, "id": "missing-provision", "applies_provisions": ["no-such-provision"], "warnings": ["Test warning one.", "Test warning two."]},
             {**template, "id": "no-evidence", "evidence": {}},
             {**template, "id": "window-roll"},
             {**template, "id": "long-business", "period": {"length": 200, "unit": "business_days"}, "rollover": "none"},

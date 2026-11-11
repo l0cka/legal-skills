@@ -156,13 +156,14 @@ def resolve_provisions(table: dict, rule: dict) -> tuple[str, list[str], list[in
     applied: list[str] = []
     ranges: list[int] = []
     threshold = 0
+    no_ranges = [0] * (2 * EXCLUDED_BLOCKS)
     for prov_id in rule.get("applies_provisions", []):
         provision = provisions.get(prov_id)
         if provision is None:
-            return f"provision {prov_id!r} referenced by rule {rule['id']} is not in the table", [], [], 0
+            return f"provision {prov_id!r} referenced by rule {rule['id']} is not in the table", [], no_ranges, 0
         state = (provision.get("evidence") or {}).get("state")
         if state != "verified":
-            return evidence_message("provision", prov_id, state), [], [], 0
+            return evidence_message("provision", prov_id, state), [], no_ranges, 0
         applied.append(provision["citation"])
         effects = provision.get("time_computation_effects") or {}
         for entry in effects.get("excluded_ranges", []):
@@ -327,9 +328,13 @@ def write_windows(ws, holiday_tables: list[dict], layout: Layout) -> None:
     for table in holiday_tables:
         for window in table.get("uncertain_windows", []):
             ws.append([table["table_id"], iso(window["from"]), iso(window["to"]), window.get("reason", "uncertain window")])
-    for row in range(ws.max_row + 1, layout.windows_last + 1):
+    first_blank = ws.max_row + 1
+    for row in range(first_blank, layout.windows_last + 1):
         for col in range(1, 5):
             mark_input(ws.cell(row, col))
+    dates = DataValidation(type="date", operator="greaterThan", formula1="1")
+    ws.add_data_validation(dates)
+    dates.add(f"B{first_blank}:C{layout.windows_last}")
     for row in ws.iter_rows(min_row=2, max_row=layout.windows_last):
         row[1].number_format = DATE_FORMAT
         row[2].number_format = DATE_FORMAT
@@ -475,7 +480,7 @@ def write_engine(ws, inputs: dict[str, str], layout: Layout) -> Formulas:
     f.add("hol_named", f"IF({{hol_row}}=0,FALSE,AND(INDEX({layout.table(5)},{{hol_row}})&\"\"<>\"\",OR({{hol_id}}<>\"{CUSTOM_HOLIDAYS}\",INDEX({layout.table(8)},{{hol_row}})&\"\"<>\"\")))", "The table names its source and, for the custom table, who verified it")
     f.add("cover_from", f"IF({{hol_row}}=0,0,N(INDEX({layout.table(3)},{{hol_row}})))", "Holiday table coverage start", date=True)
     f.add("cover_to", f"IF({{hol_row}}=0,0,N(INDEX({layout.table(4)},{{hol_row}})))", "Holiday table coverage end", date=True)
-    f.add("hol_caveats", f"IF({{hol_row}}=0,\"\",INDEX({layout.table(7)},{{hol_row}}))", "Holiday table caveats")
+    f.add("hol_caveats", f"IF({{hol_row}}=0,\"\",INDEX({layout.table(7)},{{hol_row}})&\"\")", "Holiday table caveats")
     f.add("bad_entries", f"SUM({layout.picked(11)})", "Holiday cells that are not dates")
     f.add("count_pos", f"IFERROR(MATCH({{length_n}},{layout.scan(7)},0),0)", "Scan day on which the count reaches the period length")
     f.add("count_bad", f"IFERROR(MATCH(1,{layout.scan(8)},0),0)", "First scanned business-count day the holiday table cannot answer")

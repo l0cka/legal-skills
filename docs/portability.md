@@ -128,8 +128,9 @@ window met during rollover, and a business-day count that ends on the first
 weekday past coverage or inside a window). A test fails if a status, date or refusal
 reason text differs from the engine. Separate tests prove that the 120-day
 scan and 15-day rollover limits refuse where the engine would compute, and
-the Provisions, Warnings and Holiday caveats cells are compared with the
-engine for every shipped rule. LibreOffice and Excel were not run; a live
+the Warnings and Holiday caveats cells are compared with the engine for
+every case, computed or refused, and the Provisions cell for every computed
+shipped rule. LibreOffice and Excel were not run; a live
 check in the spreadsheet a firm uses is still worth doing before first
 reliance, because blank-cell handling can differ (a rule with no period
 length reads `got 0` rather than `got None`; it still refuses).
