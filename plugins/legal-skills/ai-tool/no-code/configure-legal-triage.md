@@ -20,7 +20,11 @@ profile is not ready.
 | Identifiers are lowercase letters, digits and hyphens, and unique | | |
 | Versions are semantic versions; dates are real `YYYY-MM-DD` dates | | |
 | Every policy category the schema requires is present | | |
-| Every operational rule has an owner, version, effective date, review date and source, and its `source_policy_id` names a policy in the profile | | |
+| `profile` names the profile id, version, centre, jurisdictions and intended staff roles | | |
+| Every policy has an id, category, title, version, owner, source, effective date and review date | | |
+| Every service area, eligibility factor, exclusion and escalation pathway has a `source_policy_id` that names a policy in the profile | | |
+| Every escalation pathway has a trigger, action and availability | | |
+| Every referral has a name, scope, contact, source, jurisdictions, `verified_at` and `review_due` | | |
 | `data_handling`: `staff_facing_only`, `minimum_necessary` and `client_notice_required` are `true`; `public_ai_personal_information`, `model_training_with_client_data` and `model_may_write_client_record` are `false`; `approved_environment` is named | | |
 | `human_review`: `required` and `can_override` are `true`, `automated_rejection_allowed` is `false`, `responsible_role` is named | | |
 | `conflict_check`: `required` and `performed_outside_model` are `true`, `party_names_in_model` is `false`, `responsible_role` is named | | |
@@ -29,7 +33,7 @@ profile is not ready.
 | No client or matter fields appear anywhere in the profile | | |
 | No placeholder text from the template remains | | |
 | No review date precedes its effective, verified or approval date | | |
-| The approval date is not after today's date | | |
+| For live triage: `profile.status` is `approved`, `governance.approved_by` is named, and `governance.approved_at` is not after today's date | | |
 | The profile, every policy and every referral review date is on or after today's date | | |
 | `output_control.allowed_statuses` holds exactly the five statuses of the schema's allowed list, in that order | | |
 | `output_control`: `human_approval_required`, `reasons_required` and `policy_citations_required` are `true` | | |

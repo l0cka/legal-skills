@@ -124,7 +124,8 @@ cases, unverified tables and every 2026 NSW holiday), against every shipped
 rule for several triggers and registries, and against the gates and the
 custom holiday column, and edge refusals (unsupported rollover, a zero or
 fractional length, a missing provision, missing evidence and an uncertain
-window met during rollover). A test fails if a status, date or refusal
+window met during rollover, and a business-day count that ends on the first
+weekday past coverage or inside a window). A test fails if a status, date or refusal
 reason text differs from the engine. Separate tests prove that the 120-day
 scan and 15-day rollover limits refuse where the engine would compute, and
 the Provisions, Warnings and Holiday caveats cells are compared with the

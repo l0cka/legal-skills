@@ -12,10 +12,11 @@ Grammar: [case law verification method](../../references/case-law-verification-m
 1. Copy each citation exactly as supplied.
 2. Decide its type:
    - medium-neutral: `[YEAR] COURT NUMBER`, for example `[2023] HCA 12`;
-   - reported: `(YEAR) VOLUME SERIES PAGE` or `[YEAR] VOLUME SERIES PAGE`,
-     for example `(2020) 94 ALJR 1`;
+   - reported: `(YEAR) VOLUME SERIES PAGE`, for example `(2020) 94 ALJR 1`;
    - case name only, for example `Smith v Jones`;
-   - unknown, when it fits none of these.
+   - unknown, when it fits none of these. A reported form with the year in
+     square brackets, such as `[1990] 1 Qd R 1`, is recorded as unknown, as
+     the automated parse does; route it by court under the skill's step 3.
 3. Read the court identifier (medium-neutral) or the report series
    (reported) and route it with the table in the skill's step 2.
 4. A case name only is routed by any stated court or jurisdiction; if none is

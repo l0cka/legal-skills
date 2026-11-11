@@ -26,8 +26,10 @@ Everything else stays identify-only.
 4. VCAT has no general period. Name the enabling provision; identify-only.
 5. Only for a general period that applies, a person picks the tribunal row in
    the Calculator sheet (`art / art-general-review-application`,
-   `art / migration-judicial-review`, `ncat / ncat-internal-appeal`,
-   `qcat / qcat-review-application`). For the ART pick the registry holiday
+   `ncat / ncat-internal-appeal`, `qcat / qcat-review-application`). The
+   `art / migration-judicial-review` row is the statutory time limit for
+   judicial review in a court, not a tribunal general period: treat it as
+   identify-only here and flag specialist review. For the ART pick the registry holiday
    table. The person supplies the Status, Candidate date, Reason and Warnings
    cells as text.
 6. Never conclude that a period has expired or been extended, and never

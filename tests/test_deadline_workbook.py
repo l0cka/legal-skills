@@ -128,7 +128,17 @@ class EngineCaseTests(WorkbookAgreementMixin, unittest.TestCase):
         long_holidays["holidays"] = sorted({*long_holidays["holidays"], *(f"2026-08-{day:02d}" for day in range(1, 32))})
         (cls.tables_dir / "holidays" / "longhol.json").write_text(json.dumps(long_holidays), encoding="utf-8")
         longhol = build_rules_table("longhol", {("calendar_days", 1, "next_business_day")})
-        for table in (pending, provision, unv, edge, longhol):
+        boundary = []
+        for key, coverage_to, windows in (
+            ("edgecov", "2026-08-17", []),
+            ("edgewin", "2026-12-31", [{"from": "2026-08-18", "to": "2026-08-18", "reason": "Test window on a weekday."}]),
+        ):
+            holidays = json.loads((cls.tables_dir / "holidays" / "nsw.json").read_text(encoding="utf-8"))
+            holidays.update(table_id=key, coverage={"from": "2026-01-01", "to": coverage_to}, uncertain_windows=windows)
+            holidays["holidays"] = [day for day in holidays["holidays"] if day <= coverage_to]
+            (cls.tables_dir / "holidays" / f"{key}.json").write_text(json.dumps(holidays), encoding="utf-8")
+            boundary.append(build_rules_table(key, {("business_days", 1, "none"), ("business_days", 2, "none")}))
+        for table in (pending, provision, unv, edge, longhol, *boundary):
             path = cls.tables_dir / "computation-rules" / f"{table['table_id']}.json"
             path.write_text(json.dumps(table), encoding="utf-8")
         cls.calc = Calculator(cls.tables_dir, Path(cls._tmp.name))
@@ -181,6 +191,18 @@ class EngineCaseTests(WorkbookAgreementMixin, unittest.TestCase):
                 engine = ENGINE.compute({"table_id": "test-edge", "period_rule_id": rule, "trigger_date": trigger}, self.tables_dir)
                 self.assert_agrees(engine, self.calc.run(f"test-edge / {rule}", trigger), rule)
                 self.assertEqual(engine["status"], "identify_only", engine)
+
+    def test_count_ending_on_the_first_unusable_weekday_refuses(self) -> None:
+        for table_key, length, reason in (
+            ("edgecov", 1, "does not cover 2026-08-18"),
+            ("edgecov", 2, "does not cover 2026-08-18"),
+            ("edgewin", 1, "uncertain holiday window"),
+            ("edgewin", 2, "uncertain holiday window"),
+        ):
+            with self.subTest(f"{table_key} {length}"):
+                engine, sheet = self.compare(f"test-{table_key}", "business_days", length, "none", "2026-08-17")
+                self.assertEqual(engine["status"], "identify_only", engine)
+                self.assertIn(reason, sheet["out_reason"])
 
     def test_scan_limits_refuse_where_the_engine_computes(self) -> None:
         for rule, trigger, reason in (

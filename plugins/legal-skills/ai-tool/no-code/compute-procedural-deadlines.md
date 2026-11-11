@@ -40,7 +40,8 @@ Excel or another spreadsheet that recalculates formulas.
      rollover into an excluded range). Do not count around it.
    - `NOT READY` or `OUTSIDE SCOPE`: a gate failed; the Reason cell names it.
 4. The person gives the model the Status, Candidate date, Reason and Warnings
-   cells as text. The model reports them as supplied and never adjusts,
+   cells as text. Never upload a filled workbook to the AI tool: its Engine
+   and Working sheets hold working dates with no gate applied. The model reports them as supplied and never adjusts,
    rounds or re-derives a date.
 5. A candidate is never the binding deadline. The named confirmer confirms
    the date against the official source and enters it in the diary system of
