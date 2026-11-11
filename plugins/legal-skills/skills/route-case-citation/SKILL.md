@@ -28,6 +28,7 @@ declares a citation verified.
 1. Extract every citation from the request or supplied document. Accept
    medium-neutral citations (`[2023] HCA 12`), reported citations
    (`(2020) 94 ALJR 1`) and bare case names (`Smith v Jones`).
+   <!-- ai-tool:code -->
    - When command execution is available, use the bundled parser:
 
      ```bash
@@ -38,6 +39,7 @@ declares a citation verified.
      parser is offline and read-only: it reports citation type, court and the
      verification route, and proves nothing about whether the decision
      exists. Without command execution, apply the same grammar manually.
+   <!-- /ai-tool:code -->
 2. Route each citation.
    - `HCA`, and `CLR`/`ALJR` reported citations → `verify-hca-judgment`.
    - NSW court and tribunal identifiers (`NSWSC`, `NSWCA`, `NSWCCA`,
@@ -82,3 +84,18 @@ When the citation is malformed, the court identifier is unknown, or the
 request depends on a jurisdiction this plugin does not support, say so and
 route to a manual official source. Never guess a court from a case name
 alone, and never treat a routing result as evidence the decision exists.
+
+## AI-tool mode
+
+Use this section when the host cannot run
+code. The AI-tool bundle ships this section and
+leaves the code steps out; hosts that can run code ignore it. General rules:
+[AI-tool mode](../../references/ai-tool-mode.md).
+
+Apply the grammar in the
+[case law verification method](../../references/case-law-verification-method.md)
+by hand: read the
+court identifier in the medium-neutral citation or the report series, then
+use the routing table in step 2. State in the routing note that the citation
+was parsed manually. A manual parse proves nothing about whether the decision
+exists.

@@ -31,6 +31,14 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13"
+
+      - name: Install build dependencies
+        run: python3 -m pip install -r requirements-build.txt
+
       - name: Draft the release when one is due
         env:
           GH_TOKEN: ${{ github.token }}
@@ -59,9 +67,13 @@ jobs:
             exit "$status"
           fi
 
+          bundle_dir="$RUNNER_TEMP/bundle"
+          bash scripts/build-ai-tool-bundle.sh --all-areas --dist "$bundle_dir"
+
           gh release create "$tag" \
             --draft \
             --target "$GITHUB_SHA" \
             --title "legal-skills ${version}" \
-            --notes-file notes.md
-          echo "Drafted a release for ${tag}." >> "$GITHUB_STEP_SUMMARY"
+            --notes-file notes.md \
+            "$bundle_dir"/legal-skills-ai-*.zip
+          echo "Drafted a release for ${tag} with the AI-tool bundle attached." >> "$GITHUB_STEP_SUMMARY"

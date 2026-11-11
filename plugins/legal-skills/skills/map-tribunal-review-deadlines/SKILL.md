@@ -1,10 +1,11 @@
 ---
 name: map-tribunal-review-deadlines
-description: Map and compute candidate merits-review and tribunal deadlines for Australian decisions with the bundled script, covering the ART, NCAT, QCAT and VCAT. Use after a government or tribunal decision. Never concludes a period has expired.
+description: Map and compute candidate merits-review and tribunal deadlines for Australian decisions, never by model arithmetic, covering the ART, NCAT, QCAT and VCAT. Use after a government or tribunal decision. Never concludes a period has expired.
 ---
 
 # Map Tribunal Review Deadlines
 
+<!-- ai-tool:code -->
 ## Scope
 
 Map and compute candidate merits-review and tribunal deadlines for Australian
@@ -83,3 +84,54 @@ Return `NOT READY` when the decision, tribunal or notification date cannot
 be established. Never compute around a script refusal, never conclude a
 period has expired or been extended, never omit the migration warning from
 a migration matter, and route criminal matters `OUTSIDE SCOPE`.
+<!-- /ai-tool:code -->
+
+## AI-tool mode
+
+Use this section when the host cannot run
+code. The AI-tool bundle ships this section and
+leaves the code steps out; hosts that can run code ignore it. General rules:
+[AI-tool mode](../../references/ai-tool-mode.md).
+
+This host cannot run the deterministic computation, and the model must never
+do date arithmetic. Deliver identify-only output for each candidate. A
+candidate date for a tribunal general period may come only from the deadline
+calculator workbook, filled and read by a person as the no-code procedure
+describes.
+
+0. Read the [source and control method](../../references/litigation-deadlines-source-and-control-method.md)
+   and use an approved profile per the
+   [deadline profile schema](../../references/deadline-profile-schema.md). With
+   no approved profile, or no named confirmer and diary system of record, the
+   result is `NOT READY`.
+1. Record the decision, the decision-maker, the tribunal and the
+   lawyer-supplied notification date as an assumption. A contested or unknown
+   date is `NOT READY`. Criminal matters are `OUTSIDE SCOPE`.
+2. Open the tribunal's table in [computation rules](../../references/computation-rules/)
+   (`art`, `ncat`, `qcat`, `vcat`) and copy the general period: citation,
+   length and unit, rollover, warnings, source URL and evidence state. For ART
+   steps ask which registry the act is to be done in if the profile names no
+   `registry_holiday_table`. The Act conferring the decision often fixes its
+   own period (for QCAT, s 6(7) of the QCAT Act says so expressly). Name it and route its
+   verification through the matching legislation checker. VCAT has no general
+   period, so name the enabling provision. For other tribunals name the
+   enabling Act.
+3. Never state, estimate or adjust a date, never present a candidate as the
+   binding deadline, and never conclude that a period
+   has expired or been extended.
+4. On every migration matter include the warning that migration time limits are
+   non-extendable or jurisdictional and have changed repeatedly, and flag
+   specialist review before reliance.
+
+Lead with `READY FOR HUMAN REVIEW` (only for a workbook candidate a person
+supplied), `IDENTIFY-ONLY - NOT COMPUTED`, `NOT READY` or `OUTSIDE SCOPE`.
+
+```text
+Decision: <decision; decision-maker; tribunal; notification date assumption>
+Candidates: <period; basis; source; evidence state; result: not computed or workbook candidate as read by <person>>
+Conferring-Act check: <provision named or routed; evidence state>
+Migration warning: <present on every migration matter; specialist review>
+Inputs needed: <notification date, registry holiday table, conferring Act period>
+Human decision gate: <confirmer; decisions required; diary entry pending>
+Limitations: <identify-only; enabling enactment may differ; not a diary system>
+```

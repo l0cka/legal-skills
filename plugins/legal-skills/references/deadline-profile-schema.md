@@ -33,8 +33,8 @@ verification:
 
 ## Rules
 
-0. `registry_holiday_table` is passed to the script as `holiday_table` for
-   federal court and ART steps; without it the script refuses any
+0. `registry_holiday_table` is passed to the computation as `holiday_table` for
+   federal court and ART steps; without it the computation refuses any
    business-day or rollover computation for those forums.
 
 1. `confirmer` and `diary_system` are mandatory — a profile without a named

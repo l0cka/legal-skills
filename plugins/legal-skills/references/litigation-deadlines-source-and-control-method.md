@@ -20,11 +20,11 @@ their depth:
 - criminal procedure, foreign limitation law and cross-border
   choice-of-law questions are flagged `OUTSIDE SCOPE`, never assessed.
 
-## The script-only arithmetic rule
+## The code-only arithmetic rule
 
 The model never performs date arithmetic. Every computed date comes from the
-bundled `compute_deadline.py` script, which reads the JSON computation-rule
-tables and holiday tables in `references/` and nothing else. The script
+bundled deterministic computation, which reads the JSON computation-rule
+tables and holiday tables in `references/` and nothing else. The computation
 refuses to compute — returning identify-only output that names the governing
 rule — whenever:
 
@@ -34,7 +34,7 @@ rule — whenever:
    the computed range, or has an uncertain window intersecting it; or
 3. the period cannot be expressed by the table — court-fixed dates,
    "as soon as practicable", backwards-counted periods and any unit the
-   script does not support; or
+   computation does not support; or
 4. the forum is the federal courts or the ART, the rule counts business days
    or rolls over, and the request names no registry `holiday_table`.
 
@@ -100,10 +100,10 @@ Assign one state to every material proposition:
 <!-- end:evidence-states -->
 
 In the JSON tables the machine states are `verified` and
-`pending-verification`; the script computes only from `verified`. The
+`pending-verification`; the computation runs only from `verified`. The
 `verify-deadline-basis` workflow is the only path that moves an entry to
 `verified`, and it records source URL, version identifier, checked date and
-a table fingerprint when it does.
+<!-- ai-tool:bundle: a table fingerprint (not computed in hosts without code; a person with code computes it) when it --><!-- ai-tool:code -->a table fingerprint when it<!-- /ai-tool:code --> does.
 
 ## Profile precedence
 
@@ -117,7 +117,7 @@ approved.
 ## Human control
 
 The workflows may organise evidence, map candidate periods, run the
-computation script and prepare registers. They do not determine when a
+deterministic computation and prepare registers. They do not determine when a
 cause of action accrued, when a fact became discoverable, whether an
 extension would be granted, or which single date binds. Accrual and
 discoverability are lawyer-supplied inputs recorded as assumptions. The

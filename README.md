@@ -114,6 +114,16 @@ The repository is also a Cursor plugin marketplace
 
 </details>
 
+<details>
+<summary><b>AI tools that run no code (Harvey, Legora)</b></summary>
+
+Download `legal-skills-ai-<version>.zip` from the release, unzip it and upload
+the folder to the tool. Start from `ROUTER.md`. Deadlines become
+identify-only and legislation checks give the official sources and steps. See
+[portability](docs/portability.md) for what travels and how to install.
+
+</details>
+
 One install gives you every skill. Upgrading from the separate
 `australian-*` and `legal-*` plugins? Uninstall them first; see the
 [changelog](CHANGELOG.md).

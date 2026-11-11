@@ -12,7 +12,7 @@ Australian national system employee — unfair dismissal eligibility and the
 Small Business Fair Dismissal Code, general protections and the reverse onus,
 genuine redundancy and consultation, notice and redundancy pay, unlawful
 termination, and the Fair Work Commission's 21-day application periods routed
-to the litigation-deadlines script — using verified official sources and an
+to the litigation-deadlines computation — using verified official sources and an
 approved employment profile. Use before a dismissal decision, after a
 dismissal when a claim is threatened, or when planning a redundancy. Do not
 use to conclude that a dismissal was or would be unfair, that adverse action

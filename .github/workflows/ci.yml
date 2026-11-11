@@ -46,6 +46,9 @@ jobs:
       - name: Run focused tests
         run: python3 -m unittest discover -s tests
 
+      - name: Build the AI-tool bundle and check it
+        run: bash scripts/build-ai-tool-bundle.sh --all-areas --dist "$RUNNER_TEMP/bundle"
+
       - name: Compile all repository Python
         run: python3 -m compileall -q scripts plugins tests
 

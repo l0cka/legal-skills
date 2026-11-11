@@ -40,12 +40,15 @@ before starting.
    - Inspect complete Schedule 1 boundaries and enumerate every displayed APP
      without a hard-coded count or list.
    - Capture the official canonical and final URL, effective period, retrieval
-     timestamp, raw document SHA-256 and the complete text needed for
-     fingerprinting. Do not reproduce full statutory text in the work product.
-   - Fingerprint the application perimeter, applicable regulations and codes,
-     and versioned guidance as separate layers using the reference schema.
-4. Compare deterministically.
+     <!-- ai-tool:bundle: timestamp and the complete text; digests are not computed, a person with code computes them. --><!-- ai-tool:code -->timestamp, raw document SHA-256 and the complete text needed for
+     fingerprinting.<!-- /ai-tool:code --> Do not reproduce full statutory text in the work product.
+   - <!-- ai-tool:bundle: Record the application perimeter, applicable regulations and codes,
+     and versioned guidance as separate layers using the reference schema; fingerprints are not computed, a person with code computes them --><!-- ai-tool:code -->Fingerprint the application perimeter, applicable regulations and codes,
+     and versioned guidance as separate layers using the reference schema<!-- /ai-tool:code -->.
+4. Compare the inventories layer by layer (APP text, application perimeter,
+   instruments and codes, guidance). Hosts without code follow AI-tool mode.
 
+   <!-- ai-tool:code -->
    ```bash
    python3 <skill-root>/scripts/compare_app_inventory.py validate <inventory.json>
    python3 <skill-root>/scripts/compare_app_inventory.py compare \
@@ -57,6 +60,7 @@ before starting.
    FRAMEWORK VERIFIED`. The helper is optional, read-only and offline. Without
    command execution, perform the same comparison manually and record that the
    scripted check was not run.
+   <!-- /ai-tool:code -->
 5. Apply fail-closed statuses.
    - Use `APP FRAMEWORK VERIFIED` only after legislation checks establish the
      official source, applicable period, complete Schedule and every
@@ -81,7 +85,7 @@ Application perimeter status: <definitions, coverage, exemptions and provisions>
 Codes and instruments status: <Privacy Regulations and applicable registered code>
 Known future amendments: <mapped change and horizon effect>
 Guidance status: <page versions and refresh result>
-Inventory: <identifier, heading, clause range and SHA-256 for every APP>
+Inventory: <identifier, heading, <!-- ai-tool:bundle: clause range; hash not computed, a person with code computes it> --><!-- ai-tool:code -->clause range and SHA-256 for every APP><!-- /ai-tool:code -->
 Official sources: <links actually inspected>
 Downstream effect: <proceed, refresh or do not rely>
 Limitations and lawyer review: <unresolved legal or factual issues>
@@ -89,3 +93,22 @@ Limitations and lawyer review: <unresolved legal or factual issues>
 
 Case law is outside scope. Framework verification does not prove entity
 coverage, compliance, interpretation or application to the facts.
+
+## AI-tool mode
+
+Use this section when the host cannot run
+code. The AI-tool bundle ships this section and
+leaves the code steps out; hosts that can run code ignore it. General rules:
+[AI-tool mode](../../references/ai-tool-mode.md).
+
+Compare the earlier and later inventories by hand.
+
+1. For each of the four layers (APP text, application perimeter, regulations
+   and codes, guidance), put the earlier and later text side by side.
+2. Treat any difference in wording, heading, clause range or source URL as a
+   change in that layer. Do not compute a hash: write `hash not computed, a person with code computes it` in
+   the Inventory line of the result.
+3. Apply the fail-closed statuses in step 5. A manual comparison never
+   supports `APP FRAMEWORK VERIFIED` unless the official sources were opened
+   and every layer was compared.
+4. State in the result that the comparison was manual.

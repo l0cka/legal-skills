@@ -11,6 +11,7 @@ from pathlib import Path
 from typing import Any
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import ai_tool_bundle  # noqa: E402
 from generate_registry import SLUG, GenerationError, is_text, load_plugins  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -251,6 +252,10 @@ def main() -> int:
         plugin_count, skill_count = validate()
     except (OSError, ValidationError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
+        return 1
+    bundle_problems = ai_tool_bundle.validate_all()
+    if bundle_problems:
+        print("ERROR: AI-tool bundle checks failed:\n" + "\n".join(bundle_problems), file=sys.stderr)
         return 1
     prefix = "::warning title=Law check due::" if os.environ.get("GITHUB_ACTIONS") else "WARNING: "
     for message in law_checks_due():

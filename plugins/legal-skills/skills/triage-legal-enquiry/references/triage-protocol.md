@@ -8,7 +8,7 @@ this protocol refers to a configured rule or pathway.
 Confirm all of the following before processing substantive facts:
 
 - an authorised staff member is operating the workflow;
-- the centre profile passes `validate_triage_profile.py --require-approved`;
+- the centre profile passes `--require-approved` validation<!-- ai-tool:code --> (`validate_triage_profile.py`)<!-- /ai-tool:code -->;
 - the proposed AI environment and data class are approved by the centre; and
 - the input contains no unnecessary identifiers or third-party information.
 

@@ -1,7 +1,7 @@
 # Privacy
 
-Legal Skills is a set of instruction files and small helper scripts that run
-inside your AI assistant (Claude Cowork, Claude Code, ChatGPT Work or Codex).
+Legal Skills is a set of instruction files<!-- ai-tool:code --> and small helper scripts<!-- /ai-tool:code --> that run
+inside your AI assistant<!-- ai-tool:code --> (Claude Cowork, Claude Code, ChatGPT Work or Codex)<!-- /ai-tool:code -->.
 The author does not operate any server for it.
 
 ## What the plugin collects
@@ -17,12 +17,14 @@ storage, and it sends nothing to the author.
 - **Official-source lookups.** Research skills ask the assistant to read
   official publishers, such as legislation registers, courts, tribunals and
   regulators, through the host app's web tools.
+<!-- ai-tool:code -->
 - **Federal Register helpers.** Two scripts,
   `skills/check-commonwealth-legislation/scripts/frl_lookup.py` and
   `skills/trace-commonwealth-legislative-change/scripts/frl_change_trace.py`,
   send read-only HTTPS GET requests to `api.prod.legislation.gov.au`. Each
   request carries only a title search phrase, a Federal Register Title ID and
   dates. No other bundled script makes a network request.
+<!-- /ai-tool:code -->
 
 The research skills tell the assistant never to send confidential facts in
 public searches.

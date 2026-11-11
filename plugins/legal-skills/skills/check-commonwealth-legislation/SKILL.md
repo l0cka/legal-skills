@@ -37,6 +37,7 @@ schema.
    - Search `legislation.gov.au` and identify the official title page.
    - Match the name, collection, principal/amending character, year/number and
      Title ID. Treat multiple plausible titles as ambiguous.
+   <!-- ai-tool:code -->
    - When command execution is available, use the bundled helper:
 
      ```bash
@@ -49,6 +50,7 @@ schema.
      is optional and read-only, and it makes network requests only to
      `legislation.gov.au`. Without command execution, follow the same steps on
      the official website directly.
+   <!-- /ai-tool:code -->
 3. Identify the point-in-time version.
    - Use the Register's point-in-time result and All versions page.
    - Record the compilation ID, compilation number, start date and end date.
@@ -140,3 +142,26 @@ Return `NOT VERIFIED` instead of guessing when the Title ID is ambiguous, the
 requested date falls outside available compilations, the Register is
 unavailable, an amendment has commenced but is not incorporated, or the
 relevant commencement/endnote material cannot be checked.
+
+## AI-tool mode
+
+Use this section when the host cannot run
+code. The AI-tool bundle ships this section and
+leaves the code steps out; hosts that can run code ignore it. General rules:
+[AI-tool mode](../../references/ai-tool-mode.md).
+
+1. Search `legislation.gov.au` for the title and open the official title page.
+   Record the Title ID (`C` for an Act, `F` for a legislative instrument), the
+   name, the collection and whether it is an Act or an instrument.
+2. Open the title's All versions page. Pick the compilation whose start and
+   end dates cover the requested date. Record the compilation number, Register
+   ID, start date and end date. The text page for any title is
+   `https://www.legislation.gov.au/<Title ID>/latest/text`.
+3. On the title and versions pages, read the status history and any
+   amendments that have commenced but are not yet incorporated.
+4. Open Downloads and confirm the authorised PDF stamp before calling a
+   version authorised.
+5. If the host cannot browse, make no claim about status or version. Return
+   `NOT VERIFIED`, list the steps above, and ask the person to supply the
+   page text or the compilation. Mark every field not inspected as
+   `not established`.

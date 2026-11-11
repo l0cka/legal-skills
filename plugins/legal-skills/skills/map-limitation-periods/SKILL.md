@@ -54,9 +54,9 @@ work from the [limitation registry](references/limitation-registry.json).
      line.
    - Flag every potentially engaged special regime and every postponement
      or extension provision as a flag, never a conclusion.
-3. Compute through the script only.
+3. Compute through the deterministic computation step only.
    - Never do date arithmetic yourself. Pass each candidate to
-     `$compute-procedural-deadlines` and its bundled `compute_deadline.py`.
+     `$compute-procedural-deadlines`.
      Where it returns `identify_only` or has no rule for the period, record
      the candidate expiry as `not computed - no verified computation rule`
      and leave the arithmetic to the confirmer.
