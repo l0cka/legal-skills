@@ -9,12 +9,12 @@ description: Build and update a source-linked deadline register for one Australi
 
 Build and update a source-linked deadline register for one Australian civil
 litigation matter, where every entry carries its governing rule citation,
-trigger assumption, script or mapping provenance, evidence state and
+trigger assumption, computation or mapping provenance, evidence state and
 confirmation status, and unconfirmed entries stay visibly provisional. Use to
 assemble computed and mapped candidates into a reviewable register, to record
 the confirmer's confirmations or to update entries after a trigger changes. Do
 not use as the practice's diary or system of record, to confirm a date, or to
-recompute dates outside the bundled script — the register mirrors decisions
+recompute dates outside the deterministic computation step — the register mirrors decisions
 made elsewhere and confirmation is a human act.
 
 Assemble candidate dates into one register per matter. The register mirrors
@@ -34,7 +34,7 @@ and use an approved profile per the
      provenance does not enter the register.
 2. Build the register.
    - One row per candidate: date, governing citation, trigger assumption,
-     provenance (which workflow and script result), evidence state,
+     provenance (which workflow and computation result), evidence state,
      warnings, and confirmation status starting at `provisional`.
    - Keep the conservative marker and every unresolved characterisation
      visible; never collapse candidates into a single date.

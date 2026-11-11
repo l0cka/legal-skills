@@ -36,6 +36,10 @@ See `docs/architecture.md`.
 - Do not present discovery leads as legal authority or claim that a workflow
   replaces professional judgment.
 - Keep detailed optional material in directly linked `references/` files.
+- Keep the AI-tool bundle in step: a skill that ships a `scripts/` folder
+  needs an `## AI-tool mode` section and its code-only passages wrapped in
+  `<!-- ai-tool:code -->` markers. See `docs/portability.md`. Build the bundle
+  with `scripts/build-ai-tool-bundle.sh`; the validator runs its checks.
 - Preserve upstream attribution and licence notices for imported material.
 - Do not add MCP servers, apps, hooks, or write actions without documenting
   their permissions and approval boundaries.

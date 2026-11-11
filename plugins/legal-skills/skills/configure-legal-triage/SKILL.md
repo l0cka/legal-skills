@@ -49,7 +49,8 @@ approved profile and how a person approves it.
      escalation pathways, conflict checking, data handling and referrals.
    - Preserve the mandatory human-review and no-autonomous-rejection controls.
 4. Validate locally.
-
+   - Hosts that cannot run code follow AI-tool mode below.
+   <!-- ai-tool:code -->
    ```bash
    python3 <skill-root>/scripts/validate_triage_profile.py <profile.json>
    python3 <skill-root>/scripts/validate_triage_profile.py \
@@ -61,6 +62,7 @@ approved profile and how a person approves it.
    The helper is read-only and offline. If command execution is unavailable,
    do not treat the profile as approved; an authorised person must run the
    validation in an environment that supports it.
+   <!-- /ai-tool:code -->
 5. Obtain human approval.
    - Give the draft and validation result to the centre's authorised legal,
      operational and privacy or governance reviewers.
@@ -87,3 +89,29 @@ Limitations: <currency, legal and operational limits>
 
 Never publish or commit the completed centre profile unless the centre has
 separately confirmed that it contains no confidential or restricted material.
+
+## AI-tool mode
+
+Use this section when the host cannot run
+code. The AI-tool bundle ships this section and
+leaves the code steps out; hosts that can run code ignore it. General rules:
+[AI-tool mode](../../references/ai-tool-mode.md).
+
+Check the profile by hand against
+[the centre profile schema](references/centre-profile-schema.md) and the
+template in [assets](assets/centre-profile.template.json).
+
+1. Confirm every required field in the schema is present and non-empty.
+2. Confirm the mandatory human-review and no-autonomous-rejection controls
+   are unchanged.
+3. Confirm every operational rule has an owner, version, effective date,
+   review date and source.
+4. Compare each profile, policy and referral review date with today's date
+   (ask the person for it if the host cannot supply it).
+   Any date that has passed means the profile is expired: do not use it for
+   live triage.
+5. Report `Validation: manual check against the schema; automated validation
+   not run`. The status is at most `READY FOR HUMAN APPROVAL`. Never report
+   `VALIDATED APPROVED PROFILE`. The profile counts as validated only when a
+   person at the centre confirms that validation with approval required passed
+   outside this host; record who confirmed and when.

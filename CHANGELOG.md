@@ -9,6 +9,27 @@ manifests contain the intended release version.
 
 ## Unreleased
 
+### Added
+
+- An AI-tool bundle for tools that run no code, such as Harvey and Legora:
+  `scripts/build-ai-tool-bundle.sh` builds `legal-skills-ai-<version>.zip`
+  (and per-area zips) with a generated `ROUTER.md`, every skill and its
+  references, an empty `reference/firm/` slot, and no scripts, evals or
+  manifests. The seven script-backed skills,
+  `map-tribunal-review-deadlines` and `verify-deadline-basis` gain an
+  `AI-tool mode` section: deadlines are
+  identify-only, legislation checks give official sources and steps, and
+  validation is manual. The validator, a test and CI check the bundle, and
+  the draft release attaches the zips. See `docs/portability.md`.
+
+### Changed
+
+- `compute-procedural-deadlines` and `map-tribunal-review-deadlines` no longer
+  say "bundled script" in their descriptions, and some skill and reference
+  prose says "deterministic computation step" instead of "script". Gates,
+  commands and flags are unchanged; the validator command and flag remain in
+  the triage gates.
+
 ### Fixed
 
 - The deadline script rejects table and holiday-table ids that are not

@@ -47,6 +47,7 @@ semantics, attribution test and special cases.
    - Describe a compilation by its compilation date or effective period. Never
      say that a compilation commenced; reserve commencement for legislation,
      provisions and amendment items.
+   <!-- ai-tool:code -->
    - When command execution is available, use the bundled helper:
 
      ```bash
@@ -60,6 +61,7 @@ semantics, attribution test and special cases.
      It is optional and read-only, and it makes network requests only to
      `legislation.gov.au`. Without command execution, follow the same steps on
      the official website directly.
+   <!-- /ai-tool:code -->
 3. Compare the official text.
    - Inspect the exact provision in both endpoint compilations and in each
      potentially relevant intervening compilation.
@@ -131,3 +133,21 @@ uniquely, a provision cannot be mapped reliably, relevant amendment or
 commencement material is unavailable, a commenced but unincorporated amendment
 affects the interval, or retrospective, application, savings or transitional
 issues prevent the requested textual conclusion.
+
+## AI-tool mode
+
+Use this section when the host cannot run
+code. The AI-tool bundle ships this section and
+leaves the code steps out; hosts that can run code ignore it. General rules:
+[AI-tool mode](../../references/ai-tool-mode.md).
+
+1. Open the title on `legislation.gov.au` and its All versions page. List the
+   compilations between the two dates, including both endpoints, with their
+   dates and Register IDs.
+2. Open the provision in each compilation. Compare the text side by side and
+   note where it changes, reverts or is absent.
+3. For each change, read the compilation endnotes and amendment history to
+   find the amending Act or instrument and the schedule item. Open that Act to
+   confirm its commencement.
+4. If the host cannot browse, make no claim about what changed. Return the
+   steps above, `NOT VERIFIED`, and ask the person to supply the compilations.

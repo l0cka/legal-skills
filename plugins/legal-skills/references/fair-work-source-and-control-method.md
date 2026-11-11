@@ -26,8 +26,8 @@ source is checked in the session that relies on it.
 
 At 26 August 2026 the framework has these layers, verified against
 legislation.gov.au and the Fair Work Commission and Fair Work Ombudsman sites on
-that date (see the [employment-fair-work area guide](../areas/employment-fair-work/README.md)
-for compilation identifiers):
+that date<!-- ai-tool:code --> (see the [employment-fair-work area guide](../areas/employment-fair-work/README.md)
+for compilation identifiers)<!-- /ai-tool:code -->:
 
 1. **The Act** — the Fair Work Act 2009 (Cth), including the National Employment
    Standards in Part 2-2, unfair dismissal in Part 3-2, general protections in

@@ -55,7 +55,7 @@ safeguard.
 | Commercial drafting | Drafting proceeds from explicit instructions; missing choices become marked gaps in a partial draft |
 | Contract review | A missing playbook prevents a complete comparison; clearly labelled issue spotting is still permitted |
 | Consumer and competition | Unknown facts stay unknown and are never read as `no`; each skill states what it could not assess |
-| Litigation deadlines | Dates are computed only by the script, and every candidate date needs a named confirmer before reliance |
+| Litigation deadlines | Dates are computed only by the deterministic computation step, and every candidate date needs a named confirmer before reliance |
 | Corporations governance | Consequential governance work returns `NOT READY` until the profile and governing documents are identified |
 | AI governance | Obligation mapping requires an approved profile and records any gap |
 | AML/CTF | The mapping and review skills require an approved practice profile |

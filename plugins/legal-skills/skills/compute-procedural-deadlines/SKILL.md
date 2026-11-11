@@ -1,10 +1,11 @@
 ---
 name: compute-procedural-deadlines
-description: Compute candidate Australian civil court deadlines from a lawyer-supplied trigger date with the bundled script, never model arithmetic. Use for defences, appeals and other rule-fixed steps. Not for criminal procedure or contested trigger dates.
+description: Compute candidate Australian civil court deadlines from a lawyer-supplied trigger date, never by model arithmetic. Use for defences, appeals and other rule-fixed steps. Not for criminal procedure or contested trigger dates.
 ---
 
 # Compute Procedural Deadlines
 
+<!-- ai-tool:code -->
 ## Scope
 
 Compute candidate procedural deadlines for Australian civil litigation from a
@@ -78,3 +79,54 @@ established. Report every script refusal as identify-only output — never
 compute around an unverified table, an uncovered holiday range or an
 unsupported period. Route criminal procedure `OUTSIDE SCOPE`, and never
 present a candidate date as the binding deadline.
+<!-- /ai-tool:code -->
+
+## AI-tool mode
+
+Use this section when the host cannot run
+code. The AI-tool bundle ships this section and
+leaves the code steps out; hosts that can run code ignore it. General rules:
+[AI-tool mode](../../references/ai-tool-mode.md).
+
+This host cannot run the deterministic computation, and the model must never
+do date arithmetic. Deliver identify-only output: the rule, its source, the
+inputs a person needs and `not computed`.
+
+0. Read the [source and control method](../../references/litigation-deadlines-source-and-control-method.md)
+   and use an approved profile per the
+   [deadline profile schema](../../references/deadline-profile-schema.md). With
+   no approved profile, or no named confirmer and diary system of record, the
+   result is `NOT READY`.
+1. Fix the forum, the procedural step and the lawyer-supplied trigger date and
+   event. A contested or unknown trigger date is `NOT READY`. Criminal
+   procedure, and court-fixed or discretionary dates, are `OUTSIDE SCOPE` or
+   identify-only: name the governing rule and route them to the responsible
+   lawyer.
+2. Open the forum's table in [computation rules](../../references/computation-rules/)
+   (`cth-federal-courts`, `nsw-courts`, `vic-courts`, `qld-courts`,
+   `wa-courts`, `sa-courts`, `tas-courts`, `act-courts`, `nt-courts`, `art`,
+   `ncat`, `qcat`, `vcat`). Find the period rule whose trigger matches.
+3. Copy from the rule: its citation, period length and unit, rollover,
+   warnings, source URL and evidence state. Name the holiday table in
+   [holidays](../../references/holidays/) that a person needs. For federal
+   court and ART steps the registry's holiday table must come from the
+   profile or the person.
+4. If no rule matches, or its evidence state is `pending-verification`, say so
+   and route verification to `$verify-deadline-basis`.
+5. Never state, estimate or adjust a date, and never present a candidate as
+   the binding deadline. Give the person the inputs to count it themselves or
+   in a diary system.
+
+Lead with `IDENTIFY-ONLY - NOT COMPUTED`, `NOT READY` or `OUTSIDE SCOPE`.
+
+```text
+Step: <forum; procedural step; governing rule citation>
+Trigger: <lawyer-supplied trigger event and date; stated as assumption>
+Rule: <period rule id; period length and unit; rollover>
+Source: <source URL; evidence state and checked date>
+Inputs needed: <trigger date, registry location, holiday table, court directions>
+Result: not computed
+Warnings: <rule warnings; holiday caveats>
+Human decision gate: <confirmer; diary entry pending confirmation>
+Limitations: <identify-only; not a diary system; every date needs confirmation>
+```

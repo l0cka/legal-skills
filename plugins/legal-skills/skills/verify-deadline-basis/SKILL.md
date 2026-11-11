@@ -11,7 +11,7 @@ Verify the computation-rule tables and holiday tables that the Australian
 litigation-deadlines workflows rely on against the official publishers —
 legislation sites for Interpretation Acts, court rules and tribunal Acts, and
 government publications for public holidays — recording source URL, version
-identifier, checked date and a table fingerprint, and detecting changes since
+identifier, <!-- ai-tool:bundle: checked date (a table fingerprint is not computed, a person with code computes it) and detecting --><!-- ai-tool:code -->checked date and a table fingerprint, and detecting<!-- /ai-tool:code --> changes since
 the last verification. This is the only path that moves a table entry to the
 verified state that activates computation. Use before first computed reliance
 in a matter, on the profile's verification posture, or when a rule amendment
@@ -20,7 +20,7 @@ Legal Research checkers cover, or to bypass a publisher's bot protections.
 
 Verify the tables computation depends on, entry by entry, against the
 official publishers, and record the evidence. An entry stays
-`pending-verification` — and the script keeps refusing to compute from it —
+`pending-verification` — and the computation step keeps refusing to compute from it —
 until this workflow confirms it.
 
 Read the [source and control method](../../references/litigation-deadlines-source-and-control-method.md)
@@ -31,7 +31,7 @@ and [holiday tables](../../references/holidays/).
 
 1. Fix the verification scope.
    - Record which tables and entries the matter relies on, the assessment
-     date and the previous fingerprint if one exists.
+     date and the <!-- ai-tool:bundle: previous version of each table if one exists --><!-- ai-tool:code -->previous fingerprint if one exists<!-- /ai-tool:code -->.
 2. Verify each entry against its publisher.
    - For Acts (Interpretation Acts, Limitation Acts, tribunal Acts), route
      to the Australian Legal Research checkers
@@ -50,9 +50,11 @@ and [holiday tables](../../references/holidays/).
 3. Record the outcome.
    - For each entry: `VERIFIED`, `VERIFIED WITH QUALIFICATIONS` or
      `NOT VERIFIED`, with source URL, version identifier and checked date.
+<!-- ai-tool:code -->
      Compute a fingerprint over the verified table content and compare with
      the previous fingerprint; report every change as a change, never
      silently.
+<!-- /ai-tool:code -->
    - Present table updates as drafts for the practice to apply and store —
      the workflow itself marks nothing verified without the human applying
      the update.
@@ -66,9 +68,9 @@ Lead with `READY FOR HUMAN REVIEW`, `READY WITH QUALIFICATIONS`, `NOT READY`
 or `OUTSIDE SCOPE`.
 
 ```text
-Scope: <tables and entries; assessment date; previous fingerprint>
+Scope: <tables and entries; assessment date<!-- ai-tool:bundle: ; previous version> --><!-- ai-tool:code -->; previous fingerprint><!-- /ai-tool:code -->
 Verification: <per entry: state; source URL; version; checked date>
-Changes: <differences from previous fingerprint; affected period rules>
+Changes: <differences from <!-- ai-tool:bundle: previous version; fingerprint not computed, a person with code computes it; affected --><!-- ai-tool:code -->previous fingerprint; affected<!-- /ai-tool:code --> period rules>
 Draft updates: <table edits proposed for human application>
 Human decision gate: <who applies updates; reliance decisions required>
 Limitations: <verification is point-in-time; recheck per the profile's
@@ -81,5 +83,16 @@ Limitations: <verification is point-in-time; recheck per the profile's
 Return `NOT READY` when a publisher is unreachable or a provision cannot be
 found — the entry stays `pending-verification` and computation stays off.
 Never mark an entry verified from commentary, memory or a non-official
-mirror, never bypass bot protections, and report every fingerprint change
+mirror, never bypass bot protections, and <!-- ai-tool:bundle: report every change --><!-- ai-tool:code -->report every fingerprint change<!-- /ai-tool:code -->
 rather than reconciling it silently.
+
+## AI-tool mode
+
+Use this section when the host cannot run code. General rules:
+[AI-tool mode](../../references/ai-tool-mode.md).
+
+A fingerprint over table content needs code. Never state, estimate or invent
+a hash. Record `fingerprint not computed` in the result, compare the table
+text with the previous version by eye and report every difference as a change.
+A person with code access computes and compares the fingerprint before the
+update is applied. Every other step applies as written.

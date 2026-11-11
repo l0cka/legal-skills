@@ -109,11 +109,11 @@ is the skill's own trigger text: what it does, when to use it and when not to.
 
 ## Australian Litigation Deadlines (`litigation-deadlines`)
 
-- **`compute-procedural-deadlines`** — Compute candidate Australian civil court deadlines from a lawyer-supplied trigger date with the bundled script, never model arithmetic. Use for defences, appeals and other rule-fixed steps. Not for criminal procedure or contested trigger dates.
+- **`compute-procedural-deadlines`** — Compute candidate Australian civil court deadlines from a lawyer-supplied trigger date, never by model arithmetic. Use for defences, appeals and other rule-fixed steps. Not for criminal procedure or contested trigger dates.
 - **`configure-litigation-deadline-profile`** — Create or update the practice profile the litigation-deadlines skills require, recording forums, the named confirmer and the diary system. Use before first use. Never computes a date or approves the profile.
 - **`maintain-deadline-register`** — Build and update a source-linked deadline register for one Australian civil litigation matter, with each entry's rule, trigger and confirmation status. Not the practice's diary. Never confirms a date.
 - **`map-limitation-periods`** — Map an Australian civil cause of action to candidate limitation periods across state, territory and Commonwealth law, flagging extensions and special regimes. Never determines accrual or picks a binding date. Not for criminal matters.
-- **`map-tribunal-review-deadlines`** — Map and compute candidate merits-review and tribunal deadlines for Australian decisions with the bundled script, covering the ART, NCAT, QCAT and VCAT. Use after a government or tribunal decision. Never concludes a period has expired.
+- **`map-tribunal-review-deadlines`** — Map and compute candidate merits-review and tribunal deadlines for Australian decisions, never by model arithmetic, covering the ART, NCAT, QCAT and VCAT. Use after a government or tribunal decision. Never concludes a period has expired.
 - **`verify-deadline-basis`** — Verify the court-rule and public-holiday tables behind the litigation-deadlines skills against official publishers. Use before first computed reliance or when a rule change is suspected. Never computes dates.
 
 ## Australian Privacy & Cybersecurity (`privacy-cybersecurity`)

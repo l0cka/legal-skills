@@ -227,4 +227,4 @@ profile to be approved before they run.
 
 The triage profile is JSON with its own template and validator. Start from
 `configure-legal-triage/assets/centre-profile.template.json` and check it
-with that skill's `validate_triage_profile.py`.
+with that skill's validator<!-- ai-tool:code --> `validate_triage_profile.py`<!-- /ai-tool:code -->.

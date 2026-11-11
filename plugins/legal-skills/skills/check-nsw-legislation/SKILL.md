@@ -41,6 +41,7 @@ authorisation boundary, point-in-time method and URL structure.
    - Match the exact title, type, year and number, NSW website identifier, and
      present In force or Repealed collection. Treat multiple plausible titles
      as ambiguous.
+   <!-- ai-tool:code -->
    - When command execution is available, use the bundled navigation helper
      after establishing the identifier and collection:
 
@@ -59,6 +60,7 @@ authorisation boundary, point-in-time method and URL structure.
      optional, offline and read-only; it only formats official URLs and
      makes no network requests. Without command execution, follow the same
      steps on the official website directly.
+   <!-- /ai-tool:code -->
 3. Select the point-in-time version.
    - Use the status-page timeline and the Legislative history table of
      versions for the requested date.
@@ -135,3 +137,22 @@ official site is unavailable, a relevant amendment or commencement issue
 cannot be resolved, a recent change may be inside the stated update interval,
 or the requested proposition depends on an EPI map or adopted document whose
 authorisation cannot be established.
+
+## AI-tool mode
+
+Use this section when the host cannot run
+code. The AI-tool bundle ships this section and
+leaves the code steps out; hosts that can run code ignore it. General rules:
+[AI-tool mode](../../references/ai-tool-mode.md).
+
+1. Search `legislation.nsw.gov.au` and open the status page of the title.
+   Record the exact title, type, year and number, the website identifier
+   (for example `act-1987-015`) and whether it sits in In force or Repealed.
+2. For a historical date, open the Legislative history table of versions and
+   pick the version covering the date. The site serves historical versions
+   under an `inforce/<YYYY-MM-DD>` route; cite a page only if you opened it.
+3. Read Status Information (Currency of version, Provisions in force, Notes)
+   and the Legislative history for commencement and amending legislation.
+4. If the host cannot browse, make no claim about currency or commencement.
+   Return `NOT VERIFIED` with these steps and ask the person to supply the
+   page text. Mark every field not inspected as `not established`.
