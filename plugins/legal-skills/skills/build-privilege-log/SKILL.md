@@ -1,6 +1,6 @@
 ---
 name: build-privilege-log
-description: Draft a privilege log as a Word file, one row per document with claimed basis and waiver flags. Use for discovery, subpoenas and regulatory productions. For an index use `$build-document-index`. Never decides that privilege exists or is lost.
+description: Draft a privilege log as a Word file, one row per document with claimed basis and waiver flags. Use for discovery and subpoenas. For an index use `$build-document-index`. Never decides that privilege exists or is lost.
 ---
 
 # Build Privilege Log

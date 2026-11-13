@@ -15,7 +15,7 @@ is the skill's own trigger text: what it does, when to use it and when not to.
 
 ## Australian AI Governance (`ai-governance`)
 
-- **`assess-board-ai-oversight`** — Board and director-duty exposure from AI under the Corporations Act. Use for board AI policies and AI-assisted board packs. For general duties use `$assess-director-duties-governance`. Never concludes breach or compliance.
+- **`assess-board-ai-oversight`** — Board and director-duty exposure from AI under the Corporations Act. Use for board AI policies and packs. For general duties use `$assess-director-duties-governance`. Never concludes breach or compliance.
 - **`check-ai-guidance-alignment`** — Assess AI governance documents against Australian voluntary guidance (AI Adoption, Voluntary AI Safety Standard, ISO/IEC 42001). Use for gap assessments. For binding law use `$map-ai-regulatory-obligations`. Never certifies or concludes compliance.
 - **`configure-ai-governance-profile`** — Set up or update the AI-governance profile (entity type, sector, governing documents) the AI skills run against. Use for first setup or changes. For all-area setup use `$setup`. Never approves the profile.
 - **`map-ai-regulatory-obligations`** — Which Australian instruments bind a described AI use case; pending ones are watch items. Use for AI adoption and procurement. For privacy depth use `$assess-ai-privacy-cybersecurity-use-case`. Not for the EU AI Act.
@@ -24,7 +24,7 @@ is the skill's own trigger text: what it does, when to use it and when not to.
 
 ## Australian AML/CTF (`aml-ctf`)
 
-- **`configure-aml-ctf-practice-profile`** — Set up or update the tranche 2 AML/CTF practice profile for a legal practice. Use first. To test a service use `$map-designated-services`. Never decides whether a service is designated or approves the profile.
+- **`configure-aml-ctf-practice-profile`** — Set up or update the tranche 2 AML/CTF practice profile for a legal practice. Use before other AML/CTF workflows. To test a service use `$map-designated-services`. Never decides whether a service is designated or approves the profile.
 - **`map-designated-services`** — Whether an Australian legal practice's services are designated services under AML/CTF tranche 2. Use when a service line may trigger obligations. For reports use `$map-reporting-obligations`. Never decides enrolment.
 - **`map-reporting-obligations`** — Which AML/CTF reports a legal practice may need, incl. suspicious matter reports, tipping-off and privilege. Use for scenarios. For coverage use `$map-designated-services`. Never decides a matter is suspicious or drafts a report.
 - **`review-aml-ctf-program`** — Issue-spot a legal practice's AML/CTF program, risk assessment, policies, governance and CDD design. Use for gap reviews. For service coverage use `$map-designated-services`. Never certifies compliance.
@@ -34,34 +34,34 @@ is the skill's own trigger text: what it does, when to use it and when not to.
 
 - **`configure-drafting-profile`** — Set up or update the profile for first-draft Australian commercial documents (party, state, house style, positions). Use before drafting. For review positions use `$configure-review-playbook`. Never approves the profile.
 - **`draft-nda`** — Prepare a first-draft mutual or one-way Australian NDA for lawyer review. Use when an NDA must be drafted. To triage a received NDA use `$triage-inbound-nda`. Never approves execution.
-- **`draft-privacy-policy`** — Draft a private-sector privacy policy from evidenced data practices, with an APP 1.4 map. Use for policies. For issues use `$assess-australian-privacy-issues`. Never invents data practices or publishes the policy.
+- **`draft-privacy-policy`** — Draft a private-sector privacy policy from evidenced data practices, with an APP 1.4 map. Use for a privacy policy. For issues use `$assess-australian-privacy-issues`. Never invents data practices or publishes the policy.
 - **`draft-services-agreement`** — Draft a B2B services or contractor agreement and SOW for lawyer review. Use for a first draft. For classification use `$assess-employee-vs-contractor`. Never approves execution.
 - **`draft-website-terms`** — Prepare first-draft Australian SaaS or subscription website terms for consumers and small businesses. Use when drafting terms. To screen clauses use `$check-unfair-contract-terms`. Never publishes.
-- **`review-draft-against-checklist`** — Review a commercial draft for missing clauses, undefined terms, broken references and UCT risk. Use for our own drafts. For a counterparty draft use `$review-commercial-agreement`. Never certifies enforceability.
+- **`review-draft-against-checklist`** — Review an Australian commercial draft for missing clauses, undefined terms, broken references and UCT risk. Use for our own drafts. For a counterparty draft use `$review-commercial-agreement`. Never certifies enforceability.
 
 ## Australian Consumer & Competition (`consumer-competition`)
 
-- **`assess-cartel-and-rpm-risk`** — Issue-spot Australian cartel, RPM, exclusive dealing and market-power risk. Use for competitor contacts, distribution restraints and pricing pressure. For mergers use `$map-merger-notification`. Never concludes an offence occurred.
-- **`assess-consumer-guarantees`** — Australian Consumer Law guarantees, remedies and warranty documents. Use for defects, failed services and refund disputes. For unsafe goods use `$map-product-safety-obligations`. Never decides entitlement.
+- **`assess-cartel-and-rpm-risk`** — Issue-spot Australian cartel, RPM, exclusive dealing and market-power risk. Use for competitor contacts and distribution restraints. For mergers use `$map-merger-notification`. Never concludes an offence occurred.
+- **`assess-consumer-guarantees`** — Australian Consumer Law guarantees, remedies and warranty documents. Use for defects and refund disputes. For unsafe goods use `$map-product-safety-obligations`. Never decides entitlement.
 - **`configure-consumer-competition-profile`** — Set up or validate the business profile the consumer and competition skills run against. Use for scope and approval controls. For all-area setup use `$setup`. Never approves the profile.
 - **`map-merger-notification`** — Mandatory merger notification thresholds, exemptions and waivers from transaction evidence. Use before signing or completion. For cartels use `$assess-cartel-and-rpm-risk`. Never lodges an application or approves closing.
-- **`map-product-safety-obligations`** — Australian product safety standards, bans, recalls and mandatory reporting. Use for supply checks, injury reports and recall planning. For guarantee remedies use `$assess-consumer-guarantees`. Never executes a recall or files a report.
-- **`review-marketing-claims`** — Review marketing, environmental, comparative and pricing claims, incl. drip pricing. Use before a campaign. For terms use `$check-unfair-contract-terms`. Never certifies claims or publishes advertisements.
-- **`track-accc-developments`** — ACCC watch register checked on demand for changed merger, consumer, competition and safety positions. Use for horizon reviews. For current duties use `$map-merger-notification`. Not an unattended monitor.
+- **`map-product-safety-obligations`** — Australian product safety standards, bans, recalls and mandatory reporting. Use for injury reports and recall planning. For guarantee remedies use `$assess-consumer-guarantees`. Never executes a recall or files a report.
+- **`review-marketing-claims`** — Review Australian marketing, environmental, comparative and pricing claims, incl. drip pricing. Use before a campaign. For terms use `$check-unfair-contract-terms`. Never certifies claims or publishes advertisements.
+- **`track-accc-developments`** — ACCC watch register checked on demand for changed merger, consumer, competition and safety positions. Use for horizon reviews. For consumer duties use `$assess-consumer-guarantees`. Not an unattended monitor.
 
 ## Australian Contract Review (`contract-review`)
 
-- **`build-negotiation-redline-memo`** — Draft a negotiation memo - current text, proposed text, rationale and fallbacks per clause. Use after a contract review. To review use `$review-commercial-agreement`. Never sends the memo or alters a live document.
+- **`build-negotiation-redline-memo`** — Draft an Australian negotiation memo - current text, proposed text, rationale and fallbacks per clause. Use after a contract review. To review use `$review-commercial-agreement`. Never sends the memo or alters a live document.
 - **`check-unfair-contract-terms`** — Screen contract terms for unfair-contract-terms risk under the ACL or ASIC Act. Use for consumer and small-business standard forms. For whole contracts use `$review-commercial-agreement`. Never declares a term invalid.
 - **`configure-review-playbook`** — Set up or update a contract-review playbook of positions, fallbacks and approval thresholds. Use before inbound review. For drafting use `$configure-drafting-profile`. Never invents firm positions or approves the playbook.
 - **`review-commercial-agreement`** — Review an Australian MSA, SaaS, supply or services agreement against approved positions. Use for inbound contracts. For NDAs use `$triage-inbound-nda`. Never silently rewrites or approves execution.
-- **`review-limitation-and-indemnity-regime`** — Review caps, exclusions, indemnities, insurance and proportionate liability in a contract. Use for risk allocation. For a full review use `$review-commercial-agreement`. Never assumes contracting out is permitted.
+- **`review-limitation-and-indemnity-regime`** — Review caps, exclusions, indemnities, insurance and proportionate liability in an Australian contract. Use for risk allocation. For a full review use `$review-commercial-agreement`. Never assumes contracting out is permitted.
 - **`track-contract-renewals`** — Register of contract renewal and notice dates and auto-renewal risks. Use for a portfolio or impending renewal. For litigation dates use `$maintain-deadline-register`. Never sends notices or updates live diaries.
 - **`triage-inbound-nda`** — Triage a received Australian NDA as green, yellow or red against a playbook. Use for inbound NDAs. To draft an NDA use `$draft-nda`. Never clears execution or certifies enforceability.
 
 ## Australian Corporations Governance (`corporations-governance`)
 
-- **`assess-director-duties-governance`** — Issue-spot director and officer duty risks for a company decision. Use for authority, care, reliance, conflicts and solvency. For WHS use `$assess-officer-due-diligence`. Never concludes breach, validity or solvency.
+- **`assess-director-duties-governance`** — Issue-spot Australian director and officer duty risks for a company decision. Use for authority, care, reliance, conflicts and solvency. For WHS use `$assess-officer-due-diligence`. Never concludes breach, validity or solvency.
 - **`configure-corporations-governance`** — Set up or update an Australian company's governance profile (entity type, documents, board authority, delegations). Use before other governance skills. For all-area setup use `$setup`. Never approves the profile.
 - **`maintain-corporations-governance-calendar`** — Source-linked governance calendar for an Australian company - meetings, records, notifications and reporting. Use to create or update it. For litigation dates use `$maintain-deadline-register`. Never submits filings or sends notices.
 - **`prepare-board-decision-record`** — Draft board papers, resolutions or minutes extracts from verified law and evidence. Use for a decision. For duties use `$assess-director-duties-governance`. Never invents attendance, votes or reasons, and never circulates documents.
@@ -73,7 +73,7 @@ is the skill's own trigger text: what it does, when to use it and when not to.
 - **`assess-employee-vs-contractor`** — Issue-spot employee or contractor classification and sham contracting under the Fair Work Act. Use before engaging contractors. To draft use `$draft-services-agreement`. Never classifies conclusively from an ABN or label.
 - **`assess-restraint-of-trade`** — Issue-spot employment restraints under common law, NSW legislation and non-compete reforms. Use for exit or clause reviews. For other terms use `$review-employment-contract`. Never certifies enforceability.
 - **`assess-termination-exposure`** — Issue-spot dismissal or redundancy exposure - unfair dismissal, general protections, notice. Use before a dismissal or when a claim is threatened. For pay use `$map-fair-work-obligations`. Never concludes a dismissal was unfair.
-- **`compute-underpayment-exposure-framework`** — Underpayment exposure framework from entitlements, payroll evidence and limitation leads. Use for wage reviews. For entitlements use `$map-fair-work-obligations`. Never invents award rates or computes a final liability.
+- **`compute-underpayment-exposure-framework`** — Australian underpayment exposure framework from entitlements, payroll evidence and limitation leads. Use for wage reviews. For entitlements use `$map-fair-work-obligations`. Never invents award rates or computes a final liability.
 - **`configure-employment-profile`** — Set up or update the employer profile the Fair Work skills run against (coverage, size, awards, agreements). Use before other employment workflows. For all-area setup use `$setup`. Never decides coverage or approves the profile.
 - **`map-fair-work-obligations`** — Which Fair Work Act, NES, award and agreement provisions apply to an employment arrangement. Use for onboarding and entitlement queries. To review a contract use `$review-employment-contract`. Never concludes award coverage or calculates pay.
 - **`review-employment-contract`** — Review an Australian employment contract against the NES, award coverage, set-off, IP, termination and fixed-term limits. Use for onboarding. For restraints use `$assess-restraint-of-trade`. Never certifies compliance.
@@ -118,11 +118,11 @@ is the skill's own trigger text: what it does, when to use it and when not to.
 
 ## Australian Privacy & Cybersecurity (`privacy-cybersecurity`)
 
-- **`assess-ai-privacy-cybersecurity-use-case`** — Assess an AI use case for privacy and cybersecurity suitability - data flows, harms, vendors, controls. Use for AI intake, procurement, pilots and PIAs. For AI duties use `$map-ai-regulatory-obligations`.
+- **`assess-ai-privacy-cybersecurity-use-case`** — Assess an AI use case for Australian privacy and cybersecurity suitability - data flows, harms, vendors, controls. Use for AI intake, procurement and PIAs. For AI duties use `$map-ai-regulatory-obligations`.
 - **`assess-australian-data-breach`** — Triage a suspected Australian data breach or cyber incident for lawyers, mapping breach regimes, reporting clocks and an action matrix. Use for unauthorised access, ransomware and vendor incidents. Never decides whether to notify.
 - **`assess-australian-privacy-issues`** — Spot and structure Australian privacy and data protection issues from facts, contracts, policies or data maps into a source-linked issue matrix. Use for privacy scoping and applicability. Not for case law or final opinions.
-- **`assess-automated-decision-transparency`** — Privacy transparency duties for automated and AI-assisted decisions, incl. APP 1.7 to 1.9 from 10 December 2026 and WA PRIS. Use for decision inventories. For discrimination use `$assess-discrimination-and-positive-duty`.
-- **`assess-statutory-privacy-tort`** — Screen facts against the Privacy Act statutory tort for serious privacy invasions. Use for surveillance, recording, scraping, deepfakes and intimate, health or location disclosure. For other privacy use `$assess-australian-privacy-issues`.
+- **`assess-automated-decision-transparency`** — Privacy transparency duties for automated and AI-assisted decisions, incl. APP 1.7 to 1.9 from 10 December 2026 and WA PRIS. Use for decision inventories. For wider privacy use `$assess-australian-privacy-issues`.
+- **`assess-statutory-privacy-tort`** — Screen facts against the Privacy Act statutory tort for serious privacy invasions. Use for surveillance, scraping, deepfakes and intimate, health or location disclosure. For other privacy use `$assess-australian-privacy-issues`.
 - **`check-australian-privacy-principles`** — Verify the Australian Privacy Principles, coverage, exemptions, codes and pending amendments from official sources. Use whenever a workflow relies on an APP or reuses an earlier APP analysis. No case law.
 - **`map-australian-cyber-incident-obligations`** — Map concurrent Australian cyber incident, data breach, ransomware payment, critical infrastructure and sector reporting duties by entity, trigger, recipient and clock. For full incident triage use assess-australian-data-breach.
 - **`route-australian-privacy-jurisdiction`** — Route Australian privacy, health information, data breach, surveillance and workplace monitoring issues to the Commonwealth, State and Territory regimes that may apply. Use before substantive privacy or breach analysis.
@@ -139,7 +139,7 @@ is the skill's own trigger text: what it does, when to use it and when not to.
 
 - **`build-document-index`** — Source-linked, numbered document index as a Word file from matter documents, for court books. Use for litigation and disclosure. For dated events use `$build-evidence-chronology`. Never decides relevance, privilege or admissibility.
 - **`build-evidence-chronology`** — Source-linked evidence chronology as a Word file, keeping exact date wording, conflicts and gaps. Use for litigation and disputes. For an index use `$build-document-index`. Never decides credibility, weight or merits.
-- **`build-privilege-log`** — Draft a privilege log as a Word file, one row per document with claimed basis and waiver flags. Use for discovery, subpoenas and regulatory productions. For an index use `$build-document-index`. Never decides that privilege exists or is lost.
+- **`build-privilege-log`** — Draft a privilege log as a Word file, one row per document with claimed basis and waiver flags. Use for discovery and subpoenas. For an index use `$build-document-index`. Never decides that privilege exists or is lost.
 - **`map-evidence-inconsistencies`** — Where matter documents and accounts agree, diverge or are silent on each fact, as a Word file. Use for witness preparation and cross-examination. For the chronology use `$build-evidence-chronology`. Never decides which account is right.
 
 ## Legal Triage (`triage`)

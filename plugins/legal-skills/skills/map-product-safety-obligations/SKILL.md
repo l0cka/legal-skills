@@ -1,6 +1,6 @@
 ---
 name: map-product-safety-obligations
-description: Australian product safety standards, bans, recalls and mandatory reporting. Use for supply checks, injury reports and recall planning. For guarantee remedies use `$assess-consumer-guarantees`. Never executes a recall or files a report.
+description: Australian product safety standards, bans, recalls and mandatory reporting. Use for injury reports and recall planning. For guarantee remedies use `$assess-consumer-guarantees`. Never executes a recall or files a report.
 ---
 
 # Map Product Safety Obligations

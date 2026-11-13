@@ -44,8 +44,9 @@ description to one pattern:
 4. The "Never ..." safety sentence, where the skill has one. The body must
    hold the same rule.
 
-When all four do not fit, keep the first three; the body holds the safety
-rule either way. Put the full scope, including every neighbouring skill to use instead,
+When all four do not fit, keep the "Never" sentence and tighten the other
+wording; if the first three still do not fit, list the skill in the pull
+request. Put the full scope, including every neighbouring skill to use instead,
 in a `## Scope` section at the top of the body, and mirror each routing
 pointer there. The validator also fails when all descriptions together pass
 26,000 characters. Name another skill in the text as `` `$skill-name` ``; a

@@ -1,6 +1,6 @@
 ---
 name: assess-statutory-privacy-tort
-description: Screen facts against the Privacy Act statutory tort for serious privacy invasions. Use for surveillance, recording, scraping, deepfakes and intimate, health or location disclosure. For other privacy use `$assess-australian-privacy-issues`.
+description: Screen facts against the Privacy Act statutory tort for serious privacy invasions. Use for surveillance, scraping, deepfakes and intimate, health or location disclosure. For other privacy use `$assess-australian-privacy-issues`.
 ---
 
 # Assess Statutory Privacy Tort

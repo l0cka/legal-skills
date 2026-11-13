@@ -1,6 +1,6 @@
 ---
 name: review-limitation-and-indemnity-regime
-description: Review caps, exclusions, indemnities, insurance and proportionate liability in a contract. Use for risk allocation. For a full review use `$review-commercial-agreement`. Never assumes contracting out is permitted.
+description: Review caps, exclusions, indemnities, insurance and proportionate liability in an Australian contract. Use for risk allocation. For a full review use `$review-commercial-agreement`. Never assumes contracting out is permitted.
 ---
 
 # Review Limitation And Indemnity Regime

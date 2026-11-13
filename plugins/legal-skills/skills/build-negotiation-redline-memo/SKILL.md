@@ -1,6 +1,6 @@
 ---
 name: build-negotiation-redline-memo
-description: Draft a negotiation memo - current text, proposed text, rationale and fallbacks per clause. Use after a contract review. To review use `$review-commercial-agreement`. Never sends the memo or alters a live document.
+description: Draft an Australian negotiation memo - current text, proposed text, rationale and fallbacks per clause. Use after a contract review. To review use `$review-commercial-agreement`. Never sends the memo or alters a live document.
 ---
 
 # Build Negotiation Redline Memo

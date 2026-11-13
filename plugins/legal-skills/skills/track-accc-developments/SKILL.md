@@ -1,6 +1,6 @@
 ---
 name: track-accc-developments
-description: ACCC watch register checked on demand for changed merger, consumer, competition and safety positions. Use for horizon reviews. For current duties use `$map-merger-notification`. Not an unattended monitor.
+description: ACCC watch register checked on demand for changed merger, consumer, competition and safety positions. Use for horizon reviews. For consumer duties use `$assess-consumer-guarantees`. Not an unattended monitor.
 ---
 
 # Track ACCC Developments
@@ -26,6 +26,8 @@ version, effective date, checked date, observation and evidence state. If unavai
 'verify against <official source>' and leave the affected proposition not verified.
 
 For current duties use `$map-merger-notification`.
+
+For consumer duties use `$assess-consumer-guarantees`.
 
 ## Workflow
 

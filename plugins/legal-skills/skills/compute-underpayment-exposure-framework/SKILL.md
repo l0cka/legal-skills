@@ -1,6 +1,6 @@
 ---
 name: compute-underpayment-exposure-framework
-description: Underpayment exposure framework from entitlements, payroll evidence and limitation leads. Use for wage reviews. For entitlements use `$map-fair-work-obligations`. Never invents award rates or computes a final liability.
+description: Australian underpayment exposure framework from entitlements, payroll evidence and limitation leads. Use for wage reviews. For entitlements use `$map-fair-work-obligations`. Never invents award rates or computes a final liability.
 ---
 
 # Compute Underpayment Exposure Framework

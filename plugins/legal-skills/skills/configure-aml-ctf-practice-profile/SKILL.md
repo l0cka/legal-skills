@@ -1,6 +1,6 @@
 ---
 name: configure-aml-ctf-practice-profile
-description: Set up or update the tranche 2 AML/CTF practice profile for a legal practice. Use first. To test a service use `$map-designated-services`. Never decides whether a service is designated or approves the profile.
+description: Set up or update the tranche 2 AML/CTF practice profile for a legal practice. Use before other AML/CTF workflows. To test a service use `$map-designated-services`. Never decides whether a service is designated or approves the profile.
 ---
 
 # Configure AML/CTF Practice Profile

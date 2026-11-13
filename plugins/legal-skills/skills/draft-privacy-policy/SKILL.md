@@ -1,6 +1,6 @@
 ---
 name: draft-privacy-policy
-description: Draft a private-sector privacy policy from evidenced data practices, with an APP 1.4 map. Use for policies. For issues use `$assess-australian-privacy-issues`. Never invents data practices or publishes the policy.
+description: Draft a private-sector privacy policy from evidenced data practices, with an APP 1.4 map. Use for a privacy policy. For issues use `$assess-australian-privacy-issues`. Never invents data practices or publishes the policy.
 ---
 
 # Draft Privacy Policy

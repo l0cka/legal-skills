@@ -1,6 +1,6 @@
 ---
 name: assess-cartel-and-rpm-risk
-description: Issue-spot Australian cartel, RPM, exclusive dealing and market-power risk. Use for competitor contacts, distribution restraints and pricing pressure. For mergers use `$map-merger-notification`. Never concludes an offence occurred.
+description: Issue-spot Australian cartel, RPM, exclusive dealing and market-power risk. Use for competitor contacts and distribution restraints. For mergers use `$map-merger-notification`. Never concludes an offence occurred.
 ---
 
 # Assess Cartel and RPM Risk

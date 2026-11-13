@@ -1,6 +1,6 @@
 ---
 name: review-draft-against-checklist
-description: Review a commercial draft for missing clauses, undefined terms, broken references and UCT risk. Use for our own drafts. For a counterparty draft use `$review-commercial-agreement`. Never certifies enforceability.
+description: Review an Australian commercial draft for missing clauses, undefined terms, broken references and UCT risk. Use for our own drafts. For a counterparty draft use `$review-commercial-agreement`. Never certifies enforceability.
 ---
 
 # Review Draft Against Checklist

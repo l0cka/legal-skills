@@ -1,6 +1,6 @@
 ---
 name: assess-board-ai-oversight
-description: Board and director-duty exposure from AI under the Corporations Act. Use for board AI policies and AI-assisted board packs. For general duties use `$assess-director-duties-governance`. Never concludes breach or compliance.
+description: Board and director-duty exposure from AI under the Corporations Act. Use for board AI policies and packs. For general duties use `$assess-director-duties-governance`. Never concludes breach or compliance.
 ---
 
 # Assess Board AI Oversight

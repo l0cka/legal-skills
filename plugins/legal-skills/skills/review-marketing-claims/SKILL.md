@@ -1,6 +1,6 @@
 ---
 name: review-marketing-claims
-description: Review marketing, environmental, comparative and pricing claims, incl. drip pricing. Use before a campaign. For terms use `$check-unfair-contract-terms`. Never certifies claims or publishes advertisements.
+description: Review Australian marketing, environmental, comparative and pricing claims, incl. drip pricing. Use before a campaign. For terms use `$check-unfair-contract-terms`. Never certifies claims or publishes advertisements.
 ---
 
 # Review Marketing Claims
