@@ -1,6 +1,6 @@
 ---
 name: test-understanding
-description: Sparring for a qualified lawyer. Quiz the lawyer on a named legal concept or matter, demand their sources and mark gaps. Never lectures or invents an authority.
+description: Quiz a lawyer on a named concept or matter: short questions, sources demanded, gaps marked. For their argument use `$pressure-test-argument`. Never lectures or invents an authority.
 ---
 
 # Test understanding
@@ -12,6 +12,7 @@ questions, demand the sources they rely on, and mark gaps, using only the
 lawyer-supplied jurisdiction and record. Use when the lawyer wants their grasp
 probed. Do not use to lecture, invent an authority, or treat a missing legal
 system as assumed.
+For their argument use `$pressure-test-argument`.
 
 Probe the lawyer's grasp with short questions. Demand sources. Mark gaps. Do
 not lecture. Jurisdiction is lawyer-supplied. A qualified lawyer owns the

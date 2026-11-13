@@ -1,6 +1,6 @@
 ---
 name: simplify-without-losing-precision
-description: Sparring for a qualified lawyer. Restate a legal position in plain language a client could follow, then flag where simplifying hid a material nuance. Never sends the restatement to the client.
+description: Plain-language restatement of a position a client could follow, then flags what simplifying hid, for a lawyer. To quiz the lawyer use `$test-understanding`. Never sends it to the client.
 ---
 
 # Simplify without losing precision
@@ -12,6 +12,7 @@ client could follow, then flag where simplification hid a material nuance, for
 a qualified lawyer using a lawyer-supplied jurisdiction and record. Use when
 the lawyer wants that check. Do not use to send the restatement to the client
 or to drop a qualification silently.
+To quiz the lawyer use `$test-understanding`.
 
 Restate the position in language a non-lawyer client could follow. Then flag
 every material nuance the plain version hid. Jurisdiction is lawyer-supplied.
