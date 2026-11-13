@@ -1,6 +1,6 @@
 ---
 name: route-australian-privacy-jurisdiction
-description: Route Australian privacy, health information, data breach, surveillance and workplace monitoring issues to the Commonwealth, State and Territory regimes that may apply. Use before substantive privacy or breach analysis.
+description: Route Australian privacy, health information, data breach, surveillance and workplace monitoring issues to Commonwealth, State and Territory regimes. Use before substantive analysis. APP text: `$check-australian-privacy-principles`.
 ---
 
 # Route Australian Privacy Jurisdiction
@@ -12,7 +12,8 @@ surveillance and workplace-monitoring issues to the potentially applicable
 Commonwealth, State and Territory regimes using entity, role, data, conduct
 and date facts. Use before substantive privacy, breach or AI analysis where a
 State or Territory nexus is possible. Do not use for case law, final legal
-advice or as a substitute for checking current official legislation.
+advice or as a substitute for checking current official legislation. For the
+text and currency of an APP use `$check-australian-privacy-principles`.
 
 Build a candidate-law map before applying legal tests. Read
 [references/state-territory-coverage.json](references/state-territory-coverage.json)

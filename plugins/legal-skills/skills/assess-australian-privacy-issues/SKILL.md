@@ -1,6 +1,6 @@
 ---
 name: assess-australian-privacy-issues
-description: Spot and structure Australian privacy and data protection issues from facts, contracts, policies or data maps into a source-linked issue matrix. Use for privacy scoping and applicability. Not for case law or final opinions.
+description: Spot and structure Australian privacy and data protection issues from facts, contracts, policies or data maps into a source-linked issue matrix. Which law applies: `$route-australian-privacy-jurisdiction`. Never gives a final opinion.
 ---
 
 # Assess Australian Privacy Issues
@@ -16,7 +16,8 @@ legislation skills; and prepare a source-linked issue matrix for lawyer
 review. Use for privacy scoping, applicability analysis, privacy-policy or DPA
 issue spotting, data-flow reviews, cyber regulatory scoping and preliminary
 legal research. Do not use for case law, foreign law, final legal opinions,
-autonomous compliance decisions or external notifications.
+autonomous compliance decisions or external notifications. To decide which
+State or Territory regime applies use `$route-australian-privacy-jurisdiction`; to verify an APP use `$check-australian-privacy-principles`.
 
 Produce a preliminary issue-and-law map for an Australian lawyer. Do not state
 that a duty applies until its threshold facts and current legislative text have

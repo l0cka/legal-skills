@@ -1,6 +1,6 @@
 ---
 name: assess-notifiable-incident
-description: Urgent preliminary assessment of an Australian workplace incident, covering candidate notifiable incident, who notifies which regulator, how fast, and site preservation. Use straight after an incident. Never decides whether to notify.
+description: Assess an Australian workplace death, serious injury or dangerous incident straight after it happens: candidate notifiable incident, regulator and clock, site preservation. Cyber incident: `$assess-australian-data-breach`. Never decides whether to notify.
 ---
 
 # Assess Notifiable Incident
@@ -18,7 +18,8 @@ with known facts, assumptions and unknowns kept apart. Use straight after an
 incident or when reviewing whether an earlier incident should have been
 notified. Do not use to decide whether to notify, to notify a regulator, to
 release a site, to respond to an inspector or to assess officer due diligence
-(use $assess-officer-due-diligence).
+(use $assess-officer-due-diligence). For a cyber incident or data breach use
+`$assess-australian-data-breach`.
 
 Put the urgent steps first, then the analysis. Never delay a human escalation
 while researching, and never decide that an incident is or is not notifiable;

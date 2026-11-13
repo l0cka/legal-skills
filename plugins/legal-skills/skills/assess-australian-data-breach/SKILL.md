@@ -1,6 +1,6 @@
 ---
 name: assess-australian-data-breach
-description: Triage a suspected Australian data breach or cyber incident for lawyers, mapping breach regimes, reporting clocks and an action matrix. Use for unauthorised access, ransomware and vendor incidents. Never decides whether to notify.
+description: Triage a suspected Australian data breach or cyber incident (ransomware, hacked accounts, misdirected email) for lawyers: facts, regimes, clocks, actions. Obligations table only: `$map-australian-cyber-incident-obligations`. Never decides whether to notify.
 ---
 
 # Assess Australian Data Breach
@@ -17,7 +17,8 @@ time-sensitive assessment and action matrix. Use for suspected unauthorised
 access, disclosure or loss, ransomware, cyber extortion, vendor incidents and
 breach-response planning. Do not use for case law, forensic conclusions, live
 containment, threat hunting, external reports or autonomous notification
-decisions.
+decisions. For the reporting-obligations and clock table alone use `$map-australian-cyber-incident-obligations`; for a workplace injury or WHS incident
+use `$assess-notifiable-incident`.
 
 Prepare a privileged-workstream-ready preliminary assessment for a lawyer. Do
 not conclude that a breach is notifiable merely because a security incident
