@@ -1,6 +1,6 @@
 ---
 name: assess-australian-data-breach
-description: Triage a suspected Australian data breach or cyber incident (ransomware, hacked accounts, misdirected email) for lawyers: facts, regimes, clocks, actions. Obligations table only: `$map-australian-cyber-incident-obligations`. Never decides whether to notify.
+description: Triage a suspected Australian data breach or cyber incident for lawyers: facts, regimes, clocks, actions. Obligations table only: `$map-australian-cyber-incident-obligations`. Never decides whether to notify.
 ---
 
 # Assess Australian Data Breach

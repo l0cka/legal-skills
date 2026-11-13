@@ -1,6 +1,6 @@
 ---
 name: assess-australian-privacy-issues
-description: Spot and structure Australian privacy and data protection issues from facts, contracts, policies or data maps into a source-linked issue matrix. Which law applies: `$route-australian-privacy-jurisdiction`. Never gives a final opinion.
+description: Spot Australian privacy issues in facts, contracts, policies or data maps as a source-linked issue matrix. Which law applies: `$route-australian-privacy-jurisdiction`. Never gives a final opinion.
 ---
 
 # Assess Australian Privacy Issues

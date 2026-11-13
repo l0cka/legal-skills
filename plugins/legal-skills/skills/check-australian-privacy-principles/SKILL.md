@@ -1,6 +1,6 @@
 ---
 name: check-australian-privacy-principles
-description: Verify the Australian Privacy Principles, coverage, exemptions, codes and pending amendments from official sources. Use whenever a workflow relies on an APP or reuses an earlier APP analysis. Issue spotting: `$assess-australian-privacy-issues`. No case law.
+description: Verify the Australian Privacy Principles, coverage, exemptions, codes and pending amendments from official sources. Use whenever a workflow relies on or reuses an APP analysis. Issue spotting: `$assess-australian-privacy-issues`. No case law.
 ---
 
 # Check Australian Privacy Principles

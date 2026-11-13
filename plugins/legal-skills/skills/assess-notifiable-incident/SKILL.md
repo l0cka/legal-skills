@@ -1,6 +1,6 @@
 ---
 name: assess-notifiable-incident
-description: Assess an Australian workplace death, serious injury or dangerous incident straight after it happens: candidate notifiable incident, regulator and clock, site preservation. Cyber incident: `$assess-australian-data-breach`. Never decides whether to notify.
+description: Assess an Australian workplace death or serious injury straight after it happens: candidate notifiable incident, regulator and clock, site preservation. Cyber incident: `$assess-australian-data-breach`. Never decides whether to notify.
 ---
 
 # Assess Notifiable Incident
