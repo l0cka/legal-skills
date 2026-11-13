@@ -1,6 +1,6 @@
 ---
 name: track-accc-developments
-description: Check the ACCC watch register on demand against official sources for changed merger, consumer, competition and product safety positions. Use before advice or a horizon review. Not an unattended monitor.
+description: ACCC watch register checked on demand for changed merger, consumer, competition and safety positions. Use for horizon reviews. For current duties use `$map-merger-notification`. Not an unattended monitor.
 ---
 
 # Track ACCC Developments
@@ -24,6 +24,8 @@ Verify every statutory citation at legislation.gov.au through `$check-commonweal
 for state or territory application use its official legislation publisher. Record provision,
 version, effective date, checked date, observation and evidence state. If unavailable, say
 'verify against <official source>' and leave the affected proposition not verified.
+
+For current duties use `$map-merger-notification`.
 
 ## Workflow
 

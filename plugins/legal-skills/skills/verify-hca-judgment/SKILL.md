@@ -1,6 +1,6 @@
 ---
 name: verify-hca-judgment
-description: Verify that a High Court of Australia decision exists at the official High Court website, for HCA, CLR and ALJR citations. Use via route-case-citation or for a known High Court citation. Not for case treatment.
+description: Verify a High Court decision exists at the High Court website - HCA, CLR, ALJR citations. Use via `$route-case-citation` or for a known one. For Federal Court use `$verify-federal-judgment`. Not for case treatment.
 ---
 
 # Verify HCA Judgment
@@ -35,6 +35,8 @@ index, so verify such cases by case name and reported citation instead.
 Read [../../references/case-law-verification-method.md](../../references/case-law-verification-method.md)
 before verifying. It defines the outcome semantics, access rules and
 restriction handling.
+
+For Federal Court use `$verify-federal-judgment`.
 
 ## Workflow
 

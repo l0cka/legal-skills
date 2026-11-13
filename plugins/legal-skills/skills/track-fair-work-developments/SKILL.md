@@ -1,6 +1,6 @@
 ---
 name: track-fair-work-developments
-description: Check the Fair Work watch register on demand against primary sources, including amending Acts, the Annual Wage Review and indexed thresholds. Use for horizon reviews. Never treats a pending instrument as law.
+description: Fair Work watch register checked on demand, incl. the Annual Wage Review and indexed thresholds. Use for horizon reviews. For duties use `$map-fair-work-obligations`. Never treats a pending instrument as law.
 ---
 
 # Track Fair Work Developments
@@ -24,6 +24,8 @@ A pending instrument is never an obligation until verified in force.
 
 Read the [source and control method](../../references/fair-work-source-and-control-method.md)
 and work from the [watch register](references/watch-register.json).
+
+For duties use `$map-fair-work-obligations`.
 
 ## Workflow
 

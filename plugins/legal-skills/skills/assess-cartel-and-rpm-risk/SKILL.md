@@ -1,6 +1,6 @@
 ---
 name: assess-cartel-and-rpm-risk
-description: Issue-spot Australian cartel, concerted practice, resale price maintenance, exclusive dealing and market-power risk. Use for competitor contacts, distribution restraints and pricing pressure. Never concludes an offence occurred.
+description: Issue-spot Australian cartel, RPM, exclusive dealing and market-power risk. Use for competitor contacts, distribution restraints and pricing pressure. For mergers use `$map-merger-notification`. Never concludes an offence occurred.
 ---
 
 # Assess Cartel and RPM Risk
@@ -25,6 +25,8 @@ Verify every statutory citation at legislation.gov.au through `$check-commonweal
 for state or territory application use its official legislation publisher. Record provision,
 version, effective date, checked date, observation and evidence state. If unavailable, say
 'verify against <official source>' and leave the affected proposition not verified.
+
+For mergers use `$map-merger-notification`.
 
 ## Workflow
 

@@ -1,6 +1,6 @@
 ---
 name: map-merger-notification
-description: Map Australian mandatory merger notification thresholds, exemptions, waivers and stay pathways from transaction evidence. Use before signing or completion planning. Never lodges an application or approves closing.
+description: Mandatory merger notification thresholds, exemptions and waivers from transaction evidence. Use before signing or completion. For cartels use `$assess-cartel-and-rpm-risk`. Never lodges an application or approves closing.
 ---
 
 # Map Merger Notification
@@ -24,6 +24,8 @@ Verify every statutory citation at legislation.gov.au through `$check-commonweal
 for state or territory application use its official legislation publisher. Record provision,
 version, effective date, checked date, observation and evidence state. If unavailable, say
 'verify against <official source>' and leave the affected proposition not verified.
+
+For cartels use `$assess-cartel-and-rpm-risk`.
 
 ## Workflow
 

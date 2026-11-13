@@ -1,6 +1,6 @@
 ---
 name: verify-case-quote
-description: Verify that a quoted passage attributed to an Australian judgment appears in the decision at the official court publisher, with its paragraph location. Use after the citation is verified. Not for paraphrase or interpretation.
+description: Verify a passage quoted from an Australian judgment appears in the decision at the official publisher, with its paragraph. Use after verifying the citation. For the citation use `$route-case-citation`. Not for paraphrase or interpretation.
 ---
 
 # Verify Case Quote
@@ -23,6 +23,8 @@ Text from an aggregator, a secondary source or model memory proves nothing.
 Read [../../references/case-law-verification-method.md](../../references/case-law-verification-method.md)
 before checking. It defines the outcome semantics, access rules and
 restriction handling.
+
+For the citation use `$route-case-citation`.
 
 ## Workflow
 

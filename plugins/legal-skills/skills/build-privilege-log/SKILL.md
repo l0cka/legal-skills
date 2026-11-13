@@ -1,6 +1,6 @@
 ---
 name: build-privilege-log
-description: Draft a privilege log as a Word file from supplied matter documents, one row per document with the claimed basis and waiver flags. Use for discovery, subpoenas and regulatory productions. Never decides that privilege exists or is lost.
+description: Draft a privilege log as a Word file, one row per document with claimed basis and waiver flags. Use for discovery, subpoenas and regulatory productions. For an index use `$build-document-index`. Never decides that privilege exists or is lost.
 ---
 
 # Build Privilege Log
@@ -24,6 +24,8 @@ document, without deciding it. The log records what each document shows about
 who made it, for whom and why, and lists the questions a claim would have to
 answer. Every claim remains a practitioner decision, the source documents stay
 unchanged and the log is delivered as a Word `.docx` file.
+
+For an index use `$build-document-index`.
 
 ## Workflow
 

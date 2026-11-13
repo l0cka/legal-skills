@@ -1,6 +1,6 @@
 ---
 name: map-tribunal-review-deadlines
-description: Map and compute candidate merits-review and tribunal deadlines for Australian decisions, never by model arithmetic, covering the ART, NCAT, QCAT and VCAT. Use after a government or tribunal decision. Never concludes a period has expired.
+description: Candidate merits-review and tribunal deadlines (ART, NCAT, QCAT, VCAT), never by model arithmetic. Use after a government or tribunal decision. For court steps use `$compute-procedural-deadlines`. Never concludes a period has expired.
 ---
 
 # Map Tribunal Review Deadlines
@@ -29,6 +29,8 @@ use an approved profile per the
 [deadline profile schema](../../references/deadline-profile-schema.md), and
 run [compute_deadline.py](../compute-procedural-deadlines/scripts/compute_deadline.py)
 against the [computation-rule tables](../../references/computation-rules/).
+
+For court steps use `$compute-procedural-deadlines`.
 
 ## Workflow
 

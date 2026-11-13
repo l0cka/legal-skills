@@ -1,6 +1,6 @@
 ---
 name: assess-discrimination-and-positive-duty
-description: Map Australian workplace discrimination and positive-duty exposure under Commonwealth, NSW, Victorian and Queensland law. Use for incident or preventive-control reviews. Never determines liability or certifies compliance.
+description: Map discrimination and positive-duty exposure under Commonwealth, NSW, Vic and Qld law. Use for incident reviews. For psychosocial use `$review-psychosocial-risk-controls`. Never determines liability or certifies compliance.
 ---
 
 # Assess Discrimination and Positive Duty
@@ -32,6 +32,8 @@ consult the [extension source
 checklist](../../references/employment-extension-sources.md). Assume only
 evidenced instructions and documents; unknown facts stay unknown. Every output
 requires review by a qualified lawyer before reliance.
+
+For psychosocial use `$review-psychosocial-risk-controls`.
 
 ## Workflow
 

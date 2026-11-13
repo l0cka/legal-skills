@@ -1,6 +1,6 @@
 ---
 name: map-fair-work-obligations
-description: Map which Fair Work Act, National Employment Standards, award and enterprise agreement provisions apply to an Australian employment arrangement. Use for onboarding, contract design and entitlement queries. Never concludes award coverage or calculates pay.
+description: Which Fair Work Act, NES, award and agreement provisions apply to an employment arrangement. Use for onboarding and entitlement queries. To review a contract use `$review-employment-contract`. Never concludes award coverage or calculates pay.
 ---
 
 # Map Fair Work Obligations
@@ -27,6 +27,8 @@ Read the [source and control method](../../references/fair-work-source-and-contr
 first, use the approved profile per the
 [employment profile schema](../../references/employment-profile-schema.md),
 and work from the [framework layers reference](../../references/framework-layers.md).
+
+To review a contract use `$review-employment-contract`.
 
 ## Workflow
 

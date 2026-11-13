@@ -1,6 +1,6 @@
 ---
 name: review-employment-contract
-description: Review an Australian employment contract against the NES, award coverage, set-off, IP, confidentiality, termination and fixed-term limits. Use for onboarding or contract refreshes. Never certifies compliance.
+description: Review an Australian employment contract against the NES, award coverage, set-off, IP, termination and fixed-term limits. Use for onboarding. For restraints use `$assess-restraint-of-trade`. Never certifies compliance.
 ---
 
 # Review Employment Contract
@@ -26,6 +26,8 @@ consult the [extension source
 checklist](../../references/employment-extension-sources.md). Assume only
 evidenced instructions and documents; unknown facts stay unknown. Every output
 requires review by a qualified lawyer before reliance.
+
+For restraints use `$assess-restraint-of-trade`.
 
 ## Workflow
 

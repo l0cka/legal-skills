@@ -1,6 +1,6 @@
 ---
 name: triage-inbound-nda
-description: Triage a supplied inbound Australian NDA as green, yellow or red against a review playbook, with clause references and escalation. Never clears execution or certifies enforceability.
+description: Triage a received Australian NDA as green, yellow or red against a playbook. Use for inbound NDAs. To draft an NDA use `$draft-nda`. Never clears execution or certifies enforceability.
 ---
 
 # Triage Inbound NDA
@@ -25,6 +25,8 @@ method](../../references/review-source-and-control-method.md)
 first and use the [review playbook
 schema](../../references/review-playbook-schema.md).
 All outputs carry `DRAFT - LAWYER REVIEW REQUIRED`.
+
+To draft an NDA use `$draft-nda`.
 
 ## Workflow
 

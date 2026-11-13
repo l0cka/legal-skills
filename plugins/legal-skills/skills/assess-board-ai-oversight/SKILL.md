@@ -1,6 +1,6 @@
 ---
 name: assess-board-ai-oversight
-description: Issue-spot board and director-duty exposure from AI adoption and board use of AI under the Corporations Act. Use for board AI policies, AI-assisted board packs and oversight reviews. Never concludes breach or compliance.
+description: Board and director-duty exposure from AI under the Corporations Act. Use for board AI policies and AI-assisted board packs. For general duties use `$assess-director-duties-governance`. Never concludes breach or compliance.
 ---
 
 # Assess Board AI Oversight
@@ -23,6 +23,8 @@ declare liability.
 Read the [source and control method](../../references/ai-governance-source-and-control-method.md)
 and use the approved [profile schema](../../references/ai-governance-profile-schema.md)
 profile.
+
+For general duties use `$assess-director-duties-governance`.
 
 ## Workflow
 

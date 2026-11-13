@@ -1,6 +1,6 @@
 ---
 name: check-commonwealth-legislation
-description: Verify Commonwealth Acts and instruments on the Federal Register of Legislation, covering whether in force, the compilation on a date and whether a citation matches. Not for State or Territory law, Bills or case law.
+description: Verify Commonwealth Acts and instruments on the Federal Register of Legislation - in force, compilation on a date, citation match. Use for Commonwealth law. For changes over time use `$trace-commonwealth-legislative-change`.
 ---
 
 # Check Commonwealth Legislation
@@ -22,6 +22,8 @@ provenance record, not a bare assertion that legislation is "current".
 Read [references/register-method.md](references/register-method.md) before
 performing a check. It defines the official-source rules, edge cases and result
 schema.
+
+For changes over time use `$trace-commonwealth-legislative-change`.
 
 ## Workflow
 

@@ -1,6 +1,6 @@
 ---
 name: configure-employment-profile
-description: Create or update the employer profile the Fair Work skills run against, recording coverage basis, size, awards, agreements and policies. Use before other employment workflows. Never decides coverage or approves the profile.
+description: Set up or update the employer profile the Fair Work skills run against (coverage, size, awards, agreements). Use before other employment workflows. For all-area setup use `$setup`. Never decides coverage or approves the profile.
 ---
 
 # Configure Employment Profile
@@ -28,6 +28,8 @@ To start quickly, edit the matching starter in
 [starter-profiles.md](../../references/starter-profiles.md). The
 [profile guide](../../references/profile-guide.md) says where to keep the
 approved profile and how a person approves it.
+
+For all-area setup use `$setup`.
 
 ## Workflow
 

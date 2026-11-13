@@ -1,6 +1,6 @@
 ---
 name: assemble-vic-estate-documents
-description: Draft a Victorian will, enduring power of attorney and medical treatment decision maker appointment from a firm's approved precedents for solicitor review. Not for other jurisdictions, trusts or probate.
+description: Draft a Victorian will, enduring power of attorney and medical treatment decision maker from approved precedents. Use for solicitor-led matters. For NSW use `$assemble-nsw-estate-documents`. Not for trusts or probate.
 ---
 
 # Assemble Victorian Estate Documents
@@ -26,6 +26,8 @@ Read the
 first, then use the
 [Victorian instruction record schema](../../references/vic-instruction-record-schema.md)
 and [approved playbook usage rules](../../references/playbook-usage-rules.md).
+
+For NSW use `$assemble-nsw-estate-documents`.
 
 ## Workflow
 

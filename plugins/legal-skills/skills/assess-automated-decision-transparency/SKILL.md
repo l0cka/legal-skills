@@ -1,6 +1,6 @@
 ---
 name: assess-automated-decision-transparency
-description: Assess Australian privacy transparency duties for automated and AI-assisted decisions, including APP 1.7 to 1.9 from 10 December 2026 and WA PRIS. Use for decision inventories and privacy policy readiness. Not for discrimination law.
+description: Privacy transparency duties for automated and AI-assisted decisions, incl. APP 1.7 to 1.9 from 10 December 2026 and WA PRIS. Use for decision inventories. For discrimination use `$assess-discrimination-and-positive-duty`.
 ---
 
 # Assess Automated Decision Transparency
@@ -17,6 +17,8 @@ case law, discrimination-law conclusions or autonomous deployment approval.
 Separate current law, enacted future law and transition work. Read
 [references/automated-decision-method.md](references/automated-decision-method.md)
 before starting.
+
+For discrimination use `$assess-discrimination-and-positive-duty`.
 
 ## Workflow
 

@@ -1,6 +1,6 @@
 ---
 name: review-corporations-governance-framework
-description: Review an Australian company's governance framework against Corporations Act requirements and produce a gap and action matrix. Use for board authority, delegations, conflicts and records. Never certifies compliance.
+description: Review a company's governance framework against Corporations Act requirements. Use for authority, delegations, conflicts and records. For a decision use `$assess-director-duties-governance`. Never certifies compliance.
 ---
 
 # Review Corporations Governance Framework
@@ -22,6 +22,8 @@ prove legal compliance.
 
 Read the [source and control method](../../references/governance-source-and-control-method.md)
 and use the approved [profile schema](../../references/governance-profile-schema.md).
+
+For a decision use `$assess-director-duties-governance`.
 
 ## Workflow
 

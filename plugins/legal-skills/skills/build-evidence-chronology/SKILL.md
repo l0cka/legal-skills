@@ -1,6 +1,6 @@
 ---
 name: build-evidence-chronology
-description: Build a source-linked evidence chronology as a Word file from supplied matter documents, keeping exact date wording, conflicts and gaps. Use for litigation, investigations and disputes. Never decides credibility, weight or merits.
+description: Source-linked evidence chronology as a Word file, keeping exact date wording, conflicts and gaps. Use for litigation and disputes. For an index use `$build-document-index`. Never decides credibility, weight or merits.
 ---
 
 # Build Evidence Chronology
@@ -20,6 +20,8 @@ Organise supplied evidence into a reviewable sequence without turning disputed
 material into an agreed narrative. Keep every material event traceable to the
 source set, preserve the source documents unchanged and deliver the chronology
 as a Word `.docx` file.
+
+For an index use `$build-document-index`.
 
 ## Workflow
 

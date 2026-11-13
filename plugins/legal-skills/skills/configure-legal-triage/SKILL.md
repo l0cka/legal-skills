@@ -1,6 +1,6 @@
 ---
 name: configure-legal-triage
-description: Create or update a community legal centre's enquiry triage profile, recording service scope, urgency pathways, eligibility and referrals. Use before legal triage. Never invents centre policy or approves the profile.
+description: Set up or update a community legal centre's triage profile (scope, urgency pathways, eligibility, referrals). Use before legal triage. To triage use `$triage-legal-enquiry`. Never invents centre policy or approves the profile.
 ---
 
 # Configure Legal Triage
@@ -28,6 +28,8 @@ To start quickly, edit the matching starter in
 [starter-profiles.md](../../references/starter-profiles.md). The
 [profile guide](../../references/profile-guide.md) says where to keep the
 approved profile and how a person approves it.
+
+To triage use `$triage-legal-enquiry`.
 
 ## Workflow
 

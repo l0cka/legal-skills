@@ -1,6 +1,6 @@
 ---
 name: assess-employee-vs-contractor
-description: Issue-spot Australian employee or contractor classification and sham contracting under the Fair Work Act. Use before contractor drafting or an engagement review. Never classifies conclusively from an ABN or label.
+description: Issue-spot employee or contractor classification and sham contracting under the Fair Work Act. Use before engaging contractors. To draft use `$draft-services-agreement`. Never classifies conclusively from an ABN or label.
 ---
 
 # Assess Employee vs Contractor
@@ -26,6 +26,8 @@ consult the [extension source
 checklist](../../references/employment-extension-sources.md). Assume only
 evidenced instructions and documents; unknown facts stay unknown. Every output
 requires review by a qualified lawyer before reliance.
+
+To draft use `$draft-services-agreement`.
 
 ## Workflow
 

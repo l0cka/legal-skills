@@ -1,6 +1,6 @@
 ---
 name: build-negotiation-redline-memo
-description: Draft an Australian contract negotiation memo with current text, proposed text, rationale and authorised fallbacks per clause. Use after a contract review. Never sends the memo or alters a live document.
+description: Draft a negotiation memo - current text, proposed text, rationale and fallbacks per clause. Use after a contract review. To review use `$review-commercial-agreement`. Never sends the memo or alters a live document.
 ---
 
 # Build Negotiation Redline Memo
@@ -25,6 +25,8 @@ method](../../references/review-source-and-control-method.md)
 first and use the [review playbook
 schema](../../references/review-playbook-schema.md).
 All outputs carry `DRAFT - LAWYER REVIEW REQUIRED`.
+
+To review use `$review-commercial-agreement`.
 
 ## Workflow
 

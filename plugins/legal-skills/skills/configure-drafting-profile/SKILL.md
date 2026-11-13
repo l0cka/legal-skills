@@ -1,6 +1,6 @@
 ---
 name: configure-drafting-profile
-description: Create or update the profile for first-draft Australian commercial documents, recording the drafting party, governing state, house style and standard positions. Use before commercial drafting. Never approves the profile.
+description: Set up or update the profile for first-draft Australian commercial documents (party, state, house style, positions). Use before drafting. For review positions use `$configure-review-playbook`. Never approves the profile.
 ---
 
 # Configure Drafting Profile
@@ -30,6 +30,8 @@ To start quickly, edit the matching starter in
 [starter-profiles.md](../../references/starter-profiles.md). The
 [profile guide](../../references/profile-guide.md) says where to keep the
 approved profile and how a person approves it.
+
+For review positions use `$configure-review-playbook`.
 
 ## Workflow
 

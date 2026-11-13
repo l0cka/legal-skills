@@ -1,6 +1,6 @@
 ---
 name: verify-qld-judgment
-description: Verify that a Queensland court or tribunal decision exists at the Queensland Judgments website, for medium-neutral Queensland citations and Qd R. Use via route-case-citation or for a known Queensland citation. Not for case treatment.
+description: Verify a Queensland court or tribunal decision exists at the Queensland Judgments website - Queensland citations and Qd R. Use via `$route-case-citation` or for a known one. For NSW use `$verify-nsw-judgment`. Not for case treatment.
 ---
 
 # Verify Queensland Judgment
@@ -32,6 +32,8 @@ which it asks users to register to read.
 Read [../../references/case-law-verification-method.md](../../references/case-law-verification-method.md)
 before verifying. It defines the outcome semantics, access rules and
 restriction handling.
+
+For NSW use `$verify-nsw-judgment`.
 
 ## Workflow
 

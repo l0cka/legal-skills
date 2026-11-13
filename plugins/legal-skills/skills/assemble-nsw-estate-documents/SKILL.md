@@ -1,6 +1,6 @@
 ---
 name: assemble-nsw-estate-documents
-description: Draft a NSW will, enduring power of attorney and enduring guardianship from a firm's approved precedents for solicitor review. Not for other jurisdictions, trusts, probate or self-represented people.
+description: Draft a NSW will, enduring power of attorney and guardianship from approved precedents. Use for solicitor-led matters. For Queensland use `$assemble-qld-estate-documents`. Not for trusts or probate.
 ---
 
 # Assemble NSW Estate Documents
@@ -26,6 +26,8 @@ Read the
 first, then use the
 [NSW instruction record schema](../../references/nsw-instruction-record-schema.md)
 and [approved playbook usage rules](../../references/playbook-usage-rules.md).
+
+For Queensland use `$assemble-qld-estate-documents`.
 
 ## Workflow
 

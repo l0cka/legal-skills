@@ -1,6 +1,6 @@
 ---
 name: review-limitation-and-indemnity-regime
-description: Review interacting caps, exclusions, indemnities, insurance and proportionate liability in an Australian commercial contract. Use for risk-allocation review. Never assumes contracting out is permitted.
+description: Review caps, exclusions, indemnities, insurance and proportionate liability in a contract. Use for risk allocation. For a full review use `$review-commercial-agreement`. Never assumes contracting out is permitted.
 ---
 
 # Review Limitation And Indemnity Regime
@@ -26,6 +26,8 @@ method](../../references/review-source-and-control-method.md)
 first and use the [review playbook
 schema](../../references/review-playbook-schema.md).
 All outputs carry `DRAFT - LAWYER REVIEW REQUIRED`.
+
+For a full review use `$review-commercial-agreement`.
 
 ## Workflow
 
