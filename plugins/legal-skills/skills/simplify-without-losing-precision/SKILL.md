@@ -1,6 +1,6 @@
 ---
 name: simplify-without-losing-precision
-description: Plain-language restatement of a position a client could follow, then flags what simplifying hid, for a lawyer. To quiz the lawyer use `$test-understanding`. Never sends it to the client.
+description: Restate a position in plain language a client could follow, then flag what simplifying hid, for a lawyer. To quiz the lawyer use `$test-understanding`. Never sends it to the client.
 ---
 
 # Simplify without losing precision

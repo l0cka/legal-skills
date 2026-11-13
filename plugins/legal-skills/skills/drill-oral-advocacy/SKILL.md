@@ -1,6 +1,6 @@
 ---
 name: drill-oral-advocacy
-description: Hostile bench questions or an opening or closing drill, scored on clarity, concessions and recovery. For a written case use `$role-play-decision-maker`. Never predicts a ruling.
+description: Hostile bench questions or an opening or closing drill for a lawyer, scored on clarity, concessions, recovery. For a judge's reaction use `$role-play-decision-maker`. Never predicts a ruling.
 ---
 
 # Drill oral advocacy
@@ -11,7 +11,7 @@ Run a short hostile question-and-answer or opening or closing drill on a named
 issue, and score clarity, concessions, and recovery, for a qualified lawyer.
 Use on the lawyer-supplied jurisdiction and record. Do not use to invent
 transcript authority or to predict the decision-maker's ruling as certainty.
-For a written case use `$role-play-decision-maker`.
+For a judge's reaction use `$role-play-decision-maker`.
 
 Run a short hostile drill on one named issue. Score clarity, concessions, and
 recovery. Do not invent a transcript. Jurisdiction is lawyer-supplied. A
