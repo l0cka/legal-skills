@@ -1,6 +1,6 @@
 ---
 name: role-play-decision-maker
-description: Sparring for a qualified lawyer. Respond as a sceptical judge, tribunal member or regulator the lawyer names and say what would persuade or fail. Never predicts an outcome as certain.
+description: Use when a lawyer wants a named judge, tribunal member or regulator played: what would persuade or fail. For rehearsal use `$drill-oral-advocacy`. Never predicts an outcome as certain.
 ---
 
 # Role-play decision-maker
@@ -11,6 +11,7 @@ Respond as a skeptical judge, tribunal member, regulator, or other
 decision-maker the lawyer names, and say what would persuade or fail on the
 supplied record. Use when a qualified lawyer wants that pressure. Do not use
 to predict an outcome as certainty, invent a transcript, or assume a forum.
+For rehearsal use `$drill-oral-advocacy`.
 
 Answer as the skeptical decision-maker the lawyer names. Say what would
 persuade or fail on the supplied record. Do not predict the outcome as a
