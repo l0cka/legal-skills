@@ -1,6 +1,6 @@
 ---
 name: configure-ai-governance-profile
-description: Create or update the AI-governance profile the Australian AI-governance skills run against, recording entity type, sector, overlays and governing documents. Use for first setup or changes. Never approves the profile.
+description: Set up or update the AI-governance profile (entity type, sector, governing documents) the AI skills run against. Use for first setup or changes. For all-area setup use `$setup`. Never approves the profile.
 ---
 
 # Configure AI Governance Profile
@@ -25,6 +25,8 @@ To start quickly, edit the matching starter in
 [starter-profiles.md](../../references/starter-profiles.md). The
 [profile guide](../../references/profile-guide.md) says where to keep the
 approved profile and how a person approves it.
+
+For all-area setup use `$setup`.
 
 ## Workflow
 

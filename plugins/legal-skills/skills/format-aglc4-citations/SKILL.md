@@ -1,6 +1,6 @@
 ---
 name: format-aglc4-citations
-description: Draft, convert, review and correct Australian legal citations and bibliographies in AGLC4 format. Use for footnotes, pinpoints, subsequent references and citation audits. Does not verify that a cited source exists.
+description: Draft, convert and correct Australian legal citations and bibliographies in AGLC4. Use for footnotes, pinpoints and citation audits. To verify that a source exists use `$check-citations`. Does not verify sources.
 ---
 
 # AGLC4 legal citation
@@ -17,6 +17,8 @@ to verify that a cited source exists or says what is claimed; formatting and
 source verification are separate tasks.
 
 Apply AGLC4 to every citation. Preserve the source's substantive details; change only citation form unless the user asks for source verification or correction.
+
+To verify that a source exists use `$check-citations`.
 
 ## Workflow
 

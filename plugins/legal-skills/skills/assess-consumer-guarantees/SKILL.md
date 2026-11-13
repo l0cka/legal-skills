@@ -1,6 +1,6 @@
 ---
 name: assess-consumer-guarantees
-description: Assess Australian Consumer Law guarantee issues, remedies, manufacturer exposure and warranty documents for lawyer review. Use for defects, failed services and refund disputes. Never decides entitlement.
+description: Australian Consumer Law guarantees, remedies and warranty documents. Use for defects and refund disputes. For unsafe goods use `$map-product-safety-obligations`. Never decides entitlement.
 ---
 
 # Assess Consumer Guarantees
@@ -24,6 +24,8 @@ Verify every statutory citation at legislation.gov.au through `$check-commonweal
 for state or territory application use its official legislation publisher. Record provision,
 version, effective date, checked date, observation and evidence state. If unavailable, say
 'verify against <official source>' and leave the affected proposition not verified.
+
+For unsafe goods use `$map-product-safety-obligations`.
 
 ## Workflow
 

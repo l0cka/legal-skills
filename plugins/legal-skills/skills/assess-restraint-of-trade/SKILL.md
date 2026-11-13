@@ -1,6 +1,6 @@
 ---
 name: assess-restraint-of-trade
-description: Issue-spot Australian employment restraints against common-law reasonableness, NSW legislation and proposed non-compete reforms. Use for exit or clause reviews. Never certifies enforceability.
+description: Issue-spot employment restraints under common law, NSW legislation and non-compete reforms. Use for exit or clause reviews. For other terms use `$review-employment-contract`. Never certifies enforceability.
 ---
 
 # Assess Restraint of Trade
@@ -31,6 +31,8 @@ consult the [extension source
 checklist](../../references/employment-extension-sources.md). Assume only
 evidenced instructions and documents; unknown facts stay unknown. Every output
 requires review by a qualified lawyer before reliance.
+
+For other terms use `$review-employment-contract`.
 
 ## Workflow
 

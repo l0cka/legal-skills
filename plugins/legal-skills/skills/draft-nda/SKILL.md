@@ -1,6 +1,6 @@
 ---
 name: draft-nda
-description: Prepare a first-draft mutual or one-way Australian NDA from party details and commercial instructions for lawyer review. Not for restraints, guaranteeing secrecy or approving execution.
+description: Prepare a first-draft mutual or one-way Australian NDA for lawyer review. Use when an NDA must be drafted. To triage a received NDA use `$triage-inbound-nda`. Never approves execution.
 ---
 
 # Draft NDA
@@ -25,6 +25,8 @@ lawyer must review every output before use.
 Read the [source and control method](../../references/drafting-source-and-control-method.md)
 first. Use the [profile schema](../../references/drafting-profile-schema.md)
 for standing positions and transaction instructions.
+
+To triage a received NDA use `$triage-inbound-nda`.
 
 ## Workflow
 

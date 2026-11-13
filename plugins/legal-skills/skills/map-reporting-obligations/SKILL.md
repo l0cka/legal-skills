@@ -1,6 +1,6 @@
 ---
 name: map-reporting-obligations
-description: Map which AML/CTF reports an Australian legal practice may need for a scenario, including suspicious matter reports, tipping-off and legal professional privilege. Never decides a matter is suspicious or drafts a report.
+description: Which AML/CTF reports a legal practice may need, incl. suspicious matter reports, tipping-off and privilege. Use for scenarios. For coverage use `$map-designated-services`. Never decides a matter is suspicious or drafts a report.
 ---
 
 # Map Reporting Obligations
@@ -26,6 +26,8 @@ Read the [source and control method](../../references/aml-ctf-source-and-control
 the [LPP carve-outs reference](../../references/lpp-carve-outs.md) and use an
 approved profile per the
 [practice profile schema](../../references/aml-ctf-practice-profile-schema.md).
+
+For coverage use `$map-designated-services`.
 
 ## Workflow
 

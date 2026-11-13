@@ -1,6 +1,6 @@
 ---
 name: triage-government-ai-use-case
-description: Route an Australian government AI use case to its assurance track, either the Commonwealth DTA policy or a state or territory framework. Use for government AI adoption and procurement. Not for private-sector obligations.
+description: Route a government AI use case to its assurance track - Commonwealth DTA policy or a state or territory framework. Use for government AI adoption. For private-sector duties use `$map-ai-regulatory-obligations`.
 ---
 
 # Triage Government AI Use Case
@@ -23,6 +23,8 @@ a routing, not a completed assessment.
 Read the [source and control method](../../references/ai-governance-source-and-control-method.md)
 and use the
 [government AI assurance registry](references/government-ai-assurance-registry.json).
+
+For private-sector duties use `$map-ai-regulatory-obligations`.
 
 ## Workflow
 

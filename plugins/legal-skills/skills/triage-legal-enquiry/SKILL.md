@@ -1,6 +1,6 @@
 ---
 name: triage-legal-enquiry
-description: Prepare a provisional triage record for a legal enquiry at an Australian community legal centre under its approved profile, covering urgency, issue and referral. For authorised staff only. Not a public chatbot and never gives legal advice.
+description: Provisional triage record for a community legal centre enquiry under its approved profile - urgency, issue, referral. Use by authorised staff. For skill routing use `$route-legal-fact-pattern`. Not a public chatbot and never gives legal advice.
 ---
 
 # Triage Legal Enquiry
@@ -25,6 +25,8 @@ Read [references/triage-protocol.md](references/triage-protocol.md) before
 handling an enquiry. Use
 [references/result-contract.md](references/result-contract.md) for the final
 record.
+
+For skill routing use `$route-legal-fact-pattern`.
 
 ## Preconditions
 

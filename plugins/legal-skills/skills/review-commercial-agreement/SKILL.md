@@ -1,6 +1,6 @@
 ---
 name: review-commercial-agreement
-description: Review a supplied Australian MSA, SaaS, supply or services agreement against approved positions and return a clause-referenced issues table. Never silently rewrites or approves execution.
+description: Review an Australian MSA, SaaS, supply or services agreement against approved positions. Use for inbound contracts. For NDAs use `$triage-inbound-nda`. Never silently rewrites or approves execution.
 ---
 
 # Review Commercial Agreement
@@ -25,6 +25,8 @@ method](../../references/review-source-and-control-method.md)
 first and use the [review playbook
 schema](../../references/review-playbook-schema.md).
 All outputs carry `DRAFT - LAWYER REVIEW REQUIRED`.
+
+For NDAs use `$triage-inbound-nda`.
 
 ## Workflow
 

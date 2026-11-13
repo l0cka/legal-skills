@@ -1,6 +1,6 @@
 ---
 name: check-nsw-legislation
-description: Verify NSW Acts, statutory instruments and planning instruments on the official NSW legislation website, covering whether in force, the version on a date and whether a citation matches. Not for other jurisdictions, Bills, court rules or case law.
+description: Verify NSW legislation at the official NSW legislation website - in force, version on a date, citation match. Use for NSW law. For Commonwealth law use `$check-commonwealth-legislation`.
 ---
 
 # Check NSW Legislation
@@ -23,6 +23,8 @@ provenance record, not a bare assertion that legislation is "current".
 Read [references/nsw-legislation-method.md](references/nsw-legislation-method.md)
 before performing a check. It defines the official-source hierarchy,
 authorisation boundary, point-in-time method and URL structure.
+
+For Commonwealth law use `$check-commonwealth-legislation`.
 
 ## Workflow
 

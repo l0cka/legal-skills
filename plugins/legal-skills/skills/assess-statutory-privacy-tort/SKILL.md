@@ -1,6 +1,6 @@
 ---
 name: assess-statutory-privacy-tort
-description: Screen facts against the statutory tort for serious invasions of privacy in the Privacy Act 1988 (Cth). Use for surveillance, recording, scraping, deepfakes and disclosure of intimate, health or location information. Legislation only, no case law.
+description: Screen facts against the Privacy Act statutory tort for serious privacy invasions. Use for surveillance, scraping, deepfakes and intimate, health or location disclosure. For other privacy use `$assess-australian-privacy-issues`.
 ---
 
 # Assess Statutory Privacy Tort
@@ -18,6 +18,8 @@ treat APP-entity coverage as a prerequisite.
 Conduct a legislation-only screen under Privacy Act Schedule 2. Read
 [references/statutory-tort-method.md](references/statutory-tort-method.md) before
 starting.
+
+For other privacy use `$assess-australian-privacy-issues`.
 
 ## Workflow
 

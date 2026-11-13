@@ -1,6 +1,6 @@
 ---
 name: verify-nsw-judgment
-description: Verify that a NSW court or tribunal decision exists on NSW Caselaw, for medium-neutral NSW citations and NSWLR. Use via route-case-citation or for a known NSW citation. Not for case treatment.
+description: Verify a NSW court or tribunal decision exists on NSW Caselaw - NSW citations and NSWLR. Use via `$route-case-citation` or for a known one. For Queensland use `$verify-qld-judgment`. Not for case treatment.
 ---
 
 # Verify NSW Judgment
@@ -27,6 +27,8 @@ some courts). Produce a provenance record, not a bare assertion that a case
 Read [../../references/case-law-verification-method.md](../../references/case-law-verification-method.md)
 before verifying. It defines the outcome semantics, access rules and
 restriction handling.
+
+For Queensland use `$verify-qld-judgment`.
 
 ## Workflow
 

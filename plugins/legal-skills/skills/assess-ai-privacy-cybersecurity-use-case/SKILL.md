@@ -1,6 +1,6 @@
 ---
 name: assess-ai-privacy-cybersecurity-use-case
-description: Assess an AI use case for Australian privacy and cybersecurity suitability, covering data flows, harms, vendors and controls. Use for AI intake, procurement, pilots and privacy impact assessments. Not for AI obligations mapping or board oversight.
+description: Assess an AI use case for Australian privacy and cybersecurity suitability - data flows, harms, vendors, controls. Use for AI intake, procurement and PIAs. For AI duties use `$map-ai-regulatory-obligations`.
 ---
 
 # Assess AI Privacy and Cybersecurity Use Case
@@ -27,6 +27,8 @@ a provisional recommendation supported by verified law, evidence and controls.
 Read [references/ai-use-case-method.md](references/ai-use-case-method.md) before
 starting. It defines the intake schema, risk domains, suitability outcomes,
 control tests and authority boundaries.
+
+For AI duties use `$map-ai-regulatory-obligations`.
 
 ## Workflow
 

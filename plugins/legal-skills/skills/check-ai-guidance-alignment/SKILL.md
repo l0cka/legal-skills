@@ -1,6 +1,6 @@
 ---
 name: check-ai-guidance-alignment
-description: Assess AI governance documents against Australian voluntary guidance, including Guidance for AI Adoption, the Voluntary AI Safety Standard and ISO/IEC 42001. Use for gap assessments and AI policy reviews. Never certifies or concludes compliance.
+description: Assess AI governance documents against Australian voluntary guidance (AI Adoption, Voluntary AI Safety Standard, ISO/IEC 42001). Use for gap assessments. For binding law use `$map-ai-regulatory-obligations`. Never certifies or concludes compliance.
 ---
 
 # Check AI Guidance Alignment
@@ -24,6 +24,8 @@ a certification or a compliance conclusion.
 Read the [source and control method](../../references/ai-governance-source-and-control-method.md)
 and use the approved [profile schema](../../references/ai-governance-profile-schema.md)
 profile.
+
+For binding law use `$map-ai-regulatory-obligations`.
 
 ## Workflow
 

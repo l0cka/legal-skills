@@ -1,6 +1,6 @@
 ---
 name: verify-deadline-basis
-description: Verify the court-rule and public-holiday tables behind the litigation-deadlines skills against official publishers. Use before first computed reliance or when a rule change is suspected. Never computes dates.
+description: Verify the court-rule and public-holiday tables behind the deadline skills against official publishers. Use before first reliance or on rule changes. To compute use `$compute-procedural-deadlines`. Never computes dates.
 ---
 
 # Verify Deadline Basis
@@ -26,6 +26,8 @@ until this workflow confirms it.
 Read the [source and control method](../../references/litigation-deadlines-source-and-control-method.md)
 and verify the [computation-rule tables](../../references/computation-rules/)
 and [holiday tables](../../references/holidays/).
+
+To compute use `$compute-procedural-deadlines`.
 
 ## Workflow
 

@@ -1,6 +1,6 @@
 ---
 name: check-unfair-contract-terms
-description: Screen Australian contract terms for unfair-contract-terms risk under the ACL or ASIC Act. Use for consumer or small-business standard-form contracts. Never declares a term invalid.
+description: Screen contract terms for unfair-contract-terms risk under the ACL or ASIC Act. Use for consumer and small-business standard forms. For whole contracts use `$review-commercial-agreement`. Never declares a term invalid.
 ---
 
 # Check Unfair Contract Terms
@@ -26,6 +26,8 @@ method](../../references/review-source-and-control-method.md)
 first and use the [review playbook
 schema](../../references/review-playbook-schema.md).
 All outputs carry `DRAFT - LAWYER REVIEW REQUIRED`.
+
+For whole contracts use `$review-commercial-agreement`.
 
 ## Workflow
 
