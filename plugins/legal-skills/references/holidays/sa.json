@@ -4,7 +4,7 @@
   "description": "South Australian public holidays under the Public Holidays Act 2023 (SA), as published by SafeWork SA (statewide list).",
   "source_url": "https://www.safework.sa.gov.au/resources/public-holidays",
   "checked": "2026-08-26",
-  "evidence": {"state": "verified", "method": "Firecrawl scrape of the official SafeWork SA public-holidays page on the checked date; page last modified 2026-06-24 and covering 2025 to 2028."},
+  "evidence": {"state": "verified", "method": "Firecrawl scrape of the official SafeWork SA public-holidays page on the checked date; page last modified 2026-06-24 and covering 2025 to 2028. Re-read on 2026-11-16 for dates from 16 November 2026 to the end of 2027, which were unchanged; the page then showed last modified 2026-09-20."},
   "coverage": {"from": "2026-01-01", "to": "2027-12-31"},
   "holidays": [
     "2026-01-01", "2026-01-26", "2026-03-09", "2026-04-03", "2026-04-04",

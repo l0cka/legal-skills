@@ -17,7 +17,7 @@
     "Queensland District and Magistrates Courts",
     "Western Australian District and Magistrates Courts"
   ],
-  "no_entry_note": "The index source listed no instrument for these forums on the as-at date. That is not evidence that none exists.",
+  "no_entry_note": "The index source listed no instrument for these forums on the as-at date. That is not evidence that none exists. At the 16 November 2026 review, instruments were located on the forums' own websites for the Victorian Civil and Administrative Tribunal (Practice Note PNVCAT 11, effective 22 December 2025) and the District Court of Queensland (Practice Direction 12 of 2025), and Supreme Court of Tasmania guidelines commencing 21 October 2026 were reported but not opened at the court's website. None has been read into this register yet: open each at the forum's website.",
   "instruments": [
     {
       "id": "fca-gpn-ai",
@@ -63,16 +63,20 @@
       ]
     },
     {
-      "id": "fwc-draft-guidance",
+      "id": "fwc-genai-guidance-note",
       "forum": "Fair Work Commission",
       "jurisdiction": "Commonwealth",
-      "instrument": "Draft guidance note on the use of generative AI (exposure draft)",
-      "issued": "2026-03-25",
-      "commences": "draft only; comments closed 2026-04-10",
-      "official_source": "https://www.fwc.gov.au/about-us/news-and-media/news/presidents-statement-and-draft-guidance-use-generative-ai-published",
-      "evidence_state": "news item read at the official source; draft guidance note not read",
+      "instrument": "Guidance note: Use of generative artificial intelligence in Commission cases",
+      "issued": "2026-08",
+      "commences": "2026-10-20",
+      "official_source": "https://www.fwc.gov.au/about-us/news-and-media/news/new-genai-requirements-commission-cases",
+      "evidence_state": "news item read at the official source on 2026-11-16; guidance note not read",
       "points_at_snapshot": [
-        "Draft status only at snapshot. Check whether a final guidance note has issued"
+        "A person who uses generative AI to prepare a document for a Commission case must say so and say how it was used",
+        "The person must check the document is correct and relevant to the case",
+        "A witness statement or declaration must be based on the maker's own knowledge, reflect their own words and be true to the best of their knowledge",
+        "Legal practitioners and other professional representatives must hyperlink any case law mentioned in a document prepared using generative AI",
+        "These points paraphrase the Commission's 20 October 2026 news item. Read the guidance note itself, which replaced the 25 March 2026 exposure draft, before relying on them"
       ]
     },
     {

@@ -43,11 +43,14 @@ For guarantee remedies use `$assess-consumer-guarantees`.
    a recall and an injury report are not interchangeable. Verify their own events, periods,
    notices and any compulsory recall instrument before drafting an action matrix.
 5. For a general safety provision record announced/proposed only; not in the ACL as at
-   compilation 167 (16 September 2026). This bounded snapshot does not displace existing
+   compilation 167 (16 September 2026); compilation 168 (27 October 2026) adds only an
+   amendment to s 151BC(2)(c), outside the ACL. This bounded snapshot does not displace existing
    guarantees, standards, bans, recalls or reporting. Re-verify current ACL text and
    official reform publications before asserting any later duty or commencement. The
    source register includes a Treasury reform lead: verify against that publication
-   before asserting ministerial priorities; its page was unavailable at this check.
+   before asserting ministerial priorities. Read on 16 November 2026, it is a
+   19 September 2026 release of a consultation on post-market product safety and
+   mentions no Bill or exposure draft for a general safety provision.
 6. Route concurrent guarantees to `$assess-consumer-guarantees` and incident personal-data
    issues to `$assess-australian-data-breach`. Name specialist food, therapeutic goods,
    electrical and workplace regimes for separate review rather than claiming ACL exhausts them.

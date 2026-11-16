@@ -74,7 +74,8 @@ Evidence state: `VERIFIED WITH QUALIFICATIONS`.
 | Victoria, ACT, NT | Effectively all national (most Victorian state government referred) | `VERIFIED WITH QUALIFICATIONS` |
 | Referral states generally | Unincorporated employers in NSW, Qld, SA, Tas and Vic are state-referred national system employers; some Closing Loopholes rules, including s 15AA, apply differently | `VERIFIED` |
 
-Instruments under s 14(5) can move a named employer out of the national
+Endorsements under s 14(4)(a) can move a named employer out of the national
 system — for example the Fair Work (State Declarations — Employer Not To Be
-National System Employer) Endorsement (No. 1) 2026 (F2026L00414). Check the
+National System Employer) Endorsement (No. 1) 2026 (F2026L00414), in force
+from 8 April 2026 and naming Northern Parklands Trust (SA). Check the
 Register for endorsements naming the employer. Evidence state: `VERIFIED`.

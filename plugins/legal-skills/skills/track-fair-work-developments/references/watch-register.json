@@ -22,9 +22,9 @@
         "https://www.dewr.gov.au/closing-loopholes",
         "https://www.dewr.gov.au/workplace-relations-australia/review-closing-loopholes-acts"
       ],
-      "reviewed_on": "2026-09-24",
-      "status_at_review": "Not recorded at the snapshot; reported at the 24 September 2026 review: the independent statutory review of the Closing Loopholes Acts and the Paid Family and Domestic Violence Leave Act (reviewer Susan Booth) delivered its final report to the Minister on 15 Jun 2026 and it was tabled on 20 Aug 2026 (draft report 18 May 2026); the review covered the s 15A casual definition, labour hire and the right to disconnect; no government response located",
-      "review_basis": "Official page seen in search results only; confirm against the primary source before relying on it"
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "The Department of Employment and Workplace Relations confirms that the Closing Loopholes Review final report was tabled on 20 August 2026. No government response was located",
+      "review_basis": "dewr.gov.au Closing Loopholes review page read on 2026-11-16"
     },
     {
       "id": "protecting-penalty-rates-2025",
@@ -80,7 +80,10 @@
       "expected_trigger": "Disallowance period; text review",
       "primary_sources": [
         "https://www.legislation.gov.au/F2026L00766/latest/text"
-      ]
+      ],
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "F2026L00766 was registered on 19 June 2026, commenced on 20 June 2026 and was repealed on 10 September 2026 under s 48A of the Legislation Act 2003 once its amendment had taken effect. It inserted reg 1.13(d) into the Fair Work Regulations 2009 (relating to sexual harassment non-disclosure agreements). Read the current Fair Work Regulations for the operative text",
+      "review_basis": "legislation.gov.au version data and as-made text read on 2026-11-16"
     },
     {
       "id": "state-declaration-endorsement-2026",
@@ -89,7 +92,10 @@
       "expected_trigger": "Further endorsements naming an employer in the profile",
       "primary_sources": [
         "https://www.legislation.gov.au/F2026L00414/latest/text"
-      ]
+      ],
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "F2026L00414 was registered and is in force from 8 April 2026. It is made under s 14(4)(a) of the Fair Work Act 2009 and names Northern Parklands Trust (SA)",
+      "review_basis": "legislation.gov.au as-made text read on 2026-11-16"
     },
     {
       "id": "annual-wage-review-2026-27",
@@ -98,7 +104,10 @@
       "expected_trigger": "FWC timetable statement, usually February-March 2027",
       "primary_sources": [
         "https://www.fwc.gov.au/hearings-decisions/major-cases/annual-wage-reviews"
-      ]
+      ],
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "No change. The Annual Wage Review 2026 decision ([2026] FWCFB 3500, 2 June 2026) increased modern award minimum wages by 4.75% and set the National Minimum Wage at $1,004.90 per week ($26.44 per hour) from 1 July 2026. The Commission's benchbook pages give the high income threshold as $190,100 and the unfair dismissal compensation cap as $95,050 from 1 July 2026",
+      "review_basis": "fwc.gov.au decision announcement, National Minimum Wage page and unfair dismissals benchbook pages read on 2026-11-16"
     },
     {
       "id": "non-compete-ban",
@@ -110,9 +119,9 @@
         "https://consult.treasury.gov.au/c2026-801178",
         "https://storage.googleapis.com/files-au-treasury/treasury/p/prj3f00a298602dd09b72b97/page/fil3f010c3d46553e4672a63_c2026_801178_ed.pdf"
       ],
-      "reviewed_on": "2026-11-02",
-      "status_at_review": "Announced/proposed only: exposure draft, consultation closed 2 Oct 2026 (reported). An APH bills search of the 48th Parliament for 'non-compete' on 2 Nov 2026 returned no Bill, so no introduction is located. Title differs between sources: Treasury's consultation page snippet names it the Treasury Laws Amendment (Banning Unfair Non-Competes) Bill 2026, law firms the Competition and Fair Work Legislation Amendment (Banning Unfair Non-Competes) Bill 2026; search Parliament for both. The 13 Oct 2026 reading of the exposure draft still governs: draft cl 2 proposes commencement on the first 1 January, 1 April, 1 July or 1 October after Royal Assent, not a fixed 2027 start; proposed ss 333Z and 333ZA tie the ban to annualised full-time equivalent earnings at or below the high income threshold and cover casuals and pieceworkers irrespective of it; proposed ss 333ZF-333ZH prohibit co-worker non-solicitation terms; proposed s 333ZJ(5) restricts cascading restraints; Schedule 1 extends cartel provisions to no-poach and wage-fixing arrangements; application cl 143 must be read provision by provision. No enacted Act or legal start date confirmed.",
-      "review_basis": "Official Treasury-hosted exposure draft PDF inspected on 2026-10-13 (draft content only); APH bills search run on 2026-11-02 (strong evidence of no introduction, not confirmation). Recheck Parliament at use."
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "Exposure draft only; no Bill located. Treasury's consultation 'Reform to non-compete clauses and other restraints - draft legislation' ran from 7 September to 2 October 2026 and is closed. A keyword search of all bills on the Parliament website for 'non-compete' returned no documents on 16 Nov 2026; a Bill whose title and summary do not use that term would not be found by it.",
+      "review_basis": "consult.treasury.gov.au consultation page read on 2026-11-16; aph.gov.au all-bills keyword search run by the maintainer on 2026-11-16 (the bills search blocks automated access)"
     },
     {
       "id": "gender-undervaluation-priority-awards",
@@ -148,7 +157,10 @@
       "expected_trigger": "Final order; other employee-like minimum standards applications",
       "primary_sources": [
         "https://www.fwc.gov.au/node/5373"
-      ]
+      ],
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "The Commission made an interim on-demand delivery order on 11 August 2026 ([2026] FWCFB 211), operating from 17 August 2026. Matters MS2024/1 and MS2024/2 are continuing; the Commission's page was last updated 26 October 2026",
+      "review_basis": "fwc.gov.au major case page read on 2026-11-16"
     },
     {
       "id": "fwo-priorities-2026-27",
@@ -157,7 +169,10 @@
       "expected_trigger": "Priorities page update or Corporate Plan 2026-27",
       "primary_sources": [
         "https://www.fairwork.gov.au/about-us/our-role-and-purpose/our-priorities"
-      ]
+      ],
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "The Fair Work Ombudsman's priorities page (content updated 4 September 2026, with no year label) lists agriculture, building and construction, disability support services, fast food, restaurants and cafes, and large corporates, with an enduring commitment to small business and to vulnerable or at-risk workers. It says aged care services and universities are deprioritised. The Criminal Investigations Branch is not mentioned on the priorities page; its status was not checked elsewhere",
+      "review_basis": "fairwork.gov.au priorities page read on 2026-11-16"
     },
     {
       "id": "rtd-fwc-guidelines",
@@ -166,7 +181,10 @@
       "expected_trigger": "Publication on fwc.gov.au",
       "primary_sources": [
         "https://www.fwc.gov.au/workplace-disputes/other-workplace-disputes/right-disconnect-disputes"
-      ]
+      ],
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "No guidelines have been issued. In a statement of 21 November 2025 ([2025] FWCFB 266) the Commission said it will not issue right to disconnect guidelines until there is case law",
+      "review_basis": "fwc.gov.au statement and right to disconnect disputes page read on 2026-11-16"
     },
     {
       "id": "qld-positive-duty-commencement",
@@ -178,9 +196,9 @@
         "https://www.legislation.qld.gov.au/view/whole/html/asmade/act-2024-047",
         "https://www.legislation.qld.gov.au/view/html/inforce/current/act-1991-085"
       ],
-      "reviewed_on": "2026-10-13",
-      "status_at_review": "Enacted, not yet in force: the official history lists ss 4-27, including the s 25 insertion of the new positive-duty chapter, among amendments not yet proclaimed into force. Commencement date unconfirmed; do not treat the former 1 July 2025 target as commencement. Other amendments have separate commenced statuses.",
-      "review_basis": "Official Queensland legislative history rechecked on 2026-10-13; new chapter content inspected in the extension baseline. Follow the extension reference for provision leads and verify current proclamation status at legislation.qld.gov.au."
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "Still not commenced. The current reprint of the Anti-Discrimination Act 1991 (Qld) is current as at 19 May 2025, states that the amendments in 2024 Act No. 47 have been enacted but have not commenced and are not incorporated, and contains no s 131I. The register's legislative history for the amending Act still shows the provisions as not yet proclaimed",
+      "review_basis": "legislation.qld.gov.au legislative history read on 2026-11-16; the current reprint read on the same day from a copy the maintainer downloaded"
     }
   ]
 }
