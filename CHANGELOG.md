@@ -9,6 +9,13 @@ manifests contain the intended release version.
 
 ## Unreleased
 
+## 2026-11-16 - 1.3.0: an AI-tool bundle for tools that run no code
+
+### Released versions
+
+- `legal-skills` 1.2.0 → 1.3.0. The plugin holds 109 skills across 17
+  practice areas.
+
 ### Added
 
 - An AI-tool bundle for tools that run no code, such as Harvey and Legora:
