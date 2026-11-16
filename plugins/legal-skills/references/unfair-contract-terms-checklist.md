@@ -6,6 +6,8 @@ Verify the *Competition and Consumer Act 2010* (Cth), Schedule 2 (Australian
 Consumer Law), ss 23–28 and 224 against the current or point-in-time text on
 [legislation.gov.au](https://www.legislation.gov.au/C2004A00109/latest/text).
 Checked snapshot: C2026C00405, 16 September 2026, inspected on 2026-10-13 (official Volume 4 PDF).
+At the 16 November 2026 review the latest compilation was C2026C00486 (compilation 168,
+27 October 2026); ss 23 and 224 were re-read in it and s 23 was unchanged.
 This checklist paraphrases the statutory leads; it is not legal authority.
 A qualified lawyer must confirm application and any unfairness conclusion.
 
@@ -13,6 +15,11 @@ Record the making, renewal and variation dates and verify the transition in
 [the 2022 amending Act](https://www.legislation.gov.au/C2022A00054/asmade/text),
 Schedule 2 and its application provisions. The penalty regime commenced on
 9 November 2023, covering relevant new/renewed contracts and varied/added terms.
+For contraventions on or after 28 March 2026, the
+[Treasury Laws Amendment (Doubling Penalties for ACCC Enforcement) Act 2026](https://www.legislation.gov.au/C2026A00019/latest/details)
+raised the fixed amount in s 224(3A)(a) from $50,000,000 to $100,000,000 for a
+body corporate. Verify in s 224 which limb applies and the alternative
+benefit and turnover measures before stating a maximum.
 Do not treat every older term as newly subject to penalties merely because
 one term changed. Check the rule applying standard-form changes to the contract.
 

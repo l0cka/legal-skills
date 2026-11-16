@@ -42,7 +42,9 @@ against the Parliament of Australia bill page and Bills Digest), the
 as introduced would require an LPP form given in response to a notice
 to be given to the agency that issued the notice rather than to the AUSTRAC
 CEO. The House passed it with 25 Government amendments on 16 September 2026;
-it had not reached the Senate at review and is not law. Check its status before mapping where any LPP form
+at the 16 November 2026 review it had passed both Houses that day without Senate amendment and had not
+received Royal Assent, so it is not yet law. As passed, Schedule 3 Part 3 keeps that change and commences at
+the later of the commencement of Schedule 4 to the 2024 amending Act and the day after assent. Check its status before mapping where any LPP form
 goes, and treat the position above as current only until the change is
 verified in force.
 

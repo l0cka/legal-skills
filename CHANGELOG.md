@@ -44,6 +44,22 @@ manifests contain the intended release version.
 
 ### Changed
 
+- Currency refresh 16 November 2026
+  (`docs/audits/2026-11-16-currency-audit.md`), checked against official
+  publishers. The AML/CTF area records that the Amendment Bill passed both
+  Houses on 16 November 2026 and awaits Royal Assent, with its LPP-form
+  change intact. The consumer area records Competition and Consumer Act
+  compilation 168, the 28 March 2026 penalty increase in the unfair contract
+  terms checklist, and merger threshold indexation from 1 January 2027. The
+  employment area corrects the Fair Work Ombudsman's priority sectors and the
+  power behind the national system employer endorsement, and records that the
+  Fair Work Commission will not issue right to disconnect guidelines until
+  there is case law. The court AI protocol register records the Commission's
+  final generative AI guidance note, in force from 20 October 2026, in place
+  of the exposure draft. The privacy map adds the 1 January 2027 amendments
+  to section 33C and APP 7.8. The NSW deadline rules, the Migration Act
+  compilation and the holiday tables were re-read. `lawCheckedOn` is
+  unchanged; the audit lists what was not verified.
 - `compute-procedural-deadlines` and `map-tribunal-review-deadlines` no longer
   say "bundled script" in their descriptions, and some skill and reference
   prose says "deterministic computation step" instead of "script". Gates,

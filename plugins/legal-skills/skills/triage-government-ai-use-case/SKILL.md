@@ -43,9 +43,11 @@ For private-sector duties use `$map-ai-regulatory-obligations`.
      baseline, pegged to Australia's AI Ethics Principles.
 3. Name the required artefacts and threshold.
    - Commonwealth: accountable official, AI transparency statement and AI
-     impact assessment under DTA policy v2.0, with its phased commencement
-     checked at the assessment date (remaining requirements, including AI
-     impact assessments, reportedly due by 15 December 2026 — verify).
+     impact assessment under DTA policy v2.0 (v2.1 after minor updates on
+     21 October 2026), with its phased commencement checked at the assessment
+     date. The DTA sets the use case owner and internal register requirements
+     within 12 months of the policy taking effect on 15 December 2025; the
+     page gives no calendar date, so confirm the deadline with the DTA.
    - States and territories: the framework's self-assessment or risk
      assessment, and the escalation body or trigger recorded in the registry
      (for example NSW AI Review Committee; NT AI advisory service for medium

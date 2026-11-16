@@ -10,7 +10,10 @@
       "expected_trigger": "New CCA compilation, amending Act or commencement affecting a standing consumer or competition assessment",
       "primary_sources": [
         "https://www.legislation.gov.au/C2004A00109/latest/versions"
-      ]
+      ],
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "Latest compilation is C2026C00486 (compilation 168, 27 October 2026). Its only new amendment is the Telecommunications Legislation Amendment (Universal Outdoor Mobile Obligation) Act 2026 (No. 100, 2026) sch 1 item 1, which amends s 151BC(2)(c) in Part XIC and does not touch the ACL. Separately, the Treasury Laws Amendment (Doubling Penalties for ACCC Enforcement) Act 2026 (No. 19, 2026) commenced on 28 March 2026 and replaced the $50,000,000 fixed amount with $100,000,000 in ss 45AF(3)(a), 45AG(3)(a) and 76(1B)(a) and in the listed ACL penalty provisions, including s 224(3A)(a), for conduct on or after that date",
+      "review_basis": "legislation.gov.au version list and the as-made text of Acts No. 100 and No. 19 of 2026 read on 2026-11-16; ACL ss 23 and 224 read in compilation 168"
     },
     {
       "id": "merger-instruments",
@@ -19,7 +22,10 @@
       "expected_trigger": "Threshold, exemption, fee or waiver instrument amendment, indexation event or changed application date",
       "primary_sources": [
         "https://www.legislation.gov.au/F2025L00753/latest"
-      ]
+      ],
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "F2026C00002 (1 January 2026) is still the only compilation of the threshold determination. The screening figures in merger-pathways.md match ss 1-9, 1-10, 1-12, 1-13 and 1-14. Under s 7-1 those amounts are indexed on the first day of each calendar year starting on or after 1 January 2027, so recheck every figure from that date. Fees and waiver provisions were not re-read",
+      "review_basis": "legislation.gov.au version list and the text of F2026C00002 read on 2026-11-16"
     },
     {
       "id": "merger-forms",
@@ -28,7 +34,10 @@
       "expected_trigger": "F2025L01604 current text retrieved or a forms amendment or replacement registered",
       "primary_sources": [
         "https://www.legislation.gov.au/F2025L01604/latest"
-      ]
+      ],
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "F2025L01604 was made on 10 December 2025, is in force from 18 December 2025 and has no later version on the register. The form text was not read",
+      "review_basis": "legislation.gov.au version list read on 2026-11-16"
     },
     {
       "id": "merger-guidance",
@@ -37,7 +46,10 @@
       "expected_trigger": "ACCC publishes or revises merger process, waiver, confidentiality or enforcement guidance",
       "primary_sources": [
         "https://www.accc.gov.au/business/mergers-and-acquisitions/guidance-documents-for-the-merger-control-regime"
-      ]
+      ],
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "The ACCC guidance page (modified 23 October 2026) lists the interim Merger process guidelines (December 2025), guidance on notification waivers, a fact sheet on enforcement of notification requirements (8 October 2026), a confidential-information quick guide, a merger reform FAQ updated 26 October 2026 and a Merger guidance note on notification thresholds, version 1, October 2026. The documents themselves were not read",
+      "review_basis": "accc.gov.au guidance page read on 2026-11-16"
     },
     {
       "id": "utpa-2026",
@@ -46,7 +58,10 @@
       "expected_trigger": "Implementing regulations made, application/transition amended, or commencement on 1 July 2027",
       "primary_sources": [
         "https://www.legislation.gov.au/C2026A00064/asmade/text"
-      ]
+      ],
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "No change. Act No. 64 of 2026 was assented to on 2 July 2026 and its commencement provision gives 1 July 2027. No implementing regulations were searched for",
+      "review_basis": "legislation.gov.au as-made text read on 2026-11-16"
     },
     {
       "id": "environmental-claims",
@@ -55,7 +70,10 @@
       "expected_trigger": "ACCC revises the environmental guide, substantiation expectations or dated enforcement guidance",
       "primary_sources": [
         "https://www.accc.gov.au/about-us/publications/a-guide-to-making-environmental-claims-for-business"
-      ]
+      ],
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "The guide is still the 12 December 2023 publication. The ACCC page now states that it does not reflect the increases to maximum penalties that took effect on 28 March 2026, that the fixed amount for corporations is now $100 million for conduct on or after that date, and that the publication will be updated",
+      "review_basis": "accc.gov.au publication page read on 2026-11-16"
     },
     {
       "id": "product-instruments",
@@ -75,7 +93,10 @@
         "https://www.accc.gov.au/media-release/accc-product-safety-priorities-announced-at-national-consumer-congress",
         "https://www.legislation.gov.au/C2004A00109/latest/text",
         "https://ministers.treasury.gov.au/ministers/andrew-leigh-2025/media-releases/making-product-recalls-faster-and-more-effective"
-      ]
+      ],
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "Still proposed only. The Treasury ministerial release of 19 September 2026 is now readable: it released a consultation regulation impact statement on post-market product safety (submissions 21 September to 18 October 2026) and records that in July 2026 Consumer Ministers agreed broader product safety reforms remain a priority, including consideration of general safety protections. It mentions no Bill or exposure draft. Compilation 168 (27 October 2026) adds only an amendment to s 151BC(2)(c), outside the ACL",
+      "review_basis": "ministers.treasury.gov.au release and the text of Act No. 100 of 2026 read on 2026-11-16; the compilation 168 ACL was not searched for a general safety provision"
     },
     {
       "id": "enforcement-priorities",

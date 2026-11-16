@@ -4,7 +4,7 @@
   "description": "Tasmanian public holidays under the Statutory Holidays Act 2000 (Tas), as published by WorkSafe Tasmania (statewide list plus the Hobart-area regional holidays; Hobart Principal Registry basis).",
   "source_url": "https://worksafe.tas.gov.au/topics/laws-and-compliance/public-holidays",
   "checked": "2026-08-26",
-  "evidence": {"state": "verified", "method": "Firecrawl scrape of the official WorkSafe Tasmania public-holidays page on the checked date; page last updated 23 January 2026 and lists 2026, 2027 and 2028."},
+  "evidence": {"state": "verified", "method": "Firecrawl scrape of the official WorkSafe Tasmania public-holidays page on the checked date; page last updated 23 January 2026 and lists 2026, 2027 and 2028. Re-read on 2026-11-16 for dates from 16 November 2026 to the end of 2027, which were unchanged; the page metadata then showed an update on 2026-10-28 while the body still said last updated 23 January 2026."},
   "coverage": {"from": "2026-01-01", "to": "2027-12-31"},
   "holidays": [
     "2026-01-01", "2026-01-26", "2026-02-09", "2026-03-09", "2026-04-03",

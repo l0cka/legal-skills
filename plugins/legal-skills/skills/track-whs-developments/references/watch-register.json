@@ -11,7 +11,10 @@
       "primary_sources": [
         "https://www.safeworkaustralia.gov.au/doc/model-work-health-and-safety-legislation-amendment-incident-notification-2025",
         "https://www.safeworkaustralia.gov.au/law-and-regulation/legislation/amendments-model-whs-laws"
-      ]
+      ],
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "No change at the model level: the December 2025 amendment is listed on Safe Work Australia's amendments page. No jurisdiction's enactment was checked",
+      "review_basis": "safeworkaustralia.gov.au amendments page read on 2026-11-16"
     },
     {
       "id": "cth-whs-act-compilation",
@@ -20,7 +23,10 @@
       "expected_trigger": "New compilation registered on the Federal Register of Legislation",
       "primary_sources": [
         "https://www.legislation.gov.au/C2011A00137/latest/text"
-      ]
+      ],
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "No change. The latest compilation is still C2024C00243 (1 July 2024)",
+      "review_basis": "legislation.gov.au version list read on 2026-11-16"
     },
     {
       "id": "industrial-manslaughter-by-jurisdiction",
@@ -40,7 +46,10 @@
       "primary_sources": [
         "https://www.premier.vic.gov.au/new-regulations-start-today-protect-workers",
         "https://www.worksafe.vic.gov.au/psychological-health"
-      ]
+      ],
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "Occupational Health and Safety (Psychological Health) Regulations 2025 (Vic), S.R. No. 103/2025, were made on 30 September 2025, came into operation on 1 December 2025 (reg 3) and sunset on 30 September 2035. WorkSafe Victoria's compliance code page states the code is in effect from 1 December 2025",
+      "review_basis": "authorised version of S.R. No. 103/2025 and the WorkSafe Victoria compliance code page read on 2026-11-16"
     },
     {
       "id": "model-whs-adoption",
@@ -68,7 +77,10 @@
       "primary_sources": [
         "https://www.safeworkaustralia.gov.au/law-and-regulation/legislation/amendments-model-whs-laws",
         "https://www.safeworkaustralia.gov.au/doc/model-work-health-and-safety-act"
-      ]
+      ],
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "Safe Work Australia's amendments page shows the current model WHS Act and Regulations as at 5 December 2025 and lists the Model WHS Regulations Amendment (Workplace Exposure Limits) 2026 as coming into effect on 1 December 2026. Model amendments apply in a jurisdiction only once enacted there; no jurisdiction's adoption was checked",
+      "review_basis": "safeworkaustralia.gov.au amendments page read on 2026-11-16"
     }
   ]
 }

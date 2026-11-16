@@ -42,9 +42,10 @@ At 14 August 2026, the Federal Register identified C2026C00339, compilation
 147 from 1 July 2026, as the latest *Corporations Act* compilation. At the
 24 September 2026 review the Federal Register showed C2026C00382, compilation
 148, in force from 27 August 2026, with an uncompiled amendment from
-19 September 2026 (*Regulatory Reform Omnibus Act 2026* Sch 4 item 10), so a
-later compilation is expected. Confirm the latest compilation and its
-identifier at use.
+19 September 2026 (*Regulatory Reform Omnibus Act 2026* Sch 4 item 10). At the
+16 November 2026 review the latest compilation was C2026C00432, compilation
+149, in force from 19 September 2026, which incorporates that amendment.
+Confirm the latest compilation and its identifier at use.
 This is a research snapshot, not a cached rule: every live workflow must
 recheck it.
 ASX's 4th edition (2019) remains operative; a draft 5th edition was released
@@ -124,7 +125,10 @@ director appointment and cessation (pt 2D.3), directors' meetings (pt 2G.1),
 minutes (s 251A), financial records (s 286), insolvent trading (s 588G) and
 sustainability (climate) reporting (pt 2M.3 div 1, s 292A thresholds; AASB
 S2; phased Group 1 for financial years from 1 January 2025, Group 2 from
-1 July 2026, Group 3 from 1 July 2027 — ASIC RG 280).
+1 July 2026, Group 3 from 1 July 2027 — ASIC RG 280). At 16 November 2026
+ASIC's RG 280 page flags a Government consultation on raising the large
+proprietary company thresholds, which is not in effect and could narrow
+Group 3; the Group 1 and 2 dates were not re-verified.
 Other provisions may be decisive. Do not infer that this list is complete.
 
 ## Human control

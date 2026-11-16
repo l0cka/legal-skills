@@ -7,8 +7,8 @@ checker.
 
 | Hook | Law | Commencement | Guidance layer | Evidence state |
 | --- | --- | --- | --- | --- |
-| Right to disconnect | Fair Work Act ss 333M–333Q, 333V: right to refuse to monitor, read or respond outside working hours unless refusal is unreasonable; FWC dispute orders; award term | 26 August 2024; small business 26 August 2025 | FWO page; FWC dispute page and fact sheet. FWC statutory guidelines not located | Law `VERIFIED`; guidelines `NOT VERIFIED` |
-| Flexible working arrangements | ss 65–65C: request, 21-day written response, refusal only on reasonable business grounds after discussion, FWC arbitration | Arbitration from 6 June 2023 | FWO page (updated 10 August 2026) and best-practice guide | `VERIFIED` (date qualified) |
+| Right to disconnect | Fair Work Act ss 333M–333Q, 333V: right to refuse to monitor, read or respond outside working hours unless refusal is unreasonable; FWC dispute orders; award term | 26 August 2024; small business 26 August 2025 | FWO page; FWC dispute page and fact sheet. No FWC guidelines: the Commission stated on 21 November 2025 ([2025] FWCFB 266) that it will not issue them until there is case law | Law `VERIFIED`; guidelines `VERIFIED` as not issued (16 November 2026) |
+| Flexible working arrangements | ss 65–65C: request, 21-day written response, refusal only on reasonable business grounds after discussion, FWC arbitration | Arbitration from 6 June 2023 | FWO page (read as updated 10 August 2026; dated 11 November 2026 at the 16 November 2026 review, changes not compared) and best-practice guide | `VERIFIED` (date qualified) |
 | Parental leave | Part 2-2 Div 5 as amended 2023–2024; Fair Work Amendment (Baby Priya's) Act 2025 (No. 56) bars refusing or cancelling employer-funded paid parental leave on stillbirth or infant death | 7 November 2025 | FWO Baby Priya page | `VERIFIED` |
 | Government paid parental leave superannuation | Paid Parental Leave Amendment (Adding Superannuation for a More Secure Retirement) Act 2024 (No. 90): 12% contribution paid annually by the ATO for children born or adopted on or after 1 July 2025 | 1 July 2025 | Services Australia / ATO | `VERIFIED WITH QUALIFICATIONS` |
 | Family and domestic violence leave | ss 106A–106B: 10 days paid at full rate for all employees including casuals; pay-slip restrictions in the Regulations | 1 February 2023; small business 1 August 2023 | FWO page | `VERIFIED` |
@@ -26,8 +26,7 @@ Legislation Amendment (Respect at Work) Act
 s 2 table item 3 and Schedule 2 Part 1 item 8 (inserting s 47C).
 This targeted source check does not re-date the August snapshot.
 
-Reported after the snapshot (24 September 2026 review, not yet confirmed
-against dewr.gov.au or fwc.gov.au): the Closing Loopholes Review final report,
+After the snapshot (confirmed on dewr.gov.au on 16 November 2026): the Closing Loopholes Review final report,
 covering the casual definition, labour hire and the right to disconnect, was
 tabled on 20 August 2026 with no government response located. Confirmed on
 fwc.gov.au on 2 November 2026: determination PR815538 ([2026] FWCFB 281)
