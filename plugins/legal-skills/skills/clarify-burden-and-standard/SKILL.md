@@ -1,6 +1,6 @@
 ---
 name: clarify-burden-and-standard
-description: Sparring for a qualified lawyer. State who bears which burden, under what standard, and what evidence would meet it on the supplied facts. Never invents a standard or decides the burden is met.
+description: For a lawyer's own case: who bears the burden, to what standard, and what evidence meets it on their facts. For hidden premises use `$map-assumptions`. Never invents a standard or decides it is met.
 ---
 
 # Clarify burden and standard
@@ -12,6 +12,7 @@ what evidence would meet or fail it on the supplied facts, for a qualified
 lawyer. Use when the lawyer wants that allocation made explicit. Do not use to
 invent a standard the lawyer did not supply or to decide that the burden is
 met.
+For hidden premises use `$map-assumptions`.
 
 Make the lawyer state who bears which burden, under what standard, and what
 evidence would meet or fail it. Use only the supplied facts and the standard

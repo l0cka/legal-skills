@@ -149,15 +149,15 @@ is the skill's own trigger text: what it does, when to use it and when not to.
 
 ## Legal Cognitive Sparring (`cognitive-sparring`)
 
-- **`clarify-burden-and-standard`** — Sparring for a qualified lawyer. State who bears which burden, under what standard, and what evidence would meet it on the supplied facts. Never invents a standard or decides the burden is met.
-- **`drill-oral-advocacy`** — Sparring for a qualified lawyer. Run a hostile question-and-answer or opening and closing drill on a named issue and score clarity, concessions and recovery. Never invents transcript authority or predicts the ruling.
-- **`find-blind-spots`** — Sparring for a qualified lawyer. List the questions, facts, parties, procedures and authorities not yet addressed, split into must-check and nice-to-have. Never invents the missing authority or decides the point.
-- **`map-assumptions`** — Sparring for a qualified lawyer. Extract the explicit and hidden assumptions in an analysis, rank the ones the case turns on and propose how to test each. Never fills a gap from memory.
-- **`oppose-as-counsel`** — Sparring for a qualified lawyer. Argue the other side with the strongest counters the lawyer must answer, labelling speculation. Never advises the opposing party or invents a citation.
-- **`pressure-test-argument`** — Sparring for a qualified lawyer. Stress-test the lawyer's own argument for weak premises, leaps, missing authorities and adverse facts. Never gives final advice or invents a citation.
-- **`pressure-test-strategy`** — Sparring for a qualified lawyer. Challenge procedural and commercial strategy, including forum, timing, settlement bands and escalation, for unstated risks. Never files or contacts a counterparty.
-- **`red-team-evidence`** — Sparring for a qualified lawyer. Challenge the evidence behind a position on provenance, hearsay, weight and gaps an opponent would attack. Never decides admissibility or invents a source.
-- **`role-play-decision-maker`** — Sparring for a qualified lawyer. Respond as a sceptical judge, tribunal member or regulator the lawyer names and say what would persuade or fail. Never predicts an outcome as certain.
-- **`simplify-without-losing-precision`** — Sparring for a qualified lawyer. Restate a legal position in plain language a client could follow, then flag where simplifying hid a material nuance. Never sends the restatement to the client.
-- **`steelman-then-attack`** — Sparring for a qualified lawyer. Restate the lawyer's position in its strongest form, then attack it in a separate phase. Never merges the phases or invents an authority.
-- **`test-understanding`** — Sparring for a qualified lawyer. Quiz the lawyer on a named legal concept or matter, demand their sources and mark gaps. Never lectures or invents an authority.
+- **`clarify-burden-and-standard`** — For a lawyer's own case: who bears the burden, to what standard, and what evidence meets it on their facts. For hidden premises use `$map-assumptions`. Never invents a standard or decides it is met.
+- **`drill-oral-advocacy`** — Hostile bench questions or an opening or closing drill for a lawyer, scored on clarity, concessions, recovery. For a judge's reaction use `$role-play-decision-maker`. Never predicts a ruling.
+- **`find-blind-spots`** — Gaps in a lawyer's analysis: unaddressed questions, facts, parties, procedures, authorities, as must-check or nice-to-have. For premises use `$map-assumptions`. Never invents authority.
+- **`map-assumptions`** — Use when a lawyer wants the stated and hidden assumptions behind a view surfaced, ranked and tested. For unaddressed issues use `$find-blind-spots`. Never fills a gap from memory.
+- **`oppose-as-counsel`** — Argue the other side with the strongest counters a lawyer must answer, speculation labelled. For a judge's view use `$role-play-decision-maker`. Never advises the other side or invents a citation.
+- **`pressure-test-argument`** — Sparring for a lawyer's own argument: stress-test it for weak premises, leaps, missing authorities and adverse facts. For the other side use `$oppose-as-counsel`. Never gives final advice or invents a citation.
+- **`pressure-test-strategy`** — Challenge a lawyer's forum, timing, settlement and escalation choices for unstated risks. For arguments use `$pressure-test-argument`. Never files or contacts a counterparty.
+- **`red-team-evidence`** — Challenge the evidence behind a lawyer's position on provenance, hearsay, weight and gaps. For the argument itself use `$pressure-test-argument`. Never decides admissibility or invents a source.
+- **`role-play-decision-maker`** — Use when a lawyer wants a named judge, tribunal member or regulator played: what would persuade or fail. For rehearsal use `$drill-oral-advocacy`. Never predicts an outcome as certain.
+- **`simplify-without-losing-precision`** — Restate a position in plain language a client could follow, then flag what simplifying hid, for a lawyer. To quiz the lawyer use `$test-understanding`. Never sends it to the client.
+- **`steelman-then-attack`** — Restate a lawyer's position in its strongest form, then attack it in a separate phase. For a one-step critique use `$pressure-test-argument`. Never merges the phases or invents authority.
+- **`test-understanding`** — Quiz a lawyer on a named concept or matter: short questions, sources demanded, gaps marked. For their argument use `$pressure-test-argument`. Never lectures or invents an authority.
