@@ -1,6 +1,6 @@
 ---
 name: configure-consumer-competition-profile
-description: Create or validate the business profile the Australian consumer and competition skills run against. Use before assessment for scope, evidence owners and approval controls. Never approves the profile.
+description: Set up or validate the business profile the consumer and competition skills run against. Use for scope and approval controls. For all-area setup use `$setup`. Never approves the profile.
 ---
 
 # Configure Consumer Competition Profile
@@ -28,6 +28,8 @@ To start quickly, edit the matching starter in
 [starter-profiles.md](../../references/starter-profiles.md). The
 [profile guide](../../references/profile-guide.md) says where to keep the
 approved profile and how a person approves it.
+
+For all-area setup use `$setup`.
 
 ## Workflow
 

@@ -1,6 +1,6 @@
 ---
 name: check-court-ai-protocol
-description: Check which Australian court or tribunal generative AI practice note applies to a document being filed, what it bans and what disclosure it needs. Use before filing affidavits, witness statements, expert reports or submissions prepared with AI help.
+description: Which Australian court or tribunal generative AI practice note applies to a document being filed, what it bans and what disclosure it needs. Use before filing AI-assisted evidence or submissions. For AI governance documents use `$check-ai-guidance-alignment`.
 ---
 
 # Check Court AI Protocol
@@ -23,6 +23,8 @@ It is a dated snapshot. Each entry records whether the instrument itself was
 read at the court's own website and on what date. These instruments changed
 often in 2025 and 2026, and several adopt another court's practice note "as
 amended", so the register is a lead and never the authority.
+
+For AI governance documents use `$check-ai-guidance-alignment`.
 
 ## Workflow
 

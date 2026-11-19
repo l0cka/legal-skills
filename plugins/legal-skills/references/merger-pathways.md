@@ -29,7 +29,12 @@ Check Part 2 Division 2 exceptions and Part 3 targeted supermarket and minority-
 classes with their separate application dates under Part 10. Verify current CCA
 control/associate provisions and exemptions; minority ownership alone does not establish
 an exemption. Recheck amendments included in compilation 167 (16 September 2026), rather than
-using only the 2024 Act; trace any later amendments at legislation.gov.au.
+using only the 2024 Act; trace any later amendments at legislation.gov.au. Compilation 168
+(27 October 2026) adds only an amendment to s 151BC(2)(c).
+
+The screening figures above matched the determination (F2026C00002) when re-read on
+16 November 2026. Under s 7-1 the amounts are indexed on the first day of each calendar
+year starting on or after 1 January 2027: recheck every figure from that date.
 
 Waiver checklist: CCA ss 51ABU–51ABV; instrument ss 6-3–6-6 and 7-50. Verify form,
 information, fee, publication/confidentiality and any special process. General case

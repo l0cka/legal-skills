@@ -1,6 +1,6 @@
 ---
 name: configure-review-playbook
-description: Create or update an Australian contract-review playbook of standard positions, fallbacks and approval thresholds by clause type. Use before inbound contract review. Never invents firm positions or approves the playbook.
+description: Set up or update a contract-review playbook of positions, fallbacks and approval thresholds. Use before inbound review. For drafting use `$configure-drafting-profile`. Never invents firm positions or approves the playbook.
 ---
 
 # Configure Review Playbook
@@ -30,6 +30,8 @@ To start quickly, edit the matching starter in
 [starter-profiles.md](../../references/starter-profiles.md). The
 [profile guide](../../references/profile-guide.md) says where to keep the
 approved profile and how a person approves it.
+
+For drafting use `$configure-drafting-profile`.
 
 ## Workflow
 

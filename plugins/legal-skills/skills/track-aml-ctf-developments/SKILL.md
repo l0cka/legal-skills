@@ -1,6 +1,6 @@
 ---
 name: track-aml-ctf-developments
-description: Check the AML/CTF watch register for developments affecting Australian legal practices and report what changed, what is pending and what now binds. Never treats a pending instrument as in force.
+description: AML/CTF watch register checked on demand - what changed, is pending or now binds. Use for horizon reviews. For program gaps use `$review-aml-ctf-program`. Never treats a pending instrument as in force.
 ---
 
 # Track AML/CTF Developments
@@ -21,6 +21,8 @@ A pending instrument is never an obligation until verified in force.
 
 Read the [source and control method](../../references/aml-ctf-source-and-control-method.md)
 and work from the [watch register](references/watch-register.json).
+
+For program gaps use `$review-aml-ctf-program`.
 
 ## Workflow
 

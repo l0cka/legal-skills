@@ -1,6 +1,6 @@
 ---
 name: route-case-citation
-description: Use first to verify or check any Australian case citation, judgment or authority, including documents with possibly fabricated citations. Identifies the court and routes to the right verifier. Not for case treatment or foreign citations.
+description: Use first to verify any Australian case citation, judgment or authority, including possibly fabricated ones. Identifies the court and routes to the verifier. For quotes use `$verify-case-quote`. Not for case treatment or foreign citations.
 ---
 
 # Route Case Citation
@@ -22,6 +22,8 @@ hierarchy and the five-outcome result semantics every downstream skill uses.
 Routing is deterministic because a medium-neutral citation names its issuing
 court. This skill only identifies where verification must happen; it never
 declares a citation verified.
+
+For quotes use `$verify-case-quote`.
 
 ## Workflow
 

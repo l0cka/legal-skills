@@ -1,6 +1,6 @@
 ---
 name: route-legal-fact-pattern
-description: Use first when an Australian matter spans several practice areas or you are unsure which legal skill to run. Returns the skills to run in order with the human decision at each step. Never answers the legal question.
+description: Use first when a matter spans several practice areas or you are unsure which legal skill to run. Returns the skills in order with the human decision at each step. To step through use `$start`. Never answers the legal question.
 ---
 
 # Route Legal Fact Pattern
@@ -26,6 +26,8 @@ Read [references/skill-map.md](../../references/skill-map.md) before routing. It
 generated from the marketplace registry, groups every shipped skill by
 practice area and is the only list of skills the router may name; never route
 to a skill that is not in it.
+
+To step through use `$start`.
 
 ## Workflow
 

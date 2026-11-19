@@ -1,6 +1,6 @@
 ---
 name: track-whs-developments
-description: Check the Australian work health and safety watch register on demand, including each jurisdiction's adoption of model WHS law changes. Use for horizon reviews. Never treats a Bill or draft code as law in force.
+description: WHS watch register checked on demand, incl. each jurisdiction's adoption of model WHS law changes. Use for horizon reviews. For duties use `$map-whs-duties`. Never treats a Bill or draft code as law in force.
 ---
 
 # Track WHS Developments
@@ -25,6 +25,8 @@ in force in the jurisdiction.
 
 Read the [source and control method](../../references/whs-source-and-control-method.md)
 and work from the [watch register](references/watch-register.json).
+
+For duties use `$map-whs-duties`.
 
 ## Workflow
 

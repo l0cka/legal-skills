@@ -1,6 +1,6 @@
 ---
 name: triage-government-ai-use-case
-description: Route an Australian government AI use case to its assurance track, either the Commonwealth DTA policy or a state or territory framework. Use for government AI adoption and procurement. Not for private-sector obligations.
+description: Route a government AI use case to its assurance track - Commonwealth DTA policy or a state or territory framework. Use for government AI adoption. For private-sector duties use `$map-ai-regulatory-obligations`.
 ---
 
 # Triage Government AI Use Case
@@ -24,6 +24,8 @@ Read the [source and control method](../../references/ai-governance-source-and-c
 and use the
 [government AI assurance registry](references/government-ai-assurance-registry.json).
 
+For private-sector duties use `$map-ai-regulatory-obligations`.
+
 ## Workflow
 
 1. Fix the entity and use case.
@@ -41,9 +43,11 @@ and use the
      baseline, pegged to Australia's AI Ethics Principles.
 3. Name the required artefacts and threshold.
    - Commonwealth: accountable official, AI transparency statement and AI
-     impact assessment under DTA policy v2.0, with its phased commencement
-     checked at the assessment date (remaining requirements, including AI
-     impact assessments, reportedly due by 15 December 2026 — verify).
+     impact assessment under DTA policy v2.0 (v2.1 after minor updates on
+     21 October 2026), with its phased commencement checked at the assessment
+     date. The DTA sets the use case owner and internal register requirements
+     within 12 months of the policy taking effect on 15 December 2025; the
+     page gives no calendar date, so confirm the deadline with the DTA.
    - States and territories: the framework's self-assessment or risk
      assessment, and the escalation body or trigger recorded in the registry
      (for example NSW AI Review Committee; NT AI advisory service for medium

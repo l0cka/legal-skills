@@ -14,9 +14,9 @@
         "https://www.pm.gov.au/media/meeting-national-cabinet-26-august-26",
         "https://www.pmc.gov.au/domestic-policy/office-ai/getting-it-right-building-ai-infrastructure-works-australia"
       ],
-      "reviewed_on": "2026-09-24",
-      "status_at_review": "Confirmed: National Cabinet met on 26 August 2026 and agreed the Commonwealth will work with the States and Territories to develop nationally consistent mandatory standards for large data centres (energy, water, land use), with the Commonwealth intending to legislate in early 2027; commentary (not the communique) reports that a renewables requirement was not agreed. PM&C then opened the consultation 'Getting it right: Building AI infrastructure that works for Australia' (18 September to 9 October 2026), which also covers conditions for training AI models and support for copyright holders. Separately, a reported (leaked) Attorney-General's Department paper floats an opt-out model for AI training, so the copyright limb should be treated as under consultation, not as settled creator-consent protection",
-      "review_basis": "National Cabinet communique and PM&C consultation page read on 24 Sep 2026; the opt-out copyright paper rests on secondary sources"
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "No exposure draft or Bill located. National Cabinet's 26 August 2026 communique and the Prime Minister's 15 July 2026 release both still say the Commonwealth intends to legislate in early 2027; the communique records agreement to develop nationally consistent mandatory standards for large data centres (energy, water, land use), and commentary (not the communique) reports that a renewables requirement was not agreed. PM&C's consultation 'Getting it right: Building AI infrastructure that works for Australia' ran 18 September to 9 October 2026 and its insights were published on 13 November 2026 (see pmc-ai-infrastructure-consultation). That consultation covers conditions for training AI models, but PM&C states that copyright policy is outside its scope and is led by the Attorney-General, so the creator-consent copyright limb in the 15 July announcement should be treated as unsettled. A reported (leaked) Attorney-General's Department paper floating an opt-out model rests on secondary sources",
+      "review_basis": "pm.gov.au release and National Cabinet communique, and pmc.gov.au consultation page, read on 2026-11-16"
     },
     {
       "id": "oaic-adm-guidance",
@@ -40,9 +40,9 @@
       "primary_sources": [
         "https://www.asx.com.au/about/regulation/corporate-governance-principles-and-recommendations"
       ],
-      "reviewed_on": "2026-09-24",
-      "status_at_review": "Reported: consultation on the draft (released 21 July 2026 by ASX's Advisory Group on Corporate Governance, established January 2026) closed on 14 September 2026; the Advisory Group intends to recommend a final version to the ASX board by December 2026; reporting expected for financial years ending 30 June 2028 (31 December 2028 for calendar-year entities), consistent with the snapshot",
-      "review_basis": "official page seen in search results only, plus secondary sources; confirm against the primary source before relying on it"
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "Consultation on the draft fifth edition closed 14 September 2026. The ASX Corporate Governance Council Advisory Group met on 12 October 2026, anticipates recommending changes to the ASX Board in early December 2026 and next meets on 24 November 2026. The fourth edition remains in effect until ASX notifies otherwise. The first reporting periods and the absence of an AI-specific recommendation recorded at the snapshot are not stated on the page or the communique and were not re-verified against the draft",
+      "review_basis": "asx.com.au corporate governance page and the 13 October 2026 Advisory Group communique read on 2026-11-16"
     },
     {
       "id": "kmart-art-review",
@@ -78,9 +78,9 @@
         "https://www.ag.gov.au/rights-and-protections/publications/government-response-privacy-act-review-report",
         "https://consultations.ag.gov.au/rights-and-protections/privacy-reform/"
       ],
-      "reviewed_on": "2026-09-24",
-      "status_at_review": "Reported: on 31 August 2026 the Attorney-General's Department released an exposure draft Privacy Amendment (Personal Data Protection) Bill 2026 and consultation paper; submissions closed 18 September 2026. Reported proposals include a fair-and-reasonable test, an expanded personal-information definition, a 72-hour Commissioner notification for eligible data breaches and a right to erasure against large digital platforms; removal of the small-business and employee-records exemptions is reportedly not included; the commencement table is reportedly blank. An exposure draft is not a Bill and not law",
-      "review_basis": "official consultation page seen in search results only, plus secondary sources; confirm against the primary source before relying on it"
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "The Attorney-General's Department consultation page confirms that the Exposure Draft Privacy Amendment (Personal Data Protection) Bill 2026 was released on 31 August 2026 and that the consultation closed on 18 September 2026; it says the Bill 'remains subject to further consideration by government'. No Bill introduction was confirmed either way: the Parliament bills list could not be filtered reliably. The proposal details recorded at the snapshot were not re-verified against the exposure draft",
+      "review_basis": "consultations.ag.gov.au privacy reform page read on 2026-11-16"
     },
     {
       "id": "esafety-code-phases",
@@ -90,9 +90,9 @@
       "primary_sources": [
         "https://www.esafety.gov.au/industry/codes"
       ],
-      "reviewed_on": "2026-09-24",
-      "status_at_review": "Reported: the Online Safety Codes and Standards Regulatory Guidance was updated again in September 2026 following a Federal Court judgment, and FAQs on the applicable Unlawful Material Standard or Code are being revised; the judgment was not identified",
-      "review_basis": "official page seen in search results only; confirm against the primary source before relying on it"
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "The phase dates are unchanged on the eSafety industry codes page (updated 17 September 2026). eSafety's regulatory guidance is now dated September 2026 and says it was updated after a Federal Court judgment that eSafety links as [2026] FCA 1123; the judgment was not read",
+      "review_basis": "esafety.gov.au industry codes page read on 2026-11-16"
     },
     {
       "id": "joint-select-committee-ai",
@@ -102,9 +102,9 @@
       "primary_sources": [
         "https://www.aph.gov.au/Parliamentary_Business/Committees/Joint/Artificial_Intelligence"
       ],
-      "reviewed_on": "2026-09-24",
-      "status_at_review": "Reported: appointed by both Houses on 20 August 2026; submissions closed 14 September 2026; report reportedly due 30 November 2026; remit reportedly includes adequacy of existing laws, copyright, national security, data sovereignty, consumer protection, deepfakes and cyber security",
-      "review_basis": "official page seen in search results only, plus secondary sources; confirm against the primary source before relying on it"
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "Appointed 20 August 2026; submissions closed 14 September 2026; the committee page gives the reporting date as 30 November 2026 and lists a letter of the committee to the Prime Minister dated 12 October 2026 (not read). The remit reportedly includes adequacy of existing laws, copyright, national security, data sovereignty, consumer protection, deepfakes and cyber security; the terms of reference were not re-read",
+      "review_basis": "aph.gov.au committee page read on 2026-11-16"
     },
     {
       "id": "pmc-ai-infrastructure-consultation",
@@ -114,9 +114,9 @@
       "primary_sources": [
         "https://www.pmc.gov.au/domestic-policy/office-ai/getting-it-right-building-ai-infrastructure-works-australia"
       ],
-      "reviewed_on": "2026-11-02",
-      "status_at_review": "Closed 5 pm AEDT Friday 9 Oct 2026. The consultation page says 'Submissions to this consultation have now closed' and that more information on the outcomes 'will be made available in due course'; no outcome, submissions or exposure draft published. Feeds the development of the Australian Standards for AI (see standards-for-ai-bill)",
-      "review_basis": "pmc.gov.au consultation page read through a search-result scrape on 2026-11-02 (no update date shown); pm.gov.au media releases checked by title only"
+      "reviewed_on": "2026-11-16",
+      "status_at_review": "Closed 5 pm AEDT Friday 9 Oct 2026. On 13 Nov 2026 PM&C published 'Public consultation insights', recording 1,533 submissions and a five-stage process (consultation, evidence base, standards development, government consideration, introduction of standards) ending with 'Australia's AI standards to be released'. It gives no date, exposure draft or Bill. The consultation page says copyright policy is outside the consultation's scope and is led by the Attorney-General; the insights page nonetheless reports that 64% of submissions addressed copyright and AI training data and that views diverged. Feeds the development of the Australian Standards for AI (see standards-for-ai-bill)",
+      "review_basis": "pmc.gov.au news item and consultation page read on 2026-11-16; the insights page read on the same day from a copy the maintainer downloaded (the site blocks automated access)"
     }
   ]
 }

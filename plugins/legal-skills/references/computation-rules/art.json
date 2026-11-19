@@ -42,7 +42,7 @@
         "'Date of the migration decision' is a defined term (s 477(3)) and the period runs despite notification defects or invalidity (ss 477(4)-(5), 477A(4)-(5)).",
         "Never treat this entry as current without verification — migration time limits have changed repeatedly."
       ],
-      "evidence": {"state": "verified", "checked": "2026-08-14", "method": "Firecrawl scrape of the official current compilation text; period, defined trigger and extension mechanism confirmed.", "version": "C2026C00232, Compilation No. 171, 4 June 2026"}
+      "evidence": {"state": "verified", "checked": "2026-11-16", "method": "Federal Register text of the current compilation; ss 477 and 477A are unchanged from Compilation No. 171, in which the period, defined trigger and extension mechanism were confirmed.", "version": "C2026C00461, Compilation No. 172, 8 October 2026"}
     }
   ]
 }

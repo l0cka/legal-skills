@@ -11,7 +11,7 @@
       "role": "time_computation_and_rollover",
       "summary": "Reckoning of time: a period dating from a day, act or event excludes that day (s 36(1)); where the last day falls on a Saturday, Sunday or public or bank holiday in the place where the thing is to be done, it may be done on the first following day that is not such a day (s 36(2)); extension powers survive expiry (s 36(3)).",
       "source_url": "https://legislation.nsw.gov.au/view/whole/html/inforce/current/act-1987-015#sec.36",
-      "evidence": {"state": "verified", "checked": "2026-08-14", "method": "Firecrawl scrape of the official current in-force text.", "version": "Current version for 1 July 2026 to date"}
+      "evidence": {"state": "verified", "checked": "2026-11-16", "method": "Official PDF of the current in-force text from legislation.nsw.gov.au, downloaded by the maintainer and read on the checked date.", "version": "Current version for 1 July 2026 to date"}
     }
   ],
   "period_rules": [
@@ -25,7 +25,7 @@
       "applies_provisions": ["nsw-ia-s36"],
       "source_url": "https://legislation.nsw.gov.au/view/whole/html/inforce/current/sl-2014-0026#sec.25",
       "warnings": ["A 14-day period applies to an internal appeal against a decision made in residential proceedings (r 25(4)(b)), and any period specified by the enabling legislation displaces this rule (r 25(4)(a)).", "The Tribunal may extend time under s 41 of the Civil and Administrative Tribunal Act 2013 (NSW)."],
-      "evidence": {"state": "verified", "checked": "2026-08-14", "method": "Firecrawl scrape of the official current in-force text; trigger corrected to the later of notification and first giving of reasons.", "version": "Current version for 27 May 2022 to date"}
+      "evidence": {"state": "verified", "checked": "2026-11-16", "method": "Official PDF of the current in-force text from legislation.nsw.gov.au, downloaded by the maintainer and read on the checked date; trigger is the later of notification and first giving of reasons.", "version": "Current version for 27 May 2022 to date"}
     }
   ]
 }

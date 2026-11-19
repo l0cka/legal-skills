@@ -1,6 +1,6 @@
 ---
 name: prepare-board-decision-record
-description: Prepare draft Australian company board materials, including a board paper, resolution or minutes extract, from verified law and supplied evidence. Never invents attendance, votes or reasons, and never circulates documents.
+description: Draft board papers, resolutions or minutes extracts from verified law and evidence. Use for a decision. For duties use `$assess-director-duties-governance`. Never invents attendance, votes or reasons, and never circulates documents.
 ---
 
 # Prepare Board Decision Record
@@ -21,6 +21,8 @@ the user supplies authorised records of those events.
 
 Read the [source and control method](../../references/governance-source-and-control-method.md)
 and use the approved [profile schema](../../references/governance-profile-schema.md).
+
+For duties use `$assess-director-duties-governance`.
 
 ## Workflow
 

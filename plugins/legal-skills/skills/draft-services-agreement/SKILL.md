@@ -1,6 +1,6 @@
 ---
 name: draft-services-agreement
-description: Prepare a first-draft Australian B2B services or contractor agreement and statement of work for lawyer review. Flags worker classification for employment review. Never approves execution.
+description: Draft a B2B services or contractor agreement and SOW for lawyer review. Use for a first draft. For classification use `$assess-employee-vs-contractor`. Never approves execution.
 ---
 
 # Draft Services Agreement
@@ -24,6 +24,8 @@ lawyer must review every output before use.
 Read the [source and control method](../../references/drafting-source-and-control-method.md)
 first. Use the [profile schema](../../references/drafting-profile-schema.md)
 for standing positions and transaction instructions.
+
+For classification use `$assess-employee-vs-contractor`.
 
 ## Workflow
 

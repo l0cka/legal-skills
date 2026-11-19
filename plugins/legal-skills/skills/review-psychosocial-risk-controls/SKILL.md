@@ -1,6 +1,6 @@
 ---
 name: review-psychosocial-risk-controls
-description: Gap-check an Australian employer's psychosocial risk management against the governing WHS regulations and code of practice. Use for risk-register reviews and regulator information requests. Never certifies compliance or investigates a complaint.
+description: Gap-check psychosocial risk management against the WHS regulations and code of practice. Use for risk-register reviews. For discrimination use `$assess-discrimination-and-positive-duty`. Never certifies compliance or investigates a complaint.
 ---
 
 # Review Psychosocial Risk Controls
@@ -27,6 +27,8 @@ decides that a control is adequate or reasonably practicable.
 
 Read the [source and control method](../../references/whs-source-and-control-method.md)
 first and work from the [WHS framework reference](../../references/whs-framework.md).
+
+For discrimination use `$assess-discrimination-and-positive-duty`.
 
 ## Workflow
 

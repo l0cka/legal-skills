@@ -1,6 +1,6 @@
 ---
 name: assess-officer-due-diligence
-description: Review evidence that an Australian company's officers exercise WHS due diligence, element by element, with gaps and board questions. Use for board WHS reviews and post-incident governance. Never concludes due diligence was met.
+description: Review evidence of officers' WHS due diligence, element by element, with gaps and board questions. Use for board WHS reviews. For a fresh incident use `$assess-notifiable-incident`. Never concludes due diligence was met.
 ---
 
 # Assess Officer Due Diligence
@@ -25,6 +25,8 @@ for the responsible lawyer and, ultimately, a court.
 
 Read the [source and control method](../../references/whs-source-and-control-method.md)
 first and work from the [WHS framework reference](../../references/whs-framework.md).
+
+For a fresh incident use `$assess-notifiable-incident`.
 
 ## Workflow
 

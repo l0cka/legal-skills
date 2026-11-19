@@ -1,6 +1,6 @@
 ---
 name: review-marketing-claims
-description: Review Australian marketing, environmental, comparative and pricing claims across the purchase journey, including drip pricing. Use before a campaign. Never certifies claims or publishes advertisements.
+description: Review Australian marketing, environmental, comparative and pricing claims, incl. drip pricing. Use before a campaign. For terms use `$check-unfair-contract-terms`. Never certifies claims or publishes advertisements.
 ---
 
 # Review Marketing Claims
@@ -23,6 +23,8 @@ Verify every statutory citation at legislation.gov.au through `$check-commonweal
 for state or territory application use its official legislation publisher. Record provision,
 version, effective date, checked date, observation and evidence state. If unavailable, say
 'verify against <official source>' and leave the affected proposition not verified.
+
+For terms use `$check-unfair-contract-terms`.
 
 ## Workflow
 

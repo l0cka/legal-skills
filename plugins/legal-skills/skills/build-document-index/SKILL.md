@@ -1,6 +1,6 @@
 ---
 name: build-document-index
-description: Build a numbered, source-linked document index as a Word file from supplied matter documents, usable as a court-book or bundle index. Use for litigation, investigations and disclosure. Never decides relevance, privilege or admissibility.
+description: Source-linked, numbered document index as a Word file from matter documents, for court books. Use for litigation and disclosure. For dated events use `$build-evidence-chronology`. Never decides relevance, privilege or admissibility.
 ---
 
 # Build Document Index
@@ -22,6 +22,8 @@ what any document proves. Every row is traceable to one supplied file, the
 source documents stay unchanged, and the index is delivered as a Word `.docx`
 file so it can become the front of a bundle or the source register of a
 chronology.
+
+For dated events use `$build-evidence-chronology`.
 
 ## Workflow
 

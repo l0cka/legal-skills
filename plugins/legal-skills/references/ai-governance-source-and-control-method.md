@@ -69,7 +69,11 @@ snapshot, not a cached rule; every live workflow must recheck each source:
    infrastructure that works for Australia" closed on 9 October 2026 (no
    outcome located at the 2 November 2026 review) and also covers conditions for AI training and copyright holders; and a reported
    opt-out model for AI training means the copyright limb should be treated
-   as under consultation. Verify each point at use; see the watch register.
+   as under consultation. At the 16 November 2026 review: PM&C published its
+   consultation insights on 13 November 2026 (1,533 submissions; no date,
+   exposure draft or Bill), and PM&C's consultation page states that copyright
+   policy is outside the consultation's scope and is led by the
+   Attorney-General. Verify each point at use; see the watch register.
 6. **Mandatory guardrails for high-risk AI proposals paper** — DISR, September
    2024. Consulted on but not proceeded with; historical context only.
 
