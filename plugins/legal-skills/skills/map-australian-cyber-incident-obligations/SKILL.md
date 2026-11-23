@@ -1,6 +1,6 @@
 ---
 name: map-australian-cyber-incident-obligations
-description: Map concurrent Australian cyber incident, data breach, ransomware payment, critical infrastructure and sector reporting duties by entity, trigger, recipient and clock. For full incident triage use assess-australian-data-breach.
+description: Map concurrent Australian cyber incident, data breach, ransomware payment, critical infrastructure and sector reporting duties by entity, trigger, recipient and clock. Full incident triage: `$assess-australian-data-breach`.
 ---
 
 # Map Australian Cyber Incident Obligations
@@ -11,9 +11,9 @@ Map concurrent Australian cyber incident, data-breach, ransomware-payment,
 critical-infrastructure, prudential, telecommunications, Consumer Data Right
 and health reporting obligations by entity, role, event, trigger, recipient
 and clock. Use when only the obligations and reporting-clock matrix is needed,
-or as the cyber layer inside assess-australian-data-breach; for a full
+or as the cyber layer inside `$assess-australian-data-breach`; for a full
 incident triage with facts, harm assessment and action plan use
-assess-australian-data-breach instead. Do not use for live containment,
+`$assess-australian-data-breach` instead. Do not use for live containment,
 external notification, case law, forensic conclusions or autonomous legal
 decisions.
 
