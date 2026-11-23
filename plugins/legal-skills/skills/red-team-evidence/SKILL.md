@@ -1,6 +1,6 @@
 ---
 name: red-team-evidence
-description: Sparring for a qualified lawyer. Challenge the evidence behind a position on provenance, hearsay, weight and gaps an opponent would attack. Never decides admissibility or invents a source.
+description: Challenge the evidence behind a lawyer's position on provenance, hearsay, weight and gaps. For the argument itself use `$pressure-test-argument`. Never decides admissibility or invents a source.
 ---
 
 # Red-team evidence
@@ -11,6 +11,7 @@ Challenge the evidence basis of a qualified lawyer's position on provenance,
 hearsay or weight risks as the lawyer frames them, gaps, and what a competent
 opponent would attack. Use on the lawyer-supplied record. Do not use to decide
 admissibility or to invent a source.
+For the argument itself use `$pressure-test-argument`.
 
 Challenge the evidence the lawyer is relying on. Stay inside the risks the
 lawyer has framed. Do not rule on admissibility. Jurisdiction is lawyer-supplied.

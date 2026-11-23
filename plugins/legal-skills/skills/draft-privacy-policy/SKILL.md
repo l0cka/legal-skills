@@ -1,6 +1,6 @@
 ---
 name: draft-privacy-policy
-description: Draft an Australian private-sector privacy policy from evidenced data practices, with an APP 1.4 map and overseas disclosure and marketing controls. Never invents data practices or publishes the policy.
+description: Draft a private-sector privacy policy from evidenced data practices, with an APP 1.4 map. Use for a privacy policy. For issues use `$assess-australian-privacy-issues`. Never invents data practices or publishes the policy.
 ---
 
 # Draft Privacy Policy
@@ -25,6 +25,8 @@ lawyer must review every output before use.
 Read the [source and control method](../../references/drafting-source-and-control-method.md)
 first. Use the [profile schema](../../references/drafting-profile-schema.md)
 for standing positions and transaction instructions.
+
+For issues use `$assess-australian-privacy-issues`.
 
 ## Workflow
 

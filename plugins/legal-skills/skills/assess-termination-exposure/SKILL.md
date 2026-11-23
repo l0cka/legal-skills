@@ -1,6 +1,6 @@
 ---
 name: assess-termination-exposure
-description: Issue-spot exposure from an Australian dismissal or redundancy, covering unfair dismissal, general protections, redundancy and notice. Use before a dismissal decision or when a claim is threatened. Never concludes a dismissal was unfair.
+description: Issue-spot dismissal or redundancy exposure - unfair dismissal, general protections, notice. Use before a dismissal or when a claim is threatened. For pay use `$map-fair-work-obligations`. Never concludes a dismissal was unfair.
 ---
 
 # Assess Termination Exposure
@@ -27,6 +27,8 @@ Read the [source and control method](../../references/fair-work-source-and-contr
 first, use the approved profile per the
 [employment profile schema](../../references/employment-profile-schema.md),
 and work from the [termination exposure map](../../references/termination-exposure.md).
+
+For pay use `$map-fair-work-obligations`.
 
 ## Workflow
 

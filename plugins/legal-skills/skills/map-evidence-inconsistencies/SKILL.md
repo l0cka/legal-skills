@@ -1,6 +1,6 @@
 ---
 name: map-evidence-inconsistencies
-description: Map where supplied matter documents and accounts agree, diverge or are silent on each material fact, as a Word file. Use after a chronology, for witness preparation and cross-examination planning. Never decides which account is right.
+description: Where matter documents and accounts agree, diverge or are silent on each fact, as a Word file. Use for witness preparation and cross-examination. For the chronology use `$build-evidence-chronology`. Never decides which account is right.
 ---
 
 # Map Evidence Inconsistencies
@@ -22,6 +22,8 @@ Show, fact by fact, what each source says and where the sources part company,
 so a practitioner can decide what to test. The map records agreement,
 divergence and silence with pinpoints; it never ranks the accounts. Source
 documents stay unchanged and the map is delivered as a Word `.docx` file.
+
+For the chronology use `$build-evidence-chronology`.
 
 ## Workflow
 

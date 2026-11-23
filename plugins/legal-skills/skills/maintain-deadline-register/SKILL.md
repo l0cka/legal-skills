@@ -1,6 +1,6 @@
 ---
 name: maintain-deadline-register
-description: Build and update a source-linked deadline register for one Australian civil litigation matter, with each entry's rule, trigger and confirmation status. Not the practice's diary. Never confirms a date.
+description: Deadline register for one civil litigation matter - each entry's rule, trigger and confirmation status. Use to track a matter's dates. To compute use `$compute-procedural-deadlines`. Never confirms a date.
 ---
 
 # Maintain Deadline Register
@@ -24,6 +24,8 @@ creates a date and it is not the practice's diary.
 Read the [source and control method](../../references/litigation-deadlines-source-and-control-method.md)
 and use an approved profile per the
 [deadline profile schema](../../references/deadline-profile-schema.md).
+
+To compute use `$compute-procedural-deadlines`.
 
 ## Workflow
 

@@ -1,6 +1,6 @@
 ---
 name: maintain-corporations-governance-calendar
-description: Create or update a source-linked governance calendar for an Australian company, covering meetings, records, notifications and reporting checkpoints. Never submits filings or sends notices. Not for tax or employment calendars.
+description: Source-linked governance calendar for an Australian company - meetings, records, notifications and reporting. Use to create or update it. For litigation dates use `$maintain-deadline-register`. Never submits filings or sends notices.
 ---
 
 # Maintain Corporations Governance Calendar
@@ -21,6 +21,8 @@ verified.
 
 Read the [source and control method](../../references/governance-source-and-control-method.md)
 and use the approved [profile schema](../../references/governance-profile-schema.md).
+
+For litigation dates use `$maintain-deadline-register`.
 
 ## Workflow
 

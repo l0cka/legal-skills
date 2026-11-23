@@ -1,6 +1,6 @@
 ---
 name: map-designated-services
-description: Map whether an Australian legal practice's services are designated services under the AML/CTF Act tranche 2 reforms. Use when a service line may trigger AML/CTF obligations. Not for other sectors. Never decides enrolment.
+description: Whether an Australian legal practice's services are designated services under AML/CTF tranche 2. Use when a service line may trigger obligations. For reports use `$map-reporting-obligations`. Never decides enrolment.
 ---
 
 # Map Designated Services
@@ -28,6 +28,8 @@ use an approved profile per the
 [practice profile schema](../../references/aml-ctf-practice-profile-schema.md)
 and work from the
 [designated services registry](references/designated-services-registry.json).
+
+For reports use `$map-reporting-obligations`.
 
 ## Workflow
 

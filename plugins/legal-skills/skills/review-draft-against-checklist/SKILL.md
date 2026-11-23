@@ -1,6 +1,6 @@
 ---
 name: review-draft-against-checklist
-description: Review an Australian commercial draft for missing clauses, undefined terms, broken references, placeholders and unfair-contract-terms risk. Returns a prioritised issues table. Never certifies enforceability.
+description: Review an Australian commercial draft for missing clauses, undefined terms, broken references and UCT risk. Use for our own drafts. For a counterparty draft use `$review-commercial-agreement`. Never certifies enforceability.
 ---
 
 # Review Draft Against Checklist
@@ -24,6 +24,8 @@ lawyer must review every output before use.
 Read the [source and control method](../../references/drafting-source-and-control-method.md)
 first. Use the [profile schema](../../references/drafting-profile-schema.md)
 for standing positions and transaction instructions.
+
+For a counterparty draft use `$review-commercial-agreement`.
 
 ## Workflow
 

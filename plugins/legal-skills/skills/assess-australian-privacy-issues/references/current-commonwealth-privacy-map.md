@@ -15,6 +15,11 @@ against official sources at the legal as-at date.
 | Enforcement | Check current three-tier civil penalties, sections 13G, 13H and 13K; notices in sections 80UB–80UD; court orders in section 80UA; and current monitoring or investigation powers | Privacy Act current compilation |
 | Statutory tort | Schedule 2 has operated since 10 June 2025 and is not limited to APP entities | Privacy Act section 94A and Schedule 2 |
 | Automated decisions | APP 1.7–1.9 commence on 10 December 2026 | C2024A00128 Schedule 1 Part 15 items 87–88 (application provision: item 89) |
+| Gambling reform amendments | From 1 January 2027, section 33C(1)(h) is added and APP 7.8(aa) refers to "Part 7B and subsection 62P(2)"; verify the provisions those items cross-refer to | Interactive Gambling Amendment (Gambling Reform) Act 2026, C2026A00072, Schedule 1 items 46–47 |
+
+At the 16 November 2026 review C2026C00227 was still the latest compilation, and
+the Federal Register listed prospective versions from 10 December 2026 and
+1 January 2027.
 
 The OAIC code register identified the Australian Government Agencies Governance
 APP Code 2017, Market and Social Research APP Code 2021 and CR Code 2025 as
@@ -40,10 +45,12 @@ agreed-in-principle Privacy Act Review proposals are current law unless a later
 Bill, Act and commencement are verified. Keep policy commitments, exposure
 drafts and Bills separate from enacted current and future law.
 
-Reported after the snapshot (24 September 2026 review, not yet confirmed
-against the Attorney-General's Department): an exposure draft Privacy
+After the snapshot (confirmed against the Attorney-General's Department
+consultation page on 16 November 2026): an exposure draft Privacy
 Amendment (Personal Data Protection) Bill 2026 was released on 31 August 2026,
-with submissions closing 18 September 2026. Reported proposals include a
+with submissions closing 18 September 2026; the page says the Bill remains
+subject to further consideration by government. Reported proposals, not
+re-verified against the draft, include a
 fair-and-reasonable test, an expanded personal-information definition, a
 72-hour Commissioner notification for eligible data breaches and a right to
 erasure against large digital platforms; removal of the small-business and

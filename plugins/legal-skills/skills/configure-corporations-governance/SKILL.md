@@ -1,6 +1,6 @@
 ---
 name: configure-corporations-governance
-description: Create or update the governance profile for an Australian company, recording entity type, governing documents, board authority and delegations. Use before other corporations-governance skills. Never approves the profile.
+description: Set up or update an Australian company's governance profile (entity type, documents, board authority, delegations). Use before other governance skills. For all-area setup use `$setup`. Never approves the profile.
 ---
 
 # Configure Corporations Governance
@@ -26,6 +26,8 @@ To start quickly, edit the matching starter in
 [starter-profiles.md](../../references/starter-profiles.md). The
 [profile guide](../../references/profile-guide.md) says where to keep the
 approved profile and how a person approves it.
+
+For all-area setup use `$setup`.
 
 ## Workflow
 

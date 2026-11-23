@@ -1,6 +1,6 @@
 ---
 name: track-ai-regulatory-developments
-description: Check the Australian AI regulatory watch list on demand against primary sources and report what changed. Use for horizon reviews or before advice that depends on a pending instrument. Never treats a pending instrument as law.
+description: What changed on the Australian AI regulatory watch list, checked on demand against primary sources. Use for horizon reviews. For current duties use `$map-ai-regulatory-obligations`. Never treats a pending instrument as law.
 ---
 
 # Track AI Regulatory Developments
@@ -23,6 +23,8 @@ its commencement is verified.
 
 Read the [source and control method](../../references/ai-governance-source-and-control-method.md)
 and use the [watch register](references/watch-register.json).
+
+For current duties use `$map-ai-regulatory-obligations`.
 
 ## Workflow
 

@@ -1,6 +1,6 @@
 ---
 name: configure-litigation-deadline-profile
-description: Create or update the practice profile the litigation-deadlines skills require, recording forums, the named confirmer and the diary system. Use before first use. Never computes a date or approves the profile.
+description: Set up or update the litigation-deadlines practice profile (forums, named confirmer, diary system). Use before first use. To compute use `$compute-procedural-deadlines`. Never computes a date or approves the profile.
 ---
 
 # Configure Litigation Deadline Profile
@@ -27,6 +27,8 @@ To start quickly, edit the matching starter in
 [starter-profiles.md](../../references/starter-profiles.md). The
 [profile guide](../../references/profile-guide.md) says where to keep the
 approved profile and how a person approves it.
+
+To compute use `$compute-procedural-deadlines`.
 
 ## Workflow
 

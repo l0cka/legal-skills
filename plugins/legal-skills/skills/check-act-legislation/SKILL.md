@@ -1,6 +1,6 @@
 ---
 name: check-act-legislation
-description: Verify ACT legislation at the official ACT legislation register, covering whether it is in force, the version on a date and whether a citation matches. Not for other jurisdictions, Bills, case law or interpretation.
+description: Verify ACT legislation at the official ACT legislation register - in force, version on a date, citation match. Use for ACT law. For Commonwealth law use `$check-commonwealth-legislation`.
 ---
 
 # Check ACT Legislation
@@ -23,6 +23,8 @@ Read [the shared point-in-time method](../../references/point-in-time-method.md)
 before performing a check. It defines the official-source rules, identity
 resolution, point-in-time selection and fail-closed boundary shared by every
 State and Territory checker in this plugin.
+
+For Commonwealth law use `$check-commonwealth-legislation`.
 
 ## Workflow
 

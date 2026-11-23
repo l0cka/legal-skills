@@ -1,6 +1,6 @@
 ---
 name: compute-procedural-deadlines
-description: Compute candidate Australian civil court deadlines from a lawyer-supplied trigger date, never by model arithmetic. Use for defences, appeals and other rule-fixed steps. Not for criminal procedure or contested trigger dates.
+description: Compute candidate civil court deadlines from a lawyer-supplied trigger date, never by model arithmetic. Use for defences, appeals and rule-fixed steps. For limitation use `$map-limitation-periods`. Not for criminal or contested triggers.
 ---
 
 # Compute Procedural Deadlines
@@ -32,6 +32,8 @@ use an approved profile per the
 run [compute_deadline.py](scripts/compute_deadline.py) against the
 [computation-rule tables](../../references/computation-rules/) and
 [holiday tables](../../references/holidays/).
+
+For limitation use `$map-limitation-periods`.
 
 ## Workflow
 

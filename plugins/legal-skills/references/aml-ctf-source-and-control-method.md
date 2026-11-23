@@ -63,8 +63,9 @@ workflow must recheck each source:
    against the Parliament of Australia bill page): the *Anti-Money Laundering and Counter-Terrorism
    Financing Amendment Bill 2026*, introduced 12 March 2026, would make
    further changes including to LPP processes; the House passed it on
-   16 September 2026 and it had not reached the Senate, so verify its status
-   at use. Record pending items
+   16 September 2026. At the 16 November 2026 review it had passed both Houses
+   that day and had not received Royal Assent, so it is not yet law: verify
+   assent and commencement at use. Record pending items
    in the watch register, never as obligations.
 
 ## Source hierarchy

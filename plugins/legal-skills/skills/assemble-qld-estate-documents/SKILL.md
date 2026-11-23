@@ -1,6 +1,6 @@
 ---
 name: assemble-qld-estate-documents
-description: Draft a Queensland will and enduring power of attorney from a firm's approved precedents for solicitor review. Not for other jurisdictions, advance health directives, trusts or probate.
+description: Draft a Queensland will and enduring power of attorney from approved precedents. Use for solicitor-led matters. For NSW use `$assemble-nsw-estate-documents`. Not for trusts or probate.
 ---
 
 # Assemble Queensland Estate Documents
@@ -27,6 +27,8 @@ first, then use the
 and [approved playbook usage rules](../../references/playbook-usage-rules.md).
 The [Queensland execution formalities reference](../../references/qld-execution-formalities.md)
 lists the statutory points the drafts must leave for the solicitor.
+
+For NSW use `$assemble-nsw-estate-documents`.
 
 ## Workflow
 

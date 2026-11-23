@@ -1,6 +1,6 @@
 ---
 name: map-ai-regulatory-obligations
-description: Map which Australian regulatory instruments bind a described AI use case and flag pending ones as watch items. Use for AI adoption, procurement and product launches. Not for privacy depth or the EU AI Act.
+description: Which Australian instruments bind a described AI use case; pending ones are watch items. Use for AI adoption and procurement. For privacy depth use `$assess-ai-privacy-cybersecurity-use-case`. Not for the EU AI Act.
 ---
 
 # Map AI Regulatory Obligations
@@ -22,6 +22,8 @@ what is only proposed. Never assert a pending instrument as in force.
 Read the [source and control method](../../references/ai-governance-source-and-control-method.md)
 and use the approved [profile schema](../../references/ai-governance-profile-schema.md)
 profile.
+
+For privacy depth use `$assess-ai-privacy-cybersecurity-use-case`.
 
 ## Workflow
 

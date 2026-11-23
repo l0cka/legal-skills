@@ -32,13 +32,25 @@ plugin. Each `SKILL.md` needs frontmatter whose `name` matches its directory
 and a non-empty `description` of at most 260 characters. Every skill's
 description is listed to the agent at once, and hosts drop or shorten
 descriptions past a budget (Claude Code allows 1% of the context window,
-Codex 2%), so a dropped description stops the skill triggering. State what
-the skill does, when to use it and the one exclusion that matters most, with
-the trigger words first. Put the full scope, including the neighbouring
-skill to use instead, in a `## Scope` section at the top of the body. The
-validator also fails when all descriptions together pass 26,000 characters.
-Name another skill in the text as `` `$skill-name` ``; a test fails
-when the named skill does not exist.
+Codex 2%), so a dropped description stops the skill triggering. Write each
+description to one pattern:
+
+1. Trigger words first: what the user has or asks for (incident, facts,
+   contract, draft, argument).
+2. One "Use when" or "Use for" clause naming the situation.
+3. A routing exclusion naming the confusable neighbour: "For X use
+   `$other-skill`." Name the nearest neighbour, including across practice
+   areas.
+4. The "Never ..." safety sentence, where the skill has one. The body must
+   hold the same rule.
+
+When all four do not fit, keep the "Never" sentence and tighten the other
+wording; if the first three still do not fit, list the skill in the pull
+request. Put the full scope, including every neighbouring skill to use instead,
+in a `## Scope` section at the top of the body, and mirror each routing
+pointer there. The validator also fails when all descriptions together pass
+26,000 characters. Name another skill in the text as `` `$skill-name` ``; a
+test fails when the named skill does not exist.
 
 Each skill also needs `agents/openai.yaml`, the ChatGPT Work interface file.
 Without it the skill is invisible in ChatGPT Work. It has three required keys:

@@ -1,6 +1,6 @@
 ---
 name: track-contract-renewals
-description: Build or review a source-linked register of Australian contract renewal and notice dates and auto-renewal risks. Use for a contract portfolio or an impending renewal. Never sends notices or updates live diaries.
+description: Register of contract renewal and notice dates and auto-renewal risks. Use for a portfolio or impending renewal. For litigation dates use `$maintain-deadline-register`. Never sends notices or updates live diaries.
 ---
 
 # Track Contract Renewals
@@ -25,6 +25,8 @@ method](../../references/review-source-and-control-method.md)
 first and use the [review playbook
 schema](../../references/review-playbook-schema.md).
 All outputs carry `DRAFT - LAWYER REVIEW REQUIRED`.
+
+For litigation dates use `$maintain-deadline-register`.
 
 ## Workflow
 

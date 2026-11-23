@@ -1,6 +1,6 @@
 ---
 name: find-blind-spots
-description: Sparring for a qualified lawyer. List the questions, facts, parties, procedures and authorities not yet addressed, split into must-check and nice-to-have. Never invents the missing authority or decides the point.
+description: Gaps in a lawyer's analysis: unaddressed questions, facts, parties, procedures, authorities, as must-check or nice-to-have. For premises use `$map-assumptions`. Never invents authority.
 ---
 
 # Find blind spots
@@ -12,6 +12,7 @@ qualified lawyer has not yet addressed, and separate must-check items from
 nice-to-have, using only the lawyer-supplied jurisdiction and record. Use when
 the lawyer wants a gap list. Do not use to invent the missing authority or to
 decide the point.
+For premises use `$map-assumptions`.
 
 List what the lawyer has not addressed. Split must-check items from
 nice-to-have. Do not decide the missing points. Jurisdiction is lawyer-supplied.

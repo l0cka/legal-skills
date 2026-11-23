@@ -1,6 +1,6 @@
 ---
 name: map-limitation-periods
-description: Map an Australian civil cause of action to candidate limitation periods across state, territory and Commonwealth law, flagging extensions and special regimes. Never determines accrual or picks a binding date. Not for criminal matters.
+description: Map a civil cause of action to candidate limitation periods across jurisdictions, flagging extensions. Use for time-to-sue questions. For court steps use `$compute-procedural-deadlines`. Never determines accrual or picks a binding date.
 ---
 
 # Map Limitation Periods
@@ -28,6 +28,8 @@ Read the [source and control method](../../references/litigation-deadlines-sourc
 use an approved profile per the
 [deadline profile schema](../../references/deadline-profile-schema.md) and
 work from the [limitation registry](references/limitation-registry.json).
+
+For court steps use `$compute-procedural-deadlines`.
 
 ## Workflow
 

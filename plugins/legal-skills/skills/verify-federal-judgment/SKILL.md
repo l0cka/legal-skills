@@ -1,6 +1,6 @@
 ---
 name: verify-federal-judgment
-description: Verify that a Federal Court or Federal Circuit and Family Court decision exists at the official publisher, for FCA, FCAFC, FedCFamC, FCCA, FamCA and FCR citations. Use via route-case-citation. Not for case treatment.
+description: Verify a Federal Court or FCFCOA decision exists at the official publisher - FCA, FCAFC, FedCFamC, FCCA, FamCA, FCR citations. Use via `$route-case-citation`. For High Court use `$verify-hca-judgment`. Not for case treatment.
 ---
 
 # Verify Federal Judgment
@@ -28,6 +28,8 @@ challenge. Produce a provenance record, not a bare assertion that a case
 Read [../../references/case-law-verification-method.md](../../references/case-law-verification-method.md)
 before verifying. It defines the outcome semantics, access rules and
 restriction handling.
+
+For High Court use `$verify-hca-judgment`.
 
 ## Workflow
 

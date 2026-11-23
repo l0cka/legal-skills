@@ -1,6 +1,6 @@
 ---
 name: trace-commonwealth-legislative-change
-description: Trace what changed in a Commonwealth provision between two dates, which amendment made the change and when it commenced, from Federal Register versions. Not for Bills, State law or interpretation.
+description: Trace what changed in a Commonwealth provision between two dates, which amendment and when commenced. Use for amendment history. For one date use `$check-commonwealth-legislation`. Not for Bills or State law.
 ---
 
 # Trace Commonwealth Legislative Change
@@ -24,6 +24,8 @@ separate questions.
 Read [references/change-tracing-method.md](references/change-tracing-method.md)
 before performing a trace. It defines the source hierarchy, comparison
 semantics, attribution test and special cases.
+
+For one date use `$check-commonwealth-legislation`.
 
 ## Workflow
 

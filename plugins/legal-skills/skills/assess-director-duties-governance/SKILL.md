@@ -1,6 +1,6 @@
 ---
 name: assess-director-duties-governance
-description: Issue-spot Australian director and officer duty risks for a proposed or completed company decision. Use for authority, care, reliance, conflicts and solvency checks. Never concludes breach, validity or solvency.
+description: Issue-spot Australian director and officer duty risks for a company decision. Use for authority, care, reliance, conflicts and solvency. For WHS use `$assess-officer-due-diligence`. Never concludes breach, validity or solvency.
 ---
 
 # Assess Director Duties Governance
@@ -22,6 +22,8 @@ legal liability.
 
 Read the [source and control method](../../references/governance-source-and-control-method.md)
 and use the approved [profile schema](../../references/governance-profile-schema.md).
+
+For WHS use `$assess-officer-due-diligence`.
 
 ## Workflow
 

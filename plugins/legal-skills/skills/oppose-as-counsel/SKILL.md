@@ -1,6 +1,6 @@
 ---
 name: oppose-as-counsel
-description: Sparring for a qualified lawyer. Argue the other side with the strongest counters the lawyer must answer, labelling speculation. Never advises the opposing party or invents a citation.
+description: Argue the other side with the strongest counters a lawyer must answer, speculation labelled. For a judge's view use `$role-play-decision-maker`. Never advises the other side or invents a citation.
 ---
 
 # Oppose as counsel
@@ -12,6 +12,7 @@ counters the lawyer must answer, labelling speculation, and using only the
 lawyer-supplied jurisdiction and record. Use when the lawyer wants opposing
 pressure. Do not use to advise the opposing party, invent a citation, or
 contact anyone.
+For a judge's view use `$role-play-decision-maker`.
 
 Put the other side's best counters in front of the lawyer. Label speculation.
 Stop short of advising the opposing party. Jurisdiction is lawyer-supplied. A

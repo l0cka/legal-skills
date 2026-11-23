@@ -1,6 +1,6 @@
 ---
 name: draft-website-terms
-description: Prepare first-draft Australian SaaS or subscription website terms for consumers and small businesses, preserving consumer guarantees and flagging unfair terms. Not for financial products or publication.
+description: Prepare first-draft Australian SaaS or subscription website terms for consumers and small businesses. Use when drafting terms. To screen clauses use `$check-unfair-contract-terms`. Never publishes.
 ---
 
 # Draft Website Terms
@@ -25,6 +25,8 @@ lawyer must review every output before use.
 Read the [source and control method](../../references/drafting-source-and-control-method.md)
 first. Use the [profile schema](../../references/drafting-profile-schema.md)
 for standing positions and transaction instructions.
+
+To screen clauses use `$check-unfair-contract-terms`.
 
 ## Workflow
 

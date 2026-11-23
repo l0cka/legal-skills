@@ -4,7 +4,7 @@
   "description": "Western Australian public holidays under the Public and Bank Holidays Act 1972 (WA), as published by the Western Australian Government (statewide list; Perth basis for the King's Birthday holiday).",
   "source_url": "https://www.wa.gov.au/service/employment/workplace-arrangements/public-holidays-western-australia",
   "checked": "2026-08-26",
-  "evidence": {"state": "verified", "method": "Firecrawl scrape of the official Western Australian Government public-holidays page on the checked date; page last updated 2026-05-25 and covering 2026 and 2027, with 2028 to be published when confirmed."},
+  "evidence": {"state": "verified", "method": "Firecrawl scrape of the official Western Australian Government public-holidays page on the checked date; page last updated 2026-05-25 and covering 2026 and 2027, with 2028 to be published when confirmed. Re-read on 2026-11-16 for dates from 16 November 2026 to the end of 2027, which were unchanged; the page then showed last updated 5 November 2026 and noted that the Public and Bank Holiday Amendment Act 2026 changes the schedule from 2028."},
   "coverage": {"from": "2026-01-01", "to": "2027-12-31"},
   "holidays": [
     "2026-01-01", "2026-01-26", "2026-03-02", "2026-04-03", "2026-04-05",

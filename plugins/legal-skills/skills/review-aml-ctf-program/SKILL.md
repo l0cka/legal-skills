@@ -1,6 +1,6 @@
 ---
 name: review-aml-ctf-program
-description: Issue-spot an Australian legal practice's AML/CTF program, risk assessment, policies, governance and customer due diligence design. Use for gap reviews of draft or approved programs. Never certifies compliance.
+description: Issue-spot a legal practice's AML/CTF program, risk assessment, policies, governance and CDD design. Use for gap reviews. For service coverage use `$map-designated-services`. Never certifies compliance.
 ---
 
 # Review AML/CTF Program
@@ -24,6 +24,8 @@ certify.
 Read the [source and control method](../../references/aml-ctf-source-and-control-method.md)
 and use an approved profile per the
 [practice profile schema](../../references/aml-ctf-practice-profile-schema.md).
+
+For service coverage use `$map-designated-services`.
 
 ## Workflow
 

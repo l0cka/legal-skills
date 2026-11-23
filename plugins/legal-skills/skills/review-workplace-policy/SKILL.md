@@ -1,6 +1,6 @@
 ---
 name: review-workplace-policy
-description: Review an Australian employer's workplace policies against Fair Work Act hooks such as right to disconnect, flexible work, leave and delegates' rights. Use for policy refreshes. Never certifies compliance or drafts policy text.
+description: Review workplace policies against Fair Work Act hooks - right to disconnect, flexible work, leave, delegates' rights. Use for policy refreshes. For contracts use `$review-employment-contract`. Never certifies compliance or drafts policy text.
 ---
 
 # Review Workplace Policy
@@ -27,6 +27,8 @@ Read the [source and control method](../../references/fair-work-source-and-contr
 first, use the approved profile per the
 [employment profile schema](../../references/employment-profile-schema.md),
 and work from the [policy statutory hooks reference](../../references/policy-statutory-hooks.md).
+
+For contracts use `$review-employment-contract`.
 
 ## Workflow
 

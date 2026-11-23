@@ -1,6 +1,6 @@
 ---
 name: configure-aml-ctf-practice-profile
-description: Create or update the AML/CTF practice profile for an Australian legal practice under the tranche 2 reforms. Use before any other AML/CTF workflow. Never decides whether a service is designated or approves the profile.
+description: Set up or update the tranche 2 AML/CTF practice profile for a legal practice. Use before other AML/CTF workflows. To test a service use `$map-designated-services`. Never decides whether a service is designated or approves the profile.
 ---
 
 # Configure AML/CTF Practice Profile
@@ -26,6 +26,8 @@ To start quickly, edit the matching starter in
 [starter-profiles.md](../../references/starter-profiles.md). The
 [profile guide](../../references/profile-guide.md) says where to keep the
 approved profile and how a person approves it.
+
+To test a service use `$map-designated-services`.
 
 ## Workflow
 

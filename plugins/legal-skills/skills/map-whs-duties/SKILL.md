@@ -1,6 +1,6 @@
 ---
 name: map-whs-duties
-description: Map who holds which work health and safety duties for an Australian business, worksite or contractor arrangement under the model WHS Act or Victoria's OHS Act. Use for onboarding and multi-party sites. Never concludes a breach.
+description: Who holds which WHS duties on a worksite or contractor arrangement under the model WHS Act or Victoria's OHS Act. Use for multi-party sites. For officers use `$assess-officer-due-diligence`. Never concludes a breach.
 ---
 
 # Map WHS Duties
@@ -26,6 +26,8 @@ met, or what is reasonably practicable.
 
 Read the [source and control method](../../references/whs-source-and-control-method.md)
 first and work from the [WHS framework reference](../../references/whs-framework.md).
+
+For officers use `$assess-officer-due-diligence`.
 
 ## Workflow
 
